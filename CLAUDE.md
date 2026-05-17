@@ -66,15 +66,15 @@ GovWatch/
 
 ---
 
-## Tech Stack (MVP — zero or near-zero cost)
+## Tech Stack
 
 | Layer | Tool | Cost | Why |
 |---|---|---|---|
-| Dashboard | Static HTML + Tailwind CSS + Chart.js | Free | No server needed, works from file or GitHub Pages |
+| Dashboard | Static HTML + Chart.js + Leaflet | Free | No server needed, works on GitHub Pages |
 | Data storage | JSON files in repo | Free | Obsidian can also read/display JSON |
-| Twitter data | Twitter API v2 free tier (Tweepy) | Free | 500k tweets/month read access |
-| Hosting | GitHub Pages | Free | Auto-deploy from repo |
-| Automation | GitHub Actions (optional) | Free tier | Run fetch script on schedule |
+| Twitter data | Twitter API v2 **Basic (paid)** via Tweepy | Paid — fetched manually, not auto-refreshed | Free tier does not support search queries |
+| Hosting | GitHub Pages | Free | Live at `https://ishanfso.github.io/GovWatch/dashboard/` |
+| Automation | GitHub Actions | **On hold** — avoid API costs | Will revisit when budget allows |
 
 ---
 
@@ -109,9 +109,10 @@ Each civic issue has this shape (in `data/issues.json`):
 
 1. **Static dashboard over server-side app** — Zero hosting cost, GitHub Pages compatible.
 2. **JSON file as database** — Enough for MVP, Obsidian can display it, no DB setup needed.
-3. **Twitter API free tier** — Real data without cost. Falls back to sample data if no API key.
+3. **Twitter API v2 Basic (paid)** — Free tier does not support search. Fetch manually in batches to control cost; auto-refresh is paused.
 4. **Obsidian-first docs** — All docs are markdown so the founder sees live project state in their vault.
 5. **No frameworks (React/Vue/etc.)** — Vanilla JS keeps it simple and editable without build tools.
+6. **GitHub Pages live** — Dashboard publicly hosted at `https://ishanfso.github.io/GovWatch/dashboard/`
 
 ---
 

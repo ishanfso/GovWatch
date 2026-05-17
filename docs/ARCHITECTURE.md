@@ -136,11 +136,13 @@ steps:
 
 | Service | Usage | Monthly Cost |
 |---|---|---|
-| Twitter API v2 (free) | ~5,000 tweet searches/day | $0 |
+| Twitter API v2 (Basic paid tier) | Manual fetches only — auto-refresh paused | ~$100/mo if run regularly; $0 when paused |
 | GitHub repo + Pages | Hosting + CI | $0 |
 | Chart.js CDN | Dashboard charts | $0 |
-| Tailwind CSS CDN | Dashboard styling | $0 |
-| **Total MVP Cost** | | **$0** |
+| OpenStreetMap / Leaflet | Map view (Phase 2) | $0 |
+| **Current running cost** | Data already fetched, no auto-refresh | **$0/month** |
+
+**Cost strategy:** Fetch data manually in batches (e.g., once a month, or after major rain/events) rather than continuous polling. This keeps Twitter API costs near zero between fetches.
 
 ---
 
