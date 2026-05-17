@@ -63,32 +63,43 @@ RAW_FILE = os.path.join(os.path.dirname(__file__), "../data/raw_tweets.json")
 
 
 def fetch_tweets():
-    # Load already-fetched tweets so we can skip their IDs
+    # Load already-fetched tweets to get the highest ID and avoid re-paying for old ones
     existing_tweets = []
     seen_ids = set()
+    since_id = None
     if os.path.exists(RAW_FILE):
         with open(RAW_FILE, encoding="utf-8") as f:
             existing_tweets = json.load(f)
         seen_ids = {t["id"] for t in existing_tweets}
-        print(f"Loaded {len(existing_tweets)} existing tweets — will skip already-fetched IDs.")
+        since_id = max(int(t["id"]) for t in existing_tweets)
+        print(f"Loaded {len(existing_tweets)} existing tweets.")
+        print(f"Using since_id={since_id} — Twitter will only return tweets newer than this.")
+    else:
+        print(f"No existing data — fetching last {config.SEARCH_DAYS_BACK} days.")
 
     client = tweepy.Client(bearer_token=config.TWITTER_BEARER_TOKEN, wait_on_rate_limit=True)
+    # start_time is only used on the very first run (when there is no since_id)
     start_time = datetime.now(timezone.utc) - timedelta(days=config.SEARCH_DAYS_BACK)
     new_tweets = []
 
-    print(f"Fetching tweets from the last {config.SEARCH_DAYS_BACK} days...")
+    print(f"Fetching new tweets...")
 
     for i, query in enumerate(SEARCH_QUERIES, 1):
         print(f"  Query {i}/{len(SEARCH_QUERIES)}: {query[:60]}...")
         try:
-            response = client.search_recent_tweets(
+            kwargs = dict(
                 query=query,
-                start_time=start_time,
                 max_results=min(config.MAX_RESULTS_PER_QUERY, 100),
                 tweet_fields=["created_at", "public_metrics", "author_id", "text"],
                 expansions=["author_id"],
                 user_fields=["username"],
             )
+            if since_id:
+                kwargs["since_id"] = since_id   # server-side: only newer tweets returned
+            else:
+                kwargs["start_time"] = start_time  # first run: use time window instead
+
+            response = client.search_recent_tweets(**kwargs)
 
             if not response.data:
                 continue
@@ -124,7 +135,7 @@ def fetch_tweets():
     with open(RAW_FILE, "w", encoding="utf-8") as f:
         json.dump(all_tweets, f, indent=2, ensure_ascii=False)
 
-    print(f"\nFetched {len(new_tweets)} new tweets (skipped {len(existing_tweets)} already known)")
+    print(f"\nFetched {len(new_tweets)} new tweets (Twitter only returned tweets newer than last fetch)")
     print(f"Total in raw_tweets.json: {len(all_tweets)}")
     print("Now run: python process_issues.py")
 
