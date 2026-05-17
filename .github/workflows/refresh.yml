@@ -1,0 +1,71 @@
+name: Auto-refresh Civic Issues Data
+
+on:
+  schedule:
+    - cron: '30 0 * * *'   # Daily at 6:00 AM IST (00:30 UTC)
+  workflow_dispatch:         # Also allows manual trigger from the GitHub Actions tab
+
+permissions:
+  contents: write            # Needed to commit and push updated data files
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Write config.py from secrets
+        env:
+          TWITTER_BEARER_TOKEN: ${{ secrets.TWITTER_BEARER_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          python - <<'EOF'
+          import os
+          lines = [
+              f'TWITTER_BEARER_TOKEN = "{os.environ["TWITTER_BEARER_TOKEN"]}"',
+              f'ANTHROPIC_API_KEY = "{os.environ["ANTHROPIC_API_KEY"]}"',
+              'SEARCH_DAYS_BACK = 7',
+              'MAX_RESULTS_PER_QUERY = 100',
+              'OUTPUT_FILE = "../data/issues.json"',
+          ]
+          with open('scripts/config.py', 'w') as f:
+              f.write('\n'.join(lines) + '\n')
+          print('config.py written')
+          EOF
+
+      - name: Fetch new tweets
+        working-directory: scripts
+        run: python fetch_tweets.py
+
+      - name: Process issues
+        working-directory: scripts
+        run: python process_issues.py
+
+      - name: Filter issues with LLM
+        working-directory: scripts
+        run: python filter_issues.py
+
+      - name: Commit and push if data changed
+        run: |
+          git config user.name "GovWatch Bot"
+          git config user.email "govwatch-bot@users.noreply.github.com"
+          git add data/issues.json data/raw_tweets.json data/filter_verdicts.json data/issues_unfiltered.json
+          if git diff --staged --quiet; then
+            echo "No new tweets found — nothing to commit."
+          else
+            ISSUE_COUNT=$(python -c "import json; print(len(json.load(open('data/issues.json'))))")
+            git commit -m "data: auto-refresh — ${ISSUE_COUNT} civic issues as of $(date -u '+%Y-%m-%d %H:%M UTC')"
+            git push
+          fi

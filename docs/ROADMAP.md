@@ -40,6 +40,7 @@ Goal: Make data collection cost-efficient and repeatable.
 - [x] **Deduplication** — same tweet never stored twice across fetch runs
 - [x] **Persistent filter verdicts** — already-classified tweets skipped on future LLM filter runs
 - [x] **Backup before filter** — `issues_unfiltered.json` always saved before modifying data
+- [x] **GitHub Actions auto-refresh** — daily at 6 AM IST; commits updated data automatically
 
 ---
 

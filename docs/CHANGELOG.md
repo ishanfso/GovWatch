@@ -5,6 +5,22 @@ Format: `[Date] - What changed and why`
 
 ---
 
+## [2026-05-17] — GitHub Actions Auto-refresh
+
+### Added
+
+**`.github/workflows/refresh.yml`**
+- Runs daily at 6:00 AM IST (00:30 UTC) and can also be triggered manually from the GitHub Actions tab
+- Writes `config.py` at runtime from GitHub repository secrets (keys never stored in the repo)
+- Runs the full pipeline: `fetch_tweets.py` → `process_issues.py` → `filter_issues.py`
+- Only commits if there is actually new data — skips the commit step if no new tweets were found
+- Commit message includes the current issue count and UTC timestamp
+- Cost-safe because `since_id` means each run only fetches tweets newer than the last run
+
+**To activate:** add `TWITTER_BEARER_TOKEN` and `ANTHROPIC_API_KEY` as secrets in the GitHub repository settings (Settings → Secrets and variables → Actions → New repository secret).
+
+---
+
 ## [2026-05-17] — Incremental Fetch and Filter
 
 ### Changed
