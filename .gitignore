@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.env
+venv/
+.venv/
+*.egg-info/
+
+# Config with secrets — NEVER commit this
+scripts/config.py
+
+# Live data file (too large for git over time; use sample_issues.json instead)
+# Comment out the line below if you want to track issues.json in git for small MVPs
+# data/issues.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+*.swp
+
+# Obsidian workspace state (personal, not shared)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GovWatch — Bangalore Civic Issues Dashboard</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <!-- Chart.js for category breakdown chart -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+  <!-- ── Header ─────────────────────────────────────────────────── -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="header-brand">
+        <span class="brand-icon">🏛</span>
+        <div>
+          <h1 class="brand-title">GovWatch</h1>
+          <p class="brand-sub">Bangalore Civic Issues — Twitter Intelligence</p>
+        </div>
+      </div>
+      <div class="header-meta">
+        <span class="data-badge" id="data-source-badge">Sample Data</span>
+        <span class="last-updated" id="last-updated">Loading…</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- ── Summary Stats ──────────────────────────────────────────── -->
+    <section class="stats-row" id="stats-row">
+      <div class="stat-card">
+        <div class="stat-number" id="stat-total">—</div>
+        <div class="stat-label">Total Issues</div>
+      </div>
+      <div class="stat-card stat-high">
+        <div class="stat-number" id="stat-high">—</div>
+        <div class="stat-label">High Severity</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" id="stat-top-cat">—</div>
+        <div class="stat-label">Top Category</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" id="stat-top-area">—</div>
+        <div class="stat-label">Most Affected Area</div>
+      </div>
+    </section>
+
+    <!-- ── Chart + Filters ────────────────────────────────────────── -->
+    <section class="controls-section">
+      <div class="chart-box">
+        <h2 class="section-title">Issues by Category</h2>
+        <div class="chart-wrap">
+          <canvas id="categoryChart"></canvas>
+        </div>
+      </div>
+
+      <div class="filters-box">
+        <h2 class="section-title">Filter Issues</h2>
+
+        <label class="filter-label">Category</label>
+        <div class="filter-chips" id="category-filters">
+          <button class="chip active" data-filter="category" data-value="all">All</button>
+        </div>
+
+        <label class="filter-label" style="margin-top:16px;">Severity</label>
+        <div class="filter-chips" id="severity-filters">
+          <button class="chip active" data-filter="severity" data-value="all">All</button>
+          <button class="chip chip-high" data-filter="severity" data-value="high">🔴 High</button>
+          <button class="chip chip-med" data-filter="severity" data-value="medium">🟡 Medium</button>
+          <button class="chip chip-low" data-filter="severity" data-value="low">🟢 Low</button>
+        </div>
+
+        <label class="filter-label" style="margin-top:16px;">Area</label>
+        <select class="area-select" id="area-filter">
+          <option value="all">All Areas</option>
+        </select>
+
+        <button class="reset-btn" id="reset-filters">Reset Filters</button>
+      </div>
+    </section>
+
+    <!-- ── Issue Feed ─────────────────────────────────────────────── -->
+    <section class="feed-section">
+      <div class="feed-header">
+        <h2 class="section-title">Issue Feed</h2>
+        <span class="showing-count" id="showing-count"></span>
+      </div>
+      <div class="issue-grid" id="issue-grid">
+        <div class="loading">Loading issues…</div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>GovWatch · Data sourced from public Twitter posts · For government use only</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
