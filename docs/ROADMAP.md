@@ -5,29 +5,66 @@ Each item moves to CHANGELOG.md when completed.
 
 ---
 
-## Phase 1 — MVP (Current Sprint)
-
-Goal: A working dashboard with sample data and the ability to pull real tweets.
+## Phase 1 — MVP ✅ COMPLETE
 
 - [x] Project structure and documentation setup
 - [x] Sample data (20 mock Bangalore civic issues)
 - [x] Static dashboard — category cards, filters, chart
-- [x] Twitter fetch script (Tweepy, free tier)
+- [x] Twitter fetch script (Tweepy, paid tier — free tier does not support search)
 - [x] Issue categorization script
-- [ ] **GitHub Pages deployment** — host dashboard publicly so officials can open a URL
-- [ ] **Twitter API key setup walkthrough** — guided setup in SETUP_GUIDE.md
+- [x] GitHub Pages deployment — `https://ishanfso.github.io/GovWatch/dashboard/`
+- [x] First live data fetch completed — real Bangalore civic tweets in `data/issues.json`
 
 ---
 
-## Phase 2 — Live Data (Next Sprint)
+## Phase 2 — Squeeze the Data (Current Sprint)
 
-Goal: Dashboard auto-refreshes with real tweets, no manual running of scripts.
+Goal: Extract maximum value from already-fetched data before spending more on Twitter API calls.
+Auto-refresh is intentionally paused to manage API costs.
 
-- [ ] **GitHub Actions workflow** — runs fetch_tweets.py every 6 hours, commits new issues.json
-- [ ] **Data deduplication** — prevent same tweet showing twice across runs
-- [ ] **Issue aging** — mark issues as "old" after 7 days without resolution
+- [ ] **Map view** — plot issues on an interactive Bangalore map (free, no API key — uses OpenStreetMap/Leaflet)
+- [ ] **Issue clustering** — group tweets about the same problem (e.g., 5 tweets about one pothole → shown as 1 cluster with a count)
+- [ ] **Search** — free-text search across all issue cards
+- [ ] **Export to CSV** — one-click download for offline reports and presentations
+- [ ] **Status tracking** — officials can mark issues Acknowledged / In Progress / Resolved (saved in browser, no server needed)
+- [ ] **Department view** — group issues by responsible body (BBMP, BESCOM, BWSSB, BTP) for targeted briefings
+- [ ] **Top issues digest** — "Top 5 most-engaged issues this week" summary panel
+
+---
+
+## Phase 3 — Data Refresh Strategy (On Hold Until Needed)
+
+Goal: Bring in fresh data cost-efficiently when the current dataset gets stale.
+
+- [ ] **Manual refresh workflow** — document exactly when and how to re-run fetch (monthly? after rain events?)
+- [ ] **Incremental fetch** — only pull tweets newer than the latest one already stored (reduces API calls)
+- [ ] **GitHub Actions auto-refresh** — scheduled runs, only when budget allows
+- [ ] **Data deduplication** — prevent same tweet appearing twice across fetch runs
+- [ ] **Issue aging** — mark issues as "stale" after N days
+
+---
+
+## Phase 4 — Official Dashboard Features
+
+Goal: Features that make it genuinely useful for government officials in meetings and daily work.
+
+- [ ] **Email digest** — daily summary email of top issues (free tier of Resend or SendGrid)
+- [ ] **Trend analysis** — "Roads complaints up 40% this week in Whitefield"
+- [ ] **Export to PDF** — formatted report for presentations
+- [ ] **WhatsApp integration** — send issue alerts via WhatsApp Business API (low cost)
 - [ ] **Ward/pin code mapping** — map areas to Bangalore's 198 wards for precise location
-- [ ] **Google Maps embed** — show issue hotspot map (free tier, no API key needed for embed)
+
+---
+
+## Phase 5 — Scale to Other Cities
+
+Goal: Expand beyond Bangalore.
+
+- [ ] **City selector** — configurable keywords and areas for any Indian city
+- [ ] **Multi-source data** — add Reddit (r/bangalore), Citizen app, 311-style portals
+- [ ] **Department routing** — auto-route Roads issues to BBMP, Power to BESCOM, etc.
+- [ ] **Official response tracking** — detect when govt accounts reply to complaints
+- [ ] **Public portal** — citizens can verify if their issue was seen
 
 ---
 
