@@ -11,7 +11,7 @@ GovWatch is a civic intelligence dashboard for government officials in Bangalore
 It aggregates public complaints and civic issues posted on Twitter/X by citizens, then
 presents them in a clean, actionable dashboard so officials can prioritize and respond.
 
-**Phase 1 scope (MVP):** Bangalore only.
+**Current scope:** Bangalore only.
 **Long-term vision:** Expand to all Indian cities.
 
 ---
@@ -41,27 +41,31 @@ This GitHub repository is also an Obsidian vault on the owner's local machine.
 
 ```
 GovWatch/
-├── CLAUDE.md                   ← You are here. Read first every session.
-├── README.md                   ← Public-facing project description
+├── CLAUDE.md                      ← You are here. Read first every session.
+├── README.md                      ← Public-facing project description
 ├── .gitignore
 ├── docs/
-│   ├── CHANGELOG.md            ← EVERY code change logged here (newest first)
-│   ├── BUILD_LOG.md            ← Every file/feature built, with date
-│   ├── ROADMAP.md              ← Future features, prioritized
-│   ├── ARCHITECTURE.md         ← System design and data flow
-│   └── SETUP_GUIDE.md          ← Step-by-step setup for non-technical users
+│   ├── CHANGELOG.md               ← EVERY code change logged here (newest first)
+│   ├── BUILD_LOG.md               ← Every file/feature built, with date
+│   ├── ROADMAP.md                 ← Future features, prioritized
+│   ├── ARCHITECTURE.md            ← System design and data flow
+│   └── SETUP_GUIDE.md             ← Step-by-step setup for non-technical users
 ├── dashboard/
-│   ├── index.html              ← Main dashboard (single-page app)
-│   ├── css/styles.css          ← All styling
-│   └── js/app.js               ← Dashboard logic, reads issues.json
+│   ├── index.html                 ← Main dashboard (single-page app)
+│   ├── css/styles.css             ← All styling (modern design, responsive)
+│   └── js/app.js                  ← Dashboard logic, reads issues.json
 ├── data/
-│   ├── sample_issues.json      ← Realistic mock data for MVP demos
-│   └── issues.json             ← Live data (written by fetch script)
+│   ├── sample_issues.json         ← 20 mock issues (fallback when no real data)
+│   ├── issues.json                ← Live filtered data (shown in dashboard)
+│   ├── issues_unfiltered.json     ← Backup of all keyword-matched tweets pre-filter
+│   ├── raw_tweets.json            ← Raw Twitter API output (all fetched tweets)
+│   └── filter_verdicts.json       ← Persistent LLM verdicts: {tweet_id: "yes"/"no"}
 └── scripts/
-    ├── fetch_tweets.py         ← Pulls civic tweets from Twitter/X
-    ├── process_issues.py       ← Categorizes and scores issues
-    ├── requirements.txt        ← Python dependencies
-    └── config.example.py       ← Config template — copy to config.py, never commit config.py
+    ├── fetch_tweets.py            ← Pulls new tweets from Twitter/X (incremental)
+    ├── process_issues.py          ← Categorizes and scores all raw tweets
+    ├── filter_issues.py           ← LLM filter: removes non-civic noise (incremental)
+    ├── requirements.txt           ← Python dependencies
+    └── config.example.py          ← Config template — copy to config.py, never commit
 ```
 
 ---
@@ -72,9 +76,24 @@ GovWatch/
 |---|---|---|---|
 | Dashboard | Static HTML + Chart.js + Leaflet | Free | No server needed, works on GitHub Pages |
 | Data storage | JSON files in repo | Free | Obsidian can also read/display JSON |
-| Twitter data | Twitter API v2 **Basic (paid)** via Tweepy | Paid — fetched manually, not auto-refreshed | Free tier does not support search queries |
+| Twitter data | Twitter API v2 **Basic (paid)** via Tweepy | ~$100/mo when fetching; $0 when paused | Free tier does not support search queries |
+| LLM filtering | Anthropic Claude API (Haiku model) | ~$0.05–0.10 per filter run | Removes noise that keyword matching can't catch |
 | Hosting | GitHub Pages | Free | Live at `https://ishanfso.github.io/GovWatch/dashboard/` |
 | Automation | GitHub Actions | **On hold** — avoid API costs | Will revisit when budget allows |
+
+---
+
+## Data Pipeline
+
+Run in this order after each fetch session:
+
+```
+python fetch_tweets.py       ← appends only new tweets (uses since_id, no double billing)
+python process_issues.py     ← categorizes all raw tweets
+python filter_issues.py      ← LLM-classifies only new tweets (skips already-known IDs)
+```
+
+Then commit `data/issues.json`, `data/raw_tweets.json`, `data/filter_verdicts.json` and push.
 
 ---
 
@@ -93,26 +112,44 @@ Each civic issue has this shape (in `data/issues.json`):
   "severity": "high",
   "likes": 45,
   "retweets": 12,
-  "source_url": "https://twitter.com/...",
+  "source_url": "https://twitter.com/i/web/status/tweet_id",
   "keywords": ["pothole", "road", "broken"],
   "status": "open"
 }
 ```
 
-**Categories used:** Roads, Water, Electricity, Waste, Parks, Traffic, Flooding, Other
+**Categories:** Roads, Water, Electricity, Waste, Parks, Traffic, Flooding, Other
 
-**Severity logic:** high (>50 engagements), medium (10–50), low (<10)
+**Severity:** high (≥50 engagement), medium (10–49), low (<10)
 
 ---
 
 ## Key Decisions Made
 
 1. **Static dashboard over server-side app** — Zero hosting cost, GitHub Pages compatible.
-2. **JSON file as database** — Enough for MVP, Obsidian can display it, no DB setup needed.
-3. **Twitter API v2 Basic (paid)** — Free tier does not support search. Fetch manually in batches to control cost; auto-refresh is paused.
-4. **Obsidian-first docs** — All docs are markdown so the founder sees live project state in their vault.
-5. **No frameworks (React/Vue/etc.)** — Vanilla JS keeps it simple and editable without build tools.
-6. **GitHub Pages live** — Dashboard publicly hosted at `https://ishanfso.github.io/GovWatch/dashboard/`
+2. **JSON file as database** — Enough for current scale, Obsidian can display it, no DB setup.
+3. **Twitter API v2 Basic (paid)** — Free tier does not support search. Fetch manually; auto-refresh paused.
+4. **Incremental fetch with `since_id`** — Twitter only returns tweets newer than last fetch; no double billing.
+5. **LLM filtering (Claude Haiku)** — Keyword matching pulls in noise (politician visits, campaigns, news); LLM removes it cheaply with prompt caching.
+6. **Persistent filter verdicts** — Once a tweet is classified, its verdict is stored; future runs never re-classify it.
+7. **Obsidian-first docs** — All docs are markdown so the founder sees live project state in their vault.
+8. **No frameworks (React/Vue/etc.)** — Vanilla JS keeps it simple and editable without build tools.
+
+---
+
+## Twitter Search Queries (in fetch_tweets.py)
+
+```
+("bangalore" OR "bengaluru") (pothole OR "road damage" OR "road condition") lang:en -is:retweet
+(#BangaloreRoads OR #BBMPRoads) -is:retweet
+("bangalore" OR "bengaluru") (BWSSB OR "water supply" OR "water cut" OR "no water") lang:en -is:retweet
+("bangalore" OR "bengaluru") (BESCOM OR "power cut" OR "power outage" OR "no electricity") lang:en -is:retweet
+("bangalore" OR "bengaluru") (garbage OR "solid waste" OR "SWM" OR "dumping") lang:en -is:retweet
+("bangalore" OR "bengaluru") (waterlogged OR flooding OR "storm drain" OR "rain water") lang:en -is:retweet
+("bangalore" OR "bengaluru") (BBMP park OR "garden maintenance" OR Lalbagh OR Cubbon) lang:en -is:retweet
+("bangalore" OR "bengaluru") ("traffic signal" OR "traffic jam" OR BMTC OR "road block") lang:en -is:retweet
+@BBMP_MAYOR (complaint OR issue OR problem OR broken OR damaged) lang:en -is:retweet
+```
 
 ---
 
@@ -139,22 +176,8 @@ When beginning any new Claude Code session:
 
 ---
 
-## Twitter Search Queries Used
-
-These hashtags/keywords are searched to find Bangalore civic issues:
-
-```
-#BangaloreCivicIssues OR #BBMP OR #BangaloreRoads
-"bangalore" (pothole OR flooding OR waterlogging)
-"bangalore" (power cut OR electricity OR BESCOM)
-"namma bengaluru" (complaint OR issue OR problem)
-@BBMP_MAYOR OR @CMofKarnataka (complaint)
-```
-
----
-
-## Contact & Links
+## Links
 
 - GitHub Repo: `ishanfso/GovWatch`
+- Live Dashboard: `https://ishanfso.github.io/GovWatch/dashboard/`
 - Obsidian Vault: Local machine, synced via GitHub Desktop
-- Hosting: GitHub Pages at `https://ishanfso.github.io/GovWatch` (to be set up)

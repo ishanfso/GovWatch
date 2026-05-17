@@ -10,99 +10,88 @@ Each item moves to CHANGELOG.md when completed.
 - [x] Project structure and documentation setup
 - [x] Sample data (20 mock Bangalore civic issues)
 - [x] Static dashboard — category cards, filters, chart
-- [x] Twitter fetch script (Tweepy, paid tier — free tier does not support search)
+- [x] Twitter fetch script (Tweepy, paid tier)
 - [x] Issue categorization script
 - [x] GitHub Pages deployment — `https://ishanfso.github.io/GovWatch/dashboard/`
-- [x] First live data fetch completed — real Bangalore civic tweets in `data/issues.json`
+- [x] First live data fetch completed
 
 ---
 
 ## Phase 2 — Squeeze the Data ✅ COMPLETE
 
-Goal: Extract maximum value from already-fetched data before spending more on Twitter API calls.
+Goal: Extract maximum value from already-fetched data before spending more on Twitter API.
 
 - [x] **Map view** — interactive Bangalore map (Leaflet + OpenStreetMap, free)
 - [x] **Issue clustering** — group tweets about the same problem, show count badge
 - [x] **Search** — free-text search across all issue cards
 - [x] **Export to CSV** — one-click download for offline reports and presentations
-- [x] **Status tracking** — officials can mark issues Acknowledged / In Progress / Resolved (saved in browser)
+- [x] **Status tracking** — officials can mark issues Acknowledged / In Progress / Resolved
 - [x] **Department view** — issues grouped by BBMP / BESCOM / BWSSB / BTP
 - [x] **LLM noise filter** — Claude AI removes politician visits, news, campaigns from dataset
 - [x] **Modern dashboard design** — gradient header, card accents, improved visual hierarchy
-- [ ] **Top issues digest** — "Top 5 most-engaged issues this week" summary panel *(deferred to Phase 3)*
 
 ---
 
-## Phase 3 — Data Refresh Strategy (On Hold Until Needed)
+## Phase 3 — Data Pipeline Maturity ✅ COMPLETE
 
-Goal: Bring in fresh data cost-efficiently when the current dataset gets stale.
+Goal: Make data collection cost-efficient and repeatable.
 
-- [ ] **Manual refresh workflow** — document exactly when and how to re-run fetch (monthly? after rain events?)
-- [ ] **Incremental fetch** — only pull tweets newer than the latest one already stored (reduces API calls)
-- [ ] **GitHub Actions auto-refresh** — scheduled runs, only when budget allows
-- [ ] **Data deduplication** — prevent same tweet appearing twice across fetch runs
-- [ ] **Issue aging** — mark issues as "stale" after N days
-
----
-
-## Phase 4 — Official Dashboard Features
-
-Goal: Features that make it genuinely useful for government officials in meetings and daily work.
-
-- [ ] **Email digest** — daily summary email of top issues (free tier of Resend or SendGrid)
-- [ ] **Trend analysis** — "Roads complaints up 40% this week in Whitefield"
-- [ ] **Export to PDF** — formatted report for presentations
-- [ ] **WhatsApp integration** — send issue alerts via WhatsApp Business API (low cost)
-- [ ] **Ward/pin code mapping** — map areas to Bangalore's 198 wards for precise location
+- [x] **Incremental fetch** — `since_id` ensures Twitter only returns new tweets; no double billing
+- [x] **Deduplication** — same tweet never stored twice across fetch runs
+- [x] **Persistent filter verdicts** — already-classified tweets skipped on future LLM filter runs
+- [x] **Backup before filter** — `issues_unfiltered.json` always saved before modifying data
 
 ---
 
-## Phase 5 — Scale to Other Cities
+## Phase 4 — Intelligence Layer (Next)
+
+Goal: Make the dashboard actively useful in daily government work, not just a feed to browse.
+
+- [ ] **Top issues digest** — "Top 5 highest-engagement issues right now" panel above the feed
+- [ ] **AI weekly brief** — Claude generates a 1-page natural language summary: top problems, worst areas, what's trending. Run as a script, output displayed in dashboard or emailed.
+- [ ] **Issue aging** — show how old each complaint is ("3 days ago"); flag issues unresolved after 7+ days
+- [ ] **Trend indicators** — "Roads complaints ↑ 40% vs last week in Whitefield" (requires 2+ fetch snapshots)
+
+---
+
+## Phase 5 — Distribution
+
+Goal: Get the data to officials without them needing to open a browser.
+
+- [ ] **Email digest** — weekly summary email to a list of officials (free tier of Resend or SendGrid)
+- [ ] **WhatsApp alerts** — send top daily issues via WhatsApp Business API (low cost, high open rate for Indian officials)
+- [ ] **PDF export** — formatted one-pager for use in meetings and presentations
+
+---
+
+## Phase 6 — Precision
+
+Goal: Make location and routing more accurate.
+
+- [ ] **Ward mapping** — map Bangalore area names to the city's 198 official wards
+- [ ] **Department auto-routing** — display which specific official/ward councillor is responsible
+- [ ] **Kannada tweet support** — translate Kannada complaints before categorization
+
+---
+
+## Phase 7 — Scale to Other Cities
 
 Goal: Expand beyond Bangalore.
 
 - [ ] **City selector** — configurable keywords and areas for any Indian city
 - [ ] **Multi-source data** — add Reddit (r/bangalore), Citizen app, 311-style portals
-- [ ] **Department routing** — auto-route Roads issues to BBMP, Power to BESCOM, etc.
 - [ ] **Official response tracking** — detect when govt accounts reply to complaints
 - [ ] **Public portal** — citizens can verify if their issue was seen
 
 ---
 
-## Phase 3 — Official Dashboard Features
+## Parking Lot
 
-Goal: Features that make it genuinely useful for government officials.
-
-- [ ] **Status tracking** — officials can mark issues as "Acknowledged", "In Progress", "Resolved"
-- [ ] **Email digest** — daily summary email of top issues (use free tier of Resend or SendGrid)
-- [ ] **Issue clustering** — group similar complaints from the same area (same pothole, multiple tweets)
-- [ ] **Trend analysis** — "Roads complaints up 40% this week in Whitefield"
-- [ ] **Export to PDF/CSV** — for offline reports and presentations
-- [ ] **WhatsApp integration** — send issue alerts via WhatsApp Business API (low cost)
-
----
-
-## Phase 4 — Scale to Other Cities
-
-Goal: Expand beyond Bangalore.
-
-- [ ] **City selector** — configurable keywords and areas for any Indian city
-- [ ] **Multi-source data** — add Reddit (r/bangalore), Citizen app, 311-style portals
-- [ ] **Department routing** — auto-route Roads issues to BBMP, Power to BESCOM, etc.
-- [ ] **Official response tracking** — detect when govt accounts reply to complaints
-- [ ] **Public portal** — citizens can verify if their issue was seen
-
----
-
-## Parking Lot (Good Ideas, Not Prioritized Yet)
-
-- AI-generated weekly brief (using Claude API) — groundwork laid with filter_issues.py
-- SMS alerts for ward councillors
-- Sentiment analysis on issue urgency
 - Integration with BBMP's existing complaint portal
-- Mobile-optimized view for officials on the go
-- Historical trend charts (month-over-month)
+- Historical trend charts (month-over-month, requires ongoing data collection)
 - Budget vs complaint heatmap (areas with high complaints, low budget allocation)
+- SMS alerts for ward councillors
+- Mobile-optimized view for officials in the field
 
 ---
 
