@@ -5,6 +5,9 @@ Pulls civic issue tweets from Bangalore and saves raw data.
 Usage:
   python fetch_tweets.py
 
+Incremental: already-fetched tweet IDs are skipped automatically.
+Run as many times as needed to grow the dataset.
+
 Requirements:
   - Copy config.example.py to config.py and add your Bearer Token
   - pip install -r requirements.txt
@@ -56,15 +59,22 @@ SEARCH_QUERIES = [
     '@BBMP_MAYOR (complaint OR issue OR problem OR broken OR damaged) lang:en -is:retweet',
 ]
 
-OUTPUT_FILE = os.path.join(os.path.dirname(__file__), config.OUTPUT_FILE)
+RAW_FILE = os.path.join(os.path.dirname(__file__), "../data/raw_tweets.json")
 
 
 def fetch_tweets():
-    client = tweepy.Client(bearer_token=config.TWITTER_BEARER_TOKEN, wait_on_rate_limit=True)
-
-    start_time = datetime.now(timezone.utc) - timedelta(days=config.SEARCH_DAYS_BACK)
-    all_tweets = []
+    # Load already-fetched tweets so we can skip their IDs
+    existing_tweets = []
     seen_ids = set()
+    if os.path.exists(RAW_FILE):
+        with open(RAW_FILE, encoding="utf-8") as f:
+            existing_tweets = json.load(f)
+        seen_ids = {t["id"] for t in existing_tweets}
+        print(f"Loaded {len(existing_tweets)} existing tweets — will skip already-fetched IDs.")
+
+    client = tweepy.Client(bearer_token=config.TWITTER_BEARER_TOKEN, wait_on_rate_limit=True)
+    start_time = datetime.now(timezone.utc) - timedelta(days=config.SEARCH_DAYS_BACK)
+    new_tweets = []
 
     print(f"Fetching tweets from the last {config.SEARCH_DAYS_BACK} days...")
 
@@ -88,12 +98,12 @@ def fetch_tweets():
                 users = {u.id: u.username for u in response.includes["users"]}
 
             for tweet in response.data:
-                if tweet.id in seen_ids:
+                if str(tweet.id) in seen_ids:
                     continue
-                seen_ids.add(tweet.id)
+                seen_ids.add(str(tweet.id))
 
                 metrics = tweet.public_metrics or {}
-                all_tweets.append({
+                new_tweets.append({
                     "id": str(tweet.id),
                     "text": tweet.text,
                     "author": f"@{users.get(tweet.author_id, 'unknown')}",
@@ -108,12 +118,14 @@ def fetch_tweets():
             print(f"    Warning: query {i} failed — {e}")
             continue
 
-    os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
-    raw_file = OUTPUT_FILE.replace("issues.json", "raw_tweets.json")
-    with open(raw_file, "w", encoding="utf-8") as f:
+    all_tweets = existing_tweets + new_tweets
+
+    os.makedirs(os.path.dirname(RAW_FILE), exist_ok=True)
+    with open(RAW_FILE, "w", encoding="utf-8") as f:
         json.dump(all_tweets, f, indent=2, ensure_ascii=False)
 
-    print(f"\nFetched {len(all_tweets)} unique tweets → saved to {raw_file}")
+    print(f"\nFetched {len(new_tweets)} new tweets (skipped {len(existing_tweets)} already known)")
+    print(f"Total in raw_tweets.json: {len(all_tweets)}")
     print("Now run: python process_issues.py")
 
 

@@ -5,6 +5,32 @@ Format: `[Date] - What changed and why`
 
 ---
 
+## [2026-05-17] — Incremental Fetch and Filter
+
+### Changed
+
+**`scripts/fetch_tweets.py` — incremental fetching**
+- On startup, loads existing `data/raw_tweets.json` (if present) and records all known tweet IDs
+- New fetches skip any tweet ID already in the file — prevents duplicates across runs
+- New tweets are appended to the existing raw dataset rather than overwriting it
+- Output now reports how many new tweets were fetched vs how many were skipped as already known
+
+**`scripts/filter_issues.py` — persistent verdicts, incremental classification**
+- Introduces `data/filter_verdicts.json`: a persistent `{tweet_id: "yes"/"no"}` store
+- On each run, tweets with IDs already in the verdicts file are never sent to the LLM again
+- Only genuinely new tweets are classified — keeps cost near zero on subsequent runs
+- Output now shows separately: previously kept + newly kept + removed this run
+- Verdicts file is updated after every run so the next run can skip these too
+
+### Workflow for growing the dataset
+```
+python fetch_tweets.py       # appends new tweets only
+python process_issues.py     # categorizes all raw tweets
+python filter_issues.py      # LLM-classifies only new ones; skips already-known
+```
+
+---
+
 ## [2026-05-17] — Phase 3: LLM Filtering + Modern Design
 
 ### Added

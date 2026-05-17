@@ -2,6 +2,10 @@
 GovWatch — LLM Issue Filter
 Uses Claude AI to remove non-issues from data/issues.json.
 
+Incremental: tweet IDs that were already classified are never sent to the
+LLM again. Results are persisted in data/filter_verdicts.json so each run
+only pays for genuinely new tweets.
+
 Non-issues include: political visits, awareness campaigns, news articles,
 event promotions, and general discussion not about actual civic problems.
 
@@ -13,7 +17,9 @@ Requirements:
   - pip install anthropic
 
 Reads:  data/issues.json
-Writes: data/issues.json (filtered), data/issues_unfiltered.json (backup)
+Writes: data/issues.json (filtered)
+        data/issues_unfiltered.json (backup of full input)
+        data/filter_verdicts.json (persistent yes/no per tweet ID)
 """
 
 import json
@@ -38,8 +44,9 @@ if not hasattr(config, "ANTHROPIC_API_KEY") or not config.ANTHROPIC_API_KEY:
     print("ERROR: ANTHROPIC_API_KEY not set in config.py")
     sys.exit(1)
 
-INPUT_FILE = os.path.join(os.path.dirname(__file__), "../data/issues.json")
-BACKUP_FILE = os.path.join(os.path.dirname(__file__), "../data/issues_unfiltered.json")
+INPUT_FILE    = os.path.join(os.path.dirname(__file__), "../data/issues.json")
+BACKUP_FILE   = os.path.join(os.path.dirname(__file__), "../data/issues_unfiltered.json")
+VERDICTS_FILE = os.path.join(os.path.dirname(__file__), "../data/filter_verdicts.json")
 
 BATCH_SIZE = 20
 
@@ -115,60 +122,91 @@ def filter_issues():
 
     print(f"Loaded {len(issues)} issues from {INPUT_FILE}")
 
-    # Save backup before modifying anything
+    # Load existing verdicts from previous runs
+    known_verdicts = {}
+    if os.path.exists(VERDICTS_FILE):
+        with open(VERDICTS_FILE, encoding="utf-8") as f:
+            known_verdicts = json.load(f)
+        print(f"Loaded {len(known_verdicts)} existing verdicts from {VERDICTS_FILE}")
+
+    # Split: tweets already classified vs tweets that need LLM classification
+    needs_classification = [t for t in issues if t["id"] not in known_verdicts]
+    already_yes = [t for t in issues if known_verdicts.get(t["id"]) == "yes"]
+    already_no_count = sum(1 for t in issues if known_verdicts.get(t["id"]) == "no")
+
+    print(f"  Already classified: {len(already_yes)} kept + {already_no_count} previously removed")
+    print(f"  New tweets to classify: {len(needs_classification)}")
+
+    # Save backup of the full current issues.json before modifying
     with open(BACKUP_FILE, "w", encoding="utf-8") as f:
         json.dump(issues, f, indent=2, ensure_ascii=False)
-    print(f"Backup saved to {BACKUP_FILE}\n")
+    print(f"  Backup saved to {BACKUP_FILE}\n")
 
-    client = anthropic.Anthropic(api_key=config.ANTHROPIC_API_KEY)
+    newly_kept = []
+    newly_removed = []
 
-    kept = []
-    removed = []
-    total_batches = (len(issues) + BATCH_SIZE - 1) // BATCH_SIZE
+    if needs_classification:
+        client = anthropic.Anthropic(api_key=config.ANTHROPIC_API_KEY)
+        total_batches = (len(needs_classification) + BATCH_SIZE - 1) // BATCH_SIZE
 
-    for i in range(0, len(issues), BATCH_SIZE):
-        batch = issues[i : i + BATCH_SIZE]
-        batch_num = i // BATCH_SIZE + 1
-        print(
-            f"  Batch {batch_num}/{total_batches} ({len(batch)} tweets)...",
-            end=" ",
-            flush=True,
-        )
+        for i in range(0, len(needs_classification), BATCH_SIZE):
+            batch = needs_classification[i : i + BATCH_SIZE]
+            batch_num = i // BATCH_SIZE + 1
+            print(
+                f"  Batch {batch_num}/{total_batches} ({len(batch)} tweets)...",
+                end=" ",
+                flush=True,
+            )
 
-        try:
-            verdicts = classify_batch(client, batch)
-        except Exception as e:
-            print(f"ERROR — {e}. Keeping all tweets in this batch.")
-            kept.extend(batch)
-            continue
+            try:
+                verdicts = classify_batch(client, batch)
+            except Exception as e:
+                print(f"ERROR — {e}. Keeping all tweets in this batch.")
+                newly_kept.extend(batch)
+                for tweet in batch:
+                    known_verdicts[tweet["id"]] = "yes"
+                continue
 
-        batch_kept = 0
-        batch_removed = 0
-        for tweet, verdict in zip(batch, verdicts):
-            if verdict == "yes":
-                kept.append(tweet)
-                batch_kept += 1
-            else:
-                removed.append(tweet)
-                batch_removed += 1
+            batch_kept = 0
+            batch_removed = 0
+            for tweet, verdict in zip(batch, verdicts):
+                known_verdicts[tweet["id"]] = verdict
+                if verdict == "yes":
+                    newly_kept.append(tweet)
+                    batch_kept += 1
+                else:
+                    newly_removed.append(tweet)
+                    batch_removed += 1
 
-        print(f"kept {batch_kept}, removed {batch_removed}")
+            print(f"kept {batch_kept}, removed {batch_removed}")
 
-        # Small pause between batches to avoid rate limits
-        if batch_num < total_batches:
-            time.sleep(0.5)
+            if batch_num < total_batches:
+                time.sleep(0.5)
+    else:
+        print("  No new tweets to classify — all already processed.")
+
+    # Persist updated verdicts so next run skips these too
+    with open(VERDICTS_FILE, "w", encoding="utf-8") as f:
+        json.dump(known_verdicts, f, indent=2, ensure_ascii=False)
+
+    # Build final output: all previously kept + newly kept, sorted
+    kept = already_yes + newly_kept
+    severity_order = {"high": 0, "medium": 1, "low": 2}
+    kept.sort(key=lambda x: (severity_order.get(x["severity"], 3), -(x["likes"] + x["retweets"])))
 
     with open(INPUT_FILE, "w", encoding="utf-8") as f:
         json.dump(kept, f, indent=2, ensure_ascii=False)
 
     print(f"\nDone!")
-    print(f"  Kept:    {len(kept)} genuine civic issues")
-    print(f"  Removed: {len(removed)} non-issues")
+    print(f"  Previously kept:  {len(already_yes)}")
+    print(f"  Newly kept:       {len(newly_kept)}")
+    print(f"  Total in feed:    {len(kept)}")
+    print(f"  Removed this run: {len(newly_removed)}")
     print(f"\nDashboard will reflect filtered data on next refresh.")
 
-    if removed:
-        print(f"\nSample removed tweets:")
-        for t in removed[:5]:
+    if newly_removed:
+        print(f"\nSample removed this run:")
+        for t in newly_removed[:5]:
             print(f"  [{t.get('category', '?')}] {t['text'][:80]}...")
 
 
