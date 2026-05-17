@@ -5,19 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GovWatch — Bangalore Civic Issues Dashboard</title>
   <link rel="stylesheet" href="css/styles.css" />
-  <!-- Chart.js for category breakdown chart -->
+  <!-- Leaflet (map) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <!-- Chart.js (category chart) -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 </head>
 <body>
 
-  <!-- ── Header ─────────────────────────────────────────────────── -->
+  <!-- ── Header ─────────────────────────────────────────────── -->
   <header class="header">
     <div class="header-inner">
       <div class="header-brand">
         <span class="brand-icon">🏛</span>
         <div>
           <h1 class="brand-title">GovWatch</h1>
-          <p class="brand-sub">Bangalore Civic Issues — Twitter Intelligence</p>
+          <p class="brand-sub">Bangalore Civic Issues · Twitter Intelligence</p>
         </div>
       </div>
       <div class="header-meta">
@@ -29,8 +32,8 @@
 
   <main class="main">
 
-    <!-- ── Summary Stats ──────────────────────────────────────────── -->
-    <section class="stats-row" id="stats-row">
+    <!-- ── Summary Stats ──────────────────────────────────────── -->
+    <section class="stats-row">
       <div class="stat-card">
         <div class="stat-number" id="stat-total">—</div>
         <div class="stat-label">Total Issues</div>
@@ -49,7 +52,7 @@
       </div>
     </section>
 
-    <!-- ── Chart + Filters ────────────────────────────────────────── -->
+    <!-- ── Chart + Filters (always visible) ──────────────────── -->
     <section class="controls-section">
       <div class="chart-box">
         <h2 class="section-title">Issues by Category</h2>
@@ -61,36 +64,79 @@
       <div class="filters-box">
         <h2 class="section-title">Filter Issues</h2>
 
-        <label class="filter-label">Category</label>
+        <label class="filter-label">Search</label>
+        <input class="search-input" id="search-input" type="text" placeholder="Search issues…" />
+
+        <label class="filter-label" style="margin-top:12px;">Category</label>
         <div class="filter-chips" id="category-filters">
           <button class="chip active" data-filter="category" data-value="all">All</button>
         </div>
 
-        <label class="filter-label" style="margin-top:16px;">Severity</label>
+        <label class="filter-label" style="margin-top:12px;">Severity</label>
         <div class="filter-chips" id="severity-filters">
           <button class="chip active" data-filter="severity" data-value="all">All</button>
-          <button class="chip chip-high" data-filter="severity" data-value="high">🔴 High</button>
-          <button class="chip chip-med" data-filter="severity" data-value="medium">🟡 Medium</button>
-          <button class="chip chip-low" data-filter="severity" data-value="low">🟢 Low</button>
+          <button class="chip chip-high"  data-filter="severity" data-value="high">🔴 High</button>
+          <button class="chip chip-med"   data-filter="severity" data-value="medium">🟡 Medium</button>
+          <button class="chip chip-low"   data-filter="severity" data-value="low">🟢 Low</button>
         </div>
 
-        <label class="filter-label" style="margin-top:16px;">Area</label>
+        <label class="filter-label" style="margin-top:12px;">Status</label>
+        <div class="filter-chips" id="status-filters">
+          <button class="chip active" data-filter="status" data-value="all">All</button>
+          <button class="chip" data-filter="status" data-value="open">Open</button>
+          <button class="chip" data-filter="status" data-value="acknowledged">Acknowledged</button>
+          <button class="chip" data-filter="status" data-value="in_progress">In Progress</button>
+          <button class="chip" data-filter="status" data-value="resolved">Resolved</button>
+        </div>
+
+        <label class="filter-label" style="margin-top:12px;">Area</label>
         <select class="area-select" id="area-filter">
           <option value="all">All Areas</option>
         </select>
 
-        <button class="reset-btn" id="reset-filters">Reset Filters</button>
+        <div class="filter-actions">
+          <button class="reset-btn" id="reset-filters">Reset Filters</button>
+          <button class="export-btn" id="export-csv">⬇ Export CSV</button>
+        </div>
       </div>
     </section>
 
-    <!-- ── Issue Feed ─────────────────────────────────────────────── -->
-    <section class="feed-section">
+    <!-- ── Tab Bar ────────────────────────────────────────────── -->
+    <div class="tab-bar">
+      <button class="tab active" data-tab="feed">📋 Issues Feed</button>
+      <button class="tab" data-tab="map">🗺 Map View</button>
+      <button class="tab" data-tab="departments">🏢 By Department</button>
+    </div>
+
+    <!-- ── Tab: Issues Feed ───────────────────────────────────── -->
+    <section class="tab-content" id="tab-feed">
       <div class="feed-header">
-        <h2 class="section-title">Issue Feed</h2>
         <span class="showing-count" id="showing-count"></span>
+        <label class="cluster-toggle-label">
+          <input type="checkbox" id="cluster-toggle" />
+          Group similar issues
+        </label>
       </div>
       <div class="issue-grid" id="issue-grid">
         <div class="loading">Loading issues…</div>
+      </div>
+    </section>
+
+    <!-- ── Tab: Map View ──────────────────────────────────────── -->
+    <section class="tab-content hidden" id="tab-map">
+      <div class="map-legend">
+        <span class="legend-item"><span class="dot dot-high"></span>High severity</span>
+        <span class="legend-item"><span class="dot dot-medium"></span>Medium</span>
+        <span class="legend-item"><span class="dot dot-low"></span>Low</span>
+        <span class="map-hint">Click a marker to see the issue</span>
+      </div>
+      <div id="leaflet-map"></div>
+    </section>
+
+    <!-- ── Tab: By Department ─────────────────────────────────── -->
+    <section class="tab-content hidden" id="tab-departments">
+      <div class="dept-grid" id="dept-grid">
+        <div class="loading">Loading…</div>
       </div>
     </section>
 

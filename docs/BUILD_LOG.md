@@ -34,15 +34,23 @@ Every feature and file built in GovWatch, with dates and status.
 | `dashboard/css/styles.css` | 2026-05-17 | ✅ Live | Government-grade clean styling |
 | `dashboard/js/app.js` | 2026-05-17 | ✅ Live | Data loading, rendering, filters, chart |
 
-**Dashboard Features (MVP):**
-- [ ] Issue cards with category, area, severity, engagement count
-- [ ] Category breakdown bar chart
-- [ ] Filter by category (Roads, Water, Electricity, etc.)
-- [ ] Filter by area (Koramangala, Indiranagar, etc.)
-- [ ] Severity indicators (High / Medium / Low)
-- [ ] Click card to open original tweet
-- [ ] Summary statistics row (total issues, top category, top area)
-- [ ] Last updated timestamp
+**Dashboard Features (Phase 2 — complete):**
+- [x] Issue cards with category, area, severity, engagement count
+- [x] Category breakdown bar chart
+- [x] Filter by category (Roads, Water, Electricity, etc.)
+- [x] Filter by area (Koramangala, Indiranagar, etc.)
+- [x] Filter by severity
+- [x] Filter by status (Open / Acknowledged / In Progress / Resolved)
+- [x] Free-text search across all issues
+- [x] Severity indicators (High / Medium / Low)
+- [x] Status tracking per issue (localStorage, no server needed)
+- [x] "View Tweet" link on each card
+- [x] Summary statistics row (total issues, top category, top area)
+- [x] Last updated timestamp
+- [x] **Map View** — interactive Bangalore map with coloured markers (Leaflet + OpenStreetMap)
+- [x] **Issue Clustering** — group same category+area issues, show count badge
+- [x] **Export CSV** — download current filtered view as spreadsheet
+- [x] **Department View** — issues grouped by BBMP / BESCOM / BWSSB / BTP
 
 ### Scripts (Data Collection)
 

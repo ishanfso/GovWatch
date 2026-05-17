@@ -5,6 +5,50 @@ Format: `[Date] - What changed and why`
 
 ---
 
+## [2026-05-17] — Phase 2: Value Extraction Features
+
+### Added to dashboard
+
+**Map View (new tab)**
+- Interactive Bangalore map powered by Leaflet.js + OpenStreetMap (free, no API key)
+- Every issue plotted as a coloured circle marker: red = high, amber = medium, green = low
+- Marker size scales with severity; markers jitter slightly so stacked issues are visible
+- Click any marker → popup with issue text, category, engagement, and "View Tweet" link
+- Coordinates looked up from a 28-area Bangalore lookup table; unknown areas fall back to city centre
+
+**Issue Clustering (toggle in feed)**
+- "Group similar issues" toggle in the feed header
+- When on: issues with the same category + area are merged into one card showing the highest-engagement tweet
+- Cluster badge shows count (e.g. "4 reports") so officials know how widespread the problem is
+- When off: all individual issues shown as before
+
+**Export to CSV (button in filters)**
+- "⬇ Export CSV" button downloads the current filtered view as a .csv file
+- Columns: ID, Date, Category, Area, Severity, Status, Likes, Retweets, Author, Tweet Text, URL
+- Filename includes today's date (e.g. `govwatch_bangalore_2026-05-17.csv`)
+- Works with any active filter combination
+
+**Status Tracking (on every issue card)**
+- Each card has a dropdown: ⚪ Open / 🔵 Acknowledged / 🟡 In Progress / 🟢 Resolved
+- Status is saved in the browser (localStorage) — no server needed
+- Cards styled per status: resolved cards fade, acknowledged shows blue, in-progress shows amber
+- New "Status" filter chip row lets officials view only Open or Resolved issues
+
+**Department View (new tab)**
+- Groups all issues by responsible government body: BBMP, BESCOM, BWSSB, BTP
+- Each department card shows: total issues, high/medium/low severity breakdown, top 4 issues
+- "See all X issues in feed" button filters the feed to that department's categories
+
+**Search**
+- Free-text search box filters across tweet text, area, category, and author simultaneously
+
+### Changed
+- Issue cards redesigned: `<div>` instead of `<a>` wrapper — allows status dropdown + tweet link coexisting cleanly
+- Filters panel: added Search, Status filter chips, and Export button
+- `styles.css`: complete rewrite with new component styles (tab bar, map, dept cards, status select, cluster badge)
+
+---
+
 ## [2026-05-17] — Live Data + GitHub Pages Go-Live
 
 ### Completed

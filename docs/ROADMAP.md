@@ -17,18 +17,17 @@ Each item moves to CHANGELOG.md when completed.
 
 ---
 
-## Phase 2 — Squeeze the Data (Current Sprint)
+## Phase 2 — Squeeze the Data ✅ COMPLETE
 
 Goal: Extract maximum value from already-fetched data before spending more on Twitter API calls.
-Auto-refresh is intentionally paused to manage API costs.
 
-- [ ] **Map view** — plot issues on an interactive Bangalore map (free, no API key — uses OpenStreetMap/Leaflet)
-- [ ] **Issue clustering** — group tweets about the same problem (e.g., 5 tweets about one pothole → shown as 1 cluster with a count)
-- [ ] **Search** — free-text search across all issue cards
-- [ ] **Export to CSV** — one-click download for offline reports and presentations
-- [ ] **Status tracking** — officials can mark issues Acknowledged / In Progress / Resolved (saved in browser, no server needed)
-- [ ] **Department view** — group issues by responsible body (BBMP, BESCOM, BWSSB, BTP) for targeted briefings
-- [ ] **Top issues digest** — "Top 5 most-engaged issues this week" summary panel
+- [x] **Map view** — interactive Bangalore map (Leaflet + OpenStreetMap, free)
+- [x] **Issue clustering** — group tweets about the same problem, show count badge
+- [x] **Search** — free-text search across all issue cards
+- [x] **Export to CSV** — one-click download for offline reports and presentations
+- [x] **Status tracking** — officials can mark issues Acknowledged / In Progress / Resolved (saved in browser)
+- [x] **Department view** — issues grouped by BBMP / BESCOM / BWSSB / BTP
+- [ ] **Top issues digest** — "Top 5 most-engaged issues this week" summary panel *(deferred to Phase 3)*
 
 ---
 
