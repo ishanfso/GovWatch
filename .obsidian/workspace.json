@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/Daily Log.md",
+                "file": "docs/Project Overview.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Daily Log"
+              "title": "Project Overview"
             }
           }
         ]
@@ -181,9 +181,9 @@
       "bases:Create new base": false
     }
   },
-  "active": "7f0fe869ab561863",
+  "active": "eea9523f7bd5994f",
   "lastOpenFiles": [
-    "docs/Project Overview.md",
-    "docs/Daily Log.md"
+    "docs/Daily Log.md",
+    "docs/Project Overview.md"
   ]
 }
