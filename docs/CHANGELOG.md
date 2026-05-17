@@ -5,6 +5,43 @@ Format: `[Date] - What changed and why`
 
 ---
 
+## [2026-05-17] — Phase 3: LLM Filtering + Modern Design
+
+### Added
+
+**AI-Powered Issue Filter (`scripts/filter_issues.py`)**
+- Uses Claude API (Anthropic) to classify each tweet as a genuine civic complaint or noise
+- Runs in batches of 20 with prompt caching — keeps cost under $0.10 for a full 300-tweet dataset
+- Catches non-issues that keyword matching cannot: politician visits (HD Deve Gowda mango fair at Cubbon Park), mobile theft awareness campaigns, news articles about government actions
+- Saves a full backup to `data/issues_unfiltered.json` before modifying anything
+- Run sequence: `fetch_tweets.py` → `process_issues.py` → `filter_issues.py`
+
+**Modern Dashboard Design** (`dashboard/css/styles.css` rewrite)
+- Dark gradient header (navy → indigo) with glassmorphism brand icon
+- Gradient brand title, indigo accent throughout
+- Stat cards with gradient top-border accent and lift-on-hover
+- Issue cards with gradient severity bar, refined shadows, soft background footer
+- Tab bar with gradient active state
+- Cluster toggle and issue count styled as pill badges
+- Department cards with gradient header background and hover lift
+- Page background uses a three-stop subtle gradient (blue-tinted to green-tinted)
+- All interactive elements have improved focus rings and hover transitions
+
+**Updated `scripts/config.example.py`**
+- Added `ANTHROPIC_API_KEY` field alongside existing Twitter fields
+
+**Updated `scripts/requirements.txt`**
+- Added `anthropic>=0.40.0`
+
+### Fixed
+
+**`docs/SETUP_GUIDE.md`**
+- Removed all "free tier" Twitter references — Basic (paid) tier is required
+- Added Part 4: instructions for getting and configuring Anthropic API key
+- Updated data pipeline instructions to include the optional `filter_issues.py` step
+
+---
+
 ## [2026-05-17] — Phase 2: Value Extraction Features
 
 ### Added to dashboard

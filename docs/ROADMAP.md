@@ -27,6 +27,8 @@ Goal: Extract maximum value from already-fetched data before spending more on Tw
 - [x] **Export to CSV** — one-click download for offline reports and presentations
 - [x] **Status tracking** — officials can mark issues Acknowledged / In Progress / Resolved (saved in browser)
 - [x] **Department view** — issues grouped by BBMP / BESCOM / BWSSB / BTP
+- [x] **LLM noise filter** — Claude AI removes politician visits, news, campaigns from dataset
+- [x] **Modern dashboard design** — gradient header, card accents, improved visual hierarchy
 - [ ] **Top issues digest** — "Top 5 most-engaged issues this week" summary panel *(deferred to Phase 3)*
 
 ---
@@ -94,7 +96,7 @@ Goal: Expand beyond Bangalore.
 
 ## Parking Lot (Good Ideas, Not Prioritized Yet)
 
-- AI-generated weekly brief (using Claude API)
+- AI-generated weekly brief (using Claude API) — groundwork laid with filter_issues.py
 - SMS alerts for ward councillors
 - Sentiment analysis on issue urgency
 - Integration with BBMP's existing complaint portal

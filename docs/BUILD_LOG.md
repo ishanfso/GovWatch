@@ -51,6 +51,8 @@ Every feature and file built in GovWatch, with dates and status.
 - [x] **Issue Clustering** — group same category+area issues, show count badge
 - [x] **Export CSV** — download current filtered view as spreadsheet
 - [x] **Department View** — issues grouped by BBMP / BESCOM / BWSSB / BTP
+- [x] **LLM Filtering** — Claude AI removes non-civic noise from dataset
+- [x] **Modern Design** — gradient header, card accents, improved visual hierarchy
 
 ### Scripts (Data Collection)
 
@@ -58,8 +60,9 @@ Every feature and file built in GovWatch, with dates and status.
 |---|---|---|---|
 | `scripts/fetch_tweets.py` | 2026-05-17 | ✅ Live | Twitter API v2 fetch using Tweepy |
 | `scripts/process_issues.py` | 2026-05-17 | ✅ Live | NLP categorization + severity scoring |
-| `scripts/requirements.txt` | 2026-05-17 | ✅ Live | Python dependencies |
-| `scripts/config.example.py` | 2026-05-17 | ✅ Live | API key template |
+| `scripts/filter_issues.py` | 2026-05-17 | ✅ Live | Claude AI filter — removes non-civic tweets |
+| `scripts/requirements.txt` | 2026-05-17 | ✅ Live | Python dependencies (incl. anthropic) |
+| `scripts/config.example.py` | 2026-05-17 | ✅ Live | API key template (Twitter + Anthropic) |
 
 ---
 
@@ -72,6 +75,6 @@ Every feature and file built in GovWatch, with dates and status.
 
 ## What Requires Setup
 
-1. Live Twitter data → needs Twitter API key (free, see SETUP_GUIDE.md)
+1. Live Twitter data → needs Twitter API key (paid Basic tier, see SETUP_GUIDE.md)
 2. GitHub Pages hosting → 5-minute setup (see SETUP_GUIDE.md)
 3. Automated data refresh → GitHub Actions (Phase 2)
