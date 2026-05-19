@@ -5,6 +5,37 @@ Format: `[Date] - What changed and why`
 
 ---
 
+## [2026-05-19] — Stricter LLM Filter: Actionability over Presence
+
+### Changed
+
+**`scripts/filter_issues.py` — SYSTEM_PROMPT rewrite**
+
+Previous prompt asked: "Is this a genuine civic complaint?" — too broad.
+New prompt asks: "Can a specific department dispatch a team based solely on this tweet?" — actionable.
+
+A tweet must now meet all three criteria to pass:
+1. **Specific location** — names a street, layout, ward, or pincode. "Bangalore" alone fails.
+2. **Specific infrastructure problem** — not general commentary, political blame, or policy opinion.
+3. **Actionable now** — a team could be dispatched immediately. Not billing disputes, app issues, or work already in progress.
+
+New explicit NO categories (were incorrectly passing before):
+- Vague location: "power cut in Bangalore" / "garbage everywhere in Bengaluru"
+- Political commentary and city-level rants with no specific complaint
+- BESCOM billing disputes, meter reading issues, portal registration problems
+- Government progress announcements ("pothole filling in progress at...")
+- Near-identical duplicate complaints sent to multiple Twitter handles
+- Requests for new infrastructure (new bus routes, new water connections)
+- Comparison posts, general suggestions, appreciation tweets
+- BMTC fare overcharging (customer service, not infrastructure dispatch)
+- Aggregate civic scorecards and accountability threads
+
+NammaKasa bot reports explicitly kept as YES (specific address + severity = actionable).
+
+**`data/filter_verdicts.json`** — verdicts reset for all 181 currently-kept tweets so the new prompt re-classifies them. Previously-rejected 268 tweets unchanged (no re-cost).
+
+---
+
 ## [2026-05-19] — Actionable Dashboard: SLA, Email Routing, Role Views, Coming Soon
 
 ### Added
