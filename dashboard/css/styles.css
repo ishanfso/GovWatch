@@ -277,6 +277,41 @@ body {
   box-shadow: 0 0 0 3px rgba(59,130,246,.12);
 }
 
+.date-range-inputs {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+.date-input-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.date-input-label {
+  font-size: .65rem;
+  font-weight: 700;
+  color: var(--grey-4);
+  text-transform: uppercase;
+  letter-spacing: .4px;
+}
+.date-input {
+  width: 100%;
+  padding: 7px 10px;
+  border: 1.5px solid var(--grey-2);
+  border-radius: var(--radius);
+  font-size: .8rem;
+  color: var(--text);
+  background: var(--grey-1);
+  outline: none;
+  transition: border-color .15s, box-shadow .15s;
+}
+.date-input:focus {
+  border-color: var(--blue-mid);
+  background: var(--white);
+  box-shadow: 0 0 0 3px rgba(59,130,246,.12);
+}
+
 .filter-actions {
   display: flex;
   gap: 8px;

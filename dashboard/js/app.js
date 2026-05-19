@@ -70,7 +70,7 @@ const SEV_COLORS = { high: "#c0392b", medium: "#d97706", low: "#166534" };
 // ── State ─────────────────────────────────────────────────────
 
 let allIssues = [];
-let activeFilters = { category: "all", severity: "all", area: "all", status: "all", search: "" };
+let activeFilters = { category: "all", severity: "all", area: "all", status: "all", search: "", datePreset: "all", dateFrom: "", dateTo: "" };
 let activeTab = "feed";
 let clustered = false;
 let chart = null;
@@ -181,6 +181,33 @@ function buildFilters(issues) {
   });
 
   document.getElementById("reset-filters").addEventListener("click", resetFilters);
+
+  document.querySelectorAll(".chip[data-filter='date-preset']").forEach(btn =>
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".chip[data-filter='date-preset']").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      activeFilters.datePreset = btn.dataset.value;
+      activeFilters.dateFrom = "";
+      activeFilters.dateTo = "";
+      document.getElementById("date-from").value = "";
+      document.getElementById("date-to").value = "";
+      applyFilters();
+    })
+  );
+
+  document.getElementById("date-from").addEventListener("change", e => {
+    activeFilters.dateFrom = e.target.value;
+    activeFilters.datePreset = "custom";
+    document.querySelectorAll(".chip[data-filter='date-preset']").forEach(b => b.classList.remove("active"));
+    applyFilters();
+  });
+
+  document.getElementById("date-to").addEventListener("change", e => {
+    activeFilters.dateTo = e.target.value;
+    activeFilters.datePreset = "custom";
+    document.querySelectorAll(".chip[data-filter='date-preset']").forEach(b => b.classList.remove("active"));
+    applyFilters();
+  });
 }
 
 function onChipClick(btn) {
@@ -192,16 +219,42 @@ function onChipClick(btn) {
 }
 
 function resetFilters() {
-  activeFilters = { category: "all", severity: "all", area: "all", status: "all", search: "" };
+  activeFilters = { category: "all", severity: "all", area: "all", status: "all", search: "", datePreset: "all", dateFrom: "", dateTo: "" };
   document.querySelectorAll(".chip").forEach(b => {
     b.classList.toggle("active", b.dataset.value === "all");
   });
   document.getElementById("area-filter").value = "all";
   document.getElementById("search-input").value = "";
+  document.getElementById("date-from").value = "";
+  document.getElementById("date-to").value = "";
   applyFilters();
 }
 
+function getDateBounds() {
+  const now = new Date();
+  const preset = activeFilters.datePreset;
+  if (preset === "7") {
+    const from = new Date(now); from.setDate(from.getDate() - 7); from.setHours(0,0,0,0);
+    return { from, to: null };
+  }
+  if (preset === "30") {
+    const from = new Date(now); from.setDate(from.getDate() - 30); from.setHours(0,0,0,0);
+    return { from, to: null };
+  }
+  if (preset === "this-month") {
+    const from = new Date(now.getFullYear(), now.getMonth(), 1);
+    return { from, to: null };
+  }
+  if (preset === "custom") {
+    const from = activeFilters.dateFrom ? new Date(activeFilters.dateFrom + "T00:00:00") : null;
+    const to   = activeFilters.dateTo   ? new Date(activeFilters.dateTo   + "T23:59:59") : null;
+    return { from, to };
+  }
+  return { from: null, to: null };
+}
+
 function getFiltered() {
+  const { from, to } = getDateBounds();
   return allIssues.filter(i => {
     if (activeFilters.category !== "all" && i.category !== activeFilters.category) return false;
     if (activeFilters.severity !== "all" && i.severity !== activeFilters.severity) return false;
@@ -210,6 +263,11 @@ function getFiltered() {
     if (activeFilters.search) {
       const hay = `${i.text} ${i.area} ${i.category} ${i.author}`.toLowerCase();
       if (!hay.includes(activeFilters.search)) return false;
+    }
+    if (from || to) {
+      const d = new Date(i.date);
+      if (from && d < from) return false;
+      if (to   && d > to)   return false;
     }
     return true;
   });

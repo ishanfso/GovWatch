@@ -94,6 +94,24 @@
           <option value="all">All Areas</option>
         </select>
 
+        <label class="filter-label" style="margin-top:12px;">Date Range</label>
+        <div class="filter-chips" id="date-preset-filters">
+          <button class="chip active" data-filter="date-preset" data-value="all">All Time</button>
+          <button class="chip" data-filter="date-preset" data-value="7">Last 7 Days</button>
+          <button class="chip" data-filter="date-preset" data-value="30">Last 30 Days</button>
+          <button class="chip" data-filter="date-preset" data-value="this-month">This Month</button>
+        </div>
+        <div class="date-range-inputs">
+          <div class="date-input-group">
+            <label class="date-input-label">From</label>
+            <input type="date" class="date-input" id="date-from" />
+          </div>
+          <div class="date-input-group">
+            <label class="date-input-label">To</label>
+            <input type="date" class="date-input" id="date-to" />
+          </div>
+        </div>
+
         <div class="filter-actions">
           <button class="reset-btn" id="reset-filters">Reset Filters</button>
           <button class="export-btn" id="export-csv">⬇ Export CSV</button>

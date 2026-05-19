@@ -5,6 +5,19 @@ Format: `[Date] - What changed and why`
 
 ---
 
+## [2026-05-19] — Date Range Filter
+
+### Added
+
+**Date filter in dashboard sidebar**
+- Preset quick-picks: All Time / Last 7 Days / Last 30 Days / This Month (chip buttons, consistent with existing filter UI)
+- Custom date range: From and To date inputs for any specific range
+- Selecting a custom date input automatically deactivates the preset chips
+- Reset Filters button clears date filters along with all others
+- Filter applies across all views (feed, map, department tab)
+
+---
+
 ## [2026-05-17] — GitHub Actions Auto-refresh
 
 ### Added
