@@ -5,6 +5,30 @@ Format: `[Date] - What changed and why`
 
 ---
 
+## [2026-05-19] — Actionable Dashboard: SLA, Email Routing, Role Views, Coming Soon
+
+### Added
+
+**Issue aging + SLA timers**
+- Every issue card now shows relative age ("2d ago") instead of absolute date — hover for the full date
+- SLA badge on each card showing remaining time or overdue amount, colour-coded: green (within TAT), amber (>75% elapsed), red (overdue)
+- TAT by category: Electricity & Flooding = 4h, Water = 24h, Waste & Traffic = 48h, Roads & Other = 72h, Parks = 168h
+
+**Assign & Email button (POC directory)**
+- Each issue card has a 📧 Assign button that opens a pre-filled email to the right official
+- POC directory maps every category to the correct department email: roads@bbmp.gov.in, swm@bbmp.gov.in, consumer.care@bescom.co.in, complaints@bwssb.org, traffic.blr@ksp.gov.in, and more
+- Email body includes: category, area, severity, age, TAT deadline, tweet text, and source link
+
+**Role-based URL views**
+- Append `?role=bbmp`, `?role=bescom`, `?role=bwssb`, or `?role=btp` to the URL
+- Dashboard filters to only that department's issues and shows a banner identifying the role
+- Useful for sharing a direct link with a specific official
+
+**Coming Soon tab**
+- New tab showing 8 planned features: Multi-channel (Reddit/Facebook), Twitter clarification bot, Twitter close-loop, WhatsApp alerts, PDF reports, citizen portal, resolution analytics, city expansion
+
+---
+
 ## [2026-05-19] — Date Range Filter
 
 ### Added

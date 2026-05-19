@@ -758,6 +758,131 @@ body {
   font-size: .95rem;
 }
 
+/* ── Role Banner ─────────────────────────────────────────────── */
+.role-banner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(135deg, #1e3a5f, #1e40af);
+  color: var(--white);
+  border-radius: var(--radius);
+  padding: 12px 18px;
+  margin-bottom: 18px;
+  box-shadow: var(--shadow);
+}
+.role-banner.hidden { display: none; }
+.role-banner-icon { font-size: 1.4rem; flex-shrink: 0; }
+.role-banner-text { flex: 1; display: flex; flex-direction: column; gap: 2px; }
+.role-banner-text strong { font-size: .9rem; }
+.role-banner-cats { font-size: .75rem; opacity: .75; }
+.role-banner-clear {
+  font-size: .72rem;
+  color: rgba(255,255,255,.7);
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,.3);
+  border-radius: 20px;
+  padding: 4px 10px;
+  white-space: nowrap;
+  transition: all .15s;
+}
+.role-banner-clear:hover { background: rgba(255,255,255,.15); color: var(--white); }
+
+/* ── SLA Badges ──────────────────────────────────────────────── */
+.sla-badge {
+  font-size: .62rem;
+  font-weight: 700;
+  border-radius: 20px;
+  padding: 2px 8px;
+  letter-spacing: .2px;
+  white-space: nowrap;
+}
+.sla-ok      { background: #dcfce7; color: #15803d; border: 1px solid #86efac; }
+.sla-warning { background: #fef3c7; color: #b45309; border: 1px solid #fcd34d; }
+.sla-overdue { background: #fee2e2; color: #b91c1c; border: 1px solid #fca5a5; }
+
+/* ── Email / Assign button on cards ─────────────────────────── */
+.email-btn {
+  font-size: .72rem;
+  font-weight: 700;
+  color: var(--indigo);
+  text-decoration: none;
+  border: 1.5px solid var(--indigo);
+  border-radius: var(--radius);
+  padding: 4px 9px;
+  transition: all .15s;
+  white-space: nowrap;
+}
+.email-btn:hover {
+  background: var(--indigo);
+  color: var(--white);
+}
+
+/* ── Coming Soon ─────────────────────────────────────────────── */
+.cs-header {
+  text-align: center;
+  padding: 32px 0 24px;
+}
+.cs-heading {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+.cs-subheading {
+  font-size: .88rem;
+  color: var(--grey-4);
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.55;
+}
+.cs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  padding-bottom: 32px;
+}
+.cs-card {
+  background: var(--white);
+  border: 1.5px solid var(--grey-2);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  position: relative;
+  transition: box-shadow .15s, transform .15s;
+}
+.cs-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+.cs-icon { font-size: 1.6rem; flex-shrink: 0; margin-top: 2px; }
+.cs-body { flex: 1; }
+.cs-title {
+  font-size: .88rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+.cs-desc {
+  font-size: .78rem;
+  color: var(--grey-4);
+  line-height: 1.5;
+}
+.cs-eta {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: .6rem;
+  font-weight: 700;
+  background: var(--blue-dim);
+  color: var(--blue);
+  border-radius: 20px;
+  padding: 2px 8px;
+  letter-spacing: .3px;
+}
+
+/* ── Tab: Coming Soon styling ────────────────────────────────── */
+.tab-coming-soon { opacity: .8; }
+.tab-coming-soon.active { opacity: 1; }
+
 /* ── Footer ──────────────────────────────────────────────────── */
 .footer {
   background: var(--navy);

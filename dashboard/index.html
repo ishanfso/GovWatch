@@ -32,6 +32,9 @@
 
   <main class="main">
 
+    <!-- ── Role Banner (shown only when ?role= param is set) ──── -->
+    <div class="role-banner hidden" id="role-banner"></div>
+
     <!-- ── Summary Stats ──────────────────────────────────────── -->
     <section class="stats-row">
       <div class="stat-card">
@@ -124,6 +127,7 @@
       <button class="tab active" data-tab="feed">📋 Issues Feed</button>
       <button class="tab" data-tab="map">🗺 Map View</button>
       <button class="tab" data-tab="departments">🏢 By Department</button>
+      <button class="tab tab-coming-soon" data-tab="coming-soon">🔮 Coming Soon</button>
     </div>
 
     <!-- ── Tab: Issues Feed ───────────────────────────────────── -->
@@ -154,6 +158,17 @@
     <!-- ── Tab: By Department ─────────────────────────────────── -->
     <section class="tab-content hidden" id="tab-departments">
       <div class="dept-grid" id="dept-grid">
+        <div class="loading">Loading…</div>
+      </div>
+    </section>
+
+    <!-- ── Tab: Coming Soon ──────────────────────────────────── -->
+    <section class="tab-content hidden" id="tab-coming-soon">
+      <div class="cs-header">
+        <h2 class="cs-heading">What's Coming Next</h2>
+        <p class="cs-subheading">Features in development — GovWatch is being actively built out into a full civic action platform.</p>
+      </div>
+      <div class="cs-grid" id="coming-soon-grid">
         <div class="loading">Loading…</div>
       </div>
     </section>

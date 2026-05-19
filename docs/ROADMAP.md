@@ -41,59 +41,86 @@ Goal: Make data collection cost-efficient and repeatable.
 - [x] **Persistent filter verdicts** — already-classified tweets skipped on future LLM filter runs
 - [x] **Backup before filter** — `issues_unfiltered.json` always saved before modifying data
 - [x] **GitHub Actions auto-refresh** — daily at 6 AM IST; commits updated data automatically
+- [x] **Date range filter** — filter by preset (7d, 30d, this month) or custom From/To dates
 
 ---
 
-## Phase 4 — Intelligence Layer (Next)
+## Phase 4 — Actionable Dashboard ✅ COMPLETE
 
-Goal: Make the dashboard actively useful in daily government work, not just a feed to browse.
+Goal: Turn the dashboard from a read-only feed into a tool officials can actually act on.
 
-- [ ] **Top issues digest** — "Top 5 highest-engagement issues right now" panel above the feed
-- [ ] **AI weekly brief** — Claude generates a 1-page natural language summary: top problems, worst areas, what's trending. Run as a script, output displayed in dashboard or emailed.
-- [ ] **Issue aging** — show how old each complaint is ("3 days ago"); flag issues unresolved after 7+ days
-- [ ] **Trend indicators** — "Roads complaints ↑ 40% vs last week in Whitefield" (requires 2+ fetch snapshots)
+- [x] **Issue aging** — relative age on every card ("2d ago"), full date on hover
+- [x] **SLA / TAT timers** — category-specific turnaround times; green/amber/red badge per card
+- [x] **Assign & Email button** — one click opens a pre-filled email to the correct department POC
+- [x] **POC directory** — maps each category to the right official email (BBMP, BESCOM, BWSSB, BTP)
+- [x] **Role-based URL views** — `?role=bbmp/bescom/bwssb/btp` filters to that department, shows banner
+- [x] **Coming Soon tab** — shows planned features for stakeholder/investor demos
 
 ---
 
-## Phase 5 — Distribution
+## Phase 5 — Closing the Loop (Next)
+
+Goal: Make the dashboard actionable end-to-end — issue raised → routed → resolved → citizen notified.
+
+- [ ] **Twitter close-loop** — when official marks Resolved, auto-post reply on original tweet thread so citizen gets closure. Thread becomes the source of truth.
+- [ ] **Twitter clarification bot** — when complaint lacks location/detail, bot replies on thread asking for more info. Demo first with a controlled test account.
+- [ ] **Assignment tracking** — "Assigned to" field per issue; leadership view shows queue per official
+- [ ] **Resolution metrics** — avg time to close, SLA compliance %, issues resolved this week
+- [ ] **Improve LLM filter prompt** — based on manual CSV review: better distinguish citizen_complaint vs civic_commentary, govt announcements, and duplicate clusters
+
+---
+
+## Phase 6 — Distribution
 
 Goal: Get the data to officials without them needing to open a browser.
 
-- [ ] **Email digest** — weekly summary email to a list of officials (free tier of Resend or SendGrid)
-- [ ] **WhatsApp alerts** — send top daily issues via WhatsApp Business API (low cost, high open rate for Indian officials)
-- [ ] **PDF export** — formatted one-pager for use in meetings and presentations
+- [ ] **WhatsApp alerts** — daily digest of top issues to officials via WhatsApp Business API
+- [ ] **Email digest** — weekly summary email to a configured list of officials
+- [ ] **PDF export** — formatted one-pager for council meetings and presentations
+- [ ] **Citizen-facing portal** — public view where citizens can track if their issue was acknowledged
 
 ---
 
-## Phase 6 — Precision
+## Phase 7 — Precision
 
 Goal: Make location and routing more accurate.
 
 - [ ] **Ward mapping** — map Bangalore area names to the city's 198 official wards
-- [ ] **Department auto-routing** — display which specific official/ward councillor is responsible
+- [ ] **Department auto-routing** — display which specific ward councillor is responsible
 - [ ] **Kannada tweet support** — translate Kannada complaints before categorization
+- [ ] **Official response tracking** — detect when govt accounts reply to complaints
 
 ---
 
-## Phase 7 — Scale to Other Cities
+## Phase 8 — Multi-Channel
 
-Goal: Expand beyond Bangalore.
+Goal: Pull civic complaints from platforms beyond Twitter.
 
-- [ ] **City selector** — configurable keywords and areas for any Indian city
-- [ ] **Multi-source data** — add Reddit (r/bangalore), Citizen app, 311-style portals
-- [ ] **Official response tracking** — detect when govt accounts reply to complaints
-- [ ] **Public portal** — citizens can verify if their issue was seen
+- [ ] **Reddit r/bangalore** — free API, public posts, no auth needed
+- [ ] **Facebook Groups** — harder (Meta Graph API restricted); parking lot for now
+- [ ] **311-style portals** — integrate with existing BBMP/BWSSB complaint portal data if accessible
+
+---
+
+## Phase 9 — Scale & Infrastructure
+
+Goal: Productionise GovWatch for real institutional use (only after feature set is proven).
+
+- [ ] **Custom domain** — govwatch.in or similar
+- [ ] **Move off GitHub Pages** — Vercel (free tier, supports server functions)
+- [ ] **Database** — Supabase (Postgres + real-time + free tier); replaces JSON flat files
+- [ ] **User accounts** — officials sign up, each sees only their department's queue by default
+- [ ] **Expand to other cities** — configurable keywords and area maps for Mumbai, Delhi, Chennai, Hyderabad
 
 ---
 
 ## Parking Lot
 
-- Integration with BBMP's existing complaint portal
-- Historical trend charts (month-over-month, requires ongoing data collection)
 - Budget vs complaint heatmap (areas with high complaints, low budget allocation)
 - SMS alerts for ward councillors
-- Mobile-optimized view for officials in the field
+- Mobile-optimised view for officials in the field
+- Historical trend charts (month-over-month, requires 3+ months of data)
 
 ---
 
-*Last updated: 2026-05-17*
+*Last updated: 2026-05-19*

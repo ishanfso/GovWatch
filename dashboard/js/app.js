@@ -67,10 +67,36 @@ const STATUS_OPTIONS = [
 
 const SEV_COLORS = { high: "#c0392b", medium: "#d97706", low: "#166534" };
 
+// TAT = turnaround time in hours; email = publicly listed official contact
+const POC_DIRECTORY = {
+  Roads:       { dept: "BBMP",   div: "Roads & Infrastructure",  email: "roads@bbmp.gov.in",            phone: "080-22660000", tat: 72  },
+  Waste:       { dept: "BBMP",   div: "Solid Waste Management",  email: "swm@bbmp.gov.in",              phone: "1533",         tat: 48  },
+  Parks:       { dept: "BBMP",   div: "Parks & Gardens",         email: "parks@bbmp.gov.in",            phone: "080-22660000", tat: 168 },
+  Flooding:    { dept: "BBMP",   div: "Storm Water Drains",      email: "jdflood@bbmp.gov.in",          phone: "080-22660000", tat: 4   },
+  Electricity: { dept: "BESCOM", div: "Consumer Care",           email: "consumer.care@bescom.co.in",   phone: "1912",         tat: 4   },
+  Water:       { dept: "BWSSB",  div: "Consumer Grievances",     email: "complaints@bwssb.org",         phone: "1916",         tat: 24  },
+  Traffic:     { dept: "BTP",    div: "Traffic Management",      email: "traffic.blr@ksp.gov.in",       phone: "103",          tat: 48  },
+  Other:       { dept: "BBMP",   div: "General",                 email: "bbmpcommissioner@bbmp.gov.in", phone: "080-22660000", tat: 72  },
+};
+
+const ROLE_DEPARTMENTS = {
+  bbmp:   ["Roads", "Waste", "Parks", "Flooding", "Other"],
+  bescom: ["Electricity"],
+  bwssb:  ["Water"],
+  btp:    ["Traffic"],
+};
+
+const ROLE_LABELS = {
+  bbmp:   "BBMP — Bruhat Bengaluru Mahanagara Palike",
+  bescom: "BESCOM — Bangalore Electricity Supply Company",
+  bwssb:  "BWSSB — Bangalore Water Supply & Sewerage Board",
+  btp:    "BTP — Bangalore Traffic Police",
+};
+
 // ── State ─────────────────────────────────────────────────────
 
 let allIssues = [];
-let activeFilters = { category: "all", severity: "all", area: "all", status: "all", search: "", datePreset: "all", dateFrom: "", dateTo: "" };
+let activeFilters = { category: "all", severity: "all", area: "all", status: "all", search: "", datePreset: "all", dateFrom: "", dateTo: "", role: "" };
 let activeTab = "feed";
 let clustered = false;
 let chart = null;
@@ -98,6 +124,13 @@ async function loadData() {
 }
 
 async function init() {
+  // Detect role from URL param: ?role=bbmp / bescom / bwssb / btp
+  const urlRole = new URLSearchParams(window.location.search).get("role") || "";
+  if (urlRole && ROLE_DEPARTMENTS[urlRole]) {
+    activeFilters.role = urlRole;
+    renderRoleBanner(urlRole);
+  }
+
   allIssues = await loadData();
 
   if (allIssues.length === 0) {
@@ -116,6 +149,7 @@ async function init() {
   document.querySelectorAll(".tab").forEach(btn =>
     btn.addEventListener("click", () => switchTab(btn.dataset.tab))
   );
+
 
   // Cluster toggle
   document.getElementById("cluster-toggle").addEventListener("change", e => {
@@ -269,6 +303,9 @@ function getFiltered() {
       if (from && d < from) return false;
       if (to   && d > to)   return false;
     }
+    if (activeFilters.role && ROLE_DEPARTMENTS[activeFilters.role]) {
+      if (!ROLE_DEPARTMENTS[activeFilters.role].includes(i.category)) return false;
+    }
     return true;
   });
 }
@@ -281,6 +318,21 @@ function applyFilters() {
   if (activeTab === "departments") renderDepartments(filtered);
 }
 
+function renderRoleBanner(role) {
+  const banner = document.getElementById("role-banner");
+  if (!banner) return;
+  const cats = (ROLE_DEPARTMENTS[role] || []).join(" · ");
+  banner.innerHTML = `
+    <span class="role-banner-icon">👤</span>
+    <span class="role-banner-text">
+      <strong>${ROLE_LABELS[role]}</strong>
+      <span class="role-banner-cats">Showing: ${cats}</span>
+    </span>
+    <a class="role-banner-clear" href="${window.location.pathname}">Clear role view ×</a>
+  `;
+  banner.classList.remove("hidden");
+}
+
 // ── Tabs ──────────────────────────────────────────────────────
 
 function switchTab(tab) {
@@ -288,6 +340,8 @@ function switchTab(tab) {
   document.querySelectorAll(".tab").forEach(b => b.classList.toggle("active", b.dataset.tab === tab));
   document.querySelectorAll(".tab-content").forEach(s => s.classList.add("hidden"));
   document.getElementById(`tab-${tab}`).classList.remove("hidden");
+
+  if (tab === "coming-soon") { renderComingSoon(); return; }
 
   const filtered = getFiltered();
   if (tab === "map")         renderMap(filtered);
@@ -331,6 +385,54 @@ function getClusteredIssues(issues) {
     );
 }
 
+function getIssueAge(dateStr) {
+  const diffMs = Date.now() - new Date(dateStr).getTime();
+  const diffH  = Math.floor(diffMs / 36e5);
+  if (diffH < 1)  return "just now";
+  if (diffH < 24) return `${diffH}h ago`;
+  const diffD = Math.floor(diffH / 24);
+  return `${diffD}d ago`;
+}
+
+function getSLAStatus(issue) {
+  const poc = POC_DIRECTORY[issue.category] || POC_DIRECTORY.Other;
+  const elapsedH = (Date.now() - new Date(issue.date).getTime()) / 36e5;
+  const pct = elapsedH / poc.tat;
+  if (pct >= 1)    return { cls: "sla-overdue",  label: `Overdue by ${Math.round(elapsedH - poc.tat)}h` };
+  if (pct >= 0.75) return { cls: "sla-warning",  label: `${Math.round(poc.tat - elapsedH)}h left` };
+  return               { cls: "sla-ok",       label: `${Math.round(poc.tat - elapsedH)}h left` };
+}
+
+function buildEmailLink(issue) {
+  const poc  = POC_DIRECTORY[issue.category] || POC_DIRECTORY.Other;
+  const due  = new Date(new Date(issue.date).getTime() + poc.tat * 36e5);
+  const dueStr = due.toLocaleString("en-IN", { day: "numeric", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit" });
+  const subject = `[GovWatch] ${issue.severity.toUpperCase()} ${issue.category} issue in ${issue.area} — TAT: ${poc.tat}h`;
+  const body = [
+    `Dear ${poc.div} Team,`,
+    ``,
+    `A civic complaint has been flagged via GovWatch that requires your attention.`,
+    ``,
+    `Category:  ${issue.category}`,
+    `Area:      ${issue.area}`,
+    `Severity:  ${issue.severity.charAt(0).toUpperCase() + issue.severity.slice(1)}`,
+    `Reported:  ${formatDate(issue.date)}`,
+    `Age:       ${getIssueAge(issue.date)}`,
+    `TAT:       ${poc.tat} hours (action due by ${dueStr})`,
+    ``,
+    `Complaint:`,
+    `"${issue.text}"`,
+    ``,
+    `Source tweet: ${issue.source_url || "N/A"}`,
+    ``,
+    `Please acknowledge this complaint and update its status within ${poc.tat} hours.`,
+    ``,
+    `— GovWatch Civic Intelligence Dashboard`,
+    `  https://ishanfso.github.io/GovWatch/dashboard/`,
+  ].join("\n");
+  return `mailto:${poc.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
 function issueCard(issue) {
   const status = getStatus(issue.id);
   const sevLabel = { high: "🔴 High", medium: "🟡 Medium", low: "🟢 Low" }[issue.severity] || issue.severity;
@@ -339,6 +441,8 @@ function issueCard(issue) {
   ).join("");
   const clusterBadge = issue.clusterCount > 1
     ? `<span class="cluster-badge">${issue.clusterCount} reports</span>` : "";
+  const sla = getSLAStatus(issue);
+  const poc = POC_DIRECTORY[issue.category] || POC_DIRECTORY.Other;
 
   return `
   <div class="issue-card sev-${issue.severity}" data-id="${esc(issue.id)}" data-status="${esc(status)}">
@@ -348,6 +452,7 @@ function issueCard(issue) {
         <div class="card-badges">
           ${clusterBadge}
           <span class="severity-badge">${sevLabel}</span>
+          <span class="sla-badge ${sla.cls}">${sla.label}</span>
         </div>
       </div>
       <p class="card-text">${esc(issue.text)}</p>
@@ -359,12 +464,15 @@ function issueCard(issue) {
           <span>❤️ ${issue.likes || 0}</span>
           <span>🔁 ${issue.retweets || 0}</span>
         </span>
-        <span class="card-date">${formatDate(issue.date)}</span>
+        <span class="card-date" title="${formatDate(issue.date)}">${getIssueAge(issue.date)}</span>
       </div>
       <div class="card-actions">
         <select class="status-select" data-issue-id="${esc(issue.id)}">${statusOpts}</select>
+        <a class="email-btn" href="${buildEmailLink(issue)}" title="Send to ${poc.dept} (${poc.email})">
+          📧 Assign
+        </a>
         <a class="tweet-link" href="${esc(issue.source_url || "#")}" target="_blank" rel="noopener noreferrer">
-          View Tweet ↗
+          Tweet ↗
         </a>
       </div>
     </div>
@@ -516,6 +624,74 @@ function deptCard(name, info, issues) {
       See all ${esc(name)} issues in feed →
     </button>
   </div>`;
+}
+
+// ── Coming Soon ───────────────────────────────────────────────
+
+function renderComingSoon() {
+  const UPCOMING = [
+    {
+      icon: "📡",
+      title: "Multi-Channel Monitoring",
+      desc: "Pull civic complaints from Reddit r/bangalore, Facebook community groups, and other platforms — not just Twitter.",
+      eta: "Phase 7",
+    },
+    {
+      icon: "🤖",
+      title: "Twitter Clarification Bot",
+      desc: "When a complaint lacks enough detail, the bot replies on the same thread asking for area, ward, or photo. Fully automated.",
+      eta: "Phase 5",
+    },
+    {
+      icon: "🔄",
+      title: "Twitter Close-Loop",
+      desc: "When an official marks an issue Resolved, an automated reply is posted on the original tweet thread so the citizen knows it's done.",
+      eta: "Phase 5",
+    },
+    {
+      icon: "💬",
+      title: "WhatsApp Alerts",
+      desc: "Daily digest of top issues sent directly to officials via WhatsApp Business API — high open rates, no app needed.",
+      eta: "Phase 5",
+    },
+    {
+      icon: "🗂",
+      title: "PDF Reports for Meetings",
+      desc: "One-click PDF export formatted for council meetings and presentations — issues, maps, severity breakdown, all on one page.",
+      eta: "Phase 5",
+    },
+    {
+      icon: "🌐",
+      title: "Citizen-Facing Portal",
+      desc: "A public view where citizens can see if their reported issue was acknowledged and track its progress in real time.",
+      eta: "Phase 6",
+    },
+    {
+      icon: "📊",
+      title: "Resolution Analytics",
+      desc: "Track how long issues spend in each status, SLA compliance rates by department, and which areas are getting the fastest response.",
+      eta: "Phase 4",
+    },
+    {
+      icon: "🏙",
+      title: "Expand to Other Cities",
+      desc: "Configurable keywords and area maps for any Indian city — Mumbai, Delhi, Chennai, Hyderabad. Same pipeline, new config.",
+      eta: "Phase 7",
+    },
+  ];
+
+  const grid = document.getElementById("coming-soon-grid");
+  if (!grid) return;
+  grid.innerHTML = UPCOMING.map(f => `
+    <div class="cs-card">
+      <div class="cs-icon">${f.icon}</div>
+      <div class="cs-body">
+        <div class="cs-title">${f.title}</div>
+        <div class="cs-desc">${f.desc}</div>
+      </div>
+      <span class="cs-eta">${f.eta}</span>
+    </div>
+  `).join("");
 }
 
 // ── Status Tracking (localStorage) ───────────────────────────
