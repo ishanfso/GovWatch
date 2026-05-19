@@ -2,7 +2,7 @@ name: Auto-refresh Civic Issues Data
 
 on:
   schedule:
-    - cron: '30 0 * * *'   # Daily at 6:00 AM IST (00:30 UTC)
+    - cron: '*/5 * * * *'  # Every 5 minutes
   workflow_dispatch:         # Also allows manual trigger from the GitHub Actions tab
 
 permissions:
