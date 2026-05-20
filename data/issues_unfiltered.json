@@ -9368,5 +9368,22 @@
       "power cut"
     ],
     "status": "open"
+  },
+  {
+    "id": "2057207058441892346",
+    "text": "@BescomHelpline . Almost 4 hours. No electricity\n\nGangotri Ventures, Balaji Layout, Golahalli, Electronic City Phase 1, Bangalore 560100",
+    "author": "@hardik0321",
+    "date": "2026-05-20T21:09:18+00:00",
+    "category": "Electricity",
+    "area": "Electronic City",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2057207058441892346",
+    "keywords": [
+      "no electricity",
+      "bescom"
+    ],
+    "status": "open"
   }
 ]
