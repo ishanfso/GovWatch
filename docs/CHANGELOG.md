@@ -5,32 +5,22 @@ Format: `[Date] - What changed and why`
 
 ---
 
-## [2026-05-19] — Stricter LLM Filter: Actionability over Presence
+## [2026-05-19] — Revised LLM Filter: Genuine Citizen Issues over Strict Actionability
 
 ### Changed
 
-**`scripts/filter_issues.py` — SYSTEM_PROMPT rewrite**
+**`scripts/filter_issues.py` — SYSTEM_PROMPT and deduplication logic**
 
-Previous prompt asked: "Is this a genuine civic complaint?" — too broad.
-New prompt asks: "Can a specific department dispatch a team based solely on this tweet?" — actionable.
+The filter now asks: "Did a real citizen experience a real civic problem?" rather than requiring a specific address before passing a tweet.
 
-A tweet must now meet all three criteria to pass:
-1. **Specific location** — names a street, layout, ward, or pincode. "Bangalore" alone fails.
-2. **Specific infrastructure problem** — not general commentary, political blame, or policy opinion.
-3. **Actionable now** — a team could be dispatched immediately. Not billing disputes, app issues, or work already in progress.
+Key rule changes:
+- **Vague location is now OK** — "power cut in Bangalore" with no street still passes. We will ask the user for location later via the Twitter clarification bot.
+- **Billing and admin complaints now pass** — BESCOM billing disputes, wrong meter readings, portal failures are genuine citizen issues worth tracking as policy problems.
+- **Same-author duplicates auto-rejected in Python** — before the LLM runs, tweets where the same @handle posted near-identical text (Jaccard >= 0.75) are deduplicated. Cheapest copy is kept, rest auto-marked "no" with zero LLM cost.
+- **Different users reporting the same problem all pass** — each citizen's complaint is independent and each deserves acknowledgment.
+- Author is now passed to the LLM in each batch so it can detect within-batch same-author duplicates too.
 
-New explicit NO categories (were incorrectly passing before):
-- Vague location: "power cut in Bangalore" / "garbage everywhere in Bengaluru"
-- Political commentary and city-level rants with no specific complaint
-- BESCOM billing disputes, meter reading issues, portal registration problems
-- Government progress announcements ("pothole filling in progress at...")
-- Near-identical duplicate complaints sent to multiple Twitter handles
-- Requests for new infrastructure (new bus routes, new water connections)
-- Comparison posts, general suggestions, appreciation tweets
-- BMTC fare overcharging (customer service, not infrastructure dispatch)
-- Aggregate civic scorecards and accountability threads
-
-NammaKasa bot reports explicitly kept as YES (specific address + severity = actionable).
+Still rejected: political commentary, city-level opinion rants, news articles, government progress updates, requests for new infrastructure, comparison posts, appreciation tweets, third-party aggregate reports.
 
 **`data/filter_verdicts.json`** — verdicts reset for all 181 currently-kept tweets so the new prompt re-classifies them. Previously-rejected 268 tweets unchanged (no re-cost).
 
