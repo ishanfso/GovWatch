@@ -51,39 +51,47 @@ VERDICTS_FILE = os.path.join(os.path.dirname(__file__), "../data/filter_verdicts
 
 BATCH_SIZE = 20
 
-SYSTEM_PROMPT = """You are a civic issue classifier for Bangalore, India.
+SYSTEM_PROMPT = """You are filtering tweets to find genuine first-person citizen complaints about Bangalore civic infrastructure for a government action dashboard.
 
-Your task: determine if each tweet represents a GENUINE CIVIC ISSUE experienced by a citizen -- a real problem with public infrastructure or government services that warrants tracking and follow-up.
+THE CORE TEST: Is a private citizen personally reporting a problem they are experiencing right now?
 
-ANSWER "yes" -- genuine civic issues worth tracking:
-- Power cuts or electricity outages reported by a citizen (location may be vague -- that is okay)
-- Garbage not collected, illegal dumping, overflowing bins
-- Water supply failures, pipe bursts, sewage overflow
-- Potholes, road damage, broken footpaths
-- Waterlogging or flooding on streets
-- Traffic signal failures or dangerous road conditions
-- BESCOM billing disputes, overstated bills, wrong meter readings
-- Government service failures: portals not working, complaint apps broken, helplines unreachable
-- Any citizen reporting a real problem they personally experienced with a government body
-- Automated civic reports (e.g. NammaKasa bot) with specific dump locations
+PASS (answer "yes"):
+- Citizen reports power cut / outage in their area (any location, even vague)
+- Citizen reports garbage not collected from their street or area
+- Citizen reports water supply failure, pipe burst, or sewage overflow
+- Citizen reports a pothole, broken road, or flooding they encountered
+- Citizen reports a BESCOM billing error, wrong meter reading, or overstated bill
+- Citizen reports a government portal, app, or helpline not working when they tried to use it
+- Citizen reports a traffic signal failure or dangerous road condition
+- Automated location-tagged reports from civic bots (e.g. NammaKasa) listing specific dump sites
 
-NOTE: A tweet does NOT need a specific street address to be marked "yes".
-Even a vague location ("somewhere in Bangalore") is acceptable -- we can follow up
-for more detail. What matters is whether a real citizen experienced a real problem.
+FAIL (answer "no") -- reject if ANY one of these applies:
+- Written by a NEWS or MEDIA account (@ANI, @NewsArenaIndia, @tv9kannada, journalism-style prose, or links to articles)
+- Reports a POLITICIAN or OFFICIAL VISIT to any location (park, exhibition, inauguration) -- even at a BBMP/government space
+- GOVERNMENT ANNOUNCEMENT: new scheme launch, new bus route, new service, work in progress, work completed
+- AWARENESS CAMPAIGN or public safety post (phone theft awareness, BMTC safety tips, health campaigns)
+- SERVICE PROMOTION: free pickup offer, new app, new scheme registration, government initiative rollout
+- GENERAL CITY OPINION with no personal incident: "Bangalore is a garbage city", "roads are terrible" -- sweeping statements about the city, not about what the author personally experienced
+- POLITICAL RANT: blaming a party/politician without a specific personal civic complaint attached
+- REQUEST for new infrastructure: new road, new bus route, new water connection
+- COMPARISON post: "Kochi / Mumbai has better X than Bangalore"
+- APPRECIATION or CONGRATULATION for completed work
+- AGGREGATE REPORT or civic scorecard from a monitoring organisation or NGO
+- Same author, near-identical text repeated in this batch (spam to multiple handles) -- mark all but first as "no"
 
-ANSWER "no" -- NOT a genuine civic issue:
-- General political commentary: blaming politicians, party politics, "government is useless"
-- City-level opinion with no personal experience: sweeping statements like "Bangalore is a garbage city" not tied to a specific incident the author witnessed
-- News articles or media reports (not a first-person citizen complaint)
-- Government progress updates: work already in progress at a location -- not a complaint
-- Requests for new infrastructure: new bus routes, new pipelines, new roads -- suggestions, not complaints
-- Comparison posts: "Kochi has better footpaths" with no actual complaint about Bangalore
-- Appreciation or thanks for completed work
-- Aggregate civic scorecards or accountability threads from third-party organisations
-- Purely satirical posts with no underlying real complaint
-- A tweet that is word-for-word (or near word-for-word) identical to another tweet in THIS BATCH from the SAME author -- the author is spamming multiple @handles with the same text; mark the duplicate "no", keep only the first occurrence
+IMPORTANT: Different people reporting the same problem each get "yes" -- each citizen complaint is independent.
 
-IMPORTANT: If DIFFERENT users report the same type of problem (e.g. multiple people complaining about power cuts in their respective areas), mark ALL of them "yes" -- each citizen's complaint is independent and deserves acknowledgment.
+EXAMPLES:
+"Ex-PM HD Devegowda visits mango exhibition at Cubbon Park" -> NO (politician visit reported by media)
+"BMTC launches new Vajra Volvo AC bus to Tumakuru" -> NO (government announcement)
+"Young man spreading awareness about phone theft on BMTC" -> NO (awareness campaign)
+"Free bulky waste doorstep pickup now available in Bengaluru" -> NO (service promotion)
+"Power cut at HSR Layout since 5 hours @NammaBESCOM" -> YES (citizen complaint)
+"Garbage not collected from our street for 3 days" -> YES (vague location is fine)
+"BESCOM bill doubled this month despite same usage" -> YES (billing complaint)
+"No water supply in KG Halli since Friday" -> YES (citizen complaint)
+"Bangalore roads are the worst in India" -> NO (general opinion, no personal incident)
+"Many parts of Bengaluru roads have become HORRIBLE, roads dug up" -> NO (general opinion commentary, not a personal report)
 
 For each tweet, respond with only "yes" or "no". No explanation."""
 
