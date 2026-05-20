@@ -5,6 +5,38 @@ Format: `[Date] - What changed and why`
 
 ---
 
+## [2026-05-20] — Stricter LLM Filter + Clean Design Overhaul
+
+### Fixed
+
+**`scripts/filter_issues.py` — tighter SYSTEM_PROMPT, verdict reset**
+
+The filter was letting through news accounts reporting politician visits (HD Deve Gowda mango exhibition × 3), BMTC launch announcements, awareness campaigns, and service promotions. Root cause: the prompt said "any citizen reporting any civic problem" without explicitly excluding these account/content types.
+
+Key changes:
+- **Explicitly reject media/news accounts** — @ANI, journalism-style prose, links to articles
+- **Explicitly reject politician visits** — even to BBMP/government spaces like parks
+- **Explicitly reject government announcements** — scheme launches, new routes, work-in-progress/completed
+- **Explicitly reject awareness campaigns and service promos** — phone theft awareness, free pickup offers, new app rollouts
+- **Concrete examples in prompt** — Deve Gowda mango exhibition → NO, BMTC Volvo launch → NO, power cut complaint → YES
+- **356 yes-verdicts reset** — all previously approved tweets re-classified from scratch with the new prompt on the next GitHub Actions run; 197 no-verdicts kept
+
+### Changed
+
+**`dashboard/css/styles.css` + `dashboard/index.html` — complete design overhaul**
+
+Full rewrite to match the clean, minimal aesthetic of Claude artifacts.
+
+- **Background**: white (#f9fafb) instead of gradient
+- **Font**: Inter (via Google Fonts) for crisp, readable typography
+- **Accent**: indigo (#6366f1) throughout — tags, active chips, links, stat numbers
+- **Header**: white with 1px bottom border instead of dark navy-to-indigo gradient
+- **Issue cards**: 3px left severity strip instead of gradient top bar; subtle 1px borders and light shadow
+- **Tabs**: underline style (2px border-bottom) instead of pill/gradient buttons
+- **All UI**: removed heavy gradients everywhere; clean flat surfaces with minimal shadows
+
+---
+
 ## [2026-05-19] — Revised LLM Filter: Genuine Citizen Issues over Strict Actionability
 
 ### Changed
