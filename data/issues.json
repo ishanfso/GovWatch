@@ -674,6 +674,22 @@
     "status": "open"
   },
   {
+    "id": "2057390874481635381",
+    "text": "Hello! @bbmpcommr , @DKShivakumar @siddaramaiah  Sirs, Please undertake desilting of drain works in Bengaluru on war footing before monsoon sets in and prevent flooding of low lying areas. Let not we witness what happened in previous years )) https://t.co/qWleHdy26w",
+    "author": "@deva1956",
+    "date": "2026-05-21T09:19:43+00:00",
+    "category": "Flooding",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 1,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2057390874481635381",
+    "keywords": [
+      "flood"
+    ],
+    "status": "open"
+  },
+  {
     "id": "2054110623907357010",
     "text": "@narendramodi Bangalore roads are not built from years,in every 2m there is a big pothole,no infra,no cleaning of roads,no garbage collection from roads,who wants to travel on such roads",
     "author": "@nehagup72415189",
@@ -2493,6 +2509,41 @@
     "keywords": [
       "garbage",
       "dump"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2057419743892808181",
+    "text": "Daily power cuts in Yelahanka [Avalahalli] Bengaluru for the last 3–4 months usually from 12 PM to 6 PM, even longer on weekends. Multiple BESCOM complaints raised, but no permanent fix yet. This is badly affecting residents\nRequesting urgent action.\n@NammaBESCOM @BescomHelpline",
+    "author": "@Shivam_xox",
+    "date": "2026-05-21T11:14:26+00:00",
+    "category": "Electricity",
+    "area": "Yelahanka",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2057419743892808181",
+    "keywords": [
+      "power cut",
+      "bescom"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2057400678000312376",
+    "text": "@NammaBESCOM \n\nSubject : Power Outage – Immediate Attention Required\n\nHi Team,\n\nThere has been no power supply . Kindly look into this issue at the earliest and restore the supply.\n\nLocation: Mittaganahalli, Srinivas Nagar, Bangalore – 560064",
+    "author": "@mytweetz_9999",
+    "date": "2026-05-21T09:58:40+00:00",
+    "category": "Electricity",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2057400678000312376",
+    "keywords": [
+      "power outage",
+      "no power",
+      "bescom"
     ],
     "status": "open"
   }
