@@ -3219,5 +3219,56 @@
       "bmtc"
     ],
     "status": "open"
+  },
+  {
+    "id": "2057754319966122475",
+    "text": "@NammaBESCOM There is a power cut  in #15 Modhak , Red carpet layout kodathi village road sarjapura main road Bangalore 560035 for the entire area.. \n\nWhen will it be back??? Everyday there is power cut \n\n9556148053",
+    "author": "@HGreen31213",
+    "date": "2026-05-22T09:23:55+00:00",
+    "category": "Electricity",
+    "area": "Sarjapur",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2057754319966122475",
+    "keywords": [
+      "power cut",
+      "bescom"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2057751868911304839",
+    "text": "Hey @NammaBESCOM, we're experiencing a power outage at No.16, 2nd Cross, Teachers Colony, BSK 2nd Stage, Bangalore-560070. Any idea when power will be restored? 😩💡 My number is 9483084484. Thanks! 🙏 #Bangalore #PowerOutage",
+    "author": "@JayaramAkhilesh",
+    "date": "2026-05-22T09:14:11+00:00",
+    "category": "Electricity",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2057751868911304839",
+    "keywords": [
+      "power outage",
+      "bescom"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2057769090710937718",
+    "text": "🗑 Garbage dump at 2nd Main road, behind Seetharampalya Metro station, Bharath Aikya Ward.\n\nMLA: Manjula S. (BJP)\nEast #36 · Critical severity\n\nTrack it → https://t.co/pwD0PABKt2\n\n#NammaKasa #Bengaluru #CivicDuty",
+    "author": "@vatsan32",
+    "date": "2026-05-22T10:22:37+00:00",
+    "category": "Waste",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2057769090710937718",
+    "keywords": [
+      "garbage",
+      "dump"
+    ],
+    "status": "open"
   }
 ]
