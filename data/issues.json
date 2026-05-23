@@ -248,6 +248,22 @@
     "status": "open"
   },
   {
+    "id": "2058222271337259328",
+    "text": "Power cut loading in Bangalore https://t.co/XD2aORy6aZ",
+    "author": "@svigneshchn",
+    "date": "2026-05-23T16:23:24+00:00",
+    "category": "Electricity",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 2,
+    "retweets": 1,
+    "source_url": "https://twitter.com/i/web/status/2058222271337259328",
+    "keywords": [
+      "power cut"
+    ],
+    "status": "open"
+  },
+  {
     "id": "2053442120212689235",
     "text": "@GBA_office This is mandatory check every day in every gully if the bangalore city. Dont show this as special task. Kids women  who are the majorly impacted. No path to walk, unhygienic smelly environment and pothole block.  Do this everyday.",
     "author": "@ravishyni",
@@ -3670,6 +3686,39 @@
     "source_url": "https://twitter.com/i/web/status/2058162946816229603",
     "keywords": [
       "garbage"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2058219119468847140",
+    "text": "There is a spark coming out of one of the poles near the transformer. Kindly rectify at earliest. Last time we complained and it took 15 days to rectify. Peninsula pinnacle apartments billapura bangalore Sarjapura BESCOM division @NammaBESCOM @mdbescom https://t.co/ASyHizezHK",
+    "author": "@gouthamcp07",
+    "date": "2026-05-23T16:10:52+00:00",
+    "category": "Electricity",
+    "area": "Sarjapur",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2058219119468847140",
+    "keywords": [
+      "bescom",
+      "transformer"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2058215468553637897",
+    "text": "@BBMPSWMSplComm @GBA_office Dog owners on Kengeri Park Road are leaving their dogs’ mess on public walkways  uncleaned, every day. This is a civic violation. Demand signage, spot fines &amp; active enforcement NOW. #BBMP #KengeriParkRoad #Bengaluru",
+    "author": "@_frankenstein95",
+    "date": "2026-05-23T15:56:22+00:00",
+    "category": "Waste",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2058215468553637897",
+    "keywords": [
+      "swm"
     ],
     "status": "open"
   }
