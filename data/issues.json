@@ -3623,5 +3623,38 @@
       "park"
     ],
     "status": "open"
+  },
+  {
+    "id": "2058113880522690716",
+    "text": "@GBA_office @BDAOfficialGok @PLEKarnataka @INCKarnataka this is on Gayatri layout road, KR Pura, Bengaluru 36. Entire road has this damage. Please spot inspect and solve it ASAP. A rider fell down from his bike due to this pothole. Please take action. https://t.co/nyK7tnpQIF",
+    "author": "@t_s_s_k_0",
+    "date": "2026-05-23T09:12:41+00:00",
+    "category": "Roads",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2058113880522690716",
+    "keywords": [
+      "pothole"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2058095848152859026",
+    "text": "@BescomHelpline @NammaBESCOM\n\nNo electricity in First Main road BEML Layout since last 2 hours. Can you guys please check issue and provide ETA.\n\nAcct number - 2244186000\n\nHouse 38, Ground floor, 1st Main road, BEML layout Brookfield Bangalore 560066.\n\nContact number - 8109851371",
+    "author": "@Arpanamishra4",
+    "date": "2026-05-23T08:01:02+00:00",
+    "category": "Electricity",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2058095848152859026",
+    "keywords": [
+      "no electricity",
+      "bescom"
+    ],
+    "status": "open"
   }
 ]
