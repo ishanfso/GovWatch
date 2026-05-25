@@ -892,6 +892,40 @@
     "status": "open"
   },
   {
+    "id": "2058813352965734588",
+    "text": "@NammaBESCOM power disruption is happening very very frequently near the munnekollal area of Bengaluru. The power maintenance is very poor. Is it because there is no resource or  fund to maintain the power grid or incapable staff at BESCOM. This is really bad @DKShivakumar",
+    "author": "@Chandha67550359",
+    "date": "2026-05-25T07:32:08+00:00",
+    "category": "Electricity",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 1,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2058813352965734588",
+    "keywords": [
+      "bescom"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2058854692604838124",
+    "text": "No waste mgmt in Doddabanahalli, Bangalore. Garbage frm nearby apartments are being dumped near Doddabanahalli forest area. Heaps of Garbage is being burnt everyday. There r too many Peacocks here. Request the authorities to plz address this issue. @osd_cmkarnataka Mam plz help https://t.co/Fafuzy9jsS https://t.co/8ANbQ7015A",
+    "author": "@neethuneetha",
+    "date": "2026-05-25T10:16:25+00:00",
+    "category": "Waste",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 1,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2058854692604838124",
+    "keywords": [
+      "garbage",
+      "waste",
+      "dump"
+    ],
+    "status": "open"
+  },
+  {
     "id": "2054110623907357010",
     "text": "@narendramodi Bangalore roads are not built from years,in every 2m there is a big pothole,no infra,no cleaning of roads,no garbage collection from roads,who wants to travel on such roads",
     "author": "@nehagup72415189",
@@ -4198,6 +4232,22 @@
     "keywords": [
       "garbage",
       "dump"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2058825434889175397",
+    "text": "Severe potholes and road caving in AECS Layout C Block near Divya Jyothi Lake Point Tower, Begur, Bengaluru after BWSSB Cauvery pipeline work. Improper restoration and pending tar work are causing accidents and traffic issues. Despite repeated complaints, no action from BWSSB . https://t.co/J1mqG3QkYq",
+    "author": "@Jeevith80892104",
+    "date": "2026-05-25T08:20:09+00:00",
+    "category": "Water",
+    "area": "Begur",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2058825434889175397",
+    "keywords": [
+      "bwssb"
     ],
     "status": "open"
   }
