@@ -4319,5 +4319,39 @@
       "dump"
     ],
     "status": "open"
+  },
+  {
+    "id": "2058931942629020139",
+    "text": "This is the 4th power cut this month in CKB Layout, Bangalore! 😤 It's unacceptable that we have no power during peak summer working days, even when there's no rain. ⚡️ Please restore power ASAP! 💡😡 @NammaBESCOM",
+    "author": "@life_z_b",
+    "date": "2026-05-25T15:23:22+00:00",
+    "category": "Electricity",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2058931942629020139",
+    "keywords": [
+      "power cut",
+      "no power",
+      "bescom"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2058913048694579372",
+    "text": "@blrcitytraffic stuck for more than half an hour…Full blown traffic jam #bangalore #chamrajpet …Enri agthide adhu Monday peak hr alli https://t.co/vREi2lF0Y7",
+    "author": "@lohithharris",
+    "date": "2026-05-25T14:08:18+00:00",
+    "category": "Traffic",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2058913048694579372",
+    "keywords": [
+      "traffic jam"
+    ],
+    "status": "open"
   }
 ]
