@@ -926,6 +926,23 @@
     "status": "open"
   },
   {
+    "id": "2059156641766064414",
+    "text": "@siddaramaiah Hello CM sir, please send proper garbage vehicles to collect our trash. Since February, the collection vehicle has only come 4 to 5 times in bengaluru-hongasandra.",
+    "author": "@CDrive94148",
+    "date": "2026-05-26T06:16:15+00:00",
+    "category": "Waste",
+    "area": "Hongasandra",
+    "severity": "low",
+    "likes": 1,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2059156641766064414",
+    "keywords": [
+      "garbage",
+      "trash"
+    ],
+    "status": "open"
+  },
+  {
     "id": "2054110623907357010",
     "text": "@narendramodi Bangalore roads are not built from years,in every 2m there is a big pothole,no infra,no cleaning of roads,no garbage collection from roads,who wants to travel on such roads",
     "author": "@nehagup72415189",
@@ -4418,6 +4435,56 @@
     "keywords": [
       "garbage",
       "dump"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2059156283484508619",
+    "text": "@DKShivakumar @INCKarnataka @rssurjewala You can focus on protecting the votes later; right now, please send proper garbage vehicles to collect our trash. Since February, the collection vehicle has only come 4 to 5 times in Hongasandra, Bengaluru.",
+    "author": "@CDrive94148",
+    "date": "2026-05-26T06:14:49+00:00",
+    "category": "Waste",
+    "area": "Hongasandra",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2059156283484508619",
+    "keywords": [
+      "garbage",
+      "trash"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2059188322371821825",
+    "text": "@NammaBESCOM \n\nPower cut at AKG government school, AKG colony, channasandra, kadugudi plantation, bangalore -67\n\nIt's too hot to handle. Restore power immediately.",
+    "author": "@LeastVisited",
+    "date": "2026-05-26T08:22:08+00:00",
+    "category": "Electricity",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2059188322371821825",
+    "keywords": [
+      "power cut",
+      "bescom"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2059175490779484410",
+    "text": "@NammaBESCOM Raised complaint #101260526174522 at 8 AM for electricity issue in Kaggalipura.\n\nFollowed up every 30 mins. Customer care kept saying “you will get a callback” but nobody called.\n\n#BESCOM #Bengaluru",
+    "author": "@sufimasood",
+    "date": "2026-05-26T07:31:09+00:00",
+    "category": "Electricity",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2059175490779484410",
+    "keywords": [
+      "bescom"
     ],
     "status": "open"
   }
