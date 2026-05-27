@@ -48,6 +48,22 @@
     "status": "open"
   },
   {
+    "id": "2059478414340616571",
+    "text": "On Monday 6pm in Bengaluru from Tarangpet to Chamrajapet (across 7th cross), were crowded with sheep + sellers, it caused heavy traffic jam for hours to travel just 1 km. Including other roads under reconstruction created heavy traffic in full Bengaluru City area to mysuru rd https://t.co/wTVMLIWSMz",
+    "author": "@TanviSolanki_",
+    "date": "2026-05-27T03:34:51+00:00",
+    "category": "Traffic",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 7,
+    "retweets": 1,
+    "source_url": "https://twitter.com/i/web/status/2059478414340616571",
+    "keywords": [
+      "traffic jam"
+    ],
+    "status": "open"
+  },
+  {
     "id": "2054616720451703215",
     "text": "@Kuma50531Kumar @BsmileCe54630 This is Girinagar, this is what GBA is capable of! They are spreading garbage in all of Bangalore https://t.co/Cx4jsfdZbl",
     "author": "@DileepKasturi1",
@@ -4876,6 +4892,74 @@
       "power cut",
       "power outage",
       "bescom"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2059504930797547860",
+    "text": "@NammaBESCOM There is no Electricity in Jnanabharathi, Banglore University campus, Bengaluru. Since many hours. Please check and do needfull",
+    "author": "@KSri77",
+    "date": "2026-05-27T05:20:13+00:00",
+    "category": "Electricity",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2059504930797547860",
+    "keywords": [
+      "no electricity",
+      "bescom"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2059504282026864848",
+    "text": "@NammaBESCOM\n\nThere is no electricity from more than 1-2 hours in ullal, bangalore 560056 near amma ashrama, when will the power be back ???",
+    "author": "@EshanMagadadum",
+    "date": "2026-05-27T05:17:39+00:00",
+    "category": "Electricity",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2059504282026864848",
+    "keywords": [
+      "no electricity",
+      "bescom"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2059493696358449243",
+    "text": "🗑️ Garbage spotted in 1st main road Near SS function hall, unity nagar,Tanisandra, Bengaluru, Karnataka (22 May) by Fazal. Report yours 👉 https://t.co/JulDbfA172 #TrackYourGarbage #CleanIndia https://t.co/brKFICZ8xP",
+    "author": "@TYGIndia",
+    "date": "2026-05-27T04:35:35+00:00",
+    "category": "Waste",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2059493696358449243",
+    "keywords": [
+      "garbage"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2059470322152378486",
+    "text": "@BBMPSWMSplComm @bbmpcommr  have raised several complaints on namma Bengaluru app for solid waste not being picked and complaints being closed without any resolution @RisingVarthur https://t.co/ExMifJVBGY",
+    "author": "@kishorekunal",
+    "date": "2026-05-27T03:02:42+00:00",
+    "category": "Waste",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2059470322152378486",
+    "keywords": [
+      "waste",
+      "swm",
+      "solid waste"
     ],
     "status": "open"
   }
