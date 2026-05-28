@@ -1041,6 +1041,22 @@
     "status": "open"
   },
   {
+    "id": "2060026522648641977",
+    "text": "Have you ever heard about The Bangalore Traffic.?🙂‍↕️😏\nI'm traveling 3.8 km for Last 1 hr 50 minutes 🤧😵 it is better to walk instead of BMTC but due to heavy Rain 🌧️☔ it is an bad option.! #bengaluru #rainyday",
+    "author": "@AbiRanesh",
+    "date": "2026-05-28T15:52:51+00:00",
+    "category": "Traffic",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 1,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2060026522648641977",
+    "keywords": [
+      "bmtc"
+    ],
+    "status": "open"
+  },
+  {
     "id": "2054110623907357010",
     "text": "@narendramodi Bangalore roads are not built from years,in every 2m there is a big pothole,no infra,no cleaning of roads,no garbage collection from roads,who wants to travel on such roads",
     "author": "@nehagup72415189",
@@ -5352,6 +5368,55 @@
     "source_url": "https://twitter.com/i/web/status/2059992739786498228",
     "keywords": [
       "traffic jam"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2060035820120326394",
+    "text": "@GBAChiefComm This is what visitors to IIM B and Bannerghatta Zoo have to endure. Doesn’t do much good to image of Bangalore. There isn’t one patch without pothole from Hosur road beginning to Bannerghatta junction without potholes and patchwork. Also, why can’t patchwork be done https://t.co/R1eSFR0POz",
+    "author": "@abezack",
+    "date": "2026-05-28T16:29:47+00:00",
+    "category": "Roads",
+    "area": "Bannerghatta",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2060035820120326394",
+    "keywords": [
+      "pothole"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2060041470510538848",
+    "text": "2 drops of rain, and no electricity. Just silicon valley of India things \n\n#bangalore #no-electricity",
+    "author": "@ayushi_maru",
+    "date": "2026-05-28T16:52:14+00:00",
+    "category": "Electricity",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2060041470510538848",
+    "keywords": [
+      "no electricity"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2060039496482410851",
+    "text": "@NammaBESCOM @CMofKarnataka @RahulGandhi @INCIndia again power cut in Bengaluru 560049 everyday it happens my village in mp has 24 hours power supply that's why I didn't support congress.",
+    "author": "@VirendraBglr",
+    "date": "2026-05-28T16:44:24+00:00",
+    "category": "Electricity",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2060039496482410851",
+    "keywords": [
+      "power cut",
+      "bescom"
     ],
     "status": "open"
   }
