@@ -5115,5 +5115,38 @@
       "dump"
     ],
     "status": "open"
+  },
+  {
+    "id": "2059788909731877023",
+    "text": "@KJGeorgeOffice no electricity in bengaluru since yesterday evening.",
+    "author": "@iamkamalrao",
+    "date": "2026-05-28T00:08:39+00:00",
+    "category": "Electricity",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2059788909731877023",
+    "keywords": [
+      "no electricity"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2059842485585903632",
+    "text": "🗑 Garbage dump at APS Road, Sajjan Rao Circle VV Puram, V.V Puram.\n\nMLA: Uday B. Garudachar (BJP)\nCentral #41 · Critical severity\n\nTrack it → https://t.co/E0FUP2L9vK\n\n#NammaKasa #Bengaluru #CivicDuty",
+    "author": "@PavanKu45172458",
+    "date": "2026-05-28T03:41:33+00:00",
+    "category": "Waste",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2059842485585903632",
+    "keywords": [
+      "garbage",
+      "dump"
+    ],
+    "status": "open"
   }
 ]
