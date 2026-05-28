@@ -992,6 +992,39 @@
     "status": "open"
   },
   {
+    "id": "2059915161004298568",
+    "text": "@RailwaySeva \nNCR\n27 th May 2026\nS2 4\nNo difference between reservation \nand unreserved \nTrain late more then 1 hour\nNo water to flush near Bangalore \nWestern latrin\nMobile charger plug point not proper \n@AshwiniVaishnaw  worst @RailMinIndia  not service oriented no basic sense https://t.co/rQJ7rrqUEB",
+    "author": "@ramakosuru",
+    "date": "2026-05-28T08:30:20+00:00",
+    "category": "Water",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 1,
+    "source_url": "https://twitter.com/i/web/status/2059915161004298568",
+    "keywords": [
+      "no water"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2059925928449573083",
+    "text": "Can you confirm which city is the best city in this world Bengaluru asks why ok let me tell you.\n\nPower cut in Bengaluru City avalhalli from last one year @NammaBESCOM\n Everyday 4-5h noone is bothering about this non of BESCOM employee or government they both get paid by our tax",
+    "author": "@khuraafaati1011",
+    "date": "2026-05-28T09:13:07+00:00",
+    "category": "Electricity",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 1,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2059925928449573083",
+    "keywords": [
+      "power cut",
+      "bescom"
+    ],
+    "status": "open"
+  },
+  {
     "id": "2054110623907357010",
     "text": "@narendramodi Bangalore roads are not built from years,in every 2m there is a big pothole,no infra,no cleaning of roads,no garbage collection from roads,who wants to travel on such roads",
     "author": "@nehagup72415189",
@@ -5252,6 +5285,41 @@
     "source_url": "https://twitter.com/i/web/status/2059853723858588014",
     "keywords": [
       "garbage"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2059910950883623222",
+    "text": "@NammaBESCOM\n\nThere is no electricity from more than 2-3 hours in ullal and the wire work is paused, bangalore 560056 near amma ashrama, when will the power be back ???",
+    "author": "@EshanMagadadum",
+    "date": "2026-05-28T08:13:36+00:00",
+    "category": "Electricity",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2059910950883623222",
+    "keywords": [
+      "no electricity",
+      "bescom"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2059962569818095751",
+    "text": "@bbmp_official @bbmpcommr @wastedisposal_1 \nHey.\nGarbage/waste dumping issue near [armaan residency, 5th block, hbr layout/hbr layout], HBR Layout, Bengaluru. Waste has been lying here for days causing bad smell and mosquito issues. \nKindly request immediate cleaning and actions",
+    "author": "@KhushbooMi93089",
+    "date": "2026-05-28T11:38:43+00:00",
+    "category": "Waste",
+    "area": "HBR Layout",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2059962569818095751",
+    "keywords": [
+      "garbage",
+      "waste",
+      "dump"
     ],
     "status": "open"
   }
