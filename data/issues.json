@@ -5585,5 +5585,56 @@
       "rain water"
     ],
     "status": "open"
+  },
+  {
+    "id": "2060299381774184551",
+    "text": "@NammaBESCOM Btm 1st stage near gangothri circle bangalore 560068\n\nPower outage since 830 hrs",
+    "author": "@Ashismo05762869",
+    "date": "2026-05-29T09:57:05+00:00",
+    "category": "Electricity",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2060299381774184551",
+    "keywords": [
+      "power outage",
+      "bescom"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2060292218762792970",
+    "text": "@NammaBESCOM Complete power outage in HSR Layout Sector 2 since 6:30 AM today. Multiple attempts to get a resolution or status via 1912 have yielded no results.\nKindly provide the reason for this prolonged disruption and an official ETA for restoration. #PowerCut #bengaluru",
+    "author": "@taniat_writes",
+    "date": "2026-05-29T09:28:37+00:00",
+    "category": "Electricity",
+    "area": "HSR Layout",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2060292218762792970",
+    "keywords": [
+      "power outage",
+      "bescom"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2060253305113350445",
+    "text": "@NammaBESCOM Hi team, there seems to be power cut from past 1hour in Chamundeshwari Layout area Vidyaranyapura Main road Bangalore- 560097\n\nYour assistance is much appreciated \n\nThanks!",
+    "author": "@rajatpoonacha1",
+    "date": "2026-05-29T06:54:00+00:00",
+    "category": "Electricity",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2060253305113350445",
+    "keywords": [
+      "power cut",
+      "bescom"
+    ],
+    "status": "open"
   }
 ]
