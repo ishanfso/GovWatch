@@ -6268,5 +6268,56 @@
       "dump"
     ],
     "status": "open"
+  },
+  {
+    "id": "2060667163682496837",
+    "text": "@NammaBESCOM There is no power at 2459, AECS Layout, opposite ICICI bank Singasandra since 1 hours. Third time power cut ARE WE IN BANGALORE CITY .?\nPlease let know when power restores back.",
+    "author": "@THRILOKNat40171",
+    "date": "2026-05-30T10:18:31+00:00",
+    "category": "Electricity",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2060667163682496837",
+    "keywords": [
+      "power cut",
+      "no power",
+      "bescom"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2060676072996487537",
+    "text": "🗑 Garbage dump at # 104/3, 2nd Main Road, Behind VV puram Collage, Parvathipuram, Basvangudi, V.V Puram.\n\nMLA: Uday B. Garudachar (BJP)\nCentral #41 · Moderate severity\n\nTrack it → https://t.co/N96w5MmMh3\n\n#NammaKasa #Bengaluru #CivicDuty",
+    "author": "@RameshsuryaN9",
+    "date": "2026-05-30T10:53:55+00:00",
+    "category": "Waste",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2060676072996487537",
+    "keywords": [
+      "garbage",
+      "dump"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2060657517823463436",
+    "text": "@blrcitytraffic @rtnagartraffic @publictvnews Massive traffic jam because of a car parked in the wrong parking\nRT Nagar, Main road near ICICI Bank l, Bangalore 560006 https://t.co/bkvvzwPKpb",
+    "author": "@rukzeee",
+    "date": "2026-05-30T09:40:12+00:00",
+    "category": "Parks",
+    "area": "RT Nagar",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2060657517823463436",
+    "keywords": [
+      "park"
+    ],
+    "status": "open"
   }
 ]
