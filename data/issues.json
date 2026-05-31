@@ -1205,6 +1205,23 @@
     "status": "open"
   },
   {
+    "id": "2061141192805634346",
+    "text": "@NammaBESCOM IPL Final today and a light drizzle has caused a 3+ hour power outage in Mahadevpura. Customer care is not connecting. How can the power infrastructure be this fragile? Please restore power ASAP. #Mahadevpura #Bangalore #PowerCut",
+    "author": "@PSaraik",
+    "date": "2026-05-31T17:42:09+00:00",
+    "category": "Electricity",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 1,
+    "source_url": "https://twitter.com/i/web/status/2061141192805634346",
+    "keywords": [
+      "power outage",
+      "bescom"
+    ],
+    "status": "open"
+  },
+  {
     "id": "2054110623907357010",
     "text": "@narendramodi Bangalore roads are not built from years,in every 2m there is a big pothole,no infra,no cleaning of roads,no garbage collection from roads,who wants to travel on such roads",
     "author": "@nehagup72415189",
@@ -6603,6 +6620,58 @@
     "source_url": "https://twitter.com/i/web/status/2061004309513593251",
     "keywords": [
       "traffic jam"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2061128614612287500",
+    "text": "@NammaBESCOM It’s been more than 24 hours. How long should residents have to wait for power to be restored? What is the reason for this prolonged power cut? #PowerCut #Bengaluru",
+    "author": "@madhuriadnal",
+    "date": "2026-05-31T16:52:10+00:00",
+    "category": "Electricity",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2061128614612287500",
+    "keywords": [
+      "power cut",
+      "bescom"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2061112547357712495",
+    "text": "#iplfinal #RcbvsGt everyone watching, but thanks to @NammaBESCOM @onlineBESCOM there is no electricity, even though Bangalore is playing @CMofKarnataka",
+    "author": "@RyaFern",
+    "date": "2026-05-31T15:48:19+00:00",
+    "category": "Electricity",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2061112547357712495",
+    "keywords": [
+      "no electricity",
+      "bescom"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2061106573955731528",
+    "text": "@NammaBESCOM \n\nThere is no electricity from 3 PM\n\nLOCATION:- mahadevpura, Puttapa Layout , Bangalore\n\nIt's been more than 6 hours since the power cut.\n\nWhen will electricity come ?\n\nWhy is it hard to get basic necessities like electricity?",
+    "author": "@eshuyadav2",
+    "date": "2026-05-31T15:24:35+00:00",
+    "category": "Electricity",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2061106573955731528",
+    "keywords": [
+      "power cut",
+      "no electricity",
+      "bescom"
     ],
     "status": "open"
   }
