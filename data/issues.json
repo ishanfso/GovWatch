@@ -1287,6 +1287,22 @@
     "status": "open"
   },
   {
+    "id": "2061826644030169432",
+    "text": "@halairporttrfps please deploy police near Brookfield mall . Huge traffic jam. Bengaluru traffic is mess",
+    "author": "@sachin_bhutada",
+    "date": "2026-06-02T15:05:53+00:00",
+    "category": "Traffic",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 1,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2061826644030169432",
+    "keywords": [
+      "traffic jam"
+    ],
+    "status": "open"
+  },
+  {
     "id": "2054110623907357010",
     "text": "@narendramodi Bangalore roads are not built from years,in every 2m there is a big pothole,no infra,no cleaning of roads,no garbage collection from roads,who wants to travel on such roads",
     "author": "@nehagup72415189",
@@ -7357,6 +7373,74 @@
     "keywords": [
       "flood",
       "submerge"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2061833849890591021",
+    "text": "#Googleceo #bbmp #bwssb  Flooding Alert – Mahadevapura, Bengaluru\n\nChinnappa Layout near Samhita Serenity Apartment is flooded again after rainfall. Roads are submerged, vehicles are getting stuck, and residents are facing severe difficulties.\nJust 50 meters away from Google anat https://t.co/4EYS2PUMET",
+    "author": "@krishnared72419",
+    "date": "2026-06-02T15:34:31+00:00",
+    "category": "Flooding",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2061833849890591021",
+    "keywords": [
+      "flood",
+      "submerge"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2061844567377453314",
+    "text": "@NammaBESCOM \n\nPower Outage – Immediate Attention Required\n\n@NammaBESCOM There has been no power supply in our apt as the transformer busted. No response to calls or messages.\nLocation: Sannidhi enclave, Old flour mill rd. Bangalore – 560043",
+    "author": "@KARTHIK_DSeeker",
+    "date": "2026-06-02T16:17:06+00:00",
+    "category": "Electricity",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2061844567377453314",
+    "keywords": [
+      "power outage",
+      "no power",
+      "bescom",
+      "transformer"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2061855352963178564",
+    "text": "@GBAChiefComm garbage everywhere. No garbage vehicle from last one week. Very sad to see the Bangalore situation. Every road filed update with garbage",
+    "author": "@Sharath85852559",
+    "date": "2026-06-02T16:59:58+00:00",
+    "category": "Waste",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2061855352963178564",
+    "keywords": [
+      "garbage"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2061842137705283810",
+    "text": "@MTPHereToHelp There is Traffic jam on Bengaluru Mumbai Highway from vashi bridge exit towards Mumbai to Mankur\nPlease do the needful",
+    "author": "@people59477_of",
+    "date": "2026-06-02T16:07:27+00:00",
+    "category": "Traffic",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2061842137705283810",
+    "keywords": [
+      "traffic jam"
     ],
     "status": "open"
   }
