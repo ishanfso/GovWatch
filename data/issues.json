@@ -7908,5 +7908,22 @@
       "swm"
     ],
     "status": "open"
+  },
+  {
+    "id": "2062478188308263393",
+    "text": "@NammaBESCOM Hi BESCOM, There is a power cut in 15th A cross, behind Sri Krishna Bakery, T.Dasarahalli, Bangalore 57. Can you please do the needful",
+    "author": "@SowmyaRB",
+    "date": "2026-06-04T10:14:53+00:00",
+    "category": "Electricity",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2062478188308263393",
+    "keywords": [
+      "power cut",
+      "bescom"
+    ],
+    "status": "open"
   }
 ]
