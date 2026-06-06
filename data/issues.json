@@ -8456,5 +8456,55 @@
       "transformer"
     ],
     "status": "open"
+  },
+  {
+    "id": "2063267762492129400",
+    "text": "@IRCTCofficial @GMSRailway PNR-4138821131\nTrn:16595\nDt:06-06-26\n\nTrain departed from bangalore and no water in the coach and toilet.Please help.",
+    "author": "@rahulku81456924",
+    "date": "2026-06-06T14:32:22+00:00",
+    "category": "Water",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2063267762492129400",
+    "keywords": [
+      "no water"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2063259534353994115",
+    "text": "Never faced such issues in all my years in Bengaluru. Moved to a BDA society expecting better living standards and a good environment for children, but there’s been no water supply since 11 AM. Basic necessities shouldn’t be a struggle. #Bengaluru #WaterCrisis @bdacommunity",
+    "author": "@JBaral_Tweet",
+    "date": "2026-06-06T13:59:41+00:00",
+    "category": "Water",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2063259534353994115",
+    "keywords": [
+      "water supply",
+      "no water"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2063255665049735605",
+    "text": "@namma_vjy @Indiametdept Since morning no electricity in part of Bangalore,  @NammaBESCOM \nDidn't even respond to my tweets. Do people care about public in Bescom???",
+    "author": "@Kashmir2kkumari",
+    "date": "2026-06-06T13:44:18+00:00",
+    "category": "Electricity",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2063255665049735605",
+    "keywords": [
+      "no electricity",
+      "bescom"
+    ],
+    "status": "open"
   }
 ]
