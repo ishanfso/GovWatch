@@ -3153,6 +3153,22 @@
     "status": "open"
   },
   {
+    "id": "2063355290905682080",
+    "text": "@mister_whistler Friends in Bangalore \n- scramble to get 24h water supply",
+    "author": "@surajgaud_",
+    "date": "2026-06-06T20:20:11+00:00",
+    "category": "Water",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 6,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2063355290905682080",
+    "keywords": [
+      "water supply"
+    ],
+    "status": "open"
+  },
+  {
     "id": "2055170229345587242",
     "text": "The Bengaluru Water Supply and Sewerage Board (BWSSB) has been using advanced robotic technology to inspect underground pipelines at 399 sites over the past six months, instead of going for road excavations that creates traffic girdlocks.\nhttps://t.co/QdLCTC02Sr",
     "author": "@XpressBengaluru",
@@ -33893,6 +33909,39 @@
     "keywords": [
       "park",
       "cubbon"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2063351700065505280",
+    "text": "The amount of water tankers that I have observed in Delhi, Noida, Bombay &amp; Bangalore in the past one month is simply unbelievable, despite the huge success of piped water supply. Piped water supply is in turn intermittent and not continuous. https://t.co/6tZIRiXhxl",
+    "author": "@ZebaZoariahAhsa",
+    "date": "2026-06-06T20:05:55+00:00",
+    "category": "Water",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2063351700065505280",
+    "keywords": [
+      "water supply",
+      "water tanker"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2063363582927175781",
+    "text": "@YTKDIndia Bengaluru is the worst managed city compared to what it contributes. Nobody cares about this place anymore. Garbage everywhere, sewers blocked, far less trees, construction is making life hell... so many issues.",
+    "author": "@noname98210403",
+    "date": "2026-06-06T20:53:08+00:00",
+    "category": "Waste",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2063363582927175781",
+    "keywords": [
+      "garbage"
     ],
     "status": "open"
   }
