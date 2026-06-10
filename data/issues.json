@@ -160,6 +160,22 @@
     "status": "open"
   },
   {
+    "id": "2064635109349917161",
+    "text": "@Ankittskedia I've never been to Thailand but still the street I live in Bengaluru is full of potholes, the drain overflows every other day, there's a vacant plot which is full or garbage. I've raised complaint multiple time on Swatch bharat app and all of it still goes on.",
+    "author": "@tax_payer_in",
+    "date": "2026-06-10T09:05:43+00:00",
+    "category": "Roads",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 7,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2064635109349917161",
+    "keywords": [
+      "pothole"
+    ],
+    "status": "open"
+  },
+  {
     "id": "2056421082295672966",
     "text": "@NammaBESCOM  @mdbescom @NammaBESCOM Frequent/unexpected power outage in Kannamangala, VBHC Serene Town, Bengaluru - 560067. No updates from support. Requesting immediate action and ETA for restoration. #PowerCut #BESCOM",
     "author": "@AmitRathod9997",
@@ -1624,6 +1640,40 @@
     "keywords": [
       "park",
       "cubbon"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2064640593972936855",
+    "text": "@GBA_office @GBAChiefComm Door to Door collection of garbage is not happening in Bangalore. Garbage dumps in each and every street. @krishnabgowda @DKShivakumar @GBAChiefComm https://t.co/Imm8KL8xBh",
+    "author": "@neethuneetha",
+    "date": "2026-06-10T09:27:31+00:00",
+    "category": "Waste",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 1,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2064640593972936855",
+    "keywords": [
+      "garbage",
+      "dump"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2064637991826690427",
+    "text": "@PCMohanMP No waste management at all in Bangalore. It's been week garbage collection happened in Indiranagar. Heaps of Garbage everywhere. This Congress Government has destroyed Bengaluru. @BJP4Karnataka https://t.co/c52SGi1euH",
+    "author": "@neethuneetha",
+    "date": "2026-06-10T09:17:11+00:00",
+    "category": "Waste",
+    "area": "Indiranagar",
+    "severity": "low",
+    "likes": 1,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2064637991826690427",
+    "keywords": [
+      "garbage",
+      "waste"
     ],
     "status": "open"
   },
@@ -9690,6 +9740,74 @@
     "keywords": [
       "power outage",
       "no power",
+      "bescom"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2064639926323544272",
+    "text": "@comm_blr_south @GBA_office @GBAChiefComm @DKShivakumar Plz clear garbage dump near RV Public school first. Heaps of Garbage on the road. Bangalore south is very filthy.",
+    "author": "@neethuneetha",
+    "date": "2026-06-10T09:24:52+00:00",
+    "category": "Waste",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2064639926323544272",
+    "keywords": [
+      "garbage",
+      "dump"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2064598823323021652",
+    "text": "@BWSSBofficial @osd_cmkarnataka @CMofKarnataka  @DIPRKarnataka \nResidents of Amarjyothi Layout, Sanjaynagar, Bengaluru 560094 have been suffering from irregular and inadequate water supply for over a year despite repeated complaints to BWSSB. Authorities pls take immediate action",
+    "author": "@DrPradeep369",
+    "date": "2026-06-10T06:41:32+00:00",
+    "category": "Water",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2064598823323021652",
+    "keywords": [
+      "bwssb",
+      "water supply"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2064604251754791411",
+    "text": "@NammaBESCOM On Sat, 17-hrs power outage without prior notice to fix similar issue. Today, no power since for 4+ hrs.\nWhat was fixed then? Why same issues recurring  every day? Is there any permanent solution planned, or should we expect regular outages as the new normal?\n#BESCOM #Bengaluru",
+    "author": "@Shubhu_R",
+    "date": "2026-06-10T07:03:06+00:00",
+    "category": "Electricity",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2064604251754791411",
+    "keywords": [
+      "power outage",
+      "no power",
+      "bescom"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2064600653524258832",
+    "text": "@NammaBESCOM no current since morning in munnekollal area of marthalli. On a daily basis current is being removed. Helpline is not reachable. Shame on BESCOM. Bengaluru bring IT capital has such poor infrastructure. Shame!",
+    "author": "@Chandha67550359",
+    "date": "2026-06-10T06:48:48+00:00",
+    "category": "Electricity",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2064600653524258832",
+    "keywords": [
       "bescom"
     ],
     "status": "open"
