@@ -32,6 +32,20 @@
     "status": "open"
   },
   {
+    "id": "2065262447687323659",
+    "text": "A humble request From a Concerned Citizen of Koramangala 🙏\n\nA citizen reported this and she said she live in the area. Her first spot in the morning at 7am is this ox chewing on food and plastic. She stepped out at 2am today for a walk and was surprised to see the ox spends so https://t.co/DGGzpAGm02",
+    "author": "@karnatakaportf",
+    "date": "2026-06-12T02:38:32+00:00",
+    "category": "Other",
+    "area": "Koramangala",
+    "severity": "medium",
+    "likes": 23,
+    "retweets": 10,
+    "source_url": "https://twitter.com/i/web/status/2065262447687323659",
+    "keywords": [],
+    "status": "open"
+  },
+  {
     "id": "2061797218353561727",
     "text": "Day 3 - we are back again. BBMP leaving their garbage truck on the road. @GBAChiefComm @GBA_office \n\n#Bengaluru https://t.co/zC2YJTznFD https://t.co/0ZMDnj9mfU",
     "author": "@piyushnathani1",
@@ -10226,6 +10240,74 @@
     "keywords": [
       "no electricity",
       "bescom"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2065295142085702006",
+    "text": "@NammaBESCOM There has been no power supply in 8th Cross, Kenchanahalli, RR Nagar, Bengaluru for the last 1 hour. Kindly look into the issue and restore power at the earliest. Residents are facing inconvenience. #BESCOM #RRNagar #PowerOutage",
+    "author": "@PrasadShiralagi",
+    "date": "2026-06-12T04:48:27+00:00",
+    "category": "Electricity",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2065295142085702006",
+    "keywords": [
+      "no power",
+      "bescom"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2065272745395712120",
+    "text": "@NammaBESCOM power cut at electronic city phase-1 near velankani Tech park Bangalore",
+    "author": "@PavanKu44176872",
+    "date": "2026-06-12T03:19:28+00:00",
+    "category": "Electricity",
+    "area": "Electronic City",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2065272745395712120",
+    "keywords": [
+      "power cut",
+      "bescom"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2065269996251648200",
+    "text": "@NammaBESCOM There is power outage in 1st cross,\n11th main, Hosapalya, Bommanahalli post,\nBangalore-560068.",
+    "author": "@krishnangi66667",
+    "date": "2026-06-12T03:08:32+00:00",
+    "category": "Electricity",
+    "area": "Bommanahalli",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2065269996251648200",
+    "keywords": [
+      "power outage",
+      "bescom"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2065272630937268713",
+    "text": "Garbage dumped right under a Swach Bharat message. Nobody cares. \n\n@GBA_office @BNCCofficial @GBAChiefComm Garbage clean up needed here and a large garbage bin please. \n\nLocation : Gmaps Plus code - 2J4R+FJ9 Bengaluru, Karnataka https://t.co/yiU2hlB948",
+    "author": "@varunachar",
+    "date": "2026-06-12T03:19:00+00:00",
+    "category": "Waste",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2065272630937268713",
+    "keywords": [
+      "garbage",
+      "dump"
     ],
     "status": "open"
   }
