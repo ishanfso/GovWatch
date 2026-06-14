@@ -11279,5 +11279,58 @@
       "garbage"
     ],
     "status": "open"
+  },
+  {
+    "id": "2066155726129827843",
+    "text": "@NammaBESCOM @mdbescom @BescomHelpline No power in my area since last 4 hours \nIn morning,3 hours power cut was there \nWhat kind of service is this?\nLocation -1353,A-Square,BCCHS Layout,Sir M.Visvesvaraya Square, Vajrahalli,Bengaluru,Karnataka 560109\nNear Muturaya Swami Temple",
+    "author": "@rnjn_ayush",
+    "date": "2026-06-14T13:48:07+00:00",
+    "category": "Electricity",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2066155726129827843",
+    "keywords": [
+      "power cut",
+      "no power",
+      "bescom"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2066140275223966065",
+    "text": "@NammaBESCOM  venkateswara layout AECS layout Singasandra Bangalore \nNo power  Today there is a thrice time power cut happening. Request you to check and resolve the issue.",
+    "author": "@sajeev262",
+    "date": "2026-06-14T12:46:43+00:00",
+    "category": "Electricity",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2066140275223966065",
+    "keywords": [
+      "power cut",
+      "no power",
+      "bescom"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2066131386692735387",
+    "text": "@NammaBESCOM There is a power cut  in #15 Modhak , Red carpet layout kodathi village road sarjapura main road Bangalore 560035. It's not even raining \n9556148053",
+    "author": "@HGreen31213",
+    "date": "2026-06-14T12:11:24+00:00",
+    "category": "Electricity",
+    "area": "Sarjapur",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2066131386692735387",
+    "keywords": [
+      "power cut",
+      "bescom"
+    ],
+    "status": "open"
   }
 ]
