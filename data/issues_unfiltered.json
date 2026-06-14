@@ -13791,6 +13791,22 @@
     "status": "open"
   },
   {
+    "id": "2066166436423495862",
+    "text": "@Tejasvi_Surya Bangaloreans demand for clean, Garbage free Bengaluru. We never thought our city would look like this. Corrupt politicians have destroyed this city. https://t.co/fE88RdMEe7",
+    "author": "@neethuneetha",
+    "date": "2026-06-14T14:30:40+00:00",
+    "category": "Waste",
+    "area": "ORR",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 1,
+    "source_url": "https://twitter.com/i/web/status/2066166436423495862",
+    "keywords": [
+      "garbage"
+    ],
+    "status": "open"
+  },
+  {
     "id": "2055305588222165459",
     "text": "@Kuma50531Kumar no they are busy building it to tumakuru, kanakpura etc so core Bengaluru have to for now be happy with pothole ridden roads and traffic jams!",
     "author": "@ranjithe1",
@@ -49384,6 +49400,40 @@
     "source_url": "https://twitter.com/i/web/status/2066153763740803400",
     "keywords": [
       "traffic signal"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2066183500647354788",
+    "text": "@NammaBESCOM @NammaBESCOM  There is a power outage in Doddathoguru, Electronic City Phase 1, Bengaluru - 560100. Power has been unavailable since 4PM. Kindly check and restore the supply at the earliest. #BESCOM #Bengaluru",
+    "author": "@kothandara68879",
+    "date": "2026-06-14T15:38:29+00:00",
+    "category": "Electricity",
+    "area": "Electronic City",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2066183500647354788",
+    "keywords": [
+      "power outage",
+      "bescom"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2066165260554506516",
+    "text": "@dipikajaikishan Not sure which part of bangalore u live...Pls tell the Govt for flyover in Basaveswara circle and KR Circle..  two main airport exit points..Flyover on Avenue road connecting North south bnglr. Not allow inter state buses on JC Rd.. After metro BMTC has not worked on newer routes",
+    "author": "@Yedhunand",
+    "date": "2026-06-14T14:26:00+00:00",
+    "category": "Traffic",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2066165260554506516",
+    "keywords": [
+      "bmtc",
+      "metro"
     ],
     "status": "open"
   }
