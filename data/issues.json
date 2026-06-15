@@ -1907,6 +1907,23 @@
     "status": "open"
   },
   {
+    "id": "2066402625793450008",
+    "text": "@Tejasvi_Surya BSWML has messed up the garbage disposal in Bangalore\n\nAlmost every road side now looks like this. https://t.co/ERoUUS2Js6",
+    "author": "@tangdi_kabab",
+    "date": "2026-06-15T06:09:12+00:00",
+    "category": "Waste",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 1,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2066402625793450008",
+    "keywords": [
+      "garbage",
+      "swm"
+    ],
+    "status": "open"
+  },
+  {
     "id": "2054110623907357010",
     "text": "@narendramodi Bangalore roads are not built from years,in every 2m there is a big pothole,no infra,no cleaning of roads,no garbage collection from roads,who wants to travel on such roads",
     "author": "@nehagup72415189",
@@ -11513,6 +11530,74 @@
     "source_url": "https://twitter.com/i/web/status/2066373666255011983",
     "keywords": [
       "bmtc"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2066467779444879509",
+    "text": "@chairmanbwssb Water Supply Bill for the month of May 2026 (payable by June 17, 2026) not yet delivered in Bangalore South. No communication in this regard",
+    "author": "@easwarindira",
+    "date": "2026-06-15T10:28:06+00:00",
+    "category": "Water",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2066467779444879509",
+    "keywords": [
+      "bwssb",
+      "water supply"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2066402816177131783",
+    "text": "Whst the hell @NammaBESCOM @BescomHelpline #bescom #Bangalore #Bengaluru \nPower Is going offhand on every 2 mins in ecity https://t.co/NVw8Dg9dQN",
+    "author": "@IKuramasaki",
+    "date": "2026-06-15T06:09:57+00:00",
+    "category": "Electricity",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2066402816177131783",
+    "keywords": [
+      "bescom"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2066420730263486629",
+    "text": "@DKShivakumar @BalagereConnect @BBMPSWMSplComm @bbmpcommr @sobhadreamacres 🗑 Garbage dump at Plot behind sobha dream acres wing 9, Panathur, Bengaluru — 1 days unresolved.\nMLA: Manjula S. (BJP)\nTracked on NammaKasa → https://t.co/gDBDFLLWxb\n\nReport garbage in your ward → https://t.co/9SQbtxDSTZ https://t.co/gDBDFLLWxb\n\nReported again no use",
+    "author": "@Vaiahali7",
+    "date": "2026-06-15T07:21:08+00:00",
+    "category": "Waste",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2066420730263486629",
+    "keywords": [
+      "garbage",
+      "dump",
+      "swm"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2066419987586445652",
+    "text": "🗑 Garbage dump at Plot behind sobha dream acres wing 9, Panathur.\n\nMLA: Manjula S. (BJP)\nEast #48 · Critical severity\n\nTrack it → https://t.co/gDBDFLLWxb\n\n#NammaKasa #Bengaluru #CivicDuty",
+    "author": "@Vaiahali7",
+    "date": "2026-06-15T07:18:11+00:00",
+    "category": "Waste",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2066419987586445652",
+    "keywords": [
+      "garbage",
+      "dump"
     ],
     "status": "open"
   }
