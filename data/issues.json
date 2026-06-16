@@ -834,6 +834,22 @@
     "status": "open"
   },
   {
+    "id": "2066768556960956759",
+    "text": "@copyninja_ Everyday is a survival challenge in Bangalore. \nI was on Hebbala Flyover last Friday, it is that narrow service road lane from City side to airport which can fit only one vehicle. I was already ~50kmph and a BMTC overtook me on that narrow lane just an inch away. ಬಾಯಿಗೆ ಬಂದಿತ್ತು.",
+    "author": "@IdliDoctor",
+    "date": "2026-06-16T06:23:17+00:00",
+    "category": "Traffic",
+    "area": "Hebbal",
+    "severity": "low",
+    "likes": 2,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2066768556960956759",
+    "keywords": [
+      "bmtc"
+    ],
+    "status": "open"
+  },
+  {
     "id": "2054518266387902916",
     "text": "@EduMinOfIndia @dpradhanbjp \nAlarming state of affairs in the National Law School of India University, Bangalore. No water available and hostel facilities worsening. A lift falling from 2 floors carrying 2 students inside, risking their lives. No complaints addressed.",
     "author": "@Anchalshraff",
@@ -11698,6 +11714,40 @@
     "keywords": [
       "garbage",
       "dump"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2066808996812796138",
+    "text": "@NammaBESCOM hello sir/ma'am it is becoming a trend for power cut without any reason provided. Please restore the power at 4th Main road Telecom layout Thanisandra main road Bangalore 560077\nSince there is no Power since \nMobile 9886079403",
+    "author": "@PankajK53448045",
+    "date": "2026-06-16T09:03:58+00:00",
+    "category": "Electricity",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2066808996812796138",
+    "keywords": [
+      "power cut",
+      "no power",
+      "bescom"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2066773306238443612",
+    "text": "Today kadbisinahalli touch my car my front bomber damaged \nBMTC Driver very neglect driving reverse taken \nEv buses driver are crazy driving on outer ring road \n Bengaluru traffic ps https://t.co/dvlRFZVejg",
+    "author": "@Kbasava3",
+    "date": "2026-06-16T06:42:09+00:00",
+    "category": "Traffic",
+    "area": "Outer Ring Road",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2066773306238443612",
+    "keywords": [
+      "bmtc"
     ],
     "status": "open"
   }
