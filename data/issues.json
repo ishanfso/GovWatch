@@ -2102,6 +2102,23 @@
     "status": "open"
   },
   {
+    "id": "2067496529020301461",
+    "text": "Again no electricity in Jagdish nagar Bangalore @NammaBESCOM\n\nCan you give us at least 1 day of uninterrupted electricity??",
+    "author": "@thetanaysharma",
+    "date": "2026-06-18T06:35:59+00:00",
+    "category": "Electricity",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 1,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2067496529020301461",
+    "keywords": [
+      "no electricity",
+      "bescom"
+    ],
+    "status": "open"
+  },
+  {
     "id": "2054110623907357010",
     "text": "@narendramodi Bangalore roads are not built from years,in every 2m there is a big pothole,no infra,no cleaning of roads,no garbage collection from roads,who wants to travel on such roads",
     "author": "@nehagup72415189",
@@ -12324,6 +12341,56 @@
     "source_url": "https://twitter.com/i/web/status/2067476002104811588",
     "keywords": [
       "traffic signal"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2067507172456755465",
+    "text": "@GBAChiefComm @MALimbavali this is a serious health hazard and needs an immediate joint department intervention. BSWML(21131319), SWD (21144185) , BWSSB(681167) , Health Department(21137982) . Everyone is asking to call someone else. Issue going in loops. Malaria/Dengue risk.  I https://t.co/zIH8SgTVKb",
+    "author": "@Anubhav_11",
+    "date": "2026-06-18T07:18:16+00:00",
+    "category": "Water",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2067507172456755465",
+    "keywords": [
+      "bwssb"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2067513154557649164",
+    "text": "@NammaBESCOM @BescomHelpline @mdbescom \nPower cut since last 2 hours\nLocation - Building no 14, 3rd cross, Balaji layout, Narullahalli, Bengaluru \nRaise a complaint and please resolve asap\nIt's so frequent power cuts,\nWhy can't it be stable?",
+    "author": "@rnjn_ayush",
+    "date": "2026-06-18T07:42:03+00:00",
+    "category": "Electricity",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2067513154557649164",
+    "keywords": [
+      "power cut",
+      "bescom"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2067522817168654402",
+    "text": "🗑 Garbage dump at Hood Garden, Hoodi.\nThis is fifth time I am reporting but no action was taken.\n\nMLA: Manjula S. (BJP)\nEast #29 · Severe severity\n\nTrack it → https://t.co/0FKD8mor78 @DKShivakumar\n@narendramodi\n#NammaKasa #Bengaluru #CivicDuty",
+    "author": "@samantaraja4",
+    "date": "2026-06-18T08:20:26+00:00",
+    "category": "Waste",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2067522817168654402",
+    "keywords": [
+      "garbage",
+      "dump"
     ],
     "status": "open"
   }
