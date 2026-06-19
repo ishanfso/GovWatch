@@ -12795,5 +12795,38 @@
       "garbage"
     ],
     "status": "open"
+  },
+  {
+    "id": "2067987294473351667",
+    "text": "@krishnabgowda @INCKarnataka @DKShivakumar @CMofKarnataka @siddaramaiah Sir, please solve roadside garbage dump issue, we can see garbage on road side all over bangalore, in last 5 years situation is from bad to worse.",
+    "author": "@GhantaSinghFb33",
+    "date": "2026-06-19T15:06:07+00:00",
+    "category": "Waste",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2067987294473351667",
+    "keywords": [
+      "garbage",
+      "dump"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2067990491002728656",
+    "text": "@blrcitytraffic severe traffic jam in #JCroad #townhall #Bengaluru",
+    "author": "@123mangoman",
+    "date": "2026-06-19T15:18:49+00:00",
+    "category": "Traffic",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2067990491002728656",
+    "keywords": [
+      "traffic jam"
+    ],
+    "status": "open"
   }
 ]
