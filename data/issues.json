@@ -12712,5 +12712,56 @@
       "lalbagh"
     ],
     "status": "open"
+  },
+  {
+    "id": "2067884535333920920",
+    "text": "@BharatConnect_ Sir/ma'am the email I received is full of incorrect information. The following incorrect information are as follows :-\n1) Transaction id :-BD016168BALAAALCS0ZG\n2) Transaction time :- 11:34 AM\n3) Biller name :- Bangalore Water Supply And Sewage Board\n4) Transaction Amount :- 625 https://t.co/k1DjHZU6oV",
+    "author": "@zairgame",
+    "date": "2026-06-19T08:17:47+00:00",
+    "category": "Water",
+    "area": "ORR",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2067884535333920920",
+    "keywords": [
+      "water supply"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2067917321583387044",
+    "text": "@NammaBESCOM, we're experiencing another power outage in Budigere Cross, Old Madras Road. It's the second time this morning! 😩 Can you please provide an update on when it will be restored? 💡🙏 #Bangalore",
+    "author": "@PriyankaB0329",
+    "date": "2026-06-19T10:28:04+00:00",
+    "category": "Electricity",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2067917321583387044",
+    "keywords": [
+      "power outage",
+      "bescom"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2067909812021834233",
+    "text": "@NammaBESCOM why there is no power from early morning in 1st cross, 11th main, Hosapalya, Bommanahalli post, Bangalore-560068.\nAnd the frequent power outage is so annoying please do something",
+    "author": "@krishnangi66667",
+    "date": "2026-06-19T09:58:13+00:00",
+    "category": "Electricity",
+    "area": "Bommanahalli",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2067909812021834233",
+    "keywords": [
+      "power outage",
+      "no power",
+      "bescom"
+    ],
+    "status": "open"
   }
 ]
