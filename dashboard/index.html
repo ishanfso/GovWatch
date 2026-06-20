@@ -3,152 +3,129 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GovWatch — Bangalore Civic Issues Dashboard</title>
+  <title>GovWatch — Bangalore Civic Intelligence</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,600;0,700;1,600&display=swap" />
   <link rel="stylesheet" href="css/styles.css" />
-  <!-- Leaflet (map) -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <!-- Chart.js (category chart) -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 </head>
 <body>
 
-  <!-- ── Header ─────────────────────────────────────────────── -->
+  <!-- ── Header ────────────────────────────────────────────────── -->
   <header class="header">
     <div class="header-inner">
       <div class="header-brand">
-        <span class="brand-icon">🏛</span>
-        <div>
-          <h1 class="brand-title">GovWatch</h1>
-          <p class="brand-sub">Bangalore Civic Issues · Twitter Intelligence</p>
+        <div class="brand-mark">GW</div>
+        <div class="brand-text">
+          <span class="brand-name">GovWatch</span>
+          <span class="brand-context">Bangalore Civic Intelligence Queue</span>
         </div>
       </div>
-      <div class="header-meta">
+      <div class="header-actions">
         <span class="data-badge" id="data-source-badge">Sample Data</span>
-        <span class="last-updated" id="last-updated">Loading…</span>
+        <span class="last-updated" id="last-updated"></span>
+        <button class="header-btn" id="export-csv">Export CSV</button>
       </div>
     </div>
   </header>
 
-  <main class="main">
+  <div class="page-body">
 
-    <!-- ── Role Banner (shown only when ?role= param is set) ──── -->
+    <!-- ── Role Banner ────────────────────────────────────────── -->
     <div class="role-banner hidden" id="role-banner"></div>
 
-    <!-- ── Summary Stats ──────────────────────────────────────── -->
-    <section class="stats-row">
-      <div class="stat-card">
-        <div class="stat-number" id="stat-total">—</div>
-        <div class="stat-label">Total Issues</div>
+    <!-- ── KPI Row ────────────────────────────────────────────── -->
+    <section class="kpi-row">
+      <div class="kpi-card kpi-danger">
+        <div class="kpi-number" id="kpi-overdue">—</div>
+        <div class="kpi-label">Overdue SLA</div>
       </div>
-      <div class="stat-card stat-high">
-        <div class="stat-number" id="stat-high">—</div>
-        <div class="stat-label">High Severity</div>
+      <div class="kpi-card kpi-warning">
+        <div class="kpi-number" id="kpi-high">—</div>
+        <div class="kpi-label">High Risk Open</div>
       </div>
-      <div class="stat-card">
-        <div class="stat-number" id="stat-top-cat">—</div>
-        <div class="stat-label">Top Category</div>
+      <div class="kpi-card">
+        <div class="kpi-number" id="kpi-new">—</div>
+        <div class="kpi-label">New Today</div>
       </div>
-      <div class="stat-card">
-        <div class="stat-number" id="stat-top-area">—</div>
-        <div class="stat-label">Most Affected Area</div>
+      <div class="kpi-card">
+        <div class="kpi-number" id="kpi-unassigned">—</div>
+        <div class="kpi-label">Unassigned</div>
+      </div>
+      <div class="kpi-card kpi-success">
+        <div class="kpi-number" id="kpi-resolved">—</div>
+        <div class="kpi-label">Resolved This Week</div>
       </div>
     </section>
 
-    <!-- ── Chart + Filters (always visible) ──────────────────── -->
-    <section class="controls-section">
-      <div class="chart-box">
-        <h2 class="section-title">Issues by Category</h2>
-        <div class="chart-wrap">
-          <canvas id="categoryChart"></canvas>
-        </div>
+    <!-- ── Toolbar ────────────────────────────────────────────── -->
+    <div class="toolbar">
+      <div class="saved-views" id="saved-views">
+        <button class="view-chip active" data-view="all">All Issues</button>
+        <button class="view-chip" data-view="urgent">Urgent</button>
+        <button class="view-chip" data-view="overdue">Overdue</button>
+        <button class="view-chip" data-view="unassigned">Unassigned</button>
+        <button class="view-chip" data-view="resolved">Resolved</button>
       </div>
-
-      <div class="filters-box">
-        <h2 class="section-title">Filter Issues</h2>
-
-        <label class="filter-label">Search</label>
-        <input class="search-input" id="search-input" type="text" placeholder="Search issues…" />
-
-        <label class="filter-label" style="margin-top:12px;">Category</label>
-        <div class="filter-chips" id="category-filters">
-          <button class="chip active" data-filter="category" data-value="all">All</button>
-        </div>
-
-        <label class="filter-label" style="margin-top:12px;">Severity</label>
-        <div class="filter-chips" id="severity-filters">
-          <button class="chip active" data-filter="severity" data-value="all">All</button>
-          <button class="chip chip-high"  data-filter="severity" data-value="high">🔴 High</button>
-          <button class="chip chip-med"   data-filter="severity" data-value="medium">🟡 Medium</button>
-          <button class="chip chip-low"   data-filter="severity" data-value="low">🟢 Low</button>
-        </div>
-
-        <label class="filter-label" style="margin-top:12px;">Status</label>
-        <div class="filter-chips" id="status-filters">
-          <button class="chip active" data-filter="status" data-value="all">All</button>
-          <button class="chip" data-filter="status" data-value="open">Open</button>
-          <button class="chip" data-filter="status" data-value="acknowledged">Acknowledged</button>
-          <button class="chip" data-filter="status" data-value="in_progress">In Progress</button>
-          <button class="chip" data-filter="status" data-value="resolved">Resolved</button>
-        </div>
-
-        <label class="filter-label" style="margin-top:12px;">Area</label>
-        <select class="area-select" id="area-filter">
+      <div class="filter-bar">
+        <input class="search-input" id="search-input" type="text" placeholder="Search complaint, area, source…" />
+        <select class="filter-select" id="dept-filter">
+          <option value="all">All Departments</option>
+          <option value="BBMP">BBMP</option>
+          <option value="BESCOM">BESCOM</option>
+          <option value="BWSSB">BWSSB</option>
+          <option value="BTP">BTP</option>
+        </select>
+        <select class="filter-select" id="category-filter">
+          <option value="all">All Categories</option>
+        </select>
+        <select class="filter-select" id="area-filter">
           <option value="all">All Areas</option>
         </select>
-
-        <label class="filter-label" style="margin-top:12px;">Date Range</label>
-        <div class="filter-chips" id="date-preset-filters">
-          <button class="chip active" data-filter="date-preset" data-value="all">All Time</button>
-          <button class="chip" data-filter="date-preset" data-value="7">Last 7 Days</button>
-          <button class="chip" data-filter="date-preset" data-value="30">Last 30 Days</button>
-          <button class="chip" data-filter="date-preset" data-value="this-month">This Month</button>
-        </div>
-        <div class="date-range-inputs">
-          <div class="date-input-group">
-            <label class="date-input-label">From</label>
-            <input type="date" class="date-input" id="date-from" />
-          </div>
-          <div class="date-input-group">
-            <label class="date-input-label">To</label>
-            <input type="date" class="date-input" id="date-to" />
-          </div>
-        </div>
-
-        <div class="filter-actions">
-          <button class="reset-btn" id="reset-filters">Reset Filters</button>
-          <button class="export-btn" id="export-csv">⬇ Export CSV</button>
-        </div>
+        <button class="reset-btn" id="reset-filters">Reset</button>
       </div>
-    </section>
-
-    <!-- ── Tab Bar ────────────────────────────────────────────── -->
-    <div class="tab-bar">
-      <button class="tab active" data-tab="feed">📋 Issues Feed</button>
-      <button class="tab" data-tab="map">🗺 Map View</button>
-      <button class="tab" data-tab="departments">🏢 By Department</button>
-      <button class="tab tab-coming-soon" data-tab="coming-soon">🔮 Coming Soon</button>
     </div>
 
-    <!-- ── Tab: Issues Feed ───────────────────────────────────── -->
-    <section class="tab-content" id="tab-feed">
-      <div class="feed-header">
-        <span class="showing-count" id="showing-count"></span>
-        <label class="cluster-toggle-label">
-          <input type="checkbox" id="cluster-toggle" />
-          Group similar issues
-        </label>
-      </div>
-      <div class="issue-grid" id="issue-grid">
-        <div class="loading">Loading issues…</div>
-      </div>
-    </section>
+    <!-- ── Tab Navigation ─────────────────────────────────────── -->
+    <nav class="tab-nav">
+      <button class="tab active" data-tab="queue">Queue</button>
+      <button class="tab" data-tab="map">Map</button>
+      <button class="tab" data-tab="departments">Departments</button>
+      <button class="tab" data-tab="analytics">Analytics</button>
+    </nav>
 
-    <!-- ── Tab: Map View ──────────────────────────────────────── -->
-    <section class="tab-content hidden" id="tab-map">
+    <!-- ── Tab: Queue ─────────────────────────────────────────── -->
+    <div class="tab-content" id="tab-queue">
+      <div class="queue-layout">
+
+        <div class="queue-pane">
+          <div class="queue-header">
+            <span class="queue-count" id="queue-count"></span>
+            <label class="cluster-label">
+              <input type="checkbox" id="cluster-toggle" />
+              Group similar
+            </label>
+          </div>
+          <div class="queue-list" id="queue-list">
+            <div class="loading">Loading issues…</div>
+          </div>
+        </div>
+
+        <div class="detail-pane" id="detail-pane">
+          <div class="detail-empty">
+            <div class="detail-empty-icon">⬅</div>
+            <div class="detail-empty-text">Select an issue to view details</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── Tab: Map ───────────────────────────────────────────── -->
+    <div class="tab-content hidden" id="tab-map">
       <div class="map-legend">
         <span class="legend-item"><span class="dot dot-high"></span>High severity</span>
         <span class="legend-item"><span class="dot dot-medium"></span>Medium</span>
@@ -156,30 +133,39 @@
         <span class="map-hint">Click a marker to see the issue</span>
       </div>
       <div id="leaflet-map"></div>
-    </section>
+    </div>
 
-    <!-- ── Tab: By Department ─────────────────────────────────── -->
-    <section class="tab-content hidden" id="tab-departments">
+    <!-- ── Tab: Departments ───────────────────────────────────── -->
+    <div class="tab-content hidden" id="tab-departments">
       <div class="dept-grid" id="dept-grid">
         <div class="loading">Loading…</div>
       </div>
-    </section>
+    </div>
 
-    <!-- ── Tab: Coming Soon ──────────────────────────────────── -->
-    <section class="tab-content hidden" id="tab-coming-soon">
-      <div class="cs-header">
-        <h2 class="cs-heading">What's Coming Next</h2>
-        <p class="cs-subheading">Features in development — GovWatch is being actively built out into a full civic action platform.</p>
+    <!-- ── Tab: Analytics ────────────────────────────────────── -->
+    <div class="tab-content hidden" id="tab-analytics">
+      <div class="analytics-layout">
+        <div class="analytics-card">
+          <div class="analytics-title">Issues by Category</div>
+          <div class="chart-wrap">
+            <canvas id="categoryChart"></canvas>
+          </div>
+        </div>
+        <div class="analytics-card">
+          <div class="analytics-title">Severity Breakdown</div>
+          <div class="sev-breakdown" id="sev-breakdown"></div>
+        </div>
+        <div class="analytics-card analytics-card-wide">
+          <div class="analytics-title">SLA Performance by Department</div>
+          <div class="sla-table" id="sla-table"></div>
+        </div>
       </div>
-      <div class="cs-grid" id="coming-soon-grid">
-        <div class="loading">Loading…</div>
-      </div>
-    </section>
+    </div>
 
-  </main>
+  </div><!-- /page-body -->
 
   <footer class="footer">
-    <p>GovWatch · Data sourced from public Twitter posts · For government use only</p>
+    GovWatch · Data sourced from public Twitter posts · For government use only
   </footer>
 
   <script src="js/app.js"></script>
