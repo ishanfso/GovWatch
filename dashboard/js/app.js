@@ -430,6 +430,7 @@ function applyFilters() {
   if (activeTab === "analytics")   renderAnalytics(filtered);
   if (activeTab === "officials" && officialsLoaded) {
     renderRoutingGuide();
+    autoShowWardFromFilter();
     // Auto-select dept chip based on active dept filter
     if (activeFilters.dept !== "all") {
       const deptMap = { BBMP: "BBMP", BESCOM: "BESCOM", BWSSB: "BWSSB", BTP: "Traffic Police" };
@@ -906,12 +907,38 @@ function deptCard(name, info, issues) {
 
 // ── Analytics ──────────────────────────────────────────────────────
 
+function renderRaisedToBreakdown() {
+  const el = document.getElementById("raised-to-list");
+  if (!el) return;
+  const assignMap = {};
+  allIssues.forEach(i => {
+    const a = getAssignment(i.id);
+    if (!a || !a.name) return;
+    if (!assignMap[a.name]) assignMap[a.name] = { name: a.name, role: a.role || "", dept: a.dept || "", count: 0 };
+    assignMap[a.name].count++;
+  });
+  const entries = Object.values(assignMap).sort((a, b) => b.count - a.count);
+  if (!entries.length) {
+    el.innerHTML = '<div class="breakdown-no-data">No issues raised to officials yet. Use the "Raise to" button on any complaint.</div>';
+    return;
+  }
+  el.innerHTML = entries.map(e => `
+    <div class="raised-to-row">
+      <div class="raised-to-info">
+        <span class="official-name-link" data-name="${esc(e.name)}" data-role="${esc(e.role)}" data-dept="${esc(e.dept)}" data-phone="" data-email="" data-detail="">${esc(e.name)}</span>
+        ${e.role ? `<span class="raised-to-role">${esc(e.role)}${e.dept ? " · " + esc(e.dept) : ""}</span>` : ""}
+      </div>
+      <div class="raised-to-count">${e.count} issue${e.count !== 1 ? "s" : ""}</div>
+    </div>`).join("");
+}
+
 function renderAnalytics(issues) {
   renderChart(issues);
   renderAreaChart(issues);
   renderBreakdownList("mla-breakdown",  issues, "constituency",  false);
   renderBreakdownList("mp-breakdown",   issues, "mp",             false);
   renderBreakdownList("zone-breakdown", issues, "city_corp",      true);
+  renderRaisedToBreakdown();
 
   // Severity breakdown bars
   const high   = issues.filter(i => i.severity === "high").length;
@@ -1365,6 +1392,28 @@ async function initOfficials() {
   renderRoutingGuide();
   initWardSearch();
   initOrgChipListeners();
+  // If an area filter is already active, auto-populate the ward card
+  autoShowWardFromFilter();
+}
+
+// ── Auto-populate ward from active area filter ─────────────────────
+
+function autoShowWardFromFilter() {
+  const resultsEl = document.getElementById("ward-results");
+  const input = document.getElementById("ward-search");
+  if (activeFilters.area === "all" || !officialsLoaded) {
+    // Clear ward card if no area selected (only if it was auto-populated)
+    if (input && input.dataset.autoFilled) {
+      input.value = "";
+      input.dataset.autoFilled = "";
+      if (resultsEl) resultsEl.innerHTML = "";
+    }
+    return;
+  }
+  const ward = findWardByArea(activeFilters.area);
+  if (!ward) return;
+  if (input) { input.value = ward.ward_name; input.dataset.autoFilled = "1"; }
+  renderWardCard(ward);
 }
 
 // ── Ward Search ────────────────────────────────────────────────────
@@ -1681,7 +1730,7 @@ function renderWardCard(ward) {
         ${cells.join("")}
       </div>
     </div>
-  `;
+  ` + buildWardHierarchyHTML(ward);
 }
 
 function buildWardCell(label, content) {
@@ -1708,6 +1757,130 @@ function parseBescomAee(str) {
   const nameMatch = str.match(/(?:Assistant Executive Engineer|Sri\.|Smt\.)\s+([A-Za-z\s\.]+?)(?:\s+\d{10}|\s+AEE|$)/);
   if (nameMatch) name = nameMatch[1].trim();
   return { name, phone, email };
+}
+
+// ── Ward Hierarchy Helpers ─────────────────────────────────────────
+
+function findSwmSeForWard(ward) {
+  if (!ward.swm_division || !officialsData.swmAee || !officialsData.swmSe) return null;
+  const divLc = ward.swm_division.toLowerCase();
+  const aeeRec = officialsData.swmAee.find(a =>
+    a.division && (divLc.includes(a.division.toLowerCase()) || a.division.toLowerCase().includes(divLc.split(" ")[0]))
+  );
+  if (!aeeRec) return null;
+  const zoneShort = (aeeRec.zone || "").replace(/ zone$/i, "").trim().toLowerCase();
+  return officialsData.swmSe.find(s => {
+    if (!s.zone) return false;
+    const sz = s.zone.toLowerCase();
+    return sz.includes(zoneShort) || zoneShort.includes(sz);
+  }) || null;
+}
+
+function findBwssbEeForWard(ward) {
+  if (!ward.bwssb_station || !officialsData.bwssb) return null;
+  const stnLc = ward.bwssb_station.toLowerCase().split(",")[0].trim();
+  return officialsData.bwssb.find(s =>
+    s.service_station && (s.service_station.toLowerCase().includes(stnLc) || stnLc.includes(s.service_station.toLowerCase().split(",")[0].trim()))
+  ) || null;
+}
+
+function findBescomChainForWard(ward) {
+  if (!ward.bescom_unit || !officialsData.bescomUnits) return null;
+  const unitLc = ward.bescom_unit.toLowerCase();
+  return officialsData.bescomUnits.find(u =>
+    (u.om_unit && unitLc.includes(u.om_unit.toLowerCase())) ||
+    (u.subdivision && unitLc.includes(u.subdivision.toLowerCase()))
+  ) || null;
+}
+
+function buildWardHierarchyHTML(ward) {
+  const sections = [];
+
+  // SWM / Waste
+  if (ward.swm_jhi || ward.swm_aee) {
+    const se = findSwmSeForWard(ward);
+    const steps = [];
+    if (ward.swm_jhi) steps.push({ badge: "Ward JHI", name: ward.swm_jhi, phone: ward.swm_jhi_mobile || "", role: "SWM JHI", dept: "BBMP", detail: ward.swm_division || "", wardLevel: true });
+    if (ward.swm_aee) steps.push({ badge: "AEE", name: ward.swm_aee, phone: ward.swm_aee_mobile || "", email: ward.swm_aee_email || "", role: "SWM AEE", dept: "BBMP", detail: ward.swm_division || "" });
+    if (se && se.name) steps.push({ badge: "Zonal SE", name: se.name, phone: se.mobile || "", email: se.email || "", role: "SWM Zonal SE", dept: "BBMP", detail: se.zone || "" });
+    steps.push({ badge: "Top", name: "Commissioner SWM, BBMP", phone: "", isGeneric: true });
+    sections.push({ label: "Waste / SWM", steps });
+  }
+
+  // BESCOM
+  if (ward.bescom_aee) {
+    const parsed = parseBescomAee(ward.bescom_aee);
+    const unit = findBescomChainForWard(ward);
+    const steps = [];
+    if (parsed.name) steps.push({ badge: "Ward AEE", name: parsed.name, phone: parsed.phone || "", email: parsed.email || "", role: "BESCOM AEE", dept: "BESCOM", detail: ward.bescom_unit || "", wardLevel: true });
+    if (unit) {
+      if (unit.division) steps.push({ badge: "Division EE", name: `EE – ${unit.division} Division`, phone: "", isGeneric: true });
+      if (unit.circle) steps.push({ badge: "Circle", name: `${unit.circle} Circle`, phone: "", isGeneric: true });
+      if (unit.zone) steps.push({ badge: "Zone", name: `${unit.zone} Zone`, phone: "", isGeneric: true });
+    }
+    steps.push({ badge: "Top", name: "BESCOM CEO", phone: "1912 (helpline)", isGeneric: true });
+    sections.push({ label: "Electricity / BESCOM", steps });
+  }
+
+  // BWSSB
+  if (ward.bwssb_ae || ward.bwssb_aee) {
+    const stRec = findBwssbEeForWard(ward);
+    const steps = [];
+    if (ward.bwssb_ae) steps.push({ badge: "Ward AE", name: ward.bwssb_ae, phone: ward.bwssb_ae_mobile || "", role: "BWSSB AE", dept: "BWSSB", detail: ward.bwssb_station || "", wardLevel: true });
+    if (ward.bwssb_aee) steps.push({ badge: "AEE", name: ward.bwssb_aee, phone: ward.bwssb_aee_mobile || "", email: ward.bwssb_aee_email || "", role: "BWSSB AEE", dept: "BWSSB", detail: ward.bwssb_station || "" });
+    if (stRec && stRec.ee_name) steps.push({ badge: "Division EE", name: stRec.ee_name, phone: "", email: stRec.division_email || "", role: "BWSSB EE", dept: "BWSSB", detail: stRec.division || "" });
+    steps.push({ badge: "Top", name: "BWSSB Chairman", phone: "1916 (helpline)", isGeneric: true });
+    sections.push({ label: "Water / BWSSB", steps });
+  }
+
+  // Traffic
+  if (ward.traffic_ps || ward.traffic_pio) {
+    const steps = [];
+    if (ward.traffic_ps) steps.push({ badge: "Police Station", name: ward.traffic_ps, phone: "", isGeneric: true, wardLevel: true });
+    if (ward.traffic_pio) steps.push({ badge: "PIO", name: ward.traffic_pio, phone: ward.traffic_pio_contact || "", role: "Traffic PIO", dept: "" });
+    steps.push({ badge: "Top", name: "DCP (Traffic)", phone: "", isGeneric: true });
+    sections.push({ label: "Traffic Police", steps });
+  }
+
+  // Roads / City Corp
+  if (ward.city_commissioner) {
+    const steps = [
+      { badge: "City Corp", name: ward.city_commissioner, phone: ward.city_commissioner_contact || "", email: ward.city_commissioner_email || "", role: "City Commissioner", dept: "BBMP", detail: ward.city_corp || "", wardLevel: true },
+      { badge: "Zone Comm.", name: "Zonal Commissioner", phone: "", isGeneric: true },
+      { badge: "Top", name: "BBMP Commissioner", phone: "", isGeneric: true },
+    ];
+    sections.push({ label: "Roads / City Corporation", steps });
+  }
+
+  // Political
+  if (ward.councillor || ward.mla || ward.mp) {
+    const steps = [];
+    if (ward.councillor) steps.push({ badge: "Councillor", name: ward.councillor, phone: ward.councillor_mobile || "", role: "Ward Councillor", dept: "", detail: `Ward ${ward.ward_no}`, wardLevel: true });
+    if (ward.mla) steps.push({ badge: "MLA", name: ward.mla, phone: ward.mla_phones || "", email: ward.mla_email || "", role: "MLA", dept: "", detail: ward.constituency || "" });
+    if (ward.mp) steps.push({ badge: "MP", name: ward.mp, phone: ward.mp_phones || "", email: ward.mp_email || "", role: "MP", dept: "", detail: ward.constituency || "" });
+    sections.push({ label: "Political Representatives", steps });
+  }
+
+  if (!sections.length) return "";
+
+  const secHTML = sections.map(s => {
+    const stepsHTML = s.steps.map((step, idx) => {
+      const isLast = idx === s.steps.length - 1;
+      const nameHTML = step.isGeneric
+        ? `<span class="ward-hier-name generic">${esc(step.name)}</span>`
+        : `<span class="official-name-link ward-hier-name" data-name="${esc(step.name)}" data-role="${esc(step.role || "")}" data-dept="${esc(step.dept || "")}" data-phone="${esc(step.phone || "")}" data-email="${esc(step.email || "")}" data-detail="${esc(step.detail || "")}">${esc(step.name)}</span>`;
+      const phoneHTML = step.phone
+        ? (step.isGeneric
+            ? `<span class="ward-hier-phone">${esc(step.phone)}</span>`
+            : `<a class="ward-hier-phone" href="tel:${esc(step.phone)}">${esc(step.phone)}</a>`)
+        : "";
+      return `<div class="ward-hier-step${step.wardLevel ? " ward-level" : ""}${isLast ? " last" : ""}">
+        <span class="ward-hier-badge">${esc(step.badge)}</span>${nameHTML}${phoneHTML}</div>`;
+    }).join("");
+    return `<div class="ward-hier-dept"><div class="ward-hier-dept-label">${esc(s.label)}</div><div class="ward-hier-steps">${stepsHTML}</div></div>`;
+  }).join("");
+
+  return `<div class="ward-hierarchy"><div class="ward-hier-title">Full Escalation Chains — Ward ${esc(String(ward.ward_no))}</div><div class="ward-hier-grid">${secHTML}</div></div>`;
 }
 
 // ── Org Chart ──────────────────────────────────────────────────────

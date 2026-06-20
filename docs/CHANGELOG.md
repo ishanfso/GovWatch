@@ -5,6 +5,33 @@ Format: `[Date] - What changed and why`
 
 ---
 
+## [2026-06-20] — Analytics raised-to tracker + Officials area auto-populate + Full ward hierarchy
+
+### What changed
+
+**`dashboard/index.html`**
+- New analytics card: "Requests Raised to Officials" — tracks every issue raised to a specific person
+
+**`dashboard/css/styles.css`**
+- `.raised-to-list`, `.raised-to-row`: analytics card styles for raised-to breakdown
+- `.ward-hierarchy`, `.ward-hier-*`: full escalation chain section below every ward card; ward-level official highlighted in green
+
+**`dashboard/js/app.js`**
+- **Analytics — Raised to Officials**: `renderRaisedToBreakdown()` scans all issues for localStorage assignments, groups by person name, shows ranked list with clickable names (opens their profile)
+- **Area filter → auto-populate ward**: `autoShowWardFromFilter()` — when an area filter is active (e.g. "Bellandur") and you open the Officials tab, the ward card for that area auto-renders; clears when filter is reset
+- **`applyFilters()` and `initOfficials()` updated** to call `autoShowWardFromFilter()` so the ward card is always in sync with the active filter
+- **Full ward hierarchy**: `buildWardHierarchyHTML(ward)` builds a 3-column escalation grid below every ward card:
+  - **Waste/SWM**: Ward JHI → AEE → Zonal SE (looked up from `swm_aee.json`/`swm_se.json`) → Commissioner SWM
+  - **BESCOM**: Ward AEE → Division EE → Circle → Zone → BESCOM CEO
+  - **BWSSB**: Ward AE → AEE → Division EE (looked up from `bwssb_stations.json`) → BWSSB Chairman
+  - **Traffic**: Police Station → PIO → DCP Traffic
+  - **Roads/City Corp**: City Commissioner → Zonal Commissioner → BBMP Commissioner
+  - **Political**: Councillor → MLA → MP
+- All names in hierarchy are clickable (`official-name-link`) to open the official's profile
+- Helper lookups: `findSwmSeForWard()`, `findBwssbEeForWard()`, `findBescomChainForWard()`
+
+---
+
 ## [2026-06-20] — Rebrand to Civic Issue India + Assignment system + Official profiles + Resolve flow + Design fixes
 
 ### What changed
