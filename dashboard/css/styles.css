@@ -1485,3 +1485,71 @@ a.sc-phone:hover { text-decoration: underline; }
   .ward-card-grid { grid-template-columns: repeat(2, 1fr); }
   .routing-grid { grid-template-columns: 1fr; }
 }
+
+/* ── Raised-to Analytics ────────────────────────────────────────── */
+.raised-to-list { display: flex; flex-direction: column; gap: 6px; }
+.raised-to-row {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 8px 12px; background: var(--surface); border: 1px solid var(--border);
+  border-radius: 6px; gap: 12px;
+}
+.raised-to-info { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.raised-to-role { font-size: .75rem; color: var(--muted); }
+.raised-to-count {
+  font-size: .85rem; font-weight: 600; color: var(--brand);
+  white-space: nowrap; background: var(--bg); border: 1px solid var(--border);
+  padding: 2px 8px; border-radius: 12px;
+}
+
+/* ── Ward Hierarchy ─────────────────────────────────────────────── */
+.ward-hierarchy {
+  margin-top: 16px; padding: 16px; background: var(--surface);
+  border: 1px solid var(--border); border-radius: 8px;
+}
+.ward-hier-title {
+  font-size: .8rem; font-weight: 600; text-transform: uppercase;
+  letter-spacing: .06em; color: var(--muted); margin-bottom: 14px;
+}
+.ward-hier-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+}
+.ward-hier-dept { display: flex; flex-direction: column; gap: 6px; }
+.ward-hier-dept-label {
+  font-size: .78rem; font-weight: 600; color: var(--brand);
+  padding-bottom: 4px; border-bottom: 1px solid var(--border);
+  margin-bottom: 4px;
+}
+.ward-hier-steps { display: flex; flex-direction: column; gap: 0; }
+.ward-hier-step {
+  display: flex; align-items: flex-start; gap: 6px; padding: 5px 0;
+  border-left: 2px solid var(--border); margin-left: 8px; padding-left: 10px;
+  position: relative; font-size: .8rem;
+}
+.ward-hier-step::before {
+  content: ""; position: absolute; left: -6px; top: 11px;
+  width: 10px; height: 2px; background: var(--border);
+}
+.ward-hier-step.ward-level {
+  border-left-color: var(--brand); background: rgba(31,77,58,.04);
+  padding: 6px 10px; border-radius: 0 4px 4px 0; margin-bottom: 2px;
+}
+.ward-hier-step.ward-level::before { background: var(--brand); }
+.ward-hier-step.last { border-left-color: transparent; }
+.ward-hier-badge {
+  font-size: .68rem; font-weight: 600; text-transform: uppercase;
+  letter-spacing: .04em; background: var(--bg); border: 1px solid var(--border);
+  padding: 1px 5px; border-radius: 3px; white-space: nowrap; color: var(--muted);
+  flex-shrink: 0;
+}
+.ward-hier-step.ward-level .ward-hier-badge {
+  background: var(--brand); color: #fff; border-color: var(--brand);
+}
+.ward-hier-name { color: var(--text); flex: 1; }
+.ward-hier-name.generic { color: var(--muted); font-style: italic; }
+.ward-hier-phone { color: var(--accent); font-size: .75rem; }
+@media (max-width: 1100px) {
+  .ward-hier-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 700px) {
+  .ward-hier-grid { grid-template-columns: 1fr; }
+}
