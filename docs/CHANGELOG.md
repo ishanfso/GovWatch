@@ -5,6 +5,35 @@ Format: `[Date] - What changed and why`
 
 ---
 
+## [2026-06-20] — Custom domain + public web app hardening
+
+### What changed
+
+**`CNAME`** (NEW)
+- Tells GitHub Pages to serve the site at `civicissue.in`
+- After pushing: go to repo Settings → Pages → Custom domain → enter `civicissue.in` → Save → enable Enforce HTTPS
+- Also add 4 DNS A records at your registrar pointing `@` to `185.199.108.153`, `.109`, `.110`, `.111`
+
+**`index.html`** (root, NEW)
+- Instant redirect from `civicissue.in/` → `civicissue.in/dashboard/`
+- Uses both `<meta http-equiv="refresh">` and `window.location.replace` for maximum compatibility
+
+**`404.html`** (NEW)
+- Custom 404 page that auto-redirects back to the dashboard after 3 seconds
+
+**`dashboard/index.html`**
+- Improved `<title>` for SEO
+- Full Open Graph meta tags (og:title, og:description, og:image, og:url) for WhatsApp/Twitter/LinkedIn previews
+- Twitter card meta tags
+- `X-Content-Type-Options: nosniff` meta header
+- `Content-Security-Policy` meta tag: restricts scripts/styles/images/fonts/connections to known safe origins; blocks framing (`frame-ancestors 'none'`)
+- Public disclaimer bar at top: "independent civic monitoring platform, not an official government portal" with dismiss button
+
+**`dashboard/css/styles.css`**
+- `.disclaimer-bar`, `.disclaimer-close` styles (amber info strip, dismissible)
+
+---
+
 ## [2026-06-20] — Analytics raised-to tracker + Officials area auto-populate + Full ward hierarchy
 
 ### What changed

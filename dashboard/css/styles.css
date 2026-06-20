@@ -41,6 +41,18 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* ── Disclaimer bar ─────────────────────────────────────────────── */
+.disclaimer-bar {
+  display: flex; align-items: center; gap: 12px; justify-content: space-between;
+  background: #fefce8; border-bottom: 1px solid #fde68a;
+  padding: 8px 20px; font-size: .8rem; color: #78350f; line-height: 1.4;
+}
+.disclaimer-close {
+  background: none; border: none; cursor: pointer; font-size: 1rem;
+  color: #92400e; flex-shrink: 0; padding: 2px 4px; line-height: 1;
+}
+.disclaimer-close:hover { color: #78350f; }
+
 /* ── Header ─────────────────────────────────────────────────────── */
 .header {
   background: var(--brand);
