@@ -81,6 +81,40 @@ const POC_DIRECTORY = {
   Other:       { dept: "BBMP",   div: "General",                 email: "bbmpcommissioner@bbmp.gov.in", phone: "080-22660000", tat: 72  },
 };
 
+// City-level contacts shown when issue has no specific ward (area = "Bangalore")
+const CITY_LEVEL_CONTACTS = {
+  Roads:       [
+    { role: "BBMP Commissioner",    detail: "Bruhat Bengaluru Mahanagara Palike", name: "BBMP Commissioner", phone: "080-22660000", email: "bbmpcommissioner@bbmp.gov.in", type: "first_contact" },
+    { role: "BBMP Roads Division",  detail: "Roads & Infrastructure",              name: "Roads Helpline",    phone: "080-22660000", email: "roads@bbmp.gov.in",            type: "cc" },
+  ],
+  Waste:       [
+    { role: "BBMP Commissioner",    detail: "Bruhat Bengaluru Mahanagara Palike", name: "BBMP Commissioner", phone: "080-22660000", email: "bbmpcommissioner@bbmp.gov.in", type: "first_contact" },
+    { role: "BBMP SWM",             detail: "Solid Waste Management",             name: "SWM Helpline",      phone: "1533",         email: "swm@bbmp.gov.in",              type: "cc" },
+  ],
+  Parks:       [
+    { role: "BBMP Commissioner",    detail: "Bruhat Bengaluru Mahanagara Palike", name: "BBMP Commissioner", phone: "080-22660000", email: "bbmpcommissioner@bbmp.gov.in", type: "first_contact" },
+    { role: "BBMP Parks Division",  detail: "Parks & Gardens",                   name: "Parks Helpline",    phone: "080-22660000", email: "parks@bbmp.gov.in",            type: "cc" },
+  ],
+  Flooding:    [
+    { role: "BBMP Commissioner",    detail: "Bruhat Bengaluru Mahanagara Palike", name: "BBMP Commissioner", phone: "080-22660000", email: "bbmpcommissioner@bbmp.gov.in", type: "first_contact" },
+    { role: "BBMP Storm Drains",    detail: "Storm Water Drains Division",        name: "Flood Helpline",    phone: "080-22660000", email: "jdflood@bbmp.gov.in",          type: "cc" },
+  ],
+  Electricity: [
+    { role: "BESCOM CEO",           detail: "Bangalore Electricity Supply Co.",   name: "BESCOM CEO",        phone: "1912",         email: "ceo@bescom.co.in",             type: "first_contact" },
+    { role: "BESCOM Consumer Care", detail: "Consumer Complaints",                name: "Consumer Care",     phone: "1912",         email: "consumer.care@bescom.co.in",   type: "cc" },
+  ],
+  Water:       [
+    { role: "BWSSB Chairman",       detail: "Bangalore Water Supply & Sewerage",  name: "BWSSB Chairman",    phone: "1916",         email: "chairman@bwssb.org",           type: "first_contact" },
+    { role: "BWSSB Grievances",     detail: "Consumer Grievances",                name: "Complaints Cell",   phone: "1916",         email: "complaints@bwssb.org",         type: "cc" },
+  ],
+  Traffic:     [
+    { role: "DCP Traffic",          detail: "Bangalore Traffic Police",           name: "Traffic Control",   phone: "103",          email: "traffic.blr@ksp.gov.in",       type: "first_contact" },
+  ],
+  Other:       [
+    { role: "BBMP Commissioner",    detail: "Bruhat Bengaluru Mahanagara Palike", name: "BBMP Commissioner", phone: "080-22660000", email: "bbmpcommissioner@bbmp.gov.in", type: "first_contact" },
+  ],
+};
+
 const ROLE_DEPARTMENTS = {
   bbmp:   ["Roads", "Waste", "Parks", "Flooding", "Other"],
   bescom: ["Electricity"],
@@ -796,6 +830,10 @@ function deptCard(name, info, issues) {
 
 function renderAnalytics(issues) {
   renderChart(issues);
+  renderAreaChart(issues);
+  renderBreakdownList("mla-breakdown",  issues, "constituency",  false);
+  renderBreakdownList("mp-breakdown",   issues, "mp",             false);
+  renderBreakdownList("zone-breakdown", issues, "city_corp",      true);
 
   // Severity breakdown bars
   const high   = issues.filter(i => i.severity === "high").length;
@@ -872,6 +910,89 @@ function renderChart(issues) {
       },
     },
   });
+}
+
+let areaChart = null;
+
+function renderAreaChart(issues) {
+  const ctx = document.getElementById("areaChart");
+  if (!ctx) return;
+
+  // Only issues with a specific area (not generic "Bangalore")
+  const located = issues.filter(i => i.area && i.area !== "Bangalore");
+  const counts = countBy(located, "area");
+  const entries = Object.entries(counts).sort((a, b) => b[1] - a[1]).slice(0, 20);
+
+  if (!entries.length) {
+    ctx.closest(".analytics-card").querySelector(".analytics-title").nextSibling.textContent = "";
+    ctx.closest(".chart-wrap").innerHTML = '<div class="breakdown-no-data">No location-tagged issues yet. Run enrich_locations.py to add ward data.</div>';
+    return;
+  }
+
+  const labels = entries.map(e => e[0]);
+  const values = entries.map(e => e[1]);
+  const colors = labels.map((_, i) => `hsl(${150 + (i * 9) % 120}, 45%, ${38 + (i % 3) * 5}%)`);
+
+  if (areaChart) areaChart.destroy();
+  areaChart = new Chart(ctx.getContext("2d"), {
+    type: "bar",
+    data: {
+      labels,
+      datasets: [{ label: "Issues", data: values, backgroundColor: colors, borderRadius: 3, borderSkipped: false }],
+    },
+    options: {
+      indexAxis: "y",
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: c => ` ${c.raw} issue${c.raw !== 1 ? "s" : ""}` } },
+      },
+      scales: {
+        x: { beginAtZero: true, ticks: { stepSize: 1, font: { size: 10 } }, grid: { color: "#e2dbd0" } },
+        y: { ticks: { font: { size: 10 } }, grid: { display: false } },
+      },
+    },
+  });
+}
+
+function renderBreakdownList(elId, issues, wardField, chips) {
+  const el = document.getElementById(elId);
+  if (!el) return;
+
+  // Pull field value from each issue's ward (requires ward_name to be set)
+  const counts = {};
+  for (const issue of issues) {
+    if (!issue.ward_name || !officialsLoaded) continue;
+    const ward = officialsData.wardLookup[issue.ward_name.toLowerCase()];
+    if (!ward) continue;
+    const val = ward[wardField];
+    if (!val) continue;
+    counts[val] = (counts[val] || 0) + 1;
+  }
+
+  const entries = Object.entries(counts).sort((a, b) => b[1] - a[1]);
+  if (!entries.length) {
+    el.innerHTML = '<div class="breakdown-no-data">No ward-mapped data yet.</div>';
+    return;
+  }
+
+  const max = entries[0][1];
+
+  if (chips) {
+    el.innerHTML = entries.map(([name, count]) => `
+      <div class="breakdown-chip">
+        <span class="breakdown-chip-name">${esc(name)}</span>
+        <span class="breakdown-chip-count">${count}</span>
+      </div>`).join("");
+  } else {
+    el.innerHTML = entries.slice(0, 15).map(([name, count]) => `
+      <div class="breakdown-row">
+        <div class="breakdown-name" title="${esc(name)}">${esc(name)}</div>
+        <div class="breakdown-bar-track"><div class="breakdown-bar-fill" style="width:${(count/max*100).toFixed(1)}%"></div></div>
+        <div class="breakdown-count">${count}</div>
+      </div>`).join("");
+  }
 }
 
 // ── Role Banner ────────────────────────────────────────────────────
@@ -1039,6 +1160,9 @@ async function initOfficials() {
     const issue = allIssues.find(i => i.id === selectedIssueId);
     if (issue) renderDetailPanel(issue);
   }
+
+  // Re-render analytics breakdown charts (they depend on ward data from officialsData)
+  if (activeTab === "analytics") renderAnalytics(getFiltered());
 
   // Render initial org chart and routing guide (only if Officials tab is active)
   renderOrgChart(activeOrgDept);
@@ -1673,17 +1797,8 @@ function getSmartContacts(issue) {
   if (!ward) ward = findWardByArea(area);
 
   if (!ward) {
-    // Fallback: use POC_DIRECTORY generic contacts
-    const poc = POC_DIRECTORY[category] || POC_DIRECTORY.Other;
-    contacts.push({
-      role: poc.dept,
-      detail: poc.div,
-      name: "General Inbox",
-      phone: poc.phone,
-      email: poc.email,
-      type: "first_contact",
-    });
-    return contacts;
+    // No ward found — show city-level department heads, not random ward officials
+    return CITY_LEVEL_CONTACTS[category] || CITY_LEVEL_CONTACTS.Other;
   }
 
   if (category === "Waste") {

@@ -5,6 +5,34 @@ Format: `[Date] - What changed and why`
 
 ---
 
+## [2026-06-20] — Fix Bangalore fallback contacts + smarter area extraction + analytics breakdowns
+
+### What changed
+
+**`dashboard/js/app.js`**
+- **Bangalore fallback fix**: When an issue has no specific ward (`area: "Bangalore"`), the "Who to Contact" panel now shows city-level department heads (BBMP Commissioner, BESCOM CEO, BWSSB Chairman, DCP Traffic) instead of a random ward's officials. Added `CITY_LEVEL_CONTACTS` constant keyed by category.
+- **Analytics — Top Areas**: New horizontal bar chart showing top 20 areas by issue count (only issues with a specific location, not "Bangalore")
+- **Analytics — MLA Constituencies**: Breakdown list showing which MLA constituencies have the most issues
+- **Analytics — MP Constituencies**: Breakdown list showing which MP constituencies have the most issues
+- **Analytics — Corporation Zones**: Chip-style breakdown of issues by BBMP zone/corporation area
+- Analytics breakdown charts re-render when officials data loads (was missing before)
+
+**`scripts/filter_issues.py`** (major update)
+- LLM call now returns **both verdict AND extracted area** in one JSON response — no extra API call needed
+- New `SYSTEM_PROMPT` asks Claude Haiku to: (1) classify the tweet and (2) extract the specific locality
+- Response format: `[{"verdict": "yes", "area": "K.Channasandra"}, ...]` — JSON array, one object per tweet
+- Backward compatible: old `filter_verdicts.json` entries (plain "yes"/"no" strings) still work
+- Newly classified issues get `area`, `ward_name`, `ward_no` set in-place before saving
+- Back-fills area/ward for already-yes tweets when area data is now present in verdicts
+- `BATCH_SIZE` reduced from 20 → 10 (JSON responses use more tokens)
+- `filter_verdicts.json` now stores `{"verdict": "yes/no", "area": "locality or null"}` per tweet
+
+**`dashboard/index.html`** — added 4 new analytics card sections
+
+**`dashboard/css/styles.css`** — added `.chart-wrap-tall`, `.breakdown-list`, `.breakdown-row`, `.breakdown-chip`, and related styles for new analytics cards
+
+---
+
 ## [2026-06-20] — Fix location mapping: correct ward → correct officials hierarchy
 
 ### Root cause

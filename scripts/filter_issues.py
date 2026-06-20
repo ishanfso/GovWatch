@@ -1,6 +1,7 @@
 """
-GovWatch -- LLM Issue Filter
-Uses Claude AI to remove non-issues from data/issues.json.
+GovWatch -- LLM Issue Filter + Area Extractor
+Uses Claude AI to remove non-issues and simultaneously extract the specific
+Bangalore locality from the tweet text.
 
 Incremental: tweet IDs that were already classified are never sent to the
 LLM again. Results are persisted in data/filter_verdicts.json so each run
@@ -10,6 +11,9 @@ Same-author near-duplicate tweets (same user spamming multiple @handles
 with identical text) are removed in a pre-processing step before the LLM,
 so the LLM never pays to classify them.
 
+Verdict format (new): {"verdict": "yes"/"no", "area": "locality or null"}
+Verdict format (old, backward-compat): "yes" / "no" string
+
 Usage:
   python filter_issues.py
 
@@ -18,13 +22,14 @@ Requirements:
   - pip install anthropic
 
 Reads:  data/issues.json
-Writes: data/issues.json (filtered)
+Writes: data/issues.json (filtered, with area/ward enriched for new tweets)
         data/issues_unfiltered.json (backup of full input)
-        data/filter_verdicts.json (persistent yes/no per tweet ID)
+        data/filter_verdicts.json (persistent verdict+area per tweet ID)
 """
 
 import json
 import os
+import re
 import sys
 import time
 
@@ -48,14 +53,38 @@ if not hasattr(config, "ANTHROPIC_API_KEY") or not config.ANTHROPIC_API_KEY:
 INPUT_FILE    = os.path.join(os.path.dirname(__file__), "../data/issues.json")
 BACKUP_FILE   = os.path.join(os.path.dirname(__file__), "../data/issues_unfiltered.json")
 VERDICTS_FILE = os.path.join(os.path.dirname(__file__), "../data/filter_verdicts.json")
+WARDS_FILE    = os.path.join(os.path.dirname(__file__), "../data/officials/wards.json")
+AREA_LOOKUP_FILE = os.path.join(os.path.dirname(__file__), "../data/officials/area_ward_lookup.json")
 
-BATCH_SIZE = 20
+BATCH_SIZE = 10  # Smaller batch for JSON responses (more tokens per tweet)
 
-SYSTEM_PROMPT = """You are filtering tweets to find genuine first-person citizen complaints about Bangalore civic infrastructure for a government action dashboard.
+# Area aliases for fuzzy ward matching
+AREA_ALIASES = {
+    "orr": "Outer Ring Road", "itpl": "Whitefield", "manyata": "Hebbal",
+    "kr puram": "KR Puram", "kr pura": "KR Puram", "malleswaram": "Malleshwaram",
+    "malleshwaram": "Malleshwaram", "chikkalsandra": "Basavanagudi",
+    "nagarbhavi": "Rajajinagar", "banaswadi": "Kalyan Nagar",
+    "rr nagar": "Rajajinagar", "mysore road": "Vijayanagar",
+    "old airport road": "Indiranagar", "airport road": "Indiranagar",
+    "cunningham road": "MG Road", "residency road": "MG Road",
+    "hsr": "HSR Layout", "btm": "BTM Layout", "jp nagar": "JP Nagar",
+    "jpnagar": "JP Nagar", "rt nagar": "RT Nagar", "hbr layout": "Kalyan Nagar",
+    "ulsoor": "Indiranagar", "ejipura": "Koramangala",
+    "haralur": "Bellandur", "sarjapur road": "Bellandur",
+    "bommasandra": "Bommanahalli", "attibele": "Electronic City",
+    "k channasandra": "Kalyan Nagar", "channasandra": "Kalyan Nagar",
+    "k.channasandra": "Kalyan Nagar",
+}
+
+SYSTEM_PROMPT = """You are analyzing tweets about Bangalore civic issues for a government action dashboard.
+
+For each tweet, you must do TWO things:
+1. Decide if it is a genuine first-person citizen complaint about civic infrastructure
+2. Extract the specific Bangalore locality mentioned (if any)
 
 THE CORE TEST: Is a private citizen personally reporting a problem they are experiencing right now?
 
-PASS (answer "yes"):
+PASS (verdict: "yes"):
 - Citizen reports power cut / outage in their area (any location, even vague)
 - Citizen reports garbage not collected from their street or area
 - Citizen reports water supply failure, pipe burst, or sewage overflow
@@ -65,35 +94,36 @@ PASS (answer "yes"):
 - Citizen reports a traffic signal failure or dangerous road condition
 - Automated location-tagged reports from civic bots (e.g. NammaKasa) listing specific dump sites
 
-FAIL (answer "no") -- reject if ANY one of these applies:
+FAIL (verdict: "no") -- reject if ANY one of these applies:
 - Written by a NEWS or MEDIA account (@ANI, @NewsArenaIndia, @tv9kannada, journalism-style prose, or links to articles)
 - Reports a POLITICIAN or OFFICIAL VISIT to any location (park, exhibition, inauguration) -- even at a BBMP/government space
 - GOVERNMENT ANNOUNCEMENT: new scheme launch, new bus route, new service, work in progress, work completed
 - AWARENESS CAMPAIGN or public safety post (phone theft awareness, BMTC safety tips, health campaigns)
 - SERVICE PROMOTION: free pickup offer, new app, new scheme registration, government initiative rollout
-- GENERAL CITY OPINION with no personal incident: "Bangalore is a garbage city", "roads are terrible" -- sweeping statements about the city, not about what the author personally experienced
+- GENERAL CITY OPINION with no personal incident: sweeping statements about the city, not about what the author personally experienced
 - POLITICAL RANT: blaming a party/politician without a specific personal civic complaint attached
 - REQUEST for new infrastructure: new road, new bus route, new water connection
 - COMPARISON post: "Kochi / Mumbai has better X than Bangalore"
 - APPRECIATION or CONGRATULATION for completed work
-- AGGREGATE REPORT or civic scorecard from a monitoring organisation or NGO
 - Same author, near-identical text repeated in this batch (spam to multiple handles) -- mark all but first as "no"
+
+AREA EXTRACTION RULES:
+- Return the most specific Bangalore locality (neighbourhood, layout, road name, area name)
+- Examples: "K.Channasandra", "Koramangala 5th Block", "HSR Layout Sector 1", "Bannerghatta Road"
+- Strip "Bangalore"/"Bengaluru" from the result (e.g. return "Whitefield", not "Whitefield, Bangalore")
+- If only a broad city mention with no specific area: return null
+- Even for "no" verdicts, extract the area if present
 
 IMPORTANT: Different people reporting the same problem each get "yes" -- each citizen complaint is independent.
 
-EXAMPLES:
-"Ex-PM HD Devegowda visits mango exhibition at Cubbon Park" -> NO (politician visit reported by media)
-"BMTC launches new Vajra Volvo AC bus to Tumakuru" -> NO (government announcement)
-"Young man spreading awareness about phone theft on BMTC" -> NO (awareness campaign)
-"Free bulky waste doorstep pickup now available in Bengaluru" -> NO (service promotion)
-"Power cut at HSR Layout since 5 hours @NammaBESCOM" -> YES (citizen complaint)
-"Garbage not collected from our street for 3 days" -> YES (vague location is fine)
-"BESCOM bill doubled this month despite same usage" -> YES (billing complaint)
-"No water supply in KG Halli since Friday" -> YES (citizen complaint)
-"Bangalore roads are the worst in India" -> NO (general opinion, no personal incident)
-"Many parts of Bengaluru roads have become HORRIBLE, roads dug up" -> NO (general opinion commentary, not a personal report)
+RESPONSE FORMAT: Return a JSON array with exactly one object per tweet, in order:
+[
+  {"verdict": "yes", "area": "Koramangala"},
+  {"verdict": "no", "area": null},
+  {"verdict": "yes", "area": "K.Channasandra"}
+]
 
-For each tweet, respond with only "yes" or "no". No explanation."""
+Return ONLY the JSON array. No explanation, no markdown."""
 
 
 def jaccard_similarity(text1, text2):
@@ -129,22 +159,98 @@ def dedup_same_author(tweets, known_verdicts):
     return unique, auto_rejected
 
 
+def get_verdict_str(v):
+    """Normalize a verdict entry to 'yes'/'no' string (handles old string format and new dict)."""
+    if v is None:
+        return None
+    if isinstance(v, str):
+        return v
+    if isinstance(v, dict):
+        return v.get("verdict", "yes")
+    return None
+
+
+def get_area_from_verdict(v):
+    """Extract area from a verdict entry (new dict format only)."""
+    if isinstance(v, dict):
+        return v.get("area") or None
+    return None
+
+
+def trigram_sim(a, b):
+    """Jaccard similarity on character trigrams."""
+    def tg(s):
+        s = s.lower()
+        return {s[i:i+3] for i in range(len(s) - 2)} if len(s) >= 3 else {s}
+    ta, tb = tg(a), tg(b)
+    inter = len(ta & tb)
+    union = len(ta | tb)
+    return inter / union if union else 0
+
+
+def load_ward_data():
+    """Load wards and area lookup for ward matching. Returns (wards, area_lookup) or ([], {})."""
+    wards, area_lookup = [], {}
+    try:
+        with open(WARDS_FILE, encoding="utf-8") as f:
+            wards = json.load(f)
+    except Exception:
+        pass
+    try:
+        with open(AREA_LOOKUP_FILE, encoding="utf-8") as f:
+            area_lookup = json.load(f)
+    except Exception:
+        pass
+    return wards, area_lookup
+
+
+def match_ward(area, wards, area_lookup):
+    """Match an extracted area string to a ward object using area lookup + trigram similarity."""
+    if not area or area.lower() in ("bangalore", "bengaluru", ""):
+        return None
+
+    lc = area.lower().strip()
+    # Apply aliases
+    lc = AREA_ALIASES.get(lc, area).lower()
+
+    # Pass 1 — substring match in area_ward_lookup (high-confidence entries only)
+    for key, info in area_lookup.items():
+        if key == "Bangalore":
+            continue
+        if info.get("match_score", 0) < 0.8:
+            continue
+        kl = key.lower()
+        wn = info["ward_name"].lower()
+        if lc == kl or lc in kl or kl in lc:
+            for w in wards:
+                if w.get("ward_name", "").lower() == wn:
+                    return w
+
+    # Pass 2 — trigram similarity against all 369 ward names
+    best, best_score = None, 0.35
+    for w in wards:
+        score = trigram_sim(lc, w.get("ward_name", "").lower())
+        if score > best_score:
+            best_score = score
+            best = w
+    return best
+
+
 def classify_batch(client, tweets):
-    """Classify a batch of tweets. Returns list of 'yes'/'no' strings."""
+    """Classify a batch of tweets. Returns list of dicts: {"verdict": str, "area": str|None}."""
     numbered = "\n\n".join(
         f"Tweet {i + 1} [by {t.get('author', 'unknown')}]: {t['text']}"
         for i, t in enumerate(tweets)
     )
     user_msg = (
-        f"Classify each of the following {len(tweets)} tweets as a genuine civic issue "
-        f"(yes) or not (no).\n"
-        f"Respond with exactly {len(tweets)} lines, each containing only 'yes' or 'no'.\n\n"
+        f"Analyze the following {len(tweets)} tweets.\n"
+        f"Return a JSON array with exactly {len(tweets)} objects in the same order.\n\n"
         f"{numbered}"
     )
 
     response = client.messages.create(
-        model="claude-haiku-4-5",
-        max_tokens=200,
+        model="claude-haiku-4-5-20251001",
+        max_tokens=500,
         system=[
             {
                 "type": "text",
@@ -155,14 +261,44 @@ def classify_batch(client, tweets):
         messages=[{"role": "user", "content": user_msg}],
     )
 
-    raw = response.content[0].text.strip().lower()
-    lines = [ln.strip() for ln in raw.splitlines() if ln.strip() in ("yes", "no")]
+    raw = response.content[0].text.strip()
 
-    # If response is truncated, default to keeping the tweet (safer than discarding)
-    while len(lines) < len(tweets):
-        lines.append("yes")
+    # Parse JSON array response
+    try:
+        # Strip markdown code fences if present
+        raw = re.sub(r"^```(?:json)?\s*", "", raw, flags=re.MULTILINE)
+        raw = re.sub(r"\s*```$", "", raw, flags=re.MULTILINE)
+        results = json.loads(raw)
+        if not isinstance(results, list):
+            raise ValueError("Not a list")
+    except Exception:
+        # Fallback: try to extract individual JSON objects
+        results = []
+        for m in re.finditer(r'\{[^{}]+\}', raw):
+            try:
+                results.append(json.loads(m.group()))
+            except Exception:
+                pass
 
-    return lines[: len(tweets)]
+    # Normalize results and pad if truncated
+    output = []
+    for item in results[:len(tweets)]:
+        if isinstance(item, dict):
+            verdict = item.get("verdict", "yes").lower().strip()
+            if verdict not in ("yes", "no"):
+                verdict = "yes"
+            area = item.get("area") or None
+            if area and area.lower() in ("bangalore", "bengaluru", "null", "none", ""):
+                area = None
+        else:
+            verdict, area = "yes", None
+        output.append({"verdict": verdict, "area": area})
+
+    # If response truncated, default to keeping (safer than discarding)
+    while len(output) < len(tweets):
+        output.append({"verdict": "yes", "area": None})
+
+    return output[:len(tweets)]
 
 
 def filter_issues():
@@ -175,6 +311,10 @@ def filter_issues():
 
     print(f"Loaded {len(issues)} issues from {INPUT_FILE}")
 
+    # Load ward data for area → ward matching
+    wards, area_lookup = load_ward_data()
+    print(f"  Ward data: {len(wards)} wards, {len(area_lookup)} area entries loaded")
+
     # Load existing verdicts from previous runs
     known_verdicts = {}
     if os.path.exists(VERDICTS_FILE):
@@ -184,8 +324,8 @@ def filter_issues():
 
     # Split: already classified vs needs LLM
     needs_classification = [t for t in issues if t["id"] not in known_verdicts]
-    already_yes = [t for t in issues if known_verdicts.get(t["id"]) == "yes"]
-    already_no_count = sum(1 for t in issues if known_verdicts.get(t["id"]) == "no")
+    already_yes = [t for t in issues if get_verdict_str(known_verdicts.get(t["id"])) == "yes"]
+    already_no_count = sum(1 for t in issues if get_verdict_str(known_verdicts.get(t["id"])) == "no")
 
     print(f"  Already classified: {len(already_yes)} kept + {already_no_count} previously removed")
     print(f"  New tweets to classify: {len(needs_classification)}")
@@ -197,6 +337,7 @@ def filter_issues():
 
     newly_kept = []
     newly_removed = []
+    auto_dups = []
 
     if needs_classification:
         # Pre-filter: auto-reject same-author near-duplicates before paying for LLM
@@ -204,7 +345,7 @@ def filter_issues():
         if auto_dups:
             print(f"  Auto-rejected {len(auto_dups)} same-author duplicate tweets (no LLM cost)")
             for tweet in auto_dups:
-                known_verdicts[tweet["id"]] = "no"
+                known_verdicts[tweet["id"]] = {"verdict": "no", "area": None}
                 newly_removed.append(tweet)
 
         client = anthropic.Anthropic(api_key=config.ANTHROPIC_API_KEY)
@@ -220,31 +361,60 @@ def filter_issues():
             )
 
             try:
-                verdicts = classify_batch(client, batch)
+                results = classify_batch(client, batch)
             except Exception as e:
                 print(f"ERROR -- {e}. Keeping all tweets in this batch.")
                 newly_kept.extend(batch)
                 for tweet in batch:
-                    known_verdicts[tweet["id"]] = "yes"
+                    known_verdicts[tweet["id"]] = {"verdict": "yes", "area": None}
                 continue
 
             batch_kept = 0
             batch_removed = 0
-            for tweet, verdict in zip(batch, verdicts):
-                known_verdicts[tweet["id"]] = verdict
+            for tweet, result in zip(batch, results):
+                verdict = result["verdict"]
+                area = result["area"]
+
+                known_verdicts[tweet["id"]] = {"verdict": verdict, "area": area}
+
                 if verdict == "yes":
+                    # Enrich with area + ward if LLM found a location
+                    if area:
+                        tweet["area"] = area
+                        ward = match_ward(area, wards, area_lookup)
+                        if ward:
+                            tweet["ward_name"] = ward.get("ward_name", "")
+                            tweet["ward_no"] = ward.get("ward_no", "")
                     newly_kept.append(tweet)
                     batch_kept += 1
                 else:
                     newly_removed.append(tweet)
                     batch_removed += 1
 
+            # Also enrich already-yes tweets that have new area data from this same verdicts run
+            # (these are tweets classified in prior runs that now have area in their verdict)
             print(f"kept {batch_kept}, removed {batch_removed}")
 
             if batch_num < total_batches:
                 time.sleep(0.5)
     else:
         print("  No new tweets to classify -- all already processed.")
+
+    # Back-fill area/ward from verdicts dict for already-yes tweets that have area stored
+    enriched_existing = 0
+    for tweet in already_yes:
+        v = known_verdicts.get(tweet["id"])
+        area = get_area_from_verdict(v)
+        if area and (not tweet.get("area") or tweet.get("area") == "Bangalore"):
+            tweet["area"] = area
+            ward = match_ward(area, wards, area_lookup)
+            if ward:
+                tweet["ward_name"] = ward.get("ward_name", "")
+                tweet["ward_no"] = ward.get("ward_no", "")
+                enriched_existing += 1
+
+    if enriched_existing:
+        print(f"  Back-filled area/ward for {enriched_existing} previously-kept tweets")
 
     # Persist updated verdicts
     with open(VERDICTS_FILE, "w", encoding="utf-8") as f:
@@ -260,7 +430,7 @@ def filter_issues():
 
     print(f"\nDone!")
     print(f"  Previously kept:  {len(already_yes)}")
-    print(f"  Auto-deduped:     {len([t for t in newly_removed if t in auto_dups]) if needs_classification else 0}")
+    print(f"  Auto-deduped:     {len(auto_dups)}")
     print(f"  Newly kept:       {len(newly_kept)}")
     print(f"  Total in feed:    {len(kept)}")
     print(f"  Removed this run: {len(newly_removed)}")
