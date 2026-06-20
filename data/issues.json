@@ -13160,5 +13160,38 @@
       "dump"
     ],
     "status": "open"
+  },
+  {
+    "id": "2068312040452849690",
+    "text": "@RahulGandhi Reason why @INCIndia will never be trusted by #indian voters again, unless they stop working like it’s 1890s! Just one rain in Bengaluru and there has been no electricity since 4 hours around Kaggadaspura area. Bengaluru is in shambles! @NammaBESCOM blocked our call!",
+    "author": "@BhagwaVajra",
+    "date": "2026-06-20T12:36:32+00:00",
+    "category": "Electricity",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2068312040452849690",
+    "keywords": [
+      "no electricity",
+      "bescom"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2068309835406606446",
+    "text": "Such a terrible traffic jam on Sarjapur Road.. vehicles are stuck for nearly an hour now..Could the @ Bengaluru Traffic Police bother to look into this?",
+    "author": "@sangeetakwr",
+    "date": "2026-06-20T12:27:46+00:00",
+    "category": "Traffic",
+    "area": "Sarjapur",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2068309835406606446",
+    "keywords": [
+      "traffic jam"
+    ],
+    "status": "open"
   }
 ]
