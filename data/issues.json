@@ -271,6 +271,22 @@
     "status": "open"
   },
   {
+    "id": "2068229164361220303",
+    "text": "Silicon valley of India - Bangalore \n\nGoing through power cut from morning 😠",
+    "author": "@unfiltered_ajit",
+    "date": "2026-06-20T07:07:13+00:00",
+    "category": "Electricity",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 7,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2068229164361220303",
+    "keywords": [
+      "power cut"
+    ],
+    "status": "open"
+  },
+  {
     "id": "2056421082295672966",
     "text": "@NammaBESCOM  @mdbescom @NammaBESCOM Frequent/unexpected power outage in Kannamangala, VBHC Serene Town, Bengaluru - 560067. No updates from support. Requesting immediate action and ETA for restoration. #PowerCut #BESCOM",
     "author": "@AmitRathod9997",
@@ -13008,6 +13024,74 @@
     "source_url": "https://twitter.com/i/web/status/2068175014726439272",
     "keywords": [
       "garbage"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2068245970609963339",
+    "text": "@NammaBESCOM  No electricity in area. When will it be restored?\n\nAddress - Rachenahalli main road, thanisandra, Bengaluru - 560077",
+    "author": "@manglamiam",
+    "date": "2026-06-20T08:14:00+00:00",
+    "category": "Electricity",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2068245970609963339",
+    "keywords": [
+      "no electricity",
+      "bescom"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2068240072152096960",
+    "text": "@BescomHelpline @NammaBESCOM power outage since 2 hrs. Pls resolve immediately. Helpline no 1912 is busy / nobody answering. Bangalore , karnataka , 560091",
+    "author": "@sandeepbaluti",
+    "date": "2026-06-20T07:50:33+00:00",
+    "category": "Electricity",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2068240072152096960",
+    "keywords": [
+      "power outage",
+      "bescom"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2068219175735292078",
+    "text": "@NammaBESCOM there is no electricity since early morning. When will it be restored? \n\n72, 8th Main Avalahalli BDA Layout BSK 3rd Stage, Bengaluru 560085\n\nAmith Kumar - 9482834638",
+    "author": "@ShankarAmith",
+    "date": "2026-06-20T06:27:31+00:00",
+    "category": "Electricity",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2068219175735292078",
+    "keywords": [
+      "no electricity",
+      "bescom"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2068263815997956114",
+    "text": "🗑 Garbage dump at Near military place , K r puram metro, A Narayanapura.\n\nMLA: B. A. Basavaraja (BJP)\nEast #20 · Moderate severity\n\nTrack it → https://t.co/qUgh8lO1VJ\n\n#NammaKasa #Bengaluru #CivicDuty",
+    "author": "@shetty_ash32439",
+    "date": "2026-06-20T09:24:54+00:00",
+    "category": "Waste",
+    "area": "Bangalore",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2068263815997956114",
+    "keywords": [
+      "garbage",
+      "dump"
     ],
     "status": "open"
   }
