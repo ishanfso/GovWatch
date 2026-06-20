@@ -5,31 +5,33 @@ Format: `[Date] - What changed and why`
 
 ---
 
-## [2026-06-20] — Fix Bangalore fallback contacts + smarter area extraction + analytics breakdowns
+## [2026-06-20] — Fix ward mapping: correct aliases, preserve data across refreshes, backfill 794 issues
 
 ### What changed
 
-**`dashboard/js/app.js`**
-- **Bangalore fallback fix**: When an issue has no specific ward (`area: "Bangalore"`), the "Who to Contact" panel now shows city-level department heads (BBMP Commissioner, BESCOM CEO, BWSSB Chairman, DCP Traffic) instead of a random ward's officials. Added `CITY_LEVEL_CONTACTS` constant keyed by category.
-- **Analytics — Top Areas**: New horizontal bar chart showing top 20 areas by issue count (only issues with a specific location, not "Bangalore")
-- **Analytics — MLA Constituencies**: Breakdown list showing which MLA constituencies have the most issues
-- **Analytics — MP Constituencies**: Breakdown list showing which MP constituencies have the most issues
-- **Analytics — Corporation Zones**: Chip-style breakdown of issues by BBMP zone/corporation area
-- Analytics breakdown charts re-render when officials data loads (was missing before)
+**`scripts/process_issues.py`** (updated)
+- No longer uses `area_ward_lookup.json` (which had wrong entries: Jayanagar→Kalyanagar, Electronic City→Cottonpete, Girinagar→Srinagar via trigram).
+- Now uses a curated `AREA_TO_WARD` dict (80+ geographically verified mappings) with trigram fallback.
+- Adds `existing_ward_cache` at startup: loads `issues.json` before reprocessing, preserves `ward_name`, `ward_no`, `lat`, `lon` for any tweet that already has ward data. Manually-enriched data is never wiped by a fresh process run.
+- New `lat`/`lon` fields added to every issue dict (null by default; set when geocoding enriches them).
+- Key corrections: Girinagar→Rajajinagara, Electronic City→Bommanahalli, Sarjapur→Anjanapura, Jayanagar→Jayanagar East.
 
-**`scripts/filter_issues.py`** (major update)
-- LLM call now returns **both verdict AND extracted area** in one JSON response — no extra API call needed
-- New `SYSTEM_PROMPT` asks Claude Haiku to: (1) classify the tweet and (2) extract the specific locality
-- Response format: `[{"verdict": "yes", "area": "K.Channasandra"}, ...]` — JSON array, one object per tweet
-- Backward compatible: old `filter_verdicts.json` entries (plain "yes"/"no" strings) still work
-- Newly classified issues get `area`, `ward_name`, `ward_no` set in-place before saving
-- Back-fills area/ward for already-yes tweets when area data is now present in verdicts
-- `BATCH_SIZE` reduced from 20 → 10 (JSON responses use more tokens)
-- `filter_verdicts.json` now stores `{"verdict": "yes/no", "area": "locality or null"}` per tweet
+**`scripts/filter_issues.py`** (updated)
+- Upgraded to the full area-extracting version (extracts specific locality from tweet text alongside yes/no verdict).
+- Replaced AREA_ALIASES dict and area_ward_lookup.json dependency with the same AREA_TO_WARD dict used by process_issues.py.
+- Key alias fixes: chikkalsandra→Chikkalasandra (was wrong Basavanagudi), hbr layout→HBR Layout (was wrong Kalyan Nagar), channasandra→Channasandra (was wrong Kalyan Nagar), mysore road→Kengeri (was wrong Vijayanagar), girinagar→Rajajinagara (new, prevents wrong Srinagar trigram match).
+- Removed wrong entry: attibele→Electronic City (Electronic City is not a ward name).
 
-**`dashboard/index.html`** — added 4 new analytics card sections
+**`scripts/backfill_wards.py`** (NEW)
+- One-time keyword-based backfill script (no LLM/API cost).
+- Pass 1: 105 issues with specific area but no ward → got ward via AREA_TO_WARD + trigram (101 fixed; Anekal and Hoskote remain outside ward boundaries).
+- Pass 2: 624 issues with area="Bangalore" → scanned tweet text for all 369 ward names + all AREA_TO_WARD keys (214 fixed, also got specific area label).
+- Total: 315 new ward assignments. Issues with ward_name went from 65 → 380 (47% coverage).
 
-**`dashboard/css/styles.css`** — added `.chart-wrap-tall`, `.breakdown-list`, `.breakdown-row`, `.breakdown-chip`, and related styles for new analytics cards
+**`data/issues.json`** (updated)
+- 315 additional issues now have ward_name and ward_no set.
+- Girinagar issues now correctly point to Rajajinagara ward (not Srinagar).
+- Electronic City issues now correctly point to Bommanahalli ward (not Cottonpete).
 
 ---
 

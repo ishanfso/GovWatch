@@ -1,9 +1,9 @@
 """
 GovWatch — Issue Processing Script
 Categorizes raw tweets into civic issue types, assigns severity, extracts area.
-For areas matching the 28-entry area lookup, ward_name and ward_no are stored
-immediately. Remaining "Bangalore"-tagged issues should be enriched by running
-enrich_locations.py afterwards.
+Uses a curated AREA_TO_WARD dict (geographically verified) + trigram fallback to
+assign ward_name/ward_no. Preserves existing ward enrichment from issues.json
+(ward_name, ward_no, lat, lon) so manually-enriched data is never wiped.
 
 Usage:
   python process_issues.py
@@ -17,12 +17,105 @@ import os
 import re
 from datetime import datetime
 
-RAW_FILE = os.path.join(os.path.dirname(__file__), "../data/raw_tweets.json")
+RAW_FILE    = os.path.join(os.path.dirname(__file__), "../data/raw_tweets.json")
 OUTPUT_FILE = os.path.join(os.path.dirname(__file__), "../data/issues.json")
-AREA_LOOKUP_FILE = os.path.join(os.path.dirname(__file__), "../data/officials/area_ward_lookup.json")
-WARDS_FILE = os.path.join(os.path.dirname(__file__), "../data/officials/wards.json")
+WARDS_FILE  = os.path.join(os.path.dirname(__file__), "../data/officials/wards.json")
 
-# Keyword rules for each category (order matters — first match wins)
+# ---------------------------------------------------------------------------
+# Geographically verified area -> canonical ward name mapping.
+# Keys are lowercase; values are exact ward_name strings from wards.json.
+# Do NOT use area_ward_lookup.json -- it contains wrong entries.
+# ---------------------------------------------------------------------------
+AREA_TO_WARD = {
+    "koramangala":       "Koramangala East",
+    "indiranagar":       "Indiranagar",
+    "whitefield":        "Whitefield",
+    "jayanagar":         "Jayanagar East",
+    "jayanagar east":    "Jayanagar East",
+    "hsr layout":        "HSR Layout",
+    "hsr":               "HSR Layout",
+    "btm layout":        "RBI Layout",
+    "btm":               "RBI Layout",
+    "marathahalli":      "Marathahalli",
+    "sarjapur":          "Anjanapura",
+    "sarjapur road":     "Bellandur",
+    "electronic city":   "Bommanahalli",
+    "hebbal":            "Hebbal",
+    "malleshwaram":      "Malleshwaram",
+    "malleswaram":       "Malleshwaram",
+    "rajajinagar":       "Rajajinagara",
+    "girinagar":         "Rajajinagara",
+    "nagarbhavi":        "Rajajinagara",
+    "rr nagar":          "Rajajinagara",
+    "jp nagar":          "J.P Nagar",
+    "jpnagar":           "J.P Nagar",
+    "bannerghatta":      "Gottigere",
+    "bannerghatta road": "Gottigere",
+    "yelahanka":         "Yelahanka Old Town",
+    "mg road":           "Shivajinagar",
+    "cubbon park":       "J.P Park",
+    "lalbagh":           "J.P Park",
+    "kr puram":          "K R Pura",
+    "kr pura":           "K R Pura",
+    "k r pura":          "K R Pura",
+    "old madras road":   "K R Pura",
+    "bellandur":         "Bellandur",
+    "outer ring road":   "Bellandur",
+    "orr":               "Bellandur",
+    "haralur":           "Bellandur",
+    "domlur":            "Domlur",
+    "madiwala":          "Madiwala",
+    "basavanagudi":      "Basavanapura",
+    "vijayanagar":       "Vinayakanagar",
+    "yeshwantpur":       "Yeshwanthpura",
+    "peenya":            "Peenya",
+    "peenya industrial": "Peenya",
+    "tumkur road":       "Peenya",
+    "bommanahalli":      "Bommanahalli",
+    "bommasandra":       "Bommanahalli",
+    "nagawara":          "Nagavara",
+    "nagavara":          "Nagavara",
+    "nayandahalli":      "Nayanda Halli",
+    "chikkalsandra":     "Chikkalasandra",
+    "chikkalasandra":    "Chikkalasandra",
+    "rt nagar":          "R T Nagar",
+    "r t nagar":         "R T Nagar",
+    "kammanahalli":      "Kammanahalli",
+    "kalyan nagar":      "Kalyanagar",
+    "banaswadi":         "Kalyanagar",
+    "hbr layout":        "HBR Layout",
+    "hongasandra":       "Hongasandra",
+    "hulimavu":          "Hulimavu",
+    "begur":             "Beguru",
+    "gottigere":         "Gottigere",
+    "singasandra":       "Singasandra",
+    "cox town":          "Cox Town",
+    "benson town":       "Cox Town",
+    "frazer town":       "Cox Town",
+    "richards town":     "Cox Town",
+    "ulsoor":            "Indiranagar",
+    "ejipura":           "Koramangala East",
+    "koramangala east":  "Koramangala East",
+    "manyata":           "Hebbal",
+    "itpl":              "Whitefield",
+    "padmanabha nagar":  "Padmanabhanagar",
+    "padmanabhanagar":   "Padmanabhanagar",
+    "channasandra":      "Channasandra",
+    "k.channasandra":    "Channasandra",
+    "k channasandra":    "Channasandra",
+    "devanahalli":       "Yelahanka Old Town",
+    "majestic":          "Sampangirama Nagar",
+    "shivajinagar":      "Shivajinagar",
+    "shivaji nagar":     "Shivajinagar",
+    "austin town":       "Austin Town",
+    "vasanthnagar":      "Sampangirama Nagar",
+    "gandhinagar":       "Gandhi Nagar",
+    "gandhi nagar":      "Gandhi Nagar",
+    "mysore road":       "Kengeri",
+    "kengeri":           "Kengeri",
+}
+
+# Keyword rules for each category (order matters -- first match wins)
 CATEGORY_RULES = {
     "Flooding": [
         "waterlog", "flood", "submerge", "storm drain", "inundat",
@@ -55,7 +148,7 @@ CATEGORY_RULES = {
     ],
 }
 
-# Bangalore areas — used to extract location from tweet text
+# Bangalore areas -- used to extract location from tweet text
 BANGALORE_AREAS = [
     "Koramangala", "Indiranagar", "Whitefield", "Jayanagar", "HSR Layout",
     "BTM Layout", "Marathahalli", "Sarjapur", "Electronic City", "Hebbal",
@@ -72,7 +165,61 @@ BANGALORE_AREAS = [
 ]
 
 
-def categorize(text: str) -> str:
+def load_wards():
+    """Load all 369 wards from wards.json."""
+    try:
+        with open(WARDS_FILE, encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return []
+
+
+WARDS = load_wards()
+
+
+def trigram_sim(a, b):
+    """Jaccard similarity on character trigrams."""
+    def tg(s):
+        s = s.lower()
+        return {s[i:i+3] for i in range(len(s) - 2)} if len(s) >= 3 else {s}
+    ta, tb = tg(a), tg(b)
+    return len(ta & tb) / len(ta | tb) if (ta | tb) else 0
+
+
+def get_ward_for_area(area, wards):
+    """
+    Return (ward_name, ward_no) for a given area string.
+    Strategy:
+      1. Exact/lowercase match in AREA_TO_WARD dict (geographically verified)
+      2. Trigram similarity fallback against all 369 ward names (threshold 0.4)
+    Returns ('', '') if no match found or area is generic.
+    """
+    if not area or area.lower() in ("bangalore", "bengaluru", ""):
+        return "", ""
+
+    lc = area.lower().strip()
+
+    # Pass 1 -- curated mapping
+    ward_name = AREA_TO_WARD.get(lc)
+    if ward_name:
+        for w in wards:
+            if w["ward_name"] == ward_name:
+                return w["ward_name"], w["ward_no"]
+
+    # Pass 2 -- trigram fallback (threshold 0.4)
+    best, best_score = None, 0.40
+    for w in wards:
+        score = trigram_sim(lc, w["ward_name"].lower())
+        if score > best_score:
+            best_score = score
+            best = w
+    if best:
+        return best["ward_name"], best["ward_no"]
+
+    return "", ""
+
+
+def categorize(text):
     lower = text.lower()
     for category, keywords in CATEGORY_RULES.items():
         for kw in keywords:
@@ -81,49 +228,14 @@ def categorize(text: str) -> str:
     return "Other"
 
 
-def extract_area(text: str) -> str:
+def extract_area(text):
     for area in BANGALORE_AREAS:
         if area.lower() in text.lower():
             return area
     return "Bangalore"
 
 
-def load_ward_lookup():
-    """Build area→ward mapping from static JSON files (high-confidence entries only).
-    Returns dict of area.lower() → (ward_name, ward_no).
-    Only includes area_ward_lookup entries with match_score >= 0.8 and excludes the
-    generic 'Bangalore' entry (score 0.6 → Bagalagunte, which is meaningless).
-    Issues tagged 'Bangalore' need LLM enrichment via enrich_locations.py.
-    """
-    lookup = {}
-    try:
-        with open(AREA_LOOKUP_FILE, encoding="utf-8") as f:
-            area_map = json.load(f)
-        with open(WARDS_FILE, encoding="utf-8") as f:
-            wards = json.load(f)
-        ward_by_name = {w["ward_name"].lower(): w for w in wards if w.get("ward_name")}
-        for area, info in area_map.items():
-            if area == "Bangalore":
-                continue  # too generic — skip
-            if info.get("match_score", 0) < 0.8:
-                continue  # low-confidence mapping — skip
-            w = ward_by_name.get(info["ward_name"].lower())
-            if w:
-                lookup[area.lower()] = (w["ward_name"], w["ward_no"])
-    except Exception:
-        pass
-    return lookup
-
-
-WARD_LOOKUP = load_ward_lookup()
-
-
-def get_ward(area: str):
-    """Return (ward_name, ward_no) for a known area, or ('', '') if unknown."""
-    return WARD_LOOKUP.get(area.lower(), ("", ""))
-
-
-def extract_keywords(text: str, category: str) -> list:
+def extract_keywords(text, category):
     found = []
     lower = text.lower()
     if category in CATEGORY_RULES:
@@ -133,7 +245,7 @@ def extract_keywords(text: str, category: str) -> list:
     return found[:5]
 
 
-def severity(likes: int, retweets: int) -> str:
+def severity(likes, retweets):
     total = likes + retweets
     if total >= 50:
         return "high"
@@ -147,29 +259,67 @@ def process():
         print(f"ERROR: {RAW_FILE} not found. Run fetch_tweets.py first.")
         return
 
+    # Load existing issues to preserve manually-enriched ward data
+    existing_ward_cache = {}
+    if os.path.exists(OUTPUT_FILE):
+        try:
+            with open(OUTPUT_FILE, encoding="utf-8") as f:
+                for issue in json.load(f):
+                    if issue.get("ward_name"):
+                        existing_ward_cache[issue["id"]] = {
+                            "area":      issue.get("area", ""),
+                            "ward_name": issue["ward_name"],
+                            "ward_no":   issue.get("ward_no", ""),
+                            "lat":       issue.get("lat"),
+                            "lon":       issue.get("lon"),
+                        }
+        except Exception:
+            pass
+
+    print(f"Preserved ward cache: {len(existing_ward_cache)} tweets with existing ward data")
+
     with open(RAW_FILE, encoding="utf-8") as f:
         raw = json.load(f)
 
     issues = []
+    cache_hits = 0
+    new_lookups = 0
+
     for tweet in raw:
         category = categorize(tweet["text"])
         area = extract_area(tweet["text"])
-        ward_name, ward_no = get_ward(area)
+
+        cached = existing_ward_cache.get(tweet["id"])
+        if cached:
+            # Preserve enriched ward data; prefer cached area if it's more specific
+            area      = cached["area"] or area
+            ward_name = cached["ward_name"]
+            ward_no   = cached["ward_no"]
+            lat       = cached.get("lat")
+            lon       = cached.get("lon")
+            cache_hits += 1
+        else:
+            ward_name, ward_no = get_ward_for_area(area, WARDS)
+            lat = lon = None
+            new_lookups += 1
+
         issues.append({
-            "id": tweet["id"],
-            "text": tweet["text"],
-            "author": tweet["author"],
-            "date": tweet["date"],
-            "category": category,
-            "area": area,
-            "ward_name": ward_name,
-            "ward_no": ward_no,
-            "severity": severity(tweet.get("likes", 0), tweet.get("retweets", 0)),
-            "likes": tweet.get("likes", 0),
-            "retweets": tweet.get("retweets", 0),
+            "id":         tweet["id"],
+            "text":       tweet["text"],
+            "author":     tweet["author"],
+            "date":       tweet["date"],
+            "category":   category,
+            "area":       area,
+            "ward_name":  ward_name,
+            "ward_no":    ward_no,
+            "lat":        lat,
+            "lon":        lon,
+            "severity":   severity(tweet.get("likes", 0), tweet.get("retweets", 0)),
+            "likes":      tweet.get("likes", 0),
+            "retweets":   tweet.get("retweets", 0),
             "source_url": tweet.get("source_url", ""),
-            "keywords": extract_keywords(tweet["text"], category),
-            "status": "open",
+            "keywords":   extract_keywords(tweet["text"], category),
+            "status":     "open",
         })
 
     # Sort by severity then engagement
@@ -184,7 +334,11 @@ def process():
     for iss in issues:
         cats[iss["category"]] = cats.get(iss["category"], 0) + 1
 
-    print(f"Processed {len(issues)} issues → {OUTPUT_FILE}")
+    print(f"Processed {len(issues)} issues -> {OUTPUT_FILE}")
+    print(f"  Cache hits (ward preserved): {cache_hits}")
+    print(f"  New ward lookups:            {new_lookups}")
+    has_ward = sum(1 for i in issues if i.get("ward_name"))
+    print(f"  Issues with ward_name:       {has_ward}")
     print("Category breakdown:")
     for cat, count in sorted(cats.items(), key=lambda x: -x[1]):
         print(f"  {cat}: {count}")

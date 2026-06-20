@@ -54,26 +54,107 @@ INPUT_FILE    = os.path.join(os.path.dirname(__file__), "../data/issues.json")
 BACKUP_FILE   = os.path.join(os.path.dirname(__file__), "../data/issues_unfiltered.json")
 VERDICTS_FILE = os.path.join(os.path.dirname(__file__), "../data/filter_verdicts.json")
 WARDS_FILE    = os.path.join(os.path.dirname(__file__), "../data/officials/wards.json")
-AREA_LOOKUP_FILE = os.path.join(os.path.dirname(__file__), "../data/officials/area_ward_lookup.json")
 
 BATCH_SIZE = 10  # Smaller batch for JSON responses (more tokens per tweet)
 
-# Area aliases for fuzzy ward matching
-AREA_ALIASES = {
-    "orr": "Outer Ring Road", "itpl": "Whitefield", "manyata": "Hebbal",
-    "kr puram": "KR Puram", "kr pura": "KR Puram", "malleswaram": "Malleshwaram",
-    "malleshwaram": "Malleshwaram", "chikkalsandra": "Basavanagudi",
-    "nagarbhavi": "Rajajinagar", "banaswadi": "Kalyan Nagar",
-    "rr nagar": "Rajajinagar", "mysore road": "Vijayanagar",
-    "old airport road": "Indiranagar", "airport road": "Indiranagar",
-    "cunningham road": "MG Road", "residency road": "MG Road",
-    "hsr": "HSR Layout", "btm": "BTM Layout", "jp nagar": "JP Nagar",
-    "jpnagar": "JP Nagar", "rt nagar": "RT Nagar", "hbr layout": "Kalyan Nagar",
-    "ulsoor": "Indiranagar", "ejipura": "Koramangala",
-    "haralur": "Bellandur", "sarjapur road": "Bellandur",
-    "bommasandra": "Bommanahalli", "attibele": "Electronic City",
-    "k channasandra": "Kalyan Nagar", "channasandra": "Kalyan Nagar",
-    "k.channasandra": "Kalyan Nagar",
+# ---------------------------------------------------------------------------
+# Geographically verified area -> canonical ward name mapping.
+# Keys are lowercase; values are exact ward_name strings from wards.json.
+# Do NOT use area_ward_lookup.json -- it contains wrong entries.
+# Kept in sync with AREA_TO_WARD in process_issues.py.
+# ---------------------------------------------------------------------------
+AREA_TO_WARD = {
+    "koramangala":       "Koramangala East",
+    "indiranagar":       "Indiranagar",
+    "whitefield":        "Whitefield",
+    "jayanagar":         "Jayanagar East",
+    "jayanagar east":    "Jayanagar East",
+    "hsr layout":        "HSR Layout",
+    "hsr":               "HSR Layout",
+    "btm layout":        "RBI Layout",
+    "btm":               "RBI Layout",
+    "marathahalli":      "Marathahalli",
+    "sarjapur":          "Anjanapura",
+    "sarjapur road":     "Bellandur",
+    "electronic city":   "Bommanahalli",
+    "hebbal":            "Hebbal",
+    "malleshwaram":      "Malleshwaram",
+    "malleswaram":       "Malleshwaram",
+    "rajajinagar":       "Rajajinagara",
+    "girinagar":         "Rajajinagara",
+    "nagarbhavi":        "Rajajinagara",
+    "rr nagar":          "Rajajinagara",
+    "jp nagar":          "J.P Nagar",
+    "jpnagar":           "J.P Nagar",
+    "bannerghatta":      "Gottigere",
+    "bannerghatta road": "Gottigere",
+    "yelahanka":         "Yelahanka Old Town",
+    "mg road":           "Shivajinagar",
+    "cubbon park":       "J.P Park",
+    "lalbagh":           "J.P Park",
+    "kr puram":          "K R Pura",
+    "kr pura":           "K R Pura",
+    "k r pura":          "K R Pura",
+    "old madras road":   "K R Pura",
+    "bellandur":         "Bellandur",
+    "outer ring road":   "Bellandur",
+    "orr":               "Bellandur",
+    "haralur":           "Bellandur",
+    "domlur":            "Domlur",
+    "madiwala":          "Madiwala",
+    "basavanagudi":      "Basavanapura",
+    "vijayanagar":       "Vinayakanagar",
+    "yeshwantpur":       "Yeshwanthpura",
+    "peenya":            "Peenya",
+    "peenya industrial": "Peenya",
+    "tumkur road":       "Peenya",
+    "bommanahalli":      "Bommanahalli",
+    "bommasandra":       "Bommanahalli",
+    "nagawara":          "Nagavara",
+    "nagavara":          "Nagavara",
+    "nayandahalli":      "Nayanda Halli",
+    "chikkalsandra":     "Chikkalasandra",
+    "chikkalasandra":    "Chikkalasandra",
+    "rt nagar":          "R T Nagar",
+    "r t nagar":         "R T Nagar",
+    "kammanahalli":      "Kammanahalli",
+    "kalyan nagar":      "Kalyanagar",
+    "banaswadi":         "Kalyanagar",
+    "hbr layout":        "HBR Layout",
+    "hongasandra":       "Hongasandra",
+    "hulimavu":          "Hulimavu",
+    "begur":             "Beguru",
+    "gottigere":         "Gottigere",
+    "singasandra":       "Singasandra",
+    "cox town":          "Cox Town",
+    "benson town":       "Cox Town",
+    "frazer town":       "Cox Town",
+    "richards town":     "Cox Town",
+    "ulsoor":            "Indiranagar",
+    "ejipura":           "Koramangala East",
+    "koramangala east":  "Koramangala East",
+    "manyata":           "Hebbal",
+    "itpl":              "Whitefield",
+    "padmanabha nagar":  "Padmanabhanagar",
+    "padmanabhanagar":   "Padmanabhanagar",
+    "channasandra":      "Channasandra",
+    "k.channasandra":    "Channasandra",
+    "k channasandra":    "Channasandra",
+    "devanahalli":       "Yelahanka Old Town",
+    "majestic":          "Sampangirama Nagar",
+    "shivajinagar":      "Shivajinagar",
+    "shivaji nagar":     "Shivajinagar",
+    "austin town":       "Austin Town",
+    "vasanthnagar":      "Sampangirama Nagar",
+    "gandhinagar":       "Gandhi Nagar",
+    "gandhi nagar":      "Gandhi Nagar",
+    "mysore road":       "Kengeri",
+    "kengeri":           "Kengeri",
+    # Convenience aliases
+    "old airport road":  "Indiranagar",
+    "airport road":      "Indiranagar",
+    "cunningham road":   "Shivajinagar",
+    "residency road":    "Shivajinagar",
 }
 
 SYSTEM_PROMPT = """You are analyzing tweets about Bangalore civic issues for a government action dashboard.
@@ -188,45 +269,37 @@ def trigram_sim(a, b):
     return inter / union if union else 0
 
 
-def load_ward_data():
-    """Load wards and area lookup for ward matching. Returns (wards, area_lookup) or ([], {})."""
-    wards, area_lookup = [], {}
+def load_wards():
+    """Load all 369 wards from wards.json."""
     try:
         with open(WARDS_FILE, encoding="utf-8") as f:
-            wards = json.load(f)
+            return json.load(f)
     except Exception:
-        pass
-    try:
-        with open(AREA_LOOKUP_FILE, encoding="utf-8") as f:
-            area_lookup = json.load(f)
-    except Exception:
-        pass
-    return wards, area_lookup
+        return []
 
 
-def match_ward(area, wards, area_lookup):
-    """Match an extracted area string to a ward object using area lookup + trigram similarity."""
+WARDS = load_wards()
+
+
+def match_ward(area, wards):
+    """
+    Match an extracted area string to a ward object.
+    Uses AREA_TO_WARD (geographically verified) then trigram fallback.
+    Returns the ward dict or None.
+    """
     if not area or area.lower() in ("bangalore", "bengaluru", ""):
         return None
 
     lc = area.lower().strip()
-    # Apply aliases
-    lc = AREA_ALIASES.get(lc, area).lower()
 
-    # Pass 1 — substring match in area_ward_lookup (high-confidence entries only)
-    for key, info in area_lookup.items():
-        if key == "Bangalore":
-            continue
-        if info.get("match_score", 0) < 0.8:
-            continue
-        kl = key.lower()
-        wn = info["ward_name"].lower()
-        if lc == kl or lc in kl or kl in lc:
-            for w in wards:
-                if w.get("ward_name", "").lower() == wn:
-                    return w
+    # Pass 1 -- curated mapping
+    ward_name = AREA_TO_WARD.get(lc)
+    if ward_name:
+        for w in wards:
+            if w.get("ward_name") == ward_name:
+                return w
 
-    # Pass 2 — trigram similarity against all 369 ward names
+    # Pass 2 -- trigram similarity against all 369 ward names (threshold 0.35)
     best, best_score = None, 0.35
     for w in wards:
         score = trigram_sim(lc, w.get("ward_name", "").lower())
@@ -311,9 +384,8 @@ def filter_issues():
 
     print(f"Loaded {len(issues)} issues from {INPUT_FILE}")
 
-    # Load ward data for area → ward matching
-    wards, area_lookup = load_ward_data()
-    print(f"  Ward data: {len(wards)} wards, {len(area_lookup)} area entries loaded")
+    # Load ward data for area -> ward matching
+    print(f"  Ward data: {len(WARDS)} wards loaded")
 
     # Load existing verdicts from previous runs
     known_verdicts = {}
@@ -381,7 +453,7 @@ def filter_issues():
                     # Enrich with area + ward if LLM found a location
                     if area:
                         tweet["area"] = area
-                        ward = match_ward(area, wards, area_lookup)
+                        ward = match_ward(area, WARDS)
                         if ward:
                             tweet["ward_name"] = ward.get("ward_name", "")
                             tweet["ward_no"] = ward.get("ward_no", "")
@@ -391,8 +463,6 @@ def filter_issues():
                     newly_removed.append(tweet)
                     batch_removed += 1
 
-            # Also enrich already-yes tweets that have new area data from this same verdicts run
-            # (these are tweets classified in prior runs that now have area in their verdict)
             print(f"kept {batch_kept}, removed {batch_removed}")
 
             if batch_num < total_batches:
@@ -407,7 +477,7 @@ def filter_issues():
         area = get_area_from_verdict(v)
         if area and (not tweet.get("area") or tweet.get("area") == "Bangalore"):
             tweet["area"] = area
-            ward = match_ward(area, wards, area_lookup)
+            ward = match_ward(area, WARDS)
             if ward:
                 tweet["ward_name"] = ward.get("ward_name", "")
                 tweet["ward_no"] = ward.get("ward_no", "")
