@@ -1032,7 +1032,7 @@ function initWardSearch() {
     const areaMatches = Object.entries(officialsData.areaToWard)
       .filter(([area]) => area.toLowerCase().includes(q))
       .map(([area, info]) => {
-        const ward = officialsData.wardNoLookup[String(info.ward_no)];
+        const ward = officialsData.wardLookup[info.ward_name.toLowerCase()] || officialsData.wardNoLookup[String(info.ward_no)];
         return ward ? { ...ward, _matchedArea: area } : null;
       })
       .filter(Boolean)
@@ -1047,7 +1047,7 @@ function initWardSearch() {
     }
 
     suggestions.innerHTML = combined.map(w => `
-      <div class="ward-suggestion-item" data-ward-no="${esc(String(w.ward_no))}">
+      <div class="ward-suggestion-item" data-ward-no="${esc(String(w.ward_no))}" data-ward-name="${esc(w.ward_name)}">
         <div><strong>${esc(w._matchedArea || w.ward_name)}</strong>${w._matchedArea ? ` <span style="color:var(--muted);font-size:.78rem"> → Ward ${esc(String(w.ward_no))}: ${esc(w.ward_name)}</span>` : ""}</div>
         <div class="ward-suggestion-meta">${esc(w.constituency || "")}${w.city_corp ? " &middot; " + esc(w.city_corp) : ""}</div>
       </div>
@@ -1056,10 +1056,10 @@ function initWardSearch() {
 
     suggestions.querySelectorAll(".ward-suggestion-item[data-ward-no]").forEach(item => {
       item.addEventListener("click", () => {
-        const wardNo = item.dataset.wardNo;
-        const ward = officialsData.wardNoLookup[wardNo];
+        const wardName = item.dataset.wardName;
+        const ward = wardName ? officialsData.wardLookup[wardName.toLowerCase()] : officialsData.wardNoLookup[item.dataset.wardNo];
         if (ward) {
-          input.value = ward._matchedArea || ward.ward_name;
+          input.value = ward.ward_name;
           suggestions.classList.add("hidden");
           renderWardCard(ward);
           document.getElementById("ward-results").scrollIntoView({ behavior: "smooth", block: "nearest" });
@@ -1139,21 +1139,32 @@ async function detectNearestWard() {
 
 function findBestWardMatch(candidates) {
   if (!candidates || candidates.length === 0) return null;
-  let best = null, bestScore = 0;
 
+  // Pass 1: direct substring match against known area names (most reliable)
+  for (const candidate of candidates) {
+    const lc = candidate.toLowerCase();
+    for (const [key, info] of Object.entries(officialsData.areaToWard)) {
+      const kl = key.toLowerCase();
+      if (lc === kl || lc.includes(kl) || kl.includes(lc)) {
+        const ward = officialsData.wardLookup[info.ward_name.toLowerCase()] || officialsData.wardNoLookup[String(info.ward_no)];
+        if (ward) return ward;
+      }
+    }
+  }
+
+  // Pass 2: trigram similarity fallback
+  let best = null, bestScore = 0;
   for (const candidate of candidates) {
     const lc = candidate.toLowerCase();
 
-    // Check area lookup (28 known areas)
     for (const [key, info] of Object.entries(officialsData.areaToWard)) {
       const score = trigramSimilarity(lc, key.toLowerCase());
       if (score > bestScore && score > 0.4) {
         bestScore = score;
-        best = officialsData.wardNoLookup[String(info.ward_no)];
+        best = officialsData.wardLookup[info.ward_name.toLowerCase()] || officialsData.wardNoLookup[String(info.ward_no)];
       }
     }
 
-    // Check all ward names
     for (const w of officialsData.wards) {
       if (!w.ward_name) continue;
       const score = trigramSimilarity(lc, w.ward_name.toLowerCase());
@@ -1187,13 +1198,13 @@ function findWardByArea(area) {
 
   // 1. Exact key match in areaToWard
   for (const [key, info] of Object.entries(officialsData.areaToWard)) {
-    if (key.toLowerCase() === lc) return officialsData.wardNoLookup[String(info.ward_no)];
+    if (key.toLowerCase() === lc) return officialsData.wardLookup[info.ward_name.toLowerCase()] || officialsData.wardNoLookup[String(info.ward_no)];
   }
 
   // 2. Partial match: area name contains or is contained in the key
   for (const [key, info] of Object.entries(officialsData.areaToWard)) {
     const kl = key.toLowerCase();
-    if (lc.includes(kl) || kl.includes(lc)) return officialsData.wardNoLookup[String(info.ward_no)];
+    if (lc.includes(kl) || kl.includes(lc)) return officialsData.wardLookup[info.ward_name.toLowerCase()] || officialsData.wardNoLookup[String(info.ward_no)];
   }
 
   // 3. Exact match in 369 ward names

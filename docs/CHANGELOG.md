@@ -5,6 +5,19 @@ Format: `[Date] - What changed and why`
 
 ---
 
+## [2026-06-20] — Officials Tab: Ward Lookup Bug Fix (Bellandur → Pulakeshi Nagar)
+
+### Fixed
+
+**`dashboard/js/app.js` — Critical ward lookup mismatch**
+
+- **Root cause**: `wards.json` has duplicate `ward_no` values (e.g., Bellandur, Chandranagara, and Pulakeshi Nagar all share ward_no 47). Building `wardNoLookup` by ward_no caused the last-processed ward to overwrite the others — so any area_ward_lookup entry pointing at ward_no 47 would return Pulakeshi Nagar regardless of what was selected.
+- **Fix**: All six lookup sites that previously used `wardNoLookup[String(info.ward_no)]` for `area_ward_lookup` entries now use `wardLookup[info.ward_name.toLowerCase()]` first (name-based, always unique), falling back to `wardNoLookup` only if the name doesn't match.
+- **Location detection**: `findBestWardMatch` now runs a direct substring pass against known area keys *before* trigram similarity — "Bellandur Lake" from Nominatim now correctly matches "Bellandur" instead of a wrong ward.
+- Affected functions: `initWardSearch` (suggestion builder + click handler), `findBestWardMatch`, `findWardByArea` (two branches)
+
+---
+
 ## [2026-06-20] — Officials Tab: Location Detection, Phone Links, All MLAs, Better Routing
 
 ### Fixed
