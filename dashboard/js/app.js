@@ -205,6 +205,37 @@ async function init() {
 
   document.getElementById("export-csv").addEventListener("click", exportCSV);
 
+  // Modal: official profile
+  document.getElementById("official-profile-close").addEventListener("click", () => {
+    document.getElementById("official-profile-overlay").classList.add("hidden");
+  });
+  document.getElementById("official-profile-overlay").addEventListener("click", e => {
+    if (e.target === e.currentTarget) e.currentTarget.classList.add("hidden");
+  });
+
+  // Modal: resolve tweet
+  document.getElementById("resolve-modal-close").addEventListener("click", () => {
+    document.getElementById("resolve-modal-overlay").classList.add("hidden");
+  });
+  document.getElementById("resolve-modal-overlay").addEventListener("click", e => {
+    if (e.target === e.currentTarget) e.currentTarget.classList.add("hidden");
+  });
+
+  // Global: click any official-name-link anywhere on the page
+  document.body.addEventListener("click", e => {
+    const nameEl = e.target.closest(".official-name-link");
+    if (!nameEl) return;
+    // Skip if inside detail-pane (handled by its own delegate after renderDetailPanel)
+    openOfficialProfile({
+      name: nameEl.dataset.name || nameEl.textContent.trim(),
+      role: nameEl.dataset.role || "",
+      dept: nameEl.dataset.dept || "",
+      detail: nameEl.dataset.detail || "",
+      phone: nameEl.dataset.phone || "",
+      email: nameEl.dataset.email || "",
+    });
+  });
+
   // Pre-load officials data in the background so smart contacts are ready when issues are clicked
   initOfficials();
 }
@@ -397,6 +428,21 @@ function applyFilters() {
   if (activeTab === "map")         renderMap(filtered);
   if (activeTab === "departments") renderDepartments(filtered);
   if (activeTab === "analytics")   renderAnalytics(filtered);
+  if (activeTab === "officials" && officialsLoaded) {
+    renderRoutingGuide();
+    // Auto-select dept chip based on active dept filter
+    if (activeFilters.dept !== "all") {
+      const deptMap = { BBMP: "BBMP", BESCOM: "BESCOM", BWSSB: "BWSSB", BTP: "Traffic Police" };
+      const targetDept = deptMap[activeFilters.dept];
+      if (targetDept && targetDept !== activeOrgDept) {
+        activeOrgDept = targetDept;
+        document.querySelectorAll("#org-dept-chips .view-chip").forEach(c => {
+          c.classList.toggle("active", c.dataset.dept === targetDept);
+        });
+        renderOrgChart(targetDept);
+      }
+    }
+  }
 }
 
 // ── Tabs ───────────────────────────────────────────────────────────
@@ -481,6 +527,11 @@ function queueRow(issue) {
   const clusterBadge = issue.clusterCount > 1
     ? `<span class="q-cluster-badge">${issue.clusterCount} reports</span>` : "";
 
+  const assignment = getAssignment(issue.id);
+  const assignBadge = assignment
+    ? `<span class="q-assigned-badge" title="Raised to ${esc(assignment.name)}">${esc(assignment.name.split(' ')[0])}</span>`
+    : '';
+
   return `
   <div class="queue-row sev-${esc(issue.severity)} q-status-${esc(status)}" data-id="${esc(String(issue.id))}" data-status="${esc(status)}">
     <div class="queue-row-stripe"></div>
@@ -500,6 +551,7 @@ function queueRow(issue) {
     </div>
     <div class="queue-row-actions">
       <div class="q-status-dot"></div>
+      ${assignBadge}
     </div>
   </div>`;
 }
@@ -584,7 +636,7 @@ function renderDetailPanel(issue) {
           <select class="status-select ${statusClass}" id="detail-status-select" data-issue-id="${esc(String(issue.id))}">${statusOpts}</select>
         </div>
         <a class="btn-assign" href="${buildEmailLink(issue)}">
-          &#128231; Assign to ${esc(poc.dept)}
+          &#128231; Raise to ${esc(poc.dept)}
         </a>
         ${issue.source_url ? `<a class="btn-source" href="${esc(issue.source_url)}" target="_blank" rel="noopener">Open source tweet &#8599;</a>` : ""}
         <button class="btn-copy-tweet" id="copy-tweet-btn">&#128203; Copy Tweet Reply</button>
@@ -601,6 +653,7 @@ function renderDetailPanel(issue) {
       const val = e.target.value;
       setStatus(id, val);
       sel.className = `status-select s-${val}`;
+      if (val === "resolved") showResolveModal(issue);
       // Update queue row dot
       const row = document.querySelector(`.queue-row[data-id="${CSS.escape(id)}"]`);
       if (row) {
@@ -609,6 +662,32 @@ function renderDetailPanel(issue) {
       }
       renderKPIs(allIssues);
     });
+  }
+
+  // Wire "Raise to" buttons in the smart contacts section
+  const detailPane = document.getElementById("detail-pane");
+  if (detailPane) {
+    detailPane.addEventListener("click", e => {
+      const raiseBtn = e.target.closest(".sc-raise-btn");
+      if (raiseBtn) {
+        const idx = parseInt(raiseBtn.dataset.contactIdx, 10);
+        const contacts = getSmartContacts(issue);
+        const contact = contacts[idx];
+        if (!contact) return;
+        const already = getAssignment(issue.id);
+        if (already && already.name === contact.name) {
+          setAssignment(issue.id, null);
+        } else {
+          setAssignment(issue.id, contact);
+          if (getStatus(issue.id) === "open") {
+            setStatus(issue.id, "acknowledged");
+          }
+        }
+        renderQueue(getFiltered());
+        renderDetailPanel(issue);
+        renderKPIs(allIssues);
+      }
+    }, { once: true });
   }
 
   const copyBtn = document.getElementById("copy-tweet-btn");
@@ -691,11 +770,11 @@ function buildEmailLink(issue) {
   const poc  = POC_DIRECTORY[issue.category] || POC_DIRECTORY.Other;
   const due  = new Date(new Date(issue.date).getTime() + poc.tat * 36e5);
   const dueStr = due.toLocaleString("en-IN", { day: "numeric", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit" });
-  const subject = `[GovWatch] ${issue.severity.toUpperCase()} ${issue.category} issue in ${issue.area} — TAT: ${poc.tat}h`;
+  const subject = `[Civic Issue India] ${issue.severity.toUpperCase()} ${issue.category} issue in ${issue.area} — TAT: ${poc.tat}h`;
   const body = [
     `Dear ${poc.div} Team,`,
     ``,
-    `A civic complaint has been flagged via GovWatch that requires your attention.`,
+    `A civic complaint has been flagged via Civic Issue India that requires your attention.`,
     ``,
     `Category:  ${issue.category}`,
     `Area:      ${issue.area}`,
@@ -711,8 +790,7 @@ function buildEmailLink(issue) {
     ``,
     `Please acknowledge this complaint and update its status within ${poc.tat} hours.`,
     ``,
-    `— GovWatch Civic Intelligence Dashboard`,
-    `  https://ishanfso.github.io/GovWatch/dashboard/`,
+    `— Civic Issue India`,
   ].join("\n");
   return `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(poc.email)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
@@ -1022,6 +1100,124 @@ function setStatus(id, value) {
   localStorage.setItem(`gw_status_${id}`, value);
 }
 
+// ── Assignment (localStorage) ──────────────────────────────────────
+
+function getAssignment(id) {
+  const stored = localStorage.getItem(`gw_assigned_${id}`);
+  try { return stored ? JSON.parse(stored) : null; } catch (_) { return null; }
+}
+
+function setAssignment(id, contact) {
+  if (!contact) {
+    localStorage.removeItem(`gw_assigned_${id}`);
+  } else {
+    localStorage.setItem(`gw_assigned_${id}`, JSON.stringify({
+      name: contact.name, role: contact.role, dept: contact.dept || "",
+      detail: contact.detail || "", assignedAt: new Date().toISOString(),
+    }));
+  }
+}
+
+function getAssignedIssues(officialName) {
+  if (!officialName) return [];
+  const lc = officialName.toLowerCase();
+  return allIssues.filter(i => {
+    const a = getAssignment(i.id);
+    return a && a.name && a.name.toLowerCase() === lc;
+  });
+}
+
+// ── Official Profile Modal ─────────────────────────────────────────
+
+function openOfficialProfile(official) {
+  const overlay = document.getElementById("official-profile-overlay");
+  const content = document.getElementById("official-profile-content");
+  if (!overlay || !content) return;
+
+  const assignedIssues = getAssignedIssues(official.name);
+  const initials = official.name.split(" ").filter(Boolean).slice(0, 2)
+    .map(n => n[0] ? n[0].toUpperCase() : "").join("");
+
+  const issueRows = assignedIssues.map(iss => {
+    const status = getStatus(iss.id);
+    const sla = getSLAStatus(iss);
+    const statusOpts = STATUS_OPTIONS.map(o =>
+      `<option value="${o.value}"${status === o.value ? " selected" : ""}>${o.label}</option>`
+    ).join("");
+    const sevColor = iss.severity === "high" ? "var(--danger)" : iss.severity === "medium" ? "var(--warning)" : "var(--success)";
+    const sevBg = iss.severity === "high" ? "var(--danger-light)" : iss.severity === "medium" ? "var(--warning-light)" : "var(--success-light)";
+    return `
+      <div class="profile-issue-row">
+        <div class="profile-issue-meta">
+          <span class="q-priority-label" style="background:${sevBg};color:${sevColor}">${esc(iss.severity)}</span>
+          <span class="q-cat-badge">${esc(iss.category)}</span>
+          <span class="q-area">${esc(iss.area)}</span>
+          <span class="q-sla ${sla.cls}">${sla.label}</span>
+        </div>
+        <div class="profile-issue-text">${esc(iss.text.length > 110 ? iss.text.slice(0, 110) + "…" : iss.text)}</div>
+        <div class="profile-issue-actions">
+          <select class="profile-status-select s-${esc(status)}" data-issue-id="${esc(String(iss.id))}">${statusOpts}</select>
+          ${iss.source_url ? `<a class="btn-source" href="${esc(iss.source_url)}" target="_blank" style="font-size:.7rem;padding:4px 8px">View Tweet &#8599;</a>` : ""}
+        </div>
+      </div>`;
+  }).join("");
+
+  content.innerHTML = `
+    <div class="profile-header">
+      <div class="profile-avatar">${esc(initials)}</div>
+      <div class="profile-info">
+        <div class="profile-name">${esc(official.name)}</div>
+        <div class="profile-role">${esc(official.role)}${official.dept ? " &mdash; " + esc(official.dept) : ""}</div>
+        ${official.detail ? `<div class="profile-detail">${esc(official.detail)}</div>` : ""}
+        ${official.phone ? `<div style="margin-top:4px">${phoneLink(official.phone.split(";")[0].trim(), "sc-phone")}</div>` : ""}
+        ${official.email ? `<a class="ward-email-btn" style="display:inline-flex;margin-top:6px" href="https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(official.email)}&su=${encodeURIComponent('[Civic Issue India] Civic Issue')}" target="_blank">&#128231; Email</a>` : ""}
+      </div>
+    </div>
+    <div class="profile-section-label">Assigned Issues (${assignedIssues.length})</div>
+    ${assignedIssues.length === 0
+      ? '<div class="profile-no-issues">No issues have been raised to this official yet.</div>'
+      : issueRows}
+  `;
+
+  overlay.classList.remove("hidden");
+
+  content.querySelectorAll(".profile-status-select").forEach(sel => {
+    sel.addEventListener("change", e => {
+      const id = e.target.dataset.issueId;
+      const val = e.target.value;
+      setStatus(id, val);
+      sel.className = `profile-status-select s-${val}`;
+      if (val === "resolved") {
+        const iss = allIssues.find(i => String(i.id) === String(id));
+        if (iss) showResolveModal(iss);
+      }
+      renderKPIs(allIssues);
+      renderQueue(getFiltered());
+    });
+  });
+}
+
+// ── Resolve Tweet Modal ────────────────────────────────────────────
+
+function showResolveModal(issue) {
+  const overlay = document.getElementById("resolve-modal-overlay");
+  const tweetEl = document.getElementById("resolve-modal-tweet");
+  if (!overlay || !tweetEl) return;
+  const tweet = buildTweetReply(issue);
+  tweetEl.textContent = tweet;
+  overlay.classList.remove("hidden");
+  const copyBtn = document.getElementById("resolve-modal-copy");
+  if (copyBtn) {
+    copyBtn.onclick = () => {
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(tweet).catch(() => legacyCopy(tweet));
+      } else { legacyCopy(tweet); }
+      copyBtn.textContent = "✓ Copied!";
+      setTimeout(() => { copyBtn.innerHTML = "&#128203; Copy Tweet"; }, 2500);
+    };
+  }
+}
+
 // ── Export CSV ─────────────────────────────────────────────────────
 
 function exportCSV() {
@@ -1038,7 +1234,7 @@ function exportCSV() {
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href = url;
-  a.download = `govwatch_bangalore_${new Date().toISOString().slice(0, 10)}.csv`;
+  a.download = `civicissue_bangalore_${new Date().toISOString().slice(0, 10)}.csv`;
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
@@ -1409,7 +1605,7 @@ function renderWardCard(ward) {
   // Build cells
   const cells = [
     buildWardCell("Waste / SWM", [
-      ward.swm_jhi ? `<div class="ward-contact-name">${esc(ward.swm_jhi)}</div>` : "",
+      ward.swm_jhi ? `<div class="ward-contact-name"><span class="official-name-link" data-name="${esc(ward.swm_jhi)}" data-role="SWM JHI" data-dept="BBMP" data-phone="${esc(ward.swm_jhi_mobile||'')}" data-email="" data-detail="${esc(ward.swm_division||'')}">${esc(ward.swm_jhi)}</span></div>` : "",
       ward.swm_jhi_mobile ? phoneLink(ward.swm_jhi_mobile) : "",
       ward.swm_aee ? `<div class="ward-contact-detail">AEE: ${esc(ward.swm_aee)}</div>` : "",
       ward.swm_aee_mobile ? phoneLink(ward.swm_aee_mobile) : "",
@@ -1418,7 +1614,7 @@ function renderWardCard(ward) {
     ].filter(Boolean).join("")),
 
     buildWardCell("Electricity / BESCOM", [
-      bescomParsed.name ? `<div class="ward-contact-name">${esc(bescomParsed.name)}</div>` : "",
+      bescomParsed.name ? `<div class="ward-contact-name"><span class="official-name-link" data-name="${esc(bescomParsed.name)}" data-role="BESCOM AEE" data-dept="BESCOM" data-phone="${esc(bescomParsed.phone||'')}" data-email="${esc(bescomParsed.email||'')}" data-detail="${esc(ward.bescom_unit||'')}">${esc(bescomParsed.name)}</span></div>` : "",
       bescomParsed.phone ? phoneLink(bescomParsed.phone) : "",
       ward.bescom_subdivision ? `<div class="ward-contact-detail">Subdivision ${esc(ward.bescom_subdivision)}</div>` : "",
       ward.bescom_unit ? `<div class="ward-contact-detail">Unit: ${esc(ward.bescom_unit)}</div>` : "",
@@ -1427,7 +1623,7 @@ function renderWardCard(ward) {
     ].filter(Boolean).join("")),
 
     buildWardCell("Water / BWSSB", [
-      ward.bwssb_ae ? `<div class="ward-contact-name">${esc(ward.bwssb_ae)}</div>` : "",
+      ward.bwssb_ae ? `<div class="ward-contact-name"><span class="official-name-link" data-name="${esc(ward.bwssb_ae)}" data-role="BWSSB AE" data-dept="BWSSB" data-phone="${esc(ward.bwssb_ae_mobile||'')}" data-email="" data-detail="${esc(ward.bwssb_station||'')}">${esc(ward.bwssb_ae)}</span></div>` : "",
       ward.bwssb_ae_mobile ? phoneLink(ward.bwssb_ae_mobile) : "",
       ward.bwssb_aee ? `<div class="ward-contact-detail">AEE: ${esc(ward.bwssb_aee)}</div>` : "",
       ward.bwssb_aee_mobile ? phoneLink(ward.bwssb_aee_mobile) : "",
@@ -1443,28 +1639,28 @@ function renderWardCard(ward) {
     ].filter(Boolean).join("")),
 
     buildWardCell("Roads / City Corp", [
-      ward.city_commissioner ? `<div class="ward-contact-name">${esc(ward.city_commissioner)}</div>` : "",
+      ward.city_commissioner ? `<div class="ward-contact-name"><span class="official-name-link" data-name="${esc(ward.city_commissioner)}" data-role="City Commissioner" data-dept="BBMP" data-phone="${esc(ward.city_commissioner_contact||'')}" data-email="${esc(ward.city_commissioner_email||'')}" data-detail="${esc(ward.city_corp||'')}">${esc(ward.city_commissioner)}</span></div>` : "",
       ward.city_commissioner_contact ? phoneLink(ward.city_commissioner_contact) : "",
       ward.city_corp ? `<div class="ward-contact-detail">${esc(ward.city_corp)}</div>` : "",
       ward.city_commissioner_email ? `<a class="ward-email-btn" href="${buildWardEmail(ward.city_commissioner_email, ward, "Roads / City Corporation")}" target="_blank">&#128231; Email Commissioner</a>` : "",
     ].filter(Boolean).join("")),
 
     buildWardCell("Councillor", [
-      ward.councillor ? `<div class="ward-contact-name">${esc(ward.councillor)}</div>` : `<div class="ward-empty">Not available</div>`,
+      ward.councillor ? `<div class="ward-contact-name"><span class="official-name-link" data-name="${esc(ward.councillor)}" data-role="Ward Councillor" data-dept="BBMP" data-phone="${esc(ward.councillor_mobile||'')}" data-email="" data-detail="Ward ${esc(String(ward.ward_no))}">${esc(ward.councillor)}</span></div>` : `<div class="ward-empty">Not available</div>`,
       ward.councillor_mobile ? phoneLink(ward.councillor_mobile) : "",
       ward.councillor_confidence && ward.councillor_confidence !== "High" && ward.councillor
         ? `<div class="ward-note">Confidence: ${esc(ward.councillor_confidence)} — verify before contacting</div>` : "",
     ].filter(Boolean).join("")),
 
     buildWardCell("MLA", [
-      ward.mla ? `<div class="ward-contact-name">${esc(ward.mla)}</div>` : `<div class="ward-empty">Not available</div>`,
+      ward.mla ? `<div class="ward-contact-name"><span class="official-name-link" data-name="${esc(ward.mla)}" data-role="MLA" data-dept="" data-phone="${esc(ward.mla_phones||'')}" data-email="${esc(ward.mla_email||'')}" data-detail="${esc(ward.constituency||'')}">${esc(ward.mla)}</span></div>` : `<div class="ward-empty">Not available</div>`,
       ward.mla_party ? `<div class="ward-contact-detail">${esc(ward.mla_party)}</div>` : "",
       ward.mla_phones ? phoneLink(ward.mla_phones) : "",
       ward.mla_email ? `<a class="ward-email-btn" href="${buildWardEmail(ward.mla_email, ward, "Civic issue")}" target="_blank">&#128231; Email MLA</a>` : "",
     ].filter(Boolean).join("")),
 
     buildWardCell("MP", [
-      ward.mp ? `<div class="ward-contact-name">${esc(ward.mp)}</div>` : `<div class="ward-empty">Not available</div>`,
+      ward.mp ? `<div class="ward-contact-name"><span class="official-name-link" data-name="${esc(ward.mp)}" data-role="MP" data-dept="" data-phone="${esc(ward.mp_phones||'')}" data-email="${esc(ward.mp_email||'')}" data-detail="${esc(ward.constituency||'')}">${esc(ward.mp)}</span></div>` : `<div class="ward-empty">Not available</div>`,
       ward.mp_phones ? phoneLink(ward.mp_phones) : "",
       ward.mp_email ? `<a class="ward-email-btn" href="${buildWardEmail(ward.mp_email, ward, "Civic issue")}" target="_blank">&#128231; Email MP</a>` : "",
     ].filter(Boolean).join("")),
@@ -1491,8 +1687,8 @@ function buildWardCell(label, content) {
 }
 
 function buildWardEmail(toEmail, ward, subject) {
-  const sub = `[GovWatch] ${subject} — Ward ${ward.ward_no} ${ward.ward_name}`;
-  const body = `Dear Official,\n\nI am writing to bring a civic issue to your attention in Ward ${ward.ward_no} (${ward.ward_name}), ${ward.constituency}.\n\n[Describe the issue here]\n\n— GovWatch Civic Intelligence Dashboard\nhttps://ishanfso.github.io/GovWatch/dashboard/`;
+  const sub = `[Civic Issue India] ${subject} — Ward ${ward.ward_no} ${ward.ward_name}`;
+  const body = `Dear Official,\n\nI am writing to bring a civic issue to your attention in Ward ${ward.ward_no} (${ward.ward_name}), ${ward.constituency}.\n\n[Describe the issue here]\n\n— Civic Issue India`;
   return `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(toEmail)}&su=${encodeURIComponent(sub)}&body=${encodeURIComponent(body)}`;
 }
 
@@ -1710,7 +1906,7 @@ function renderOrgChart(dept) {
         <div class="org-contact-name">${esc(m.name || "")}</div>
         <div class="org-contact-info">${esc(m.party || "")}</div>
         ${m.phones ? phoneLink(m.phones.split(";")[0].trim(), "org-contact-info") : ""}
-        ${m.email ? `<a class="ward-email-btn" style="margin-top:4px" href="https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(m.email)}&su=${encodeURIComponent("[GovWatch] Civic issue — Bangalore")}" target="_blank">&#128231; Email MLA</a>` : ""}
+        ${m.email ? `<a class="ward-email-btn" style="margin-top:4px" href="https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(m.email)}&su=${encodeURIComponent("[Civic Issue India] Civic issue — Bangalore")}" target="_blank">&#128231; Email MLA</a>` : ""}
       </div>
     `;
 
@@ -1720,7 +1916,7 @@ function renderOrgChart(dept) {
         <div class="org-contact-name">${esc(m.name || "")}</div>
         <div class="org-contact-info">${esc(m.party || "")}</div>
         ${m.phones ? phoneLink(m.phones.split(";")[0].trim(), "org-contact-info") : ""}
-        ${m.email ? `<a class="ward-email-btn" style="margin-top:4px" href="https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(m.email)}&su=${encodeURIComponent("[GovWatch] Civic issue — Bangalore")}" target="_blank">&#128231; Email MP</a>` : ""}
+        ${m.email ? `<a class="ward-email-btn" style="margin-top:4px" href="https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(m.email)}&su=${encodeURIComponent("[Civic Issue India] Civic issue — Bangalore")}" target="_blank">&#128231; Email MP</a>` : ""}
       </div>
     `).join("");
 
@@ -1762,7 +1958,55 @@ function renderRoutingGuide() {
     return;
   }
 
-  const cards = officialsData.issueRouting.map(r => `
+  // Resolve ward context from active area filter
+  const contextArea = activeFilters.area !== "all" ? activeFilters.area : null;
+  const contextWard = contextArea ? findWardByArea(contextArea) : null;
+
+  // Map routing category → ward field accessor
+  const wardContactMap = {
+    "Waste / SWM":       w => w.swm_jhi  ? { name: w.swm_jhi,  phone: w.swm_jhi_mobile || "",  role: "SWM JHI",     email: "", detail: w.swm_division || "" } : null,
+    "Electricity":       w => { const p = parseBescomAee(w.bescom_aee || ""); return p.name ? { name: p.name, phone: p.phone || "", role: "BESCOM AEE", email: p.email || "", detail: w.bescom_unit || "" } : null; },
+    "Water Supply":      w => w.bwssb_ae ? { name: w.bwssb_ae, phone: w.bwssb_ae_mobile || "", role: "BWSSB AE",     email: "", detail: w.bwssb_station || "" } : null,
+    "Roads":             w => w.city_commissioner ? { name: w.city_commissioner, phone: w.city_commissioner_contact || "", role: "City Commissioner", email: w.city_commissioner_email || "", detail: w.city_corp || "" } : null,
+    "Flooding / Drains": w => w.city_commissioner ? { name: w.city_commissioner, phone: w.city_commissioner_contact || "", role: "City Commissioner", email: w.city_commissioner_email || "", detail: w.city_corp || "" } : null,
+    "Traffic":           w => w.traffic_pio ? { name: w.traffic_pio, phone: w.traffic_pio_contact || "", role: "Traffic PIO", email: "", detail: w.traffic_ps || "" } : null,
+    "Parks / Gardens":   w => w.city_commissioner ? { name: w.city_commissioner, phone: w.city_commissioner_contact || "", role: "City Commissioner", email: w.city_commissioner_email || "", detail: w.city_corp || "" } : null,
+  };
+
+  const wardContextBanner = contextWard
+    ? `<div class="routing-ward-context">&#128205; Showing contacts for <strong>Ward ${esc(String(contextWard.ward_no))} &mdash; ${esc(contextWard.ward_name)}</strong>${contextArea !== contextWard.ward_name ? ` (${esc(contextArea)})` : ""}</div>`
+    : "";
+
+  const cards = officialsData.issueRouting.map(r => {
+    // Try to find a ward contact match for this category
+    let wardContactHTML = "";
+    if (contextWard) {
+      const accessor = Object.entries(wardContactMap).find(([key]) =>
+        r.category && r.category.toLowerCase().includes(key.toLowerCase().split(" ")[0])
+      );
+      if (accessor) {
+        const contact = accessor[1](contextWard);
+        if (contact) {
+          wardContactHTML = `
+            <div class="routing-contact-person">
+              <span class="rcp-label">&#128100; For your ward:</span>
+              <span class="official-name-link" data-name="${esc(contact.name)}" data-role="${esc(contact.role)}" data-dept="" data-phone="${esc(contact.phone)}" data-email="${esc(contact.email)}" data-detail="${esc(contact.detail)}">${esc(contact.name)}</span>
+              ${contact.phone ? `<span class="rcp-phone">${esc(contact.phone)}</span>` : ""}
+            </div>`;
+        }
+      }
+      // Always show MLA/Councillor
+      if (contextWard.councillor) {
+        wardContactHTML += `
+          <div class="routing-contact-person">
+            <span class="rcp-label">Councillor:</span>
+            <span class="official-name-link" data-name="${esc(contextWard.councillor)}" data-role="Ward Councillor" data-dept="" data-phone="${esc(contextWard.councillor_mobile || '')}" data-email="" data-detail="Ward ${esc(String(contextWard.ward_no))}">${esc(contextWard.councillor)}</span>
+            ${contextWard.councillor_mobile ? `<span class="rcp-phone">${esc(contextWard.councillor_mobile)}</span>` : ""}
+          </div>`;
+      }
+    }
+
+    return `
     <div class="routing-card">
       <div class="routing-issue-type">${esc(r.category)}</div>
       <div class="routing-step">
@@ -1773,12 +2017,13 @@ function renderRoutingGuide() {
       ${r.escalation_1 ? `<div class="routing-step"><span class="routing-badge badge-esc1">Escalate 1</span><span>${esc(r.escalation_1)}</span></div>` : ""}
       ${r.escalation_2 ? `<div class="routing-step"><span class="routing-badge badge-esc2">Escalate 2</span><span>${esc(r.escalation_2)}</span></div>` : ""}
       ${r.political ? `<div class="routing-step"><span class="routing-badge badge-political">Political</span><span>${esc(r.political)}</span></div>` : ""}
+      ${wardContactHTML}
       <div class="routing-sla"><strong>SLA:</strong> ${esc(r.sla)}</div>
       ${r.notes ? `<div class="routing-notes">${esc(r.notes)}</div>` : ""}
-    </div>
-  `).join("");
+    </div>`;
+  }).join("");
 
-  el.innerHTML = `<div class="routing-grid">${cards}</div>`;
+  el.innerHTML = `${wardContextBanner}<div class="routing-grid">${cards}</div>`;
 }
 
 // ── Smart Contacts ─────────────────────────────────────────────────
@@ -1972,20 +2217,23 @@ function renderSmartContactsHTML(issue) {
   const badgeLabel = { first_contact: "First Contact", cc: "CC", escalation: "Escalation", highest: "Highest Authority" };
 
   const emailLinkForContacts = buildSmartEmailLink(contacts, issue);
+  const assignment = getAssignment(issue.id);
 
-  const rows = contacts.map(c => {
+  const rows = contacts.map((c, idx) => {
     const badge = `<span class="sc-type-badge ${badgeClass[c.type] || "badge-cc"}">${badgeLabel[c.type] || "CC"}</span>`;
     const roleDetail = c.detail ? `${esc(c.role)} &mdash; ${esc(c.detail)}` : esc(c.role);
     const emailBtn = c.email
       ? `<a class="sc-email-btn" href="${esc(buildSmartEmailLink([c], issue))}" target="_blank">Email</a>`
       : "";
+    const isAssigned = assignment && assignment.name === c.name;
     return `
       <div class="smart-contact-row">
         ${badge}
         <span class="sc-role">${roleDetail}</span>
-        <span class="sc-name">${esc(c.name)}</span>
+        <span class="official-name-link sc-name" data-name="${esc(c.name)}" data-role="${esc(c.role)}" data-dept="${esc(c.dept || '')}" data-phone="${esc(c.phone || '')}" data-email="${esc(c.email || '')}" data-detail="${esc(c.detail || '')}">${esc(c.name)}</span>
         ${c.phone ? phoneLink(c.phone.split(";")[0].trim(), "sc-phone") : ""}
         ${emailBtn}
+        <button class="sc-raise-btn${isAssigned ? ' active' : ''}" data-contact-idx="${idx}" data-issue-id="${esc(String(issue.id))}">${isAssigned ? '&#10003; Assigned' : 'Raise to'}</button>
       </div>
     `;
   }).join("");
@@ -2015,7 +2263,7 @@ function buildTweetReply(issue) {
   const cat = (issue.category || "civic").toLowerCase();
   const area = issue.area || "Bangalore";
 
-  const tweet = `${greeting}Hi! We've raised your ${cat} concern in ${area} with ${authority} and requested resolution within ${poc.tat}h. We're tracking this. 🙏 #GovWatch #Bengaluru`;
+  const tweet = `${greeting}Hi! We've raised your ${cat} concern in ${area} with ${authority} and requested resolution within ${poc.tat}h. We're tracking this. 🙏 #CivicIssueIndia #Bengaluru`;
   return tweet.length > 280 ? tweet.slice(0, 277) + "…" : tweet;
 }
 
@@ -2029,7 +2277,7 @@ function buildSmartEmailLink(contacts, issue) {
   const toEmail = (firstContact && firstContact.email) ? firstContact.email : (poc.email || "");
   const ccEmails = ccContacts.map(c => c.email).filter(Boolean).join(",");
 
-  const subject = `[GovWatch] ${esc(issue.category)} issue — ${esc(issue.area)} — TAT: ${poc.tat}h`;
+  const subject = `[Civic Issue India] ${esc(issue.category)} issue — ${esc(issue.area)} — TAT: ${poc.tat}h`;
 
   const contactNames = contacts.map(c => `  ${c.role}: ${c.name}${c.phone ? " (" + c.phone + ")" : ""}`).join("\n");
   const body = [
@@ -2051,8 +2299,7 @@ function buildSmartEmailLink(contacts, issue) {
     ``,
     `Please acknowledge and update status within ${poc.tat} hours.`,
     ``,
-    `— GovWatch Civic Intelligence Dashboard`,
-    `  https://ishanfso.github.io/GovWatch/dashboard/`,
+    `— Civic Issue India`,
   ].join("\n");
 
   let url = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(toEmail)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
