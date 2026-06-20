@@ -1,6 +1,9 @@
 """
 GovWatch — Issue Processing Script
 Categorizes raw tweets into civic issue types, assigns severity, extracts area.
+For areas matching the 28-entry area lookup, ward_name and ward_no are stored
+immediately. Remaining "Bangalore"-tagged issues should be enriched by running
+enrich_locations.py afterwards.
 
 Usage:
   python process_issues.py
@@ -16,6 +19,8 @@ from datetime import datetime
 
 RAW_FILE = os.path.join(os.path.dirname(__file__), "../data/raw_tweets.json")
 OUTPUT_FILE = os.path.join(os.path.dirname(__file__), "../data/issues.json")
+AREA_LOOKUP_FILE = os.path.join(os.path.dirname(__file__), "../data/officials/area_ward_lookup.json")
+WARDS_FILE = os.path.join(os.path.dirname(__file__), "../data/officials/wards.json")
 
 # Keyword rules for each category (order matters — first match wins)
 CATEGORY_RULES = {
@@ -83,6 +88,41 @@ def extract_area(text: str) -> str:
     return "Bangalore"
 
 
+def load_ward_lookup():
+    """Build area→ward mapping from static JSON files (high-confidence entries only).
+    Returns dict of area.lower() → (ward_name, ward_no).
+    Only includes area_ward_lookup entries with match_score >= 0.8 and excludes the
+    generic 'Bangalore' entry (score 0.6 → Bagalagunte, which is meaningless).
+    Issues tagged 'Bangalore' need LLM enrichment via enrich_locations.py.
+    """
+    lookup = {}
+    try:
+        with open(AREA_LOOKUP_FILE, encoding="utf-8") as f:
+            area_map = json.load(f)
+        with open(WARDS_FILE, encoding="utf-8") as f:
+            wards = json.load(f)
+        ward_by_name = {w["ward_name"].lower(): w for w in wards if w.get("ward_name")}
+        for area, info in area_map.items():
+            if area == "Bangalore":
+                continue  # too generic — skip
+            if info.get("match_score", 0) < 0.8:
+                continue  # low-confidence mapping — skip
+            w = ward_by_name.get(info["ward_name"].lower())
+            if w:
+                lookup[area.lower()] = (w["ward_name"], w["ward_no"])
+    except Exception:
+        pass
+    return lookup
+
+
+WARD_LOOKUP = load_ward_lookup()
+
+
+def get_ward(area: str):
+    """Return (ward_name, ward_no) for a known area, or ('', '') if unknown."""
+    return WARD_LOOKUP.get(area.lower(), ("", ""))
+
+
 def extract_keywords(text: str, category: str) -> list:
     found = []
     lower = text.lower()
@@ -114,6 +154,7 @@ def process():
     for tweet in raw:
         category = categorize(tweet["text"])
         area = extract_area(tweet["text"])
+        ward_name, ward_no = get_ward(area)
         issues.append({
             "id": tweet["id"],
             "text": tweet["text"],
@@ -121,6 +162,8 @@ def process():
             "date": tweet["date"],
             "category": category,
             "area": area,
+            "ward_name": ward_name,
+            "ward_no": ward_no,
             "severity": severity(tweet.get("likes", 0), tweet.get("retweets", 0)),
             "likes": tweet.get("likes", 0),
             "retweets": tweet.get("retweets", 0),

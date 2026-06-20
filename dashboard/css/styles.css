@@ -1138,6 +1138,7 @@ a.org-contact-info:hover { text-decoration: underline; }
 .badge-cc        { background: #eff6ff; color: #1d4ed8; }
 .badge-esc1      { background: var(--warning-light); color: var(--warning); }
 .badge-esc2      { background: var(--danger-light); color: var(--danger); }
+.badge-highest   { background: #fdf2f8; color: #9d174d; }
 .badge-political { background: #f3e8ff; color: #7c3aed; }
 .routing-sla {
   font-size: .72rem;

@@ -1666,8 +1666,11 @@ function getSmartContacts(issue) {
   const category = issue.category || "Other";
   const area = issue.area || "";
 
-  // Lookup ward (robust: case-insensitive + partial match)
-  const ward = findWardByArea(area);
+  // Prefer ward stored directly on the issue (from enrich_locations.py),
+  // fall back to fuzzy area-name lookup
+  let ward = null;
+  if (issue.ward_name) ward = officialsData.wardLookup[issue.ward_name.toLowerCase()];
+  if (!ward) ward = findWardByArea(area);
 
   if (!ward) {
     // Fallback: use POC_DIRECTORY generic contacts
@@ -1794,19 +1797,49 @@ function getSmartContacts(issue) {
     }
   }
 
-  // Always add MLA as political contact if email exists
-  if (ward.mla && ward.mla_email) {
+  // Ward Councillor — always include if known (level 3)
+  if (ward.councillor) {
+    contacts.push({
+      role: "Ward Councillor",
+      detail: `Ward ${ward.ward_no} — ${ward.ward_name}`,
+      name: ward.councillor,
+      phone: ward.councillor_mobile || "",
+      email: "",
+      type: "cc",
+    });
+  }
+
+  // MLA — always include (level 4)
+  if (ward.mla) {
+    const mlaRec = officialsData.mlas.find(m =>
+      m.name && ward.mla && m.name.toLowerCase().includes(ward.mla.toLowerCase().split(" ").pop())
+    );
     contacts.push({
       role: "MLA",
       detail: ward.constituency || "",
       name: ward.mla,
-      phone: ward.mla_phones || "",
-      email: ward.mla_email,
+      phone: ward.mla_phones || (mlaRec && mlaRec.phones) || "",
+      email: ward.mla_email || (mlaRec && mlaRec.email) || "",
       type: "escalation",
     });
   }
 
-  return contacts;
+  // MP — highest authority (level 5)
+  if (ward.mp) {
+    const mpRec = officialsData.mps.find(m =>
+      m.name && ward.mp && m.name.toLowerCase().includes(ward.mp.toLowerCase().split(" ").pop())
+    );
+    contacts.push({
+      role: "MP",
+      detail: mpRec ? mpRec.constituency : "",
+      name: ward.mp,
+      phone: ward.mp_phones || (mpRec && mpRec.phones) || "",
+      email: ward.mp_email || (mpRec && mpRec.email) || "",
+      type: "highest",
+    });
+  }
+
+  return contacts.filter(c => c.name && c.name.trim());
 }
 
 function renderSmartContactsHTML(issue) {
@@ -1820,8 +1853,8 @@ function renderSmartContactsHTML(issue) {
     return '<div class="sc-no-contacts">No specific contacts found for this area and category.</div>';
   }
 
-  const badgeClass = { first_contact: "badge-first", cc: "badge-cc", escalation: "badge-esc1" };
-  const badgeLabel = { first_contact: "First Contact", cc: "CC", escalation: "Escalation" };
+  const badgeClass = { first_contact: "badge-first", cc: "badge-cc", escalation: "badge-esc1", highest: "badge-highest" };
+  const badgeLabel = { first_contact: "First Contact", cc: "CC", escalation: "Escalation", highest: "Highest Authority" };
 
   const emailLinkForContacts = buildSmartEmailLink(contacts, issue);
 

@@ -85,9 +85,10 @@ Every feature and file built in GovWatch, with dates and status.
 | File | Date Built | Status | Description |
 |---|---|---|---|
 | `scripts/fetch_tweets.py` | 2026-05-17 | ✅ Live | Incremental Twitter fetch — `since_id` avoids double billing |
-| `scripts/process_issues.py` | 2026-05-17 | ✅ Live | Keyword categorization + severity scoring |
+| `scripts/process_issues.py` | 2026-05-17 | ✅ Live | Keyword categorization + severity scoring + static ward lookup |
 | `scripts/filter_issues.py` | 2026-05-17 | ✅ Live | LLM filter (Claude Haiku) — incremental, persists verdicts |
-| `scripts/requirements.txt` | 2026-05-17 | ✅ Live | Python dependencies (tweepy, anthropic, python-dateutil) |
+| `scripts/enrich_locations.py` | 2026-06-20 | ✅ Live | LLM area extraction + Nominatim geocoding → ward mapping |
+| `scripts/requirements.txt` | 2026-05-17 | ✅ Live | Python dependencies (tweepy, anthropic, requests, python-dateutil) |
 | `scripts/config.example.py` | 2026-05-17 | ✅ Live | Config template — Twitter + Anthropic API keys |
 | `.github/workflows/refresh.yml` | 2026-05-17 | ✅ Live | GitHub Actions — daily auto-refresh at 6 AM IST |
 
