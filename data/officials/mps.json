@@ -5,7 +5,17 @@
     "party": "Bharatiya Janata Party",
     "phones": "+91-9448087039",
     "email": "karandljeshobha@gmail.com",
-    "assemblies": "K.R. Puram; Byatarayanapura; Yeshwanthapura; Dasarahalli; Mahalakshmi Layout; Malleshwaram; Hebbal; Pulakeshinagar"
+    "assemblies": [
+      "Yelahanka",
+      "K.R. Puram",
+      "Byatarayanapura",
+      "Yeshwanthapura",
+      "Dasarahalli",
+      "Mahalakshmi Layout",
+      "Malleshwaram",
+      "Hebbal",
+      "Ganganagar"
+    ]
   },
   {
     "name": "Shri P. C. Mohan",
@@ -13,7 +23,16 @@
     "party": "Bharatiya Janata Party",
     "phones": "+91-011-23016074",
     "email": "pc.mohan@sansad.nic.in",
-    "assemblies": "Sarvagnanagar; C.V. Raman Nagar; Shivajinagar; Shanti Nagar; Gandhi Nagar; Rajaji Nagar; Chamarajpet; Mahadevapura"
+    "assemblies": [
+      "Pulakeshinagar",
+      "Sarvagnanagar",
+      "C.V. Raman Nagar",
+      "Shivajinagar",
+      "Gandhinagara",
+      "Shanthinagar",
+      "Rajajinagar",
+      "Mahadevapura"
+    ]
   },
   {
     "name": "Shri Tejasvi Surya",
@@ -21,6 +40,18 @@
     "party": "Bharatiya Janata Party",
     "phones": "+91-9916836964",
     "email": "contact@tejasvisurya.in",
-    "assemblies": "Govindraj Nagar; Vijay Nagar; Chickpet; Basavanagudi; Padmanaba Nagar; BTM Layout; Jayanagar; Bommanahalli"
+    "assemblies": [
+      "Chamrajapet",
+      "Chickpet",
+      "Basavanagudi",
+      "Padmanabanagar",
+      "Govindrajnagar",
+      "Vijayanagar",
+      "Jayanagar",
+      "BTM Layout",
+      "Bommanahalli",
+      "Rajarajeshwarinagar",
+      "Anekal"
+    ]
   }
 ]
