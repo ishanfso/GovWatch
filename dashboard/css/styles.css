@@ -826,6 +826,7 @@ body {
   margin-bottom: 14px;
 }
 .chart-wrap { position: relative; height: 220px; }
+.chart-wrap-tall { height: 320px; }
 
 .sev-breakdown { display: flex; flex-direction: column; gap: 10px; }
 .sev-bar-row { display: flex; align-items: center; gap: 10px; }
@@ -852,6 +853,19 @@ body {
 .sla-table tr:last-child td { border-bottom: none; }
 .sla-table tr:hover td { background: var(--bg); }
 .sla-overdue-count { color: var(--danger); font-weight: 700; }
+
+/* ── Analytics breakdown lists ───────────────────────────────────── */
+.breakdown-list { display: flex; flex-direction: column; gap: 7px; max-height: 340px; overflow-y: auto; }
+.breakdown-list-wide { flex-direction: row; flex-wrap: wrap; gap: 8px; max-height: none; overflow-y: visible; }
+.breakdown-row { display: flex; align-items: center; gap: 8px; }
+.breakdown-name { font-size: .79rem; color: var(--text); flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.breakdown-bar-track { width: 90px; height: 6px; background: var(--border-soft); border-radius: 3px; overflow: hidden; flex-shrink: 0; }
+.breakdown-bar-fill { height: 100%; border-radius: 3px; background: var(--accent); transition: width .4s ease; }
+.breakdown-count { font-size: .72rem; color: var(--muted); font-weight: 600; width: 28px; text-align: right; flex-shrink: 0; }
+.breakdown-chip { display: flex; align-items: center; gap: 6px; background: var(--surface); border: 1px solid var(--border-soft); border-radius: 20px; padding: 4px 12px 4px 8px; font-size: .77rem; }
+.breakdown-chip-name { color: var(--text); font-weight: 500; }
+.breakdown-chip-count { background: var(--accent); color: #fff; border-radius: 10px; padding: 1px 7px; font-size: .68rem; font-weight: 700; }
+.breakdown-no-data { font-size: .78rem; color: var(--muted); font-style: italic; }
 
 /* ── Shared Loading / Empty ──────────────────────────────────────── */
 .loading, .no-results {
