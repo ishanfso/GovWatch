@@ -5,6 +5,18 @@ Format: `[Date] - What changed and why`
 
 ---
 
+## [2026-06-20] — Fix: "Officials data loading" shown in complaint detail panel
+
+### Fixed
+
+**`dashboard/js/app.js`**
+
+- Officials data now loads in the background at app startup (not just when the Officials tab is clicked), so smart contacts are ready when any complaint is opened
+- If an issue detail panel is already open when officials finish loading, it automatically re-renders to show the real contacts instead of the placeholder
+- The stale "Officials data loading..." message is replaced with a subtle "Loading contact info…" that self-resolves
+
+---
+
 ## [2026-06-20] — Officials Tab: Ward Lookup Bug Fix (Bellandur → Pulakeshi Nagar)
 
 ### Fixed
