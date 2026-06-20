@@ -47,7 +47,7 @@ def geocode(place: str) -> Optional[Tuple[float, float]]:
     key = place.strip().lower()
     if key in cache:
         entry = cache[key]
-        if entry is None:
+        if entry is None or (isinstance(entry, dict) and entry.get("skip")):
             return None
         return entry["lat"], entry["lon"]
 
