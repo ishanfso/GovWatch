@@ -629,7 +629,7 @@ function buildEmailLink(issue) {
     `— GovWatch Civic Intelligence Dashboard`,
     `  https://ishanfso.github.io/GovWatch/dashboard/`,
   ].join("\n");
-  return `mailto:${poc.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  return `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(poc.email)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
 
 // ── Map ────────────────────────────────────────────────────────────
