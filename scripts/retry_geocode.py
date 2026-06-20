@@ -1,21 +1,32 @@
 """
-retry_geocode.py — LLM-assisted retry for failed Nominatim lookups.
+retry_geocode.py — LLM-assisted retry for ALL failed Nominatim lookups in geo_cache.json.
 
-For each place in geo_cache.json with value None, this script:
-  1. Asks Claude to generate 4 alternative spellings / search terms
-  2. Tries each through Nominatim until one succeeds
-  3. Stores the successful result under the original key in geo_cache.json
+Handles all failure categories found in the cache:
+  1. OCR artifacts  — spaces in wrong places: "byatarayanap ura" → "Byatarayanapura"
+  2. Abbreviations  — "hgr", "llr", "bsk ii stage" → expanded place names
+  3. Real places    — misspellings like "cooks town", "govindrajnagar" → LLM variants
+  4. Admin offices  — "acp planning", "north sub division office" → not geocodable, skip
+  5. O&M codes      — "o&m -i", "o&m -ii" → operational codes, skip
 
-After this runs, re-run enrich_bescom_bwssb.py to pick up the corrections.
+For categories 1-3, tries:
+  a) Direct retry with "name, Bangalore Karnataka India"
+  b) Pre-processed name (OCR fix, known expansions)
+  c) LLM generates 4 spelling/transliteration variants → tries each
 
-Requirements: ANTHROPIC_API_KEY in environment or scripts/config.py
+Permanently marks non-geocodable entries with {"skip": true} so re-runs skip them.
 
-Run from the GovWatch root:
+Requirements: ANTHROPIC_API_KEY in scripts/config.py or environment
+
+Run from GovWatch root:
     python scripts/retry_geocode.py
+
+After this completes, re-run:
+    python scripts/enrich_bescom_bwssb.py
 """
 
 import json
 import os
+import re
 import sys
 import time
 import urllib.request
@@ -31,7 +42,6 @@ try:
     ANTHROPIC_KEY = getattr(cfg, "ANTHROPIC_API_KEY", None)
 except ImportError:
     ANTHROPIC_KEY = None
-
 ANTHROPIC_KEY = ANTHROPIC_KEY or os.environ.get("ANTHROPIC_API_KEY", "")
 
 NOMINATIM_URL = "https://nominatim.openstreetmap.org/search"
@@ -41,11 +51,129 @@ RATE_LIMIT    = 1.1
 
 _last_nominatim = 0.0
 
-# Places we know are outside Bangalore or garbage entries — skip entirely
-SKIP_PATTERNS = [
-    "i need to identify",
-    "toll gate near parle",
-    "vashi",           # Mumbai
+# ── Known abbreviations ───────────────────────────────────────────────────────
+# Map bare name (lowercase, no suffix) → expanded search term
+KNOWN_EXPANSIONS = {
+    "hgr":    "Hanumanthanagar Bangalore",
+    "llr":    "Lalbagh Road Bangalore",
+    "clr":    "Chickpet Lalbagh Road Bangalore",
+    "cooks town":    "Cooke Town Bangalore",
+    "cotton pet":    "Cottonpete Bangalore",
+    "cubbon pet":    "Cubbonpet Bangalore",
+    "bsk ii stage":  "Banashankari 2nd Stage Bangalore",
+    "bsk":           "Banashankari Bangalore",
+    "bannergata":    "Bannerghatta Bangalore",
+    "marthalli":     "Marathahalli Bangalore",
+    "yashwanthpur":  "Yeshwanthpur Bangalore",
+    "msnagar":       "M S Nagar Bangalore",
+    "tanisandra":    "Thanisandra Bangalore",
+    "govindrajnagar":"Govindraj Nagar Bangalore",
+    "naagarabhavi":  "Nagarbhavi Bangalore",
+    "sampangiram nagar": "Sampangi Rama Nagar Bangalore",
+    "talaghattapura":"Talaghattapura Bangalore",
+    "kaggadaspura":  "Kaggadasapura Bangalore",
+    "kadubesanhalli":"Kadubesanahalli Bangalore",
+    "chinnapahalli": "Chinnappanahalli Bangalore",
+    "munnekollal":   "Munnekolala Bangalore",
+    "munnekollala":  "Munnekolala Bangalore",
+    "munnekolalu":   "Munnekolala Bangalore",
+    "d.jhalli":      "Dasarahalli Bangalore",
+    "b narayanpura": "B Narayanapura Bangalore",
+    "k naryanpura":  "K Narayanapura Bangalore",
+    "thubrahalli":   "Thubarahalli Bangalore",
+    "srinivasnagar": "Srinivasa Nagar Bangalore",
+    "saraswathinagar": "Saraswathipuram Bangalore",
+    "bhyraveshwara nagar": "Bhairaveswara Nagar Bangalore",
+    "jigni":         "Jigani Bangalore",
+    "attibale":      "Attibele Bangalore",
+    "bannappa park": "Bannappa Park Bangalore",
+    "hombegowda nagara": "Hombegowda Nagar Bangalore",
+    "hebbal guddahalli": "Guddahalli Hebbal Bangalore",
+    "vignan nagar":  "Vignana Nagar Bangalore",
+    "virgo nagar":   "Virgo Nagar Bangalore",
+    "weaver colony": "Weaver Colony Bangalore",
+    "jagdish nagar": "Jagdish Nagar Bangalore",
+    "jakkur village":"Jakkur Bangalore",
+    "pillanagarden": "Pillanna Garden Bangalore",
+    "pillanna garden":"Pillanna Garden Bangalore",
+    "kengeri park road": "Kengeri Bangalore",
+    "aishwarya crystal layout": "Aishwarya Crystal Layout Bangalore",
+    "chiranjeevi layout": "Chiranjeevi Layout Bangalore",
+    "chowrappa layout": "Chowrappa Layout Bangalore",
+    "dominic layout": "Dominic Layout Bangalore",
+    "dns layout":    "DNS Layout Bangalore",
+    "rhcs layout":   "RHCS Layout Bangalore",
+    "ramesh reddy layout": "Ramesh Reddy Layout Bangalore",
+    "red carpet layout": "Red Carpet Layout Bangalore",
+    "sannidhi enclave": "Sannidhi Enclave Bangalore",
+    "mittaganahalli": "Mittaganahalli Bangalore",
+    "pragatipura":   "Pragatipura Bangalore",
+    "reva circle":   "Reva Circle Bangalore",
+    "shanthipura":   "Shanthipura Bangalore",
+    "shantinetan layout": "Shantiniketan Layout Bangalore",
+    "somasandara palya": "Somasundara Palya Bangalore",
+    "new gurupanpalya": "Guru Nanak Palya Bangalore",
+    "annayappakare": "Annayappakare Bangalore",
+    "aswathnagar":   "Ashwath Nagar Bangalore",
+    "avalhalli":     "Avalahalli Bangalore",
+    "babusapalya":   "Babusapalya Bangalore",
+    "mylasandra ramesh reddy layout": "Mylasandra Bangalore",
+    "narullahalli":  "Narullahalli Bangalore",
+    "kithaganur":    "Kithaganur Bangalore",
+    "sri venkateshpura layout": "Venkateshpura Bangalore",
+    "puttapa layout":"Puttappa Layout Bangalore",
+}
+
+# ── Patterns that are NOT geocodable (admin office titles, O&M codes) ─────────
+NON_PLACE_PATTERNS = [
+    # BESCOM O&M operational codes — not geocodable place names
+    r"^o&m",
+    r"bstation$",
+    r"cstation$",
+
+    # Traffic administrative offices / subdivisions — not a physical PS location
+    r"sub division office",
+    r"^office of the",
+    r"^north sub division",
+    r"^south sub division",
+    r"^east sub division",
+    r"^west sub division",
+    r"^acp (planning|tr|traffic)",
+    r"^dcp ",
+    r"^deputy commissioner of police",
+    r"^traffic (south|north|east|west|northeast|southeast) (division|sub division)",
+    r"^tr (south|north|east|west) (sub|office|division)",
+    r"^tr whitefield sub",
+    r"^tr hsr layout sub",
+    r"acp vijaynagara trafic sub",
+    r"^j b ngara tr ps",
+    r"^k r pura tr$",
+
+    # BESCOM/BWSSB section names (administrative, not geographic points)
+    r"^central section",
+    r"^north section",
+    r"^south section",
+    r"^west section",
+
+    # Multi-area slash entries — ambiguous, skip
+    r"^banashankari / padmanabha nagara",
+    r"^challakere / horamavu",
+    r"^devasandra service station / k r puram",
+    r"^hal airport/marathalli",
+    r"^ittamadu / devagiri",
+    r"^kumaraswamy layout stage",
+    r"^magadi road 1/ magadi road 2",
+    r"^mnk / basavanagudi",
+    r"^nagendra block / girinagar",
+    r"^narayan nagar & gottigerew",
+    r"^vv puram / k.g.nagar",
+
+    # Garbage / out-of-city / prompt artifacts
+    r"toll gate near parle",
+    r"i need to identify",
+    r"^vashi$",
+    r"^vashi bridge$",
+    r"\(cid:\d+\)",                   # HTML encoding artifacts in source data
 ]
 
 
@@ -67,13 +195,12 @@ def nominatim_query(place):
     if elapsed < RATE_LIMIT:
         time.sleep(RATE_LIMIT - elapsed)
     params = urllib.parse.urlencode({
-        "q": place,
-        "format": "json",
-        "limit": 1,
-        "countrycodes": "in",
+        "q": place, "format": "json", "limit": 1, "countrycodes": "in",
     })
-    url = "{0}?{1}".format(NOMINATIM_URL, params)
-    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+    req = urllib.request.Request(
+        "{0}?{1}".format(NOMINATIM_URL, params),
+        headers={"User-Agent": USER_AGENT},
+    )
     try:
         _last_nominatim = time.time()
         with urllib.request.urlopen(req, timeout=10) as resp:
@@ -85,37 +212,26 @@ def nominatim_query(place):
     return None
 
 
-def get_variants(original_key):
-    """Use Claude Haiku to generate 4 Bangalore-specific search term variants."""
+def get_llm_variants(bare_name):
+    """Ask Claude Haiku for 4 Bangalore-specific geocodable name variants."""
     if not ANTHROPIC_KEY:
         return []
-
-    # Strip the ", bangalore, karnataka" suffix if present to get the bare name
-    bare = original_key
-    for suffix in [", bangalore, karnataka", ", bangalore", ", karnataka"]:
-        if bare.endswith(suffix):
-            bare = bare[: -len(suffix)]
-            break
-
     prompt = (
         "The following place name in Bangalore, India failed to geocode on OpenStreetMap Nominatim: {0!r}\n\n"
-        "Generate exactly 4 alternative search terms for this same place — try different spellings, "
-        "transliterations, or common short forms. Each should be a plain place name to search on "
-        "Nominatim (include 'Bangalore' at the end of each). "
-        "Output ONLY a JSON array of 4 strings, no explanation.\n"
-        "Example output: [\"Marathahalli, Bangalore\", \"Marath Halli, Bangalore\", "
-        "\"Marathalli, Bangalore\", \"Marathalli Bangalore Karnataka\"]"
-    ).format(bare)
-
+        "Generate exactly 4 alternative search terms — try different spellings, common transliterations, "
+        "official BBMP ward names, or well-known area names that would match this location. "
+        "Each should end with ', Bangalore'. "
+        "Output ONLY a JSON array of 4 strings, nothing else.\n"
+        "Example: [\"Marathahalli, Bangalore\", \"Marathalli, Bangalore\", "
+        "\"Marath Halli Outer Ring Road, Bangalore\", \"Marathahalli Bridge, Bangalore\"]"
+    ).format(bare_name)
     payload = json.dumps({
         "model": "claude-haiku-4-5-20251001",
         "max_tokens": 200,
         "messages": [{"role": "user", "content": prompt}],
     }).encode()
-
     req = urllib.request.Request(
-        ANTHROPIC_URL,
-        data=payload,
+        ANTHROPIC_URL, data=payload,
         headers={
             "Content-Type": "application/json",
             "x-api-key": ANTHROPIC_KEY,
@@ -126,9 +242,7 @@ def get_variants(original_key):
         with urllib.request.urlopen(req, timeout=20) as resp:
             body = json.loads(resp.read())
         text = body["content"][0]["text"].strip()
-        # Extract JSON array from response
-        start = text.find("[")
-        end   = text.rfind("]") + 1
+        start, end = text.find("["), text.rfind("]") + 1
         if start != -1 and end > start:
             return json.loads(text[start:end])
     except Exception as e:
@@ -136,9 +250,70 @@ def get_variants(original_key):
     return []
 
 
-def should_skip(key):
+def bare_name(key):
+    """Strip ', bangalore, karnataka' suffix to get the raw place name."""
+    s = key
+    for suffix in [", bangalore, karnataka", ", bangalore", ", karnataka"]:
+        if s.endswith(suffix):
+            s = s[: -len(suffix)]
+            break
+    return s.strip()
+
+
+def fix_ocr_spaces(name):
+    """Remove spaces that split words mid-syllable (OCR artifact).
+
+    Pattern: lowercase letter, space, 1-3 lowercase letters, space OR end.
+    e.g. 'byatarayanap ura' → 'byatarayanapura'
+         'chandapu ra'      → 'chandapura'
+    """
+    fixed = re.sub(r'([a-z]) ([a-z]{1,3})(\b)', lambda m: m.group(1) + m.group(2) + m.group(3), name)
+    # Also handle patterns like 'govindapur a' → 'govindapura'
+    fixed = re.sub(r'([a-z]{4,}) ([a-z]{1,3})$', lambda m: m.group(1) + m.group(2), fixed)
+    return fixed
+
+
+def is_non_place(key):
     lk = key.lower()
-    return any(p in lk for p in SKIP_PATTERNS)
+    return any(re.search(p, lk) for p in NON_PLACE_PATTERNS)
+
+
+def try_geocode_sequence(key, label=""):
+    """Try multiple queries for a key. Return (lat, lon) on first success or None."""
+    b = bare_name(key).lower()
+
+    # 1. Known expansion
+    if b in KNOWN_EXPANSIONS:
+        result = nominatim_query(KNOWN_EXPANSIONS[b])
+        if result:
+            print("    -> known expansion: {0!r}".format(KNOWN_EXPANSIONS[b]))
+            return result
+
+    # 2. OCR space fix
+    fixed = fix_ocr_spaces(b)
+    if fixed != b:
+        result = nominatim_query("{0}, Bangalore Karnataka India".format(fixed.title()))
+        if result:
+            print("    -> OCR fix: {0!r}".format(fixed))
+            return result
+
+    # 3. Direct retry with tighter scope
+    result = nominatim_query("{0}, Bangalore Karnataka India".format(b.title()))
+    if result:
+        print("    -> direct retry succeeded")
+        return result
+
+    # 4. LLM variants
+    variants = get_llm_variants(b)
+    if variants:
+        print("    -> LLM variants: {0}".format(variants))
+    for v in variants:
+        result = nominatim_query(v)
+        if result:
+            print("    -> SUCCESS with: {0!r}".format(v))
+            return result
+
+    return None
 
 
 def main():
@@ -148,63 +323,53 @@ def main():
         sys.exit(1)
 
     cache = load_cache()
-    failed = [k for k, v in cache.items() if v is None]
-    skipped = [k for k in failed if should_skip(k)]
-    to_retry = [k for k in failed if not should_skip(k)]
 
+    # Partition cache entries
+    all_failed  = [k for k, v in cache.items() if v is None]
+    already_skipped = [k for k, v in cache.items()
+                       if isinstance(v, dict) and v.get("skip")]
+    non_places  = [k for k in all_failed if is_non_place(k)]
+    retryable   = [k for k in all_failed if not is_non_place(k)]
+
+    print("=" * 60)
     print("Geo-cache retry with LLM-assisted name variants")
-    print("  Total failures : {0}".format(len(failed)))
-    print("  Skipping       : {0} (outside Bangalore or garbage)".format(len(skipped)))
-    print("  Will retry     : {0}".format(len(to_retry)))
+    print("=" * 60)
+    print("  Total failures (None)    : {0}".format(len(all_failed)))
+    print("  Already marked skip      : {0}".format(len(already_skipped)))
+    print("  Non-place admin entries  : {0} (will mark skip)".format(len(non_places)))
+    print("  Retryable place names    : {0}".format(len(retryable)))
     print()
+
+    # Mark non-places permanently so future runs skip them
+    for k in non_places:
+        cache[k] = {"skip": True}
+    save_cache(cache)
+    print("Marked {0} admin/office entries as skip.\n".format(len(non_places)))
 
     resolved = 0
     still_failed = 0
 
-    for i, key in enumerate(to_retry, 1):
-        print("[{0}/{1}] {2!r}".format(i, len(to_retry), key))
-
-        # First try the key as-is with a tighter Bangalore-scoped query
-        bare = key
-        for suffix in [", bangalore, karnataka", ", bangalore", ", karnataka"]:
-            if bare.endswith(suffix):
-                bare = bare[: -len(suffix)]
-                break
-        direct = "{0}, Bangalore Karnataka India".format(bare)
-        result = nominatim_query(direct)
+    for i, key in enumerate(retryable, 1):
+        print("[{0}/{1}] {2!r}".format(i, len(retryable), key))
+        result = try_geocode_sequence(key)
         if result:
-            print("  -> Direct retry succeeded: {0}".format(direct))
             cache[key] = {"lat": result[0], "lon": result[1]}
-            save_cache(cache)
             resolved += 1
-            continue
-
-        # Ask LLM for variants
-        variants = get_variants(key)
-        print("  -> LLM variants: {0}".format(variants))
-
-        found = False
-        for variant in variants:
-            result = nominatim_query(variant)
-            if result:
-                print("  -> SUCCESS with variant {0!r}: {1}".format(variant, result))
-                cache[key] = {"lat": result[0], "lon": result[1]}
-                save_cache(cache)
-                resolved += 1
-                found = True
-                break
-
-        if not found:
-            print("  -> All variants failed — marking permanently skipped")
+        else:
+            print("    -> all attempts failed")
             still_failed += 1
+        # Save after every entry so progress is not lost on interrupt
+        save_cache(cache)
 
     print()
+    print("=" * 60)
     print("Done.")
-    print("  Resolved   : {0}".format(resolved))
+    print("  Resolved    : {0} / {1}".format(resolved, len(retryable)))
     print("  Still failed: {0}".format(still_failed))
-    print("  Skipped    : {0}".format(len(skipped)))
+    print("  Marked skip : {0} (admin offices / O&M codes)".format(len(non_places)))
     print()
-    print("Next: re-run enrich_bescom_bwssb.py to apply the corrected geocodes")
+    print("Next: re-run enrich_bescom_bwssb.py to apply corrected geocodes:")
+    print("  python scripts/enrich_bescom_bwssb.py")
 
 
 if __name__ == "__main__":
