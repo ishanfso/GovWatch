@@ -5,6 +5,16 @@ Format: `[Date] - What changed and why`
 
 ---
 
+## [2026-06-20] — Assign Button Opens Gmail in Browser
+
+### Fixed
+
+**`dashboard/js/app.js` — `buildEmailLink`**
+
+Changed the Assign button from a `mailto:` link (which opens Apple Mail or whatever the OS default is) to a Gmail web compose URL (`https://mail.google.com/mail/?view=cm&...`). Now clicking Assign always opens a pre-filled Gmail draft in the browser — no desktop mail app involved.
+
+---
+
 ## [2026-06-20] — Restore Date Filters + Sort Control
 
 ### Added
