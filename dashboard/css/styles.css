@@ -623,6 +623,37 @@ body {
 }
 .btn-source:hover { background: var(--brand-light); border-color: var(--brand); color: var(--brand); }
 
+.btn-copy-tweet {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px;
+  background: transparent;
+  color: #1d9bf0;
+  border: 1px solid #1d9bf0;
+  border-radius: var(--radius);
+  font-size: .76rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all .12s;
+}
+.btn-copy-tweet:hover { background: #e8f5fe; }
+.btn-copy-tweet.copied { background: #e6f4ea; color: var(--action); border-color: var(--action); }
+.tweet-preview {
+  padding: 10px 12px;
+  background: #f0f8ff;
+  border: 1px solid #b8d9f5;
+  border-radius: var(--radius);
+  font-size: .75rem;
+  line-height: 1.5;
+  color: var(--ink);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.tweet-preview.hidden { display: none; }
+
 /* ── Map View ────────────────────────────────────────────────────── */
 .map-legend {
   display: flex;

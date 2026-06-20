@@ -553,6 +553,8 @@ function renderDetailPanel(issue) {
           &#128231; Assign to ${esc(poc.dept)}
         </a>
         ${issue.source_url ? `<a class="btn-source" href="${esc(issue.source_url)}" target="_blank" rel="noopener">Open source tweet &#8599;</a>` : ""}
+        <button class="btn-copy-tweet" id="copy-tweet-btn">&#128203; Copy Tweet Reply</button>
+        <div class="tweet-preview hidden" id="tweet-preview"></div>
       </div>
 
     </div>
@@ -574,6 +576,46 @@ function renderDetailPanel(issue) {
       renderKPIs(allIssues);
     });
   }
+
+  const copyBtn = document.getElementById("copy-tweet-btn");
+  const tweetPreview = document.getElementById("tweet-preview");
+  if (copyBtn) {
+    copyBtn.addEventListener("click", () => {
+      const tweet = buildTweetReply(issue);
+      if (tweetPreview) {
+        tweetPreview.textContent = tweet;
+        tweetPreview.classList.remove("hidden");
+      }
+      const doCopy = () => {
+        copyBtn.innerHTML = "&#10003; Copied!";
+        copyBtn.classList.add("copied");
+        setTimeout(() => {
+          copyBtn.innerHTML = "&#128203; Copy Tweet Reply";
+          copyBtn.classList.remove("copied");
+        }, 2500);
+      };
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(tweet).then(doCopy).catch(() => {
+          legacyCopy(tweet);
+          doCopy();
+        });
+      } else {
+        legacyCopy(tweet);
+        doCopy();
+      }
+    });
+  }
+}
+
+function legacyCopy(text) {
+  const ta = document.createElement("textarea");
+  ta.value = text;
+  ta.style.position = "fixed";
+  ta.style.opacity = "0";
+  document.body.appendChild(ta);
+  ta.select();
+  document.execCommand("copy");
+  document.body.removeChild(ta);
 }
 
 // ── Clustering ─────────────────────────────────────────────────────
@@ -1807,6 +1849,26 @@ function renderSmartContactsHTML(issue) {
     : "";
 
   return `<div class="smart-contacts">${rows}${bulkBtn}</div>`;
+}
+
+function buildTweetReply(issue) {
+  const author = issue.author
+    ? (issue.author.startsWith("@") ? issue.author : "@" + issue.author)
+    : "";
+  const contacts = officialsLoaded ? getSmartContacts(issue) : [];
+  const first = contacts.find(c => c.type === "first_contact");
+  const poc = POC_DIRECTORY[issue.category] || POC_DIRECTORY.Other;
+
+  const authority = first
+    ? `${first.name}, ${first.role} (${poc.dept})`
+    : poc.dept;
+
+  const greeting = author ? `${author} ` : "";
+  const cat = (issue.category || "civic").toLowerCase();
+  const area = issue.area || "Bangalore";
+
+  const tweet = `${greeting}Hi! We've raised your ${cat} concern in ${area} with ${authority} and requested resolution within ${poc.tat}h. We're tracking this. 🙏 #GovWatch #Bengaluru`;
+  return tweet.length > 280 ? tweet.slice(0, 277) + "…" : tweet;
 }
 
 function buildSmartEmailLink(contacts, issue) {

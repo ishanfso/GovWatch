@@ -5,6 +5,25 @@ Format: `[Date] - What changed and why`
 
 ---
 
+## [2026-06-20] — Copy Tweet Reply button in complaint detail panel
+
+### Added
+
+**`dashboard/js/app.js`**
+
+- New `buildTweetReply(issue)` function drafts a Twitter reply using the smart contact's name, role, and department — e.g. *"@citizen Hi! We've raised your roads concern in Koramangala with Rajesh Kumar, Ward Councillor (BBMP) and requested resolution within 72h. 🙏 #GovWatch #Bengaluru"*
+- Falls back to generic department name if officials data isn't loaded yet
+- Auto-trims to 280 characters if needed
+- "Copy Tweet Reply" button in the detail panel copies text to clipboard and shows the draft inline so you can review before pasting
+- Button flashes "✓ Copied!" for 2.5 seconds, then resets
+
+**`dashboard/css/styles.css`**
+
+- `.btn-copy-tweet` — Twitter-blue outlined button, green on copy success
+- `.tweet-preview` — light blue card showing the drafted text inline
+
+---
+
 ## [2026-06-20] — Fix: "Officials data loading" shown in complaint detail panel
 
 ### Fixed
