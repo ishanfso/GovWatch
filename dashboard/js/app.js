@@ -170,6 +170,9 @@ async function init() {
   });
 
   document.getElementById("export-csv").addEventListener("click", exportCSV);
+
+  // Pre-load officials data in the background so smart contacts are ready when issues are clicked
+  initOfficials();
 }
 
 // ── KPIs ───────────────────────────────────────────────────────────
@@ -989,7 +992,13 @@ async function initOfficials() {
 
   officialsLoading = false;
 
-  // Render initial org chart and routing guide
+  // If a complaint detail panel is already open, re-render it so smart contacts appear
+  if (officialsLoaded && selectedIssueId) {
+    const issue = allIssues.find(i => i.id === selectedIssueId);
+    if (issue) renderDetailPanel(issue);
+  }
+
+  // Render initial org chart and routing guide (only if Officials tab is active)
   renderOrgChart(activeOrgDept);
   renderRoutingGuide();
   initWardSearch();
@@ -1760,7 +1769,8 @@ function getSmartContacts(issue) {
 
 function renderSmartContactsHTML(issue) {
   if (!officialsLoaded) {
-    return '<div class="sc-no-contacts">Officials data loading...</div>';
+    if (!officialsLoading) initOfficials();
+    return '<div class="sc-no-contacts" style="color:var(--muted);font-style:italic">Loading contact info…</div>';
   }
 
   const contacts = getSmartContacts(issue);
