@@ -13,7 +13,9 @@
     "keywords": [
       "flood"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2064362116312871386",
@@ -29,7 +31,9 @@
     "keywords": [
       "footpath"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2065262447687323659",
@@ -43,7 +47,9 @@
     "retweets": 10,
     "source_url": "https://twitter.com/i/web/status/2065262447687323659",
     "keywords": [],
-    "status": "open"
+    "status": "open",
+    "ward_name": "Koramangala East",
+    "ward_no": "28"
   },
   {
     "id": "2066351562851799123",
@@ -60,7 +66,9 @@
       "waterlog",
       "flood"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2067103734719791436",
@@ -76,7 +84,9 @@
     "keywords": [
       "bwssb"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2061797218353561727",
@@ -92,7 +102,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2055145374382256138",
@@ -108,7 +120,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2064371680903098535",
@@ -124,7 +138,9 @@
     "keywords": [
       "bmtc"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2067096415898329196",
@@ -140,7 +156,9 @@
     "keywords": [
       "digging"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2055206446363730253",
@@ -156,7 +174,9 @@
     "keywords": [
       "pothole"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2056082063133151368",
@@ -172,7 +192,9 @@
     "keywords": [
       "rain water"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2065425617764716692",
@@ -188,7 +210,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2059478414340616571",
@@ -204,7 +228,9 @@
     "keywords": [
       "traffic jam"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2054616720451703215",
@@ -220,7 +246,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2056566276424953868",
@@ -236,7 +264,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2064635109349917161",
@@ -252,7 +282,9 @@
     "keywords": [
       "pothole"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2065099269330375084",
@@ -268,7 +300,9 @@
     "keywords": [
       "digging"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2068229164361220303",
@@ -284,7 +318,9 @@
     "keywords": [
       "power cut"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2056421082295672966",
@@ -301,7 +337,9 @@
       "power outage",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2056962465888669873",
@@ -317,7 +355,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2055620327020130654",
@@ -333,7 +373,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2055533957916356891",
@@ -351,7 +393,9 @@
       "dump",
       "swm"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2054755924770963808",
@@ -367,7 +411,9 @@
     "keywords": [
       "bmtc"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2056322129948541397",
@@ -385,7 +431,9 @@
       "dump",
       "solid waste"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2064346856231145497",
@@ -399,7 +447,9 @@
     "retweets": 1,
     "source_url": "https://twitter.com/i/web/status/2064346856231145497",
     "keywords": [],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2065738853256945862",
@@ -415,7 +465,9 @@
     "keywords": [
       "rainwater"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2055403787817529598",
@@ -432,7 +484,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2055553017878135261",
@@ -449,7 +503,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2062183138118574508",
@@ -463,7 +519,9 @@
     "retweets": 2,
     "source_url": "https://twitter.com/i/web/status/2062183138118574508",
     "keywords": [],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2063992293892522153",
@@ -480,7 +538,9 @@
       "footpath",
       "pavement"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2067470738207244700",
@@ -496,7 +556,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2054558135508209764",
@@ -512,7 +574,9 @@
     "keywords": [
       "traffic jam"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057492306295771469",
@@ -529,7 +593,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2058222271337259328",
@@ -545,7 +611,9 @@
     "keywords": [
       "power cut"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2061686460550709658",
@@ -561,7 +629,9 @@
     "keywords": [
       "bmtc"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2063271867268673536",
@@ -578,7 +648,9 @@
       "garbage",
       "waste"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2067479377563250742",
@@ -594,7 +666,9 @@
     "keywords": [
       "waterlog"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2053442120212689235",
@@ -610,7 +684,9 @@
     "keywords": [
       "pothole"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2054173600543113692",
@@ -626,7 +702,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2053691682093449436",
@@ -642,7 +720,9 @@
     "keywords": [
       "power cut"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2055483510811451615",
@@ -660,7 +740,9 @@
       "debris",
       "litter"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "K R Pura",
+    "ward_no": "14"
   },
   {
     "id": "2056448088282460303",
@@ -677,7 +759,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057287508329980348",
@@ -693,7 +777,9 @@
     "keywords": [
       "bwssb"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057457317176852787",
@@ -711,7 +797,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057596344613978500",
@@ -727,7 +815,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057719189755019440",
@@ -745,7 +835,9 @@
       "dump",
       "swm"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057896881255322024",
@@ -763,7 +855,9 @@
       "bescom",
       "load shedding"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "Hebbal",
+    "ward_no": "56"
   },
   {
     "id": "2058458250748756110",
@@ -779,7 +873,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2059258050175767044",
@@ -795,7 +891,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2060349564465623419",
@@ -811,7 +909,9 @@
     "keywords": [
       "flood"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2060392816573087993",
@@ -827,7 +927,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2062808461721976833",
@@ -844,7 +946,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2063273842366403021",
@@ -861,7 +965,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2064916899633480053",
@@ -877,7 +983,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2066055572164919749",
@@ -894,7 +1002,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2066691141060411616",
@@ -911,7 +1021,9 @@
       "garbage",
       "swm"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2066768556960956759",
@@ -927,7 +1039,9 @@
     "keywords": [
       "bmtc"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "Hebbal",
+    "ward_no": "56"
   },
   {
     "id": "2067286528720814373",
@@ -943,7 +1057,9 @@
     "keywords": [
       "road condition"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "Bellandur",
+    "ward_no": "47"
   },
   {
     "id": "2068177190739726778",
@@ -959,7 +1075,9 @@
     "keywords": [
       "pothole"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2054518266387902916",
@@ -975,7 +1093,9 @@
     "keywords": [
       "no water"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2053815337163112891",
@@ -991,7 +1111,9 @@
     "keywords": [
       "bwssb"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2055892156737585427",
@@ -1007,7 +1129,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2055662035917287825",
@@ -1024,7 +1148,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "Hebbal",
+    "ward_no": "56"
   },
   {
     "id": "2055586156893594012",
@@ -1041,7 +1167,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2054071413682966957",
@@ -1058,7 +1186,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2053732079360516447",
@@ -1075,7 +1205,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2053489774217019416",
@@ -1091,7 +1223,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2055257775467606342",
@@ -1107,7 +1241,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2055232116250776028",
@@ -1123,7 +1259,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2055144207984263375",
@@ -1140,7 +1278,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "Whitefield",
+    "ward_no": "38"
   },
   {
     "id": "2054262787149574441",
@@ -1156,7 +1296,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2054260227231605204",
@@ -1172,7 +1314,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2054259175711285402",
@@ -1188,7 +1332,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2054948083629506868",
@@ -1205,7 +1351,9 @@
       "traffic signal",
       "congestion"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2055902524159451469",
@@ -1221,7 +1369,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2056366882924679237",
@@ -1238,7 +1388,9 @@
       "power outage",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2056813920615301329",
@@ -1254,7 +1406,9 @@
     "keywords": [
       "bwssb"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "Whitefield",
+    "ward_no": "38"
   },
   {
     "id": "2056747351507931530",
@@ -1270,7 +1424,9 @@
     "keywords": [
       "water supply"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2056765220358705368",
@@ -1286,7 +1442,9 @@
     "keywords": [
       "power cut"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057333042054828205",
@@ -1303,7 +1461,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057390874481635381",
@@ -1319,7 +1479,9 @@
     "keywords": [
       "flood"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057643219882811654",
@@ -1336,7 +1498,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057726332742844771",
@@ -1353,7 +1517,9 @@
       "power outage",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057714216665260510",
@@ -1369,7 +1535,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057721385028603963",
@@ -1385,7 +1553,9 @@
     "keywords": [
       "pothole"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2058456944361533782",
@@ -1402,7 +1572,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "Kalyanagar",
+    "ward_no": "31"
   },
   {
     "id": "2058813352965734588",
@@ -1418,7 +1590,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2058854692604838124",
@@ -1436,7 +1610,9 @@
       "waste",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2059156641766064414",
@@ -1453,7 +1629,9 @@
       "garbage",
       "trash"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2059285424171110716",
@@ -1470,7 +1648,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2059915161004298568",
@@ -1486,7 +1666,9 @@
     "keywords": [
       "no water"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2059925928449573083",
@@ -1503,7 +1685,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2059988358315880466",
@@ -1519,7 +1703,9 @@
     "keywords": [
       "pothole"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2060026522648641977",
@@ -1535,7 +1721,9 @@
     "keywords": [
       "bmtc"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2060324436109332951",
@@ -1551,7 +1739,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2060311937213501582",
@@ -1567,7 +1757,9 @@
     "keywords": [
       "bmtc"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2060387813959594160",
@@ -1584,7 +1776,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2060414185566298502",
@@ -1601,7 +1795,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2060746853684314367",
@@ -1618,7 +1814,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2061086037783491058",
@@ -1635,7 +1833,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2061141192805634346",
@@ -1652,7 +1852,9 @@
       "power outage",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2061198669689581907",
@@ -1669,7 +1871,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2061791949141815699",
@@ -1685,7 +1889,9 @@
     "keywords": [
       "borewell"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2061826644030169432",
@@ -1701,7 +1907,9 @@
     "keywords": [
       "traffic jam"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2062421649476157462",
@@ -1718,7 +1926,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2062512607601561950",
@@ -1734,7 +1944,9 @@
     "keywords": [
       "bwssb"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2062766151466438732",
@@ -1750,7 +1962,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2063087459777565103",
@@ -1766,7 +1980,9 @@
     "keywords": [
       "bwssb"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2063137775973695662",
@@ -1783,7 +1999,9 @@
       "power outage",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2063173497543856273",
@@ -1799,7 +2017,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2063317004938047943",
@@ -1816,7 +2036,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2064257801833402523",
@@ -1832,7 +2054,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2064306068923245046",
@@ -1848,7 +2072,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2064369283573174591",
@@ -1865,7 +2091,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2064374688881746073",
@@ -1881,7 +2109,9 @@
     "keywords": [
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2064339103223816498",
@@ -1898,7 +2128,9 @@
       "park",
       "cubbon"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2064640593972936855",
@@ -1915,7 +2147,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2064637991826690427",
@@ -1932,7 +2166,9 @@
       "garbage",
       "waste"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "Indiranagar",
+    "ward_no": "15"
   },
   {
     "id": "2064988624823992511",
@@ -1948,7 +2184,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2065554962768130398",
@@ -1964,7 +2202,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2065615996413694433",
@@ -1981,7 +2221,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "Madiwala",
+    "ward_no": "20"
   },
   {
     "id": "2065613140898045998",
@@ -1998,7 +2240,9 @@
       "bescom",
       "power failure"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2065727169498866130",
@@ -2015,7 +2259,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2065725931797533115",
@@ -2032,7 +2278,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2065850680368410734",
@@ -2049,7 +2297,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2066402625793450008",
@@ -2066,7 +2316,9 @@
       "garbage",
       "swm"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2066889611184681044",
@@ -2082,7 +2334,9 @@
     "keywords": [
       "rain water"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2067212245604720832",
@@ -2098,7 +2352,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2067262506398331323",
@@ -2115,7 +2371,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2067261333129871498",
@@ -2131,7 +2389,9 @@
     "keywords": [
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2067496529020301461",
@@ -2148,7 +2408,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2067581039976005652",
@@ -2165,7 +2427,9 @@
       "waste",
       "solid waste"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2067824826832871717",
@@ -2182,7 +2446,9 @@
       "pothole",
       "road damage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "HSR Layout",
+    "ward_no": "72"
   },
   {
     "id": "2068029290160226344",
@@ -2199,7 +2465,9 @@
       "garbage",
       "swm"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2068094236843729058",
@@ -2216,7 +2484,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2068284093746254276",
@@ -2232,7 +2502,9 @@
     "keywords": [
       "flood"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2068279661034107141",
@@ -2248,7 +2520,9 @@
     "keywords": [
       "lalbagh"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2054110623907357010",
@@ -2264,7 +2538,9 @@
     "keywords": [
       "pothole"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2054932579636416704",
@@ -2278,7 +2554,9 @@
     "retweets": 0,
     "source_url": "https://twitter.com/i/web/status/2054932579636416704",
     "keywords": [],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2054906527228793180",
@@ -2294,7 +2572,9 @@
     "keywords": [
       "water supply"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2054574252335256048",
@@ -2311,7 +2591,9 @@
       "bwssb",
       "water supply"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2054456352794403020",
@@ -2327,7 +2609,9 @@
     "keywords": [
       "bwssb"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2054222170692481141",
@@ -2344,7 +2628,9 @@
       "bwssb",
       "water supply"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2054043689232760842",
@@ -2361,7 +2647,9 @@
       "bwssb",
       "water pipe"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2055876959822070092",
@@ -2377,7 +2665,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2055667335554535532",
@@ -2393,7 +2683,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "Koramangala East",
+    "ward_no": "28"
   },
   {
     "id": "2055664718883455208",
@@ -2411,7 +2703,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2055588880351715640",
@@ -2427,7 +2721,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2055564231936983061",
@@ -2444,7 +2740,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2055519221489299712",
@@ -2461,7 +2759,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2055414205755605112",
@@ -2478,7 +2778,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2055403502470672479",
@@ -2495,7 +2797,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2055243824772100512",
@@ -2512,7 +2816,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2055224843570991107",
@@ -2529,7 +2835,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2055198291500101852",
@@ -2545,7 +2853,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2054961184294797638",
@@ -2563,7 +2873,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2054823917253222703",
@@ -2580,7 +2892,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2054727615341379724",
@@ -2597,7 +2911,9 @@
       "bescom",
       "transformer"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2054646281331769601",
@@ -2614,7 +2930,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2054619374598906152",
@@ -2631,7 +2949,9 @@
       "power outage",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2054609713787289911",
@@ -2647,7 +2967,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2054581023304982758",
@@ -2663,7 +2985,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2054498389828784415",
@@ -2679,7 +3003,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2054468435015610792",
@@ -2696,7 +3022,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2054430753954599044",
@@ -2712,7 +3040,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2054223260209074358",
@@ -2729,7 +3059,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2054179510053122293",
@@ -2745,7 +3077,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2054142264444879233",
@@ -2761,7 +3095,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2054041597877387668",
@@ -2778,7 +3114,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "Indiranagar",
+    "ward_no": "15"
   },
   {
     "id": "2054039100982989254",
@@ -2794,7 +3132,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2053882239075942519",
@@ -2811,7 +3151,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "Marathahalli",
+    "ward_no": "45"
   },
   {
     "id": "2053833165727510831",
@@ -2828,7 +3170,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "Indiranagar",
+    "ward_no": "15"
   },
   {
     "id": "2053416603153494454",
@@ -2844,7 +3188,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2055872030822810088",
@@ -2860,7 +3206,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2055844240710873186",
@@ -2877,7 +3225,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2055819664043983097",
@@ -2894,7 +3244,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2055661079616012461",
@@ -2911,7 +3263,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2055619398480835069",
@@ -2927,7 +3281,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2055601661062906018",
@@ -2943,7 +3299,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2055583283149508613",
@@ -2960,7 +3318,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2055497419874578923",
@@ -2976,7 +3336,9 @@
     "keywords": [
       "flood"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2055415569160323461",
@@ -2993,7 +3355,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2055352290429767975",
@@ -3011,7 +3375,9 @@
       "trash",
       "swm"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2055244748915605784",
@@ -3028,7 +3394,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2055179297531552105",
@@ -3044,7 +3412,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2055118517368971757",
@@ -3060,7 +3430,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2054967209932570624",
@@ -3076,7 +3448,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2054930273280938413",
@@ -3093,7 +3467,9 @@
       "waste",
       "solid waste"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2054803521204297731",
@@ -3110,7 +3486,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2054782645712928891",
@@ -3127,7 +3505,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2054430027245408315",
@@ -3143,7 +3523,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2054379533000994849",
@@ -3160,7 +3542,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2053823307087286685",
@@ -3176,7 +3560,9 @@
     "keywords": [
       "rain water"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2055347967117472038",
@@ -3192,7 +3578,9 @@
     "keywords": [
       "park"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2053685924308082817",
@@ -3210,7 +3598,9 @@
       "traffic jam",
       "bmtc"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2055928849842815022",
@@ -3226,7 +3616,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2055911585525404030",
@@ -3243,7 +3635,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2056191188559094178",
@@ -3259,7 +3653,9 @@
     "keywords": [
       "pothole"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2056116232513106022",
@@ -3276,7 +3672,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2056111636889653589",
@@ -3294,7 +3692,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2056049918650040602",
@@ -3311,7 +3711,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2055974145796837742",
@@ -3328,7 +3730,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2055949914954440975",
@@ -3345,7 +3749,9 @@
       "garbage",
       "swm"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2056063888580600243",
@@ -3361,7 +3767,9 @@
     "keywords": [
       "traffic signal"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2056469167549890844",
@@ -3378,7 +3786,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2056466469039538245",
@@ -3395,7 +3805,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2056441538927116302",
@@ -3412,7 +3824,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2056441380516544712",
@@ -3429,7 +3843,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2056438715162243206",
@@ -3446,7 +3862,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2056403041906225274",
@@ -3463,7 +3881,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2056401666833072536",
@@ -3480,7 +3900,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2056386647793791213",
@@ -3497,7 +3919,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2056381861577085070",
@@ -3515,7 +3939,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2056367693322924295",
@@ -3532,7 +3958,9 @@
       "power outage",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2056356964003934600",
@@ -3549,7 +3977,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2056352512740049268",
@@ -3566,7 +3996,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2056318664241188903",
@@ -3583,7 +4015,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2056348007004811696",
@@ -3599,7 +4033,9 @@
     "keywords": [
       "flood"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2056343336555000179",
@@ -3615,7 +4051,9 @@
     "keywords": [
       "flood"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2056261763553988883",
@@ -3632,7 +4070,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2056578838822531401",
@@ -3648,7 +4088,9 @@
     "keywords": [
       "rain water"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2056766002411737259",
@@ -3665,7 +4107,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2056741243368169776",
@@ -3683,7 +4127,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2056660553993682954",
@@ -3699,7 +4145,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2056632143728804344",
@@ -3717,7 +4165,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2056596309176693224",
@@ -3734,7 +4184,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2056766635911106616",
@@ -3750,7 +4202,9 @@
     "keywords": [
       "flood"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2056841656075452440",
@@ -3767,7 +4221,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2056838406618132915",
@@ -3784,7 +4240,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2056974786467942597",
@@ -3800,7 +4258,9 @@
     "keywords": [
       "power cut"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2056978628316127671",
@@ -3816,7 +4276,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057027178076991563",
@@ -3833,7 +4295,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "HSR Layout",
+    "ward_no": "72"
   },
   {
     "id": "2057058166085652493",
@@ -3850,7 +4314,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057119091111162202",
@@ -3866,7 +4332,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057127104643547519",
@@ -3883,7 +4351,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057176578447298777",
@@ -3902,7 +4372,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057172586916913611",
@@ -3919,7 +4391,9 @@
       "power outage",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057207058441892346",
@@ -3936,7 +4410,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057290038967476246",
@@ -3952,7 +4428,9 @@
     "keywords": [
       "bwssb"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057312129875894619",
@@ -3969,7 +4447,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057302426659762388",
@@ -3986,7 +4466,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "Kalyanagar",
+    "ward_no": "31"
   },
   {
     "id": "2057299739105022339",
@@ -4003,7 +4485,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057287067571540108",
@@ -4020,7 +4504,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057338858166182237",
@@ -4037,7 +4523,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057359212678963303",
@@ -4054,7 +4542,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057319294590210388",
@@ -4071,7 +4561,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057419743892808181",
@@ -4088,7 +4580,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057400678000312376",
@@ -4106,7 +4600,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057465726567629104",
@@ -4123,7 +4619,9 @@
       "power outage",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "Domlur",
+    "ward_no": "22"
   },
   {
     "id": "2057454732831285369",
@@ -4140,7 +4638,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057450171785703766",
@@ -4157,7 +4657,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057436328271478922",
@@ -4174,7 +4676,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057494792700150146",
@@ -4190,7 +4694,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "Koramangala East",
+    "ward_no": "28"
   },
   {
     "id": "2057505072091894050",
@@ -4208,7 +4714,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057503857211760656",
@@ -4225,7 +4733,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057491801624510547",
@@ -4242,7 +4752,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057478171671638158",
@@ -4259,7 +4771,9 @@
       "power outage",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057477772604482046",
@@ -4276,7 +4790,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057479847795163315",
@@ -4293,7 +4809,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057534379224879270",
@@ -4310,7 +4828,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057521070455054602",
@@ -4327,7 +4847,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057516854806233108",
@@ -4344,7 +4866,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057550499759710457",
@@ -4361,7 +4885,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057611857251422539",
@@ -4377,7 +4903,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057695142178648122",
@@ -4394,7 +4922,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057674983254675626",
@@ -4410,7 +4940,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "Peenya",
+    "ward_no": "34"
   },
   {
     "id": "2057646206600565126",
@@ -4427,7 +4959,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057680611872223327",
@@ -4444,7 +4978,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057677484179812632",
@@ -4461,7 +4997,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057690002189160777",
@@ -4477,7 +5015,9 @@
     "keywords": [
       "pothole"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057737345055785241",
@@ -4494,7 +5034,9 @@
       "power outage",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057737217850921088",
@@ -4511,7 +5053,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057710317258633447",
@@ -4529,7 +5073,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057740921316442344",
@@ -4546,7 +5092,9 @@
       "garbage",
       "swm"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057713874820907440",
@@ -4562,7 +5110,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057705010029641908",
@@ -4578,7 +5128,9 @@
     "keywords": [
       "flood"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057734603608383834",
@@ -4595,7 +5147,9 @@
       "park",
       "cubbon"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057743235452436484",
@@ -4611,7 +5165,9 @@
     "keywords": [
       "bmtc"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "Koramangala East",
+    "ward_no": "28"
   },
   {
     "id": "2057730265267818593",
@@ -4628,7 +5184,9 @@
       "bmtc",
       "metro"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057701317339177268",
@@ -4644,7 +5202,9 @@
     "keywords": [
       "bmtc"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057754319966122475",
@@ -4661,7 +5221,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057751868911304839",
@@ -4678,7 +5240,9 @@
       "power outage",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057769090710937718",
@@ -4695,7 +5259,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057801602195661106",
@@ -4711,7 +5277,9 @@
     "keywords": [
       "road condition"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057844933487374767",
@@ -4729,7 +5297,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057840029360406679",
@@ -4746,7 +5316,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057839409412849975",
@@ -4763,7 +5335,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057838983271637194",
@@ -4781,7 +5355,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057836745430073446",
@@ -4798,7 +5374,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057835724821663926",
@@ -4815,7 +5393,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057835205575229559",
@@ -4832,7 +5412,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057857521214517588",
@@ -4848,7 +5430,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057892155356799174",
@@ -4865,7 +5449,9 @@
       "power outage",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2057933426116964542",
@@ -4881,7 +5467,9 @@
     "keywords": [
       "power cut"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2058043037654397381",
@@ -4898,7 +5486,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2058014110735077575",
@@ -4914,7 +5504,9 @@
     "keywords": [
       "bmtc"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2058058471099306323",
@@ -4930,7 +5522,9 @@
     "keywords": [
       "bwssb"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2058089834229674307",
@@ -4947,7 +5541,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2058088828188209347",
@@ -4964,7 +5560,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2058083141785698709",
@@ -4981,7 +5579,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2058079236246950368",
@@ -4997,7 +5597,9 @@
     "keywords": [
       "footpath"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2058074947118108961",
@@ -5014,7 +5616,9 @@
       "waste",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2058090481247248594",
@@ -5030,7 +5634,9 @@
     "keywords": [
       "park"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2058113880522690716",
@@ -5046,7 +5652,9 @@
     "keywords": [
       "pothole"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2058095848152859026",
@@ -5063,7 +5671,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2058162946816229603",
@@ -5079,7 +5689,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2058219119468847140",
@@ -5096,7 +5708,9 @@
       "bescom",
       "transformer"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2058215468553637897",
@@ -5112,7 +5726,9 @@
     "keywords": [
       "swm"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2058236615060054502",
@@ -5128,7 +5744,9 @@
     "keywords": [
       "road condition"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2058234176244220056",
@@ -5144,7 +5762,9 @@
     "keywords": [
       "road condition"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2058239012121522489",
@@ -5160,7 +5780,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2058255942467342538",
@@ -5176,7 +5798,9 @@
     "keywords": [
       "rain water"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2058405236663034283",
@@ -5193,7 +5817,9 @@
       "bwssb",
       "water supply"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2058376786380218807",
@@ -5209,7 +5835,9 @@
     "keywords": [
       "bwssb"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2058441517254193263",
@@ -5225,7 +5853,9 @@
     "keywords": [
       "bwssb"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2058445374201999429",
@@ -5243,7 +5873,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2058422170720833866",
@@ -5260,7 +5892,9 @@
       "power cut",
       "no power"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2058429410232160435",
@@ -5276,7 +5910,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2058461897150918701",
@@ -5292,7 +5928,9 @@
     "keywords": [
       "bwssb"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2058518177571889430",
@@ -5308,7 +5946,9 @@
     "keywords": [
       "bwssb"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2058517285904732190",
@@ -5324,7 +5964,9 @@
     "keywords": [
       "power cut"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2058519878932566377",
@@ -5341,7 +5983,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2058522467329782139",
@@ -5357,7 +6001,9 @@
     "keywords": [
       "park"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2058551859263271042",
@@ -5373,7 +6019,9 @@
     "keywords": [
       "power cut"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2058549400289542330",
@@ -5389,7 +6037,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2058577934169067766",
@@ -5406,7 +6056,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2058586371275809122",
@@ -5423,7 +6075,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2058619635520679985",
@@ -5439,7 +6093,9 @@
     "keywords": [
       "bmtc"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2058684648226713827",
@@ -5455,7 +6111,9 @@
     "keywords": [
       "power cut"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "Whitefield",
+    "ward_no": "38"
   },
   {
     "id": "2058719460526264698",
@@ -5472,7 +6130,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2058754732139958470",
@@ -5490,7 +6150,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2058735529089507616",
@@ -5508,7 +6170,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2058789963546898680",
@@ -5524,7 +6188,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2058777904587452849",
@@ -5541,7 +6207,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2058735375959683495",
@@ -5558,7 +6226,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "Hebbal",
+    "ward_no": "56"
   },
   {
     "id": "2058825434889175397",
@@ -5574,7 +6244,9 @@
     "keywords": [
       "bwssb"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2058876081202229411",
@@ -5590,7 +6262,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2058870245188870581",
@@ -5608,7 +6282,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2058900083245277207",
@@ -5625,7 +6301,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2058896750170235259",
@@ -5643,7 +6321,9 @@
       "waste",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2058931942629020139",
@@ -5661,7 +6341,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2058913048694579372",
@@ -5677,7 +6359,9 @@
     "keywords": [
       "traffic jam"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2058962739935293783",
@@ -5693,7 +6377,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "J.P Nagar",
+    "ward_no": "14"
   },
   {
     "id": "2059058588774199693",
@@ -5710,7 +6396,9 @@
       "garbage",
       "waste"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2059124381985669622",
@@ -5727,7 +6415,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2059119239890649278",
@@ -5744,7 +6434,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "Whitefield",
+    "ward_no": "38"
   },
   {
     "id": "2059188322371821825",
@@ -5761,7 +6453,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2059175490779484410",
@@ -5777,7 +6471,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2059156283484508619",
@@ -5794,7 +6490,9 @@
       "garbage",
       "trash"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2059242809782370611",
@@ -5811,7 +6509,9 @@
       "bwssb",
       "water supply"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2059299356076085381",
@@ -5828,7 +6528,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2059289547494895801",
@@ -5845,7 +6547,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2059274572067954864",
@@ -5861,7 +6565,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2059273422014996933",
@@ -5878,7 +6584,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2059267431324139704",
@@ -5895,7 +6603,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2059267215665549386",
@@ -5912,7 +6622,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2059227740474401017",
@@ -5929,7 +6641,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2059221967971254522",
@@ -5947,7 +6661,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2059263003535802406",
@@ -5965,7 +6681,9 @@
       "dump",
       "swm"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2059239216727699575",
@@ -5983,7 +6701,9 @@
       "trash",
       "litter"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2059209993593999386",
@@ -6001,7 +6721,9 @@
       "waste",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2059340181132775721",
@@ -6018,7 +6740,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2059339303403262439",
@@ -6035,7 +6759,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2059334651240681791",
@@ -6052,7 +6778,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2059327025127776722",
@@ -6068,7 +6796,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2059324078323040719",
@@ -6084,7 +6814,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2059323657877663818",
@@ -6101,7 +6833,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2059322807151161495",
@@ -6117,7 +6851,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2059312618599485785",
@@ -6134,7 +6870,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2059310771776164290",
@@ -6152,7 +6890,9 @@
       "power outage",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2059504930797547860",
@@ -6169,7 +6909,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2059504282026864848",
@@ -6186,7 +6928,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2059493696358449243",
@@ -6202,7 +6946,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2059470322152378486",
@@ -6220,7 +6966,9 @@
       "swm",
       "solid waste"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2059525192855281707",
@@ -6236,7 +6984,9 @@
     "keywords": [
       "road condition"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2059571574353572091",
@@ -6253,7 +7003,9 @@
       "garbage",
       "waste"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2059554549497737329",
@@ -6270,7 +7022,9 @@
       "garbage",
       "swm"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2059533369483084287",
@@ -6287,7 +7041,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2059520116224934042",
@@ -6304,7 +7060,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2059517417781682513",
@@ -6321,7 +7079,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2059624068551516173",
@@ -6338,7 +7098,9 @@
       "garbage",
       "swm"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2059637962258997278",
@@ -6355,7 +7117,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "J.P Nagar",
+    "ward_no": "14"
   },
   {
     "id": "2059705964711080082",
@@ -6373,7 +7137,9 @@
       "waste",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2059788909731877023",
@@ -6389,7 +7155,9 @@
     "keywords": [
       "no electricity"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2059842485585903632",
@@ -6406,7 +7174,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2059892945000763561",
@@ -6424,7 +7194,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2059874234089013732",
@@ -6441,7 +7213,9 @@
       "power outage",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2059867553007374409",
@@ -6459,7 +7233,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2059900482198643180",
@@ -6477,7 +7253,9 @@
       "dump",
       "swm"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "Kalyanagar",
+    "ward_no": "31"
   },
   {
     "id": "2059884045304320342",
@@ -6496,7 +7274,9 @@
       "dump",
       "swm"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2059853723858588014",
@@ -6512,7 +7292,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2059910950883623222",
@@ -6529,7 +7311,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2059962569818095751",
@@ -6547,7 +7331,9 @@
       "waste",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2059992739786498228",
@@ -6563,7 +7349,9 @@
     "keywords": [
       "traffic jam"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "Madiwala",
+    "ward_no": "20"
   },
   {
     "id": "2060035820120326394",
@@ -6579,7 +7367,9 @@
     "keywords": [
       "pothole"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2060041470510538848",
@@ -6595,7 +7385,9 @@
     "keywords": [
       "no electricity"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2060039496482410851",
@@ -6612,7 +7404,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2060095698352439588",
@@ -6629,7 +7423,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "Koramangala East",
+    "ward_no": "28"
   },
   {
     "id": "2060092809190006929",
@@ -6645,7 +7441,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2060109304787804342",
@@ -6662,7 +7460,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2060234778973249565",
@@ -6679,7 +7479,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2060210269578752015",
@@ -6695,7 +7497,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "Koramangala East",
+    "ward_no": "28"
   },
   {
     "id": "2060182307332624659",
@@ -6711,7 +7515,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2060232097017766075",
@@ -6728,7 +7534,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2060220826524459228",
@@ -6745,7 +7553,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2060200793551360128",
@@ -6762,7 +7572,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2060200013268165107",
@@ -6778,7 +7590,9 @@
     "keywords": [
       "rain water"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2060299381774184551",
@@ -6795,7 +7609,9 @@
       "power outage",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2060292218762792970",
@@ -6812,7 +7628,9 @@
       "power outage",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "HSR Layout",
+    "ward_no": "72"
   },
   {
     "id": "2060253305113350445",
@@ -6829,7 +7647,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2060344136356729056",
@@ -6845,7 +7665,9 @@
     "keywords": [
       "no electricity"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2060334608743600493",
@@ -6863,7 +7685,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2060313156610847163",
@@ -6880,7 +7704,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2060343195670847732",
@@ -6896,7 +7722,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2060346184435384365",
@@ -6912,7 +7740,9 @@
     "keywords": [
       "flood"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2060388406535012725",
@@ -6929,7 +7759,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2060377790118326763",
@@ -6946,7 +7778,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2060367343369547921",
@@ -6963,7 +7797,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "Koramangala East",
+    "ward_no": "28"
   },
   {
     "id": "2060356039699321008",
@@ -6980,7 +7816,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2060383787893264796",
@@ -6997,7 +7835,9 @@
       "garbage",
       "waste"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2060356937452237259",
@@ -7014,7 +7854,9 @@
       "garbage",
       "swm"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2060383530971288027",
@@ -7030,7 +7872,9 @@
     "keywords": [
       "rain water"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2060430263759605941",
@@ -7047,7 +7891,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2060412701718028547",
@@ -7064,7 +7910,9 @@
       "power outage",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2060439574783078613",
@@ -7080,7 +7928,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2060457570457071881",
@@ -7096,7 +7946,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2060451989386092558",
@@ -7113,7 +7965,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2060531184778756334",
@@ -7130,7 +7984,9 @@
       "water supply",
       "no water"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2060539253281747441",
@@ -7147,7 +8003,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2060546581766787343",
@@ -7163,7 +8021,9 @@
     "keywords": [
       "flood"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2060539445510869001",
@@ -7180,7 +8040,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2060537992939532366",
@@ -7197,7 +8059,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2060555301749936379",
@@ -7213,7 +8077,9 @@
     "keywords": [
       "traffic jam"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2060588787391222084",
@@ -7230,7 +8096,9 @@
       "power outage",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "J.P Nagar",
+    "ward_no": "14"
   },
   {
     "id": "2060615870720921786",
@@ -7247,7 +8115,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2060613360878829975",
@@ -7264,7 +8134,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2060600429998997660",
@@ -7281,7 +8153,9 @@
       "garbage",
       "waste"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2060594239256551470",
@@ -7297,7 +8171,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2060575542664208594",
@@ -7314,7 +8190,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2060651288103366824",
@@ -7330,7 +8208,9 @@
     "keywords": [
       "bwssb"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "Bellandur",
+    "ward_no": "47"
   },
   {
     "id": "2060635204059119747",
@@ -7347,7 +8227,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2060667163682496837",
@@ -7365,7 +8247,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2060676072996487537",
@@ -7382,7 +8266,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2060657517823463436",
@@ -7398,7 +8284,9 @@
     "keywords": [
       "park"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2060688605602021601",
@@ -7414,7 +8302,9 @@
     "keywords": [
       "bwssb"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2060699581537800605",
@@ -7430,7 +8320,9 @@
     "keywords": [
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2060899776372359432",
@@ -7448,7 +8340,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2060914837451079716",
@@ -7464,7 +8358,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2060960616328868210",
@@ -7480,7 +8376,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2060973503697060330",
@@ -7497,7 +8395,9 @@
       "garbage",
       "waste"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2060968274951798824",
@@ -7515,7 +8415,9 @@
       "waste",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2061058453217690064",
@@ -7531,7 +8433,9 @@
     "keywords": [
       "no water"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2061050298144375002",
@@ -7548,7 +8452,9 @@
       "water supply",
       "no water"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2061093415660687771",
@@ -7565,7 +8471,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2061048933984747947",
@@ -7582,7 +8490,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2061034020830654534",
@@ -7600,7 +8510,9 @@
       "dump",
       "debris"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2061031173032497235",
@@ -7617,7 +8529,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "HSR Layout",
+    "ward_no": "72"
   },
   {
     "id": "2061029850891366875",
@@ -7634,7 +8548,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "HSR Layout",
+    "ward_no": "72"
   },
   {
     "id": "2061004309513593251",
@@ -7650,7 +8566,9 @@
     "keywords": [
       "traffic jam"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2061128614612287500",
@@ -7667,7 +8585,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2061112547357712495",
@@ -7684,7 +8604,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2061106573955731528",
@@ -7702,7 +8624,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2061303661767409668",
@@ -7718,7 +8642,9 @@
     "keywords": [
       "pothole"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2061289565772775562",
@@ -7732,7 +8658,9 @@
     "retweets": 0,
     "source_url": "https://twitter.com/i/web/status/2061289565772775562",
     "keywords": [],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2061268453605224699",
@@ -7749,7 +8677,9 @@
       "bwssb",
       "water supply"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2061329845389525330",
@@ -7766,7 +8696,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2061302186370629802",
@@ -7783,7 +8715,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "Whitefield",
+    "ward_no": "38"
   },
   {
     "id": "2061308333211201734",
@@ -7800,7 +8734,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2061393997302837669",
@@ -7817,7 +8753,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2061341517810409913",
@@ -7834,7 +8772,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2061373811434660089",
@@ -7851,7 +8791,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2061336862535590231",
@@ -7868,7 +8810,9 @@
       "garbage",
       "swm"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2061489809110266131",
@@ -7884,7 +8828,9 @@
     "keywords": [
       "sewage overflow"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2061473358164975944",
@@ -7901,7 +8847,9 @@
       "power outage",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2061451546303578175",
@@ -7919,7 +8867,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2061435653469147250",
@@ -7935,7 +8885,9 @@
     "keywords": [
       "no electricity"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2061462540861968391",
@@ -7951,7 +8903,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2061439606613213513",
@@ -7967,7 +8921,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2061431168705462470",
@@ -7984,7 +8940,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2061544137330217019",
@@ -8001,7 +8959,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2061544136545849442",
@@ -8018,7 +8978,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2061599078665134154",
@@ -8034,7 +8996,9 @@
     "keywords": [
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2061685314494792091",
@@ -8050,7 +9014,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2061693570424492119",
@@ -8067,7 +9033,9 @@
       "garbage",
       "waste"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2061688022702477524",
@@ -8084,7 +9052,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2061675527191363651",
@@ -8101,7 +9071,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2061661382555431065",
@@ -8117,7 +9089,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2061648246041432187",
@@ -8133,7 +9107,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2061641880505614622",
@@ -8152,7 +9128,9 @@
       "dump",
       "stray"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2061724387976593683",
@@ -8168,7 +9146,9 @@
     "keywords": [
       "bwssb"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2061733170748498288",
@@ -8185,7 +9165,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2061710003980177830",
@@ -8201,7 +9183,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2061701750902739166",
@@ -8220,7 +9204,9 @@
       "dump",
       "debris"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "Bellandur",
+    "ward_no": "47"
   },
   {
     "id": "2061795180785881181",
@@ -8237,7 +9223,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "Marathahalli",
+    "ward_no": "45"
   },
   {
     "id": "2061779757625393336",
@@ -8254,7 +9242,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2061779552897311118",
@@ -8272,7 +9262,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2061812224650551633",
@@ -8288,7 +9280,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "Marathahalli",
+    "ward_no": "45"
   },
   {
     "id": "2061809410100617299",
@@ -8305,7 +9299,9 @@
       "garbage",
       "waste"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2061820559017844795",
@@ -8322,7 +9318,9 @@
       "flood",
       "submerge"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2061833849890591021",
@@ -8339,7 +9337,9 @@
       "flood",
       "submerge"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2061844567377453314",
@@ -8358,7 +9358,9 @@
       "bescom",
       "transformer"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2061855352963178564",
@@ -8374,7 +9376,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2061842137705283810",
@@ -8390,7 +9394,9 @@
     "keywords": [
       "traffic jam"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2061902941137850734",
@@ -8406,7 +9412,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2061983512744595612",
@@ -8423,7 +9431,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2061963442232426960",
@@ -8440,7 +9450,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2061981980364034471",
@@ -8456,7 +9468,9 @@
     "keywords": [
       "waterlog"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2062042530041167892",
@@ -8473,7 +9487,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2062046294496141730",
@@ -8490,7 +9506,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "Bellandur",
+    "ward_no": "47"
   },
   {
     "id": "2062018365976449214",
@@ -8506,7 +9524,9 @@
     "keywords": [
       "swm"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2062033653505659081",
@@ -8522,7 +9542,9 @@
     "keywords": [
       "traffic jam"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2062120606007705865",
@@ -8538,7 +9560,9 @@
     "keywords": [
       "borewell"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "Whitefield",
+    "ward_no": "38"
   },
   {
     "id": "2062101660730827058",
@@ -8556,7 +9580,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2062081150773035179",
@@ -8573,7 +9599,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2062138670707364202",
@@ -8590,7 +9618,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2062137994484879675",
@@ -8607,7 +9637,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2062158964876623909",
@@ -8624,7 +9656,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "Marathahalli",
+    "ward_no": "45"
   },
   {
     "id": "2062173736623808653",
@@ -8640,7 +9674,9 @@
     "keywords": [
       "waterlog"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2062381721820221669",
@@ -8657,7 +9693,9 @@
       "water supply",
       "water tanker"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2062393312410292736",
@@ -8674,7 +9712,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2062376298023100791",
@@ -8691,7 +9731,9 @@
       "garbage",
       "litter"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2062363177292333178",
@@ -8708,7 +9750,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2062346091123933217",
@@ -8725,7 +9769,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2062431276192485877",
@@ -8741,7 +9787,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2062416700570812542",
@@ -8759,7 +9807,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2062455211416019057",
@@ -8776,7 +9826,9 @@
       "garbage",
       "swm"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2062406485511156107",
@@ -8792,7 +9844,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "Marathahalli",
+    "ward_no": "45"
   },
   {
     "id": "2062406481484619939",
@@ -8808,7 +9862,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "Marathahalli",
+    "ward_no": "45"
   },
   {
     "id": "2062404753100005566",
@@ -8824,7 +9880,9 @@
     "keywords": [
       "swm"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2062478188308263393",
@@ -8841,7 +9899,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2062546778030027254",
@@ -8858,7 +9918,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2062588837206143080",
@@ -8874,7 +9936,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2062714790456459603",
@@ -8890,7 +9954,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2062751282444771830",
@@ -8907,7 +9973,9 @@
       "garbage",
       "swm"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "Kalyanagar",
+    "ward_no": "31"
   },
   {
     "id": "2062750841828950170",
@@ -8924,7 +9992,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2062747568090894614",
@@ -8941,7 +10011,9 @@
       "garbage",
       "swm"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2062742674881519646",
@@ -8957,7 +10029,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2062805118266089718",
@@ -8974,7 +10048,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2062772964614180930",
@@ -8992,7 +10068,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2062775223649517790",
@@ -9009,7 +10087,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2062767882304655774",
@@ -9025,7 +10105,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2062766975185760482",
@@ -9041,7 +10123,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2062766516576432549",
@@ -9057,7 +10141,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "Kalyanagar",
+    "ward_no": "31"
   },
   {
     "id": "2062849913298526330",
@@ -9073,7 +10159,9 @@
     "keywords": [
       "bwssb"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2062834320600129588",
@@ -9090,7 +10178,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2062850174343577718",
@@ -9107,7 +10197,9 @@
       "waste",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2062929844518973680",
@@ -9124,7 +10216,9 @@
       "pothole",
       "crater"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2062932416109678755",
@@ -9140,7 +10234,9 @@
     "keywords": [
       "footpath"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2062913972110831756",
@@ -9156,7 +10252,9 @@
     "keywords": [
       "footpath"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2063068936514805933",
@@ -9174,7 +10272,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2063046594250109266",
@@ -9190,7 +10290,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2063130438005399552",
@@ -9206,7 +10308,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "Whitefield",
+    "ward_no": "38"
   },
   {
     "id": "2063127499777974676",
@@ -9223,7 +10327,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2063155437936210120",
@@ -9240,7 +10346,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2063180448894001301",
@@ -9256,7 +10364,9 @@
     "keywords": [
       "flood"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2063205241949139181",
@@ -9274,7 +10384,9 @@
       "bescom",
       "transformer"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2063267762492129400",
@@ -9290,7 +10402,9 @@
     "keywords": [
       "no water"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2063259534353994115",
@@ -9307,7 +10421,9 @@
       "water supply",
       "no water"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2063255665049735605",
@@ -9324,7 +10440,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2063289080079851721",
@@ -9338,7 +10456,9 @@
     "retweets": 0,
     "source_url": "https://twitter.com/i/web/status/2063289080079851721",
     "keywords": [],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2063296130759479533",
@@ -9354,7 +10474,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2063376138676879838",
@@ -9371,7 +10493,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2063501002184245546",
@@ -9389,7 +10513,9 @@
       "water supply",
       "no water"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2063440343799078987",
@@ -9407,7 +10533,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2063501800263541086",
@@ -9424,7 +10552,9 @@
       "traffic signal",
       "bmtc"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2063551993952743677",
@@ -9442,7 +10572,9 @@
       "water supply",
       "no water"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2063511387427799515",
@@ -9459,7 +10591,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2063509631528562715",
@@ -9476,7 +10610,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2063577398172590317",
@@ -9493,7 +10629,9 @@
       "bwssb",
       "water supply"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2063560416144544253",
@@ -9510,7 +10648,9 @@
       "waste",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2063627436215177287",
@@ -9526,7 +10666,9 @@
     "keywords": [
       "pothole"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2063633544153563606",
@@ -9543,7 +10685,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2063659659920343285",
@@ -9559,7 +10703,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2063658985870557290",
@@ -9575,7 +10721,9 @@
     "keywords": [
       "traffic jam"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2063866207443497008",
@@ -9593,7 +10741,9 @@
       "water supply",
       "no water"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2063858322835734717",
@@ -9611,7 +10761,9 @@
       "water supply",
       "no water"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2063872951796236503",
@@ -9628,7 +10780,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2063828306395570563",
@@ -9646,7 +10800,9 @@
       "bescom",
       "transformer"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2063812232887353725",
@@ -9662,7 +10818,9 @@
     "keywords": [
       "footpath"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2063942949810139468",
@@ -9680,7 +10838,9 @@
       "water supply",
       "no water"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2063933828725637323",
@@ -9698,7 +10858,9 @@
       "water supply",
       "no water"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2063895021850653119",
@@ -9716,7 +10878,9 @@
       "water supply",
       "no water"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2063888371173498944",
@@ -9734,7 +10898,9 @@
       "water supply",
       "no water"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2063892759296262242",
@@ -9751,7 +10917,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2063945817216684221",
@@ -9768,7 +10936,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2063918690912153884",
@@ -9785,7 +10955,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "J.P Nagar",
+    "ward_no": "14"
   },
   {
     "id": "2063961187231105300",
@@ -9801,7 +10973,9 @@
     "keywords": [
       "pothole"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2063964022362583428",
@@ -9819,7 +10993,9 @@
       "water supply",
       "no water"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2064002167745495338",
@@ -9836,7 +11012,9 @@
       "garbage",
       "swm"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2063957542812971248",
@@ -9852,7 +11030,9 @@
     "keywords": [
       "pothole"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2063971989166125357",
@@ -9868,7 +11048,9 @@
     "keywords": [
       "bmtc"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2064229129650901268",
@@ -9884,7 +11066,9 @@
     "keywords": [
       "pothole"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "Whitefield",
+    "ward_no": "38"
   },
   {
     "id": "2064216711554040198",
@@ -9901,7 +11085,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2064213659791052957",
@@ -9919,7 +11105,9 @@
       "waste",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2064179785765691851",
@@ -9936,7 +11124,9 @@
       "garbage",
       "swm"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2064284613586161869",
@@ -9953,7 +11143,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "Whitefield",
+    "ward_no": "38"
   },
   {
     "id": "2064236404784447573",
@@ -9970,7 +11162,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2064288629120503911",
@@ -9987,7 +11181,9 @@
       "garbage",
       "waste"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2064244058835517566",
@@ -10003,7 +11199,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2064334712328610036",
@@ -10019,7 +11217,9 @@
     "keywords": [
       "no electricity"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2064322244189585446",
@@ -10036,7 +11236,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2064345436706762800",
@@ -10053,7 +11255,9 @@
       "pothole",
       "footpath"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "J.P Nagar",
+    "ward_no": "14"
   },
   {
     "id": "2064376341466923512",
@@ -10067,7 +11271,9 @@
     "retweets": 0,
     "source_url": "https://twitter.com/i/web/status/2064376341466923512",
     "keywords": [],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2064364078022463864",
@@ -10083,7 +11289,9 @@
     "keywords": [
       "bwssb"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2064378917654573477",
@@ -10099,7 +11307,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2064374542026637554",
@@ -10117,7 +11327,9 @@
       "waste",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2064370465452519770",
@@ -10133,7 +11345,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2064367612696670582",
@@ -10149,7 +11363,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2064343278393385158",
@@ -10166,7 +11382,9 @@
       "waste",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2064341231292109310",
@@ -10183,7 +11401,9 @@
       "garbage",
       "waste"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2064340911161798917",
@@ -10199,7 +11419,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2064338093881397519",
@@ -10215,7 +11437,9 @@
     "keywords": [
       "pavement"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2064337980395807075",
@@ -10231,7 +11455,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2064337646655025211",
@@ -10247,7 +11473,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2064370050924945736",
@@ -10265,7 +11493,9 @@
       "lalbagh",
       "cubbon"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "Malleshwaram",
+    "ward_no": "53"
   },
   {
     "id": "2064392585674961362",
@@ -10281,7 +11511,9 @@
     "keywords": [
       "park"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2064585603849900319",
@@ -10297,7 +11529,9 @@
     "keywords": [
       "pothole"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2064538968428024218",
@@ -10315,7 +11549,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2064598823323021652",
@@ -10332,7 +11568,9 @@
       "bwssb",
       "water supply"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2064604251754791411",
@@ -10350,7 +11588,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2064600653524258832",
@@ -10366,7 +11606,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2064639926323544272",
@@ -10383,7 +11625,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2064681338373083574",
@@ -10401,7 +11645,9 @@
       "water supply",
       "no water"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2064685381111754880",
@@ -10418,7 +11664,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2064716152224485455",
@@ -10434,7 +11682,9 @@
     "keywords": [
       "pothole"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2064742931974721966",
@@ -10450,7 +11700,9 @@
     "keywords": [
       "water supply"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2064736567936360496",
@@ -10467,7 +11719,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2064727722686132288",
@@ -10484,7 +11738,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2064723980330946768",
@@ -10502,7 +11758,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2064780884784632307",
@@ -10519,7 +11777,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2064871850103238774",
@@ -10535,7 +11795,9 @@
     "keywords": [
       "traffic jam"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2064889129540993490",
@@ -10552,7 +11814,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2064927810901450892",
@@ -10569,7 +11833,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2064923281426395277",
@@ -10586,7 +11852,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2064913492940046796",
@@ -10602,7 +11870,9 @@
     "keywords": [
       "bmtc"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2064958793210122387",
@@ -10618,7 +11888,9 @@
     "keywords": [
       "bwssb"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2065008376564834744",
@@ -10634,7 +11906,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2065083298972631228",
@@ -10651,7 +11925,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2065068720570192316",
@@ -10667,7 +11943,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "Whitefield",
+    "ward_no": "38"
   },
   {
     "id": "2065066468556022131",
@@ -10684,7 +11962,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2065056017491333251",
@@ -10701,7 +11981,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2065051596070031513",
@@ -10718,7 +12000,9 @@
       "garbage",
       "waste"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2065035959587254673",
@@ -10735,7 +12019,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2065097271054905623",
@@ -10752,7 +12038,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2065295142085702006",
@@ -10769,7 +12057,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2065272745395712120",
@@ -10786,7 +12076,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2065269996251648200",
@@ -10803,7 +12095,9 @@
       "power outage",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2065272630937268713",
@@ -10820,7 +12114,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2065333889162502335",
@@ -10837,7 +12133,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2065332396699042127",
@@ -10854,7 +12152,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2065315705810227302",
@@ -10872,7 +12172,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2065347221558849639",
@@ -10889,7 +12191,9 @@
       "garbage",
       "trash"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "Kalyanagar",
+    "ward_no": "31"
   },
   {
     "id": "2065321475205390622",
@@ -10906,7 +12210,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2065320588005237042",
@@ -10923,7 +12229,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2065375209633558605",
@@ -10940,7 +12248,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2065369035618099692",
@@ -10957,7 +12267,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2065444756168315045",
@@ -10974,7 +12286,9 @@
       "dump",
       "swm"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2065442300650836181",
@@ -10991,7 +12305,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2065435350542291283",
@@ -11008,7 +12324,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2065441543130054685",
@@ -11024,7 +12342,9 @@
     "keywords": [
       "lalbagh"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2065481465899753947",
@@ -11040,7 +12360,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2065471473595392380",
@@ -11057,7 +12379,9 @@
       "power outage",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2065461529794040287",
@@ -11073,7 +12397,9 @@
     "keywords": [
       "borewell"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "Whitefield",
+    "ward_no": "38"
   },
   {
     "id": "2065515681731444763",
@@ -11090,7 +12416,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2065549982560927851",
@@ -11107,7 +12435,9 @@
       "power outage",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "RBI Layout",
+    "ward_no": "42"
   },
   {
     "id": "2065574821526724867",
@@ -11124,7 +12454,9 @@
       "power outage",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "Koramangala East",
+    "ward_no": "28"
   },
   {
     "id": "2065664019214774621",
@@ -11140,7 +12472,9 @@
     "keywords": [
       "bwssb"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2065655764233117804",
@@ -11156,7 +12490,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2065653815974740203",
@@ -11173,7 +12509,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2065642717552808438",
@@ -11191,7 +12529,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2065666823987863996",
@@ -11208,7 +12548,9 @@
       "garbage",
       "swm"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2065664792749338656",
@@ -11225,7 +12567,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2065647735047622791",
@@ -11239,7 +12583,9 @@
     "retweets": 0,
     "source_url": "https://twitter.com/i/web/status/2065647735047622791",
     "keywords": [],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2065642836419359015",
@@ -11256,7 +12602,9 @@
       "garbage",
       "waste"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2065666983262359802",
@@ -11272,7 +12620,9 @@
     "keywords": [
       "waterlog"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2065686691852280160",
@@ -11288,7 +12638,9 @@
     "keywords": [
       "pothole"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2065721031046881621",
@@ -11306,7 +12658,9 @@
       "waste",
       "swm"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2065703871801106758",
@@ -11323,7 +12677,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2065690956318556566",
@@ -11340,7 +12696,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2065687388618473836",
@@ -11356,7 +12714,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2065756642592108840",
@@ -11373,7 +12733,9 @@
       "power outage",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2065738312078533075",
@@ -11390,7 +12752,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2065731613561065783",
@@ -11407,7 +12771,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2065776767810548039",
@@ -11423,7 +12789,9 @@
     "keywords": [
       "traffic jam"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2065797051682898213",
@@ -11439,7 +12807,9 @@
     "keywords": [
       "rain water"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2065891433354334211",
@@ -11456,7 +12826,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2065904327794077849",
@@ -11472,7 +12844,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2065947915286392921",
@@ -11489,7 +12863,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2066037979127361554",
@@ -11506,7 +12882,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2066019148371816761",
@@ -11523,7 +12901,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2065998525952049344",
@@ -11540,7 +12920,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2066056490075717776",
@@ -11556,7 +12938,9 @@
     "keywords": [
       "bwssb"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2066066365413470631",
@@ -11572,7 +12956,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2066090226825768980",
@@ -11589,7 +12975,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "Whitefield",
+    "ward_no": "38"
   },
   {
     "id": "2066064045367861526",
@@ -11606,7 +12994,9 @@
       "garbage",
       "waste"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2066124568386027585",
@@ -11623,7 +13013,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "Koramangala East",
+    "ward_no": "28"
   },
   {
     "id": "2066126741207408917",
@@ -11639,7 +13031,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2066155726129827843",
@@ -11657,7 +13051,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2066140275223966065",
@@ -11675,7 +13071,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2066131386692735387",
@@ -11692,7 +13090,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2066183500647354788",
@@ -11709,7 +13109,9 @@
       "power outage",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2066197696705409195",
@@ -11725,7 +13127,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2066220208323186860",
@@ -11742,7 +13146,9 @@
       "garbage",
       "swm"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2066388218531246424",
@@ -11758,7 +13164,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2066387277635608954",
@@ -11775,7 +13183,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2066362645054418986",
@@ -11792,7 +13202,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2066385561670324639",
@@ -11809,7 +13221,9 @@
       "waste",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2066362914328674462",
@@ -11826,7 +13240,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2066316019715776768",
@@ -11842,7 +13258,9 @@
     "keywords": [
       "flood"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2066373666255011983",
@@ -11858,7 +13276,9 @@
     "keywords": [
       "bmtc"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2066467779444879509",
@@ -11875,7 +13295,9 @@
       "bwssb",
       "water supply"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2066402816177131783",
@@ -11891,7 +13313,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2066420730263486629",
@@ -11909,7 +13333,9 @@
       "dump",
       "swm"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2066419987586445652",
@@ -11926,7 +13352,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2066551800736719088",
@@ -11942,7 +13370,9 @@
     "keywords": [
       "bwssb"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2066572030791806979",
@@ -11959,7 +13389,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2066558734030225491",
@@ -11975,7 +13407,9 @@
     "keywords": [
       "rain water"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "Whitefield",
+    "ward_no": "38"
   },
   {
     "id": "2066723948503724106",
@@ -11992,7 +13426,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2066739431286202572",
@@ -12009,7 +13445,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2066808996812796138",
@@ -12027,7 +13465,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2066773306238443612",
@@ -12043,7 +13483,9 @@
     "keywords": [
       "bmtc"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2066862102577566022",
@@ -12059,7 +13501,9 @@
     "keywords": [
       "bwssb"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2066877422935715847",
@@ -12076,7 +13520,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2066859602558484811",
@@ -12094,7 +13540,9 @@
       "waste",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2066852045689139598",
@@ -12110,7 +13558,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2066842072255185021",
@@ -12126,7 +13576,9 @@
     "keywords": [
       "flood"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2066913019867848964",
@@ -12143,7 +13595,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2066912265216123284",
@@ -12160,7 +13614,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2067087742753005909",
@@ -12176,7 +13632,9 @@
     "keywords": [
       "bwssb"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2067085500176089556",
@@ -12192,7 +13650,9 @@
     "keywords": [
       "bwssb"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2067098245273141313",
@@ -12209,7 +13669,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2067064867002184011",
@@ -12225,7 +13687,9 @@
     "keywords": [
       "bmtc"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2067156005990117801",
@@ -12241,7 +13705,9 @@
     "keywords": [
       "bwssb"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2067182128396390415",
@@ -12258,7 +13724,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2067241426581389454",
@@ -12275,7 +13743,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2067233379897241608",
@@ -12289,7 +13759,9 @@
     "retweets": 0,
     "source_url": "https://twitter.com/i/web/status/2067233379897241608",
     "keywords": [],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2067210340115546257",
@@ -12305,7 +13777,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2067276167070265623",
@@ -12323,7 +13797,9 @@
       "dump",
       "swm"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2067305530239201791",
@@ -12339,7 +13815,9 @@
     "keywords": [
       "pothole"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2067489589456158933",
@@ -12357,7 +13835,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2067476811257430375",
@@ -12374,7 +13854,9 @@
       "power outage",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2067477752308253019",
@@ -12391,7 +13873,9 @@
       "pothole",
       "crater"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2067460173418115417",
@@ -12408,7 +13892,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2067456060160643079",
@@ -12424,7 +13910,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2067451266515832978",
@@ -12442,7 +13930,9 @@
       "dump",
       "swm"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "Madiwala",
+    "ward_no": "20"
   },
   {
     "id": "2067487812304474488",
@@ -12458,7 +13948,9 @@
     "keywords": [
       "park"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "Marathahalli",
+    "ward_no": "45"
   },
   {
     "id": "2067476002104811588",
@@ -12474,7 +13966,9 @@
     "keywords": [
       "traffic signal"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2067507172456755465",
@@ -12490,7 +13984,9 @@
     "keywords": [
       "bwssb"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2067513154557649164",
@@ -12507,7 +14003,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2067522817168654402",
@@ -12524,7 +14022,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2067579116518515179",
@@ -12540,7 +14040,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2067575160178425998",
@@ -12557,7 +14059,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2067584146608943590",
@@ -12574,7 +14078,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2067611082500575528",
@@ -12590,7 +14096,9 @@
     "keywords": [
       "bmtc"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2067577229400576409",
@@ -12607,7 +14115,9 @@
       "bmtc",
       "metro"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2067640787513512013",
@@ -12624,7 +14134,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2067625899571482633",
@@ -12641,7 +14153,9 @@
       "power outage",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2067649033129308676",
@@ -12659,7 +14173,9 @@
       "dump",
       "debris"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2067690513550197092",
@@ -12676,7 +14192,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2067684108348854275",
@@ -12693,7 +14211,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2067869293094842786",
@@ -12710,7 +14230,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2067865718566395996",
@@ -12726,7 +14248,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2067857052417064977",
@@ -12743,7 +14267,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2067849142572036469",
@@ -12760,7 +14286,9 @@
       "power outage",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2067803290990198890",
@@ -12776,7 +14304,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2067797486752952708",
@@ -12793,7 +14323,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2067859298034786644",
@@ -12809,7 +14341,9 @@
     "keywords": [
       "lalbagh"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2067884535333920920",
@@ -12825,7 +14359,9 @@
     "keywords": [
       "water supply"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2067917321583387044",
@@ -12842,7 +14378,9 @@
       "power outage",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2067909812021834233",
@@ -12860,7 +14398,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2067975746103263282",
@@ -12876,7 +14416,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2067940840174236037",
@@ -12892,7 +14434,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2067987294473351667",
@@ -12909,7 +14453,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2067990491002728656",
@@ -12925,7 +14471,9 @@
     "keywords": [
       "traffic jam"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2068032251078783066",
@@ -12941,7 +14489,9 @@
     "keywords": [
       "pothole"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2068019761997660169",
@@ -12957,7 +14507,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2068142777872027865",
@@ -12974,7 +14526,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2068213526922174850",
@@ -12991,7 +14545,9 @@
       "bwssb",
       "water supply"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2068190253274616083",
@@ -13008,7 +14564,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "HSR Layout",
+    "ward_no": "72"
   },
   {
     "id": "2068183656406126637",
@@ -13025,7 +14583,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2068181041253392453",
@@ -13041,7 +14601,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2068175014726439272",
@@ -13057,7 +14619,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2068245970609963339",
@@ -13074,7 +14638,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2068240072152096960",
@@ -13091,7 +14657,9 @@
       "power outage",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2068219175735292078",
@@ -13108,7 +14676,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2068263815997956114",
@@ -13125,7 +14695,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2068289598128898482",
@@ -13142,7 +14714,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2068286833117823004",
@@ -13159,7 +14733,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2068312040452849690",
@@ -13176,7 +14752,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   },
   {
     "id": "2068309835406606446",
@@ -13192,6 +14770,8 @@
     "keywords": [
       "traffic jam"
     ],
-    "status": "open"
+    "status": "open",
+    "ward_name": "",
+    "ward_no": ""
   }
 ]

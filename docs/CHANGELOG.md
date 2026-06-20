@@ -5,6 +5,42 @@ Format: `[Date] - What changed and why`
 
 ---
 
+## [2026-06-20] — Fix location mapping: correct ward → correct officials hierarchy
+
+### Root cause
+78% of issues (620/790) were tagged `area: "Bangalore"` because the keyword extractor only matched 44 hardcoded area names. The dashboard then mapped "Bangalore" → Bagalagunte ward → showed Bagalagunte BESCOM/SWM officials for every complaint with no specific area.
+
+### What changed
+
+**`scripts/enrich_locations.py`** (NEW — backfill + forward pipeline step)
+- Uses Claude Haiku to extract the specific Bangalore locality from each tweet text
+- Geocodes the locality → lat/lon via Nominatim (OpenStreetMap, free, rate-limited 1/sec)
+- Reverse-geocodes to get neighbourhood/suburb candidates, then fuzzy-matches to the correct BBMP ward using trigram similarity
+- Caches geocoding results in `data/geo_cache.json` so re-runs never pay twice
+- Stores `area`, `lat`, `lon`, `ward_name`, `ward_no` on each issue
+- Usage: `python enrich_locations.py --days 15` (backfill) or `python enrich_locations.py` (all Bangalore-tagged)
+
+**`scripts/process_issues.py`** (updated)
+- Now stores `ward_name` and `ward_no` on every new issue using a static area→ward lookup
+- Only uses high-confidence mappings (match_score ≥ 0.8) from `area_ward_lookup.json`
+- Skips the generic "Bangalore" → Bagalagunte mapping (match_score 0.6) — those need LLM enrichment
+- New pipeline step for every fresh data run: `fetch → process → filter → enrich_locations`
+
+**`scripts/requirements.txt`** — added `requests>=2.28.0` for Nominatim geocoding
+
+**`data/issues.json`** (static backfill applied)
+- 65 issues with high-confidence area names (Whitefield, Koramangala, HSR Layout, etc.) now have correct `ward_name` and `ward_no`
+- Remaining ~725 issues still need `enrich_locations.py --all` to be run with API keys
+
+**`dashboard/js/app.js`** — full escalation hierarchy in "Who to Contact"
+- `getSmartContacts` now prefers `issue.ward_name` directly (from enrichment script) over fuzzy area lookup — much more accurate
+- **Full hierarchy always shown**: dept-specific official → Ward Councillor → MLA → MP (Highest Authority)
+- Previously only showed MLA when `mla_email` was set (most wards don't have this) — now shows MLA and MP always if the ward has them, with phone numbers
+- New `highest` badge type (pink) for MP
+- `badge-highest` CSS class added
+
+---
+
 ## [2026-06-20] — Copy Tweet Reply button in complaint detail panel
 
 ### Added
