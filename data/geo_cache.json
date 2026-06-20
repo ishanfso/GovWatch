@@ -1,0 +1,2698 @@
+{
+  "nayandahalli junction": {
+    "lat": 12.9453187,
+    "lon": 77.5280862,
+    "candidates": [
+      "Nayandahalli Junction",
+      "Deepanjali Nagara",
+      "Bengaluru West City Corporation"
+    ]
+  },
+  "malleshwaram": {
+    "lat": 13.0027353,
+    "lon": 77.5703253,
+    "candidates": [
+      "Malleshwaram",
+      "Malleswaram",
+      "Bengaluru West City Corporation"
+    ]
+  },
+  "koramangala": {
+    "lat": 12.9357366,
+    "lon": 77.624081,
+    "candidates": [
+      "Koramangala",
+      "Koramangala 6th Block",
+      "Koramangala",
+      "Bengaluru South City Corporation"
+    ]
+  },
+  "chikkalsandra": {
+    "lat": 12.9090687,
+    "lon": 77.5490557,
+    "candidates": [
+      "Chikkalsandra",
+      "Subramanyapura",
+      "Bengaluru South City Corporation"
+    ]
+  },
+  "yelahanka": {
+    "lat": 13.1006982,
+    "lon": 77.5963454,
+    "candidates": [
+      "Yelahanka",
+      "Gandhinagar",
+      "Yelahanka",
+      "Bengaluru North City Corporation"
+    ]
+  },
+  "bannerghatta road": {
+    "lat": 12.9430372,
+    "lon": 77.6028965,
+    "candidates": [
+      "Bannerghatta Road",
+      "Lakkasandra",
+      "Bengaluru South City Corporation"
+    ]
+  },
+  "chamrajapet": {
+    "lat": 12.9602381,
+    "lon": 77.562114,
+    "candidates": [
+      "Chamrajapet",
+      "Chamarajpet",
+      "Bengaluru Central City Corporation"
+    ]
+  },
+  "girinagar": {
+    "lat": 12.9401439,
+    "lon": 77.5444995,
+    "candidates": [
+      "Girinagar",
+      "Swamy Vivekananda Ward",
+      "Girinagar",
+      "Bengaluru West City Corporation"
+    ]
+  },
+  "kannamangala": {
+    "lat": 13.015491,
+    "lon": 77.7631731,
+    "candidates": [
+      "Kannamangala",
+      "Seegehalli",
+      "Shigehalli"
+    ]
+  },
+  "silkboard": {
+    "lat": 12.9164904,
+    "lon": 77.6234434,
+    "candidates": [
+      "Silkboard",
+      "MCHS Colony",
+      "HSR Layout",
+      "Bengaluru South City Corporation"
+    ]
+  },
+  "kasturi nagar": {
+    "lat": 13.0015277,
+    "lon": 77.6512362,
+    "candidates": [
+      "Kasturi Nagar",
+      "Baiyyappanahalli",
+      "Income Tax Layout, Sadananda Nagar, NGEF Layout",
+      "Bengaluru Central City Corporation"
+    ]
+  },
+  "k naryanpura": null,
+  "gattahalli": {
+    "lat": 12.8685628,
+    "lon": 77.7026913,
+    "candidates": [
+      "Gattahalli",
+      "Gattahalli",
+      "Gattahalli",
+      "Gettehalli"
+    ]
+  },
+  "annayappakare": null,
+  "doddanekundi": {
+    "lat": 12.9713194,
+    "lon": 77.6964768,
+    "candidates": [
+      "Doddanekundi",
+      "Ambedkar Colony",
+      "Dodda Nekkundi",
+      "Doddanekundi",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "vinayaka layout": {
+    "lat": 12.9682111,
+    "lon": 77.5116639,
+    "candidates": [
+      "Vinayaka Layout",
+      "Vinayaka Layout",
+      "Nagarabhavi",
+      "Bengaluru West City Corporation"
+    ]
+  },
+  "malleshpalya": {
+    "lat": 12.9744129,
+    "lon": 77.6743533,
+    "candidates": [
+      "Malleshpalya",
+      "Maruthi Nagar",
+      "G.M Palya",
+      "Malleshpalya",
+      "Bengaluru Central City Corporation"
+    ]
+  },
+  "old airport road": {
+    "lat": 12.9591061,
+    "lon": 77.6595688,
+    "candidates": [
+      "Old Airport Road",
+      "Konena Agrahara",
+      "Vimanapura",
+      "Bengaluru Central City Corporation"
+    ]
+  },
+  "basavanagudi": {
+    "lat": 12.9417261,
+    "lon": 77.5755021,
+    "candidates": [
+      "Basavanagudi",
+      "Basavanagudi",
+      "Bengaluru Central City Corporation"
+    ]
+  },
+  "mathikere": {
+    "lat": 13.0333587,
+    "lon": 77.5581786,
+    "candidates": [
+      "Mathikere",
+      "Mathikere",
+      "Bengaluru North City Corporation"
+    ]
+  },
+  "mahadevapura": {
+    "lat": 12.9965445,
+    "lon": 77.6927176,
+    "candidates": [
+      "Mahadevapura",
+      "Devasandra",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "kr puram": {
+    "lat": 13.007516,
+    "lon": 77.695935,
+    "candidates": [
+      "KR Puram",
+      "Shree Vinayaka Layout",
+      "KR Puram",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "munnekollala": null,
+  "talaghattapura": null,
+  "cv raman nagar": {
+    "lat": 12.9850987,
+    "lon": 77.6631173,
+    "candidates": [
+      "CV Raman Nagar",
+      "C V Raman Nagar",
+      "DRDO Phase 1",
+      "Bengaluru Central City Corporation"
+    ]
+  },
+  "jeevan bhima nagar": {
+    "lat": 12.9678074,
+    "lon": 77.6568367,
+    "candidates": [
+      "Jeevan Bhima Nagar",
+      "Hanuman Nagar",
+      "Jeevan Bhimanagar",
+      "Jeevan Bhima Nagar",
+      "Bengaluru Central City Corporation"
+    ]
+  },
+  "hebbal guddahalli": null,
+  "green domain layout": {
+    "lat": 12.9728468,
+    "lon": 77.7148942,
+    "candidates": [
+      "Green Domain Layout",
+      "Green Domain Layout",
+      "EPIP Zone",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "bommasandra": {
+    "lat": 12.8160161,
+    "lon": 77.6892217,
+    "candidates": [
+      "Bommasandra",
+      "Bommasandra",
+      "Kittaganahalli",
+      "Bommasandra"
+    ]
+  },
+  "hanumanthanagar": {
+    "lat": 12.9427346,
+    "lon": 77.558378,
+    "candidates": [
+      "Hanumanthanagar",
+      "Mount Joy",
+      "Hanumanthanagar",
+      "Srinagar",
+      "Bengaluru West City Corporation"
+    ]
+  },
+  "jayadeva hospital": {
+    "lat": 12.9167282,
+    "lon": 77.5997303,
+    "candidates": [
+      "Jayadeva Hospital",
+      "J.P Nagar",
+      "Bengaluru South City Corporation"
+    ]
+  },
+  "kogilu": {
+    "lat": 13.1067228,
+    "lon": 77.6173956,
+    "candidates": [
+      "Kogilu",
+      "Kogilu",
+      "Kogilu",
+      "Bengaluru North City Corporation"
+    ]
+  },
+  "harsha layout": {
+    "lat": 12.9629824,
+    "lon": 77.3896189,
+    "candidates": [
+      "Harsha Layout",
+      "Tavarekere",
+      "Peddhanapalya"
+    ]
+  },
+  "nagarbhavi 2nd stage": {
+    "lat": 12.9512353,
+    "lon": 77.519054,
+    "candidates": [
+      "Nagarbhavi 2nd stage",
+      "Teacher's Colony",
+      "Nagarbhavi",
+      "Bengaluru West City Corporation"
+    ]
+  },
+  "hebbala": {
+    "lat": 13.0388166,
+    "lon": 77.5896632,
+    "candidates": [
+      "Hebbala",
+      "Anand Nagar",
+      "Hebbal",
+      "Bengaluru North City Corporation"
+    ]
+  },
+  "bellandur": {
+    "lat": 12.9320495,
+    "lon": 77.6842915,
+    "candidates": [
+      "Bellandur",
+      "Bellanduru",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "national law school of india university": {
+    "lat": 12.9529035,
+    "lon": 77.5158003,
+    "candidates": [
+      "National Law School of India University",
+      "Teacher's Colony",
+      "Nagarbhavi",
+      "Bengaluru West City Corporation"
+    ]
+  },
+  "vignan nagar": null,
+  "chiranjeevi layout": null,
+  "munnekollal": null,
+  "arekere": {
+    "lat": 12.8872086,
+    "lon": 77.5960493,
+    "candidates": [
+      "Arekere",
+      "Mico Arekere Layout 1st Stage",
+      "Doresanipalya",
+      "Arekere",
+      "Bengaluru South City Corporation"
+    ]
+  },
+  "sarjapura": {
+    "lat": 12.8600866,
+    "lon": 77.7861352,
+    "candidates": [
+      "Sarjapura",
+      "Akshaya Greens",
+      "Sarjapura"
+    ]
+  },
+  "whitefield": {
+    "lat": 12.9957428,
+    "lon": 77.7579489,
+    "candidates": [
+      "Whitefield",
+      "Belathur",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "b narayanapura": {
+    "lat": 12.9980556,
+    "lon": 77.6848622,
+    "candidates": [
+      "B Narayanapura",
+      "Kamdhenu Nagar",
+      "A Narayanapura",
+      "B. Narayanapura",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "chandapura": {
+    "lat": 12.8009043,
+    "lon": 77.7114908,
+    "candidates": [
+      "Chandapura",
+      "Tirumagondahalli",
+      "Chandapura"
+    ]
+  },
+  "gottigere": {
+    "lat": 12.8565317,
+    "lon": 77.5877237,
+    "candidates": [
+      "Gottigere",
+      "Gottigere",
+      "Bengaluru South City Corporation"
+    ]
+  },
+  "hebbal": {
+    "lat": 13.0382184,
+    "lon": 77.5919,
+    "candidates": [
+      "Hebbal",
+      "Anand Nagar",
+      "Hebbal",
+      "Bengaluru North City Corporation"
+    ]
+  },
+  "brookefield": {
+    "lat": 12.9652094,
+    "lon": 77.717936,
+    "candidates": [
+      "Brookefield",
+      "AECS Layout B Block",
+      "Priyadarshini Ward",
+      "Brookefield",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "weaver colony": null,
+  "chandra layout": {
+    "lat": 12.955333,
+    "lon": 77.5238903,
+    "candidates": [
+      "Chandra Layout",
+      "Chandra Layout",
+      "Bengaluru West City Corporation"
+    ]
+  },
+  "maheshwari nagar": {
+    "lat": 12.9917803,
+    "lon": 77.6907504,
+    "candidates": [
+      "Maheshwari Nagar",
+      "Maheshwari Nagar",
+      "Garudachar Palya",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "electronic city": {
+    "lat": 12.8487599,
+    "lon": 77.648253,
+    "candidates": [
+      "Electronic City",
+      "Vittasandra"
+    ]
+  },
+  "vijayanagar": {
+    "lat": 12.9709537,
+    "lon": 77.5373851,
+    "candidates": [
+      "Vijayanagar",
+      "M C Layout",
+      "Dr. Vishnuvardhan Ward",
+      "Bengaluru West City Corporation"
+    ]
+  },
+  "doddabanahalli": {
+    "lat": 13.0271648,
+    "lon": 77.7473867,
+    "candidates": [
+      "Doddabanahalli",
+      "Bidare Agrahara",
+      "Doddabanahalli"
+    ]
+  },
+  "hongasandra": {
+    "lat": 12.8986261,
+    "lon": 77.6286732,
+    "candidates": [
+      "Hongasandra",
+      "Hongasandra",
+      "Bengaluru South City Corporation"
+    ]
+  },
+  "shanthi layout": {
+    "lat": 13.0167674,
+    "lon": 77.6834304,
+    "candidates": [
+      "Shanthi Layout",
+      "K Chennasandra",
+      "ITI Colony",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "avalhalli": null,
+  "vijaya bank layout": {
+    "lat": 12.8822364,
+    "lon": 77.6138592,
+    "candidates": [
+      "Vijaya Bank Layout",
+      "Royal Residency Layout",
+      "Vijaya Bank Layout",
+      "Bengaluru South City Corporation"
+    ]
+  },
+  "banaswadi": {
+    "lat": 13.0141618,
+    "lon": 77.6518539,
+    "candidates": [
+      "Banaswadi",
+      "Banaswadi",
+      "HRBR Layout 1st Block",
+      "Bengaluru North City Corporation"
+    ]
+  },
+  "mahadevpura": {
+    "lat": 12.9968412,
+    "lon": 77.6928386,
+    "candidates": [
+      "Mahadevpura",
+      "Devasandra",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "shantinetan layout": null,
+  "nallurhalli": {
+    "lat": 12.9766408,
+    "lon": 77.7248845,
+    "candidates": [
+      "Nallurhalli",
+      "Bharath Aikya Ward",
+      "Kundalahalli",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "brookfield": {
+    "lat": 12.9660972,
+    "lon": 77.7178615,
+    "candidates": [
+      "Brookfield",
+      "AECS Layout B Block",
+      "Priyadarshini Ward",
+      "Brookefield",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "anekal": {
+    "lat": 12.7845589,
+    "lon": 77.7383327,
+    "candidates": [
+      "Anekal",
+      "Tirumagondahalli",
+      "Balegaranahalli"
+    ]
+  },
+  "saraswathinagar": null,
+  "chickpete": {
+    "lat": 12.9697837,
+    "lon": 77.5756901,
+    "candidates": [
+      "Chickpete",
+      "Old Tharagupete",
+      "Chikkapete",
+      "Bengaluru Central City Corporation"
+    ]
+  },
+  "yashwanthpur": null,
+  "singasandra": {
+    "lat": 12.8787382,
+    "lon": 77.642089,
+    "candidates": [
+      "Singasandra",
+      "Wellington Paradise Layout",
+      "Singasandra",
+      "Bengaluru South City Corporation"
+    ]
+  },
+  "aecs layout": {
+    "lat": 12.964118,
+    "lon": 77.7130369,
+    "candidates": [
+      "AECS Layout",
+      "Maruthi Layout",
+      "Priyadarshini Ward",
+      "AECS Layout",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "kadugodi": {
+    "lat": 12.9957428,
+    "lon": 77.7579489,
+    "candidates": [
+      "Kadugodi",
+      "Belathur",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "chickpet": {
+    "lat": 12.9563732,
+    "lon": 77.7454891,
+    "candidates": [
+      "Chickpet",
+      "Varthur Kodi",
+      "Varthur",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "indiranagar": {
+    "lat": 12.9732913,
+    "lon": 77.6404672,
+    "candidates": [
+      "Indiranagar",
+      "Defence Colony",
+      "Indiranagar",
+      "Bengaluru Central City Corporation"
+    ]
+  },
+  "maruthi nagar": {
+    "lat": 12.9746062,
+    "lon": 77.6756305,
+    "candidates": [
+      "Maruthi Nagar",
+      "Maruthi Nagar",
+      "G.M Palya",
+      "Malleshpalya",
+      "Bengaluru Central City Corporation"
+    ]
+  },
+  "k.m. layout": {
+    "lat": 12.9733651,
+    "lon": 77.6164843,
+    "candidates": [
+      "K.M. Layout",
+      "Hanumanthappa Layout",
+      "K Kamaraj Ward",
+      "Bengaluru Central City Corporation"
+    ]
+  },
+  "singasandra aecs layout": {
+    "lat": 12.8829572,
+    "lon": 77.6500831,
+    "candidates": [
+      "Singasandra AECS Layout",
+      "AECS Layout, A block",
+      "Bandepalya",
+      "Bengaluru South City Corporation"
+    ]
+  },
+  "agara": {
+    "lat": 12.9091524,
+    "lon": 77.6438684,
+    "candidates": [
+      "Agara",
+      "HSR Layout",
+      "Sector 3",
+      "Bengaluru South City Corporation"
+    ]
+  },
+  "jagdish nagar": null,
+  "hsr layout": {
+    "lat": 12.9116225,
+    "lon": 77.6388622,
+    "candidates": [
+      "HSR Layout",
+      "MCHS Colony",
+      "HSR Layout",
+      "Sector 3",
+      "Bengaluru South City Corporation"
+    ]
+  },
+  "vinayaka nagar": {
+    "lat": 12.9872184,
+    "lon": 77.5230958,
+    "candidates": [
+      "Vinayaka Nagar",
+      "Vinayaka Nagar",
+      "Vrishabhavathi Nagar",
+      "Bengaluru West City Corporation"
+    ]
+  },
+  "thanisandra": {
+    "lat": 13.0522499,
+    "lon": 77.6316152,
+    "candidates": [
+      "Thanisandra",
+      "Thanisandra",
+      "Thanisandra",
+      "Bengaluru North City Corporation"
+    ]
+  },
+  "lalbagh road": {
+    "lat": 12.9573479,
+    "lon": 77.5861786,
+    "candidates": [
+      "Lalbagh Road",
+      "Shanti Nagar",
+      "Bengaluru Central City Corporation"
+    ]
+  },
+  "sarvagnanagar": {
+    "lat": 12.9954832,
+    "lon": 77.6239259,
+    "candidates": [
+      "Sarvagnanagar",
+      "Doddigunta",
+      "Cox Town",
+      "Cox Town",
+      "Bengaluru Central City Corporation"
+    ]
+  },
+  "panathur": {
+    "lat": 12.9351457,
+    "lon": 77.7047541,
+    "candidates": [
+      "Panathur",
+      "JCR Layout",
+      "Panathur",
+      "Kaadubeesanahalli",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "kg halli": {
+    "lat": 13.0568608,
+    "lon": 77.5327052,
+    "candidates": [
+      "KG Halli",
+      "Shettihalli",
+      "Bengaluru North City Corporation"
+    ]
+  },
+  "anjanadri layout": {
+    "lat": 12.9316229,
+    "lon": 77.7033463,
+    "candidates": [
+      "Anjanadri layout",
+      "JCR Layout",
+      "Panathur",
+      "Kaadubeesanahalli",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "jigani": {
+    "lat": 12.7756195,
+    "lon": 77.6324661,
+    "candidates": [
+      "Jigani",
+      "Jigani"
+    ]
+  },
+  "koramangala 4th block": {
+    "lat": 12.9327778,
+    "lon": 77.6294052,
+    "candidates": [
+      "Koramangala 4th Block",
+      "Koramangala 4th Block",
+      "Kormangala East",
+      "Bengaluru South City Corporation"
+    ]
+  },
+  "mittaganahalli": null,
+  "rajasree layout": {
+    "lat": 13.0686085,
+    "lon": 77.5562896,
+    "candidates": [
+      "Rajasree Layout",
+      "Nanjappa Layout",
+      "Vidyaranyapura",
+      "BEL Layout",
+      "Bengaluru North City Corporation"
+    ]
+  },
+  "sunkadakatte": {
+    "lat": 12.9951556,
+    "lon": 77.5022163,
+    "candidates": [
+      "Sunkadakatte",
+      "Sunkadakatte",
+      "Bengaluru West City Corporation"
+    ]
+  },
+  "chinnapahalli": null,
+  "reva university": {
+    "lat": 13.1154027,
+    "lon": 77.6357699,
+    "candidates": [
+      "Reva University",
+      "Kogilu",
+      "Bengaluru North City Corporation"
+    ]
+  },
+  "sobha sentosa": {
+    "lat": 12.9350961,
+    "lon": 77.7241065,
+    "candidates": [
+      "Sobha Sentosa",
+      "Balagere",
+      "Sobha Sentosa",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "pillanna garden": null,
+  "gupta layout": {
+    "lat": 12.9796895,
+    "lon": 77.6247821,
+    "candidates": [
+      "Gupta Layout",
+      "Gupta Layout",
+      "Halasuru",
+      "Bengaluru Central City Corporation"
+    ]
+  },
+  "jakkasandra": {
+    "lat": 12.9206827,
+    "lon": 77.6357104,
+    "candidates": [
+      "Jakkasandra",
+      "Venkatpura",
+      "HSR Layout",
+      "Sector 5",
+      "Bengaluru South City Corporation"
+    ]
+  },
+  "bommanahalli": {
+    "lat": 12.9034581,
+    "lon": 77.6230028,
+    "candidates": [
+      "Bommanahalli",
+      "Bommanahalli",
+      "Hongasandra",
+      "Bengaluru South City Corporation"
+    ]
+  },
+  "reva circle": null,
+  "bagalur": {
+    "lat": 13.0079918,
+    "lon": 77.6184726,
+    "candidates": [
+      "Bagalur",
+      "New Bagalur Layout",
+      "Sagayapuram",
+      "Richards Town",
+      "Bengaluru North City Corporation"
+    ]
+  },
+  "shivajinagar": {
+    "lat": 12.9855286,
+    "lon": 77.6054496,
+    "candidates": [
+      "Shivajinagar",
+      "Commercial Street Market",
+      "Shivajinagar",
+      "Bengaluru Central City Corporation"
+    ]
+  },
+  "kothanur": {
+    "lat": 12.8701259,
+    "lon": 77.5820178,
+    "candidates": [
+      "Kothanur",
+      "Kothnur",
+      "Bengaluru South City Corporation"
+    ]
+  },
+  "chikkakannalli": {
+    "lat": 12.893703,
+    "lon": 77.7081315,
+    "candidates": [
+      "Chikkakannalli",
+      "Kodati",
+      "Kodathi"
+    ]
+  },
+  "kithaganur": null,
+  "nisarga layout": {
+    "lat": 12.7870869,
+    "lon": 77.6178221,
+    "candidates": [
+      "Nisarga Layout",
+      "Nisarga Layout",
+      "Harappanahalli",
+      "Harapanahalli"
+    ]
+  },
+  "sanjaynagar": {
+    "lat": 13.0231251,
+    "lon": 77.5842675,
+    "candidates": [
+      "Sanjaynagar",
+      "Sadashivanagar",
+      "Bengaluru West City Corporation"
+    ]
+  },
+  "rt nagar": {
+    "lat": 13.0227204,
+    "lon": 77.595715,
+    "candidates": [
+      "RT Nagar",
+      "RT Nagar",
+      "Bengaluru North City Corporation"
+    ]
+  },
+  "k v layout": {
+    "lat": 12.9205931,
+    "lon": 77.6330004,
+    "candidates": [
+      "K V Layout",
+      "Venkatpura",
+      "Jakkasandra",
+      "Sector 5",
+      "Bengaluru South City Corporation"
+    ]
+  },
+  "hrbr layout": {
+    "lat": 13.0141515,
+    "lon": 77.6340564,
+    "candidates": [
+      "HRBR Layout",
+      "KFSC Layout",
+      "Kammanahalli",
+      "Bengaluru North City Corporation"
+    ]
+  },
+  "v.v puram": {
+    "lat": 12.9500602,
+    "lon": 77.5768521,
+    "candidates": [
+      "V.V Puram",
+      "V.V Puram",
+      "VV Puram",
+      "Bengaluru Central City Corporation"
+    ]
+  },
+  "shivaji nagar": {
+    "lat": 12.9883249,
+    "lon": 77.6004488,
+    "candidates": [
+      "Shivaji Nagar",
+      "Jayamahal",
+      "Bengaluru Central City Corporation"
+    ]
+  },
+  "bangalore toll gate near parle factory": null,
+  "jaraganahalli": {
+    "lat": 12.8987896,
+    "lon": 77.5776273,
+    "candidates": [
+      "Jaraganahalli",
+      "Jaraganahalli",
+      "Bengaluru South City Corporation"
+    ]
+  },
+  "pai layout": {
+    "lat": 12.993111,
+    "lon": 77.6666772,
+    "candidates": [
+      "Pai Layout",
+      "Pai Layout",
+      "K.S. Nissar Ahmed Ward",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "goshala road": {
+    "lat": 12.9818745,
+    "lon": 77.695421,
+    "candidates": [
+      "Goshala Road",
+      "Mahadevapura",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "bsk 3rd stage": {
+    "lat": 12.8957216,
+    "lon": 77.5549142,
+    "candidates": [
+      "BSK 3rd stage",
+      "Kalyani Nagara",
+      "Uttarahalli",
+      "Bengaluru South City Corporation"
+    ]
+  },
+  "kumarswamy layout": {
+    "lat": 12.9119181,
+    "lon": 77.5646668,
+    "candidates": [
+      "Kumarswamy Layout",
+      "JHBCS Layout",
+      "Gowdanapalya",
+      "Kumaraswamy Layout",
+      "Bengaluru South City Corporation"
+    ]
+  },
+  "harlur": {
+    "lat": 12.9058923,
+    "lon": 77.675465,
+    "candidates": [
+      "Harlur",
+      "Kasavanahalli",
+      "Kasavanahalli",
+      "Kaikondrahalli",
+      "Bengaluru South City Corporation"
+    ]
+  },
+  "thyagarajnagar": {
+    "lat": 12.9321615,
+    "lon": 77.5637133,
+    "candidates": [
+      "Thyagarajnagar",
+      "Thyagarajnagar",
+      "Bengaluru West City Corporation"
+    ]
+  },
+  "krishna garden layout": {
+    "lat": 12.9132852,
+    "lon": 77.506908,
+    "candidates": [
+      "Krishna garden layout",
+      "Krishna Garden Layout",
+      "Mylasandra",
+      "Pattanagere",
+      "Bengaluru West City Corporation"
+    ]
+  },
+  "pragatipura": null,
+  "surabhi layout": {
+    "lat": 13.0930374,
+    "lon": 77.6002443,
+    "candidates": [
+      "Surabhi Layout",
+      "Surabhi Layout",
+      "Yelahanka",
+      "Bengaluru North City Corporation"
+    ]
+  },
+  "bhoganahalli": {
+    "lat": 12.9265141,
+    "lon": 77.7009129,
+    "candidates": [
+      "Bhoganahalli",
+      "Bhoganahalli",
+      "Panathur",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "st joseph's": {
+    "lat": 12.9703357,
+    "lon": 77.595084,
+    "candidates": [
+      "St Joseph's",
+      "D'Souza Layout",
+      "Ashokanagar",
+      "Shanthala Nagar",
+      "Bengaluru Central City Corporation"
+    ]
+  },
+  "gunjur": {
+    "lat": 12.9209772,
+    "lon": 77.7361016,
+    "candidates": [
+      "Gunjur",
+      "Gunjur",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "kalyan nagar": {
+    "lat": 13.0221416,
+    "lon": 77.6403368,
+    "candidates": [
+      "Kalyan Nagar",
+      "Kalyan Nagar",
+      "Bengaluru North City Corporation"
+    ]
+  },
+  "byadarahalli": {
+    "lat": 12.9779094,
+    "lon": 77.484086,
+    "candidates": [
+      "Byadarahalli",
+      "Byadarahalli",
+      "Byadarahalli",
+      "Bharathnagar",
+      "Bengaluru West City Corporation"
+    ]
+  },
+  "attur ward": {
+    "lat": 13.0946873,
+    "lon": 77.5596677,
+    "candidates": [
+      "Attur Ward",
+      "Kaveri Layout",
+      "Attur",
+      "Sector 3",
+      "Bengaluru North City Corporation"
+    ]
+  },
+  "anand rao circle": {
+    "lat": 12.9807136,
+    "lon": 77.5747416,
+    "candidates": [
+      "Anand Rao Circle",
+      "Gandhinagar",
+      "Bengaluru Central City Corporation"
+    ]
+  },
+  "thubarahalli": {
+    "lat": 12.9547872,
+    "lon": 77.7213154,
+    "candidates": [
+      "Thubarahalli",
+      "Thubarahalli",
+      "Kundalahalli",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "silver springs layout": {
+    "lat": 12.9582324,
+    "lon": 77.7098778,
+    "candidates": [
+      "Silver Springs Layout",
+      "Silver Springs Layout",
+      "Priyadarshini Ward",
+      "AECS Layout",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "e9 division": {
+    "lat": 12.9591483,
+    "lon": 77.6781141,
+    "candidates": [
+      "E9 Division",
+      "Ramesh Nagar",
+      "Vibhootipura",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "horamavu": {
+    "lat": 13.0273312,
+    "lon": 77.6601508,
+    "candidates": [
+      "Horamavu",
+      "Horamavu",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "attibale": null,
+  "chowrappa layout": null,
+  "hmt layout": {
+    "lat": 13.03553,
+    "lon": 77.5027084,
+    "candidates": [
+      "HMT Layout",
+      "HMT Layout",
+      "Nagasandra",
+      "Bengaluru West City Corporation"
+    ]
+  },
+  "balagere road": {
+    "lat": 12.939209,
+    "lon": 77.7309444,
+    "candidates": [
+      "Balagere Road",
+      "Balagere",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "tc palya": {
+    "lat": 13.0226152,
+    "lon": 77.7057327,
+    "candidates": [
+      "TC PALYA",
+      "Bhattarahalli",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "electronic city phase 2": {
+    "lat": 12.8468545,
+    "lon": 77.6769267,
+    "candidates": [
+      "Electronic City Phase 2",
+      "Electronics City Phase 2 (East)"
+    ]
+  },
+  "kachamaranahalli": {
+    "lat": 12.9046015,
+    "lon": 77.7337528,
+    "candidates": [
+      "Kachamaranahalli",
+      "Kachamaranahalli",
+      "Kachamaranahalli"
+    ]
+  },
+  "sarakki": {
+    "lat": 12.9087667,
+    "lon": 77.576797,
+    "candidates": [
+      "Sarakki",
+      "Sarakki",
+      "JP Nagar",
+      "JP Nagar 1st Phase",
+      "Bengaluru South City Corporation"
+    ]
+  },
+  "naagarabhavi": null,
+  "siddapura": {
+    "lat": 12.9542596,
+    "lon": 77.7309743,
+    "candidates": [
+      "Siddapura",
+      "Siddapura",
+      "Kundalahalli",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "attigupe": {
+    "lat": 12.9581817,
+    "lon": 77.5301742,
+    "candidates": [
+      "Attigupe",
+      "Attigupe",
+      "BCC Layout",
+      "Bengaluru West City Corporation"
+    ]
+  },
+  "electronic city phase 1": {
+    "lat": 12.8496783,
+    "lon": 77.6649749,
+    "candidates": [
+      "Electronic City Phase 1",
+      "Electronics City Phase 1"
+    ]
+  },
+  "agrahara": {
+    "lat": 13.0979764,
+    "lon": 77.6183872,
+    "candidates": [
+      "Agrahara",
+      "Sampigehalli",
+      "Sampigehalli",
+      "Bengaluru North City Corporation"
+    ]
+  },
+  "talagattapura": {
+    "lat": 12.8668939,
+    "lon": 77.5344087,
+    "candidates": [
+      "Talagattapura",
+      "Ganigarapalya",
+      "Talagattapura",
+      "Vajrahalli",
+      "Bengaluru South City Corporation"
+    ]
+  },
+  "jayanagar": {
+    "lat": 12.9292731,
+    "lon": 77.5824229,
+    "candidates": [
+      "Jayanagar",
+      "Byrasandra",
+      "Jayanagar 4th Block",
+      "Bengaluru South City Corporation"
+    ]
+  },
+  "amruthahalli": {
+    "lat": 13.0648426,
+    "lon": 77.5993429,
+    "candidates": [
+      "Amruthahalli",
+      "Amruthahalli",
+      "Amrutahalli",
+      "Bengaluru North City Corporation"
+    ]
+  },
+  "sarjapur": {
+    "lat": 12.9116225,
+    "lon": 77.6388622,
+    "candidates": [
+      "Sarjapur",
+      "MCHS Colony",
+      "HSR Layout",
+      "Sector 3",
+      "Bengaluru South City Corporation"
+    ]
+  },
+  "patel layout": {
+    "lat": 13.0578257,
+    "lon": 77.6457644,
+    "candidates": [
+      "Patel Layout",
+      "Arkavathy Layout 17th Block",
+      "K Narayanapura",
+      "Kothanur",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "rr nagar": {
+    "lat": 12.9314733,
+    "lon": 77.5290964,
+    "candidates": [
+      "RR Nagar",
+      "Bangarappa Nagara",
+      "Sobha Valley View",
+      "Bengaluru West City Corporation"
+    ]
+  },
+  "domlur": {
+    "lat": 12.9624669,
+    "lon": 77.6381958,
+    "candidates": [
+      "Domlur",
+      "Domlur BDA Layout",
+      "Domluru",
+      "Domlur",
+      "Bengaluru Central City Corporation"
+    ]
+  },
+  "g r layout": {
+    "lat": 12.9558857,
+    "lon": 77.6512156,
+    "candidates": [
+      "G R Layout",
+      "Jeevan Bhimanagar",
+      "N R Layout",
+      "Bengaluru Central City Corporation"
+    ]
+  },
+  "kaggadasapura": {
+    "lat": 12.9812262,
+    "lon": 77.6745845,
+    "candidates": [
+      "Kaggadasapura",
+      "Kaggadasapura",
+      "Kaggadasapura",
+      "Bengaluru Central City Corporation"
+    ]
+  },
+  "koramangala 1st block": {
+    "lat": 12.9277245,
+    "lon": 77.6327822,
+    "candidates": [
+      "Koramangala 1st Block",
+      "Koramangala 1st Block",
+      "Kormangala East",
+      "Bengaluru South City Corporation"
+    ]
+  },
+  "v kallahalli": {
+    "lat": 12.8857015,
+    "lon": 77.7767933,
+    "candidates": [
+      "V Kallahalli",
+      "Valagere Kallahalli",
+      "Valagere Kallahalli"
+    ]
+  },
+  "murugeshpalya": {
+    "lat": 12.9589406,
+    "lon": 77.6555917,
+    "candidates": [
+      "Murugeshpalya",
+      "Kaveri Nagara",
+      "Konena Agrahara",
+      "Murugeshpalaya",
+      "Bengaluru Central City Corporation"
+    ]
+  },
+  "vignananagar": {
+    "lat": 12.9736159,
+    "lon": 77.6824619,
+    "candidates": [
+      "Vignananagar",
+      "Sangama Ward",
+      "Vignananagar",
+      "Jain Heights - East Parade",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "uttarahalli": {
+    "lat": 12.9055682,
+    "lon": 77.5455438,
+    "candidates": [
+      "Uttarahalli",
+      "Uttarahalli",
+      "Bengaluru South City Corporation"
+    ]
+  },
+  "pillanagarden": null,
+  "pr layout": {
+    "lat": 13.031992,
+    "lon": 77.6280789,
+    "candidates": [
+      "PR Layout",
+      "Grace Town",
+      "HBR Layout",
+      "HBR Layout 3rd Block",
+      "Bengaluru North City Corporation"
+    ]
+  },
+  "tasker town": {
+    "lat": 12.9801622,
+    "lon": 77.605818,
+    "candidates": [
+      "Tasker Town",
+      "Tasker Town",
+      "Shivajinagar",
+      "Bengaluru Central City Corporation"
+    ]
+  },
+  "peenya": {
+    "lat": 13.0330515,
+    "lon": 77.5332233,
+    "candidates": [
+      "Peenya",
+      "Peenya",
+      "Goragunte Palya",
+      "Bengaluru West City Corporation"
+    ]
+  },
+  "hulimangala": {
+    "lat": 12.8226963,
+    "lon": 77.6495447,
+    "candidates": [
+      "Hulimangala",
+      "Hulimangala",
+      "Hulimangala"
+    ]
+  },
+  "nagarbhavi": {
+    "lat": 12.9512353,
+    "lon": 77.519054,
+    "candidates": [
+      "Nagarbhavi",
+      "Teacher's Colony",
+      "Nagarbhavi",
+      "Bengaluru West City Corporation"
+    ]
+  },
+  "kodigehalli": {
+    "lat": 13.0031666,
+    "lon": 77.7272835,
+    "candidates": [
+      "Kodigehalli",
+      "Belathur",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "kapila nagar": {
+    "lat": 12.979643,
+    "lon": 77.5751455,
+    "candidates": [
+      "Kapila Nagar",
+      "Gandhinagar",
+      "Bengaluru Central City Corporation"
+    ]
+  },
+  "red carpet layout": null,
+  "bsk 2nd stage": {
+    "lat": 12.8953908,
+    "lon": 77.5547931,
+    "candidates": [
+      "BSK 2nd Stage",
+      "Vasanthapura",
+      "Uttarahalli",
+      "Bengaluru South City Corporation"
+    ]
+  },
+  "seetharampalya": {
+    "lat": 12.9808558,
+    "lon": 77.7087854,
+    "candidates": [
+      "Seetharampalya",
+      "Channama Layout",
+      "EPIP Zone",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "doddakammanahalli": {
+    "lat": 12.8509089,
+    "lon": 77.5986785,
+    "candidates": [
+      "Doddakammanahalli",
+      "Chikka Kammanahalli",
+      "Doddakammanahalli",
+      "Bengaluru South City Corporation"
+    ]
+  },
+  "dominic layout": null,
+  "jigni": null,
+  "vinayakanagar": {
+    "lat": 12.9579825,
+    "lon": 77.609009,
+    "candidates": [
+      "Vinayakanagar",
+      "Vinayakanagar",
+      "Bengaluru Central City Corporation"
+    ]
+  },
+  "avenue road": {
+    "lat": 12.9698326,
+    "lon": 77.5797061,
+    "candidates": [
+      "Avenue Road",
+      "Mamulpete",
+      "Chikkapete",
+      "Bengaluru Central City Corporation"
+    ]
+  },
+  "hal 3rd stage": {
+    "lat": 12.9715338,
+    "lon": 77.6497819,
+    "candidates": [
+      "HAL 3rd Stage",
+      "HAL 3rd Stage",
+      "Indiranagar",
+      "Thippasandra",
+      "Bengaluru Central City Corporation"
+    ]
+  },
+  "s.g. palya": {
+    "lat": 12.9324773,
+    "lon": 77.6046399,
+    "candidates": [
+      "S.G. Palya",
+      "S.G Palya",
+      "Bengaluru South City Corporation"
+    ]
+  },
+  "thubrahalli": null,
+  "garudacharpalya": {
+    "lat": 12.993425,
+    "lon": 77.7005156,
+    "candidates": [
+      "Garudacharpalya",
+      "Garudacharpalya",
+      "Garudachar Palya",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "cantonment": {
+    "lat": 12.9936865,
+    "lon": 77.5980003,
+    "candidates": [
+      "Cantonment",
+      "Jayamahal",
+      "Jayamahal",
+      "Bengaluru Central City Corporation"
+    ]
+  },
+  "kr pura": {
+    "lat": 13.007516,
+    "lon": 77.695935,
+    "candidates": [
+      "KR Pura",
+      "Shree Vinayaka Layout",
+      "KR Puram",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "beml layout": {
+    "lat": 12.9600385,
+    "lon": 77.7164183,
+    "candidates": [
+      "BEML Layout",
+      "Thubarahalli Palya",
+      "Kundalahalli",
+      "Kundalahalli",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "billapura": {
+    "lat": 12.8410686,
+    "lon": 77.7887246,
+    "candidates": [
+      "Billapura",
+      "Billapura",
+      "Billapura"
+    ]
+  },
+  "kengeri park road": null,
+  "hal": {
+    "lat": 12.9565103,
+    "lon": 77.6759082,
+    "candidates": [
+      "HAL",
+      "Vibhootipura",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "tc palaya": {
+    "lat": 13.0106104,
+    "lon": 77.6932665,
+    "candidates": [
+      "TC Palaya",
+      "KR Puram",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "nagawara": {
+    "lat": 13.0529146,
+    "lon": 77.6312831,
+    "candidates": [
+      "Nagawara",
+      "Thanisandra",
+      "Thanisandra",
+      "Bengaluru North City Corporation"
+    ]
+  },
+  "isro layout": {
+    "lat": 12.8974283,
+    "lon": 77.5573828,
+    "candidates": [
+      "ISRO Layout",
+      "Kane Muneshwara Ward",
+      "ISRO Layout",
+      "Bengaluru South City Corporation"
+    ]
+  },
+  "munnenkolalu": {
+    "lat": 12.9488094,
+    "lon": 77.7074968,
+    "candidates": [
+      "Munnenkolalu",
+      "P R Layout",
+      "Munnenkolalu",
+      "Munekolala",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "mahalakshmi layout": {
+    "lat": 13.0113153,
+    "lon": 77.5446972,
+    "candidates": [
+      "Mahalakshmi Layout",
+      "Ashokapuram",
+      "Mahalakshmi Layout",
+      "Bengaluru West City Corporation"
+    ]
+  },
+  "mylasandra": {
+    "lat": 12.9160293,
+    "lon": 77.497544,
+    "candidates": [
+      "Mylasandra",
+      "BEML Layout 7th Phase",
+      "Mylasandra",
+      "Pattanagere",
+      "Bengaluru West City Corporation"
+    ]
+  },
+  "shanthi nagar": {
+    "lat": 12.9546254,
+    "lon": 77.5922821,
+    "candidates": [
+      "Shanthi Nagar",
+      "Shanti Nagar",
+      "Bengaluru Central City Corporation"
+    ]
+  },
+  "hoskote": {
+    "lat": 13.0318443,
+    "lon": 77.7618779,
+    "candidates": [
+      "Hoskote",
+      "Sobha Amethyst & Adamus",
+      "Khajisonnenahalli",
+      "Kannamangala"
+    ]
+  },
+  "ramesh reddy layout": null,
+  "banashankari": {
+    "lat": 12.9278196,
+    "lon": 77.556621,
+    "candidates": [
+      "Banashankari",
+      "Banashankari",
+      "Bengaluru West City Corporation"
+    ]
+  },
+  "navya layout": {
+    "lat": 13.0747689,
+    "lon": 77.6041362,
+    "candidates": [
+      "Navya Layout",
+      "MCHS Layout",
+      "Arkavathy Layout",
+      "Bengaluru North City Corporation"
+    ]
+  },
+  "ckb layout": {
+    "lat": 12.9507498,
+    "lon": 77.7049698,
+    "candidates": [
+      "CKB Layout",
+      "P R Layout",
+      "Munnenkolalu",
+      "Munekolala",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "chamrajpet": {
+    "lat": 12.9584184,
+    "lon": 77.5629161,
+    "candidates": [
+      "Chamrajpet",
+      "Chamarajapete",
+      "Bengaluru Central City Corporation"
+    ]
+  },
+  "jp nagar": {
+    "lat": 12.9096941,
+    "lon": 77.5866067,
+    "candidates": [
+      "JP Nagar",
+      "Shakambarinagara",
+      "JP Nagar 2nd Phase",
+      "Bengaluru South City Corporation"
+    ]
+  },
+  "channasandra": {
+    "lat": 12.9873426,
+    "lon": 77.7538033,
+    "candidates": [
+      "Channasandra",
+      "Maithri Layout",
+      "Kadugodi",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "kaggalipura": {
+    "lat": 12.8089587,
+    "lon": 77.5097006,
+    "candidates": [
+      "Kaggalipura",
+      "Kaggalipura",
+      "Kaggalipura"
+    ]
+  },
+  "balaji layout": {
+    "lat": 12.9636169,
+    "lon": 77.7342959,
+    "candidates": [
+      "Balaji Layout",
+      "Whitefield",
+      "Ramagondanahalli",
+      "Balaji Layout",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "kpc layout": {
+    "lat": 12.9041861,
+    "lon": 77.6778517,
+    "candidates": [
+      "KPC Layout",
+      "KPC Layout",
+      "Kasavanahalli",
+      "Kaikondrahalli",
+      "Bengaluru South City Corporation"
+    ]
+  },
+  "rhcs layout": null,
+  "balagere": {
+    "lat": 12.9377243,
+    "lon": 77.7280705,
+    "candidates": [
+      "Balagere",
+      "Balagere",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "chamundeshwari layout": {
+    "lat": 13.0667714,
+    "lon": 77.5555723,
+    "candidates": [
+      "Chamundeshwari layout",
+      "Chamundeshwari Layout",
+      "Vidyaranyapura",
+      "BEL Layout",
+      "Bengaluru North City Corporation"
+    ]
+  },
+  "virgo nagar": null,
+  "judicial layout": {
+    "lat": 13.0837692,
+    "lon": 77.5860438,
+    "candidates": [
+      "Judicial Layout",
+      "Nyayanga Badavane",
+      "Judicial Layout",
+      "Bengaluru North City Corporation"
+    ]
+  },
+  "sai serenity layout": {
+    "lat": 13.0185339,
+    "lon": 77.7278266,
+    "candidates": [
+      "Sai Serenity Layout",
+      "Medahalli",
+      "Sai Serenity Layout",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "austin town": {
+    "lat": 12.9612736,
+    "lon": 77.6152935,
+    "candidates": [
+      "Austin Town",
+      "Officers Colony",
+      "Ashokanagar",
+      "Victoria Layout",
+      "Bengaluru Central City Corporation"
+    ]
+  },
+  "jnanabharathi": {
+    "lat": 12.9354476,
+    "lon": 77.5124016,
+    "candidates": [
+      "Jnanabharathi",
+      "Jnana Bharathi",
+      "Bengaluru West City Corporation"
+    ]
+  },
+  "ullal": {
+    "lat": 12.9545633,
+    "lon": 77.4787637,
+    "candidates": [
+      "Ullal",
+      "5th Block",
+      "Sir MV Layout",
+      "Ullalu",
+      "Bengaluru West City Corporation"
+    ]
+  },
+  "tanisandra": null,
+  "varthur": {
+    "lat": 12.9406508,
+    "lon": 77.746988,
+    "candidates": [
+      "Varthur",
+      "Gandhi Circle",
+      "Varthur",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "jakkur": {
+    "lat": 13.0784743,
+    "lon": 77.6068938,
+    "candidates": [
+      "Jakkur",
+      "Arkavathy Layout 7th Block",
+      "Arkavathy Layout",
+      "Bengaluru North City Corporation"
+    ]
+  },
+  "bhyraveshwara nagar": null,
+  "hbr layout": {
+    "lat": 13.031992,
+    "lon": 77.6280789,
+    "candidates": [
+      "HBR Layout",
+      "Grace Town",
+      "HBR Layout",
+      "HBR Layout 3rd Block",
+      "Bengaluru North City Corporation"
+    ]
+  },
+  "madiwala": {
+    "lat": 12.9218931,
+    "lon": 77.6177348,
+    "candidates": [
+      "Madiwala",
+      "Jai Bheema Nagar",
+      "Madiwala",
+      "Madiwala",
+      "Bengaluru South City Corporation"
+    ]
+  },
+  "bannerghatta": {
+    "lat": 12.9392496,
+    "lon": 77.6021275,
+    "candidates": [
+      "Bannerghatta",
+      "S.G Palya",
+      "Bengaluru South City Corporation"
+    ]
+  },
+  "dns layout": null,
+  "kanaka layout": {
+    "lat": 13.0865656,
+    "lon": 77.6508546,
+    "candidates": [
+      "Kanaka Layout",
+      "Kanakasree Layout",
+      "Kannuru",
+      "Kannuru"
+    ]
+  },
+  "telecom layout": {
+    "lat": 12.965528,
+    "lon": 77.5467051,
+    "candidates": [
+      "Telecom Layout",
+      "Telecom Layout",
+      "Adi Chunchanagiri Ward",
+      "Bengaluru West City Corporation"
+    ]
+  },
+  "garudachar palya": {
+    "lat": 12.9899098,
+    "lon": 77.7011259,
+    "candidates": [
+      "Garudachar Palya",
+      "Garudachar Palya",
+      "Brigade Metropolis",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "kammanahalli": {
+    "lat": 13.0148544,
+    "lon": 77.6382029,
+    "candidates": [
+      "Kammanahalli",
+      "KFSC Layout",
+      "Kammanahalli",
+      "Bengaluru North City Corporation"
+    ]
+  },
+  "gayatri layout": {
+    "lat": 13.0140546,
+    "lon": 77.7095983,
+    "candidates": [
+      "Gayatri Layout",
+      "Medahalli",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "btm 1st stage": {
+    "lat": 12.9194108,
+    "lon": 77.609966,
+    "candidates": [
+      "BTM 1st Stage",
+      "Maruthi Nagara",
+      "New Tavarekere",
+      "BTM Layout 1st Stage",
+      "Bengaluru South City Corporation"
+    ]
+  },
+  "vidyaranyapura": {
+    "lat": 13.0766407,
+    "lon": 77.5577315,
+    "candidates": [
+      "Vidyaranyapura",
+      "Vaishnavi Layout",
+      "Vidyaranyapura",
+      "Bengaluru North City Corporation"
+    ]
+  },
+  "btm layout": {
+    "lat": 12.9140008,
+    "lon": 77.6102821,
+    "candidates": [
+      "BTM Layout",
+      "Kuvempu Nagar",
+      "BTM Layout",
+      "Bengaluru South City Corporation"
+    ]
+  },
+  "d.j. halli": {
+    "lat": 12.9896607,
+    "lon": 77.5445986,
+    "candidates": [
+      "D.J. Halli",
+      "Saneguruvanahalli",
+      "Sane Guruvana Halli",
+      "Bengaluru West City Corporation"
+    ]
+  },
+  "hennur": {
+    "lat": 13.037077,
+    "lon": 77.6413572,
+    "candidates": [
+      "Hennur",
+      "Hennur",
+      "Bengaluru North City Corporation"
+    ]
+  },
+  "frazer town": {
+    "lat": 12.9975851,
+    "lon": 77.6136744,
+    "candidates": [
+      "Frazer Town",
+      "Sindhi Colony",
+      "Frazer Town",
+      "Bengaluru North City Corporation"
+    ]
+  },
+  "chinnapanahalli": {
+    "lat": 12.9661219,
+    "lon": 77.7071156,
+    "candidates": [
+      "Chinnapanahalli",
+      "Chinnappanahalli",
+      "Priyadarshini Ward",
+      "AECS Layout",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "naganathapura": {
+    "lat": 12.8755868,
+    "lon": 77.6673054,
+    "candidates": [
+      "Naganathapura",
+      "Naganathapura",
+      "Bengaluru South City Corporation"
+    ]
+  },
+  "vasant vihar": {
+    "lat": 13.1551713,
+    "lon": 77.6398438,
+    "candidates": [
+      "Vasant Vihar",
+      "Chikkajala",
+      "Kadiganahalli"
+    ]
+  },
+  "jaya nagar": {
+    "lat": 12.9074812,
+    "lon": 77.5731495,
+    "candidates": [
+      "Jaya Nagar",
+      "Sarakki",
+      "Bengaluru South City Corporation"
+    ]
+  },
+  "jaya chamarajendra nagara": {
+    "lat": 13.0145985,
+    "lon": 77.5950254,
+    "candidates": [
+      "Jaya Chamarajendra Nagara",
+      "Jaya Chamarajendra Nagara",
+      "Bengaluru North City Corporation"
+    ]
+  },
+  "bsk ii stage": null,
+  "kasavanahalli": {
+    "lat": 12.8977737,
+    "lon": 77.6745075,
+    "candidates": [
+      "Kasavanahalli",
+      "Haralur",
+      "Bengaluru South City Corporation"
+    ]
+  },
+  "d.jhalli": null,
+  "gnana bharathi": {
+    "lat": 12.9529035,
+    "lon": 77.5158003,
+    "candidates": [
+      "Gnana Bharathi",
+      "Teacher's Colony",
+      "Nagarbhavi",
+      "Bengaluru West City Corporation"
+    ]
+  },
+  "kanakanapalya": {
+    "lat": 12.9405965,
+    "lon": 77.5883031,
+    "candidates": [
+      "Kanakanapalya",
+      "Kanakanapalya",
+      "Jayanagar 1st Block",
+      "Bengaluru Central City Corporation"
+    ]
+  },
+  "bangalore cantonment": {
+    "lat": 12.9936865,
+    "lon": 77.5980003,
+    "candidates": [
+      "Bangalore Cantonment",
+      "Jayamahal",
+      "Jayamahal",
+      "Bengaluru Central City Corporation"
+    ]
+  },
+  "puttapa layout": null,
+  "lakshmi layout": {
+    "lat": 12.8913057,
+    "lon": 77.5878632,
+    "candidates": [
+      "Lakshmi Layout",
+      "Bank of Baroda Colony",
+      "Puttenahalli",
+      "Puttenahalli",
+      "Bengaluru South City Corporation"
+    ]
+  },
+  "ashok nagar": {
+    "lat": 12.9694359,
+    "lon": 77.6092319,
+    "candidates": [
+      "Ashok Nagar",
+      "Arab Lines",
+      "Ashokanagar",
+      "Ashok Nagar",
+      "Bengaluru Central City Corporation"
+    ]
+  },
+  "begur road": {
+    "lat": 12.9059597,
+    "lon": 77.6277508,
+    "candidates": [
+      "Begur Road",
+      "Bommanahalli",
+      "Hongasandra",
+      "Bengaluru South City Corporation"
+    ]
+  },
+  "krishnarajapuram": {
+    "lat": 13.0005461,
+    "lon": 77.6754561,
+    "candidates": [
+      "Krishnarajapuram",
+      "Darga Mohalla",
+      "K.S. Nissar Ahmed Ward",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "mico layout": {
+    "lat": 12.9129858,
+    "lon": 77.6037799,
+    "candidates": [
+      "MICO LAYOUT",
+      "MICO Layout",
+      "Viswamanava Kuvempu Ward",
+      "BTM Layout 2nd Stage",
+      "Bengaluru South City Corporation"
+    ]
+  },
+  "challakere": {
+    "lat": 13.027538,
+    "lon": 77.6412496,
+    "candidates": [
+      "Challakere",
+      "Chelekere",
+      "Chellakere",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "sahakar nagar": {
+    "lat": 13.069641,
+    "lon": 77.5857251,
+    "candidates": [
+      "Sahakar Nagar",
+      "Rajiv Gandhi Nagar",
+      "Thindlu",
+      "Bengaluru North City Corporation"
+    ]
+  },
+  "viveknagar": {
+    "lat": 12.9529247,
+    "lon": 77.6231374,
+    "candidates": [
+      "Viveknagar",
+      "Viveknagar",
+      "Vannarpet",
+      "Bengaluru Central City Corporation"
+    ]
+  },
+  "shanthipura": null,
+  "richards town": {
+    "lat": 13.0042369,
+    "lon": 77.6170601,
+    "candidates": [
+      "Richards Town",
+      "Sagayapura",
+      "Sagayapuram",
+      "Richards Town",
+      "Bengaluru North City Corporation"
+    ]
+  },
+  "msnagar": null,
+  "k r puram": {
+    "lat": 13.0005461,
+    "lon": 77.6754561,
+    "candidates": [
+      "K R Puram",
+      "Darga Mohalla",
+      "K.S. Nissar Ahmed Ward",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "marathahalli": {
+    "lat": 12.9552572,
+    "lon": 77.6984163,
+    "candidates": [
+      "Marathahalli",
+      "Marathahalli",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "chinnappa layout": {
+    "lat": 13.1193051,
+    "lon": 77.689537,
+    "candidates": [
+      "Chinnappa Layout",
+      "Chokkanahalli",
+      "Dasanayakanahalli"
+    ]
+  },
+  "sannidhi enclave": null,
+  "vashi bridge": null,
+  "malleswaram": {
+    "lat": 13.0027353,
+    "lon": 77.5703253,
+    "candidates": [
+      "Malleswaram",
+      "Malleswaram",
+      "Bengaluru West City Corporation"
+    ]
+  },
+  "kotthur": {
+    "lat": 13.0059216,
+    "lon": 77.6797707,
+    "candidates": [
+      "Kotthur",
+      "Kotthur",
+      "ITI Colony",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "kumaraswamy layout": {
+    "lat": 12.9150398,
+    "lon": 77.5678879,
+    "candidates": [
+      "Kumaraswamy Layout",
+      "Teacher's Colony",
+      "Kumaraswamy Layout",
+      "Kadirenahalli",
+      "Bengaluru South City Corporation"
+    ]
+  },
+  "manjunath layout": {
+    "lat": 12.9549835,
+    "lon": 77.6532944,
+    "candidates": [
+      "Manjunath Layout",
+      "Manjunath Nagar",
+      "Konena Agrahara",
+      "Murugeshpalaya",
+      "Bengaluru Central City Corporation"
+    ]
+  },
+  "bannappa park": null,
+  "t.dasarahalli": {
+    "lat": 13.0430177,
+    "lon": 77.5130488,
+    "candidates": [
+      "T.Dasarahalli",
+      "Dasarahalli",
+      "Bengaluru North City Corporation"
+    ]
+  },
+  "aishwarya crystal layout": null,
+  "govindrajnagar": null,
+  "hombegowda nagara": null,
+  "the international school": {
+    "lat": 12.9271107,
+    "lon": 77.7392135,
+    "candidates": [
+      "The International School",
+      "Gunjur",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "babusapalya": null,
+  "nimhans": {
+    "lat": 12.9374894,
+    "lon": 77.594142,
+    "candidates": [
+      "Nimhans",
+      "BHEL Ward",
+      "Bengaluru Central City Corporation"
+    ]
+  },
+  "vishwanatha nagenahalli": {
+    "lat": 13.036775,
+    "lon": 77.6036324,
+    "candidates": [
+      "Vishwanatha Nagenahalli",
+      "Kanaka Nagar",
+      "Vishwanatha Nagenahalli",
+      "Vishwanath Nagenahalli",
+      "Bengaluru North City Corporation"
+    ]
+  },
+  "padmanabhanagar": {
+    "lat": 12.9181024,
+    "lon": 77.5576638,
+    "candidates": [
+      "Padmanabhanagar",
+      "Kadirenahalli",
+      "Bengaluru South City Corporation"
+    ]
+  },
+  "b narayanpura": null,
+  "parappana agrahara": {
+    "lat": 12.8802088,
+    "lon": 77.6658442,
+    "candidates": [
+      "Parappana Agrahara",
+      "Naganathapura",
+      "Bengaluru South City Corporation"
+    ]
+  },
+  "jakkur village": null,
+  "konena agrahara": {
+    "lat": 12.9528903,
+    "lon": 77.6511294,
+    "candidates": [
+      "Konena Agrahara",
+      "Muniyappa Layout",
+      "Konena Agrahara",
+      "Murugeshpalaya",
+      "Bengaluru Central City Corporation"
+    ]
+  },
+  "gurappanapalya": {
+    "lat": 12.9238132,
+    "lon": 77.6004538,
+    "candidates": [
+      "Gurappanapalya",
+      "Abdul Kalam Nagar",
+      "Bengaluru South City Corporation"
+    ]
+  },
+  "medahalli": {
+    "lat": 13.0278454,
+    "lon": 77.7206079,
+    "candidates": [
+      "Medahalli",
+      "TC Palya",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "c v raman nagar": {
+    "lat": 12.9856478,
+    "lon": 77.6649767,
+    "candidates": [
+      "C V Raman Nagar",
+      "Byrasandra",
+      "Kaggadasapura",
+      "Bengaluru Central City Corporation"
+    ]
+  },
+  "vashi": null,
+  "choodasandra": {
+    "lat": 12.8883623,
+    "lon": 77.6799727,
+    "candidates": [
+      "Choodasandra",
+      "Choodasandra",
+      "Choodasandra"
+    ]
+  },
+  "hoodi": {
+    "lat": 12.9959233,
+    "lon": 77.7192796,
+    "candidates": [
+      "Hoodi",
+      "Hoody Garden",
+      "Hoodi",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "new gurupanpalya": null,
+  "horamavu agara": {
+    "lat": 13.0367725,
+    "lon": 77.6549479,
+    "candidates": [
+      "Horamavu Agara",
+      "Horamavu",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "basavangudi": {
+    "lat": 12.9421868,
+    "lon": 77.5742576,
+    "candidates": [
+      "Basavangudi",
+      "Gandhi Bazaar",
+      "Basavanagudi",
+      "Bengaluru Central City Corporation"
+    ]
+  },
+  "vittasandra": {
+    "lat": 12.8699226,
+    "lon": 77.6272278,
+    "candidates": [
+      "Vittasandra",
+      "Beguru",
+      "Bengaluru South City Corporation"
+    ]
+  },
+  "tannery road": {
+    "lat": 13.0076879,
+    "lon": 77.6127999,
+    "candidates": [
+      "Tannery Road",
+      "Kushal Nagar",
+      "Bengaluru North City Corporation"
+    ]
+  },
+  "marthalli": null,
+  "addiganahlli": null,
+  "mylasandra ramesh reddy layout": null,
+  "halasuru": {
+    "lat": 12.9778793,
+    "lon": 77.6246697,
+    "candidates": [
+      "Halasuru",
+      "Dodakattappa",
+      "Halasuru",
+      "Bengaluru Central City Corporation"
+    ]
+  },
+  "kenchanahalli": {
+    "lat": 12.9259485,
+    "lon": 77.5086317,
+    "candidates": [
+      "Kenchanahalli",
+      "Kenchenahalli",
+      "Rajarajeshwari Nagar",
+      "Bengaluru West City Corporation"
+    ]
+  },
+  "geddalahalli": {
+    "lat": 13.0367681,
+    "lon": 77.5675668,
+    "candidates": [
+      "Geddalahalli",
+      "Dollars Colony",
+      "Geddalahalli",
+      "Bengaluru North City Corporation"
+    ]
+  },
+  "city market": {
+    "lat": 12.965718,
+    "lon": 77.5762705,
+    "candidates": [
+      "City Market",
+      "K.R Market",
+      "Bengaluru Central City Corporation"
+    ]
+  },
+  "raja market": {
+    "lat": 12.9675767,
+    "lon": 77.5787621,
+    "candidates": [
+      "Raja Market",
+      "Ganigarpet",
+      "Dharmaraya Swamy Temple Ward",
+      "Bengaluru Central City Corporation"
+    ]
+  },
+  "green garden layout": {
+    "lat": 12.8727237,
+    "lon": 77.6451233,
+    "candidates": [
+      "Green Garden Layout",
+      "Singasandra",
+      "Green Garden Layout",
+      "Bengaluru South City Corporation"
+    ]
+  },
+  "sahakaranagar": {
+    "lat": 13.0643446,
+    "lon": 77.5843917,
+    "candidates": [
+      "Sahakaranagar",
+      "CQAL Layout",
+      "Byatarayanapura",
+      "Kodigehalli",
+      "Bengaluru North City Corporation"
+    ]
+  },
+  "kaikondrahalli": {
+    "lat": 12.9138348,
+    "lon": 77.6775268,
+    "candidates": [
+      "Kaikondrahalli",
+      "Kasavanahalli",
+      "Kasavanahalli",
+      "Kaikondrahalli",
+      "Bengaluru South City Corporation"
+    ]
+  },
+  "om shakti layout": {
+    "lat": 13.0669404,
+    "lon": 77.5569476,
+    "candidates": [
+      "Om Shakti Layout",
+      "Nanjappa Layout",
+      "Vidyaranyapura",
+      "BEL Layout",
+      "Bengaluru North City Corporation"
+    ]
+  },
+  "jumma masjid road": {
+    "lat": 12.9820399,
+    "lon": 77.6056706,
+    "candidates": [
+      "Jumma Masjid Road",
+      "Tasker Town",
+      "Shivajinagar",
+      "Bengaluru Central City Corporation"
+    ]
+  },
+  "sreenagar": {
+    "lat": 12.9443766,
+    "lon": 77.5551899,
+    "candidates": [
+      "Sreenagar",
+      "Hanumanthanagar",
+      "Srinagar",
+      "Bengaluru West City Corporation"
+    ]
+  },
+  "mysore": {
+    "lat": 12.9730088,
+    "lon": 77.5804711,
+    "candidates": [
+      "Mysore",
+      "Balepet",
+      "Chikkapete",
+      "Bengaluru Central City Corporation"
+    ]
+  },
+  "rk hegde nagar": {
+    "lat": 13.063945,
+    "lon": 77.6335951,
+    "candidates": [
+      "RK Hegde Nagar",
+      "Arkavathy Layout 6th Block",
+      "Jakkur",
+      "Thanisandra",
+      "Bengaluru North City Corporation"
+    ]
+  },
+  "sri venkateshpura layout": null,
+  "munnekolalu": null,
+  "bcchs layout": {
+    "lat": 12.8670591,
+    "lon": 77.5462311,
+    "candidates": [
+      "BCCHS Layout",
+      "Talagattapura",
+      "Vajrahalli",
+      "Bengaluru South City Corporation"
+    ]
+  },
+  "venkateswara layout": {
+    "lat": 12.9306481,
+    "lon": 77.6756562,
+    "candidates": [
+      "Venkateswara Layout",
+      "Green Glen Layout",
+      "Bellanduru",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "bannergata": null,
+  "muneshwara nagar": {
+    "lat": 13.0052451,
+    "lon": 77.7132511,
+    "candidates": [
+      "Muneshwara Nagar",
+      "Muneshwara Nagar",
+      "Basavanapura",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "airport road": {
+    "lat": 12.9641165,
+    "lon": 77.6261211,
+    "candidates": [
+      "Airport Road",
+      "Agaram",
+      "Bengaluru Central City Corporation"
+    ]
+  },
+  "bangalore south": {
+    "lat": 12.9287596,
+    "lon": 77.6287122,
+    "candidates": [
+      "Bangalore South",
+      "Jakkasandra Block",
+      "Kormangala East",
+      "Bengaluru South City Corporation"
+    ]
+  },
+  "e-city": {
+    "lat": 12.9287596,
+    "lon": 77.6287122,
+    "candidates": [
+      "E-City",
+      "Jakkasandra Block",
+      "Kormangala East",
+      "Bengaluru South City Corporation"
+    ]
+  },
+  "ms palya": {
+    "lat": 13.0816572,
+    "lon": 77.5482326,
+    "candidates": [
+      "MS Palya",
+      "Vinayaka Nagara",
+      "Singapura",
+      "MS Palaya",
+      "Bengaluru North City Corporation"
+    ]
+  },
+  "sampangiram nagar": null,
+  "rajamahal": {
+    "lat": 13.0046141,
+    "lon": 77.5887805,
+    "candidates": [
+      "Rajamahal",
+      "Rajamahal",
+      "Bengaluru West City Corporation"
+    ]
+  },
+  "i need to identify the specific bangalore locality from the coordinates and address provided in the tweet.\n\nthe coordinates given are (13.0523656": null,
+  "narullahalli": null,
+  "munnekolala": {
+    "lat": 12.9480839,
+    "lon": 77.7090175,
+    "candidates": [
+      "Munnekolala",
+      "Munnenkolalu",
+      "Munekolala",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "ejipura": {
+    "lat": 12.945245,
+    "lon": 77.6274776,
+    "candidates": [
+      "Ejipura",
+      "Indira Gandhi Colony",
+      "Ejipura",
+      "Ejipura",
+      "Bengaluru South City Corporation"
+    ]
+  },
+  "k kamaraj ward": {
+    "lat": 12.9815994,
+    "lon": 77.6173185,
+    "candidates": [
+      "K Kamaraj Ward",
+      "Yellappa Chetty Layout",
+      "K Kamaraj Ward",
+      "Bengaluru Central City Corporation"
+    ]
+  },
+  "budigere cross": {
+    "lat": 13.0462134,
+    "lon": 77.7504125,
+    "candidates": [
+      "Budigere Cross",
+      "Konadasapura",
+      "Konadasanapura"
+    ]
+  },
+  "jc road": {
+    "lat": 12.9645873,
+    "lon": 77.5858967,
+    "candidates": [
+      "JC Road",
+      "Ganigarpet",
+      "Dharmaraya Swamy Temple Ward",
+      "Bengaluru Central City Corporation"
+    ]
+  },
+  "aswathnagar": null,
+  "shankar mutt": {
+    "lat": 12.9974415,
+    "lon": 77.5312249,
+    "candidates": [
+      "Shankar Mutt",
+      "Kirloskar Colony",
+      "Shankar Mutt",
+      "Bengaluru West City Corporation"
+    ]
+  },
+  "k. channasandra": {
+    "lat": 13.040022,
+    "lon": 77.6796248,
+    "candidates": [
+      "K. Channasandra",
+      "K Chennasandra",
+      "K. Channasandra",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "avalahalli": {
+    "lat": 12.9459464,
+    "lon": 77.5409354,
+    "candidates": [
+      "Avalahalli",
+      "Ganapathy Nagar",
+      "Avalahalli",
+      "Byataranyapura",
+      "Bengaluru West City Corporation"
+    ]
+  },
+  "srinivasnagar": null,
+  "kadubesanhalli": null,
+  "kaggadaspura": null,
+  "somasandara palya": null,
+  "ns palya": {
+    "lat": 12.9071902,
+    "lon": 77.6067335,
+    "candidates": [
+      "NS Palya",
+      "BTM Layout",
+      "Bengaluru South City Corporation"
+    ]
+  }
+}
