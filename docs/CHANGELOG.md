@@ -5,6 +5,40 @@ Format: `[Date] - What changed and why`
 
 ---
 
+## [2026-06-20] — Rebrand to Civic Issue India + Assignment system + Official profiles + Resolve flow + Design fixes
+
+### What changed
+
+**`dashboard/index.html`**
+- Rebranded: title, brand name, brand context, and footer now say "Civic Issue India"
+- New SVG logo: government building (pediment + 3 columns + base) with red alert circle
+- Added Official Profile modal overlay (click any official name to open)
+- Added Resolve Tweet modal overlay (appears when marking an issue resolved)
+
+**`dashboard/css/styles.css`**
+- `.official-name-link`: clickable official names across the whole app (dotted underline)
+- `.sc-raise-btn` / `.sc-raise-btn.active`: "Raise to" assignment buttons, green when assigned
+- `.q-assigned-badge`: small green badge in queue rows showing who an issue is assigned to
+- Full Official Profile modal styles: avatar, name, role, profile sections, per-issue status dropdowns
+- Resolve Tweet modal styles
+- `.routing-ward-context`, `.routing-contact-person`: filter-aware routing guide styles
+- Design fixes: `min-height` on smart contact rows and ward dept cells to prevent layout thrash
+
+**`dashboard/js/app.js`**
+- **Rebrand**: all email subjects, tweet hashtag, CSV filename, and email footers updated to "Civic Issue India" (removed dashboard link from emails)
+- **Copy change**: "Assign" → "Raise to", "Assign to BESCOM" → "Raise Issue" throughout
+- **Assignment system**: `getAssignment(id)` / `setAssignment(id, contact)` using localStorage; "Raise to" button in detail panel assigns an issue to a specific contact; shows green when assigned
+- **Official profiles**: `openOfficialProfile(official)` — modal showing avatar, role, all issues assigned to that person; status can be changed from the profile
+- **Resolve flow**: `showResolveModal(issue)` — when marking resolved from any status dropdown or button, shows a pre-drafted tweet reply the user can copy to post on the original complaint
+- **Clickable names everywhere**: `renderSmartContactsHTML`, `renderWardCard` (SWM JHI, BESCOM AEE, BWSSB AE, City Commissioner, Councillor, MLA, MP) all wrap names in `.official-name-link` spans
+- **Filter-aware routing guide**: `renderRoutingGuide()` now looks up the ward matching the active area filter and shows actual people's names (clickable) for each routing category
+- **Filter-aware Officials dept chips**: switching to Officials tab or changing filters auto-selects the matching dept chip (BBMP/BESCOM/BWSSB/Traffic Police)
+
+**`.gitignore`**
+- Added `.claude/` to prevent committing Claude session files
+
+---
+
 ## [2026-06-20] — Fix Bangalore fallback showing wrong ward; LLM-retry geocoder
 
 ### What changed
