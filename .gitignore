@@ -22,6 +22,9 @@ Thumbs.db
 .vscode/
 *.swp
 
+# Claude Code session data (internal tooling)
+.claude/
+
 # Obsidian workspace state (personal, not shared)
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
