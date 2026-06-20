@@ -25,3 +25,6 @@ Thumbs.db
 # Obsidian workspace state (personal, not shared)
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
+
+# Claude Code session state
+.claude/
