@@ -33,7 +33,7 @@ Every feature and file built in GovWatch, with dates and status.
 
 | File | Records | Description |
 |---|---|---|
-| `data/officials/wards.json` | 369 wards | Full ward accountability map: councillor, MLA, MP, SWM JHI, BESCOM AEE, BWSSB AE, traffic PS |
+| `data/officials/wards.json` | 369 wards | Full ward accountability map: councillor, MLA, MP, SWM JHI, BESCOM AEE, BWSSB AE, traffic PS — all 369 wards have correct MP assigned as of 2026-06-20 |
 | `data/officials/issue_routing.json` | 10 types | Issue type → first contact, CC, escalation chain, SLA |
 | `data/officials/escalation_chains.json` | 5 depts | Department escalation ladders (BBMP, BESCOM, BWSSB, Traffic, Political) |
 | `data/officials/city_corp_contacts.json` | 55 entries | BBMP zone/division officers with email |
@@ -88,6 +88,9 @@ Every feature and file built in GovWatch, with dates and status.
 | `scripts/process_issues.py` | 2026-05-17 | ✅ Live | Keyword categorization + severity scoring + static ward lookup |
 | `scripts/filter_issues.py` | 2026-05-17 | ✅ Live | LLM filter (Claude Haiku) — incremental, persists verdicts |
 | `scripts/enrich_locations.py` | 2026-06-20 | ✅ Live | LLM area extraction + Nominatim geocoding → ward mapping |
+| `scripts/backfill_wards.py` | 2026-06-20 | ✅ Done | One-time keyword backfill — fixed 315 issues from "Bangalore" → specific ward |
+| `scripts/fix_mp_assignments.py` | 2026-06-20 | ✅ Done | One-time fix — corrected MP for all 369 wards (was wrong for 138) |
+| `scripts/enrich_bescom_bwssb.py` | 2026-06-20 | ✅ Live | Geo-proximity BESCOM/BWSSB assignment via Nominatim — run locally to re-verify |
 | `scripts/requirements.txt` | 2026-05-17 | ✅ Live | Python dependencies (tweepy, anthropic, requests, python-dateutil) |
 | `scripts/config.example.py` | 2026-05-17 | ✅ Live | Config template — Twitter + Anthropic API keys |
 | `.github/workflows/refresh.yml` | 2026-05-17 | ✅ Live | GitHub Actions — daily auto-refresh at 6 AM IST |
