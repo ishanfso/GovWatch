@@ -5,6 +5,29 @@ Format: `[Date] - What changed and why`
 
 ---
 
+## [2026-06-20] — Fix Bangalore fallback showing wrong ward; LLM-retry geocoder
+
+### What changed
+
+**Root cause**: `area_ward_lookup.json` contained `"Bangalore": {"ward_name": "Bagalagunte"}` — a bad trigram match that caused every issue with `area: "Bangalore"` to resolve to Bagalagunte ward (BBMP West Zone) and show its ward councillor/BESCOM/SWM officers instead of city-level contacts.
+
+**`data/officials/area_ward_lookup.json`**
+- Removed the `"Bangalore" → Bagalagunte` entry entirely
+
+**`dashboard/js/app.js`**
+- `getSmartContacts()`: added early-exit for generic area strings (`"bangalore"`, `"bengaluru"`, `"blr"`, etc.) — immediately returns `CITY_LEVEL_CONTACTS` without any ward lookup
+- `findWardByArea()`: added explicit null-return for `"bangalore"` / `"bengaluru"` / `"blr"` as a second layer of defence
+
+**`scripts/retry_geocode.py`** (NEW — run locally)
+- Reads all 66 failed geocodes from `data/geo_cache.json`
+- Skips known-garbage entries (out-of-city places, LLM prompt fragments)
+- For each real failure: first tries a direct retry with a tighter query (`"name, Bangalore Karnataka India"`), then asks Claude Haiku to generate 4 alternative spellings/transliterations, and tries each until Nominatim succeeds
+- Saves successful results back into `geo_cache.json` under the original key
+- After running, re-run `enrich_bescom_bwssb.py` to pick up the corrected geocodes
+- Run: `python scripts/retry_geocode.py`
+
+---
+
 ## [2026-06-20] — Fix MP assignments for all 369 wards + geo-based BESCOM/BWSSB enrichment script
 
 ### What changed

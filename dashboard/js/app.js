@@ -1370,6 +1370,8 @@ function trigramSimilarity(a, b) {
 function findWardByArea(area) {
   if (!area || !officialsLoaded) return null;
   const lc = area.toLowerCase().trim();
+  // Never map a generic city name to a specific ward
+  if (lc === "bangalore" || lc === "bengaluru" || lc === "blr") return null;
 
   // 1. Exact key match in areaToWard
   for (const [key, info] of Object.entries(officialsData.areaToWard)) {
@@ -1789,6 +1791,12 @@ function getSmartContacts(issue) {
   const contacts = [];
   const category = issue.category || "Other";
   const area = issue.area || "";
+
+  // Generic area strings mean no specific ward — go straight to city-level contacts
+  const GENERIC_AREAS = ["bangalore", "bengaluru", "blr", "bangalore city", "bengaluru city"];
+  if (!area || GENERIC_AREAS.includes(area.toLowerCase().trim())) {
+    return CITY_LEVEL_CONTACTS[category] || CITY_LEVEL_CONTACTS.Other;
+  }
 
   // Prefer ward stored directly on the issue (from enrich_locations.py),
   // fall back to fuzzy area-name lookup

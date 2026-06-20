@@ -133,10 +133,5 @@
     "ward_no": "34",
     "ward_name": "Peenya",
     "match_score": 1.0
-  },
-  "Bangalore": {
-    "ward_no": "69",
-    "ward_name": "Bagalagunte",
-    "match_score": 0.6
   }
 }
