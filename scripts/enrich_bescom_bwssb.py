@@ -24,6 +24,7 @@ import time
 import urllib.request
 import urllib.parse
 from pathlib import Path
+from typing import Optional, Tuple
 
 ROOT = Path(__file__).parent.parent
 WARDS_PATH   = ROOT / "data/officials/wards.json"
@@ -38,7 +39,7 @@ RATE_LIMIT    = 1.1   # seconds between requests
 _last_request = 0.0
 
 
-def geocode(place: str) -> tuple[float, float] | None:
+def geocode(place: str) -> Optional[Tuple[float, float]]:
     """Return (lat, lon) for a place string, or None on failure."""
     global _last_request
     cache = load_cache()
@@ -114,7 +115,7 @@ def save_json(path, data):
         json.dump(data, f, ensure_ascii=False, indent=2)
 
 
-def geocode_all(items: list[str], label: str) -> dict[str, tuple]:
+def geocode_all(items, label: str) -> dict:
     """Geocode a list of place names, return {name: (lat, lon)} for successes."""
     coords = {}
     total = len(items)
@@ -128,7 +129,7 @@ def geocode_all(items: list[str], label: str) -> dict[str, tuple]:
     return coords
 
 
-def nearest(ward_lat, ward_lon, coord_map: dict[str, tuple]) -> str | None:
+def nearest(ward_lat, ward_lon, coord_map: dict) -> Optional[str]:
     """Return the name of the nearest place to (ward_lat, ward_lon)."""
     best_name = None
     best_dist = float("inf")
