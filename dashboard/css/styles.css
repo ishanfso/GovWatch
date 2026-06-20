@@ -260,6 +260,29 @@ body {
 }
 .reset-btn:hover { border-color: var(--danger); color: var(--danger); background: var(--danger-light); }
 
+.date-range-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 8px 0 2px;
+  width: 100%;
+}
+.date-range-row.hidden { display: none; }
+.date-range-label { font-size: .72rem; font-weight: 600; color: var(--muted); white-space: nowrap; }
+.date-input {
+  padding: 6px 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: .78rem;
+  color: var(--text);
+  background: var(--panel);
+  outline: none;
+  font-family: inherit;
+  transition: border-color .12s;
+}
+.date-input:focus { border-color: var(--brand); }
+
 /* ── Tab Navigation ──────────────────────────────────────────────── */
 .tab-nav {
   display: flex;
@@ -316,6 +339,20 @@ body {
   text-transform: uppercase;
   letter-spacing: .4px;
 }
+.queue-header-controls { display: flex; align-items: center; gap: 10px; }
+.sort-select {
+  padding: 4px 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: .73rem;
+  color: var(--muted);
+  background: transparent;
+  cursor: pointer;
+  font-family: inherit;
+  outline: none;
+  transition: border-color .12s;
+}
+.sort-select:focus { border-color: var(--brand); }
 .cluster-label {
   display: flex;
   align-items: center;

@@ -85,7 +85,21 @@
         <select class="filter-select" id="area-filter">
           <option value="all">All Areas</option>
         </select>
+        <select class="filter-select" id="date-preset-filter">
+          <option value="all">All Time</option>
+          <option value="1">Last 24 Hours</option>
+          <option value="7">Last 7 Days</option>
+          <option value="30">Last 30 Days</option>
+          <option value="this-month">This Month</option>
+          <option value="custom">Custom Range…</option>
+        </select>
         <button class="reset-btn" id="reset-filters">Reset</button>
+      </div>
+      <div class="date-range-row hidden" id="date-range-row">
+        <span class="date-range-label">From</span>
+        <input type="date" class="date-input" id="date-from" />
+        <span class="date-range-label">To</span>
+        <input type="date" class="date-input" id="date-to" />
       </div>
     </div>
 
@@ -104,10 +118,18 @@
         <div class="queue-pane">
           <div class="queue-header">
             <span class="queue-count" id="queue-count"></span>
-            <label class="cluster-label">
-              <input type="checkbox" id="cluster-toggle" />
-              Group similar
-            </label>
+            <div class="queue-header-controls">
+              <select class="sort-select" id="sort-select">
+                <option value="priority">Sort: Priority</option>
+                <option value="newest">Sort: Newest First</option>
+                <option value="oldest">Sort: Oldest First</option>
+                <option value="severity">Sort: Severity</option>
+              </select>
+              <label class="cluster-label">
+                <input type="checkbox" id="cluster-toggle" />
+                Group similar
+              </label>
+            </div>
           </div>
           <div class="queue-list" id="queue-list">
             <div class="loading">Loading issues…</div>
