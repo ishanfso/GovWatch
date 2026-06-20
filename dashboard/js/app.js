@@ -100,8 +100,10 @@ const ROLE_LABELS = {
 let allIssues = [];
 let activeFilters = {
   search: "", category: "all", area: "all", dept: "all", role: "",
+  datePreset: "all", dateFrom: "", dateTo: "",
 };
 let activeSavedView = "all";
+let activeSort = "priority";
 let activeTab = "queue";
 let clustered = false;
 let selectedIssueId = null;
@@ -159,6 +161,11 @@ async function init() {
 
   document.getElementById("cluster-toggle").addEventListener("change", e => {
     clustered = e.target.checked;
+    renderQueue(getFiltered());
+  });
+
+  document.getElementById("sort-select").addEventListener("change", e => {
+    activeSort = e.target.value;
     renderQueue(getFiltered());
   });
 
@@ -227,6 +234,33 @@ function buildFilters(issues) {
   catSel.addEventListener("change", e => { activeFilters.category = e.target.value; applyFilters(); });
   areaSel.addEventListener("change", e => { activeFilters.area = e.target.value; applyFilters(); });
   document.getElementById("dept-filter").addEventListener("change", e => { activeFilters.dept = e.target.value; applyFilters(); });
+
+  const dateSel = document.getElementById("date-preset-filter");
+  const dateRangeRow = document.getElementById("date-range-row");
+  dateSel.addEventListener("change", e => {
+    activeFilters.datePreset = e.target.value;
+    activeFilters.dateFrom = "";
+    activeFilters.dateTo = "";
+    document.getElementById("date-from").value = "";
+    document.getElementById("date-to").value = "";
+    dateRangeRow.classList.toggle("hidden", e.target.value !== "custom");
+    applyFilters();
+  });
+  document.getElementById("date-from").addEventListener("change", e => {
+    activeFilters.dateFrom = e.target.value;
+    activeFilters.datePreset = "custom";
+    dateSel.value = "custom";
+    dateRangeRow.classList.remove("hidden");
+    applyFilters();
+  });
+  document.getElementById("date-to").addEventListener("change", e => {
+    activeFilters.dateTo = e.target.value;
+    activeFilters.datePreset = "custom";
+    dateSel.value = "custom";
+    dateRangeRow.classList.remove("hidden");
+    applyFilters();
+  });
+
   document.getElementById("reset-filters").addEventListener("click", resetFilters);
 }
 
@@ -238,18 +272,52 @@ function onSavedViewClick(btn) {
 }
 
 function resetFilters() {
-  activeFilters = { search: "", category: "all", area: "all", dept: "all", role: activeFilters.role };
+  activeFilters = { search: "", category: "all", area: "all", dept: "all", role: activeFilters.role, datePreset: "all", dateFrom: "", dateTo: "" };
   activeSavedView = "all";
+  activeSort = "priority";
   document.querySelectorAll(".view-chip").forEach(b => b.classList.toggle("active", b.dataset.view === "all"));
   document.getElementById("search-input").value = "";
   document.getElementById("category-filter").value = "all";
   document.getElementById("area-filter").value = "all";
   document.getElementById("dept-filter").value = "all";
+  document.getElementById("date-preset-filter").value = "all";
+  document.getElementById("date-from").value = "";
+  document.getElementById("date-to").value = "";
+  document.getElementById("date-range-row").classList.add("hidden");
+  document.getElementById("sort-select").value = "priority";
   applyFilters();
+}
+
+function getDateBounds() {
+  const now = new Date();
+  const p = activeFilters.datePreset;
+  if (p === "1") {
+    const from = new Date(now); from.setDate(from.getDate() - 1); from.setHours(0,0,0,0);
+    return { from, to: null };
+  }
+  if (p === "7") {
+    const from = new Date(now); from.setDate(from.getDate() - 7); from.setHours(0,0,0,0);
+    return { from, to: null };
+  }
+  if (p === "30") {
+    const from = new Date(now); from.setDate(from.getDate() - 30); from.setHours(0,0,0,0);
+    return { from, to: null };
+  }
+  if (p === "this-month") {
+    return { from: new Date(now.getFullYear(), now.getMonth(), 1), to: null };
+  }
+  if (p === "custom") {
+    return {
+      from: activeFilters.dateFrom ? new Date(activeFilters.dateFrom + "T00:00:00") : null,
+      to:   activeFilters.dateTo   ? new Date(activeFilters.dateTo   + "T23:59:59") : null,
+    };
+  }
+  return { from: null, to: null };
 }
 
 function getFiltered() {
   const now = Date.now();
+  const { from, to } = getDateBounds();
   return allIssues.filter(i => {
     if (activeFilters.category !== "all" && i.category !== activeFilters.category) return false;
     if (activeFilters.area !== "all" && i.area !== activeFilters.area) return false;
@@ -259,6 +327,13 @@ function getFiltered() {
     if (activeFilters.search) {
       const hay = `${i.text} ${i.area} ${i.category} ${i.author}`.toLowerCase();
       if (!hay.includes(activeFilters.search)) return false;
+    }
+
+    // Date filter
+    if (from || to) {
+      const d = new Date(i.date);
+      if (from && d < from) return false;
+      if (to   && d > to)   return false;
     }
 
     // Saved view filter
@@ -315,10 +390,17 @@ function renderQueue(issues) {
     return;
   }
 
-  // Sort: overdue first, then by severity, then by engagement
+  // Sort according to activeSort selection
   const sevOrder = { high: 0, medium: 1, low: 2 };
   const now = Date.now();
   displayed.sort((a, b) => {
+    if (activeSort === "newest") return new Date(b.date) - new Date(a.date);
+    if (activeSort === "oldest") return new Date(a.date) - new Date(b.date);
+    if (activeSort === "severity") {
+      return sevOrder[a.severity] - sevOrder[b.severity] ||
+             (b.likes + b.retweets) - (a.likes + a.retweets);
+    }
+    // "priority" — overdue first, then severity, then engagement
     const pocA = POC_DIRECTORY[a.category] || POC_DIRECTORY.Other;
     const pocB = POC_DIRECTORY[b.category] || POC_DIRECTORY.Other;
     const aOver = (now - new Date(a.date).getTime()) / 36e5 >= pocA.tat;

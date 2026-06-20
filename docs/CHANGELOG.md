@@ -5,6 +5,19 @@ Format: `[Date] - What changed and why`
 
 ---
 
+## [2026-06-20] — Restore Date Filters + Sort Control
+
+### Added
+
+**`dashboard/index.html` + `dashboard/js/app.js` — date filtering and sort restored**
+
+- **Date preset dropdown**: All Time / Last 24 Hours / Last 7 Days / Last 30 Days / This Month / Custom Range
+- **Custom date range**: From and To date inputs appear inline when "Custom Range" is selected
+- **Sort control** in queue header: Priority (overdue → severity → engagement), Newest First, Oldest First, Severity
+- Reset Filters clears date and sort back to defaults
+
+---
+
 ## [2026-06-20] — Dashboard Redesign: Public Ledger Theme (Option 3)
 
 ### Changed
