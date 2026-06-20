@@ -1003,22 +1003,32 @@ function initWardSearch() {
   const suggestions = document.getElementById("ward-suggestions");
   if (!input || !suggestions) return;
 
+  // Add "Detect My Location" button after search wrap
+  const searchWrap = document.querySelector(".ward-search-wrap");
+  if (searchWrap && !document.getElementById("detect-location-btn")) {
+    const locBtn = document.createElement("button");
+    locBtn.id = "detect-location-btn";
+    locBtn.className = "btn-detect-location";
+    locBtn.innerHTML = "&#127757; Detect My Location";
+    locBtn.addEventListener("click", detectNearestWard);
+    searchWrap.after(locBtn);
+  }
+
   input.addEventListener("input", () => {
     const q = input.value.toLowerCase().trim();
     if (!q || q.length < 2) {
       suggestions.classList.add("hidden");
       return;
     }
-    const matches = officialsData.wards.filter(w => {
-      return (
-        (w.ward_name && w.ward_name.toLowerCase().includes(q)) ||
-        (w.constituency && w.constituency.toLowerCase().includes(q)) ||
-        (w.city_corp && w.city_corp.toLowerCase().includes(q)) ||
-        (w.ward_no && String(w.ward_no).includes(q))
-      );
-    }).slice(0, 8);
 
-    // Also check area names from areaToWard
+    // Search all 369 wards
+    const wardMatches = officialsData.wards.filter(w =>
+      (w.ward_name && w.ward_name.toLowerCase().includes(q)) ||
+      (w.constituency && w.constituency.toLowerCase().includes(q)) ||
+      (w.ward_no && String(w.ward_no) === q)
+    ).slice(0, 6);
+
+    // Also check the 28 named areas from areaToWard
     const areaMatches = Object.entries(officialsData.areaToWard)
       .filter(([area]) => area.toLowerCase().includes(q))
       .map(([area, info]) => {
@@ -1026,34 +1036,44 @@ function initWardSearch() {
         return ward ? { ...ward, _matchedArea: area } : null;
       })
       .filter(Boolean)
-      .filter(w => !matches.find(m => m.ward_no === w.ward_no));
+      .filter(w => !wardMatches.find(m => m.ward_no === w.ward_no));
 
-    const combined = [...matches, ...areaMatches].slice(0, 8);
+    const combined = [...areaMatches, ...wardMatches].slice(0, 8);
 
     if (combined.length === 0) {
-      suggestions.classList.add("hidden");
+      suggestions.innerHTML = `<div class="ward-suggestion-item" style="color:var(--muted);cursor:default">No wards found for "${esc(input.value)}"</div>`;
+      suggestions.classList.remove("hidden");
       return;
     }
 
     suggestions.innerHTML = combined.map(w => `
       <div class="ward-suggestion-item" data-ward-no="${esc(String(w.ward_no))}">
-        <div>${esc(w.ward_name)}${w._matchedArea ? ` <span style="color:var(--muted)">(${esc(w._matchedArea)})</span>` : ""}</div>
-        <div class="ward-suggestion-meta">${esc(w.constituency || "")} &middot; ${esc(w.city_corp || "")}</div>
+        <div><strong>${esc(w._matchedArea || w.ward_name)}</strong>${w._matchedArea ? ` <span style="color:var(--muted);font-size:.78rem"> → Ward ${esc(String(w.ward_no))}: ${esc(w.ward_name)}</span>` : ""}</div>
+        <div class="ward-suggestion-meta">${esc(w.constituency || "")}${w.city_corp ? " &middot; " + esc(w.city_corp) : ""}</div>
       </div>
     `).join("");
     suggestions.classList.remove("hidden");
 
-    suggestions.querySelectorAll(".ward-suggestion-item").forEach(item => {
+    suggestions.querySelectorAll(".ward-suggestion-item[data-ward-no]").forEach(item => {
       item.addEventListener("click", () => {
         const wardNo = item.dataset.wardNo;
         const ward = officialsData.wardNoLookup[wardNo];
         if (ward) {
-          input.value = ward.ward_name;
+          input.value = ward._matchedArea || ward.ward_name;
           suggestions.classList.add("hidden");
           renderWardCard(ward);
+          document.getElementById("ward-results").scrollIntoView({ behavior: "smooth", block: "nearest" });
         }
       });
     });
+  });
+
+  // Also trigger on Enter
+  input.addEventListener("keydown", e => {
+    if (e.key === "Enter") {
+      const first = suggestions.querySelector(".ward-suggestion-item[data-ward-no]");
+      if (first) first.click();
+    }
   });
 
   // Close suggestions on outside click
@@ -1062,6 +1082,134 @@ function initWardSearch() {
       suggestions.classList.add("hidden");
     }
   });
+}
+
+// ── Location Detection ─────────────────────────────────────────────
+
+async function detectNearestWard() {
+  const resultsEl = document.getElementById("ward-results");
+  const input = document.getElementById("ward-search");
+  const btn = document.getElementById("detect-location-btn");
+
+  if (!navigator.geolocation) {
+    if (resultsEl) resultsEl.innerHTML = `<div class="ward-empty">Geolocation is not supported by your browser.</div>`;
+    return;
+  }
+
+  if (btn) { btn.disabled = true; btn.innerHTML = "&#8987; Locating..."; }
+
+  navigator.geolocation.getCurrentPosition(
+    async pos => {
+      try {
+        const { latitude, longitude } = pos.coords;
+        const url = `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json&addressdetails=1`;
+        const resp = await fetch(url, { headers: { "Accept-Language": "en" } });
+        const data = await resp.json();
+        const addr = data.address || {};
+
+        // Try candidates from most-specific to least-specific
+        const candidates = [
+          addr.neighbourhood, addr.suburb, addr.quarter,
+          addr.residential, addr.village, addr.city_district,
+          addr.county, addr.town, addr.city
+        ].filter(Boolean);
+
+        const ward = findBestWardMatch(candidates);
+
+        if (ward) {
+          if (input) input.value = ward.ward_name;
+          renderWardCard(ward);
+          document.getElementById("ward-results").scrollIntoView({ behavior: "smooth", block: "nearest" });
+        } else {
+          if (resultsEl) resultsEl.innerHTML = `<div class="ward-empty" style="padding:12px">Could not match your location (${candidates.join(", ")}) to a ward. Try searching manually.</div>`;
+        }
+      } catch (err) {
+        if (resultsEl) resultsEl.innerHTML = `<div class="ward-empty" style="padding:12px">Location lookup failed. Try searching manually.</div>`;
+      } finally {
+        if (btn) { btn.disabled = false; btn.innerHTML = "&#127757; Detect My Location"; }
+      }
+    },
+    () => {
+      if (btn) { btn.disabled = false; btn.innerHTML = "&#127757; Detect My Location"; }
+      if (resultsEl) resultsEl.innerHTML = `<div class="ward-empty" style="padding:12px">Location access denied. Please allow location access and try again.</div>`;
+    },
+    { timeout: 10000 }
+  );
+}
+
+function findBestWardMatch(candidates) {
+  if (!candidates || candidates.length === 0) return null;
+  let best = null, bestScore = 0;
+
+  for (const candidate of candidates) {
+    const lc = candidate.toLowerCase();
+
+    // Check area lookup (28 known areas)
+    for (const [key, info] of Object.entries(officialsData.areaToWard)) {
+      const score = trigramSimilarity(lc, key.toLowerCase());
+      if (score > bestScore && score > 0.4) {
+        bestScore = score;
+        best = officialsData.wardNoLookup[String(info.ward_no)];
+      }
+    }
+
+    // Check all ward names
+    for (const w of officialsData.wards) {
+      if (!w.ward_name) continue;
+      const score = trigramSimilarity(lc, w.ward_name.toLowerCase());
+      if (score > bestScore && score > 0.4) {
+        bestScore = score;
+        best = w;
+      }
+    }
+  }
+  return best;
+}
+
+function trigramSimilarity(a, b) {
+  const tg = s => {
+    const out = new Set();
+    for (let i = 0; i < s.length - 2; i++) out.add(s.slice(i, i + 3));
+    return out;
+  };
+  const ta = tg(a), tb = tg(b);
+  let inter = 0;
+  ta.forEach(t => { if (tb.has(t)) inter++; });
+  const union = ta.size + tb.size - inter;
+  return union === 0 ? 0 : inter / union;
+}
+
+// ── Ward-by-area lookup (robust, case-insensitive) ─────────────────
+
+function findWardByArea(area) {
+  if (!area || !officialsLoaded) return null;
+  const lc = area.toLowerCase().trim();
+
+  // 1. Exact key match in areaToWard
+  for (const [key, info] of Object.entries(officialsData.areaToWard)) {
+    if (key.toLowerCase() === lc) return officialsData.wardNoLookup[String(info.ward_no)];
+  }
+
+  // 2. Partial match: area name contains or is contained in the key
+  for (const [key, info] of Object.entries(officialsData.areaToWard)) {
+    const kl = key.toLowerCase();
+    if (lc.includes(kl) || kl.includes(lc)) return officialsData.wardNoLookup[String(info.ward_no)];
+  }
+
+  // 3. Exact match in 369 ward names
+  const exact = officialsData.wardLookup[lc];
+  if (exact) return exact;
+
+  // 4. Partial match in ward names
+  return officialsData.wards.find(w => w.ward_name && w.ward_name.toLowerCase().includes(lc)) || null;
+}
+
+// ── Phone link helper ──────────────────────────────────────────────
+
+function phoneLink(num, classes = "ward-contact-phone") {
+  if (!num || !num.trim()) return "";
+  const digits = num.replace(/[^\d+]/g, "");
+  return `<a href="tel:${esc(digits)}" class="${classes}">${esc(num)}</a>`;
 }
 
 // ── Ward Card ──────────────────────────────────────────────────────
@@ -1076,63 +1224,63 @@ function renderWardCard(ward) {
   const cells = [
     buildWardCell("Waste / SWM", [
       ward.swm_jhi ? `<div class="ward-contact-name">${esc(ward.swm_jhi)}</div>` : "",
-      ward.swm_jhi_mobile ? `<div class="ward-contact-phone">${esc(ward.swm_jhi_mobile)}</div>` : "",
+      ward.swm_jhi_mobile ? phoneLink(ward.swm_jhi_mobile) : "",
       ward.swm_aee ? `<div class="ward-contact-detail">AEE: ${esc(ward.swm_aee)}</div>` : "",
-      ward.swm_aee_mobile ? `<div class="ward-contact-phone">${esc(ward.swm_aee_mobile)}</div>` : "",
-      ward.swm_aee_email ? `<a class="ward-email-btn" href="${buildWardEmail(ward.swm_aee_email, ward, "Waste / SWM")}" target="_blank">Email AEE</a>` : "",
+      ward.swm_aee_mobile ? phoneLink(ward.swm_aee_mobile) : "",
+      ward.swm_aee_email ? `<a class="ward-email-btn" href="${buildWardEmail(ward.swm_aee_email, ward, "Waste / SWM")}" target="_blank">&#128231; Email AEE</a>` : "",
       !ward.swm_jhi && !ward.swm_aee ? `<div class="ward-empty">Data not available</div>` : "",
     ].filter(Boolean).join("")),
 
     buildWardCell("Electricity / BESCOM", [
       bescomParsed.name ? `<div class="ward-contact-name">${esc(bescomParsed.name)}</div>` : "",
-      bescomParsed.phone ? `<div class="ward-contact-phone">${esc(bescomParsed.phone)}</div>` : "",
+      bescomParsed.phone ? phoneLink(bescomParsed.phone) : "",
       ward.bescom_subdivision ? `<div class="ward-contact-detail">Subdivision ${esc(ward.bescom_subdivision)}</div>` : "",
       ward.bescom_unit ? `<div class="ward-contact-detail">Unit: ${esc(ward.bescom_unit)}</div>` : "",
-      bescomParsed.email ? `<a class="ward-email-btn" href="${buildWardEmail(bescomParsed.email, ward, "Electricity / BESCOM")}" target="_blank">Email AEE</a>` : "",
+      bescomParsed.email ? `<a class="ward-email-btn" href="${buildWardEmail(bescomParsed.email, ward, "Electricity / BESCOM")}" target="_blank">&#128231; Email AEE</a>` : "",
       !bescomParsed.name && !ward.bescom_aee ? `<div class="ward-empty">Data not available</div>` : "",
     ].filter(Boolean).join("")),
 
     buildWardCell("Water / BWSSB", [
       ward.bwssb_ae ? `<div class="ward-contact-name">${esc(ward.bwssb_ae)}</div>` : "",
-      ward.bwssb_ae_mobile ? `<div class="ward-contact-phone">${esc(ward.bwssb_ae_mobile)}</div>` : "",
+      ward.bwssb_ae_mobile ? phoneLink(ward.bwssb_ae_mobile) : "",
       ward.bwssb_aee ? `<div class="ward-contact-detail">AEE: ${esc(ward.bwssb_aee)}</div>` : "",
-      ward.bwssb_aee_mobile ? `<div class="ward-contact-phone">${esc(ward.bwssb_aee_mobile)}</div>` : "",
-      ward.bwssb_aee_email ? `<a class="ward-email-btn" href="${buildWardEmail(ward.bwssb_aee_email, ward, "Water / BWSSB")}" target="_blank">Email AEE</a>` : "",
+      ward.bwssb_aee_mobile ? phoneLink(ward.bwssb_aee_mobile) : "",
+      ward.bwssb_aee_email ? `<a class="ward-email-btn" href="${buildWardEmail(ward.bwssb_aee_email, ward, "Water / BWSSB")}" target="_blank">&#128231; Email AEE</a>` : "",
       !ward.bwssb_ae && !ward.bwssb_aee ? `<div class="ward-empty">Data not available</div>` : "",
     ].filter(Boolean).join("")),
 
     buildWardCell("Traffic Police", [
       ward.traffic_ps ? `<div class="ward-contact-detail">PS: ${esc(ward.traffic_ps)}</div>` : "",
       ward.traffic_pio ? `<div class="ward-contact-name">${esc(ward.traffic_pio)}</div>` : "",
-      ward.traffic_pio_contact ? `<div class="ward-contact-phone">${esc(ward.traffic_pio_contact)}</div>` : "",
+      ward.traffic_pio_contact ? phoneLink(ward.traffic_pio_contact) : "",
       !ward.traffic_ps && !ward.traffic_pio ? `<div class="ward-empty">Data not available</div>` : "",
     ].filter(Boolean).join("")),
 
     buildWardCell("Roads / City Corp", [
       ward.city_commissioner ? `<div class="ward-contact-name">${esc(ward.city_commissioner)}</div>` : "",
-      ward.city_commissioner_contact ? `<div class="ward-contact-phone">${esc(ward.city_commissioner_contact)}</div>` : "",
+      ward.city_commissioner_contact ? phoneLink(ward.city_commissioner_contact) : "",
       ward.city_corp ? `<div class="ward-contact-detail">${esc(ward.city_corp)}</div>` : "",
-      ward.city_commissioner_email ? `<a class="ward-email-btn" href="${buildWardEmail(ward.city_commissioner_email, ward, "Roads / City Corporation")}" target="_blank">Email Commissioner</a>` : "",
+      ward.city_commissioner_email ? `<a class="ward-email-btn" href="${buildWardEmail(ward.city_commissioner_email, ward, "Roads / City Corporation")}" target="_blank">&#128231; Email Commissioner</a>` : "",
     ].filter(Boolean).join("")),
 
     buildWardCell("Councillor", [
       ward.councillor ? `<div class="ward-contact-name">${esc(ward.councillor)}</div>` : `<div class="ward-empty">Not available</div>`,
-      ward.councillor_mobile ? `<div class="ward-contact-phone">${esc(ward.councillor_mobile)}</div>` : "",
+      ward.councillor_mobile ? phoneLink(ward.councillor_mobile) : "",
       ward.councillor_confidence && ward.councillor_confidence !== "High" && ward.councillor
-        ? `<div class="ward-note">Confidence: ${esc(ward.councillor_confidence)} - verify before contacting</div>` : "",
+        ? `<div class="ward-note">Confidence: ${esc(ward.councillor_confidence)} — verify before contacting</div>` : "",
     ].filter(Boolean).join("")),
 
     buildWardCell("MLA", [
       ward.mla ? `<div class="ward-contact-name">${esc(ward.mla)}</div>` : `<div class="ward-empty">Not available</div>`,
       ward.mla_party ? `<div class="ward-contact-detail">${esc(ward.mla_party)}</div>` : "",
-      ward.mla_phones ? `<div class="ward-contact-phone">${esc(ward.mla_phones)}</div>` : "",
-      ward.mla_email ? `<a class="ward-email-btn" href="${buildWardEmail(ward.mla_email, ward, "Civic issue")}" target="_blank">Email MLA</a>` : "",
+      ward.mla_phones ? phoneLink(ward.mla_phones) : "",
+      ward.mla_email ? `<a class="ward-email-btn" href="${buildWardEmail(ward.mla_email, ward, "Civic issue")}" target="_blank">&#128231; Email MLA</a>` : "",
     ].filter(Boolean).join("")),
 
     buildWardCell("MP", [
       ward.mp ? `<div class="ward-contact-name">${esc(ward.mp)}</div>` : `<div class="ward-empty">Not available</div>`,
-      ward.mp_phones ? `<div class="ward-contact-phone">${esc(ward.mp_phones)}</div>` : "",
-      ward.mp_email ? `<a class="ward-email-btn" href="${buildWardEmail(ward.mp_email, ward, "Civic issue")}" target="_blank">Email MP</a>` : "",
+      ward.mp_phones ? phoneLink(ward.mp_phones) : "",
+      ward.mp_email ? `<a class="ward-email-btn" href="${buildWardEmail(ward.mp_email, ward, "Civic issue")}" target="_blank">&#128231; Email MP</a>` : "",
     ].filter(Boolean).join("")),
   ];
 
@@ -1370,21 +1518,23 @@ function renderOrgChart(dept) {
       </div>
     `).join("");
 
-    const mlaCards = officialsData.mlas.slice(0, 12).map(m => `
+    const mlaCard = m => `
       <div class="org-contact-card">
         <div class="org-contact-role">${esc(m.constituency || "")}</div>
         <div class="org-contact-name">${esc(m.name || "")}</div>
-        <div class="org-contact-info">${esc(m.party || "")}${m.phones ? " &middot; " + esc(m.phones) : ""}</div>
-        ${m.email ? `<div class="org-contact-info"><a href="mailto:${esc(m.email)}" style="color:var(--action)">${esc(m.email)}</a></div>` : ""}
+        <div class="org-contact-info">${esc(m.party || "")}</div>
+        ${m.phones ? phoneLink(m.phones.split(";")[0].trim(), "org-contact-info") : ""}
+        ${m.email ? `<a class="ward-email-btn" style="margin-top:4px" href="https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(m.email)}&su=${encodeURIComponent("[GovWatch] Civic issue — Bangalore")}" target="_blank">&#128231; Email MLA</a>` : ""}
       </div>
-    `).join("");
+    `;
 
     const mpCards = officialsData.mps.map(m => `
       <div class="org-contact-card">
         <div class="org-contact-role">${esc(m.constituency || "")}</div>
         <div class="org-contact-name">${esc(m.name || "")}</div>
-        <div class="org-contact-info">${esc(m.party || "")}${m.phones ? " &middot; " + esc(m.phones) : ""}</div>
-        ${m.email ? `<div><a class="ward-email-btn" href="https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(m.email)}&su=${encodeURIComponent("[GovWatch] Civic issue — Bangalore")}" target="_blank">Email MP</a></div>` : ""}
+        <div class="org-contact-info">${esc(m.party || "")}</div>
+        ${m.phones ? phoneLink(m.phones.split(";")[0].trim(), "org-contact-info") : ""}
+        ${m.email ? `<a class="ward-email-btn" style="margin-top:4px" href="https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(m.email)}&su=${encodeURIComponent("[GovWatch] Civic issue — Bangalore")}" target="_blank">&#128231; Email MP</a>` : ""}
       </div>
     `).join("");
 
@@ -1393,10 +1543,26 @@ function renderOrgChart(dept) {
       <div style="margin-top:20px">
         <div class="officials-section-title" style="font-size:.85rem;margin-bottom:12px">Members of Parliament</div>
         <div class="org-level-cards" style="margin-bottom:20px">${mpCards}</div>
-        <div class="officials-section-title" style="font-size:.85rem;margin-bottom:12px">MLAs (Bangalore Constituencies)</div>
-        <div class="org-level-cards">${mlaCards}</div>
+        <div class="officials-section-title" style="font-size:.85rem;margin-bottom:8px">MLAs — All Bangalore Constituencies (${officialsData.mlas.length})</div>
+        <input type="text" class="search-input" id="mla-search" placeholder="Filter by name or constituency..." style="max-width:340px;margin-bottom:12px" />
+        <div class="org-level-cards" id="mla-cards-grid">${officialsData.mlas.map(mlaCard).join("")}</div>
       </div>
     `;
+
+    // Wire MLA search filter
+    const mlaSearch = document.getElementById("mla-search");
+    const mlaGrid = document.getElementById("mla-cards-grid");
+    if (mlaSearch && mlaGrid) {
+      mlaSearch.addEventListener("input", () => {
+        const q = mlaSearch.value.toLowerCase();
+        const filtered = q ? officialsData.mlas.filter(m =>
+          (m.name && m.name.toLowerCase().includes(q)) ||
+          (m.constituency && m.constituency.toLowerCase().includes(q)) ||
+          (m.party && m.party.toLowerCase().includes(q))
+        ) : officialsData.mlas;
+        mlaGrid.innerHTML = filtered.map(mlaCard).join("") || `<div class="ward-empty">No MLAs match "${esc(q)}"</div>`;
+      });
+    }
   }
 }
 
@@ -1438,12 +1604,8 @@ function getSmartContacts(issue) {
   const category = issue.category || "Other";
   const area = issue.area || "";
 
-  // Lookup ward
-  const areaEntry = officialsData.areaToWard[area];
-  let ward = null;
-  if (areaEntry) {
-    ward = officialsData.wardNoLookup[String(areaEntry.ward_no)];
-  }
+  // Lookup ward (robust: case-insensitive + partial match)
+  const ward = findWardByArea(area);
 
   if (!ward) {
     // Fallback: use POC_DIRECTORY generic contacts
@@ -1611,7 +1773,7 @@ function renderSmartContactsHTML(issue) {
         ${badge}
         <span class="sc-role">${roleDetail}</span>
         <span class="sc-name">${esc(c.name)}</span>
-        ${c.phone ? `<span class="sc-phone">${esc(c.phone)}</span>` : ""}
+        ${c.phone ? phoneLink(c.phone.split(";")[0].trim(), "sc-phone") : ""}
         ${emailBtn}
       </div>
     `;

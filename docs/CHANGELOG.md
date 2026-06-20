@@ -5,6 +5,73 @@ Format: `[Date] - What changed and why`
 
 ---
 
+## [2026-06-20] — Officials Tab: Location Detection, Phone Links, All MLAs, Better Routing
+
+### Fixed
+
+**`dashboard/js/app.js` — Officials tab usability fixes**
+
+- **Ward search suggestions now work**: searches all 369 wards by name + constituency, plus the 28 named areas from `area_ward_lookup.json`; shows "Ward 28 → Koramangala East" format so it's clear what you'll get; Enter key selects first result
+- **Location detection**: new "Detect My Location" button uses `navigator.geolocation` + OpenStreetMap Nominatim reverse geocoding; finds the nearest ward via trigram similarity matching and shows its contact card automatically
+- **Phone numbers are now clickable**: all phone numbers in ward cards, smart contacts, and org charts are `tel:` links — tap on mobile to call directly
+- **All 36 MLAs shown**: removed `slice(0, 12)` cap from Political org chart; added live search/filter box to find MLA by name, constituency, or party
+- **Smart routing fixed**: `getSmartContacts` now uses robust `findWardByArea()` — case-insensitive, partial-match, falls back from area lookup → ward name lookup; fixes the "generic inbox" problem where areas like "koramangala" didn't match "Koramangala"
+
+**`dashboard/css/styles.css` — Officials tab styles**
+
+- `.btn-detect-location` — green pill button with hover and disabled states
+- `.ward-contact-phone` — green clickable tel: links with "T: " prefix
+- `.sc-phone` — clickable phone in smart contacts
+- `.org-contact-info` — phone links in org chart cards
+
+---
+
+## [2026-06-20] — Phase 5: Officials Intelligence + Smart Assignment
+
+### Added
+
+**`data/officials/` — 14 new JSON files (consolidated Bangalore officials database)**
+
+Extracted from the `bengaluru_gov_watch_consolidated.xlsx` spreadsheet covering the full administrative structure of Bangalore:
+
+- `wards.json` — 369-ward accountability map: councillor, MLA, MP, SWM JHI, BESCOM AEE, BWSSB AE, traffic PS per ward
+- `issue_routing.json` — 10 civic issue types mapped to: first contact, CC list, escalation 1, escalation 2, political escalation, SLA target
+- `escalation_chains.json` — 5-department escalation ladders (BBMP, BESCOM, BWSSB, Traffic Police, Political)
+- `city_corp_contacts.json` — 55 BBMP city corporation zone/division officers with email
+- `bbmp_directory.json` — 428 BBMP email directory entries by section and designation
+- `swm_se.json` — 8 SWM Zonal Superintending Engineers
+- `swm_aee.json` — 27 SWM AEEs by zone/division
+- `swm_jhi.json` — 198 ward-level SWM Junior Health Inspectors with mobile numbers
+- `bescom_units.json` — 484 BESCOM operational units: zone → circle → division → subdivision → AEE/AE/JE
+- `bwssb_stations.json` — 122 BWSSB service stations: division → EE → subdivision → AEE → service station AE
+- `mlas.json` — 36 Bangalore MLAs with party, phones, email
+- `mps.json` — 3 Bangalore MPs with phones, email, assembly constituencies
+- `traffic_rti.json` — 66 traffic police stations with PIO and FAA contacts
+- `area_ward_lookup.json` — 28 dashboard area names fuzzy-matched to official ward names/numbers
+
+**`dashboard/index.html` — Officials tab added**
+
+New fifth tab in the main navigation with three sections:
+- **Ward & Area Lookup**: search any Bangalore area → see every responsible official (SWM, BESCOM, BWSSB, Traffic, Councillor, MLA, MP) in a colour-coded grid card
+- **Department Org Charts**: click any of 5 departments → graphical escalation ladder showing who to contact at each level and why
+- **Issue Routing Guide**: 10 civic issue types → first contact, CC, escalation chain, SLA target, notes
+
+**`dashboard/css/styles.css` — Officials UI components**
+
+~330 lines of new styles: ward card grid, org chart levels, routing cards with coloured badges (first/cc/escalation/political), ward search suggestions, smart contact rows in detail panel.
+
+**`dashboard/js/app.js` — Officials intelligence logic**
+
+- `initOfficials()` — lazy-loads all 13 officials JSON files in parallel on first Officials tab visit
+- `initWardSearch()` — live fuzzy search with auto-suggestions, ward card on select
+- `renderWardCard(ward)` — 8-cell grid showing every responsible contact for a ward with Gmail compose buttons
+- `renderOrgChart(dept)` — escalation chain view for BBMP, BESCOM, BWSSB, Traffic Police, Political
+- `renderRoutingGuide()` — 2-column grid of all 10 routing cards
+- `getSmartContacts(issue)` / `renderSmartContactsHTML(issue)` — in detail panel: shows named ward-specific officials for the selected issue's area + category
+- `buildSmartEmailLink(contacts, issue)` — Gmail compose URL pre-filled with To (first contact), CC (all others), subject and body with issue details
+
+---
+
 ## [2026-06-20] — Assign Button Opens Gmail in Browser
 
 ### Fixed
