@@ -35,21 +35,24 @@ Every feature and file built in GovWatch, with dates and status.
 
 | File | Date Built | Status | Description |
 |---|---|---|---|
-| `dashboard/index.html` | 2026-05-17 | ✅ Live | Single-page app — works offline with sample data |
-| `dashboard/css/styles.css` | 2026-05-17 | ✅ Live | Modern design — gradient header, card accents, responsive |
-| `dashboard/js/app.js` | 2026-05-17 | ✅ Live | All dashboard logic |
+| `dashboard/index.html` | 2026-05-17 | ✅ Live | Single-page app — redesigned 2026-06-20 (Public Ledger) |
+| `dashboard/css/styles.css` | 2026-05-17 | ✅ Live | Public Ledger theme — warm canvas, forest green, Source Serif 4 |
+| `dashboard/js/app.js` | 2026-05-17 | ✅ Live | Queue-first logic — saved views, detail panel, analytics |
 
 **Dashboard Features (all live):**
-- [x] Issue cards — category, area, severity, engagement, tweet link
-- [x] Summary stats row — total, high severity, top category, most affected area
-- [x] Category breakdown bar chart (Chart.js)
-- [x] Filter by category, severity, status, area
-- [x] Free-text search across all issues
-- [x] Status tracking per issue — Open / Acknowledged / In Progress / Resolved (localStorage)
-- [x] Issue clustering — group same category+area into one card with count badge
+- [x] Priority queue — rows sorted overdue → severity → engagement; 4px severity stripe
+- [x] Detail panel — selected issue shows full text, metadata, status selector, assign button
+- [x] 5 KPI cards — Overdue SLA, High Risk Open, New Today, Unassigned, Resolved This Week
+- [x] Saved views — All / Urgent / Overdue / Unassigned / Resolved chips
+- [x] Filter bar — Department, Category, Area dropdowns + free-text search
+- [x] Issue clustering — group same category+area into one row with count badge
 - [x] Map view — interactive Leaflet map, coloured markers by severity, click for detail
 - [x] Department view — issues grouped by BBMP / BESCOM / BWSSB / BTP
+- [x] Analytics tab — category bar chart + severity breakdown bars + SLA table by department
+- [x] Status tracking per issue — Open / Acknowledged / In Progress / Resolved (localStorage)
 - [x] CSV export — downloads current filtered view as a spreadsheet
+- [x] Email assign — pre-filled email to correct department official
+- [x] Role URL params — ?role=bbmp/bescom/bwssb/btp filters to that department
 
 ---
 

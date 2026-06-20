@@ -1,25 +1,23 @@
 /**
  * GovWatch Dashboard — app.js
- * Features: issue feed, map view, department view, clustering,
- *           status tracking (localStorage), search, export CSV.
+ * Public Ledger theme redesign: queue-first layout, detail panel, 5 KPIs.
  */
 
-// ── Constants ─────────────────────────────────────────────────
+// ── Constants ──────────────────────────────────────────────────────
 
 const DATA_PATHS = ["../data/issues.json", "../data/sample_issues.json"];
 
 const CATEGORY_COLORS = {
-  Roads:       "#2563a8",
+  Roads:       "#1f4d3a",
   Water:       "#0891b2",
-  Electricity: "#d97706",
-  Waste:       "#65a30d",
+  Electricity: "#92400e",
+  Waste:       "#31572c",
   Flooding:    "#7c3aed",
-  Parks:       "#16a34a",
-  Traffic:     "#dc2626",
-  Other:       "#94a3b8",
+  Parks:       "#15803d",
+  Traffic:     "#991b1b",
+  Other:       "#6f675d",
 };
 
-// Approximate lat/long centres for Bangalore areas
 const AREA_COORDS = {
   "Koramangala":    [12.9352, 77.6245],
   "Indiranagar":    [12.9784, 77.6408],
@@ -52,10 +50,15 @@ const AREA_COORDS = {
 };
 
 const DEPARTMENT_MAP = {
-  BBMP:   { icon: "🏗",  color: "#2563a8", desc: "Roads · Waste · Parks · Flooding", categories: ["Roads", "Waste", "Parks", "Flooding", "Other"] },
-  BESCOM: { icon: "⚡",  color: "#d97706", desc: "Electricity · Street Lights",      categories: ["Electricity"] },
-  BWSSB:  { icon: "💧",  color: "#0891b2", desc: "Water Supply · Drainage",          categories: ["Water"] },
-  BTP:    { icon: "🚦",  color: "#dc2626", desc: "Traffic Signals · Road Safety",    categories: ["Traffic"] },
+  BBMP:   { icon: "🏗", color: "#1f4d3a", desc: "Roads · Waste · Parks · Flooding", categories: ["Roads", "Waste", "Parks", "Flooding", "Other"] },
+  BESCOM: { icon: "⚡", color: "#92400e", desc: "Electricity · Street Lights",      categories: ["Electricity"] },
+  BWSSB:  { icon: "💧", color: "#0891b2", desc: "Water Supply · Drainage",          categories: ["Water"] },
+  BTP:    { icon: "🚦", color: "#991b1b", desc: "Traffic Signals · Road Safety",    categories: ["Traffic"] },
+};
+
+const CATEGORY_DEPT = {
+  Roads: "BBMP", Waste: "BBMP", Parks: "BBMP", Flooding: "BBMP", Other: "BBMP",
+  Electricity: "BESCOM", Water: "BWSSB", Traffic: "BTP",
 };
 
 const STATUS_OPTIONS = [
@@ -65,9 +68,8 @@ const STATUS_OPTIONS = [
   { value: "resolved",     label: "🟢 Resolved" },
 ];
 
-const SEV_COLORS = { high: "#c0392b", medium: "#d97706", low: "#166534" };
+const SEV_COLORS = { high: "#991b1b", medium: "#92400e", low: "#14532d" };
 
-// TAT = turnaround time in hours; email = publicly listed official contact
 const POC_DIRECTORY = {
   Roads:       { dept: "BBMP",   div: "Roads & Infrastructure",  email: "roads@bbmp.gov.in",            phone: "080-22660000", tat: 72  },
   Waste:       { dept: "BBMP",   div: "Solid Waste Management",  email: "swm@bbmp.gov.in",              phone: "1533",         tat: 48  },
@@ -93,18 +95,22 @@ const ROLE_LABELS = {
   btp:    "BTP — Bangalore Traffic Police",
 };
 
-// ── State ─────────────────────────────────────────────────────
+// ── State ──────────────────────────────────────────────────────────
 
 let allIssues = [];
-let activeFilters = { category: "all", severity: "all", area: "all", status: "all", search: "", datePreset: "all", dateFrom: "", dateTo: "", role: "" };
-let activeTab = "feed";
+let activeFilters = {
+  search: "", category: "all", area: "all", dept: "all", role: "",
+};
+let activeSavedView = "all";
+let activeTab = "queue";
 let clustered = false;
+let selectedIssueId = null;
 let chart = null;
 let leafletMap = null;
 let mapMarkers = [];
 let mapInitialized = false;
 
-// ── Bootstrap ─────────────────────────────────────────────────
+// ── Bootstrap ──────────────────────────────────────────────────────
 
 async function loadData() {
   for (const path of DATA_PATHS) {
@@ -124,7 +130,6 @@ async function loadData() {
 }
 
 async function init() {
-  // Detect role from URL param: ?role=bbmp / bescom / bwssb / btp
   const urlRole = new URLSearchParams(window.location.search).get("role") || "";
   if (urlRole && ROLE_DEPARTMENTS[urlRole]) {
     activeFilters.role = urlRole;
@@ -134,206 +139,155 @@ async function init() {
   allIssues = await loadData();
 
   if (allIssues.length === 0) {
-    document.getElementById("issue-grid").innerHTML =
+    document.getElementById("queue-list").innerHTML =
       '<div class="no-results">No data found. Check the data folder or run the fetch script.</div>';
     return;
   }
 
   setLastUpdated();
-  renderStats(allIssues);
+  renderKPIs(allIssues);
   buildFilters(allIssues);
-  renderChart(allIssues);
-  renderIssues(getFiltered());
+  renderQueue(getFiltered());
 
-  // Tab switching
   document.querySelectorAll(".tab").forEach(btn =>
     btn.addEventListener("click", () => switchTab(btn.dataset.tab))
   );
 
+  document.querySelectorAll(".view-chip").forEach(btn =>
+    btn.addEventListener("click", () => onSavedViewClick(btn))
+  );
 
-  // Cluster toggle
   document.getElementById("cluster-toggle").addEventListener("change", e => {
     clustered = e.target.checked;
-    renderIssues(getFiltered());
+    renderQueue(getFiltered());
   });
 
-  // Export
   document.getElementById("export-csv").addEventListener("click", exportCSV);
-
-  // Status changes (event delegation on the grid)
-  document.getElementById("issue-grid").addEventListener("change", e => {
-    if (e.target.classList.contains("status-select")) {
-      const id = e.target.dataset.issueId;
-      const val = e.target.value;
-      setStatus(id, val);
-      const card = e.target.closest(".issue-card");
-      if (card) card.dataset.status = val;
-    }
-  });
 }
 
-// ── Stats ─────────────────────────────────────────────────────
+// ── KPIs ───────────────────────────────────────────────────────────
 
-function renderStats(issues) {
-  document.getElementById("stat-total").textContent = issues.length;
-  document.getElementById("stat-high").textContent = issues.filter(i => i.severity === "high").length;
-  document.getElementById("stat-top-cat").textContent = topKey(countBy(issues, "category")) || "—";
-  document.getElementById("stat-top-area").textContent = topKey(countBy(issues, "area")) || "—";
+function renderKPIs(issues) {
+  const now = Date.now();
+  const oneWeekAgo = now - 7 * 24 * 36e5;
+  const todayStart = new Date(); todayStart.setHours(0, 0, 0, 0);
+
+  const overdue = issues.filter(i => {
+    const status = getStatus(i.id);
+    if (status === "resolved") return false;
+    const poc = POC_DIRECTORY[i.category] || POC_DIRECTORY.Other;
+    return (now - new Date(i.date).getTime()) / 36e5 >= poc.tat;
+  }).length;
+
+  const highOpen = issues.filter(i =>
+    i.severity === "high" && getStatus(i.id) !== "resolved"
+  ).length;
+
+  const newToday = issues.filter(i =>
+    new Date(i.date).getTime() >= todayStart.getTime()
+  ).length;
+
+  const unassigned = issues.filter(i => getStatus(i.id) === "open").length;
+
+  const resolvedWk = issues.filter(i => {
+    if (getStatus(i.id) !== "resolved") return false;
+    return new Date(i.date).getTime() >= oneWeekAgo;
+  }).length;
+
+  document.getElementById("kpi-overdue").textContent   = overdue;
+  document.getElementById("kpi-high").textContent      = highOpen;
+  document.getElementById("kpi-new").textContent       = newToday;
+  document.getElementById("kpi-unassigned").textContent = unassigned;
+  document.getElementById("kpi-resolved").textContent  = resolvedWk;
 }
 
-// ── Filters ───────────────────────────────────────────────────
+// ── Filters ────────────────────────────────────────────────────────
 
 function buildFilters(issues) {
   const categories = [...new Set(issues.map(i => i.category))].sort();
-  const catContainer = document.getElementById("category-filters");
+  const catSel = document.getElementById("category-filter");
   categories.forEach(cat => {
-    const btn = document.createElement("button");
-    btn.className = "chip";
-    btn.dataset.filter = "category";
-    btn.dataset.value = cat;
-    btn.textContent = cat;
-    catContainer.appendChild(btn);
+    const opt = document.createElement("option");
+    opt.value = cat; opt.textContent = cat;
+    catSel.appendChild(opt);
   });
 
   const areas = [...new Set(issues.map(i => i.area))].sort();
-  const sel = document.getElementById("area-filter");
+  const areaSel = document.getElementById("area-filter");
   areas.forEach(area => {
     const opt = document.createElement("option");
-    opt.value = area;
-    opt.textContent = area;
-    sel.appendChild(opt);
+    opt.value = area; opt.textContent = area;
+    areaSel.appendChild(opt);
   });
-
-  document.querySelectorAll(".chip").forEach(btn =>
-    btn.addEventListener("click", () => onChipClick(btn))
-  );
-  sel.addEventListener("change", () => { activeFilters.area = sel.value; applyFilters(); });
 
   document.getElementById("search-input").addEventListener("input", e => {
     activeFilters.search = e.target.value.toLowerCase().trim();
     applyFilters();
   });
-
+  catSel.addEventListener("change", e => { activeFilters.category = e.target.value; applyFilters(); });
+  areaSel.addEventListener("change", e => { activeFilters.area = e.target.value; applyFilters(); });
+  document.getElementById("dept-filter").addEventListener("change", e => { activeFilters.dept = e.target.value; applyFilters(); });
   document.getElementById("reset-filters").addEventListener("click", resetFilters);
-
-  document.querySelectorAll(".chip[data-filter='date-preset']").forEach(btn =>
-    btn.addEventListener("click", () => {
-      document.querySelectorAll(".chip[data-filter='date-preset']").forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-      activeFilters.datePreset = btn.dataset.value;
-      activeFilters.dateFrom = "";
-      activeFilters.dateTo = "";
-      document.getElementById("date-from").value = "";
-      document.getElementById("date-to").value = "";
-      applyFilters();
-    })
-  );
-
-  document.getElementById("date-from").addEventListener("change", e => {
-    activeFilters.dateFrom = e.target.value;
-    activeFilters.datePreset = "custom";
-    document.querySelectorAll(".chip[data-filter='date-preset']").forEach(b => b.classList.remove("active"));
-    applyFilters();
-  });
-
-  document.getElementById("date-to").addEventListener("change", e => {
-    activeFilters.dateTo = e.target.value;
-    activeFilters.datePreset = "custom";
-    document.querySelectorAll(".chip[data-filter='date-preset']").forEach(b => b.classList.remove("active"));
-    applyFilters();
-  });
 }
 
-function onChipClick(btn) {
-  const type = btn.dataset.filter;
-  document.querySelectorAll(`.chip[data-filter="${type}"]`).forEach(b => b.classList.remove("active"));
+function onSavedViewClick(btn) {
+  document.querySelectorAll(".view-chip").forEach(b => b.classList.remove("active"));
   btn.classList.add("active");
-  activeFilters[type] = btn.dataset.value;
+  activeSavedView = btn.dataset.view;
   applyFilters();
 }
 
 function resetFilters() {
-  activeFilters = { category: "all", severity: "all", area: "all", status: "all", search: "", datePreset: "all", dateFrom: "", dateTo: "" };
-  document.querySelectorAll(".chip").forEach(b => {
-    b.classList.toggle("active", b.dataset.value === "all");
-  });
-  document.getElementById("area-filter").value = "all";
+  activeFilters = { search: "", category: "all", area: "all", dept: "all", role: activeFilters.role };
+  activeSavedView = "all";
+  document.querySelectorAll(".view-chip").forEach(b => b.classList.toggle("active", b.dataset.view === "all"));
   document.getElementById("search-input").value = "";
-  document.getElementById("date-from").value = "";
-  document.getElementById("date-to").value = "";
+  document.getElementById("category-filter").value = "all";
+  document.getElementById("area-filter").value = "all";
+  document.getElementById("dept-filter").value = "all";
   applyFilters();
 }
 
-function getDateBounds() {
-  const now = new Date();
-  const preset = activeFilters.datePreset;
-  if (preset === "7") {
-    const from = new Date(now); from.setDate(from.getDate() - 7); from.setHours(0,0,0,0);
-    return { from, to: null };
-  }
-  if (preset === "30") {
-    const from = new Date(now); from.setDate(from.getDate() - 30); from.setHours(0,0,0,0);
-    return { from, to: null };
-  }
-  if (preset === "this-month") {
-    const from = new Date(now.getFullYear(), now.getMonth(), 1);
-    return { from, to: null };
-  }
-  if (preset === "custom") {
-    const from = activeFilters.dateFrom ? new Date(activeFilters.dateFrom + "T00:00:00") : null;
-    const to   = activeFilters.dateTo   ? new Date(activeFilters.dateTo   + "T23:59:59") : null;
-    return { from, to };
-  }
-  return { from: null, to: null };
-}
-
 function getFiltered() {
-  const { from, to } = getDateBounds();
+  const now = Date.now();
   return allIssues.filter(i => {
     if (activeFilters.category !== "all" && i.category !== activeFilters.category) return false;
-    if (activeFilters.severity !== "all" && i.severity !== activeFilters.severity) return false;
     if (activeFilters.area !== "all" && i.area !== activeFilters.area) return false;
-    if (activeFilters.status !== "all" && getStatus(i.id) !== activeFilters.status) return false;
+    if (activeFilters.dept !== "all" && CATEGORY_DEPT[i.category] !== activeFilters.dept) return false;
+    if (activeFilters.role && ROLE_DEPARTMENTS[activeFilters.role] &&
+        !ROLE_DEPARTMENTS[activeFilters.role].includes(i.category)) return false;
     if (activeFilters.search) {
       const hay = `${i.text} ${i.area} ${i.category} ${i.author}`.toLowerCase();
       if (!hay.includes(activeFilters.search)) return false;
     }
-    if (from || to) {
-      const d = new Date(i.date);
-      if (from && d < from) return false;
-      if (to   && d > to)   return false;
+
+    // Saved view filter
+    const status = getStatus(i.id);
+    if (activeSavedView === "urgent") {
+      if (i.severity !== "high" || status === "resolved") return false;
+    } else if (activeSavedView === "overdue") {
+      if (status === "resolved") return false;
+      const poc = POC_DIRECTORY[i.category] || POC_DIRECTORY.Other;
+      if ((now - new Date(i.date).getTime()) / 36e5 < poc.tat) return false;
+    } else if (activeSavedView === "unassigned") {
+      if (status !== "open") return false;
+    } else if (activeSavedView === "resolved") {
+      if (status !== "resolved") return false;
     }
-    if (activeFilters.role && ROLE_DEPARTMENTS[activeFilters.role]) {
-      if (!ROLE_DEPARTMENTS[activeFilters.role].includes(i.category)) return false;
-    }
+
     return true;
   });
 }
 
 function applyFilters() {
   const filtered = getFiltered();
-  renderChart(filtered);
-  if (activeTab === "feed")        renderIssues(filtered);
+  if (activeTab === "queue")       renderQueue(filtered);
   if (activeTab === "map")         renderMap(filtered);
   if (activeTab === "departments") renderDepartments(filtered);
+  if (activeTab === "analytics")   renderAnalytics(filtered);
 }
 
-function renderRoleBanner(role) {
-  const banner = document.getElementById("role-banner");
-  if (!banner) return;
-  const cats = (ROLE_DEPARTMENTS[role] || []).join(" · ");
-  banner.innerHTML = `
-    <span class="role-banner-icon">👤</span>
-    <span class="role-banner-text">
-      <strong>${ROLE_LABELS[role]}</strong>
-      <span class="role-banner-cats">Showing: ${cats}</span>
-    </span>
-    <a class="role-banner-clear" href="${window.location.pathname}">Clear role view ×</a>
-  `;
-  banner.classList.remove("hidden");
-}
-
-// ── Tabs ──────────────────────────────────────────────────────
+// ── Tabs ───────────────────────────────────────────────────────────
 
 function switchTab(tab) {
   activeTab = tab;
@@ -341,28 +295,197 @@ function switchTab(tab) {
   document.querySelectorAll(".tab-content").forEach(s => s.classList.add("hidden"));
   document.getElementById(`tab-${tab}`).classList.remove("hidden");
 
-  if (tab === "coming-soon") { renderComingSoon(); return; }
-
   const filtered = getFiltered();
   if (tab === "map")         renderMap(filtered);
   if (tab === "departments") renderDepartments(filtered);
+  if (tab === "analytics")   renderAnalytics(filtered);
 }
 
-// ── Feed / Issue Cards ────────────────────────────────────────
+// ── Queue ──────────────────────────────────────────────────────────
 
-function renderIssues(issues) {
+function renderQueue(issues) {
   const displayed = clustered ? getClusteredIssues(issues) : issues;
-  document.getElementById("showing-count").textContent =
-    `${displayed.length} issue${displayed.length !== 1 ? "s" : ""}` +
-    (clustered && displayed.length < issues.length ? ` (clustered from ${issues.length})` : "");
+  const count = document.getElementById("queue-count");
+  count.textContent = `${displayed.length} issue${displayed.length !== 1 ? "s" : ""}` +
+    (clustered && displayed.length < issues.length ? ` (grouped from ${issues.length})` : "");
 
-  const grid = document.getElementById("issue-grid");
+  const list = document.getElementById("queue-list");
   if (displayed.length === 0) {
-    grid.innerHTML = '<div class="no-results">No issues match the selected filters.</div>';
+    list.innerHTML = '<div class="no-results">No issues match the current view.</div>';
     return;
   }
-  grid.innerHTML = displayed.map(i => issueCard(i)).join("");
+
+  // Sort: overdue first, then by severity, then by engagement
+  const sevOrder = { high: 0, medium: 1, low: 2 };
+  const now = Date.now();
+  displayed.sort((a, b) => {
+    const pocA = POC_DIRECTORY[a.category] || POC_DIRECTORY.Other;
+    const pocB = POC_DIRECTORY[b.category] || POC_DIRECTORY.Other;
+    const aOver = (now - new Date(a.date).getTime()) / 36e5 >= pocA.tat;
+    const bOver = (now - new Date(b.date).getTime()) / 36e5 >= pocB.tat;
+    if (aOver !== bOver) return aOver ? -1 : 1;
+    if (sevOrder[a.severity] !== sevOrder[b.severity]) return sevOrder[a.severity] - sevOrder[b.severity];
+    return (b.likes + b.retweets) - (a.likes + a.retweets);
+  });
+
+  list.innerHTML = displayed.map(i => queueRow(i)).join("");
+
+  // Select first if none selected or selected not in list
+  const ids = displayed.map(i => i.id);
+  if (!selectedIssueId || !ids.includes(selectedIssueId)) {
+    selectedIssueId = displayed[0]?.id || null;
+  }
+  if (selectedIssueId) {
+    const el = list.querySelector(`[data-id="${CSS.escape(String(selectedIssueId))}"]`);
+    if (el) el.classList.add("selected");
+    renderDetailPanel(displayed.find(i => i.id === selectedIssueId));
+  }
+
+  list.querySelectorAll(".queue-row").forEach(row => {
+    row.addEventListener("click", () => {
+      const id = row.dataset.id;
+      selectedIssueId = id;
+      list.querySelectorAll(".queue-row").forEach(r => r.classList.remove("selected"));
+      row.classList.add("selected");
+      const issue = allIssues.find(i => String(i.id) === id);
+      if (issue) renderDetailPanel(issue);
+    });
+  });
 }
+
+function queueRow(issue) {
+  const status = getStatus(issue.id);
+  const sla = getSLAStatus(issue);
+  const poc = POC_DIRECTORY[issue.category] || POC_DIRECTORY.Other;
+  const sevLabel = { high: "High", medium: "Medium", low: "Low" }[issue.severity] || issue.severity;
+  const clusterBadge = issue.clusterCount > 1
+    ? `<span class="q-cluster-badge">${issue.clusterCount} reports</span>` : "";
+
+  return `
+  <div class="queue-row sev-${esc(issue.severity)} q-status-${esc(status)}" data-id="${esc(String(issue.id))}" data-status="${esc(status)}">
+    <div class="queue-row-stripe"></div>
+    <div class="queue-row-body">
+      <div class="queue-row-meta">
+        <span class="q-priority-label">${sevLabel}</span>
+        <span class="q-cat-badge">${esc(issue.category)}</span>
+        <span class="q-area">${esc(issue.area)}</span>
+        ${clusterBadge}
+      </div>
+      <div class="queue-row-text">${esc(issue.text)}</div>
+      <div class="queue-row-footer">
+        <span class="q-dept">${esc(poc.dept)} · ${esc(poc.div)}</span>
+        <span class="q-age">${getIssueAge(issue.date)}</span>
+        <span class="q-sla ${sla.cls}">${sla.label}</span>
+      </div>
+    </div>
+    <div class="queue-row-actions">
+      <div class="q-status-dot"></div>
+    </div>
+  </div>`;
+}
+
+function renderDetailPanel(issue) {
+  if (!issue) {
+    document.getElementById("detail-pane").innerHTML =
+      `<div class="detail-empty"><div class="detail-empty-icon">⬅</div><div class="detail-empty-text">Select an issue to view details</div></div>`;
+    return;
+  }
+
+  const status = getStatus(issue.id);
+  const sla = getSLAStatus(issue);
+  const poc = POC_DIRECTORY[issue.category] || POC_DIRECTORY.Other;
+  const sevLabel = { high: "High Risk", medium: "Medium", low: "Low" }[issue.severity] || issue.severity;
+  const statusOpts = STATUS_OPTIONS.map(o =>
+    `<option value="${o.value}"${status === o.value ? " selected" : ""}>${o.label}</option>`
+  ).join("");
+  const statusClass = `s-${status}`;
+
+  document.getElementById("detail-pane").innerHTML = `
+    <div class="detail-header">
+      <div class="detail-badges">
+        <span class="detail-cat">${esc(issue.category)}</span>
+        <span class="detail-sev detail-sev-${esc(issue.severity)}">${sevLabel}</span>
+        <span class="detail-sla-badge ${sla.cls}">${sla.label}</span>
+      </div>
+      <div class="detail-title">${esc(issue.text.length > 120 ? issue.text.slice(0, 120) + "…" : issue.text)}</div>
+    </div>
+    <div class="detail-body">
+
+      <div>
+        <div class="detail-section-label">Full complaint</div>
+        <div class="detail-full-text">${esc(issue.text)}</div>
+      </div>
+
+      <div class="detail-meta-grid">
+        <div class="detail-meta-item">
+          <div class="detail-section-label">Area</div>
+          <div class="detail-meta-val">📍 ${esc(issue.area)}</div>
+        </div>
+        <div class="detail-meta-item">
+          <div class="detail-section-label">Department</div>
+          <div class="detail-meta-val">${esc(poc.dept)} · ${esc(poc.div)}</div>
+        </div>
+        <div class="detail-meta-item">
+          <div class="detail-section-label">Age</div>
+          <div class="detail-meta-val">${getIssueAge(issue.date)}</div>
+        </div>
+        <div class="detail-meta-item">
+          <div class="detail-section-label">SLA</div>
+          <div class="detail-meta-val">${poc.tat}h TAT</div>
+        </div>
+        <div class="detail-meta-item">
+          <div class="detail-section-label">Engagement</div>
+          <div class="detail-meta-val">❤️ ${issue.likes || 0} &nbsp; 🔁 ${issue.retweets || 0}</div>
+        </div>
+        <div class="detail-meta-item">
+          <div class="detail-section-label">Author</div>
+          <div class="detail-meta-val">${esc(issue.author || "—")}</div>
+        </div>
+        ${issue.clusterCount > 1 ? `
+        <div class="detail-meta-item" style="grid-column:1/-1">
+          <div class="detail-section-label">Related reports</div>
+          <div class="detail-meta-val">${issue.clusterCount} complaints in same area &amp; category</div>
+        </div>` : ""}
+        ${issue.source_url ? `
+        <div class="detail-meta-item" style="grid-column:1/-1">
+          <div class="detail-section-label">Source</div>
+          <div class="detail-meta-val"><a href="${esc(issue.source_url)}" target="_blank" rel="noopener">View original tweet ↗</a></div>
+        </div>` : ""}
+      </div>
+
+      <div class="detail-actions">
+        <div class="detail-status-row">
+          <span class="detail-status-label">Status</span>
+          <select class="status-select ${statusClass}" id="detail-status-select" data-issue-id="${esc(String(issue.id))}">${statusOpts}</select>
+        </div>
+        <a class="btn-assign" href="${buildEmailLink(issue)}">
+          📧 Assign to ${esc(poc.dept)}
+        </a>
+        ${issue.source_url ? `<a class="btn-source" href="${esc(issue.source_url)}" target="_blank" rel="noopener">Open source tweet ↗</a>` : ""}
+      </div>
+
+    </div>
+  `;
+
+  const sel = document.getElementById("detail-status-select");
+  if (sel) {
+    sel.addEventListener("change", e => {
+      const id = e.target.dataset.issueId;
+      const val = e.target.value;
+      setStatus(id, val);
+      sel.className = `status-select s-${val}`;
+      // Update queue row dot
+      const row = document.querySelector(`.queue-row[data-id="${CSS.escape(id)}"]`);
+      if (row) {
+        row.dataset.status = val;
+        row.className = row.className.replace(/q-status-\S+/, `q-status-${val}`);
+      }
+      renderKPIs(allIssues);
+    });
+  }
+}
+
+// ── Clustering ─────────────────────────────────────────────────────
 
 function getClusteredIssues(issues) {
   const groups = {};
@@ -371,35 +494,29 @@ function getClusteredIssues(issues) {
     if (!groups[key]) groups[key] = [];
     groups[key].push(issue);
   }
-  const sevOrder = { high: 0, medium: 1, low: 2 };
-  return Object.values(groups)
-    .map(group => {
-      const lead = [...group].sort((a, b) =>
-        (b.likes + b.retweets) - (a.likes + a.retweets)
-      )[0];
-      return { ...lead, clusterCount: group.length };
-    })
-    .sort((a, b) =>
-      sevOrder[a.severity] - sevOrder[b.severity] ||
+  return Object.values(groups).map(group => {
+    const lead = [...group].sort((a, b) =>
       (b.likes + b.retweets) - (a.likes + a.retweets)
-    );
+    )[0];
+    return { ...lead, clusterCount: group.length };
+  });
 }
 
+// ── SLA & Age ──────────────────────────────────────────────────────
+
 function getIssueAge(dateStr) {
-  const diffMs = Date.now() - new Date(dateStr).getTime();
-  const diffH  = Math.floor(diffMs / 36e5);
+  const diffH = Math.floor((Date.now() - new Date(dateStr).getTime()) / 36e5);
   if (diffH < 1)  return "just now";
   if (diffH < 24) return `${diffH}h ago`;
-  const diffD = Math.floor(diffH / 24);
-  return `${diffD}d ago`;
+  return `${Math.floor(diffH / 24)}d ago`;
 }
 
 function getSLAStatus(issue) {
   const poc = POC_DIRECTORY[issue.category] || POC_DIRECTORY.Other;
   const elapsedH = (Date.now() - new Date(issue.date).getTime()) / 36e5;
   const pct = elapsedH / poc.tat;
-  if (pct >= 1)    return { cls: "sla-overdue",  label: `Overdue by ${Math.round(elapsedH - poc.tat)}h` };
-  if (pct >= 0.75) return { cls: "sla-warning",  label: `${Math.round(poc.tat - elapsedH)}h left` };
+  if (pct >= 1)    return { cls: "sla-overdue", label: `Overdue ${Math.round(elapsedH - poc.tat)}h` };
+  if (pct >= 0.75) return { cls: "sla-warning", label: `${Math.round(poc.tat - elapsedH)}h left` };
   return               { cls: "sla-ok",       label: `${Math.round(poc.tat - elapsedH)}h left` };
 }
 
@@ -433,84 +550,7 @@ function buildEmailLink(issue) {
   return `mailto:${poc.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
 
-function issueCard(issue) {
-  const status = getStatus(issue.id);
-  const sevLabel = { high: "🔴 High", medium: "🟡 Medium", low: "🟢 Low" }[issue.severity] || issue.severity;
-  const statusOpts = STATUS_OPTIONS.map(o =>
-    `<option value="${o.value}"${status === o.value ? " selected" : ""}>${o.label}</option>`
-  ).join("");
-  const clusterBadge = issue.clusterCount > 1
-    ? `<span class="cluster-badge">${issue.clusterCount} reports</span>` : "";
-  const sla = getSLAStatus(issue);
-  const poc = POC_DIRECTORY[issue.category] || POC_DIRECTORY.Other;
-
-  return `
-  <div class="issue-card sev-${issue.severity}" data-id="${esc(issue.id)}" data-status="${esc(status)}">
-    <div class="card-top">
-      <div class="card-header">
-        <span class="category-tag">${esc(issue.category)}</span>
-        <div class="card-badges">
-          ${clusterBadge}
-          <span class="severity-badge">${sevLabel}</span>
-          <span class="sla-badge ${sla.cls}">${sla.label}</span>
-        </div>
-      </div>
-      <p class="card-text">${esc(issue.text)}</p>
-    </div>
-    <div class="card-bottom">
-      <div class="card-meta">
-        <span class="card-area">📍 ${esc(issue.area)}</span>
-        <span class="card-engagement">
-          <span>❤️ ${issue.likes || 0}</span>
-          <span>🔁 ${issue.retweets || 0}</span>
-        </span>
-        <span class="card-date" title="${formatDate(issue.date)}">${getIssueAge(issue.date)}</span>
-      </div>
-      <div class="card-actions">
-        <select class="status-select" data-issue-id="${esc(issue.id)}">${statusOpts}</select>
-        <a class="email-btn" href="${buildEmailLink(issue)}" title="Send to ${poc.dept} (${poc.email})">
-          📧 Assign
-        </a>
-        <a class="tweet-link" href="${esc(issue.source_url || "#")}" target="_blank" rel="noopener noreferrer">
-          Tweet ↗
-        </a>
-      </div>
-    </div>
-  </div>`;
-}
-
-// ── Chart ─────────────────────────────────────────────────────
-
-function renderChart(issues) {
-  const counts = countBy(issues, "category");
-  const labels = Object.keys(counts).sort((a, b) => counts[b] - counts[a]);
-  const values = labels.map(l => counts[l]);
-  const colors = labels.map(l => CATEGORY_COLORS[l] || CATEGORY_COLORS.Other);
-
-  const ctx = document.getElementById("categoryChart").getContext("2d");
-  if (chart) chart.destroy();
-  chart = new Chart(ctx, {
-    type: "bar",
-    data: {
-      labels,
-      datasets: [{ label: "Issues", data: values, backgroundColor: colors, borderRadius: 4, borderSkipped: false }],
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: {
-        legend: { display: false },
-        tooltip: { callbacks: { label: ctx => ` ${ctx.raw} issue${ctx.raw !== 1 ? "s" : ""}` } },
-      },
-      scales: {
-        y: { beginAtZero: true, ticks: { stepSize: 1, font: { size: 11 } }, grid: { color: "#e2e8f0" } },
-        x: { ticks: { font: { size: 11 } }, grid: { display: false } },
-      },
-    },
-  });
-}
-
-// ── Map ───────────────────────────────────────────────────────
+// ── Map ────────────────────────────────────────────────────────────
 
 function renderMap(issues) {
   if (!mapInitialized) {
@@ -527,11 +567,9 @@ function renderMap(issues) {
 
   issues.forEach(issue => {
     const coords = AREA_COORDS[issue.area] || AREA_COORDS["Bangalore"];
-    // Jitter slightly so overlapping markers don't fully stack
     const jitter = () => (Math.random() - 0.5) * 0.008;
     const latLng = [coords[0] + jitter(), coords[1] + jitter()];
-
-    const color = SEV_COLORS[issue.severity] || "#94a3b8";
+    const color = SEV_COLORS[issue.severity] || "#9e9487";
     const marker = L.circleMarker(latLng, {
       radius: issue.severity === "high" ? 10 : issue.severity === "medium" ? 7 : 5,
       fillColor: color,
@@ -540,24 +578,21 @@ function renderMap(issues) {
       opacity: 1,
       fillOpacity: 0.85,
     });
-
-    const engagement = (issue.likes || 0) + (issue.retweets || 0);
-    const sevLabel = { high: "🔴 High", medium: "🟡 Medium", low: "🟢 Low" }[issue.severity] || "";
+    const sevLabel = { high: "High", medium: "Medium", low: "Low" }[issue.severity] || "";
     marker.bindPopup(`
       <div style="max-width:240px;font-family:system-ui,sans-serif;font-size:13px">
-        <div style="font-weight:700;color:#1a3a5c;margin-bottom:4px">${esc(issue.category)} — ${esc(issue.area)}</div>
-        <div style="color:#1e293b;line-height:1.45;margin-bottom:6px">${esc(issue.text)}</div>
-        <div style="color:#94a3b8;font-size:11px">${sevLabel} · ❤️ ${issue.likes || 0} 🔁 ${issue.retweets || 0} · ${formatDate(issue.date)}</div>
-        ${issue.source_url ? `<a href="${esc(issue.source_url)}" target="_blank" style="color:#2563a8;font-weight:600;font-size:12px">View Tweet ↗</a>` : ""}
+        <div style="font-weight:700;color:#1f4d3a;margin-bottom:4px">${esc(issue.category)} — ${esc(issue.area)}</div>
+        <div style="color:#202124;line-height:1.45;margin-bottom:6px">${esc(issue.text)}</div>
+        <div style="color:#9e9487;font-size:11px">${sevLabel} · ❤️ ${issue.likes || 0} 🔁 ${issue.retweets || 0} · ${formatDate(issue.date)}</div>
+        ${issue.source_url ? `<a href="${esc(issue.source_url)}" target="_blank" style="color:#31572c;font-weight:600;font-size:12px">View Tweet ↗</a>` : ""}
       </div>
     `);
-
     marker.addTo(leafletMap);
     mapMarkers.push(marker);
   });
 }
 
-// ── Department View ───────────────────────────────────────────
+// ── Departments ────────────────────────────────────────────────────
 
 function renderDepartments(issues) {
   const grid = document.getElementById("dept-grid");
@@ -568,10 +603,10 @@ function renderDepartments(issues) {
 
   grid.querySelectorAll(".dept-filter-link").forEach(btn => {
     btn.addEventListener("click", () => {
-      const cat = btn.dataset.filterCat;
-      switchTab("feed");
-      const chip = document.querySelector(`.chip[data-filter="category"][data-value="${cat}"]`);
-      if (chip) chip.click();
+      activeFilters.dept = btn.dataset.filterDept;
+      document.getElementById("dept-filter").value = btn.dataset.filterDept;
+      switchTab("queue");
+      applyFilters();
     });
   });
 }
@@ -597,15 +632,13 @@ function deptCard(name, info, issues) {
     .slice(0, 4);
 
   const issueRows = issues.length === 0
-    ? `<div class="dept-no-issues">No issues in current filter</div>`
+    ? `<div class="dept-no-issues">No issues in current view</div>`
     : topIssues.map(i => `
         <div class="dept-issue-row">
           <span class="dept-issue-cat">${esc(i.category)}</span>
           <span class="dept-issue-text" title="${esc(i.text)}">${esc(i.text)}</span>
           <span class="dept-issue-sev" style="color:${SEV_COLORS[i.severity]}">${i.severity === "high" ? "🔴" : i.severity === "medium" ? "🟡" : "🟢"}</span>
         </div>`).join("");
-
-  const filterCat = info.categories[0];
 
   return `
   <div class="dept-card">
@@ -620,81 +653,112 @@ function deptCard(name, info, issues) {
     <div class="dept-severity-row">${sevRow}</div>
     <div class="dept-issues-label">Top Issues</div>
     ${issueRows}
-    <button class="dept-filter-link" data-filter-cat="${esc(filterCat)}">
-      See all ${esc(name)} issues in feed →
+    <button class="dept-filter-link" data-filter-dept="${esc(name)}">
+      See all ${esc(name)} issues →
     </button>
   </div>`;
 }
 
-// ── Coming Soon ───────────────────────────────────────────────
+// ── Analytics ──────────────────────────────────────────────────────
 
-function renderComingSoon() {
-  const UPCOMING = [
-    {
-      icon: "📡",
-      title: "Multi-Channel Monitoring",
-      desc: "Pull civic complaints from Reddit r/bangalore, Facebook community groups, and other platforms — not just Twitter.",
-      eta: "Phase 7",
-    },
-    {
-      icon: "🤖",
-      title: "Twitter Clarification Bot",
-      desc: "When a complaint lacks enough detail, the bot replies on the same thread asking for area, ward, or photo. Fully automated.",
-      eta: "Phase 5",
-    },
-    {
-      icon: "🔄",
-      title: "Twitter Close-Loop",
-      desc: "When an official marks an issue Resolved, an automated reply is posted on the original tweet thread so the citizen knows it's done.",
-      eta: "Phase 5",
-    },
-    {
-      icon: "💬",
-      title: "WhatsApp Alerts",
-      desc: "Daily digest of top issues sent directly to officials via WhatsApp Business API — high open rates, no app needed.",
-      eta: "Phase 5",
-    },
-    {
-      icon: "🗂",
-      title: "PDF Reports for Meetings",
-      desc: "One-click PDF export formatted for council meetings and presentations — issues, maps, severity breakdown, all on one page.",
-      eta: "Phase 5",
-    },
-    {
-      icon: "🌐",
-      title: "Citizen-Facing Portal",
-      desc: "A public view where citizens can see if their reported issue was acknowledged and track its progress in real time.",
-      eta: "Phase 6",
-    },
-    {
-      icon: "📊",
-      title: "Resolution Analytics",
-      desc: "Track how long issues spend in each status, SLA compliance rates by department, and which areas are getting the fastest response.",
-      eta: "Phase 4",
-    },
-    {
-      icon: "🏙",
-      title: "Expand to Other Cities",
-      desc: "Configurable keywords and area maps for any Indian city — Mumbai, Delhi, Chennai, Hyderabad. Same pipeline, new config.",
-      eta: "Phase 7",
-    },
-  ];
+function renderAnalytics(issues) {
+  renderChart(issues);
 
-  const grid = document.getElementById("coming-soon-grid");
-  if (!grid) return;
-  grid.innerHTML = UPCOMING.map(f => `
-    <div class="cs-card">
-      <div class="cs-icon">${f.icon}</div>
-      <div class="cs-body">
-        <div class="cs-title">${f.title}</div>
-        <div class="cs-desc">${f.desc}</div>
-      </div>
-      <span class="cs-eta">${f.eta}</span>
-    </div>
-  `).join("");
+  // Severity breakdown bars
+  const high   = issues.filter(i => i.severity === "high").length;
+  const medium = issues.filter(i => i.severity === "medium").length;
+  const low    = issues.filter(i => i.severity === "low").length;
+  const total  = issues.length || 1;
+
+  document.getElementById("sev-breakdown").innerHTML = [
+    { label: "High",   count: high,   cls: "high" },
+    { label: "Medium", count: medium, cls: "medium" },
+    { label: "Low",    count: low,    cls: "low" },
+  ].map(s => `
+    <div class="sev-bar-row">
+      <div class="sev-bar-label">${s.label}</div>
+      <div class="sev-bar-track"><div class="sev-bar-fill sev-bar-fill-${s.cls}" style="width:${(s.count/total*100).toFixed(1)}%"></div></div>
+      <div class="sev-bar-count">${s.count}</div>
+    </div>`).join("");
+
+  // SLA table by dept
+  const now = Date.now();
+  const deptStats = {};
+  for (const [dName, dInfo] of Object.entries(DEPARTMENT_MAP)) {
+    const di = issues.filter(i => dInfo.categories.includes(i.category));
+    const od = di.filter(i => {
+      if (getStatus(i.id) === "resolved") return false;
+      const poc = POC_DIRECTORY[i.category] || POC_DIRECTORY.Other;
+      return (now - new Date(i.date).getTime()) / 36e5 >= poc.tat;
+    }).length;
+    deptStats[dName] = { total: di.length, overdue: od, resolved: di.filter(i => getStatus(i.id) === "resolved").length };
+  }
+
+  const tableRows = Object.entries(deptStats).map(([d, s]) =>
+    `<tr>
+      <td>${esc(d)}</td>
+      <td>${s.total}</td>
+      <td class="sla-overdue-count">${s.overdue}</td>
+      <td>${s.resolved}</td>
+      <td>${s.total > 0 ? ((s.resolved / s.total) * 100).toFixed(0) + "%" : "—"}</td>
+    </tr>`
+  ).join("");
+
+  document.getElementById("sla-table").innerHTML = `
+    <table class="sla-table">
+      <thead><tr><th>Department</th><th>Total</th><th>Overdue</th><th>Resolved</th><th>Resolution %</th></tr></thead>
+      <tbody>${tableRows}</tbody>
+    </table>`;
 }
 
-// ── Status Tracking (localStorage) ───────────────────────────
+function renderChart(issues) {
+  const ctx = document.getElementById("categoryChart");
+  if (!ctx) return;
+  const counts = countBy(issues, "category");
+  const labels = Object.keys(counts).sort((a, b) => counts[b] - counts[a]);
+  const values = labels.map(l => counts[l]);
+  const colors = labels.map(l => CATEGORY_COLORS[l] || CATEGORY_COLORS.Other);
+
+  if (chart) chart.destroy();
+  chart = new Chart(ctx.getContext("2d"), {
+    type: "bar",
+    data: {
+      labels,
+      datasets: [{ label: "Issues", data: values, backgroundColor: colors, borderRadius: 4, borderSkipped: false }],
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: c => ` ${c.raw} issue${c.raw !== 1 ? "s" : ""}` } },
+      },
+      scales: {
+        y: { beginAtZero: true, ticks: { stepSize: 1, font: { size: 11 } }, grid: { color: "#e2dbd0" } },
+        x: { ticks: { font: { size: 11 } }, grid: { display: false } },
+      },
+    },
+  });
+}
+
+// ── Role Banner ────────────────────────────────────────────────────
+
+function renderRoleBanner(role) {
+  const banner = document.getElementById("role-banner");
+  if (!banner) return;
+  const cats = (ROLE_DEPARTMENTS[role] || []).join(" · ");
+  banner.innerHTML = `
+    <span class="role-banner-icon">👤</span>
+    <span class="role-banner-text">
+      <strong>${ROLE_LABELS[role]}</strong>
+      <span class="role-banner-cats">Showing: ${cats}</span>
+    </span>
+    <a class="role-banner-clear" href="${window.location.pathname}">Clear role view ×</a>
+  `;
+  banner.classList.remove("hidden");
+}
+
+// ── Status (localStorage) ──────────────────────────────────────────
 
 function getStatus(id) {
   return localStorage.getItem(`gw_status_${id}`) || "open";
@@ -704,21 +768,14 @@ function setStatus(id, value) {
   localStorage.setItem(`gw_status_${id}`, value);
 }
 
-// ── Export CSV ────────────────────────────────────────────────
+// ── Export CSV ─────────────────────────────────────────────────────
 
 function exportCSV() {
   const issues = getFiltered();
   const headers = ["ID", "Date", "Category", "Area", "Severity", "Status", "Likes", "Retweets", "Author", "Tweet Text", "URL"];
   const rows = issues.map(i => [
-    i.id,
-    i.date || "",
-    i.category,
-    i.area,
-    i.severity,
-    getStatus(i.id),
-    i.likes || 0,
-    i.retweets || 0,
-    i.author || "",
+    i.id, i.date || "", i.category, i.area, i.severity, getStatus(i.id),
+    i.likes || 0, i.retweets || 0, i.author || "",
     `"${(i.text || "").replace(/"/g, '""')}"`,
     i.source_url || "",
   ]);
@@ -734,25 +791,17 @@ function exportCSV() {
   URL.revokeObjectURL(url);
 }
 
-// ── Helpers ───────────────────────────────────────────────────
+// ── Helpers ────────────────────────────────────────────────────────
 
 function countBy(arr, key) {
   return arr.reduce((acc, item) => {
-    acc[item[key]] = (acc[item[key]] || 0) + 1;
-    return acc;
+    acc[item[key]] = (acc[item[key]] || 0) + 1; return acc;
   }, {});
-}
-
-function topKey(obj) {
-  return Object.entries(obj).sort((a, b) => b[1] - a[1])[0]?.[0] || null;
 }
 
 function esc(str) {
   return String(str ?? "")
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;");
+    .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 }
 
 function formatDate(iso) {
@@ -763,13 +812,12 @@ function formatDate(iso) {
 }
 
 function setLastUpdated() {
-  const timestamps = allIssues.map(i => i.date ? new Date(i.date).getTime() : 0).filter(Boolean);
-  if (!timestamps.length) return;
-  const latest = new Date(Math.max(...timestamps));
+  const ts = allIssues.map(i => i.date ? new Date(i.date).getTime() : 0).filter(Boolean);
+  if (!ts.length) return;
   document.getElementById("last-updated").textContent =
-    "Latest: " + latest.toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" });
+    "Latest: " + new Date(Math.max(...ts)).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" });
 }
 
-// ── Start ─────────────────────────────────────────────────────
+// ── Start ──────────────────────────────────────────────────────────
 
 document.addEventListener("DOMContentLoaded", init);

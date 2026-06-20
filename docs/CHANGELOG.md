@@ -5,6 +5,45 @@ Format: `[Date] - What changed and why`
 
 ---
 
+## [2026-06-20] — Dashboard Redesign: Public Ledger Theme (Option 3)
+
+### Changed
+
+**`dashboard/index.html` — full layout restructure**
+
+Complete rewrite from a report-style card grid to a civic operations queue:
+
+- **Header**: Dark forest-green (`#1f4d3a`) brand bar with Source Serif 4 wordmark, data freshness badge, and Export CSV button
+- **KPI row**: 5 operational cards — Overdue SLA, High Risk Open, New Today, Unassigned, Resolved This Week (replaces old 4-stat row)
+- **Saved views toolbar**: Chips for All / Urgent / Overdue / Unassigned / Resolved (replaces prominent filter sidebar)
+- **Filter bar**: Compact inline dropdowns (Department, Category, Area) + search field
+- **Tab navigation**: Queue · Map · Departments · Analytics (removed "Coming Soon" from main nav)
+- **Queue + Detail layout**: Two-column — left is a priority-sorted row list, right is a sticky detail panel for the selected issue
+- **Analytics tab**: Bar chart (moved from always-visible) + severity breakdown bars + SLA performance table by department
+
+**`dashboard/css/styles.css` — Public Ledger design system**
+
+Complete rewrite using the Option 3 "Public Ledger" palette:
+
+- **Background**: `#f8f5ef` warm document canvas
+- **Panels**: `#fffdf8` warm off-white surfaces
+- **Brand/action**: `#1f4d3a` / `#31572c` deep forest green
+- **Accent/danger**: `#9a3412` / `#991b1b` rust and deep red
+- **Typography**: Source Sans 3 (body) + Source Serif 4 (headings, brand, KPI numbers)
+- **Queue rows**: Coloured 4px left stripe per severity; priority/category/area/dept/SLA/age visible at a glance
+- **Detail panel**: Sticky side panel with full complaint text, metadata grid, status selector, Assign button, source link
+- **Analytics cards**: Severity bar chart, breakdown bars, SLA-by-department table
+
+**`dashboard/js/app.js` — queue-first logic**
+
+- Saved views filtering: Urgent (high + open), Overdue (SLA elapsed), Unassigned (open), Resolved
+- Queue sorted: overdue first → severity → engagement
+- Detail panel renders and updates on row click; status changes reflect immediately in queue dot and KPIs
+- Analytics tab: severity breakdown + per-department SLA table
+- All existing features preserved: status tracking (localStorage), CSV export, map, departments, clustering, email assign, role URL params
+
+---
+
 ## [2026-05-20] — Stricter LLM Filter + Clean Design Overhaul
 
 ### Fixed
