@@ -1,0 +1,1586 @@
+{
+  "basavanagudi": {
+    "ward_name": "Basavanagudi",
+    "ward_no": "154",
+    "division": "Basavanagudi",
+    "zone": "South Zone",
+    "jhi_name": "Balakrishna.N",
+    "jhi_mobile": "9901110999"
+  },
+  "hanumathnagar": {
+    "ward_name": "Hanumathnagar",
+    "ward_no": "155",
+    "division": "Basavanagudi",
+    "zone": "South Zone",
+    "jhi_name": "Lavanya Keerthi.T.R",
+    "jhi_mobile": "9740719640"
+  },
+  "srinagar": {
+    "ward_name": "Srinagar",
+    "ward_no": "156",
+    "division": "Basavanagudi",
+    "zone": "South Zone",
+    "jhi_name": "Meena.R",
+    "jhi_mobile": "9606243352"
+  },
+  "girinagar": {
+    "ward_name": "Girinagar",
+    "ward_no": "162",
+    "division": "Basavanagudi",
+    "zone": "South Zone",
+    "jhi_name": "Srilakshmi",
+    "jhi_mobile": "8123994199"
+  },
+  "kathriguppe": {
+    "ward_name": "Kathriguppe",
+    "ward_no": "163",
+    "division": "Basavanagudi",
+    "zone": "South Zone",
+    "jhi_name": "Ravi Kumar.S",
+    "jhi_mobile": "9108160095"
+  },
+  "vidyapeeta": {
+    "ward_name": "VidyaPeeta",
+    "ward_no": "164",
+    "division": "Basavanagudi",
+    "zone": "South Zone",
+    "jhi_name": "Lakshmi s havalkod",
+    "jhi_mobile": "8749067848"
+  },
+  "lakkasandra": {
+    "ward_name": "Lakkasandra",
+    "ward_no": "146",
+    "division": "BTM Layout",
+    "zone": "South Zone",
+    "jhi_name": "vijay",
+    "jhi_mobile": "9738721476"
+  },
+  "adugodi": {
+    "ward_name": "Adugodi",
+    "ward_no": "147",
+    "division": "BTM Layout",
+    "zone": "South Zone",
+    "jhi_name": "Durgaprasad",
+    "jhi_mobile": "8217628076"
+  },
+  "ejeepura": {
+    "ward_name": "Ejeepura",
+    "ward_no": "148",
+    "division": "BTM Layout",
+    "zone": "South Zone",
+    "jhi_name": "Mutturaj",
+    "jhi_mobile": "9740051536"
+  },
+  "koramangala": {
+    "ward_name": "Koramangala",
+    "ward_no": "151",
+    "division": "BTM Layout",
+    "zone": "South Zone",
+    "jhi_name": "Prasad",
+    "jhi_mobile": "8884241001"
+  },
+  "suddugunte palya": {
+    "ward_name": "Suddugunte Palya",
+    "ward_no": "152",
+    "division": "BTM Layout",
+    "zone": "South Zone",
+    "jhi_name": "Ajaykumar",
+    "jhi_mobile": "9632222304"
+  },
+  "madiwala": {
+    "ward_name": "Madiwala",
+    "ward_no": "172",
+    "division": "BTM Layout",
+    "zone": "South Zone",
+    "jhi_name": "Mounesh",
+    "jhi_mobile": "9620391270"
+  },
+  "chikkasandra": {
+    "ward_name": "Chikkasandra",
+    "ward_no": "173",
+    "division": "BTM Layout",
+    "zone": "South Zone",
+    "jhi_name": "Arvind",
+    "jhi_mobile": "8660073782"
+  },
+  "b.t.m.layout": {
+    "ward_name": "B.T.M.Layout",
+    "ward_no": "176",
+    "division": "BTM Layout",
+    "zone": "South Zone",
+    "jhi_name": "Prahallad",
+    "jhi_mobile": "9972320005"
+  },
+  "sudham nagar": {
+    "ward_name": "Sudham Nagar",
+    "ward_no": "118",
+    "division": "Chikpete",
+    "zone": "South Zone",
+    "jhi_name": "Veeraiah",
+    "jhi_mobile": "9844859560"
+  },
+  "dharmaraya swamy temple": {
+    "ward_name": "Dharmaraya Swamy Temple",
+    "ward_no": "119",
+    "division": "Chikpete",
+    "zone": "South Zone",
+    "jhi_name": "Nagaraju.N",
+    "jhi_mobile": "8073493562"
+  },
+  "sunkenahalli": {
+    "ward_name": "Sunkenahalli",
+    "ward_no": "142",
+    "division": "Chikpete",
+    "zone": "South Zone",
+    "jhi_name": "Suresh",
+    "jhi_mobile": "9886552225"
+  },
+  "vishweshwarapuram": {
+    "ward_name": "Vishweshwarapuram",
+    "ward_no": "143",
+    "division": "Chikpete",
+    "zone": "South Zone",
+    "jhi_name": "Narsimha",
+    "jhi_mobile": "8660658637"
+  },
+  "siddapura": {
+    "ward_name": "Siddapura",
+    "ward_no": "144",
+    "division": "Chikpete",
+    "zone": "South Zone",
+    "jhi_name": "Surekha",
+    "jhi_mobile": "9686216698"
+  },
+  "hombegowda nagar": {
+    "ward_name": "Hombegowda Nagar",
+    "ward_no": "145",
+    "division": "Chikpete",
+    "zone": "South Zone",
+    "jhi_name": "Umashankar.R",
+    "jhi_mobile": "9945698504"
+  },
+  "jayanagar": {
+    "ward_name": "Jayanagar",
+    "ward_no": "153",
+    "division": "Chikpete",
+    "zone": "South Zone",
+    "jhi_name": "Ravindra Ejeri",
+    "jhi_mobile": "8618583654"
+  },
+  "pattabhirama nagar": {
+    "ward_name": "Pattabhirama Nagar",
+    "ward_no": "168",
+    "division": "Jayanagar",
+    "zone": "South Zone",
+    "jhi_name": "kavya.S",
+    "jhi_mobile": "7760276356"
+  },
+  "byrasandra": {
+    "ward_name": "Byrasandra",
+    "ward_no": "169",
+    "division": "Jayanagar",
+    "zone": "South Zone",
+    "jhi_name": "Ramesh.S",
+    "jhi_mobile": "9844428969"
+  },
+  "jayanagar east": {
+    "ward_name": "Jayanagar East",
+    "ward_no": "170",
+    "division": "Jayanagar",
+    "zone": "South Zone",
+    "jhi_name": "Goutham,Y",
+    "jhi_mobile": "7760598281"
+  },
+  "guruppanapalya": {
+    "ward_name": "Guruppanapalya",
+    "ward_no": "171",
+    "division": "Jayanagar",
+    "zone": "South Zone",
+    "jhi_name": "Lakshmikanth.H",
+    "jhi_mobile": "7019785122"
+  },
+  "j.p nagar": {
+    "ward_name": "J.P Nagar",
+    "ward_no": "177",
+    "division": "Jayanagar",
+    "zone": "South Zone",
+    "jhi_name": "Kalyan Mohan.G",
+    "jhi_mobile": "9741734734"
+  },
+  "sarakki": {
+    "ward_name": "Sarakki",
+    "ward_no": "178",
+    "division": "Jayanagar",
+    "zone": "South Zone",
+    "jhi_name": "Manjunath.AC",
+    "jhi_mobile": "9916190925"
+  },
+  "shakambari nagar": {
+    "ward_name": "Shakambari Nagar",
+    "ward_no": "179",
+    "division": "Jayanagar",
+    "zone": "South Zone",
+    "jhi_name": "Hemanth Kumar.R",
+    "jhi_mobile": "9900117252"
+  },
+  "hosakerehalli": {
+    "ward_name": "Hosakerehalli",
+    "ward_no": "161",
+    "division": "PADMANABHNAGAR",
+    "zone": "South Zone",
+    "jhi_name": "Madhu Shree",
+    "jhi_mobile": "9380550485"
+  },
+  "ganesh mandira": {
+    "ward_name": "Ganesh Mandira",
+    "ward_no": "165",
+    "division": "PADMANABHNAGAR",
+    "zone": "South Zone",
+    "jhi_name": "Pavan Kumar",
+    "jhi_mobile": "8147400515"
+  },
+  "karisandra": {
+    "ward_name": "Karisandra",
+    "ward_no": "166",
+    "division": "PADMANABHNAGAR",
+    "zone": "South Zone",
+    "jhi_name": "Karthik",
+    "jhi_mobile": "9141042118"
+  },
+  "yadiyur": {
+    "ward_name": "Yadiyur",
+    "ward_no": "167",
+    "division": "PADMANABHNAGAR",
+    "zone": "South Zone",
+    "jhi_name": "Parappaswamy prasanna",
+    "jhi_mobile": "7996262004"
+  },
+  "banashankari temple ward": {
+    "ward_name": "Banashankari Temple Ward",
+    "ward_no": "180",
+    "division": "PADMANABHNAGAR",
+    "zone": "South Zone",
+    "jhi_name": "Chandan J",
+    "jhi_mobile": "8971021661"
+  },
+  "kumaraswamy layout": {
+    "ward_name": "Kumaraswamy Layout",
+    "ward_no": "181",
+    "division": "PADMANABHNAGAR",
+    "zone": "South Zone",
+    "jhi_name": "Bharath",
+    "jhi_mobile": "9945457292"
+  },
+  "padmanabhanagar": {
+    "ward_name": "Padmanabhanagar",
+    "ward_no": "182",
+    "division": "PADMANABHNAGAR",
+    "zone": "South Zone",
+    "jhi_name": "Shankar B Singh",
+    "jhi_mobile": "9591593599"
+  },
+  "chikkakallasandra": {
+    "ward_name": "Chikkakallasandra",
+    "ward_no": "183",
+    "division": "PADMANABHNAGAR",
+    "zone": "South Zone",
+    "jhi_name": "ANITHA",
+    "jhi_mobile": "9916694464"
+  },
+  "kempapura agrahara": {
+    "ward_name": "Kempapura Agrahara",
+    "ward_no": "122",
+    "division": "Vijay Nagar",
+    "zone": "South Zone",
+    "jhi_name": "Ramkumar D",
+    "jhi_mobile": "9535656206"
+  },
+  "vijaynagara": {
+    "ward_name": "Vijaynagara",
+    "ward_no": "123",
+    "division": "Vijay Nagar",
+    "zone": "South Zone",
+    "jhi_name": "Sapna.M",
+    "jhi_mobile": "8123065854"
+  },
+  "hosahalli": {
+    "ward_name": "Hosahalli",
+    "ward_no": "124",
+    "division": "Vijay Nagar",
+    "zone": "South Zone",
+    "jhi_name": "Savitha C.K.",
+    "jhi_mobile": "9686650537"
+  },
+  "attiguppe": {
+    "ward_name": "Attiguppe",
+    "ward_no": "132",
+    "division": "Vijay Nagar",
+    "zone": "South Zone",
+    "jhi_name": "Vacant",
+    "jhi_mobile": "Vacant"
+  },
+  "hampi nagar": {
+    "ward_name": "Hampi Nagar",
+    "ward_no": "133",
+    "division": "Vijay Nagar",
+    "zone": "South Zone",
+    "jhi_name": "Kavitha K",
+    "jhi_mobile": "9916682657"
+  },
+  "bapuji nagar": {
+    "ward_name": "Bapuji Nagar",
+    "ward_no": "134",
+    "division": "Vijay Nagar",
+    "zone": "South Zone",
+    "jhi_name": "Seema.R",
+    "jhi_mobile": "9632696700"
+  },
+  "gali anjaneya temple": {
+    "ward_name": "Gali Anjaneya Temple",
+    "ward_no": "157",
+    "division": "Vijay Nagar",
+    "zone": "South Zone",
+    "jhi_name": "Muniraju",
+    "jhi_mobile": "7975397605"
+  },
+  "deepanjali nagar": {
+    "ward_name": "Deepanjali Nagar",
+    "ward_no": "158",
+    "division": "Vijay Nagar",
+    "zone": "South Zone",
+    "jhi_name": "Manjunatha H",
+    "jhi_mobile": "8073766472"
+  },
+  "uttarahalli": {
+    "ward_name": "Uttarahalli",
+    "ward_no": "184",
+    "division": "Bengaluru South",
+    "zone": "Bommanahalli Zone",
+    "jhi_name": "Shashi kumar & Krishna N",
+    "jhi_mobile": "9480688484 & 9945522272"
+  },
+  "yalachenahalli": {
+    "ward_name": "Yalachenahalli",
+    "ward_no": "185",
+    "division": "Bengaluru South",
+    "zone": "Bommanahalli Zone",
+    "jhi_name": "Sathish",
+    "jhi_mobile": "9480688485"
+  },
+  "singasandra": {
+    "ward_name": "Singasandra",
+    "ward_no": "191",
+    "division": "Bengaluru South",
+    "zone": "Bommanahalli Zone",
+    "jhi_name": "Kumar D & Amith",
+    "jhi_mobile": "9113670855 & 9731001465"
+  },
+  "begur": {
+    "ward_name": "Begur",
+    "ward_no": "192",
+    "division": "Bengaluru South",
+    "zone": "Bommanahalli Zone",
+    "jhi_name": "Kempaiah & Ashok",
+    "jhi_mobile": "8892920035 & 9738505381"
+  },
+  "gottigere": {
+    "ward_name": "Gottigere",
+    "ward_no": "194",
+    "division": "Bengaluru South",
+    "zone": "Bommanahalli Zone",
+    "jhi_name": "Sharan Basappa & Manjunath",
+    "jhi_mobile": "9611966143 & 8217357323"
+  },
+  "konanakunte": {
+    "ward_name": "Konanakunte",
+    "ward_no": "195",
+    "division": "Bengaluru South",
+    "zone": "Bommanahalli Zone",
+    "jhi_name": "Pruthvi Raj &Sharath.P.M",
+    "jhi_mobile": "8088066737 & 7975399940"
+  },
+  "anajanapura": {
+    "ward_name": "Anajanapura",
+    "ward_no": "196",
+    "division": "Bengaluru South",
+    "zone": "Bommanahalli Zone",
+    "jhi_name": "Nagamani & Chethan",
+    "jhi_mobile": "9036401163 & 8553128980"
+  },
+  "vasanthapura": {
+    "ward_name": "Vasanthapura",
+    "ward_no": "197",
+    "division": "Bengaluru South",
+    "zone": "Bommanahalli Zone",
+    "jhi_name": "Sharath.S & Ganganaiah",
+    "jhi_mobile": "9513235656 & 9741141747"
+  },
+  "h.s.r. layout": {
+    "ward_name": "H.S.R. Layout",
+    "ward_no": "174",
+    "division": "Bommanahalli",
+    "zone": "Bommanahalli Zone",
+    "jhi_name": "Pothalaiah. Y & Vidyadhar & Keerthy",
+    "jhi_mobile": "9731539296 & 8884870421"
+  },
+  "bommanahalli": {
+    "ward_name": "Bommanahalli",
+    "ward_no": "175",
+    "division": "Bommanahalli",
+    "zone": "Bommanahalli Zone",
+    "jhi_name": "Amruth kumar R Nairy / Mohan & Geetha",
+    "jhi_mobile": "8095512808, 9008064113 & 7565768525"
+  },
+  "jaraganahalli": {
+    "ward_name": "Jaraganahalli",
+    "ward_no": "186",
+    "division": "Bommanahalli",
+    "zone": "Bommanahalli Zone",
+    "jhi_name": "Yogesh.M",
+    "jhi_mobile": "9880043724"
+  },
+  "puttenahalli": {
+    "ward_name": "Puttenahalli",
+    "ward_no": "187",
+    "division": "Bommanahalli",
+    "zone": "Bommanahalli Zone",
+    "jhi_name": "Sushma M.S",
+    "jhi_mobile": "7899288567"
+  },
+  "bilekahalli": {
+    "ward_name": "Bilekahalli",
+    "ward_no": "188",
+    "division": "Bommanahalli",
+    "zone": "Bommanahalli Zone",
+    "jhi_name": "Manjunath & Prakash",
+    "jhi_mobile": "7337781372 & 8147476161"
+  },
+  "hongasandra": {
+    "ward_name": "Hongasandra",
+    "ward_no": "189",
+    "division": "Bommanahalli",
+    "zone": "Bommanahalli Zone",
+    "jhi_name": "Adi Narayana & Bhavya G",
+    "jhi_mobile": "8310256051 & 9972812559"
+  },
+  "mangammana palya": {
+    "ward_name": "Mangammana Palya",
+    "ward_no": "190",
+    "division": "Bommanahalli",
+    "zone": "Bommanahalli Zone",
+    "jhi_name": "Hunnur Basha Saheb",
+    "jhi_mobile": "9480688490"
+  },
+  "arakere": {
+    "ward_name": "Arakere",
+    "ward_no": "193",
+    "division": "Bommanahalli",
+    "zone": "Bommanahalli Zone",
+    "jhi_name": "Dileep Nayak C T & Kumar L.S",
+    "jhi_mobile": "9611864215 & 9686490756"
+  },
+  "jakkuru": {
+    "ward_name": "Jakkuru",
+    "ward_no": "5",
+    "division": "Byatarayanapura",
+    "zone": "Yelahanka Zone",
+    "jhi_name": "Guruprasad N & Siddaraju G",
+    "jhi_mobile": "9480688305/8073142636"
+  },
+  "thanisandra": {
+    "ward_name": "Thanisandra",
+    "ward_no": "6",
+    "division": "Byatarayanapura",
+    "zone": "Yelahanka Zone",
+    "jhi_name": "Netravathi B N & Vidya M",
+    "jhi_mobile": "9480688306/9663921763"
+  },
+  "byatarayanapura": {
+    "ward_name": "Byatarayanapura",
+    "ward_no": "7",
+    "division": "Byatarayanapura",
+    "zone": "Yelahanka Zone",
+    "jhi_name": "Aswanth N & Srinivasamurthy M V",
+    "jhi_mobile": "9480688307/9920739645"
+  },
+  "kodigehalli": {
+    "ward_name": "Kodigehalli",
+    "ward_no": "8",
+    "division": "Byatarayanapura",
+    "zone": "Yelahanka Zone",
+    "jhi_name": "Subhramanya Y K",
+    "jhi_mobile": "9480688308"
+  },
+  "dodda bommasandra": {
+    "ward_name": "Dodda bommasandra",
+    "ward_no": "10",
+    "division": "Byatarayanapura",
+    "zone": "Yelahanka Zone",
+    "jhi_name": "Kavitha K G S",
+    "jhi_mobile": "9480688310"
+  },
+  "vidyaranyapura": {
+    "ward_name": "Vidyaranyapura",
+    "ward_no": "9",
+    "division": "Byatarayanapura",
+    "zone": "Yelahanka Zone",
+    "jhi_name": "Soniya R",
+    "jhi_mobile": "9480688309"
+  },
+  "kuvempu nagar": {
+    "ward_name": "Kuvempu nagar",
+    "ward_no": "11",
+    "division": "Byatarayanapura",
+    "zone": "Yelahanka Zone",
+    "jhi_name": "Naveen N",
+    "jhi_mobile": "9480688311"
+  },
+  "kempegowda ward": {
+    "ward_name": "Kempegowda ward",
+    "ward_no": "1",
+    "division": "Yelahanka",
+    "zone": "Yelahanka Zone",
+    "jhi_name": "Manjunatha A",
+    "jhi_mobile": "9480688301"
+  },
+  "chowdeswari ward": {
+    "ward_name": "Chowdeswari ward",
+    "ward_no": "2",
+    "division": "Yelahanka",
+    "zone": "Yelahanka Zone",
+    "jhi_name": "Satish R",
+    "jhi_mobile": "9480688302"
+  },
+  "atturu": {
+    "ward_name": "Atturu",
+    "ward_no": "3",
+    "division": "Yelahanka",
+    "zone": "Yelahanka Zone",
+    "jhi_name": "Dencil & Madhukar L",
+    "jhi_mobile": "9480688303/7019807080"
+  },
+  "yelahanka satellite town": {
+    "ward_name": "Yelahanka satellite town",
+    "ward_no": "4",
+    "division": "Yelahanka",
+    "zone": "Yelahanka Zone",
+    "jhi_name": "Vivek Kumar N L",
+    "jhi_mobile": "9480688304"
+  },
+  "benniganahalli": {
+    "ward_name": "Benniganahalli",
+    "ward_no": "50",
+    "division": "C.V.Raman Nagar",
+    "zone": "East Zone",
+    "jhi_name": "Hanumanthappa B",
+    "jhi_mobile": "8549924117"
+  },
+  "c.v raman nagar": {
+    "ward_name": "C.V Raman Nagar",
+    "ward_no": "57",
+    "division": "C.V.Raman Nagar",
+    "zone": "East Zone",
+    "jhi_name": "Naveen.V",
+    "jhi_mobile": "7892922732"
+  },
+  "new thippasandra": {
+    "ward_name": "New Thippasandra",
+    "ward_no": "58",
+    "division": "C.V.Raman Nagar",
+    "zone": "East Zone",
+    "jhi_name": "Raju.L",
+    "jhi_mobile": "7411212503"
+  },
+  "sarvajna nagar": {
+    "ward_name": "Sarvajna Nagar",
+    "ward_no": "79",
+    "division": "C.V.Raman Nagar",
+    "zone": "East Zone",
+    "jhi_name": "Mohan Kumar",
+    "jhi_mobile": "9483313323"
+  },
+  "hoysala nagar": {
+    "ward_name": "Hoysala Nagar",
+    "ward_no": "80",
+    "division": "C.V.Raman Nagar",
+    "zone": "East Zone",
+    "jhi_name": "Husenappa",
+    "jhi_mobile": "9972341171"
+  },
+  "jeevan bheema nagar": {
+    "ward_name": "Jeevan Bheema Nagar",
+    "ward_no": "88",
+    "division": "C.V.Raman Nagar",
+    "zone": "East Zone",
+    "jhi_name": "Vijay Kumar",
+    "jhi_mobile": "9008922866"
+  },
+  "konena agrahara": {
+    "ward_name": "Konena Agrahara",
+    "ward_no": "113",
+    "division": "C.V.Raman Nagar",
+    "zone": "East Zone",
+    "jhi_name": "Praveen",
+    "jhi_mobile": "7090142984"
+  },
+  "radha krishna temple": {
+    "ward_name": "Radha Krishna Temple",
+    "ward_no": "18",
+    "division": "Hebbal",
+    "zone": "East Zone",
+    "jhi_name": "Ganesh K.N",
+    "jhi_mobile": "9480688318"
+  },
+  "sanjayanagar": {
+    "ward_name": "Sanjayanagar",
+    "ward_no": "19",
+    "division": "Hebbal",
+    "zone": "East Zone",
+    "jhi_name": "Akshy Kumar.S",
+    "jhi_mobile": "9480688319"
+  },
+  "ganganagar": {
+    "ward_name": "Ganganagar",
+    "ward_no": "20",
+    "division": "Hebbal",
+    "zone": "East Zone",
+    "jhi_name": "Harish",
+    "jhi_mobile": "9480688320"
+  },
+  "hebbal": {
+    "ward_name": "Hebbal",
+    "ward_no": "21",
+    "division": "Hebbal",
+    "zone": "East Zone",
+    "jhi_name": "Nandhshree.K",
+    "jhi_mobile": "9902853749"
+  },
+  "vishwanatha nagenahalli": {
+    "ward_name": "Vishwanatha Nagenahalli",
+    "ward_no": "22",
+    "division": "Hebbal",
+    "zone": "East Zone",
+    "jhi_name": "Manoj",
+    "jhi_mobile": "9880525159"
+  },
+  "manorayanapalya": {
+    "ward_name": "Manorayanapalya",
+    "ward_no": "33",
+    "division": "Hebbal",
+    "zone": "East Zone",
+    "jhi_name": "Seema",
+    "jhi_mobile": "9632696700"
+  },
+  "gangenahalli": {
+    "ward_name": "Gangenahalli",
+    "ward_no": "34",
+    "division": "Hebbal",
+    "zone": "East Zone",
+    "jhi_name": "Akashdeep.p",
+    "jhi_mobile": "9480688334"
+  },
+  "jayachamarajendra nagar": {
+    "ward_name": "Jayachamarajendra Nagar",
+    "ward_no": "46",
+    "division": "Hebbal",
+    "zone": "East Zone",
+    "jhi_name": "Meena",
+    "jhi_mobile": "9591026129"
+  },
+  "kushaal nagar": {
+    "ward_name": "Kushaal nagar",
+    "ward_no": "31",
+    "division": "Pulikeshi Nagar",
+    "zone": "East Zone",
+    "jhi_name": "Rajesh",
+    "jhi_mobile": "9972266829"
+  },
+  "kavalbyrasandra": {
+    "ward_name": "Kavalbyrasandra",
+    "ward_no": "32",
+    "division": "Pulikeshi Nagar",
+    "zone": "East Zone",
+    "jhi_name": "Rohit Ramesh",
+    "jhi_mobile": "9886507715"
+  },
+  "devarajeevanahalli": {
+    "ward_name": "Devarajeevanahalli",
+    "ward_no": "47",
+    "division": "Pulikeshi Nagar",
+    "zone": "East Zone",
+    "jhi_name": "Davanam Somashekar",
+    "jhi_mobile": "9035739005"
+  },
+  "muneshwara nagar": {
+    "ward_name": "Muneshwara Nagar",
+    "ward_no": "48",
+    "division": "Pulikeshi Nagar",
+    "zone": "East Zone",
+    "jhi_name": "A. Nagendra",
+    "jhi_mobile": "9845833307"
+  },
+  "sagayapuram": {
+    "ward_name": "Sagayapuram",
+    "ward_no": "60",
+    "division": "Pulikeshi Nagar",
+    "zone": "East Zone",
+    "jhi_name": "Madhu Kumar",
+    "jhi_mobile": "9742592726"
+  },
+  "s.k garden": {
+    "ward_name": "S.K Garden",
+    "ward_no": "61",
+    "division": "Pulikeshi Nagar",
+    "zone": "East Zone",
+    "jhi_name": "Bharath Kumar N",
+    "jhi_mobile": "9902443076"
+  },
+  "pulakeshinagar": {
+    "ward_name": "Pulakeshinagar",
+    "ward_no": "78",
+    "division": "Pulikeshi Nagar",
+    "zone": "East Zone",
+    "jhi_name": "Bhanupriya.P",
+    "jhi_mobile": "9845619154"
+  },
+  "nagavara": {
+    "ward_name": "Nagavara",
+    "ward_no": "23",
+    "division": "Sarvajna Nagar",
+    "zone": "East Zone",
+    "jhi_name": "Kishore E.S",
+    "jhi_mobile": "9901622694"
+  },
+  "h.b.r layout": {
+    "ward_name": "H.B.R Layout",
+    "ward_no": "24",
+    "division": "Sarvajna Nagar",
+    "zone": "East Zone",
+    "jhi_name": "Keshava Murthy.M",
+    "jhi_mobile": "8867325737"
+  },
+  "banaswadi": {
+    "ward_name": "Banaswadi",
+    "ward_no": "27",
+    "division": "Sarvajna Nagar",
+    "zone": "East Zone",
+    "jhi_name": "Chandrakala",
+    "jhi_mobile": "9620101648"
+  },
+  "kammanahalli": {
+    "ward_name": "Kammanahalli",
+    "ward_no": "28",
+    "division": "Sarvajna Nagar",
+    "zone": "East Zone",
+    "jhi_name": "Monika",
+    "jhi_mobile": "9066250806"
+  },
+  "kacharakanahalli": {
+    "ward_name": "Kacharakanahalli",
+    "ward_no": "29",
+    "division": "Sarvajna Nagar",
+    "zone": "East Zone",
+    "jhi_name": "Sandeep kumar L",
+    "jhi_mobile": "8746027881"
+  },
+  "kadugondanahalli": {
+    "ward_name": "Kadugondanahalli",
+    "ward_no": "30",
+    "division": "Sarvajna Nagar",
+    "zone": "East Zone",
+    "jhi_name": "Santhosh Kumar A.V",
+    "jhi_mobile": "9380057009"
+  },
+  "lingarajapura": {
+    "ward_name": "Lingarajapura",
+    "ward_no": "49",
+    "division": "Sarvajna Nagar",
+    "zone": "East Zone",
+    "jhi_name": "Abhishek S",
+    "jhi_mobile": "9880921101"
+  },
+  "maruthi seva nagar": {
+    "ward_name": "Maruthi Seva Nagar",
+    "ward_no": "59",
+    "division": "Sarvajna Nagar",
+    "zone": "East Zone",
+    "jhi_name": "A. Veerappa",
+    "jhi_mobile": "9916166837"
+  },
+  "jogupalya": {
+    "ward_name": "Jogupalya",
+    "ward_no": "89",
+    "division": "Shanti Nagar",
+    "zone": "East Zone",
+    "jhi_name": "Mahalakshmi",
+    "jhi_mobile": "8147963925"
+  },
+  "shantala nagar": {
+    "ward_name": "Shantala Nagar",
+    "ward_no": "111",
+    "division": "Shanti Nagar",
+    "zone": "East Zone",
+    "jhi_name": "Ramesh. S",
+    "jhi_mobile": "9480688411"
+  },
+  "dommalur": {
+    "ward_name": "Dommalur",
+    "ward_no": "112",
+    "division": "Shanti Nagar",
+    "zone": "East Zone",
+    "jhi_name": "Puroshatam",
+    "jhi_mobile": "9964267412"
+  },
+  "agaram": {
+    "ward_name": "Agaram",
+    "ward_no": "114",
+    "division": "Shanti Nagar",
+    "zone": "East Zone",
+    "jhi_name": "Shivanayak G.S",
+    "jhi_mobile": "9480688414"
+  },
+  "vannarpete": {
+    "ward_name": "Vannarpete",
+    "ward_no": "115",
+    "division": "Shanti Nagar",
+    "zone": "East Zone",
+    "jhi_name": "Chidanandha K.S",
+    "jhi_mobile": "9480688415"
+  },
+  "neelasandra": {
+    "ward_name": "Neelasandra",
+    "ward_no": "116",
+    "division": "Shanti Nagar",
+    "zone": "East Zone",
+    "jhi_name": "Thipeswamy",
+    "jhi_mobile": "9480688417"
+  },
+  "shanthinagar": {
+    "ward_name": "Shanthinagar",
+    "ward_no": "117",
+    "division": "Shanti Nagar",
+    "zone": "East Zone",
+    "jhi_name": "K.R Lilanjanappa",
+    "jhi_mobile": "9480688416"
+  },
+  "ramaswamy palya": {
+    "ward_name": "Ramaswamy Palya",
+    "ward_no": "62",
+    "division": "Shivaji Nagar",
+    "zone": "East Zone",
+    "jhi_name": "Waseem Basha",
+    "jhi_mobile": "9480688362"
+  },
+  "jayamahal": {
+    "ward_name": "Jayamahal",
+    "ward_no": "63",
+    "division": "Shivaji Nagar",
+    "zone": "East Zone",
+    "jhi_name": "Abhilash",
+    "jhi_mobile": "9901218335"
+  },
+  "halsoor": {
+    "ward_name": "Halsoor",
+    "ward_no": "90",
+    "division": "Shivaji Nagar",
+    "zone": "East Zone",
+    "jhi_name": "Anjan Krishna Rao",
+    "jhi_mobile": "9742112295"
+  },
+  "bharathi nagar": {
+    "ward_name": "Bharathi Nagar",
+    "ward_no": "91",
+    "division": "Shivaji Nagar",
+    "zone": "East Zone",
+    "jhi_name": "Karthik NP",
+    "jhi_mobile": "9141042118"
+  },
+  "shivaji nagar": {
+    "ward_name": "Shivaji Nagar",
+    "ward_no": "92",
+    "division": "Shivaji Nagar",
+    "zone": "East Zone",
+    "jhi_name": "Sagar N",
+    "jhi_mobile": "7411175752"
+  },
+  "vasanthnagar": {
+    "ward_name": "Vasanthnagar",
+    "ward_no": "93",
+    "division": "Shivaji Nagar",
+    "zone": "East Zone",
+    "jhi_name": "Shoba T",
+    "jhi_mobile": "8618946952"
+  },
+  "samapangirama nagar": {
+    "ward_name": "Samapangirama Nagar",
+    "ward_no": "110",
+    "division": "Shivaji Nagar",
+    "zone": "East Zone",
+    "jhi_name": "Madhu",
+    "jhi_mobile": "9206309374"
+  },
+  "padarayanapura": {
+    "ward_name": "Padarayanapura",
+    "ward_no": "135",
+    "division": "Chamarajpete",
+    "zone": "west Zone",
+    "jhi_name": "Jacob",
+    "jhi_mobile": "7899093478"
+  },
+  "jagajeevan ramnagar": {
+    "ward_name": "Jagajeevan Ramnagar",
+    "ward_no": "136",
+    "division": "Chamarajpete",
+    "zone": "west Zone",
+    "jhi_name": "Ramakrishna M R /Suresh",
+    "jhi_mobile": "9731028345/9972430147"
+  },
+  "rayapuram": {
+    "ward_name": "Rayapuram",
+    "ward_no": "137",
+    "division": "Chamarajpete",
+    "zone": "west Zone",
+    "jhi_name": "K Vijayakumar/Manjunath",
+    "jhi_mobile": "6361214939/8792505446"
+  },
+  "chalavadi palya": {
+    "ward_name": "Chalavadi Palya",
+    "ward_no": "138",
+    "division": "Chamarajpete",
+    "zone": "west Zone",
+    "jhi_name": "Yashavantha K",
+    "jhi_mobile": "7353877878"
+  },
+  "k.r market": {
+    "ward_name": "K.R Market",
+    "ward_no": "139",
+    "division": "Chamarajpete",
+    "zone": "west Zone",
+    "jhi_name": "Umesh/Chandra Shekar",
+    "jhi_mobile": "9036445034/9108529696"
+  },
+  "chamarajpet": {
+    "ward_name": "Chamarajpet",
+    "ward_no": "140",
+    "division": "Chamarajpete",
+    "zone": "west Zone",
+    "jhi_name": "VijayKumar/Srinivas N",
+    "jhi_mobile": "6361214939/9986559981"
+  },
+  "azad nagar": {
+    "ward_name": "Azad Nagar",
+    "ward_no": "141",
+    "division": "Chamarajpete",
+    "zone": "west Zone",
+    "jhi_name": "R. Srinivas/Lakshmikanth",
+    "jhi_mobile": "9036194107/7019785122"
+  },
+  "dattatreya temple": {
+    "ward_name": "Dattatreya Temple",
+    "ward_no": "77",
+    "division": "Gandhi Nagar",
+    "zone": "west Zone",
+    "jhi_name": "Krishna/Nagabhushan",
+    "jhi_mobile": "9480688377/9886659074"
+  },
+  "gandhinagar": {
+    "ward_name": "Gandhinagar",
+    "ward_no": "94",
+    "division": "Gandhi Nagar",
+    "zone": "west Zone",
+    "jhi_name": "Ramanathan K/Lavanya",
+    "jhi_mobile": "9480688394/7022166603"
+  },
+  "subhash nagar": {
+    "ward_name": "Subhash Nagar",
+    "ward_no": "95",
+    "division": "Gandhi Nagar",
+    "zone": "west Zone",
+    "jhi_name": "Ramesh",
+    "jhi_mobile": "9480688395"
+  },
+  "okalipuram": {
+    "ward_name": "Okalipuram",
+    "ward_no": "96",
+    "division": "Gandhi Nagar",
+    "zone": "west Zone",
+    "jhi_name": "Ramesh/Shalini M",
+    "jhi_mobile": "9480688395/9071952015"
+  },
+  "chikpete": {
+    "ward_name": "Chikpete",
+    "ward_no": "109",
+    "division": "Gandhi Nagar",
+    "zone": "west Zone",
+    "jhi_name": "Krishna/Janardhan N",
+    "jhi_mobile": "9480688377/9148882345"
+  },
+  "cottonpet": {
+    "ward_name": "Cottonpet",
+    "ward_no": "120",
+    "division": "Gandhi Nagar",
+    "zone": "west Zone",
+    "jhi_name": "Velayudham H/Nataraj",
+    "jhi_mobile": "9480688420/9902278105"
+  },
+  "binnypet": {
+    "ward_name": "Binnypet",
+    "ward_no": "121",
+    "division": "Gandhi Nagar",
+    "zone": "west Zone",
+    "jhi_name": "Govindaraju S",
+    "jhi_mobile": "9480688421"
+  },
+  "kaveripura": {
+    "ward_name": "Kaveripura",
+    "ward_no": "103",
+    "division": "Govindaraj Nagar",
+    "zone": "west Zone",
+    "jhi_name": "Yoganand /Aishwarya",
+    "jhi_mobile": "7411894937/6362776968"
+  },
+  "govindarajanagar": {
+    "ward_name": "Govindarajanagar",
+    "ward_no": "104",
+    "division": "Govindaraj Nagar",
+    "zone": "west Zone",
+    "jhi_name": "Pranesh",
+    "jhi_mobile": "8546969601"
+  },
+  "agrahara dasarahalli": {
+    "ward_name": "Agrahara Dasarahalli",
+    "ward_no": "105",
+    "division": "Govindaraj Nagar",
+    "zone": "west Zone",
+    "jhi_name": "Suresh",
+    "jhi_mobile": "9980502368"
+  },
+  "dr. rajkumar ward": {
+    "ward_name": "Dr. Rajkumar Ward",
+    "ward_no": "106",
+    "division": "Govindaraj Nagar",
+    "zone": "west Zone",
+    "jhi_name": "Chandrashekar S R",
+    "jhi_mobile": "9449725204"
+  },
+  "marenahalli": {
+    "ward_name": "Marenahalli",
+    "ward_no": "125",
+    "division": "Govindaraj Nagar",
+    "zone": "west Zone",
+    "jhi_name": "Abhinay",
+    "jhi_mobile": "9535372136"
+  },
+  "maruthi mandira ward": {
+    "ward_name": "Maruthi Mandira Ward",
+    "ward_no": "126",
+    "division": "Govindaraj Nagar",
+    "zone": "west Zone",
+    "jhi_name": "Ramesh",
+    "jhi_mobile": "9206687122"
+  },
+  "moodalapalya": {
+    "ward_name": "Moodalapalya",
+    "ward_no": "127",
+    "division": "Govindaraj Nagar",
+    "zone": "west Zone",
+    "jhi_name": "Manjunath",
+    "jhi_mobile": "9482800586"
+  },
+  "nagarbhavi": {
+    "ward_name": "Nagarbhavi",
+    "ward_no": "128",
+    "division": "Govindaraj Nagar",
+    "zone": "west Zone",
+    "jhi_name": "Ashwin Gowda",
+    "jhi_mobile": "8748887321"
+  },
+  "nayandahalli": {
+    "ward_name": "Nayandahalli",
+    "ward_no": "131",
+    "division": "Govindaraj Nagar",
+    "zone": "west Zone",
+    "jhi_name": "Ranganath",
+    "jhi_mobile": "7892648147"
+  },
+  "nandini layout": {
+    "ward_name": "Nandini Layout",
+    "ward_no": "43",
+    "division": "Mahalakshmi Layout",
+    "zone": "west Zone",
+    "jhi_name": "Suresh.K.N.",
+    "jhi_mobile": "9945800657"
+  },
+  "marappana palya": {
+    "ward_name": "Marappana Palya",
+    "ward_no": "44",
+    "division": "Mahalakshmi Layout",
+    "zone": "west Zone",
+    "jhi_name": "M.Chayapathi",
+    "jhi_mobile": "9448240492"
+  },
+  "nagapura": {
+    "ward_name": "Nagapura",
+    "ward_no": "67",
+    "division": "Mahalakshmi Layout",
+    "zone": "west Zone",
+    "jhi_name": "M.Chayapathi/Pavan Kalyan",
+    "jhi_mobile": "9448240492/9742565151"
+  },
+  "mahalakshmipuram": {
+    "ward_name": "Mahalakshmipuram",
+    "ward_no": "68",
+    "division": "Mahalakshmi Layout",
+    "zone": "west Zone",
+    "jhi_name": "Suresh/Gopi",
+    "jhi_mobile": "9945800657/8553388386"
+  },
+  "shakthi ganapathi nagar": {
+    "ward_name": "Shakthi Ganapathi Nagar",
+    "ward_no": "74",
+    "division": "Mahalakshmi Layout",
+    "zone": "west Zone",
+    "jhi_name": "Suresh/Geetha",
+    "jhi_mobile": "9945800657/7892283684"
+  },
+  "shankaramatt": {
+    "ward_name": "Shankaramatt",
+    "ward_no": "75",
+    "division": "Mahalakshmi Layout",
+    "zone": "west Zone",
+    "jhi_name": "Chayapathi/Ranjitha",
+    "jhi_mobile": "9448240492/9108540278"
+  },
+  "vrushabhavathi nagar": {
+    "ward_name": "Vrushabhavathi Nagar",
+    "ward_no": "102",
+    "division": "Mahalakshmi Layout",
+    "zone": "west Zone",
+    "jhi_name": "Chayapathi/Babu",
+    "jhi_mobile": "9448240492/9632549664"
+  },
+  "aramane nagar": {
+    "ward_name": "Aramane Nagar",
+    "ward_no": "35",
+    "division": "Malleshwaram",
+    "zone": "west Zone",
+    "jhi_name": "Raghuram /Deepak Kumar R",
+    "jhi_mobile": "9880161041/9972508042"
+  },
+  "mattikere": {
+    "ward_name": "Mattikere",
+    "ward_no": "36",
+    "division": "Malleshwaram",
+    "zone": "west Zone",
+    "jhi_name": "Yashaswini",
+    "jhi_mobile": "9036351628"
+  },
+  "malleshwaram": {
+    "ward_name": "Malleshwaram",
+    "ward_no": "45",
+    "division": "Malleshwaram",
+    "zone": "west Zone",
+    "jhi_name": "Pooja",
+    "jhi_mobile": "8904420811"
+  },
+  "rajmahal guttahalli": {
+    "ward_name": "Rajmahal Guttahalli",
+    "ward_no": "64",
+    "division": "Malleshwaram",
+    "zone": "west Zone",
+    "jhi_name": "Shivakumar DP/Anjankumar.K",
+    "jhi_mobile": "7204697433/9980307763"
+  },
+  "kadu malleshwaram": {
+    "ward_name": "Kadu Malleshwaram",
+    "ward_no": "65",
+    "division": "Malleshwaram",
+    "zone": "west Zone",
+    "jhi_name": "Nagaraj N/Ranjitha",
+    "jhi_mobile": "8971865647/7349294627"
+  },
+  "subramanya nagar": {
+    "ward_name": "Subramanya Nagar",
+    "ward_no": "66",
+    "division": "Malleshwaram",
+    "zone": "west Zone",
+    "jhi_name": "Balaji /Prasanna Kumar D R",
+    "jhi_mobile": "9845747576/9611963531"
+  },
+  "gayithri nagar": {
+    "ward_name": "Gayithri Nagar",
+    "ward_no": "76",
+    "division": "Malleshwaram",
+    "zone": "west Zone",
+    "jhi_name": "Balaji /Pushpanjali",
+    "jhi_mobile": "9742565151/9535182913"
+  },
+  "dayananda nagar": {
+    "ward_name": "Dayananda Nagar",
+    "ward_no": "97",
+    "division": "Rajajinagar",
+    "zone": "west Zone",
+    "jhi_name": "Amurtha",
+    "jhi_mobile": "9480688397"
+  },
+  "prakash nagar": {
+    "ward_name": "Prakash Nagar",
+    "ward_no": "98",
+    "division": "Rajajinagar",
+    "zone": "west Zone",
+    "jhi_name": "Ravanahaiah P",
+    "jhi_mobile": "9535748532"
+  },
+  "rajajinagar": {
+    "ward_name": "Rajajinagar",
+    "ward_no": "99",
+    "division": "Rajajinagar",
+    "zone": "west Zone",
+    "jhi_name": "Sowmaya",
+    "jhi_mobile": "9480688399"
+  },
+  "basaveshwaranagar": {
+    "ward_name": "Basaveshwaranagar",
+    "ward_no": "100",
+    "division": "Rajajinagar",
+    "zone": "west Zone",
+    "jhi_name": "Vinay",
+    "jhi_mobile": "9480688400"
+  },
+  "kamakshipalya": {
+    "ward_name": "Kamakshipalya",
+    "ward_no": "101",
+    "division": "Rajajinagar",
+    "zone": "west Zone",
+    "jhi_name": "K. Janardhan",
+    "jhi_mobile": "8123128245"
+  },
+  "shiva nagar": {
+    "ward_name": "Shiva Nagar",
+    "ward_no": "107",
+    "division": "Rajajinagar",
+    "zone": "west Zone",
+    "jhi_name": "Revana Sidappa bangi",
+    "jhi_mobile": "8495045243"
+  },
+  "sri ramamandira ward": {
+    "ward_name": "Sri Ramamandira Ward",
+    "ward_no": "108",
+    "division": "Rajajinagar",
+    "zone": "west Zone",
+    "jhi_name": "Sudha/Sunil",
+    "jhi_mobile": "9480688408/9739646083"
+  },
+  "shettihalli": {
+    "ward_name": "Shettihalli",
+    "ward_no": "12",
+    "division": "Dasarahalli",
+    "zone": "Dasarahalli Zone",
+    "jhi_name": "Suresh",
+    "jhi_mobile": "7760069250"
+  },
+  "mallasandra": {
+    "ward_name": "Mallasandra",
+    "ward_no": "13",
+    "division": "Dasarahalli",
+    "zone": "Dasarahalli Zone",
+    "jhi_name": "Ranganath",
+    "jhi_mobile": "9108715591"
+  },
+  "bagalakunte": {
+    "ward_name": "Bagalakunte",
+    "ward_no": "14",
+    "division": "Dasarahalli",
+    "zone": "Dasarahalli Zone",
+    "jhi_name": "Chaithra M & Kausalya B",
+    "jhi_mobile": "8792749229 / 9901681731"
+  },
+  "t dasarahalli": {
+    "ward_name": "T dasarahalli",
+    "ward_no": "15",
+    "division": "Dasarahalli",
+    "zone": "Dasarahalli Zone",
+    "jhi_name": "Ravi",
+    "jhi_mobile": "9108160095"
+  },
+  "chokkasandra": {
+    "ward_name": "Chokkasandra",
+    "ward_no": "39",
+    "division": "Dasarahalli",
+    "zone": "Dasarahalli Zone",
+    "jhi_name": "Ramesh",
+    "jhi_mobile": "9844083424"
+  },
+  "peenya industrial area": {
+    "ward_name": "Peenya Industrial Area",
+    "ward_no": "41",
+    "division": "Dasarahalli",
+    "zone": "Dasarahalli Zone",
+    "jhi_name": "Swamy & Kashinath",
+    "jhi_mobile": "8884866697/9731152311"
+  },
+  "rajagopalanagar": {
+    "ward_name": "Rajagopalanagar",
+    "ward_no": "70",
+    "division": "Dasarahalli",
+    "zone": "Dasarahalli Zone",
+    "jhi_name": "Ajay Kumar & Deekshith Kumar",
+    "jhi_mobile": "9632222304/9108715591"
+  },
+  "heggenahalli": {
+    "ward_name": "Heggenahalli",
+    "ward_no": "71",
+    "division": "Dasarahalli",
+    "zone": "Dasarahalli Zone",
+    "jhi_name": "Triveni N",
+    "jhi_mobile": "9632467647"
+  },
+  "horamavu": {
+    "ward_name": "Horamavu",
+    "ward_no": "25",
+    "division": "K.R.Puram",
+    "zone": "Mahadevapura Zone",
+    "jhi_name": "Annapoorna & Mahalakshmi",
+    "jhi_mobile": "7676611321/8722967166"
+  },
+  "ramamurthy nagar": {
+    "ward_name": "Ramamurthy nagar",
+    "ward_no": "26",
+    "division": "K.R.Puram",
+    "zone": "Mahadevapura Zone",
+    "jhi_name": "Harshith L & Akhil S",
+    "jhi_mobile": "8197206820/8904334336"
+  },
+  "vijinapura": {
+    "ward_name": "Vijinapura",
+    "ward_no": "51",
+    "division": "K.R.Puram",
+    "zone": "Mahadevapura Zone",
+    "jhi_name": "Suvarna HL",
+    "jhi_mobile": "7483562915"
+  },
+  "k.r.puram": {
+    "ward_name": "K.R.Puram",
+    "ward_no": "52",
+    "division": "K.R.Puram",
+    "zone": "Mahadevapura Zone",
+    "jhi_name": "Suresh",
+    "jhi_mobile": "8105952135"
+  },
+  "basavanapura": {
+    "ward_name": "Basavanapura",
+    "ward_no": "53",
+    "division": "K.R.Puram",
+    "zone": "Mahadevapura Zone",
+    "jhi_name": "Jagadish & Manjunatha K",
+    "jhi_mobile": "9738000643/9902000287"
+  },
+  "devasandra": {
+    "ward_name": "Devasandra",
+    "ward_no": "55",
+    "division": "K.R.Puram",
+    "zone": "Mahadevapura Zone",
+    "jhi_name": "M.Anitharaj",
+    "jhi_mobile": "9480688355"
+  },
+  "a.narayanapura": {
+    "ward_name": "A.Narayanapura",
+    "ward_no": "56",
+    "division": "K.R.Puram",
+    "zone": "Mahadevapura Zone",
+    "jhi_name": "Ranganath",
+    "jhi_mobile": "9480688387"
+  },
+  "vignana nagar": {
+    "ward_name": "Vignana Nagar",
+    "ward_no": "81",
+    "division": "K.R.Puram",
+    "zone": "Mahadevapura Zone",
+    "jhi_name": "Harish & Mageshwari",
+    "jhi_mobile": "9035595014/9972316621"
+  },
+  "h.a.l airport": {
+    "ward_name": "H.A.L Airport",
+    "ward_no": "87",
+    "division": "K.R.Puram",
+    "zone": "Mahadevapura Zone",
+    "jhi_name": "Bhavyashree R",
+    "jhi_mobile": "9902462827"
+  },
+  "hoodi": {
+    "ward_name": "Hoodi",
+    "ward_no": "54",
+    "division": "Mahadevapura",
+    "zone": "Mahadevapura Zone",
+    "jhi_name": "Vinay Prabhu & Anand.M",
+    "jhi_mobile": "9739862304/9113698244"
+  },
+  "garudachar palya": {
+    "ward_name": "Garudachar Palya",
+    "ward_no": "82",
+    "division": "Mahadevapura",
+    "zone": "Mahadevapura Zone",
+    "jhi_name": "Seshagiri & Ujwal",
+    "jhi_mobile": "8123915174/7019401043"
+  },
+  "kadugodi": {
+    "ward_name": "Kadugodi",
+    "ward_no": "83",
+    "division": "Mahadevapura",
+    "zone": "Mahadevapura Zone",
+    "jhi_name": "Prabhu Das R & Balaji",
+    "jhi_mobile": "9972218921/7483487501"
+  },
+  "hagaduru": {
+    "ward_name": "Hagaduru",
+    "ward_no": "84",
+    "division": "Mahadevapura",
+    "zone": "Mahadevapura Zone",
+    "jhi_name": "Harish",
+    "jhi_mobile": "8105132695"
+  },
+  "doddanekundi": {
+    "ward_name": "Doddanekundi",
+    "ward_no": "85",
+    "division": "Mahadevapura",
+    "zone": "Mahadevapura Zone",
+    "jhi_name": "Dayananda & Ramesh",
+    "jhi_mobile": "9742913261/9902785690"
+  },
+  "marathhalli": {
+    "ward_name": "Marathhalli",
+    "ward_no": "86",
+    "division": "Mahadevapura",
+    "zone": "Mahadevapura Zone",
+    "jhi_name": "Anitha",
+    "jhi_mobile": "9535739419"
+  },
+  "varthur": {
+    "ward_name": "Varthur",
+    "ward_no": "149",
+    "division": "Mahadevapura",
+    "zone": "Mahadevapura Zone",
+    "jhi_name": "Madhu S & Somashekar Reddy",
+    "jhi_mobile": "7624848500/9480688449"
+  },
+  "bellandur": {
+    "ward_name": "Bellandur",
+    "ward_no": "150",
+    "division": "Mahadevapura",
+    "zone": "Mahadevapura Zone",
+    "jhi_name": "Ananda S & Harish H N",
+    "jhi_mobile": "9986277644/7483318757"
+  },
+  "doddabidirekallu": {
+    "ward_name": "Doddabidirekallu",
+    "ward_no": "40",
+    "division": "Kengeri",
+    "zone": "R.R Nagar Zone",
+    "jhi_name": "Muthegowda/Madappa S N/Kumari K",
+    "jhi_mobile": "9845616082/9110892400/9538515122"
+  },
+  "herohalli": {
+    "ward_name": "Herohalli",
+    "ward_no": "72",
+    "division": "Kengeri",
+    "zone": "R.R Nagar Zone",
+    "jhi_name": "Sathyamurthy M H/Monika S D",
+    "jhi_mobile": "9538777795/7348988798"
+  },
+  "ullala": {
+    "ward_name": "Ullala",
+    "ward_no": "130",
+    "division": "Kengeri",
+    "zone": "R.R Nagar Zone",
+    "jhi_name": "Vinay/Swathi",
+    "jhi_mobile": "9880243077/9591254574"
+  },
+  "kengeri": {
+    "ward_name": "Kengeri",
+    "ward_no": "159",
+    "division": "Kengeri",
+    "zone": "R.R Nagar Zone",
+    "jhi_name": "Anil Kumar/Naveen Kumar",
+    "jhi_mobile": "9886211828/7899484338"
+  },
+  "hemmigepura": {
+    "ward_name": "Hemmigepura",
+    "ward_no": "198",
+    "division": "Kengeri",
+    "zone": "R.R Nagar Zone",
+    "jhi_name": "Hanumesha/Ningappa/Chandrashekarmurthy",
+    "jhi_mobile": "9686239767/8884052990/9731602266"
+  },
+  "jalahalli": {
+    "ward_name": "Jalahalli",
+    "ward_no": "16",
+    "division": "Rajarajeshwari Nagar",
+    "zone": "R.R Nagar Zone",
+    "jhi_name": "Ravi Kumar",
+    "jhi_mobile": "9663691629"
+  },
+  "j.p garden": {
+    "ward_name": "J.P Garden",
+    "ward_no": "17",
+    "division": "Rajarajeshwari Nagar",
+    "zone": "R.R Nagar Zone",
+    "jhi_name": "Shashidar Y",
+    "jhi_mobile": "9740927342"
+  },
+  "yashwanthpura": {
+    "ward_name": "Yashwanthpura",
+    "ward_no": "37",
+    "division": "Rajarajeshwari Nagar",
+    "zone": "R.R Nagar Zone",
+    "jhi_name": "Mahesh/Ranjeth Kumar",
+    "jhi_mobile": "9945146003/9880464855"
+  },
+  "h.m.t ward": {
+    "ward_name": "H.M.T Ward",
+    "ward_no": "38",
+    "division": "Rajarajeshwari Nagar",
+    "zone": "R.R Nagar Zone",
+    "jhi_name": "Thanuja",
+    "jhi_mobile": "9742169791"
+  },
+  "lakshmidevinagara": {
+    "ward_name": "Lakshmidevinagara",
+    "ward_no": "42",
+    "division": "Rajarajeshwari Nagar",
+    "zone": "R.R Nagar Zone",
+    "jhi_name": "Mani Megalai",
+    "jhi_mobile": "9035514287"
+  },
+  "laggere": {
+    "ward_name": "Laggere",
+    "ward_no": "69",
+    "division": "Rajarajeshwari Nagar",
+    "zone": "R.R Nagar Zone",
+    "jhi_name": "Varadaraju",
+    "jhi_mobile": "9986637691"
+  },
+  "kottigepalya": {
+    "ward_name": "Kottigepalya",
+    "ward_no": "73",
+    "division": "Rajarajeshwari Nagar",
+    "zone": "R.R Nagar Zone",
+    "jhi_name": "Lakshminarayan GM/Kushak Gowda",
+    "jhi_mobile": "9945849340/9945924499"
+  },
+  "gnanabharathi": {
+    "ward_name": "Gnanabharathi",
+    "ward_no": "129",
+    "division": "Rajarajeshwari Nagar",
+    "zone": "R.R Nagar Zone",
+    "jhi_name": "Sowmya/Vallarmadi/Narasimhamurthy/Srikanth/Vijayraghavan",
+    "jhi_mobile": "9986369051/8088442062/9880367756/7019834876/7892537121"
+  },
+  "rajarajeshwari nagar": {
+    "ward_name": "Rajarajeshwari Nagar",
+    "ward_no": "160",
+    "division": "Rajarajeshwari Nagar",
+    "zone": "R.R Nagar Zone",
+    "jhi_name": "Sunithakumari/Prasanna/Nagarajaiah/Shashikumar",
+    "jhi_mobile": "8971154175/9742280841/7019059188/7411856931"
+  }
+}

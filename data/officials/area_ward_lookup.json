@@ -1,0 +1,142 @@
+{
+  "Koramangala": {
+    "ward_no": "28",
+    "ward_name": "Koramangala East",
+    "match_score": 0.81
+  },
+  "Indiranagar": {
+    "ward_no": "15",
+    "ward_name": "Indiranagar",
+    "match_score": 1.0
+  },
+  "Whitefield": {
+    "ward_no": "38",
+    "ward_name": "Whitefield",
+    "match_score": 1.0
+  },
+  "Jayanagar": {
+    "ward_no": "31",
+    "ward_name": "Kalyanagar",
+    "match_score": 0.84
+  },
+  "HSR Layout": {
+    "ward_no": "72",
+    "ward_name": "HSR Layout",
+    "match_score": 1.0
+  },
+  "BTM Layout": {
+    "ward_no": "42",
+    "ward_name": "RBI Layout",
+    "match_score": 0.8
+  },
+  "Marathahalli": {
+    "ward_no": "45",
+    "ward_name": "Marathahalli",
+    "match_score": 1.0
+  },
+  "Sarjapur": {
+    "ward_no": "40",
+    "ward_name": "Anjanapura",
+    "match_score": 0.67
+  },
+  "Electronic City": {
+    "ward_no": "57",
+    "ward_name": "Cottonpete",
+    "match_score": 0.4
+  },
+  "Hebbal": {
+    "ward_no": "56",
+    "ward_name": "Hebbal",
+    "match_score": 1.0
+  },
+  "Malleshwaram": {
+    "ward_no": "53",
+    "ward_name": "Malleshwaram",
+    "match_score": 1.0
+  },
+  "Rajajinagar": {
+    "ward_no": "63",
+    "ward_name": "Rajajinagara",
+    "match_score": 0.96
+  },
+  "JP Nagar": {
+    "ward_no": "14",
+    "ward_name": "J.P Nagar",
+    "match_score": 0.94
+  },
+  "Bannerghatta": {
+    "ward_no": "67",
+    "ward_name": "Bandepalya",
+    "match_score": 0.55
+  },
+  "Yelahanka": {
+    "ward_no": "3",
+    "ward_name": "Yelahanka Old Town",
+    "match_score": 0.67
+  },
+  "MG Road": {
+    "ward_no": "61",
+    "ward_name": "HMT Ward",
+    "match_score": 0.53
+  },
+  "Cubbon Park": {
+    "ward_no": "63",
+    "ward_name": "J.P Park",
+    "match_score": 0.53
+  },
+  "Lalbagh": {
+    "ward_no": "16",
+    "ward_name": "Ullal",
+    "match_score": 0.5
+  },
+  "KR Puram": {
+    "ward_no": "14",
+    "ward_name": "K R Pura",
+    "match_score": 0.88
+  },
+  "Lavelle Road": {
+    "ward_no": "32",
+    "ward_name": "Silver Jubilee Park Ward",
+    "match_score": 0.5
+  },
+  "Bellandur": {
+    "ward_no": "47",
+    "ward_name": "Bellandur",
+    "match_score": 1.0
+  },
+  "Domlur": {
+    "ward_no": "22",
+    "ward_name": "Domlur",
+    "match_score": 1.0
+  },
+  "Madiwala": {
+    "ward_no": "20",
+    "ward_name": "Madiwala",
+    "match_score": 1.0
+  },
+  "Basavanagudi": {
+    "ward_no": "11",
+    "ward_name": "Basavanapura",
+    "match_score": 0.75
+  },
+  "Vijayanagar": {
+    "ward_no": "30",
+    "ward_name": "Vinayakanagar",
+    "match_score": 0.83
+  },
+  "Yeshwantpur": {
+    "ward_no": "64",
+    "ward_name": "Yeshwanthpura",
+    "match_score": 0.92
+  },
+  "Peenya": {
+    "ward_no": "34",
+    "ward_name": "Peenya",
+    "match_score": 1.0
+  },
+  "Bangalore": {
+    "ward_no": "69",
+    "ward_name": "Bagalagunte",
+    "match_score": 0.6
+  }
+}

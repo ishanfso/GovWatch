@@ -1,0 +1,112 @@
+[
+  {
+    "category": "Garbage not collected / black spot",
+    "primary_dept": "BBMP Solid Waste Management",
+    "first_contact": "SWM JHI / SWM AEE for division",
+    "cc": "Health Officer / MOH; Ward Councillor",
+    "escalation_1": "Zonal SE SWM / City Corporation Health Officer",
+    "escalation_2": "Chief Engineer SWM / Commissioner",
+    "political": "Councillor; MLA for repeated failure",
+    "sla": "24-48 hours",
+    "notes": "Use SWM JHI when ward mapping exists; otherwise use SWM AEE by division."
+  },
+  {
+    "category": "Pothole / damaged road / footpath",
+    "primary_dept": "City Corporation / BBMP Engineering",
+    "first_contact": "AEE / Executive Engineer for ward/zone",
+    "cc": "Chief Engineer; Deputy Commissioner of City Corporation",
+    "escalation_1": "Joint Commissioner / Chief Engineer",
+    "escalation_2": "Commissioner / Additional Commissioner Development",
+    "political": "Councillor; MLA",
+    "sla": "3-7 days depending severity",
+    "notes": "Use City Corporation contact where ward-specific engineer is not available."
+  },
+  {
+    "category": "Storm-water drain flooding / blockage",
+    "primary_dept": "BBMP SWD / Engineering",
+    "first_contact": "Ward engineer / AEE; SWD Superintendent Engineer",
+    "cc": "Chief Engineer SWD; Health Officer if sewage/health risk",
+    "escalation_1": "Joint Commissioner / Chief Engineer SWD",
+    "escalation_2": "Commissioner",
+    "political": "Councillor; MLA",
+    "sla": "Immediate for flooding; 48 hours for inspection",
+    "notes": "If sewage is involved, also route to BWSSB."
+  },
+  {
+    "category": "Power cut / transformer / electricity safety",
+    "primary_dept": "BESCOM",
+    "first_contact": "BESCOM AE/JE or service station from BESCOM sheet",
+    "cc": "BESCOM AEE / Executive Engineer",
+    "escalation_1": "Superintending Engineer / Chief Engineer",
+    "escalation_2": "BESCOM senior office / consumer grievance forum",
+    "political": "MLA for repeated outages",
+    "sla": "Same day for outage/safety",
+    "notes": "Ward mapping is inferred from locality text in BESCOM data; verify before dispatch."
+  },
+  {
+    "category": "Traffic congestion / signal / parking enforcement",
+    "primary_dept": "Bengaluru Traffic Police",
+    "first_contact": "Traffic Police Station / PIO or PI",
+    "cc": "ACP Traffic Subdivision",
+    "escalation_1": "DCP Traffic Division",
+    "escalation_2": "Joint Commissioner Traffic",
+    "political": "MLA / Councillor if road-design issue",
+    "sla": "24-72 hours for response; longer for infrastructure changes",
+    "notes": "Traffic PS boundaries do not exactly match wards."
+  },
+  {
+    "category": "Water supply / sewage / manhole / BWSSB",
+    "primary_dept": "BWSSB",
+    "first_contact": "Service Station AE",
+    "cc": "AEE sub-division",
+    "escalation_1": "Executive Engineer Division",
+    "escalation_2": "BWSSB higher office",
+    "political": "MLA for chronic area failure",
+    "sla": "24 hours for sewage overflow; 48-72 hours for water supply complaints",
+    "notes": "BWSSB mapping is by service station/locality name from uploaded BWSSB data."
+  },
+  {
+    "category": "Public health / mosquito / sanitation nuisance",
+    "primary_dept": "City Corporation Health / BBMP Health",
+    "first_contact": "Health Officer / MOH",
+    "cc": "SWM AEE where waste-related",
+    "escalation_1": "City Corporation Commissioner / DHO",
+    "escalation_2": "BBMP/GBA health leadership",
+    "political": "Councillor; MLA",
+    "sla": "24-72 hours",
+    "notes": "Use city corporation Health Officer from contact matrix when ward MOH unavailable."
+  },
+  {
+    "category": "Lake encroachment / lake maintenance",
+    "primary_dept": "BBMP Lakes / City Corporation Engineering",
+    "first_contact": "BBMP Lakes Executive Engineer / Chief Engineer Lakes",
+    "cc": "City Corporation Chief Engineer",
+    "escalation_1": "Commissioner / Chief Engineer Lakes",
+    "escalation_2": "Urban Development / legal route",
+    "political": "MLA; MP for major environmental issue",
+    "sla": "Inspection within 7 days",
+    "notes": "Use BBMP email directory for Chief Engineer Lakes and Executive Engineer Lakes."
+  },
+  {
+    "category": "Property tax / revenue / khata / ward admin",
+    "primary_dept": "City Corporation Revenue / BBMP Revenue",
+    "first_contact": "Revenue Officer / ARO",
+    "cc": "Deputy Commissioner Revenue / City Corporation DC",
+    "escalation_1": "Additional Commissioner Revenue",
+    "escalation_2": "Commissioner",
+    "political": "Councillor only if local facilitation needed",
+    "sla": "As per service type",
+    "notes": "Use BBMP email directory for Revenue Officers / AROs."
+  },
+  {
+    "category": "Illegal construction / encroachment",
+    "primary_dept": "BBMP Town Planning / Engineering / BMTF",
+    "first_contact": "AEE / Town Planning officer",
+    "cc": "BMTF / Legal cell where applicable",
+    "escalation_1": "Joint Commissioner / Chief Engineer",
+    "escalation_2": "Commissioner / legal route",
+    "political": "Councillor; MLA for repeated inaction",
+    "sla": "Inspection request within 7 days",
+    "notes": "Evidence-heavy complaint; attach photos, geotag, property/address details."
+  }
+]

@@ -14,7 +14,7 @@
 </head>
 <body>
 
-  <!-- ── Header ────────────────────────────────────────────────── -->
+  <!-- Header -->
   <header class="header">
     <div class="header-inner">
       <div class="header-brand">
@@ -34,34 +34,34 @@
 
   <div class="page-body">
 
-    <!-- ── Role Banner ────────────────────────────────────────── -->
+    <!-- Role Banner -->
     <div class="role-banner hidden" id="role-banner"></div>
 
-    <!-- ── KPI Row ────────────────────────────────────────────── -->
+    <!-- KPI Row -->
     <section class="kpi-row">
       <div class="kpi-card kpi-danger">
-        <div class="kpi-number" id="kpi-overdue">—</div>
+        <div class="kpi-number" id="kpi-overdue">-</div>
         <div class="kpi-label">Overdue SLA</div>
       </div>
       <div class="kpi-card kpi-warning">
-        <div class="kpi-number" id="kpi-high">—</div>
+        <div class="kpi-number" id="kpi-high">-</div>
         <div class="kpi-label">High Risk Open</div>
       </div>
       <div class="kpi-card">
-        <div class="kpi-number" id="kpi-new">—</div>
+        <div class="kpi-number" id="kpi-new">-</div>
         <div class="kpi-label">New Today</div>
       </div>
       <div class="kpi-card">
-        <div class="kpi-number" id="kpi-unassigned">—</div>
+        <div class="kpi-number" id="kpi-unassigned">-</div>
         <div class="kpi-label">Unassigned</div>
       </div>
       <div class="kpi-card kpi-success">
-        <div class="kpi-number" id="kpi-resolved">—</div>
+        <div class="kpi-number" id="kpi-resolved">-</div>
         <div class="kpi-label">Resolved This Week</div>
       </div>
     </section>
 
-    <!-- ── Toolbar ────────────────────────────────────────────── -->
+    <!-- Toolbar -->
     <div class="toolbar">
       <div class="saved-views" id="saved-views">
         <button class="view-chip active" data-view="all">All Issues</button>
@@ -71,7 +71,7 @@
         <button class="view-chip" data-view="resolved">Resolved</button>
       </div>
       <div class="filter-bar">
-        <input class="search-input" id="search-input" type="text" placeholder="Search complaint, area, source…" />
+        <input class="search-input" id="search-input" type="text" placeholder="Search complaint, area, source..." />
         <select class="filter-select" id="dept-filter">
           <option value="all">All Departments</option>
           <option value="BBMP">BBMP</option>
@@ -91,7 +91,7 @@
           <option value="7">Last 7 Days</option>
           <option value="30">Last 30 Days</option>
           <option value="this-month">This Month</option>
-          <option value="custom">Custom Range…</option>
+          <option value="custom">Custom Range...</option>
         </select>
         <button class="reset-btn" id="reset-filters">Reset</button>
       </div>
@@ -103,15 +103,16 @@
       </div>
     </div>
 
-    <!-- ── Tab Navigation ─────────────────────────────────────── -->
+    <!-- Tab Navigation -->
     <nav class="tab-nav">
       <button class="tab active" data-tab="queue">Queue</button>
       <button class="tab" data-tab="map">Map</button>
       <button class="tab" data-tab="departments">Departments</button>
       <button class="tab" data-tab="analytics">Analytics</button>
+      <button class="tab" data-tab="officials">Officials</button>
     </nav>
 
-    <!-- ── Tab: Queue ─────────────────────────────────────────── -->
+    <!-- Tab: Queue -->
     <div class="tab-content" id="tab-queue">
       <div class="queue-layout">
 
@@ -132,13 +133,13 @@
             </div>
           </div>
           <div class="queue-list" id="queue-list">
-            <div class="loading">Loading issues…</div>
+            <div class="loading">Loading issues...</div>
           </div>
         </div>
 
         <div class="detail-pane" id="detail-pane">
           <div class="detail-empty">
-            <div class="detail-empty-icon">⬅</div>
+            <div class="detail-empty-icon">&#8592;</div>
             <div class="detail-empty-text">Select an issue to view details</div>
           </div>
         </div>
@@ -146,7 +147,7 @@
       </div>
     </div>
 
-    <!-- ── Tab: Map ───────────────────────────────────────────── -->
+    <!-- Tab: Map -->
     <div class="tab-content hidden" id="tab-map">
       <div class="map-legend">
         <span class="legend-item"><span class="dot dot-high"></span>High severity</span>
@@ -157,14 +158,14 @@
       <div id="leaflet-map"></div>
     </div>
 
-    <!-- ── Tab: Departments ───────────────────────────────────── -->
+    <!-- Tab: Departments -->
     <div class="tab-content hidden" id="tab-departments">
       <div class="dept-grid" id="dept-grid">
-        <div class="loading">Loading…</div>
+        <div class="loading">Loading...</div>
       </div>
     </div>
 
-    <!-- ── Tab: Analytics ────────────────────────────────────── -->
+    <!-- Tab: Analytics -->
     <div class="tab-content hidden" id="tab-analytics">
       <div class="analytics-layout">
         <div class="analytics-card">
@@ -184,10 +185,49 @@
       </div>
     </div>
 
+    <!-- Tab: Officials -->
+    <div class="tab-content hidden" id="tab-officials">
+
+      <!-- Section A: Ward Lookup -->
+      <div class="officials-section">
+        <div class="officials-section-title">Ward &amp; Area Lookup</div>
+        <div class="officials-section-sub">Search by area or ward name to see all responsible officials</div>
+        <div class="ward-search-wrap">
+          <input class="search-input" id="ward-search" type="text" placeholder="e.g. Koramangala, Indiranagar, HSR Layout..." autocomplete="off" />
+          <div class="ward-suggestions hidden" id="ward-suggestions"></div>
+        </div>
+        <div id="ward-results"></div>
+      </div>
+
+      <!-- Section B: Department Org Charts -->
+      <div class="officials-section">
+        <div class="officials-section-title">Department Structure &amp; Contacts</div>
+        <div class="org-dept-chips" id="org-dept-chips">
+          <button class="view-chip active" data-dept="BBMP">BBMP</button>
+          <button class="view-chip" data-dept="BESCOM">BESCOM</button>
+          <button class="view-chip" data-dept="BWSSB">BWSSB</button>
+          <button class="view-chip" data-dept="Traffic Police">Traffic Police</button>
+          <button class="view-chip" data-dept="Political">Political (MLA/MP)</button>
+        </div>
+        <div id="org-chart-container">
+          <div class="loading">Select a department to view its structure.</div>
+        </div>
+      </div>
+
+      <!-- Section C: Issue Routing Guide -->
+      <div class="officials-section">
+        <div class="officials-section-title">Issue Routing &amp; Escalation Reference</div>
+        <div id="routing-guide">
+          <div class="loading">Loading routing guide...</div>
+        </div>
+      </div>
+
+    </div>
+
   </div><!-- /page-body -->
 
   <footer class="footer">
-    GovWatch · Data sourced from public Twitter posts · For government use only
+    GovWatch &middot; Data sourced from public Twitter posts &middot; For government use only
   </footer>
 
   <script src="js/app.js"></script>

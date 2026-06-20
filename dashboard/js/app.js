@@ -374,6 +374,7 @@ function switchTab(tab) {
   if (tab === "map")         renderMap(filtered);
   if (tab === "departments") renderDepartments(filtered);
   if (tab === "analytics")   renderAnalytics(filtered);
+  if (tab === "officials")   initOfficials();
 }
 
 // ── Queue ──────────────────────────────────────────────────────────
@@ -535,15 +536,20 @@ function renderDetailPanel(issue) {
         </div>` : ""}
       </div>
 
+      <div>
+        <div class="detail-section-label">Who to contact</div>
+        ${renderSmartContactsHTML(issue)}
+      </div>
+
       <div class="detail-actions">
         <div class="detail-status-row">
           <span class="detail-status-label">Status</span>
           <select class="status-select ${statusClass}" id="detail-status-select" data-issue-id="${esc(String(issue.id))}">${statusOpts}</select>
         </div>
         <a class="btn-assign" href="${buildEmailLink(issue)}">
-          📧 Assign to ${esc(poc.dept)}
+          &#128231; Assign to ${esc(poc.dept)}
         </a>
-        ${issue.source_url ? `<a class="btn-source" href="${esc(issue.source_url)}" target="_blank" rel="noopener">Open source tweet ↗</a>` : ""}
+        ${issue.source_url ? `<a class="btn-source" href="${esc(issue.source_url)}" target="_blank" rel="noopener">Open source tweet &#8599;</a>` : ""}
       </div>
 
     </div>
@@ -898,6 +904,767 @@ function setLastUpdated() {
   if (!ts.length) return;
   document.getElementById("last-updated").textContent =
     "Latest: " + new Date(Math.max(...ts)).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" });
+}
+
+// ── Officials Data & State ─────────────────────────────────────────
+
+let officialsData = {
+  wards: [],
+  wardLookup: {},       // ward_name.toLowerCase() -> ward object
+  wardNoLookup: {},     // ward_no -> ward object
+  areaToWard: {},       // from area_ward_lookup.json
+  issueRouting: [],
+  escalationChains: {},
+  cityCorpContacts: [],
+  swmSe: [],
+  swmAee: [],
+  bescomUnits: [],
+  bwssb: [],
+  traffic: [],
+  mlas: [],
+  mps: [],
+  bbmpDir: [],
+};
+let officialsLoaded = false;
+let officialsLoading = false;
+let activeOrgDept = "BBMP";
+
+// ── Officials Init ─────────────────────────────────────────────────
+
+async function initOfficials() {
+  if (officialsLoaded) return;
+  if (officialsLoading) return;
+  officialsLoading = true;
+
+  document.getElementById("org-chart-container").innerHTML = '<div class="loading">Loading officials data...</div>';
+  document.getElementById("routing-guide").innerHTML = '<div class="loading">Loading routing guide...</div>';
+
+  try {
+    const base = "../data/officials/";
+    const [
+      wards, areaWard, routing, escalation, cityCorpContacts,
+      swmSe, swmAee, bescomUnits, bwssb, traffic, mlas, mps, bbmpDir
+    ] = await Promise.all([
+      fetch(base + "wards.json").then(r => r.json()).catch(() => []),
+      fetch(base + "area_ward_lookup.json").then(r => r.json()).catch(() => ({})),
+      fetch(base + "issue_routing.json").then(r => r.json()).catch(() => []),
+      fetch(base + "escalation_chains.json").then(r => r.json()).catch(() => ({})),
+      fetch(base + "city_corp_contacts.json").then(r => r.json()).catch(() => []),
+      fetch(base + "swm_se.json").then(r => r.json()).catch(() => []),
+      fetch(base + "swm_aee.json").then(r => r.json()).catch(() => []),
+      fetch(base + "bescom_units.json").then(r => r.json()).catch(() => []),
+      fetch(base + "bwssb_stations.json").then(r => r.json()).catch(() => []),
+      fetch(base + "traffic_rti.json").then(r => r.json()).catch(() => []),
+      fetch(base + "mlas.json").then(r => r.json()).catch(() => []),
+      fetch(base + "mps.json").then(r => r.json()).catch(() => []),
+      fetch(base + "bbmp_directory.json").then(r => r.json()).catch(() => []),
+    ]);
+
+    officialsData.wards = Array.isArray(wards) ? wards : [];
+    officialsData.areaToWard = areaWard || {};
+    officialsData.issueRouting = Array.isArray(routing) ? routing : [];
+    officialsData.escalationChains = escalation || {};
+    officialsData.cityCorpContacts = Array.isArray(cityCorpContacts) ? cityCorpContacts : [];
+    officialsData.swmSe = Array.isArray(swmSe) ? swmSe : [];
+    officialsData.swmAee = Array.isArray(swmAee) ? swmAee : [];
+    officialsData.bescomUnits = Array.isArray(bescomUnits) ? bescomUnits : [];
+    officialsData.bwssb = Array.isArray(bwssb) ? bwssb : [];
+    officialsData.traffic = Array.isArray(traffic) ? traffic : [];
+    officialsData.mlas = Array.isArray(mlas) ? mlas : [];
+    officialsData.mps = Array.isArray(mps) ? mps : [];
+    officialsData.bbmpDir = Array.isArray(bbmpDir) ? bbmpDir : [];
+
+    // Build lookup tables
+    officialsData.wardLookup = {};
+    officialsData.wardNoLookup = {};
+    officialsData.wards.forEach(w => {
+      if (w.ward_name) officialsData.wardLookup[w.ward_name.toLowerCase()] = w;
+      if (w.ward_no) officialsData.wardNoLookup[String(w.ward_no)] = w;
+    });
+
+    officialsLoaded = true;
+  } catch (err) {
+    console.error("Officials data load error:", err);
+  }
+
+  officialsLoading = false;
+
+  // Render initial org chart and routing guide
+  renderOrgChart(activeOrgDept);
+  renderRoutingGuide();
+  initWardSearch();
+  initOrgChipListeners();
+}
+
+// ── Ward Search ────────────────────────────────────────────────────
+
+function initWardSearch() {
+  const input = document.getElementById("ward-search");
+  const suggestions = document.getElementById("ward-suggestions");
+  if (!input || !suggestions) return;
+
+  input.addEventListener("input", () => {
+    const q = input.value.toLowerCase().trim();
+    if (!q || q.length < 2) {
+      suggestions.classList.add("hidden");
+      return;
+    }
+    const matches = officialsData.wards.filter(w => {
+      return (
+        (w.ward_name && w.ward_name.toLowerCase().includes(q)) ||
+        (w.constituency && w.constituency.toLowerCase().includes(q)) ||
+        (w.city_corp && w.city_corp.toLowerCase().includes(q)) ||
+        (w.ward_no && String(w.ward_no).includes(q))
+      );
+    }).slice(0, 8);
+
+    // Also check area names from areaToWard
+    const areaMatches = Object.entries(officialsData.areaToWard)
+      .filter(([area]) => area.toLowerCase().includes(q))
+      .map(([area, info]) => {
+        const ward = officialsData.wardNoLookup[String(info.ward_no)];
+        return ward ? { ...ward, _matchedArea: area } : null;
+      })
+      .filter(Boolean)
+      .filter(w => !matches.find(m => m.ward_no === w.ward_no));
+
+    const combined = [...matches, ...areaMatches].slice(0, 8);
+
+    if (combined.length === 0) {
+      suggestions.classList.add("hidden");
+      return;
+    }
+
+    suggestions.innerHTML = combined.map(w => `
+      <div class="ward-suggestion-item" data-ward-no="${esc(String(w.ward_no))}">
+        <div>${esc(w.ward_name)}${w._matchedArea ? ` <span style="color:var(--muted)">(${esc(w._matchedArea)})</span>` : ""}</div>
+        <div class="ward-suggestion-meta">${esc(w.constituency || "")} &middot; ${esc(w.city_corp || "")}</div>
+      </div>
+    `).join("");
+    suggestions.classList.remove("hidden");
+
+    suggestions.querySelectorAll(".ward-suggestion-item").forEach(item => {
+      item.addEventListener("click", () => {
+        const wardNo = item.dataset.wardNo;
+        const ward = officialsData.wardNoLookup[wardNo];
+        if (ward) {
+          input.value = ward.ward_name;
+          suggestions.classList.add("hidden");
+          renderWardCard(ward);
+        }
+      });
+    });
+  });
+
+  // Close suggestions on outside click
+  document.addEventListener("click", e => {
+    if (!input.contains(e.target) && !suggestions.contains(e.target)) {
+      suggestions.classList.add("hidden");
+    }
+  });
+}
+
+// ── Ward Card ──────────────────────────────────────────────────────
+
+function renderWardCard(ward) {
+  const el = document.getElementById("ward-results");
+  if (!el) return;
+
+  const bescomParsed = parseBescomAee(ward.bescom_aee || "");
+
+  // Build cells
+  const cells = [
+    buildWardCell("Waste / SWM", [
+      ward.swm_jhi ? `<div class="ward-contact-name">${esc(ward.swm_jhi)}</div>` : "",
+      ward.swm_jhi_mobile ? `<div class="ward-contact-phone">${esc(ward.swm_jhi_mobile)}</div>` : "",
+      ward.swm_aee ? `<div class="ward-contact-detail">AEE: ${esc(ward.swm_aee)}</div>` : "",
+      ward.swm_aee_mobile ? `<div class="ward-contact-phone">${esc(ward.swm_aee_mobile)}</div>` : "",
+      ward.swm_aee_email ? `<a class="ward-email-btn" href="${buildWardEmail(ward.swm_aee_email, ward, "Waste / SWM")}" target="_blank">Email AEE</a>` : "",
+      !ward.swm_jhi && !ward.swm_aee ? `<div class="ward-empty">Data not available</div>` : "",
+    ].filter(Boolean).join("")),
+
+    buildWardCell("Electricity / BESCOM", [
+      bescomParsed.name ? `<div class="ward-contact-name">${esc(bescomParsed.name)}</div>` : "",
+      bescomParsed.phone ? `<div class="ward-contact-phone">${esc(bescomParsed.phone)}</div>` : "",
+      ward.bescom_subdivision ? `<div class="ward-contact-detail">Subdivision ${esc(ward.bescom_subdivision)}</div>` : "",
+      ward.bescom_unit ? `<div class="ward-contact-detail">Unit: ${esc(ward.bescom_unit)}</div>` : "",
+      bescomParsed.email ? `<a class="ward-email-btn" href="${buildWardEmail(bescomParsed.email, ward, "Electricity / BESCOM")}" target="_blank">Email AEE</a>` : "",
+      !bescomParsed.name && !ward.bescom_aee ? `<div class="ward-empty">Data not available</div>` : "",
+    ].filter(Boolean).join("")),
+
+    buildWardCell("Water / BWSSB", [
+      ward.bwssb_ae ? `<div class="ward-contact-name">${esc(ward.bwssb_ae)}</div>` : "",
+      ward.bwssb_ae_mobile ? `<div class="ward-contact-phone">${esc(ward.bwssb_ae_mobile)}</div>` : "",
+      ward.bwssb_aee ? `<div class="ward-contact-detail">AEE: ${esc(ward.bwssb_aee)}</div>` : "",
+      ward.bwssb_aee_mobile ? `<div class="ward-contact-phone">${esc(ward.bwssb_aee_mobile)}</div>` : "",
+      ward.bwssb_aee_email ? `<a class="ward-email-btn" href="${buildWardEmail(ward.bwssb_aee_email, ward, "Water / BWSSB")}" target="_blank">Email AEE</a>` : "",
+      !ward.bwssb_ae && !ward.bwssb_aee ? `<div class="ward-empty">Data not available</div>` : "",
+    ].filter(Boolean).join("")),
+
+    buildWardCell("Traffic Police", [
+      ward.traffic_ps ? `<div class="ward-contact-detail">PS: ${esc(ward.traffic_ps)}</div>` : "",
+      ward.traffic_pio ? `<div class="ward-contact-name">${esc(ward.traffic_pio)}</div>` : "",
+      ward.traffic_pio_contact ? `<div class="ward-contact-phone">${esc(ward.traffic_pio_contact)}</div>` : "",
+      !ward.traffic_ps && !ward.traffic_pio ? `<div class="ward-empty">Data not available</div>` : "",
+    ].filter(Boolean).join("")),
+
+    buildWardCell("Roads / City Corp", [
+      ward.city_commissioner ? `<div class="ward-contact-name">${esc(ward.city_commissioner)}</div>` : "",
+      ward.city_commissioner_contact ? `<div class="ward-contact-phone">${esc(ward.city_commissioner_contact)}</div>` : "",
+      ward.city_corp ? `<div class="ward-contact-detail">${esc(ward.city_corp)}</div>` : "",
+      ward.city_commissioner_email ? `<a class="ward-email-btn" href="${buildWardEmail(ward.city_commissioner_email, ward, "Roads / City Corporation")}" target="_blank">Email Commissioner</a>` : "",
+    ].filter(Boolean).join("")),
+
+    buildWardCell("Councillor", [
+      ward.councillor ? `<div class="ward-contact-name">${esc(ward.councillor)}</div>` : `<div class="ward-empty">Not available</div>`,
+      ward.councillor_mobile ? `<div class="ward-contact-phone">${esc(ward.councillor_mobile)}</div>` : "",
+      ward.councillor_confidence && ward.councillor_confidence !== "High" && ward.councillor
+        ? `<div class="ward-note">Confidence: ${esc(ward.councillor_confidence)} - verify before contacting</div>` : "",
+    ].filter(Boolean).join("")),
+
+    buildWardCell("MLA", [
+      ward.mla ? `<div class="ward-contact-name">${esc(ward.mla)}</div>` : `<div class="ward-empty">Not available</div>`,
+      ward.mla_party ? `<div class="ward-contact-detail">${esc(ward.mla_party)}</div>` : "",
+      ward.mla_phones ? `<div class="ward-contact-phone">${esc(ward.mla_phones)}</div>` : "",
+      ward.mla_email ? `<a class="ward-email-btn" href="${buildWardEmail(ward.mla_email, ward, "Civic issue")}" target="_blank">Email MLA</a>` : "",
+    ].filter(Boolean).join("")),
+
+    buildWardCell("MP", [
+      ward.mp ? `<div class="ward-contact-name">${esc(ward.mp)}</div>` : `<div class="ward-empty">Not available</div>`,
+      ward.mp_phones ? `<div class="ward-contact-phone">${esc(ward.mp_phones)}</div>` : "",
+      ward.mp_email ? `<a class="ward-email-btn" href="${buildWardEmail(ward.mp_email, ward, "Civic issue")}" target="_blank">Email MP</a>` : "",
+    ].filter(Boolean).join("")),
+  ];
+
+  el.innerHTML = `
+    <div class="ward-card">
+      <div class="ward-card-header">
+        <div class="ward-card-header-name">Ward ${esc(ward.ward_no || "")} &mdash; ${esc(ward.ward_name || "")}</div>
+        <div class="ward-card-header-meta">
+          <span>Constituency: ${esc(ward.constituency || "N/A")}</span>
+          <span>${esc(ward.city_corp || "")}</span>
+        </div>
+      </div>
+      <div class="ward-card-grid">
+        ${cells.join("")}
+      </div>
+    </div>
+  `;
+}
+
+function buildWardCell(label, content) {
+  return `<div class="ward-dept-cell"><div class="ward-dept-label">${esc(label)}</div>${content}</div>`;
+}
+
+function buildWardEmail(toEmail, ward, subject) {
+  const sub = `[GovWatch] ${subject} — Ward ${ward.ward_no} ${ward.ward_name}`;
+  const body = `Dear Official,\n\nI am writing to bring a civic issue to your attention in Ward ${ward.ward_no} (${ward.ward_name}), ${ward.constituency}.\n\n[Describe the issue here]\n\n— GovWatch Civic Intelligence Dashboard\nhttps://ishanfso.github.io/GovWatch/dashboard/`;
+  return `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(toEmail)}&su=${encodeURIComponent(sub)}&body=${encodeURIComponent(body)}`;
+}
+
+// ── Parse BESCOM AEE string ────────────────────────────────────────
+
+function parseBescomAee(str) {
+  if (!str) return {};
+  // Format: "Assistant Executive Engineer Sri. Jagadish M.H 8277893186 AEE Ele <aees20.work@gmail.com >"
+  const emailMatch = str.match(/<([^>]+)>/);
+  const email = emailMatch ? emailMatch[1].trim() : "";
+  const phoneMatch = str.match(/\b(\d{10})\b/);
+  const phone = phoneMatch ? phoneMatch[1] : "";
+  // Extract name: text between "Engineer" or "Sri." and the phone
+  let name = "";
+  const nameMatch = str.match(/(?:Assistant Executive Engineer|Sri\.|Smt\.)\s+([A-Za-z\s\.]+?)(?:\s+\d{10}|\s+AEE|$)/);
+  if (nameMatch) name = nameMatch[1].trim();
+  return { name, phone, email };
+}
+
+// ── Org Chart ──────────────────────────────────────────────────────
+
+function initOrgChipListeners() {
+  const chips = document.querySelectorAll("#org-dept-chips .view-chip");
+  chips.forEach(chip => {
+    chip.addEventListener("click", () => {
+      chips.forEach(c => c.classList.remove("active"));
+      chip.classList.add("active");
+      activeOrgDept = chip.dataset.dept;
+      renderOrgChart(activeOrgDept);
+    });
+  });
+}
+
+function renderOrgChart(dept) {
+  const container = document.getElementById("org-chart-container");
+  if (!container) return;
+
+  if (!officialsLoaded) {
+    container.innerHTML = '<div class="loading">Loading...</div>';
+    return;
+  }
+
+  if (dept === "BBMP") {
+    const chain = officialsData.escalationChains["BBMP / City Corporation Engineering"] || [];
+    // Group city corp contacts by corporation
+    const corps = {};
+    officialsData.cityCorpContacts.forEach(c => {
+      if (!corps[c.corporation]) corps[c.corporation] = [];
+      corps[c.corporation].push(c);
+    });
+
+    const chainHTML = chain.map(level => `
+      <div class="org-level">
+        <div class="org-level-num">${esc(level.level)}</div>
+        <div class="org-level-body">
+          <div class="org-level-role">${esc(level.role)}</div>
+          <div class="org-level-use">${esc(level.use_for)}</div>
+          ${level.notes ? `<div class="ward-note">${esc(level.notes)}</div>` : ""}
+        </div>
+      </div>
+    `).join("");
+
+    const corpCards = Object.entries(corps).map(([corp, contacts]) => {
+      const cards = contacts.slice(0, 4).map(c => `
+        <div class="org-contact-card">
+          <div class="org-contact-role">${esc(c.role)}${c.zone ? " &mdash; " + esc(c.zone) : ""}</div>
+          <div class="org-contact-name">${esc(c.name)}</div>
+          <div class="org-contact-info">${esc(c.phone || "")}${c.email ? " &middot; " + esc(c.email) : ""}</div>
+        </div>
+      `).join("");
+      return `
+        <div style="margin-bottom:16px">
+          <div class="ward-dept-label" style="margin-bottom:8px">${esc(corp)}</div>
+          <div class="org-level-cards">${cards}</div>
+        </div>
+      `;
+    }).join("");
+
+    container.innerHTML = `
+      <div class="org-chart">${chainHTML}</div>
+      <div style="margin-top:20px">
+        <div class="officials-section-title" style="font-size:.85rem;margin-bottom:12px">City Corporation Commissioners &amp; Key Contacts</div>
+        ${corpCards}
+      </div>
+    `;
+
+  } else if (dept === "BESCOM") {
+    const chain = officialsData.escalationChains["BESCOM"] || [];
+    const chainHTML = chain.map(level => `
+      <div class="org-level">
+        <div class="org-level-num">${esc(level.level)}</div>
+        <div class="org-level-body">
+          <div class="org-level-role">${esc(level.role)}</div>
+          <div class="org-level-use">${esc(level.use_for)}</div>
+        </div>
+      </div>
+    `).join("");
+
+    // Group by zone -> circle -> show summary
+    const zones = {};
+    officialsData.bescomUnits.forEach(u => {
+      const z = u.zone || "Other";
+      if (!zones[z]) zones[z] = {};
+      const c = u.circle || "General";
+      if (!zones[z][c]) zones[z][c] = [];
+      zones[z][c].push(u);
+    });
+
+    const zoneCards = Object.entries(zones).slice(0, 4).map(([zone, circles]) => {
+      const circleItems = Object.entries(circles).map(([circle, units]) => {
+        const parsed = parseBescomAee(units[0]?.aee || "");
+        return `<div class="org-contact-card">
+          <div class="org-contact-role">${esc(circle)} Circle</div>
+          <div class="org-contact-name">${parsed.name ? esc(parsed.name) : "AEE " + esc(units[0]?.subdivision || "")}</div>
+          <div class="org-contact-info">${esc(units.length)} subdivision${units.length !== 1 ? "s" : ""}</div>
+        </div>`;
+      }).join("");
+      return `
+        <div style="margin-bottom:16px">
+          <div class="ward-dept-label" style="margin-bottom:8px">${esc(zone)}</div>
+          <div class="org-level-cards">${circleItems}</div>
+        </div>
+      `;
+    }).join("");
+
+    container.innerHTML = `
+      <div class="org-chart">${chainHTML}</div>
+      <div style="margin-top:20px">
+        <div class="officials-section-title" style="font-size:.85rem;margin-bottom:12px">BESCOM Zones &amp; Circles</div>
+        ${zoneCards}
+      </div>
+    `;
+
+  } else if (dept === "BWSSB") {
+    const chain = officialsData.escalationChains["BWSSB"] || [];
+    const chainHTML = chain.map(level => `
+      <div class="org-level">
+        <div class="org-level-num">${esc(level.level)}</div>
+        <div class="org-level-body">
+          <div class="org-level-role">${esc(level.role)}</div>
+          <div class="org-level-use">${esc(level.use_for)}</div>
+        </div>
+      </div>
+    `).join("");
+
+    // Group by division
+    const divs = {};
+    officialsData.bwssb.forEach(s => {
+      const d = s.division || "Other";
+      if (!divs[d]) divs[d] = { ee: s.ee_name, email: s.division_email, stations: [] };
+      divs[d].stations.push(s);
+    });
+
+    const divCards = Object.entries(divs).slice(0, 4).map(([div, info]) => {
+      return `<div class="org-contact-card">
+        <div class="org-contact-role">${esc(div)} Division</div>
+        <div class="org-contact-name">${esc(info.ee || "EE")}</div>
+        <div class="org-contact-info">${info.stations.length} service station${info.stations.length !== 1 ? "s" : ""}${info.email ? " &middot; " + esc(info.email) : ""}</div>
+      </div>`;
+    }).join("");
+
+    container.innerHTML = `
+      <div class="org-chart">${chainHTML}</div>
+      <div style="margin-top:20px">
+        <div class="officials-section-title" style="font-size:.85rem;margin-bottom:12px">BWSSB Divisions</div>
+        <div class="org-level-cards">${divCards}</div>
+      </div>
+    `;
+
+  } else if (dept === "Traffic Police") {
+    const chain = officialsData.escalationChains["Traffic Police"] || [];
+    const chainHTML = chain.map(level => `
+      <div class="org-level">
+        <div class="org-level-num">${esc(level.level)}</div>
+        <div class="org-level-body">
+          <div class="org-level-role">${esc(level.role)}</div>
+          <div class="org-level-use">${esc(level.use_for)}</div>
+          ${level.notes ? `<div class="ward-note">${esc(level.notes)}</div>` : ""}
+        </div>
+      </div>
+    `).join("");
+
+    const psCards = officialsData.traffic.slice(0, 12).map(t => `
+      <div class="org-contact-card">
+        <div class="org-contact-role">${esc(t.ps || "")}</div>
+        <div class="org-contact-name">${esc(t.pio || "")}</div>
+        <div class="org-contact-info">${esc(t.pio_contact || "")}</div>
+      </div>
+    `).join("");
+
+    container.innerHTML = `
+      <div class="org-chart">${chainHTML}</div>
+      <div style="margin-top:20px">
+        <div class="officials-section-title" style="font-size:.85rem;margin-bottom:12px">Traffic Police Stations &amp; RTI Officers</div>
+        <div class="org-level-cards">${psCards}</div>
+      </div>
+    `;
+
+  } else if (dept === "Political") {
+    const chain = officialsData.escalationChains["Political / Elected"] || [];
+    const chainHTML = chain.map(level => `
+      <div class="org-level">
+        <div class="org-level-num">${esc(level.level)}</div>
+        <div class="org-level-body">
+          <div class="org-level-role">${esc(level.role)}</div>
+          <div class="org-level-use">${esc(level.use_for)}</div>
+          ${level.notes ? `<div class="ward-note">${esc(level.notes)}</div>` : ""}
+        </div>
+      </div>
+    `).join("");
+
+    const mlaCards = officialsData.mlas.slice(0, 12).map(m => `
+      <div class="org-contact-card">
+        <div class="org-contact-role">${esc(m.constituency || "")}</div>
+        <div class="org-contact-name">${esc(m.name || "")}</div>
+        <div class="org-contact-info">${esc(m.party || "")}${m.phones ? " &middot; " + esc(m.phones) : ""}</div>
+        ${m.email ? `<div class="org-contact-info"><a href="mailto:${esc(m.email)}" style="color:var(--action)">${esc(m.email)}</a></div>` : ""}
+      </div>
+    `).join("");
+
+    const mpCards = officialsData.mps.map(m => `
+      <div class="org-contact-card">
+        <div class="org-contact-role">${esc(m.constituency || "")}</div>
+        <div class="org-contact-name">${esc(m.name || "")}</div>
+        <div class="org-contact-info">${esc(m.party || "")}${m.phones ? " &middot; " + esc(m.phones) : ""}</div>
+        ${m.email ? `<div><a class="ward-email-btn" href="https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(m.email)}&su=${encodeURIComponent("[GovWatch] Civic issue — Bangalore")}" target="_blank">Email MP</a></div>` : ""}
+      </div>
+    `).join("");
+
+    container.innerHTML = `
+      <div class="org-chart">${chainHTML}</div>
+      <div style="margin-top:20px">
+        <div class="officials-section-title" style="font-size:.85rem;margin-bottom:12px">Members of Parliament</div>
+        <div class="org-level-cards" style="margin-bottom:20px">${mpCards}</div>
+        <div class="officials-section-title" style="font-size:.85rem;margin-bottom:12px">MLAs (Bangalore Constituencies)</div>
+        <div class="org-level-cards">${mlaCards}</div>
+      </div>
+    `;
+  }
+}
+
+// ── Routing Guide ──────────────────────────────────────────────────
+
+function renderRoutingGuide() {
+  const el = document.getElementById("routing-guide");
+  if (!el) return;
+  if (!officialsLoaded || officialsData.issueRouting.length === 0) {
+    el.innerHTML = '<div class="no-results">Routing data not available.</div>';
+    return;
+  }
+
+  const cards = officialsData.issueRouting.map(r => `
+    <div class="routing-card">
+      <div class="routing-issue-type">${esc(r.category)}</div>
+      <div class="routing-step">
+        <span class="routing-badge badge-first">First</span>
+        <span>${esc(r.first_contact)}</span>
+      </div>
+      ${r.cc ? `<div class="routing-step"><span class="routing-badge badge-cc">CC</span><span>${esc(r.cc)}</span></div>` : ""}
+      ${r.escalation_1 ? `<div class="routing-step"><span class="routing-badge badge-esc1">Escalate 1</span><span>${esc(r.escalation_1)}</span></div>` : ""}
+      ${r.escalation_2 ? `<div class="routing-step"><span class="routing-badge badge-esc2">Escalate 2</span><span>${esc(r.escalation_2)}</span></div>` : ""}
+      ${r.political ? `<div class="routing-step"><span class="routing-badge badge-political">Political</span><span>${esc(r.political)}</span></div>` : ""}
+      <div class="routing-sla"><strong>SLA:</strong> ${esc(r.sla)}</div>
+      ${r.notes ? `<div class="routing-notes">${esc(r.notes)}</div>` : ""}
+    </div>
+  `).join("");
+
+  el.innerHTML = `<div class="routing-grid">${cards}</div>`;
+}
+
+// ── Smart Contacts ─────────────────────────────────────────────────
+
+function getSmartContacts(issue) {
+  if (!officialsLoaded) return [];
+
+  const contacts = [];
+  const category = issue.category || "Other";
+  const area = issue.area || "";
+
+  // Lookup ward
+  const areaEntry = officialsData.areaToWard[area];
+  let ward = null;
+  if (areaEntry) {
+    ward = officialsData.wardNoLookup[String(areaEntry.ward_no)];
+  }
+
+  if (!ward) {
+    // Fallback: use POC_DIRECTORY generic contacts
+    const poc = POC_DIRECTORY[category] || POC_DIRECTORY.Other;
+    contacts.push({
+      role: poc.dept,
+      detail: poc.div,
+      name: "General Inbox",
+      phone: poc.phone,
+      email: poc.email,
+      type: "first_contact",
+    });
+    return contacts;
+  }
+
+  if (category === "Waste") {
+    if (ward.swm_jhi) {
+      contacts.push({
+        role: "SWM JHI",
+        detail: ward.swm_division || "",
+        name: ward.swm_jhi,
+        phone: ward.swm_jhi_mobile || "",
+        email: "",
+        type: "first_contact",
+      });
+    }
+    if (ward.swm_aee) {
+      contacts.push({
+        role: "SWM AEE",
+        detail: ward.swm_division || "",
+        name: ward.swm_aee,
+        phone: ward.swm_aee_mobile || "",
+        email: ward.swm_aee_email || "",
+        type: "cc",
+      });
+    }
+    if (!ward.swm_jhi && !ward.swm_aee) {
+      const poc = POC_DIRECTORY.Waste;
+      contacts.push({ role: "BBMP SWM", detail: "General", name: "SWM Helpline", phone: poc.phone, email: poc.email, type: "first_contact" });
+    }
+
+  } else if (category === "Electricity") {
+    const parsed = parseBescomAee(ward.bescom_aee || "");
+    if (parsed.name || parsed.phone || parsed.email) {
+      contacts.push({
+        role: "BESCOM AEE",
+        detail: ward.bescom_subdivision ? "Subdivision " + ward.bescom_subdivision : ward.bescom_unit || "",
+        name: parsed.name || "AEE",
+        phone: parsed.phone || "",
+        email: parsed.email || "",
+        type: "first_contact",
+      });
+    }
+    if (ward.bescom_ae_je) {
+      contacts.push({
+        role: "BESCOM AE/JE",
+        detail: ward.bescom_unit || "",
+        name: ward.bescom_ae_je.substring(0, 60),
+        phone: "",
+        email: "",
+        type: "cc",
+      });
+    }
+    if (contacts.length === 0) {
+      const poc = POC_DIRECTORY.Electricity;
+      contacts.push({ role: "BESCOM", detail: "Consumer Care", name: "Helpline", phone: poc.phone, email: poc.email, type: "first_contact" });
+    }
+
+  } else if (category === "Water") {
+    if (ward.bwssb_ae) {
+      contacts.push({
+        role: "BWSSB AE",
+        detail: ward.bwssb_station || "",
+        name: ward.bwssb_ae,
+        phone: ward.bwssb_ae_mobile || "",
+        email: "",
+        type: "first_contact",
+      });
+    }
+    if (ward.bwssb_aee) {
+      contacts.push({
+        role: "BWSSB AEE",
+        detail: ward.bwssb_station || "",
+        name: ward.bwssb_aee,
+        phone: ward.bwssb_aee_mobile || "",
+        email: ward.bwssb_aee_email || "",
+        type: "cc",
+      });
+    }
+    if (!ward.bwssb_ae && !ward.bwssb_aee) {
+      const poc = POC_DIRECTORY.Water;
+      contacts.push({ role: "BWSSB", detail: "Consumer Grievances", name: "Helpline", phone: poc.phone, email: poc.email, type: "first_contact" });
+    }
+
+  } else if (category === "Traffic") {
+    if (ward.traffic_pio) {
+      contacts.push({
+        role: "Traffic Police PIO",
+        detail: ward.traffic_ps || "",
+        name: ward.traffic_pio,
+        phone: ward.traffic_pio_contact || "",
+        email: "",
+        type: "first_contact",
+      });
+    } else {
+      const poc = POC_DIRECTORY.Traffic;
+      contacts.push({ role: "BTP", detail: "Traffic Management", name: "Helpline", phone: poc.phone, email: poc.email, type: "first_contact" });
+    }
+
+  } else {
+    // Roads, Parks, Flooding, Other — use City Commissioner
+    if (ward.city_commissioner) {
+      contacts.push({
+        role: "City Commissioner",
+        detail: ward.city_corp || "",
+        name: ward.city_commissioner,
+        phone: ward.city_commissioner_contact || "",
+        email: ward.city_commissioner_email || "",
+        type: "first_contact",
+      });
+    } else {
+      const poc = POC_DIRECTORY[category] || POC_DIRECTORY.Other;
+      contacts.push({ role: poc.dept, detail: poc.div, name: "General", phone: poc.phone, email: poc.email, type: "first_contact" });
+    }
+  }
+
+  // Always add MLA as political contact if email exists
+  if (ward.mla && ward.mla_email) {
+    contacts.push({
+      role: "MLA",
+      detail: ward.constituency || "",
+      name: ward.mla,
+      phone: ward.mla_phones || "",
+      email: ward.mla_email,
+      type: "escalation",
+    });
+  }
+
+  return contacts;
+}
+
+function renderSmartContactsHTML(issue) {
+  if (!officialsLoaded) {
+    return '<div class="sc-no-contacts">Officials data loading...</div>';
+  }
+
+  const contacts = getSmartContacts(issue);
+  if (!contacts || contacts.length === 0) {
+    return '<div class="sc-no-contacts">No specific contacts found for this area and category.</div>';
+  }
+
+  const badgeClass = { first_contact: "badge-first", cc: "badge-cc", escalation: "badge-esc1" };
+  const badgeLabel = { first_contact: "First Contact", cc: "CC", escalation: "Escalation" };
+
+  const emailLinkForContacts = buildSmartEmailLink(contacts, issue);
+
+  const rows = contacts.map(c => {
+    const badge = `<span class="sc-type-badge ${badgeClass[c.type] || "badge-cc"}">${badgeLabel[c.type] || "CC"}</span>`;
+    const roleDetail = c.detail ? `${esc(c.role)} &mdash; ${esc(c.detail)}` : esc(c.role);
+    const emailBtn = c.email
+      ? `<a class="sc-email-btn" href="${esc(buildSmartEmailLink([c], issue))}" target="_blank">Email</a>`
+      : "";
+    return `
+      <div class="smart-contact-row">
+        ${badge}
+        <span class="sc-role">${roleDetail}</span>
+        <span class="sc-name">${esc(c.name)}</span>
+        ${c.phone ? `<span class="sc-phone">${esc(c.phone)}</span>` : ""}
+        ${emailBtn}
+      </div>
+    `;
+  }).join("");
+
+  // Bulk email button if multiple contacts have emails
+  const emailContacts = contacts.filter(c => c.email);
+  const bulkBtn = emailContacts.length > 1
+    ? `<a class="ward-email-btn" style="margin-top:4px" href="${esc(emailLinkForContacts)}" target="_blank">Email All Contacts</a>`
+    : "";
+
+  return `<div class="smart-contacts">${rows}${bulkBtn}</div>`;
+}
+
+function buildSmartEmailLink(contacts, issue) {
+  if (!contacts || contacts.length === 0) return "#";
+  const poc = POC_DIRECTORY[issue.category] || POC_DIRECTORY.Other;
+
+  const firstContact = contacts.find(c => c.type === "first_contact");
+  const ccContacts = contacts.filter(c => c.type !== "first_contact" && c.email);
+
+  const toEmail = (firstContact && firstContact.email) ? firstContact.email : (poc.email || "");
+  const ccEmails = ccContacts.map(c => c.email).filter(Boolean).join(",");
+
+  const subject = `[GovWatch] ${esc(issue.category)} issue — ${esc(issue.area)} — TAT: ${poc.tat}h`;
+
+  const contactNames = contacts.map(c => `  ${c.role}: ${c.name}${c.phone ? " (" + c.phone + ")" : ""}`).join("\n");
+  const body = [
+    `Dear ${firstContact ? firstContact.role : "Official"},`,
+    ``,
+    `A civic complaint has been flagged via GovWatch that requires your attention.`,
+    ``,
+    `Category:  ${issue.category}`,
+    `Area:      ${issue.area}`,
+    `Severity:  ${issue.severity ? issue.severity.charAt(0).toUpperCase() + issue.severity.slice(1) : ""}`,
+    ``,
+    `Complaint:`,
+    `"${issue.text}"`,
+    ``,
+    `Source: ${issue.source_url || "N/A"}`,
+    ``,
+    `Contacts copied on this email:`,
+    contactNames,
+    ``,
+    `Please acknowledge and update status within ${poc.tat} hours.`,
+    ``,
+    `— GovWatch Civic Intelligence Dashboard`,
+    `  https://ishanfso.github.io/GovWatch/dashboard/`,
+  ].join("\n");
+
+  let url = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(toEmail)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  if (ccEmails) url += `&cc=${encodeURIComponent(ccEmails)}`;
+  return url;
 }
 
 // ── Start ──────────────────────────────────────────────────────────

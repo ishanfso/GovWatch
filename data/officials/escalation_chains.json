@@ -1,0 +1,120 @@
+{
+  "BBMP / City Corporation Engineering": [
+    {
+      "level": "1",
+      "role": "AEE / Ward Engineer",
+      "use_for": "Roads, footpath, drains, street infra",
+      "notes": "Ward-specific contact still missing; use city-corporation CE/DC as escalation."
+    },
+    {
+      "level": "2",
+      "role": "Executive Engineer / Chief Engineer",
+      "use_for": "Escalate non-response from AEE",
+      "notes": "From BBMP email directory and city corporation contact matrix."
+    },
+    {
+      "level": "3",
+      "role": "Joint Commissioner / Deputy Commissioner",
+      "use_for": "Administrative escalation",
+      "notes": "City corporation contact matrix as on 08-12-2025."
+    },
+    {
+      "level": "4",
+      "role": "Commissioner / Additional Commissioner Development",
+      "use_for": "High-priority or repeated failures",
+      "notes": ""
+    }
+  ],
+  "Traffic Police": [
+    {
+      "level": "1",
+      "role": "Traffic Police Station / PI or PIO",
+      "use_for": "Parking, signal, congestion, enforcement",
+      "notes": "Traffic RTI sheet includes PIO and First Appellate Authority."
+    },
+    {
+      "level": "2",
+      "role": "ACP Traffic Subdivision",
+      "use_for": "Escalate PS-level non-response",
+      "notes": ""
+    },
+    {
+      "level": "3",
+      "role": "DCP Traffic Division",
+      "use_for": "Division-level escalation",
+      "notes": ""
+    },
+    {
+      "level": "4",
+      "role": "Joint Commissioner Traffic",
+      "use_for": "Systemic or city-level issue",
+      "notes": ""
+    }
+  ],
+  "BESCOM": [
+    {
+      "level": "1",
+      "role": "AE / JE / Service station",
+      "use_for": "Outage, transformer, wires, billing local issue",
+      "notes": "Mapped by BESCOM O&M unit/locality where possible."
+    },
+    {
+      "level": "2",
+      "role": "AEE Subdivision",
+      "use_for": "Escalate repeated outage/unsafe infrastructure",
+      "notes": ""
+    },
+    {
+      "level": "3",
+      "role": "EE Division / SE Circle",
+      "use_for": "Division/circle escalation",
+      "notes": ""
+    },
+    {
+      "level": "4",
+      "role": "Chief Engineer",
+      "use_for": "Major repeated or widespread issues",
+      "notes": ""
+    }
+  ],
+  "BWSSB": [
+    {
+      "level": "1",
+      "role": "Service Station AE",
+      "use_for": "Water supply, sewage, manholes",
+      "notes": "Mapped from BWSSB service station data."
+    },
+    {
+      "level": "2",
+      "role": "AEE Subdivision",
+      "use_for": "Service station non-response",
+      "notes": ""
+    },
+    {
+      "level": "3",
+      "role": "Executive Engineer Division",
+      "use_for": "Division escalation",
+      "notes": ""
+    }
+  ],
+  "Political / Elected": [
+    {
+      "level": "1",
+      "role": "Councillor",
+      "use_for": "Ward-level accountability",
+      "notes": "Legacy 198-ward list; current status unverified."
+    },
+    {
+      "level": "2",
+      "role": "MLA",
+      "use_for": "Assembly-level escalation",
+      "notes": "From MLA map PDF."
+    },
+    {
+      "level": "3",
+      "role": "MP",
+      "use_for": "Parliamentary-level escalation, major infrastructure/system issues",
+      "notes": "From MP map PDF."
+    }
+  ]
+}
