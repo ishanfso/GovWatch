@@ -842,6 +842,313 @@ body {
   margin-top: 20px;
 }
 
+/* ── Officials Tab ───────────────────────────────────────────────── */
+.officials-section { margin-bottom: 28px; }
+.officials-section-title {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+.officials-section-sub {
+  font-size: .8rem;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+
+/* Ward search */
+.ward-search-wrap { position: relative; max-width: 480px; margin-bottom: 16px; }
+.ward-suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  z-index: 50;
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  margin-top: 2px;
+}
+.ward-suggestions.hidden { display: none; }
+.ward-suggestion-item {
+  padding: 8px 14px;
+  font-size: .84rem;
+  cursor: pointer;
+  color: var(--text);
+  border-bottom: 1px solid var(--border-soft);
+  transition: background .1s;
+}
+.ward-suggestion-item:last-child { border-bottom: none; }
+.ward-suggestion-item:hover { background: var(--brand-light); color: var(--brand); }
+.ward-suggestion-meta { font-size: .71rem; color: var(--muted); margin-top: 1px; }
+
+/* Ward card */
+.ward-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.ward-card-header {
+  background: var(--brand);
+  color: #fff;
+  padding: 14px 18px;
+}
+.ward-card-header-name {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.ward-card-header-meta {
+  font-size: .74rem;
+  opacity: .8;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.ward-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--border);
+}
+.ward-dept-cell {
+  padding: 12px 14px;
+  border-right: 1px solid var(--border-soft);
+  border-bottom: 1px solid var(--border-soft);
+}
+.ward-dept-cell:nth-child(3n) { border-right: none; }
+.ward-dept-label {
+  font-size: .6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  color: var(--brand);
+  margin-bottom: 6px;
+}
+.ward-contact-name {
+  font-size: .84rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 2px;
+}
+.ward-contact-detail {
+  font-size: .76rem;
+  color: var(--muted);
+  margin-bottom: 2px;
+}
+.ward-contact-phone {
+  font-size: .76rem;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+.ward-contact-phone::before { content: "T: "; font-weight: 600; }
+.ward-email-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 9px;
+  background: var(--action);
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  font-size: .7rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: inherit;
+  transition: background .12s;
+  margin-top: 4px;
+}
+.ward-email-btn:hover { background: var(--action-hover); }
+.ward-note {
+  font-size: .71rem;
+  color: var(--muted);
+  font-style: italic;
+  margin-top: 4px;
+}
+.ward-empty { font-size: .78rem; color: var(--subtle); font-style: italic; }
+
+/* Org chart */
+.org-dept-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+.org-chart { display: flex; flex-direction: column; gap: 0; }
+.org-level {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border-soft);
+}
+.org-level:last-child { border-bottom: none; }
+.org-level-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--brand);
+  color: #fff;
+  font-size: .72rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.org-level-body { flex: 1; }
+.org-level-role {
+  font-size: .72rem;
+  font-weight: 700;
+  color: var(--brand);
+  text-transform: uppercase;
+  letter-spacing: .4px;
+  margin-bottom: 6px;
+}
+.org-level-use {
+  font-size: .78rem;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.org-level-cards { display: flex; flex-wrap: wrap; gap: 8px; }
+.org-contact-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+  min-width: 200px;
+}
+.org-contact-role {
+  font-size: .61rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .4px;
+  color: var(--brand);
+  margin-bottom: 3px;
+}
+.org-contact-name {
+  font-size: .82rem;
+  font-weight: 600;
+  color: var(--text);
+}
+.org-contact-info {
+  font-size: .73rem;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+/* Routing guide */
+.routing-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+.routing-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 16px 18px;
+  box-shadow: var(--shadow-sm);
+}
+.routing-issue-type {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: .95rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--text);
+}
+.routing-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 7px;
+  font-size: .8rem;
+  color: var(--text);
+}
+.routing-badge {
+  font-size: .6rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 3px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.badge-first     { background: var(--success-light); color: var(--success); }
+.badge-cc        { background: #eff6ff; color: #1d4ed8; }
+.badge-esc1      { background: var(--warning-light); color: var(--warning); }
+.badge-esc2      { background: var(--danger-light); color: var(--danger); }
+.badge-political { background: #f3e8ff; color: #7c3aed; }
+.routing-sla {
+  font-size: .72rem;
+  color: var(--muted);
+  margin-top: 8px;
+  border-top: 1px solid var(--border-soft);
+  padding-top: 8px;
+}
+.routing-notes {
+  font-size: .71rem;
+  color: var(--subtle);
+  font-style: italic;
+  margin-top: 4px;
+}
+
+/* Smart contacts in detail panel */
+.smart-contacts { display: flex; flex-direction: column; gap: 6px; }
+.smart-contact-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  background: var(--bg);
+  border-radius: var(--radius);
+  border: 1px solid var(--border-soft);
+  flex-wrap: wrap;
+}
+.sc-type-badge {
+  font-size: .6rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 3px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.sc-role {
+  font-size: .72rem;
+  font-weight: 600;
+  color: var(--text);
+  flex: 1;
+  min-width: 120px;
+}
+.sc-name { font-size: .72rem; color: var(--muted); }
+.sc-phone { font-size: .71rem; color: var(--subtle); }
+.sc-email-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 9px;
+  background: var(--action);
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  font-size: .7rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: inherit;
+  transition: background .12s;
+  flex-shrink: 0;
+}
+.sc-email-btn:hover { background: var(--action-hover); }
+.sc-no-contacts {
+  font-size: .8rem;
+  color: var(--subtle);
+  font-style: italic;
+  padding: 4px 0;
+}
+
 /* ── Responsive ──────────────────────────────────────────────────── */
 @media (max-width: 1100px) {
   .queue-layout { grid-template-columns: 1fr; }
@@ -863,4 +1170,10 @@ body {
   #leaflet-map { height: 360px; }
   .tab { font-size: .76rem; padding: 8px 12px; }
   .dept-grid { grid-template-columns: 1fr; }
+  .ward-card-grid { grid-template-columns: 1fr; }
+  .routing-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 900px) {
+  .ward-card-grid { grid-template-columns: repeat(2, 1fr); }
+  .routing-grid { grid-template-columns: 1fr; }
 }

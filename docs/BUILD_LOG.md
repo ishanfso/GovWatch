@@ -24,10 +24,29 @@ Every feature and file built in GovWatch, with dates and status.
 | File | Date Built | Status | Description |
 |---|---|---|---|
 | `data/sample_issues.json` | 2026-05-17 | ✅ Live | 20 mock civic issues (dashboard fallback) |
-| `data/issues.json` | 2026-05-17 | ✅ Live | ~128 live filtered Bangalore civic tweets |
+| `data/issues.json` | 2026-05-17 | ✅ Live | ~773 live filtered Bangalore civic tweets |
 | `data/raw_tweets.json` | 2026-05-17 | ✅ Live | All raw tweets from Twitter API (pre-categorization) |
 | `data/issues_unfiltered.json` | 2026-05-17 | ✅ Live | Backup of all keyword-matched tweets before LLM filter |
 | `data/filter_verdicts.json` | 2026-05-17 | ✅ Live | Persistent LLM verdicts per tweet ID (incremental filtering) |
+
+### Officials Database (Phase 5 — added 2026-06-20)
+
+| File | Records | Description |
+|---|---|---|
+| `data/officials/wards.json` | 369 wards | Full ward accountability map: councillor, MLA, MP, SWM JHI, BESCOM AEE, BWSSB AE, traffic PS |
+| `data/officials/issue_routing.json` | 10 types | Issue type → first contact, CC, escalation chain, SLA |
+| `data/officials/escalation_chains.json` | 5 depts | Department escalation ladders (BBMP, BESCOM, BWSSB, Traffic, Political) |
+| `data/officials/city_corp_contacts.json` | 55 entries | BBMP zone/division officers with email |
+| `data/officials/bbmp_directory.json` | 428 entries | BBMP email directory by section and designation |
+| `data/officials/swm_se.json` | 8 entries | SWM Zonal Superintending Engineers |
+| `data/officials/swm_aee.json` | 27 entries | SWM AEEs by zone/division |
+| `data/officials/swm_jhi.json` | 198 entries | Ward-level SWM Junior Health Inspectors with mobile |
+| `data/officials/bescom_units.json` | 484 units | BESCOM operational units: zone→circle→division→AEE/AE/JE |
+| `data/officials/bwssb_stations.json` | 122 stations | BWSSB service stations: EE→AEE→AE with contacts |
+| `data/officials/mlas.json` | 36 MLAs | Bangalore MLAs: party, phones, email |
+| `data/officials/mps.json` | 3 MPs | Bangalore MPs: phones, email, assemblies |
+| `data/officials/traffic_rti.json` | 66 stations | Traffic police stations with PIO and FAA contacts |
+| `data/officials/area_ward_lookup.json` | 28 areas | Dashboard area names → nearest ward name/number |
 
 ---
 
@@ -45,14 +64,19 @@ Every feature and file built in GovWatch, with dates and status.
 - [x] 5 KPI cards — Overdue SLA, High Risk Open, New Today, Unassigned, Resolved This Week
 - [x] Saved views — All / Urgent / Overdue / Unassigned / Resolved chips
 - [x] Filter bar — Department, Category, Area dropdowns + free-text search
+- [x] Date filter — Last 24h / 7d / 30d / This Month / Custom date range
+- [x] Sort control — Priority / Newest / Oldest / Severity
 - [x] Issue clustering — group same category+area into one row with count badge
 - [x] Map view — interactive Leaflet map, coloured markers by severity, click for detail
 - [x] Department view — issues grouped by BBMP / BESCOM / BWSSB / BTP
 - [x] Analytics tab — category bar chart + severity breakdown bars + SLA table by department
 - [x] Status tracking per issue — Open / Acknowledged / In Progress / Resolved (localStorage)
 - [x] CSV export — downloads current filtered view as a spreadsheet
-- [x] Email assign — pre-filled email to correct department official
+- [x] Email assign — Gmail compose URL pre-filled to correct official (not mailto:)
 - [x] Role URL params — ?role=bbmp/bescom/bwssb/btp filters to that department
+- [x] Officials tab — ward lookup, department org charts, issue routing guide
+- [x] Smart contacts — detail panel shows named ward-specific officials for each issue
+- [x] Multi-contact email — Gmail compose with To + CC pre-filled from routing rules
 
 ---
 

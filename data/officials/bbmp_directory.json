@@ -1,0 +1,2142 @@
+[
+  {
+    "section": "HEAD OFFICE",
+    "designation": "Administrator",
+    "email": "admin@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "Commissioner",
+    "email": "comm@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "Special Commissioner Admin",
+    "email": "spcommadmin@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "Special Commissioner Projects",
+    "email": "spcommproj@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "Special Commissioner Finance",
+    "email": "spcommfin@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "IGP",
+    "email": "ig@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "Engineer In Chief",
+    "email": "eic@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "Joint Commissioner Health",
+    "email": "jchealth@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "Joint Commissioner Advertisement",
+    "email": "jcadv@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "Joint Commissioner Market",
+    "email": "jcmarket@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "Joint Commissioner BMTF",
+    "email": "jcbmtf@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "Joint Commissioner Welfare",
+    "email": "jcwel@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "Joint Director Horticulture",
+    "email": "jdhort@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "Joint Director Animal Husbandry",
+    "email": "jdanihus@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "Council Secretary",
+    "email": "clsec@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "Joint Director Town Planning",
+    "email": "jdtp@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "Deputy Commissioner Welfare",
+    "email": "dcwel@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "Deputy Commissioner Estate",
+    "email": "dcest@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "Deputy Commissioner Admin",
+    "email": "dcadm@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "Deputy Commissioner Resources",
+    "email": "dcres@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "Deputy Commissioner Revenue",
+    "email": "dcrev@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "Deputy Commissioner HVA",
+    "email": "dchva@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "Deputy Commissioner Health",
+    "email": "dchealth@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "Chief Engineer Project-1",
+    "email": "ceproj1@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "Chief Engineer Project-2",
+    "email": "ceproj2@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "Chief Engineer Project-3",
+    "email": "ceproj3@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "Chief Engineer Project-4",
+    "email": "ceproj4@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "Chief Engineer Project-5",
+    "email": "ceproj5@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "Chief Engineer Major Roads",
+    "email": "cemajroad@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "Chief Engineer BSUP1",
+    "email": "cebsup1@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "Chief Engineer BSUP2",
+    "email": "cebsup2@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "Chief Engineer Lakes",
+    "email": "celakes@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "Chief Engineer SWM",
+    "email": "ceswm@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "Chief Engineer SWD",
+    "email": "ceswd@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "Chief Engineer Road Widening",
+    "email": "cerdwide@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "Advisor to CM",
+    "email": "advcm@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "Advisor to commissioner",
+    "email": "advcommv@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "Superintendent Engineer SWD",
+    "email": "seswd@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "Superintendent Engineer Project-1",
+    "email": "seproj1@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "Superintendent Engineer BSUP",
+    "email": "sebsup@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "Executive Engineer Project-1",
+    "email": "eeproj1@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "Executive Engineer SWM-1",
+    "email": "eeswm1@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "Executive Engineer SWM-2",
+    "email": "eeswm2@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "Executive Engineer BSUP",
+    "email": "eebsup@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "Executive Engineer Lakes",
+    "email": "eelakes@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "Executive Engineer Road Widening",
+    "email": "eerdwide@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "Executive Engineer MPED",
+    "email": "eemped@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "Chief Audit Officer",
+    "email": "ca@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "Head of the Legal Cell",
+    "email": "hlc@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "Chief Health Officer",
+    "email": "cho@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "IT Advisor",
+    "email": "itadv@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "Environmental Engineer",
+    "email": "evneng@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "Chief Finance Officer",
+    "email": "cao@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "Chief Account Officer",
+    "email": "cfo@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "Technical Assistant IT",
+    "email": "tecassit@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "Sr Programmer",
+    "email": "srprg@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "SAS Complaints",
+    "email": "bbmpsas@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "ACF-1",
+    "email": "acf1@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "ACF-2",
+    "email": "acf2@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "AC Estate",
+    "email": "acest@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "AC Admin-1",
+    "email": "acadm1@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "AC Admin-2",
+    "email": "acadm2@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "AC Recruitment",
+    "email": "acrec@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "AC Market",
+    "email": "acmarket@bbmp.gov.in"
+  },
+  {
+    "section": "HEAD OFFICE",
+    "designation": "Legal Advisor to Commissioner",
+    "email": "lgladvcomm@bbmp.gov.in"
+  },
+  {
+    "section": "EAST",
+    "designation": "Asst Revenue Officer Domlur",
+    "email": "aroeast-dom@bbmp.gov.in"
+  },
+  {
+    "section": "EAST",
+    "designation": "Asst Revenue Officer Shivajinagar",
+    "email": "aroeast-shiva@bbmp.gov.in"
+  },
+  {
+    "section": "EAST",
+    "designation": "Asst Revenue Officer Vasanthnagar",
+    "email": "aroeast-vas@bbmp.gov.in"
+  },
+  {
+    "section": "EAST",
+    "designation": "Health Officer",
+    "email": "hoeast@bbmp.gov.in"
+  },
+  {
+    "section": "EAST",
+    "designation": "DHO",
+    "email": "dhoeast@bbmp.gov.in"
+  },
+  {
+    "section": "EAST",
+    "designation": "MOH Hebbal",
+    "email": "moheast-heb@bbmp.gov.in"
+  },
+  {
+    "section": "EAST",
+    "designation": "MOH J C Nagar",
+    "email": "moheast-jcn@bbmp.gov.in"
+  },
+  {
+    "section": "EAST",
+    "designation": "MOH K G Halli",
+    "email": "moheast-kghalli@bbmp.gov.in"
+  },
+  {
+    "section": "EAST",
+    "designation": "MOH Pulakeshi Nagara",
+    "email": "moheast-pula@bbmp.gov.in"
+  },
+  {
+    "section": "EAST",
+    "designation": "MOH Maruthi Seva Nagara",
+    "email": "moheast-msn@bbmp.gov.in"
+  },
+  {
+    "section": "EAST",
+    "designation": "MOH H.B.R Layout",
+    "email": "moheast-hbr@bbmp.gov.in"
+  },
+  {
+    "section": "EAST",
+    "designation": "MOH Jeevan Bheema Nagara",
+    "email": "moheast-jbn@bbmp.gov.in"
+  },
+  {
+    "section": "EAST",
+    "designation": "MOH C V Raman Nagara",
+    "email": "moheast-cvr@bbmp.gov.in"
+  },
+  {
+    "section": "EAST",
+    "designation": "MOH Shantinagar",
+    "email": "moheast-shanti@bbmp.gov.in"
+  },
+  {
+    "section": "EAST",
+    "designation": "MOH Domlur",
+    "email": "moheast-dom@bbmp.gov.in"
+  },
+  {
+    "section": "EAST",
+    "designation": "MOH Shivajinagar",
+    "email": "moheast-shiva@bbmp.gov.in"
+  },
+  {
+    "section": "EAST",
+    "designation": "MOH Vasanthnagar",
+    "email": "moheast-vas@bbmp.gov.in"
+  },
+  {
+    "section": "EAST",
+    "designation": "Chief Engineer",
+    "email": "ceeast@bbmp.gov.in"
+  },
+  {
+    "section": "EAST",
+    "designation": "Supt Engineer",
+    "email": "seeast@bbmp.gov.in"
+  },
+  {
+    "section": "EAST",
+    "designation": "Executive Engineer Hebbal",
+    "email": "eeeast-heb@bbmp.gov.in"
+  },
+  {
+    "section": "EAST",
+    "designation": "Executive Engineer Sarvajnanagari",
+    "email": "eeeast-sar@bbmp.gov.in"
+  },
+  {
+    "section": "EAST",
+    "designation": "Executive Engineer Shanthinagar",
+    "email": "eeeast-shanti@bbmp.gov.in"
+  },
+  {
+    "section": "EAST",
+    "designation": "AEE Hebbal",
+    "email": "aeeeast-heb@bbmp.gov.in"
+  },
+  {
+    "section": "EAST",
+    "designation": "AEE J C Nagar",
+    "email": "aeeeast-jcn@bbmp.gov.in"
+  },
+  {
+    "section": "EAST",
+    "designation": "AEE K G Halli",
+    "email": "aeeeast-kghalli@bbmp.gov.in"
+  },
+  {
+    "section": "EAST",
+    "designation": "AEE Pulakeshi nagara",
+    "email": "aeeeast-pula@bbmp.gov.in"
+  },
+  {
+    "section": "EAST",
+    "designation": "AEE Maruthi Seva Nagara",
+    "email": "aeeeast-msn@bbmp.gov.in"
+  },
+  {
+    "section": "EAST",
+    "designation": "AEE H.B.R. Layout",
+    "email": "aeeeast-hbr@bbmp.gov.in"
+  },
+  {
+    "section": "EAST",
+    "designation": "AEE Jeevan Bheema Nagara",
+    "email": "aeeeast-jbn@bbmp.gov.in"
+  },
+  {
+    "section": "EAST",
+    "designation": "AEE C.V.Raman Nagara",
+    "email": "aeeeast-cvr@bbmp.gov.in"
+  },
+  {
+    "section": "EAST",
+    "designation": "AEE Shantinagar",
+    "email": "aeeeast-shanti@bbmp.gov.in"
+  },
+  {
+    "section": "EAST",
+    "designation": "AEE Domlur",
+    "email": "aeeeast-dom@bbmp.gov.in"
+  },
+  {
+    "section": "EAST",
+    "designation": "AEE Shivajinagar",
+    "email": "aeeeast-shiva@bbmp.gov.in"
+  },
+  {
+    "section": "EAST",
+    "designation": "AEE Vasanthnagar",
+    "email": "aeeeast-vas@bbmp.gov.in"
+  },
+  {
+    "section": "EAST",
+    "designation": "Asst Controller Finance",
+    "email": "acfeast@bbmp.gov.in"
+  },
+  {
+    "section": "EAST",
+    "designation": "Range Forest Officer",
+    "email": "rfoeast@bbmp.gov.in"
+  },
+  {
+    "section": "EAST",
+    "designation": "Asst Education Officer",
+    "email": "aeoeast@bbmp.gov.in"
+  },
+  {
+    "section": "SOUTH",
+    "designation": "JC South",
+    "email": "jcsouth@bbmp.gov.in"
+  },
+  {
+    "section": "SOUTH",
+    "designation": "DC South",
+    "email": "dcsouth@bbmp.gov.in"
+  },
+  {
+    "section": "SOUTH",
+    "designation": "Head Quarters Assistant",
+    "email": "hqasouth@bbmp.gov.in"
+  },
+  {
+    "section": "SOUTH",
+    "designation": "Manager",
+    "email": "mngsouth@bbmp.gov.in"
+  },
+  {
+    "section": "SOUTH",
+    "designation": "Revenue Officer Govindrajnagar",
+    "email": "rosouth-gov@bbmp.gov.in"
+  },
+  {
+    "section": "SOUTH",
+    "designation": "Revenue Officer Basavanagudi",
+    "email": "rosouth-bas@bbmp.gov.in"
+  },
+  {
+    "section": "SOUTH",
+    "designation": "Revenue Officer BTM Layout",
+    "email": "rosouth-btm@bbmp.gov.in"
+  },
+  {
+    "section": "SOUTH",
+    "designation": "Asst Revenue Officer Govindrajnagar",
+    "email": "arosouth-gov@bbmp.gov.in"
+  },
+  {
+    "section": "SOUTH",
+    "designation": "Asst Revenue Officer Chandra Layout",
+    "email": "arosouth-cha@bbmp.gov.in"
+  },
+  {
+    "section": "SOUTH",
+    "designation": "Asst Revenue Officer Vijayanagar",
+    "email": "arosouth-vij@bbmp.gov.in"
+  },
+  {
+    "section": "SOUTH",
+    "designation": "Asst Revenue Officer Gali Anjenaya Temple",
+    "email": "arosouth-gal@bbmp.gov.in"
+  },
+  {
+    "section": "SOUTH",
+    "designation": "Asst Revenue Officer Basavanagudi",
+    "email": "arosouth-bas@bbmp.gov.in"
+  },
+  {
+    "section": "SOUTH",
+    "designation": "Asst Revenue Officer Girinagar",
+    "email": "arosouth-giri@bbmp.gov.in"
+  },
+  {
+    "section": "SOUTH",
+    "designation": "Asst Revenue Officer Padamanabhanagar",
+    "email": "arosouth-pad@bbmp.gov.in"
+  },
+  {
+    "section": "SOUTH",
+    "designation": "Asst Revenue Officer Banashankari",
+    "email": "arosouth-ban@bbmp.gov.in"
+  },
+  {
+    "section": "SOUTH",
+    "designation": "Asst Revenue Officer BTM Layout",
+    "email": "arosouth-btm@bbmp.gov.in"
+  },
+  {
+    "section": "SOUTH",
+    "designation": "Asst Revenue Officer Kormangala",
+    "email": "arosouth-kor@bbmp.gov.in"
+  },
+  {
+    "section": "SOUTH",
+    "designation": "Asst Revenue Officer Jayanagar",
+    "email": "arosouth-jay@bbmp.gov.in"
+  },
+  {
+    "section": "SOUTH",
+    "designation": "Asst Revenue Officer J P Nagar",
+    "email": "arosouth-jpn@bbmp.gov.in"
+  },
+  {
+    "section": "SOUTH",
+    "designation": "Health Officer",
+    "email": "hosouth@bbmp.gov.in"
+  },
+  {
+    "section": "SOUTH",
+    "designation": "DHO",
+    "email": "dhosouth@bbmp.gov.in"
+  },
+  {
+    "section": "SOUTH",
+    "designation": "MOH Govindrajnagar",
+    "email": "mohsouth-gov@bbmp.gov.in"
+  },
+  {
+    "section": "SOUTH",
+    "designation": "MOH Chandra Layout",
+    "email": "mohsouth-cha@bbmp.gov.in"
+  },
+  {
+    "section": "SOUTH",
+    "designation": "MOH Vijayanagar",
+    "email": "mohsouth-vij@bbmp.gov.in"
+  },
+  {
+    "section": "SOUTH",
+    "designation": "MOH Gali Anjenaya Temple",
+    "email": "mohsouth-gal@bbmp.gov.in"
+  },
+  {
+    "section": "SOUTH",
+    "designation": "MOH Basavanagudi",
+    "email": "mohsouth-bas@bbmp.gov.in"
+  },
+  {
+    "section": "SOUTH",
+    "designation": "MOH Girinagar",
+    "email": "mohsouth-giri@bbmp.gov.in"
+  },
+  {
+    "section": "SOUTH",
+    "designation": "MOH Padamanabhanagar",
+    "email": "mohsouth-pad@bbmp.gov.in"
+  },
+  {
+    "section": "SOUTH",
+    "designation": "MOH Banashankari",
+    "email": "mohsouth-ban@bbmp.gov.in"
+  },
+  {
+    "section": "SOUTH",
+    "designation": "MOH BTM Layout",
+    "email": "mohsouth-btm@bbmp.gov.in"
+  },
+  {
+    "section": "SOUTH",
+    "designation": "MOH Kormangala",
+    "email": "mohsouth-kor@bbmp.gov.in"
+  },
+  {
+    "section": "SOUTH",
+    "designation": "MOH Jayanagar",
+    "email": "mohsouth-jay@bbmp.gov.in"
+  },
+  {
+    "section": "SOUTH",
+    "designation": "MOH J P Nagar",
+    "email": "mohsouth-jpn@bbmp.gov.in"
+  },
+  {
+    "section": "SOUTH",
+    "designation": "Chief Engineer",
+    "email": "cesouth@bbmp.gov.in"
+  },
+  {
+    "section": "SOUTH",
+    "designation": "Supt Engineer",
+    "email": "sesouth@bbmp.gov.in"
+  },
+  {
+    "section": "SOUTH",
+    "designation": "Executive Engineer Govindrajnagar",
+    "email": "eesouth-gov@bbmp.gov.in"
+  },
+  {
+    "section": "SOUTH",
+    "designation": "Executive Engineer Basavanagudi",
+    "email": "eesouth-bas@bbmp.gov.in"
+  },
+  {
+    "section": "SOUTH",
+    "designation": "Executive Engineer BTM Layout",
+    "email": "eesouth-btm@bbmp.gov.in"
+  },
+  {
+    "section": "SOUTH",
+    "designation": "AEE Govindrajnagar",
+    "email": "aeesouth-gov@bbmp.gov.in"
+  },
+  {
+    "section": "SOUTH",
+    "designation": "AEE Chandra Layout",
+    "email": "aeesouth-cha@bbmp.gov.in"
+  },
+  {
+    "section": "SOUTH",
+    "designation": "AEE Vijayanagar",
+    "email": "aeesouth-vij@bbmp.gov.in"
+  },
+  {
+    "section": "SOUTH",
+    "designation": "AEE Gali Anjenaya Temple",
+    "email": "aeesouth-gal@bbmp.gov.in"
+  },
+  {
+    "section": "SOUTH",
+    "designation": "AEE Basavanagudi",
+    "email": "aeesouth-bas@bbmp.gov.in"
+  },
+  {
+    "section": "SOUTH",
+    "designation": "AEE Girinagar",
+    "email": "aeesouth-giri@bbmp.gov.in"
+  },
+  {
+    "section": "SOUTH",
+    "designation": "AEE Padamanabhanagar",
+    "email": "aeesouth-pad@bbmp.gov.in"
+  },
+  {
+    "section": "SOUTH",
+    "designation": "AEE Banashankari",
+    "email": "aeesouth-ban@bbmp.gov.in"
+  },
+  {
+    "section": "SOUTH",
+    "designation": "AEE BTM Layout",
+    "email": "aeesouth-btm@bbmp.gov.in"
+  },
+  {
+    "section": "SOUTH",
+    "designation": "AEE Kormangala",
+    "email": "aeesouth-kor@bbmp.gov.in"
+  },
+  {
+    "section": "SOUTH",
+    "designation": "AEE Jayanagar",
+    "email": "aeesouth-jay@bbmp.gov.in"
+  },
+  {
+    "section": "SOUTH",
+    "designation": "AEE J P Nagar",
+    "email": "aeesouth-jpn@bbmp.gov.in"
+  },
+  {
+    "section": "SOUTH",
+    "designation": "Asst Controller Finance",
+    "email": "acfsouth@bbmp.gov.in"
+  },
+  {
+    "section": "SOUTH",
+    "designation": "Horticulture Superintendent",
+    "email": "hssouth@bbmp.gov.in"
+  },
+  {
+    "section": "SOUTH",
+    "designation": "Range Forest Officer",
+    "email": "rfosouth@bbmp.gov.in"
+  },
+  {
+    "section": "SOUTH",
+    "designation": "Asst Education Officer",
+    "email": "aeosouth@bbmp.gov.in"
+  },
+  {
+    "section": "WEST",
+    "designation": "JC West",
+    "email": "jcwest@bbmp.gov.in"
+  },
+  {
+    "section": "WEST",
+    "designation": "DC West",
+    "email": "dcwest@bbmp.gov.in"
+  },
+  {
+    "section": "WEST",
+    "designation": "Head Quarters Assistant",
+    "email": "hqawest@bbmp.gov.in"
+  },
+  {
+    "section": "WEST",
+    "designation": "Manager",
+    "email": "mngwest@bbmp.gov.in"
+  },
+  {
+    "section": "WEST",
+    "designation": "Revenue Officer Malleshwaram",
+    "email": "rowest-mall@bbmp.gov.in"
+  },
+  {
+    "section": "WEST",
+    "designation": "Revenue Officer Gandhinagar",
+    "email": "rowest-gnagar@bbmp.gov.in"
+  },
+  {
+    "section": "WEST",
+    "designation": "Revenue Officer Chamrajpet",
+    "email": "rowest-cpet@bbmp.gov.in"
+  },
+  {
+    "section": "WEST",
+    "designation": "Asst Revenue Officer Mathikere",
+    "email": "arowest-mkere@bbmp.gov.in"
+  },
+  {
+    "section": "WEST",
+    "designation": "Asst Revenue Officer Malleshwaram",
+    "email": "arowest-mall@bbmp.gov.in"
+  },
+  {
+    "section": "WEST",
+    "designation": "Asst Revenue Officer Rajajainagar",
+    "email": "arowest-raj@bbmp.gov.in"
+  },
+  {
+    "section": "WEST",
+    "designation": "Asst Revenue Officer Srirammandir",
+    "email": "arowest-sri@bbmp.gov.in"
+  },
+  {
+    "section": "WEST",
+    "designation": "Asst Revenue Officer Gandhinagar",
+    "email": "arowest-gnagar@bbmp.gov.in"
+  },
+  {
+    "section": "WEST",
+    "designation": "Asst Revenue Officer Chickpet",
+    "email": "arowest-cpet@bbmp.gov.in"
+  },
+  {
+    "section": "WEST",
+    "designation": "Asst Revenue Officer Kempegoudnagar",
+    "email": "arowest-kgnagar@bbmp.gov.in"
+  },
+  {
+    "section": "WEST",
+    "designation": "Asst Revenue Officer Hombegoudnagar",
+    "email": "arowest-hgnagar@bbmp.gov.in"
+  },
+  {
+    "section": "WEST",
+    "designation": "Asst Revenue Officer Jagjeevanramnagar",
+    "email": "arowest-jjnagar@bbmp.gov.in"
+  },
+  {
+    "section": "WEST",
+    "designation": "Asst Revenue Officer Chamrajpet",
+    "email": "arowest-crajpet@bbmp.gov.in"
+  },
+  {
+    "section": "WEST",
+    "designation": "Health Officer",
+    "email": "howest@bbmp.gov.in"
+  },
+  {
+    "section": "WEST",
+    "designation": "DHO",
+    "email": "dhowest@bbmp.gov.in"
+  },
+  {
+    "section": "WEST",
+    "designation": "MOH Mathikere",
+    "email": "mohwest-mkere@bbmp.gov.in"
+  },
+  {
+    "section": "WEST",
+    "designation": "MOH Malleshwaram",
+    "email": "mohwest-mall@bbmp.gov.in"
+  },
+  {
+    "section": "WEST",
+    "designation": "MOH Rajajainagar",
+    "email": "mohwest-raj@bbmp.gov.in"
+  },
+  {
+    "section": "WEST",
+    "designation": "MOH Srirammandir",
+    "email": "mohwest-sri@bbmp.gov.in"
+  },
+  {
+    "section": "WEST",
+    "designation": "MOH Gandhinagar",
+    "email": "mohwest-gnagar@bbmp.gov.in"
+  },
+  {
+    "section": "WEST",
+    "designation": "MOH Chickpet",
+    "email": "mohwest-cpet@bbmp.gov.in"
+  },
+  {
+    "section": "WEST",
+    "designation": "MOH Kempegoudnagar",
+    "email": "mohwest- kgnagar@bbmp.gov.in"
+  },
+  {
+    "section": "WEST",
+    "designation": "MOH Hombegoudnagar",
+    "email": "mohwest- hgnagar@bbmp.gov.in"
+  },
+  {
+    "section": "WEST",
+    "designation": "MOH Jagjeevanramnagar",
+    "email": "mohwest-jjnagar@bbmp.gov.in"
+  },
+  {
+    "section": "WEST",
+    "designation": "MOH Chamrajpet",
+    "email": "mohwest-crajpet@bbmp.gov.in"
+  },
+  {
+    "section": "WEST",
+    "designation": "Chief Engineer",
+    "email": "cewest@bbmp.gov.in"
+  },
+  {
+    "section": "WEST",
+    "designation": "Superintendent Engineer",
+    "email": "sewest@bbmp.gov.in"
+  },
+  {
+    "section": "WEST",
+    "designation": "Executive Engineer Chamrajpet",
+    "email": "eewest-crajpet@bbmp.gov.in"
+  },
+  {
+    "section": "WEST",
+    "designation": "Executive Engineer Gandhinagar",
+    "email": "eewest-gnagar@bbmp.gov.in"
+  },
+  {
+    "section": "WEST",
+    "designation": "Executive Engineer Malleshwaram",
+    "email": "eewest-mall@bbmp.gov.in"
+  },
+  {
+    "section": "WEST",
+    "designation": "AEE Mathikere",
+    "email": "aeewest-mkere@bbmp.gov.in"
+  },
+  {
+    "section": "WEST",
+    "designation": "AEE Malleshwaram",
+    "email": "aeewest-mall@bbmp.gov.in"
+  },
+  {
+    "section": "WEST",
+    "designation": "AEE Rajajainagar",
+    "email": "aeewest-raj@bbmp.gov.in"
+  },
+  {
+    "section": "WEST",
+    "designation": "AEE Srirammandir",
+    "email": "aeewest-sri@bbmp.gov.in"
+  },
+  {
+    "section": "WEST",
+    "designation": "AEE Gandhinagar",
+    "email": "aeewest-gnagar@bbmp.gov.in"
+  },
+  {
+    "section": "WEST",
+    "designation": "AEE Chickpet",
+    "email": "aeewest-cpet@bbmp.gov.in"
+  },
+  {
+    "section": "WEST",
+    "designation": "AEE Kempegoudnagar",
+    "email": "aeewest- kgnagar@bbmp.gov.in"
+  },
+  {
+    "section": "WEST",
+    "designation": "AEE Hombegoudnagar",
+    "email": "aeewest-hnagar@bbmp.gov.in"
+  },
+  {
+    "section": "WEST",
+    "designation": "AEE Jagjeevanramnagar",
+    "email": "aeewest-jjnagar@bbmp.gov.in"
+  },
+  {
+    "section": "WEST",
+    "designation": "AEE Chamrajpet",
+    "email": "aeewest-crajpet@bbmp.gov.in"
+  },
+  {
+    "section": "WEST",
+    "designation": "Asst Controller Finance",
+    "email": "acfwest@bbmp.gov.in"
+  },
+  {
+    "section": "WEST",
+    "designation": "Horticulture Superintendent",
+    "email": "hswest@bbmp.gov.in"
+  },
+  {
+    "section": "WEST",
+    "designation": "Range Forest Office",
+    "email": "rfowest@bbmp.gov.in"
+  },
+  {
+    "section": "WEST",
+    "designation": "Asst Education Officer",
+    "email": "aeowest@bbmp.gov.in"
+  },
+  {
+    "section": "MAHADEVPURA",
+    "designation": "JC Mahadevapura",
+    "email": "jcmpura@bbmp.gov.in"
+  },
+  {
+    "section": "MAHADEVPURA",
+    "designation": "DC Mahadevapura",
+    "email": "dcmpura@bbmp.gov.in"
+  },
+  {
+    "section": "MAHADEVPURA",
+    "designation": "Head Quarters Assistant",
+    "email": "hqampura@bbmp.gov.in"
+  },
+  {
+    "section": "MAHADEVPURA",
+    "designation": "Manager",
+    "email": "mngmpura@bbmp.gov.in"
+  },
+  {
+    "section": "MAHADEVPURA",
+    "designation": "Revenue Officer K.R Puram",
+    "email": "rompura-krp@bbmp.gov.in"
+  },
+  {
+    "section": "MAHADEVPURA",
+    "designation": "Revenue Officer Mahadevapura",
+    "email": "rompura-mah@bbmp.gov.in"
+  },
+  {
+    "section": "MAHADEVPURA",
+    "designation": "Asst Revenue Officer Hormavu",
+    "email": "arompura-hor@bbmp.gov.in"
+  },
+  {
+    "section": "MAHADEVPURA",
+    "designation": "Asst Revenue Officer K R Puram",
+    "email": "arompura-krp@bbmp.gov.in"
+  },
+  {
+    "section": "MAHADEVPURA",
+    "designation": "Asst Revenue Officer HAL Airport",
+    "email": "arompura-hal@bbmp.gov.in"
+  },
+  {
+    "section": "MAHADEVPURA",
+    "designation": "Asst Revenue Officer Hoodi",
+    "email": "arompura-hoodi@bbmp.gov.in"
+  },
+  {
+    "section": "MAHADEVPURA",
+    "designation": "Asst Revenue Officer Whitefield",
+    "email": "arompura-wf@bbmp.gov.in"
+  },
+  {
+    "section": "MAHADEVPURA",
+    "designation": "Asst Revenue Officer Marathalli",
+    "email": "arompura-mar@bbmp.gov.in"
+  },
+  {
+    "section": "MAHADEVPURA",
+    "designation": "DHO",
+    "email": "dhompura@bbmp.gov.in"
+  },
+  {
+    "section": "MAHADEVPURA",
+    "designation": "MOH",
+    "email": "mohmpura@bbmp.gov.in"
+  },
+  {
+    "section": "MAHADEVPURA",
+    "designation": "Chief Engineer",
+    "email": "cempura@bbmp.gov.in"
+  },
+  {
+    "section": "MAHADEVPURA",
+    "designation": "Supt Engineer",
+    "email": "sempura@bbmp.gov.in"
+  },
+  {
+    "section": "MAHADEVPURA",
+    "designation": "Executive Engineer K.R Puram",
+    "email": "eempura-krp@bbmp.gov.in"
+  },
+  {
+    "section": "MAHADEVPURA",
+    "designation": "Executive Engineer Mahadevapura",
+    "email": "eempura-mah@bbmp.gov.in"
+  },
+  {
+    "section": "MAHADEVPURA",
+    "designation": "AEE Hormavu",
+    "email": "aeempura-hor@bbmp.gov.in"
+  },
+  {
+    "section": "MAHADEVPURA",
+    "designation": "AEE K R Puram",
+    "email": "aeempura-krp@bbmp.gov.in"
+  },
+  {
+    "section": "MAHADEVPURA",
+    "designation": "AEE HAL Airport",
+    "email": "aeempura-hal@bbmp.gov.in"
+  },
+  {
+    "section": "MAHADEVPURA",
+    "designation": "AEE Hoodi",
+    "email": "aeempura-hoo@bbmp.gov.in"
+  },
+  {
+    "section": "MAHADEVPURA",
+    "designation": "AEE Whitefield",
+    "email": "aeempura-wf@bbmp.gov.in"
+  },
+  {
+    "section": "MAHADEVPURA",
+    "designation": "AEE Marathalli",
+    "email": "aeempura-mar@bbmp.gov.in"
+  },
+  {
+    "section": "MAHADEVPURA",
+    "designation": "Asst Controller Finance",
+    "email": "acfmpura@bbmp.gov.in"
+  },
+  {
+    "section": "MAHADEVPURA",
+    "designation": "Horticulture Superintendent",
+    "email": "hsmpura@bbmp.gov.in"
+  },
+  {
+    "section": "MAHADEVPURA",
+    "designation": "Asst Education Officer",
+    "email": "rfompura@bbmp.gov.in"
+  },
+  {
+    "section": "R R NAGAR",
+    "designation": "JC R.R Nagar",
+    "email": "jcrrnagar@bbmp.gov.in"
+  },
+  {
+    "section": "R R NAGAR",
+    "designation": "DC R R Nagar",
+    "email": "dcrrnagar@bbmp.gov.in"
+  },
+  {
+    "section": "R R NAGAR",
+    "designation": "Head Quarters Assistant",
+    "email": "hqarrnagar@bbmp.gov.in"
+  },
+  {
+    "section": "R R NAGAR",
+    "designation": "Manager",
+    "email": "mngrrnagar@bbmp.gov.in"
+  },
+  {
+    "section": "R R NAGAR",
+    "designation": "Revenue Officer R R Nagar",
+    "email": "rorrnagar-rrn@bbmp.gov.in"
+  },
+  {
+    "section": "R R NAGAR",
+    "designation": "Revenue Officer Kengeri",
+    "email": "rorrnagar-ken@bbmp.gov.in"
+  },
+  {
+    "section": "R R NAGAR",
+    "designation": "Revenue Officer Mahalakshmi Layout",
+    "email": "rorrnagar-mhl@bbmp.gov.in"
+  },
+  {
+    "section": "R R NAGAR",
+    "designation": "Asst Revenue Officer R R Nagar",
+    "email": "arorrnagar-rrn@bbmp.gov.in"
+  },
+  {
+    "section": "R R NAGAR",
+    "designation": "Asst Revenue Officer Laggere",
+    "email": "arorrnagar-lag@bbmp.gov.in"
+  },
+  {
+    "section": "R R NAGAR",
+    "designation": "Asst Revenue Officer Goregonte Palya",
+    "email": "arorrnagar-gor@bbmp.gov.in"
+  },
+  {
+    "section": "R R NAGAR",
+    "designation": "Asst Revenue Officer Yeshwanthapur",
+    "email": "arorrnagar-yes@bbmp.gov.in"
+  },
+  {
+    "section": "R R NAGAR",
+    "designation": "Asst Revenue Officer Kengeri",
+    "email": "arorrnagar-ken@bbmp.gov.in"
+  },
+  {
+    "section": "R R NAGAR",
+    "designation": "Asst Revenue Officer Herohalli",
+    "email": "arorrnagar-her@bbmp.gov.in"
+  },
+  {
+    "section": "R R NAGAR",
+    "designation": "Asst Revenue Officer Mahalakshmi Layout",
+    "email": "arorrnagar-mhl@bbmp.gov.in"
+  },
+  {
+    "section": "R R NAGAR",
+    "designation": "Asst Revenue Officer Nagapura",
+    "email": "arorrnagar-nag@bbmp.gov.in"
+  },
+  {
+    "section": "R R NAGAR",
+    "designation": "DHO",
+    "email": "dhorrnagar@bbmp.gov.in"
+  },
+  {
+    "section": "R R NAGAR",
+    "designation": "MOH",
+    "email": "mohrrnagar@bbmp.gov.in"
+  },
+  {
+    "section": "R R NAGAR",
+    "designation": "Chief Engineer",
+    "email": "cerrnagar@bbmp.gov.in"
+  },
+  {
+    "section": "R R NAGAR",
+    "designation": "Supt Engineer",
+    "email": "serrnagar@bbmp.gov.in"
+  },
+  {
+    "section": "R R NAGAR",
+    "designation": "Executive Engineer R R Nagar",
+    "email": "eerrnagar-rrn@bbmp.gov.in"
+  },
+  {
+    "section": "R R NAGAR",
+    "designation": "Executive Engineer Kengeri",
+    "email": "eerrnagar-ken@bbmp.gov.in"
+  },
+  {
+    "section": "R R NAGAR",
+    "designation": "Executive Engineer Mahalakshmi Layout",
+    "email": "eerrnagar-mhl@bbmp.gov.in"
+  },
+  {
+    "section": "R R NAGAR",
+    "designation": "AEE R R Nagar",
+    "email": "aeerrnagar-rrn@bbmp.gov.in"
+  },
+  {
+    "section": "R R NAGAR",
+    "designation": "AEE Laggere",
+    "email": "aeerrnagar-lag@bbmp.gov.in"
+  },
+  {
+    "section": "R R NAGAR",
+    "designation": "AEE Goregonte Palya",
+    "email": "aeerrnagar-gor@bbmp.gov.in"
+  },
+  {
+    "section": "R R NAGAR",
+    "designation": "AEE Yeshwanthapur",
+    "email": "aeerrnagar-yes@bbmp.gov.in"
+  },
+  {
+    "section": "R R NAGAR",
+    "designation": "AEE Kengeri",
+    "email": "aeerrnagar-ken@bbmp.gov.in"
+  },
+  {
+    "section": "R R NAGAR",
+    "designation": "AEE Herohalli",
+    "email": "aeerrnagar-her@bbmp.gov.in"
+  },
+  {
+    "section": "R R NAGAR",
+    "designation": "AEE Mahalakshmi Layout",
+    "email": "aeerrnagar-mhl@bbmp.gov.in"
+  },
+  {
+    "section": "R R NAGAR",
+    "designation": "AEE Nagapura",
+    "email": "aeerrnagar-nag@bbmp.gov.in"
+  },
+  {
+    "section": "R R NAGAR",
+    "designation": "Asst Controller Finance",
+    "email": "acfrrnagar@bbmp.gov.in"
+  },
+  {
+    "section": "R R NAGAR",
+    "designation": "Horticulture Superintendent",
+    "email": "hsrrnagar@bbmp.gov.in"
+  },
+  {
+    "section": "R R NAGAR",
+    "designation": "Range Forest Officer",
+    "email": "rforrnagar@bbmp.gov.in"
+  },
+  {
+    "section": "R R NAGAR",
+    "designation": "Asst Education Officer",
+    "email": "aeorrnagar@bbmp.gov.in"
+  },
+  {
+    "section": "BOMMANAHALLI",
+    "designation": "JC Bommanahalli",
+    "email": "jcbhalli@bbmp.gov.in"
+  },
+  {
+    "section": "BOMMANAHALLI",
+    "designation": "DC Bommanahalli",
+    "email": "dcbhalli@bbmp.gov.in"
+  },
+  {
+    "section": "BOMMANAHALLI",
+    "designation": "Head Quarters Assistant",
+    "email": "hqabhalli@bbmp.gov.in"
+  },
+  {
+    "section": "BOMMANAHALLI",
+    "designation": "Manager",
+    "email": "mngbhalli@bbmp.gov.in"
+  },
+  {
+    "section": "BOMMANAHALLI",
+    "designation": "Revenue Officer Bommanahalli",
+    "email": "robhalli-@bbmp.gov.in"
+  },
+  {
+    "section": "BOMMANAHALLI",
+    "designation": "Revenue Officer Bangalore South",
+    "email": "robhalli-bansth@bbmp.gov.in"
+  },
+  {
+    "section": "BOMMANAHALLI",
+    "designation": "Asst Revenue Officer Bommanahalli",
+    "email": "arobhalli@bbmp.gov.in"
+  },
+  {
+    "section": "BOMMANAHALLI",
+    "designation": "Asst Revenue Officer HSR Layout",
+    "email": "arobhalli-hsr@bbmp.gov.in"
+  },
+  {
+    "section": "BOMMANAHALLI",
+    "designation": "Asst Revenue Officer Arekere",
+    "email": "arobhalli-are@bbmp.gov.in"
+  },
+  {
+    "section": "BOMMANAHALLI",
+    "designation": "Asst Revenue Officer Begur",
+    "email": "arobhalli-beg@bbmp.gov.in"
+  },
+  {
+    "section": "BOMMANAHALLI",
+    "designation": "Asst Revenue Officer Uttarahalli",
+    "email": "arobhalli-utt@bbmp.gov.in"
+  },
+  {
+    "section": "BOMMANAHALLI",
+    "designation": "Asst Revenue Officer Kothnur",
+    "email": "arobhalli-kot@bbmp.gov.in"
+  },
+  {
+    "section": "BOMMANAHALLI",
+    "designation": "Health Officer",
+    "email": "dcbhalli-ho@bbmp.gov.in"
+  },
+  {
+    "section": "BOMMANAHALLI",
+    "designation": "DHO",
+    "email": "dhobhalli@bbmp.gov.in"
+  },
+  {
+    "section": "BOMMANAHALLI",
+    "designation": "MOH Bommanahalli",
+    "email": "mohbhalli@bbmp.gov.in"
+  },
+  {
+    "section": "BOMMANAHALLI",
+    "designation": "Chief Engineer",
+    "email": "cehalli@bbmp.gov.in"
+  },
+  {
+    "section": "BOMMANAHALLI",
+    "designation": "Supt Engineer",
+    "email": "sebhalli@bbmp.gov.in"
+  },
+  {
+    "section": "BOMMANAHALLI",
+    "designation": "Executive Engineer Bommanahalli",
+    "email": "eebhalli-heb@bbmp.gov.in"
+  },
+  {
+    "section": "BOMMANAHALLI",
+    "designation": "Executive Engineer puttenahalli",
+    "email": "eebhalli-sar@bbmp.gov.in"
+  },
+  {
+    "section": "BOMMANAHALLI",
+    "designation": "Executive Engineer Ananjanapura",
+    "email": "eebhalli-sha@bbmp.gov.in"
+  },
+  {
+    "section": "BOMMANAHALLI",
+    "designation": "AEE HSR Layout",
+    "email": "aeebhalli-hsr@bbmp.gov.in"
+  },
+  {
+    "section": "BOMMANAHALLI",
+    "designation": "AEE Arekere",
+    "email": "aeebhalli-are@bbmp.gov.in"
+  },
+  {
+    "section": "BOMMANAHALLI",
+    "designation": "AEE Begur",
+    "email": "aeebhalli-beg@bbmp.gov.in"
+  },
+  {
+    "section": "BOMMANAHALLI",
+    "designation": "AEE Uttarahalli",
+    "email": "aeebhalli-utt@bbmp.gov.in"
+  },
+  {
+    "section": "BOMMANAHALLI",
+    "designation": "AEE Kothnur",
+    "email": "aeebhalli-kot@bbmp.gov.in"
+  },
+  {
+    "section": "BOMMANAHALLI",
+    "designation": "Asst Controller Finance",
+    "email": "acfbhalli@bbmp.gov.in"
+  },
+  {
+    "section": "BOMMANAHALLI",
+    "designation": "Horticulture Superintendent",
+    "email": "hsbhalli@bbmp.gov.in"
+  },
+  {
+    "section": "BOMMANAHALLI",
+    "designation": "Range Forest Officer",
+    "email": "rfobhalli@bbmp.gov.in"
+  },
+  {
+    "section": "BOMMANAHALLI",
+    "designation": "Asst Education Officer",
+    "email": "aeobhalli@bbmp.gov.in"
+  },
+  {
+    "section": "DASARAHALLI",
+    "designation": "JC Dasarahalli",
+    "email": "jcdhalli@bbmp.gov.in"
+  },
+  {
+    "section": "DASARAHALLI",
+    "designation": "DC Dasarahalli",
+    "email": "dcdhalli@bbmp.gov.in"
+  },
+  {
+    "section": "DASARAHALLI",
+    "designation": "Head Quarters Assistant",
+    "email": "hqadhalli@bbmp.gov.in"
+  },
+  {
+    "section": "DASARAHALLI",
+    "designation": "Manager",
+    "email": "mngdhalli@bbmp.gov.in"
+  },
+  {
+    "section": "DASARAHALLI",
+    "designation": "Revenue Officer Shettahalli",
+    "email": "rodhalli-she@bbmp.gov.in"
+  },
+  {
+    "section": "DASARAHALLI",
+    "designation": "Revenue Officer T Dasarahalli",
+    "email": "rodhalli-tda@bbmp.gov.in"
+  },
+  {
+    "section": "DASARAHALLI",
+    "designation": "Revenue Officer Peenya Indl Layout",
+    "email": "rodhalli-peenya@bbmp.gov.in"
+  },
+  {
+    "section": "DASARAHALLI",
+    "designation": "Revenue Officer Heganahalli",
+    "email": "rodhalli-hhalli@bbmp.gov.in"
+  },
+  {
+    "section": "DASARAHALLI",
+    "designation": "Asst Revenue Officer Shettahalli",
+    "email": "arodhalli-she@bbmp.gov.in"
+  },
+  {
+    "section": "DASARAHALLI",
+    "designation": "Asst Revenue Officer T Dasarahalli",
+    "email": "arodhalli-tda@bbmp.gov.in"
+  },
+  {
+    "section": "DASARAHALLI",
+    "designation": "Asst Revenue Officer Peenya Indl Layout",
+    "email": "arodhalli-peenya@bbmp.gov.in"
+  },
+  {
+    "section": "DASARAHALLI",
+    "designation": "Asst Revenue Officer Heganahalli",
+    "email": "arodhalli-hhalli@bbmp.gov.in"
+  },
+  {
+    "section": "DASARAHALLI",
+    "designation": "DHO",
+    "email": "dhodhalli@bbmp.gov.in"
+  },
+  {
+    "section": "DASARAHALLI",
+    "designation": "MOH",
+    "email": "mohdhalli@bbmp.gov.in"
+  },
+  {
+    "section": "DASARAHALLI",
+    "designation": "Chief Engineer",
+    "email": "cedhalli@bbmp.gov.in"
+  },
+  {
+    "section": "DASARAHALLI",
+    "designation": "Supt Engineer",
+    "email": "sedhalli@bbmp.gov.in"
+  },
+  {
+    "section": "DASARAHALLI",
+    "designation": "EE Shettahalli",
+    "email": "eedhalli-she@bbmp.gov.in"
+  },
+  {
+    "section": "DASARAHALLI",
+    "designation": "EE T Dasarahalli",
+    "email": "eedhalli-tda@bbmp.gov.in"
+  },
+  {
+    "section": "DASARAHALLI",
+    "designation": "EE Peenya Indl Layout",
+    "email": "eedhalli-peenya@bbmp.gov.in"
+  },
+  {
+    "section": "DASARAHALLI",
+    "designation": "EE Heganahalli",
+    "email": "eedhalli-hhalli@bbmp.gov.in"
+  },
+  {
+    "section": "DASARAHALLI",
+    "designation": "AEE Shettahalli",
+    "email": "aeedhalli-she@bbmp.gov.in"
+  },
+  {
+    "section": "DASARAHALLI",
+    "designation": "AEE T Dasarahalli",
+    "email": "aeedhalli-tda@bbmp.gov.in"
+  },
+  {
+    "section": "DASARAHALLI",
+    "designation": "AEE Peenya Indl Layout",
+    "email": "aeedhalli- peenya@bbmp.gov.in"
+  },
+  {
+    "section": "DASARAHALLI",
+    "designation": "AEE Heganahalli",
+    "email": "aeedhalli-hhalli@bbmp.gov.in"
+  },
+  {
+    "section": "DASARAHALLI",
+    "designation": "Asst Controller Finance",
+    "email": "acfdhalli@bbmp.gov.in"
+  },
+  {
+    "section": "DASARAHALLI",
+    "designation": "Horticulture Superintendent",
+    "email": "hsdhalli@bbmp.gov.i"
+  },
+  {
+    "section": "DASARAHALLI",
+    "designation": "Range Forest Officer",
+    "email": "rfodhalli@bbmp.gov.in"
+  },
+  {
+    "section": "DASARAHALLI",
+    "designation": "Asst Education Officer",
+    "email": "aeodhalli@bbmp.gov.in"
+  },
+  {
+    "section": "YELAHANKA",
+    "designation": "JC Yelahanka",
+    "email": "jcyel@bbmp.gov.in"
+  },
+  {
+    "section": "YELAHANKA",
+    "designation": "DC Yelahanka",
+    "email": "dcyel@bbmp.gov.in"
+  },
+  {
+    "section": "YELAHANKA",
+    "designation": "Head Quarters Assistant",
+    "email": "hqayel@bbmp.gov.in"
+  },
+  {
+    "section": "YELAHANKA",
+    "designation": "Manager",
+    "email": "mngyel@bbmp.gov.in"
+  },
+  {
+    "section": "YELAHANKA",
+    "designation": "Revenue Officer Yelahanka",
+    "email": "royel-yel@bbmp.gov.in"
+  },
+  {
+    "section": "YELAHANKA",
+    "designation": "Revenue Officer Byatrayanapura",
+    "email": "royel-bya@bbmp.gov.in"
+  },
+  {
+    "section": "YELAHANKA",
+    "designation": "Asst Revenue Officer Yelahanka",
+    "email": "aroyel-yel@bbmp.gov.in"
+  },
+  {
+    "section": "YELAHANKA",
+    "designation": "Asst Revenue Officer Yelahanka Stl Town",
+    "email": "aroyel-yst@bbmp.gov.in"
+  },
+  {
+    "section": "YELAHANKA",
+    "designation": "Asst Revenue Officer Vidyaranyapura",
+    "email": "aroyel-vid@bbmp.gov.in"
+  },
+  {
+    "section": "YELAHANKA",
+    "designation": "Asst Revenue Officer Kodigehalli",
+    "email": "aroyel-kod@bbmp.gov.in"
+  },
+  {
+    "section": "YELAHANKA",
+    "designation": "DHO",
+    "email": "dhoyel@bbmp.gov.in"
+  },
+  {
+    "section": "YELAHANKA",
+    "designation": "MOH",
+    "email": "mohyel@bbmp.gov.in"
+  },
+  {
+    "section": "YELAHANKA",
+    "designation": "Chief Engineer",
+    "email": "ceyel@bbmp.gov.in"
+  },
+  {
+    "section": "YELAHANKA",
+    "designation": "Supt Engineer",
+    "email": "seyel@bbmp.gov.in"
+  },
+  {
+    "section": "YELAHANKA",
+    "designation": "Executive Engineer Yelahanka",
+    "email": "eeyel-yel@bbmp.gov.in"
+  },
+  {
+    "section": "YELAHANKA",
+    "designation": "Executive Engineer Byatarayanpura",
+    "email": "eeyel-bya@bbmp.gov.in"
+  },
+  {
+    "section": "YELAHANKA",
+    "designation": "AEE Yelahanka",
+    "email": "aeeyel-yel@bbmp.gov.in"
+  },
+  {
+    "section": "YELAHANKA",
+    "designation": "AEE Yelahanka Stl Town",
+    "email": "aeeyel-yst@bbmp.gov.in"
+  },
+  {
+    "section": "YELAHANKA",
+    "designation": "AEE Vidrayanapura",
+    "email": "aeeyel-vidpura@bbmp.gov.in"
+  },
+  {
+    "section": "YELAHANKA",
+    "designation": "AEE Kodigehalli",
+    "email": "aeeyel-khalli@bbmp.gov.in"
+  },
+  {
+    "section": "YELAHANKA",
+    "designation": "Asst Controller Finance",
+    "email": "acfyel@bbmp.gov.in"
+  },
+  {
+    "section": "YELAHANKA",
+    "designation": "Horticulture Superintendent",
+    "email": "hsyel@bbmp.gov.in"
+  },
+  {
+    "section": "YELAHANKA",
+    "designation": "Range Forest Officer",
+    "email": "rfoyel@bbmp.gov.in"
+  },
+  {
+    "section": "YELAHANKA",
+    "designation": "Asst Education Officer",
+    "email": "aeoyel@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Project-2 ,EE(project-2)",
+    "email": "eeproj2@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Project-3 ,EE(project-2)",
+    "email": "eeproj3@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Project-4 ,EE(project-2)",
+    "email": "eeproj4@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Project-5 ,EE(project-2)",
+    "email": "eeproj5@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Superintendent Engineer(proj-2)",
+    "email": "seproj2@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Executive Engineer(Proj2)",
+    "email": "ee1proj2@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Executive Engineer(Proj2)",
+    "email": "ee2proj2@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Executive Engineer(Proj2)",
+    "email": "ee3proj2@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Executive Engineer(Proj2)",
+    "email": "ee4proj2@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Superintendent Engineer(MR)",
+    "email": "semr@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Superintendent Engineer(RW)",
+    "email": "serw@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Executive Engineer(Major Roads)",
+    "email": "eemr@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Executive Engineer(MR) South",
+    "email": "eesouthmr@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Executive Engineer1(MR) South",
+    "email": "eesouthmr1@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Executive Engineer2(MR) South",
+    "email": "eesouthmr2@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Executive Engineer3(MR) South",
+    "email": "eesouthmr3@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Executive Engineer4(MR) South",
+    "email": "eesouthmr4@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Executive Engineer5(MR) South",
+    "email": "eesouthmr5@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Executive Engineer(East)",
+    "email": "eeeastmr@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Executive Engineer(West)",
+    "email": "eewest@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "EE(Special Cell for Under Pass)",
+    "email": "eesplup@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Executive Engineer(RW)",
+    "email": "eerw@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Executive Engineer(RW)",
+    "email": "eerw1@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Executive Engineer(RW)",
+    "email": "eerw2@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Chief Engineer2(SWD)",
+    "email": "ceswd2@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Executive Engineer(Vrb Valley)",
+    "email": "eevrbvalley@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Executive Engineer(Vrb Valley)2",
+    "email": "eevrbvalley2@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Executive Enginner(Kormangala)",
+    "email": "eekor@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "EE(Bomanahalli)",
+    "email": "eebhalli@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "EE(Challaghatta)",
+    "email": "eechall@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "EE(Hebbal)",
+    "email": "eehebbal@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "EE(Mahadevapura)",
+    "email": "eempura@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "EE(Byatarayanapura)",
+    "email": "eeyel@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Horticulture Superintendent(East)",
+    "email": "hortsupteast@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Horticulture Superintendent(West)",
+    "email": "hortsuptwest@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Horticulture Superintendent(South)",
+    "email": "hortsuptsouth@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Horticulture Superintendent(Mahadevapura)",
+    "email": "hortsuptmpura@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Horticulture Superintendent(R R Nagar)",
+    "email": "hortsupt-rrnagar@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Horticulture Superintendent(Yelahanka)",
+    "email": "hortsupt-ylhnka@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Horticulture Superintendent(Dasarahalli)",
+    "email": "hortsupt-dsrhalli@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "SE(TVCC)",
+    "email": "setvcc@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "EE(TVCC)1",
+    "email": "eetvcc1@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "EE(TVCC)2",
+    "email": "eetvcc2@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "EE(TVCC)3",
+    "email": "eetvcc3@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "EE(TVCC)4",
+    "email": "eetvcc4@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "EE(TVCC)5",
+    "email": "eetvcc5@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "EE(BSUP)1",
+    "email": "eebsup1@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "EE(BSUP)2",
+    "email": "eebsup2@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "EE(Duct)",
+    "email": "eeduct@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "CE(MPED)",
+    "email": "cemped@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "EE(Quality Control)",
+    "email": "eeqc@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "EE(Quality Control)1",
+    "email": "eeqc1@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Chief Engineer(Project)3",
+    "email": "ceproject3@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Executive Engineer(Project)3",
+    "email": "ee1proj3@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Executive Engineer(Project-3)",
+    "email": "ee2proj3@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Executive Engineer",
+    "email": "eeeast-cvr@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Executive Engineer",
+    "email": "eeeast-shi@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Executive Engineer",
+    "email": "eeeast-puknagar@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Executive Engineer",
+    "email": "eeeastele@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Executive Engineer",
+    "email": "eeeast-puknagar1@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "DCE",
+    "email": "dcesouth@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Executive Engineer",
+    "email": "eesouth-chl@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Executive Engineer",
+    "email": "eesouth-bgudi1@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Executive Engineer",
+    "email": "eesouth-jaynagar@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Executive Engineer",
+    "email": "eesouth-ele@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Executive Engineer",
+    "email": "eewest-rjn@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Executive Engineer",
+    "email": "eewest-chk@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Executive Engineer(Ele)",
+    "email": "eewest-ele@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Executive Engineer(Project-West)",
+    "email": "eewest-pw@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Executive Engineer",
+    "email": "eewest-mlpura@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Executive Engineer",
+    "email": "eempura-wfield@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Executive Engineer",
+    "email": "eempura-hal@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Executive Engineer",
+    "email": "eempura-hoodi@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Executive Engineer",
+    "email": "eerrnagar-ypr@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Executive Engineer",
+    "email": "eebhalli-ele@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Executive Engineer(Project)",
+    "email": "eebhalli-proj@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Executive Engineer(project)",
+    "email": "eeyel-projbpura@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Executive Engineer(project)Central-2",
+    "email": "eeyel-projbpura2@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Executive Engineer(Project)",
+    "email": "eedhalli-projdiv@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Executive Engineer(Electrical)",
+    "email": "eedhalli-eledz@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Public Relation Officer and I/c of HRD Training",
+    "email": "hrd@bbmp.gov.in"
+  },
+  {
+    "section": "Engineers E-Mail id\u2019s of All Zones",
+    "designation": "Additional Commissioner (HRD & Public Grievance)",
+    "email": "achrd@bbmp.gov.in"
+  }
+]

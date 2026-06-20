@@ -59,7 +59,22 @@ GovWatch/
 │   ├── issues.json                ← Live filtered data (shown in dashboard)
 │   ├── issues_unfiltered.json     ← Backup of all keyword-matched tweets pre-filter
 │   ├── raw_tweets.json            ← Raw Twitter API output (all fetched tweets)
-│   └── filter_verdicts.json       ← Persistent LLM verdicts: {tweet_id: "yes"/"no"}
+│   ├── filter_verdicts.json       ← Persistent LLM verdicts: {tweet_id: "yes"/"no"}
+│   └── officials/                 ← Phase 5: Bangalore officials database (14 JSON files)
+│       ├── wards.json             ← 369-ward map: councillor, MLA, MP, SWM, BESCOM, BWSSB, traffic per ward
+│       ├── issue_routing.json     ← 10 issue types → first contact, CC, escalation chain, SLA
+│       ├── escalation_chains.json ← 5-dept escalation ladders
+│       ├── city_corp_contacts.json← 55 BBMP zone/division officers
+│       ├── bbmp_directory.json    ← 428 BBMP email entries by section
+│       ├── swm_se.json            ← 8 SWM zonal SEs
+│       ├── swm_aee.json           ← 27 SWM AEEs
+│       ├── swm_jhi.json           ← 198 ward-level SWM JHIs with mobile
+│       ├── bescom_units.json      ← 484 BESCOM units: zone→circle→division→AEE/AE/JE
+│       ├── bwssb_stations.json    ← 122 BWSSB service stations
+│       ├── mlas.json              ← 36 Bangalore MLAs
+│       ├── mps.json               ← 3 Bangalore MPs
+│       ├── traffic_rti.json       ← 66 traffic PS contacts
+│       └── area_ward_lookup.json  ← 28 dashboard areas → nearest ward name/number
 └── scripts/
     ├── fetch_tweets.py            ← Pulls new tweets from Twitter/X (incremental)
     ├── process_issues.py          ← Categorizes and scores all raw tweets
@@ -134,6 +149,8 @@ Each civic issue has this shape (in `data/issues.json`):
 6. **Persistent filter verdicts** — Once a tweet is classified, its verdict is stored; future runs never re-classify it.
 7. **Obsidian-first docs** — All docs are markdown so the founder sees live project state in their vault.
 8. **No frameworks (React/Vue/etc.)** — Vanilla JS keeps it simple and editable without build tools.
+9. **Officials data as static JSON** — All 369-ward, multi-department contact data lives in `data/officials/`. Loaded lazily on first Officials tab visit; no server or database needed.
+10. **Gmail compose URLs for all email** — All "Assign" and contact buttons open `mail.google.com` compose URLs (not `mailto:`), so clicking always opens Gmail in the browser.
 
 ---
 
