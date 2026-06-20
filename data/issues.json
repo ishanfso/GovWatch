@@ -23,7 +23,7 @@
     "author": "@TVMohandasPai",
     "date": "2026-06-09T15:00:57+00:00",
     "category": "Roads",
-    "area": "Bangalore",
+    "area": "Malleswaram",
     "severity": "high",
     "likes": 91,
     "retweets": 6,
@@ -32,8 +32,8 @@
       "footpath"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Malleshwaram",
+    "ward_no": "53"
   },
   {
     "id": "2065262447687323659",
@@ -85,8 +85,8 @@
       "bwssb"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Yelahanka Old Town",
+    "ward_no": "3"
   },
   {
     "id": "2061797218353561727",
@@ -157,8 +157,8 @@
       "digging"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Bandepalya",
+    "ward_no": "67"
   },
   {
     "id": "2055206446363730253",
@@ -247,8 +247,8 @@
       "garbage"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Nagarbhavi",
+    "ward_no": "79"
   },
   {
     "id": "2056566276424953868",
@@ -301,8 +301,8 @@
       "digging"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Bandepalya",
+    "ward_no": "67"
   },
   {
     "id": "2068229164361220303",
@@ -347,7 +347,7 @@
     "author": "@misterc_speaks",
     "date": "2026-05-20T04:57:23+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Silkboard",
     "severity": "low",
     "likes": 5,
     "retweets": 1,
@@ -356,8 +356,8 @@
       "garbage"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Agara",
+    "ward_no": "71"
   },
   {
     "id": "2055620327020130654",
@@ -365,7 +365,7 @@
     "author": "@dgaurav7",
     "date": "2026-05-16T12:04:12+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Kasturi Nagar",
     "severity": "low",
     "likes": 3,
     "retweets": 2,
@@ -374,8 +374,8 @@
       "garbage"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kasturi Nagar",
+    "ward_no": "12"
   },
   {
     "id": "2055533957916356891",
@@ -383,7 +383,7 @@
     "author": "@sunny4frenz",
     "date": "2026-05-16T06:21:00+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Kothanur",
     "severity": "low",
     "likes": 3,
     "retweets": 2,
@@ -394,8 +394,8 @@
       "swm"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kothanur",
+    "ward_no": "41"
   },
   {
     "id": "2054755924770963808",
@@ -494,7 +494,7 @@
     "author": "@Vijaystwit",
     "date": "2026-05-16T07:36:44+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Subramanyapura",
     "severity": "low",
     "likes": 3,
     "retweets": 1,
@@ -504,8 +504,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Subramanyapura",
+    "ward_no": "51"
   },
   {
     "id": "2062183138118574508",
@@ -520,8 +520,8 @@
     "source_url": "https://twitter.com/i/web/status/2062183138118574508",
     "keywords": [],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Bandepalya",
+    "ward_no": "67"
   },
   {
     "id": "2063992293892522153",
@@ -621,7 +621,7 @@
     "author": "@Hamsaa04",
     "date": "2026-06-02T05:48:51+00:00",
     "category": "Traffic",
-    "area": "Bangalore",
+    "area": "Old Airport Road",
     "severity": "low",
     "likes": 2,
     "retweets": 1,
@@ -630,8 +630,8 @@
       "bmtc"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Domlur",
+    "ward_no": "22"
   },
   {
     "id": "2063271867268673536",
@@ -649,8 +649,8 @@
       "waste"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Basavanapura",
+    "ward_no": "11"
   },
   {
     "id": "2067479377563250742",
@@ -658,7 +658,7 @@
     "author": "@0001manju",
     "date": "2026-06-18T05:27:50+00:00",
     "category": "Flooding",
-    "area": "Bangalore",
+    "area": "Mathikere",
     "severity": "low",
     "likes": 3,
     "retweets": 0,
@@ -667,8 +667,8 @@
       "waterlog"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Mathikere",
+    "ward_no": "48"
   },
   {
     "id": "2053442120212689235",
@@ -694,7 +694,7 @@
     "author": "@1Mithlesh",
     "date": "2026-05-12T12:15:25+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Mahadevapura",
     "severity": "low",
     "likes": 2,
     "retweets": 0,
@@ -703,8 +703,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Mahadevapura",
+    "ward_no": "22"
   },
   {
     "id": "2053691682093449436",
@@ -750,7 +750,7 @@
     "author": "@VenomGayatri",
     "date": "2026-05-18T18:53:25+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Kasavanahalli",
     "severity": "low",
     "likes": 1,
     "retweets": 1,
@@ -760,8 +760,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kasavanahalli",
+    "ward_no": "31"
   },
   {
     "id": "2057287508329980348",
@@ -769,7 +769,7 @@
     "author": "@hysujit",
     "date": "2026-05-21T02:28:59+00:00",
     "category": "Water",
-    "area": "Bangalore",
+    "area": "Talaghattapura",
     "severity": "low",
     "likes": 1,
     "retweets": 1,
@@ -778,8 +778,8 @@
       "bwssb"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Talaghattapura",
+    "ward_no": "52"
   },
   {
     "id": "2057457317176852787",
@@ -966,8 +966,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Bandepalya",
+    "ward_no": "67"
   },
   {
     "id": "2064916899633480053",
@@ -975,7 +975,7 @@
     "author": "@Panchampagadam",
     "date": "2026-06-11T03:45:27+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Kogilu",
     "severity": "low",
     "likes": 1,
     "retweets": 1,
@@ -984,8 +984,8 @@
       "garbage"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kogilu",
+    "ward_no": "21"
   },
   {
     "id": "2066055572164919749",
@@ -993,7 +993,7 @@
     "author": "@aryansgk24",
     "date": "2026-06-14T07:10:08+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Kengeri",
     "severity": "low",
     "likes": 1,
     "retweets": 1,
@@ -1003,8 +1003,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kengeri",
+    "ward_no": "19"
   },
   {
     "id": "2066691141060411616",
@@ -1012,7 +1012,7 @@
     "author": "@kannadigaa07",
     "date": "2026-06-16T01:15:39+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Nagarbhavi",
     "severity": "low",
     "likes": 2,
     "retweets": 0,
@@ -1022,8 +1022,8 @@
       "swm"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Nagarbhavi",
+    "ward_no": "79"
   },
   {
     "id": "2066768556960956759",
@@ -1103,7 +1103,7 @@
     "author": "@Singhhusa",
     "date": "2026-05-11T12:31:49+00:00",
     "category": "Water",
-    "area": "Bangalore",
+    "area": "Vignan Nagar",
     "severity": "low",
     "likes": 1,
     "retweets": 0,
@@ -1112,8 +1112,8 @@
       "bwssb"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Vignan Nagar",
+    "ward_no": "24"
   },
   {
     "id": "2055892156737585427",
@@ -1242,8 +1242,8 @@
       "garbage"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kasavanahalli",
+    "ward_no": "31"
   },
   {
     "id": "2055232116250776028",
@@ -1462,8 +1462,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Bandepalya",
+    "ward_no": "67"
   },
   {
     "id": "2057390874481635381",
@@ -1489,7 +1489,7 @@
     "author": "@Tejraj06592063",
     "date": "2026-05-22T02:02:27+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Chandra Layout",
     "severity": "low",
     "likes": 1,
     "retweets": 0,
@@ -1499,8 +1499,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Chandra Layout",
+    "ward_no": "80"
   },
   {
     "id": "2057726332742844771",
@@ -1508,7 +1508,7 @@
     "author": "@PSaraik",
     "date": "2026-05-22T07:32:43+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Mahadevapura",
     "severity": "low",
     "likes": 0,
     "retweets": 1,
@@ -1518,8 +1518,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Mahadevapura",
+    "ward_no": "22"
   },
   {
     "id": "2057714216665260510",
@@ -1554,8 +1554,8 @@
       "pothole"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Bommanahalli",
+    "ward_no": "63"
   },
   {
     "id": "2058456944361533782",
@@ -1630,8 +1630,8 @@
       "trash"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Hongasandra",
+    "ward_no": "64"
   },
   {
     "id": "2059285424171110716",
@@ -1767,7 +1767,7 @@
     "author": "@sunnyvermashubh",
     "date": "2026-05-29T15:48:29+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Vijaya Bank Layout",
     "severity": "low",
     "likes": 1,
     "retweets": 0,
@@ -1777,8 +1777,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Vijaya Bank Layout",
+    "ward_no": "59"
   },
   {
     "id": "2060414185566298502",
@@ -1805,7 +1805,7 @@
     "author": "@chauhanvijay81",
     "date": "2026-05-30T15:35:11+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Banaswadi",
     "severity": "low",
     "likes": 1,
     "retweets": 0,
@@ -1815,8 +1815,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Banaswadi",
+    "ward_no": "32"
   },
   {
     "id": "2061086037783491058",
@@ -1945,8 +1945,8 @@
       "bwssb"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Anjanapura",
+    "ward_no": "40"
   },
   {
     "id": "2062766151466438732",
@@ -1972,7 +1972,7 @@
     "author": "@123mangoman",
     "date": "2026-06-06T02:35:55+00:00",
     "category": "Water",
-    "area": "Bangalore",
+    "area": "Chickpete",
     "severity": "low",
     "likes": 0,
     "retweets": 1,
@@ -1981,8 +1981,8 @@
       "bwssb"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Chickpete",
+    "ward_no": "58"
   },
   {
     "id": "2063137775973695662",
@@ -2027,7 +2027,7 @@
     "author": "@Shubhu_R",
     "date": "2026-06-06T17:48:03+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Singasandra",
     "severity": "low",
     "likes": 1,
     "retweets": 0,
@@ -2037,8 +2037,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Singasandra",
+    "ward_no": "66"
   },
   {
     "id": "2064257801833402523",
@@ -2064,7 +2064,7 @@
     "author": "@priyaranjanD1",
     "date": "2026-06-09T11:18:14+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Singasandra",
     "severity": "low",
     "likes": 0,
     "retweets": 1,
@@ -2073,8 +2073,8 @@
       "garbage"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Singasandra",
+    "ward_no": "66"
   },
   {
     "id": "2064369283573174591",
@@ -2082,7 +2082,7 @@
     "author": "@adak_anwaya",
     "date": "2026-06-09T15:29:25+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Kadugodi",
     "severity": "low",
     "likes": 1,
     "retweets": 0,
@@ -2092,8 +2092,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kadugodi",
+    "ward_no": "31"
   },
   {
     "id": "2064374688881746073",
@@ -2129,8 +2129,8 @@
       "cubbon"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Shivajinagar",
+    "ward_no": "5"
   },
   {
     "id": "2064640593972936855",
@@ -2260,8 +2260,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Mahadevapura",
+    "ward_no": "22"
   },
   {
     "id": "2065725931797533115",
@@ -2269,7 +2269,7 @@
     "author": "@Shubhu_R",
     "date": "2026-06-13T09:20:16+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Singasandra",
     "severity": "low",
     "likes": 1,
     "retweets": 0,
@@ -2279,8 +2279,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Singasandra",
+    "ward_no": "66"
   },
   {
     "id": "2065850680368410734",
@@ -2353,8 +2353,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Mahadevapura",
+    "ward_no": "22"
   },
   {
     "id": "2067262506398331323",
@@ -2362,7 +2362,7 @@
     "author": "@avisandhyatech",
     "date": "2026-06-17T15:06:04+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Agara",
     "severity": "low",
     "likes": 1,
     "retweets": 0,
@@ -2372,8 +2372,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Agara",
+    "ward_no": "71"
   },
   {
     "id": "2067261333129871498",
@@ -2494,7 +2494,7 @@
     "author": "@Aiyappa",
     "date": "2026-06-20T10:45:29+00:00",
     "category": "Flooding",
-    "area": "Bangalore",
+    "area": "Thanisandra",
     "severity": "low",
     "likes": 1,
     "retweets": 0,
@@ -2503,8 +2503,8 @@
       "flood"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Thanisandra",
+    "ward_no": "19"
   },
   {
     "id": "2068279661034107141",
@@ -2521,8 +2521,8 @@
       "lalbagh"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Lakkasandra",
+    "ward_no": "23"
   },
   {
     "id": "2054110623907357010",
@@ -2601,7 +2601,7 @@
     "author": "@Kamalikab2909",
     "date": "2026-05-13T06:58:59+00:00",
     "category": "Water",
-    "area": "Bangalore",
+    "area": "Panathur",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -2610,8 +2610,8 @@
       "bwssb"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Panathur",
+    "ward_no": "48"
   },
   {
     "id": "2054222170692481141",
@@ -2638,7 +2638,7 @@
     "author": "@m_saadathh",
     "date": "2026-05-12T03:39:12+00:00",
     "category": "Water",
-    "area": "Bangalore",
+    "area": "Thanisandra",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -2648,8 +2648,8 @@
       "water pipe"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Thanisandra",
+    "ward_no": "19"
   },
   {
     "id": "2055876959822070092",
@@ -2769,7 +2769,7 @@
     "author": "@Bharath_Kumar01",
     "date": "2026-05-15T22:25:09+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Sunkadakatte",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -2779,8 +2779,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Sunkadakatte",
+    "ward_no": "10"
   },
   {
     "id": "2055403502470672479",
@@ -2807,7 +2807,7 @@
     "author": "@pawandhakar18",
     "date": "2026-05-15T11:08:07+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Singasandra",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -2817,8 +2817,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Singasandra",
+    "ward_no": "66"
   },
   {
     "id": "2055224843570991107",
@@ -2902,7 +2902,7 @@
     "author": "@Bn027Natraj",
     "date": "2026-05-14T00:56:53+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Jakkasandra",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -2912,8 +2912,8 @@
       "transformer"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Jakkasandra",
+    "ward_no": "30"
   },
   {
     "id": "2054646281331769601",
@@ -2931,8 +2931,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Bommanahalli",
+    "ward_no": "63"
   },
   {
     "id": "2054619374598906152",
@@ -2977,7 +2977,7 @@
     "author": "@Nadeemq7m",
     "date": "2026-05-13T15:14:22+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Shivajinagar",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -2986,8 +2986,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Shivajinagar",
+    "ward_no": "5"
   },
   {
     "id": "2054498389828784415",
@@ -2995,7 +2995,7 @@
     "author": "@__Prad_blr_koth",
     "date": "2026-05-13T09:46:01+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Kothanur",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -3004,8 +3004,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kothanur",
+    "ward_no": "41"
   },
   {
     "id": "2054468435015610792",
@@ -3023,8 +3023,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kasavanahalli",
+    "ward_no": "31"
   },
   {
     "id": "2054430753954599044",
@@ -3189,8 +3189,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "R T Nagar",
+    "ward_no": "53"
   },
   {
     "id": "2055872030822810088",
@@ -3198,7 +3198,7 @@
     "author": "@bhudaana1951",
     "date": "2026-05-17T04:44:23+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "K R Pura",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -3207,8 +3207,8 @@
       "garbage"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "K R Pura",
+    "ward_no": "14"
   },
   {
     "id": "2055844240710873186",
@@ -3216,7 +3216,7 @@
     "author": "@Shyam_mandayam",
     "date": "2026-05-17T02:53:57+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "HRBR Layout",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -3226,8 +3226,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "HRBR Layout",
+    "ward_no": "33"
   },
   {
     "id": "2055819664043983097",
@@ -3235,7 +3235,7 @@
     "author": "@RameshsuryaN9",
     "date": "2026-05-17T01:16:17+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Vv Puram",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -3245,8 +3245,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "V.V Puram",
+    "ward_no": "41"
   },
   {
     "id": "2055661079616012461",
@@ -3254,7 +3254,7 @@
     "author": "@HegdeNaresh",
     "date": "2026-05-16T14:46:08+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Banaswadi",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -3264,8 +3264,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Banaswadi",
+    "ward_no": "32"
   },
   {
     "id": "2055619398480835069",
@@ -3319,8 +3319,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Bommanahalli",
+    "ward_no": "63"
   },
   {
     "id": "2055497419874578923",
@@ -3346,7 +3346,7 @@
     "author": "@OkaySanjana",
     "date": "2026-05-15T22:30:34+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Bharath Aikya Ward",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -3356,8 +3356,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Bharath Aikya Ward",
+    "ward_no": "36"
   },
   {
     "id": "2055352290429767975",
@@ -3385,7 +3385,7 @@
     "author": "@ISeshubabu",
     "date": "2026-05-15T11:11:47+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "V.V Puram",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -3395,8 +3395,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "V.V Puram",
+    "ward_no": "41"
   },
   {
     "id": "2055179297531552105",
@@ -3431,8 +3431,8 @@
       "garbage"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Nagarbhavi",
+    "ward_no": "79"
   },
   {
     "id": "2054967209932570624",
@@ -3440,7 +3440,7 @@
     "author": "@sapna_krishnani",
     "date": "2026-05-14T16:48:56+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Harlur",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -3449,8 +3449,8 @@
       "garbage"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kasavanahalli",
+    "ward_no": "31"
   },
   {
     "id": "2054930273280938413",
@@ -3468,8 +3468,8 @@
       "solid waste"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Gottigere",
+    "ward_no": "39"
   },
   {
     "id": "2054803521204297731",
@@ -3477,7 +3477,7 @@
     "author": "@roshan_now",
     "date": "2026-05-14T05:58:30+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Agara",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -3487,8 +3487,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Agara",
+    "ward_no": "71"
   },
   {
     "id": "2054782645712928891",
@@ -3496,7 +3496,7 @@
     "author": "@vishalkaradagi",
     "date": "2026-05-14T04:35:33+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Kengeri",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -3506,8 +3506,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kengeri",
+    "ward_no": "19"
   },
   {
     "id": "2054430027245408315",
@@ -3533,7 +3533,7 @@
     "author": "@hari_nath_ranga",
     "date": "2026-05-13T01:53:43+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Raja Kempegowda Ward",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -3543,8 +3543,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Raja Kempegowda Ward",
+    "ward_no": "1"
   },
   {
     "id": "2053823307087286685",
@@ -3570,7 +3570,7 @@
     "author": "@AlisterDcruz",
     "date": "2026-05-15T18:01:56+00:00",
     "category": "Parks",
-    "area": "Bangalore",
+    "area": "Panathur",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -3579,8 +3579,8 @@
       "park"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Panathur",
+    "ward_no": "48"
   },
   {
     "id": "2053685924308082817",
@@ -3617,8 +3617,8 @@
       "garbage"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Nagarbhavi",
+    "ward_no": "79"
   },
   {
     "id": "2055911585525404030",
@@ -3626,7 +3626,7 @@
     "author": "@kisk1986",
     "date": "2026-05-17T07:21:33+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Srinagar",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -3636,8 +3636,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Srinagar",
+    "ward_no": "100"
   },
   {
     "id": "2056191188559094178",
@@ -3645,7 +3645,7 @@
     "author": "@ankeshsharma",
     "date": "2026-05-18T01:52:36+00:00",
     "category": "Roads",
-    "area": "Bangalore",
+    "area": "Gunjur",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -3654,8 +3654,8 @@
       "pothole"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Gunjur",
+    "ward_no": "50"
   },
   {
     "id": "2056116232513106022",
@@ -3693,8 +3693,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kalyanagar",
+    "ward_no": "31"
   },
   {
     "id": "2056049918650040602",
@@ -3702,7 +3702,7 @@
     "author": "@RenukaiahH",
     "date": "2026-05-17T16:31:14+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Byadarahalli",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -3712,8 +3712,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Byadarahalli",
+    "ward_no": "15"
   },
   {
     "id": "2055974145796837742",
@@ -3721,7 +3721,7 @@
     "author": "@BangaloreN79969",
     "date": "2026-05-17T11:30:09+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Attur",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -3731,8 +3731,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Attur",
+    "ward_no": "7"
   },
   {
     "id": "2055949914954440975",
@@ -3853,7 +3853,7 @@
     "author": "@peas_carrot_",
     "date": "2026-05-18T18:16:11+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Horamavu",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -3863,8 +3863,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Horamavu",
+    "ward_no": "2"
   },
   {
     "id": "2056403041906225274",
@@ -3949,7 +3949,7 @@
     "author": "@SanthuB28",
     "date": "2026-05-18T13:33:58+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Horamavu",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -3959,8 +3959,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Horamavu",
+    "ward_no": "2"
   },
   {
     "id": "2056356964003934600",
@@ -3968,7 +3968,7 @@
     "author": "@goutham064",
     "date": "2026-05-18T12:51:20+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Nagasandra",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -3978,8 +3978,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Nagasandra",
+    "ward_no": "1"
   },
   {
     "id": "2056352512740049268",
@@ -4071,8 +4071,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Bommanahalli",
+    "ward_no": "63"
   },
   {
     "id": "2056578838822531401",
@@ -4128,8 +4128,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Bommanahalli",
+    "ward_no": "63"
   },
   {
     "id": "2056660553993682954",
@@ -4155,7 +4155,7 @@
     "author": "@THRILOKNat40171",
     "date": "2026-05-19T07:04:48+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Singasandra",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -4166,8 +4166,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Singasandra",
+    "ward_no": "66"
   },
   {
     "id": "2056596309176693224",
@@ -4175,7 +4175,7 @@
     "author": "@PaiVishnu1",
     "date": "2026-05-19T04:42:24+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "G.M Palya",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -4185,8 +4185,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "G.M Palya",
+    "ward_no": "18"
   },
   {
     "id": "2056766635911106616",
@@ -4212,7 +4212,7 @@
     "author": "@NitinSa48282266",
     "date": "2026-05-19T20:57:19+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Sarakki",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -4222,8 +4222,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Sarakki",
+    "ward_no": "16"
   },
   {
     "id": "2056838406618132915",
@@ -4268,7 +4268,7 @@
     "author": "@VenkatSPrabhu",
     "date": "2026-05-20T06:01:36+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Agara",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -4277,8 +4277,8 @@
       "garbage"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Agara",
+    "ward_no": "71"
   },
   {
     "id": "2057027178076991563",
@@ -4373,8 +4373,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Bommanahalli",
+    "ward_no": "63"
   },
   {
     "id": "2057172586916913611",
@@ -4411,8 +4411,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Bommanahalli",
+    "ward_no": "63"
   },
   {
     "id": "2057290038967476246",
@@ -4438,7 +4438,7 @@
     "author": "@PaiVishnu1",
     "date": "2026-05-21T04:06:49+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "G.M Palya",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -4448,8 +4448,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "G.M Palya",
+    "ward_no": "18"
   },
   {
     "id": "2057302426659762388",
@@ -4476,7 +4476,7 @@
     "author": "@Ragz_m",
     "date": "2026-05-21T03:17:35+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Amruthahalli",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -4486,8 +4486,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Amruthahalli",
+    "ward_no": "16"
   },
   {
     "id": "2057287067571540108",
@@ -4524,8 +4524,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kasavanahalli",
+    "ward_no": "31"
   },
   {
     "id": "2057359212678963303",
@@ -4533,7 +4533,7 @@
     "author": "@sambeet4you",
     "date": "2026-05-21T07:13:54+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Varthur",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -4543,8 +4543,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Varthur",
+    "ward_no": "40"
   },
   {
     "id": "2057319294590210388",
@@ -4552,7 +4552,7 @@
     "author": "@vishalkaradagi",
     "date": "2026-05-21T04:35:17+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Kengeri",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -4562,8 +4562,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kengeri",
+    "ward_no": "19"
   },
   {
     "id": "2057419743892808181",
@@ -4581,8 +4581,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Yelahanka Old Town",
+    "ward_no": "3"
   },
   {
     "id": "2057400678000312376",
@@ -4629,7 +4629,7 @@
     "author": "@srmanish1755",
     "date": "2026-05-21T13:33:28+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Haralur",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -4639,8 +4639,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kasavanahalli",
+    "ward_no": "31"
   },
   {
     "id": "2057450171785703766",
@@ -4648,7 +4648,7 @@
     "author": "@BhagwaVajra",
     "date": "2026-05-21T13:15:21+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Kaggadasapura",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -4658,8 +4658,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kaggadasapura",
+    "ward_no": "17"
   },
   {
     "id": "2057436328271478922",
@@ -4715,8 +4715,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kasavanahalli",
+    "ward_no": "31"
   },
   {
     "id": "2057503857211760656",
@@ -4781,7 +4781,7 @@
     "author": "@ThisIsABadWorld",
     "date": "2026-05-21T15:05:01+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Vignan Nagar",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -4791,8 +4791,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Vignan Nagar",
+    "ward_no": "24"
   },
   {
     "id": "2057479847795163315",
@@ -4800,7 +4800,7 @@
     "author": "@farook_nala",
     "date": "2026-05-21T15:13:16+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Uttarahalli",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -4810,8 +4810,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Uttarahalli",
+    "ward_no": "49"
   },
   {
     "id": "2057534379224879270",
@@ -4819,7 +4819,7 @@
     "author": "@chinmaygowda25",
     "date": "2026-05-21T18:49:57+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Jaraganahalli",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -4829,8 +4829,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Jaraganahalli",
+    "ward_no": "53"
   },
   {
     "id": "2057521070455054602",
@@ -4838,7 +4838,7 @@
     "author": "@BhagwaVajra",
     "date": "2026-05-21T17:57:04+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Kaggadasapura",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -4848,8 +4848,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kaggadasapura",
+    "ward_no": "17"
   },
   {
     "id": "2057516854806233108",
@@ -4857,7 +4857,7 @@
     "author": "@sadat01",
     "date": "2026-05-21T17:40:19+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Sagayapuram",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -4867,8 +4867,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Sagayapuram",
+    "ward_no": "46"
   },
   {
     "id": "2057550499759710457",
@@ -4969,7 +4969,7 @@
     "author": "@PaiVishnu1",
     "date": "2026-05-22T04:31:02+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "G.M Palya",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -4979,8 +4979,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "G.M Palya",
+    "ward_no": "18"
   },
   {
     "id": "2057677484179812632",
@@ -4988,7 +4988,7 @@
     "author": "@Invictus13th",
     "date": "2026-05-22T04:18:36+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Nagarbhavi",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -4998,8 +4998,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Nagarbhavi",
+    "ward_no": "79"
   },
   {
     "id": "2057690002189160777",
@@ -5007,7 +5007,7 @@
     "author": "@mayur_pirate",
     "date": "2026-05-22T05:08:21+00:00",
     "category": "Roads",
-    "area": "Bangalore",
+    "area": "Kodigehalli",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -5016,8 +5016,8 @@
       "pothole"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kodigehalli",
+    "ward_no": "13"
   },
   {
     "id": "2057737345055785241",
@@ -5025,7 +5025,7 @@
     "author": "@ShankarAmith",
     "date": "2026-05-22T08:16:28+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Avalahalli",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -5035,8 +5035,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Avalahalli",
+    "ward_no": "93"
   },
   {
     "id": "2057737217850921088",
@@ -5129,8 +5129,8 @@
       "flood"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Mahadevapura",
+    "ward_no": "22"
   },
   {
     "id": "2057734603608383834",
@@ -5148,8 +5148,8 @@
       "cubbon"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Shivajinagar",
+    "ward_no": "5"
   },
   {
     "id": "2057743235452436484",
@@ -5222,8 +5222,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kasavanahalli",
+    "ward_no": "31"
   },
   {
     "id": "2057751868911304839",
@@ -5250,7 +5250,7 @@
     "author": "@vatsan32",
     "date": "2026-05-22T10:22:37+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Bharath Aikya Ward",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -5260,8 +5260,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Bharath Aikya Ward",
+    "ward_no": "36"
   },
   {
     "id": "2057801602195661106",
@@ -5278,8 +5278,8 @@
       "road condition"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kammanahalli",
+    "ward_no": "35"
   },
   {
     "id": "2057844933487374767",
@@ -5440,7 +5440,7 @@
     "author": "@SriroopaD99",
     "date": "2026-05-22T18:31:38+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Vinayakanagar",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -5450,8 +5450,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Vinayakanagar",
+    "ward_no": "30"
   },
   {
     "id": "2057933426116964542",
@@ -5477,7 +5477,7 @@
     "author": "@vishalkaradagi",
     "date": "2026-05-23T04:31:11+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Kengeri",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -5487,8 +5487,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kengeri",
+    "ward_no": "19"
   },
   {
     "id": "2058014110735077575",
@@ -5580,8 +5580,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kasavanahalli",
+    "ward_no": "31"
   },
   {
     "id": "2058079236246950368",
@@ -5709,8 +5709,8 @@
       "transformer"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kasavanahalli",
+    "ward_no": "31"
   },
   {
     "id": "2058215468553637897",
@@ -5718,7 +5718,7 @@
     "author": "@_frankenstein95",
     "date": "2026-05-23T15:56:22+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Kengeri",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -5727,8 +5727,8 @@
       "swm"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kengeri",
+    "ward_no": "19"
   },
   {
     "id": "2058236615060054502",
@@ -5745,8 +5745,8 @@
       "road condition"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Bommanahalli",
+    "ward_no": "63"
   },
   {
     "id": "2058234176244220056",
@@ -5763,8 +5763,8 @@
       "road condition"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Bommanahalli",
+    "ward_no": "63"
   },
   {
     "id": "2058239012121522489",
@@ -5893,8 +5893,8 @@
       "no power"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Hebbal",
+    "ward_no": "56"
   },
   {
     "id": "2058429410232160435",
@@ -6066,7 +6066,7 @@
     "author": "@DipankarSahani5",
     "date": "2026-05-24T16:30:12+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Mylasandra",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -6076,8 +6076,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Mylasandra",
+    "ward_no": "21"
   },
   {
     "id": "2058619635520679985",
@@ -6131,8 +6131,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Anjanapura",
+    "ward_no": "40"
   },
   {
     "id": "2058754732139958470",
@@ -6151,8 +6151,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Mahadevapura",
+    "ward_no": "22"
   },
   {
     "id": "2058735529089507616",
@@ -6160,7 +6160,7 @@
     "author": "@DipankarSahani5",
     "date": "2026-05-25T02:22:54+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Mylasandra",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -6171,8 +6171,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Mylasandra",
+    "ward_no": "21"
   },
   {
     "id": "2058789963546898680",
@@ -6198,7 +6198,7 @@
     "author": "@PaiVishnu1",
     "date": "2026-05-25T05:11:17+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "G.M Palya",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -6208,8 +6208,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "G.M Palya",
+    "ward_no": "18"
   },
   {
     "id": "2058735375959683495",
@@ -6245,8 +6245,8 @@
       "bwssb"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Beguru",
+    "ward_no": "36"
   },
   {
     "id": "2058876081202229411",
@@ -6263,8 +6263,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Mahadevapura",
+    "ward_no": "22"
   },
   {
     "id": "2058870245188870581",
@@ -6292,7 +6292,7 @@
     "author": "@AravindMys10603",
     "date": "2026-05-25T13:16:47+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Ganesh Mandira Ward",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -6302,8 +6302,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Ganesh Mandira Ward",
+    "ward_no": "108"
   },
   {
     "id": "2058896750170235259",
@@ -6397,8 +6397,8 @@
       "waste"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Mahadevapura",
+    "ward_no": "22"
   },
   {
     "id": "2059124381985669622",
@@ -6406,7 +6406,7 @@
     "author": "@vishalkaradagi",
     "date": "2026-05-26T04:08:04+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Kengeri",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -6416,8 +6416,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kengeri",
+    "ward_no": "19"
   },
   {
     "id": "2059119239890649278",
@@ -6444,7 +6444,7 @@
     "author": "@LeastVisited",
     "date": "2026-05-26T08:22:08+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Channasandra",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -6454,8 +6454,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Channasandra",
+    "ward_no": "32"
   },
   {
     "id": "2059175490779484410",
@@ -6491,8 +6491,8 @@
       "trash"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Hongasandra",
+    "ward_no": "64"
   },
   {
     "id": "2059242809782370611",
@@ -6538,7 +6538,7 @@
     "author": "@yash958singh",
     "date": "2026-05-26T15:04:22+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Kasavanahalli",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -6548,8 +6548,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kasavanahalli",
+    "ward_no": "31"
   },
   {
     "id": "2059274572067954864",
@@ -6594,7 +6594,7 @@
     "author": "@manglamiam",
     "date": "2026-05-26T13:36:29+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Thanisandra",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -6604,8 +6604,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Thanisandra",
+    "ward_no": "19"
   },
   {
     "id": "2059267215665549386",
@@ -6613,7 +6613,7 @@
     "author": "@Bharath_Kumar01",
     "date": "2026-05-26T13:35:38+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Sunkadakatte",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -6623,8 +6623,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Sunkadakatte",
+    "ward_no": "10"
   },
   {
     "id": "2059227740474401017",
@@ -6632,7 +6632,7 @@
     "author": "@AshishKumar_10",
     "date": "2026-05-26T10:58:46+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Vignan Nagar",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -6642,8 +6642,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Vignan Nagar",
+    "ward_no": "24"
   },
   {
     "id": "2059221967971254522",
@@ -6824,7 +6824,7 @@
     "author": "@AdbhutParth",
     "date": "2026-05-26T17:19:55+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Talaghattapura",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -6834,8 +6834,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Talaghattapura",
+    "ward_no": "52"
   },
   {
     "id": "2059322807151161495",
@@ -6861,7 +6861,7 @@
     "author": "@medeepakostwal",
     "date": "2026-05-26T16:36:03+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Austin Town",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -6871,8 +6871,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Austin Town",
+    "ward_no": "29"
   },
   {
     "id": "2059310771776164290",
@@ -6919,7 +6919,7 @@
     "author": "@EshanMagadadum",
     "date": "2026-05-27T05:17:39+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Ullal",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -6929,8 +6929,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Ullal",
+    "ward_no": "16"
   },
   {
     "id": "2059493696358449243",
@@ -6956,7 +6956,7 @@
     "author": "@kishorekunal",
     "date": "2026-05-27T03:02:42+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Varthur",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -6967,8 +6967,8 @@
       "solid waste"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Varthur",
+    "ward_no": "40"
   },
   {
     "id": "2059525192855281707",
@@ -7051,7 +7051,7 @@
     "author": "@rep_movsd",
     "date": "2026-05-27T06:20:34+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Varthur",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -7061,8 +7061,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Varthur",
+    "ward_no": "40"
   },
   {
     "id": "2059517417781682513",
@@ -7070,7 +7070,7 @@
     "author": "@58afe844b02f4d0",
     "date": "2026-05-27T06:09:51+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Jakkur",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -7080,8 +7080,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Jakkur",
+    "ward_no": "17"
   },
   {
     "id": "2059624068551516173",
@@ -7089,7 +7089,7 @@
     "author": "@a_r_y_a__s_e_n",
     "date": "2026-05-27T13:13:38+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Kadugodi",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -7099,8 +7099,8 @@
       "swm"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kadugodi",
+    "ward_no": "31"
   },
   {
     "id": "2059637962258997278",
@@ -7165,7 +7165,7 @@
     "author": "@PavanKu45172458",
     "date": "2026-05-28T03:41:33+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Vv Puram",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -7175,8 +7175,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "V.V Puram",
+    "ward_no": "41"
   },
   {
     "id": "2059892945000763561",
@@ -7263,7 +7263,7 @@
     "author": "@Anubhav_11",
     "date": "2026-05-28T06:26:41+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Panathur",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -7275,8 +7275,8 @@
       "swm"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Panathur",
+    "ward_no": "48"
   },
   {
     "id": "2059853723858588014",
@@ -7302,7 +7302,7 @@
     "author": "@EshanMagadadum",
     "date": "2026-05-28T08:13:36+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Ullal",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -7312,8 +7312,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Ullal",
+    "ward_no": "16"
   },
   {
     "id": "2059962569818095751",
@@ -7332,8 +7332,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "HBR Layout",
+    "ward_no": "24"
   },
   {
     "id": "2059992739786498228",
@@ -7368,8 +7368,8 @@
       "pothole"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Bandepalya",
+    "ward_no": "67"
   },
   {
     "id": "2060041470510538848",
@@ -7470,7 +7470,7 @@
     "author": "@Shancy_Suresh",
     "date": "2026-05-29T05:40:23+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Mahadevapura",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -7480,8 +7480,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Mahadevapura",
+    "ward_no": "22"
   },
   {
     "id": "2060210269578752015",
@@ -7525,7 +7525,7 @@
     "author": "@OkaySanjana",
     "date": "2026-05-29T05:29:43+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Garudachar Palya",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -7535,8 +7535,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Garudachar Palya",
+    "ward_no": "35"
   },
   {
     "id": "2060220826524459228",
@@ -7544,7 +7544,7 @@
     "author": "@PaiVishnu1",
     "date": "2026-05-29T04:44:56+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "G.M Palya",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -7554,8 +7554,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "G.M Palya",
+    "ward_no": "18"
   },
   {
     "id": "2060200793551360128",
@@ -7573,8 +7573,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kammanahalli",
+    "ward_no": "35"
   },
   {
     "id": "2060200013268165107",
@@ -7582,7 +7582,7 @@
     "author": "@t_s_s_k_0",
     "date": "2026-05-29T03:22:14+00:00",
     "category": "Flooding",
-    "area": "Bangalore",
+    "area": "Basavanapura",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -7591,8 +7591,8 @@
       "rain water"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Basavanapura",
+    "ward_no": "11"
   },
   {
     "id": "2060299381774184551",
@@ -7600,7 +7600,7 @@
     "author": "@Ashismo05762869",
     "date": "2026-05-29T09:57:05+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Btm",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -7610,8 +7610,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "RBI Layout",
+    "ward_no": "42"
   },
   {
     "id": "2060292218762792970",
@@ -7638,7 +7638,7 @@
     "author": "@rajatpoonacha1",
     "date": "2026-05-29T06:54:00+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Vidyaranyapura",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -7648,8 +7648,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Vidyaranyapura",
+    "ward_no": "10"
   },
   {
     "id": "2060344136356729056",
@@ -7695,7 +7695,7 @@
     "author": "@patnaiksarit",
     "date": "2026-05-29T10:51:49+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Btm",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -7705,8 +7705,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "RBI Layout",
+    "ward_no": "42"
   },
   {
     "id": "2060343195670847732",
@@ -7732,7 +7732,7 @@
     "author": "@yeppAniket",
     "date": "2026-05-29T13:03:04+00:00",
     "category": "Flooding",
-    "area": "Bangalore",
+    "area": "Agara",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -7741,8 +7741,8 @@
       "flood"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Agara",
+    "ward_no": "71"
   },
   {
     "id": "2060388406535012725",
@@ -7750,7 +7750,7 @@
     "author": "@RoshanJadwani",
     "date": "2026-05-29T15:50:50+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Btm",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -7760,8 +7760,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "RBI Layout",
+    "ward_no": "42"
   },
   {
     "id": "2060377790118326763",
@@ -7845,7 +7845,7 @@
     "author": "@bhatia_shray",
     "date": "2026-05-29T13:45:48+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Kothanur",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -7855,8 +7855,8 @@
       "swm"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kothanur",
+    "ward_no": "41"
   },
   {
     "id": "2060383530971288027",
@@ -7882,7 +7882,7 @@
     "author": "@Rajasekhar3515",
     "date": "2026-05-29T18:37:10+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Mahadevapura",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -7892,8 +7892,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Mahadevapura",
+    "ward_no": "22"
   },
   {
     "id": "2060412701718028547",
@@ -7911,8 +7911,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Pulakeshi Nagar",
+    "ward_no": "47"
   },
   {
     "id": "2060439574783078613",
@@ -7938,7 +7938,7 @@
     "author": "@vetris50",
     "date": "2026-05-29T20:25:40+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Naganathapura",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -7947,8 +7947,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Naganathapura",
+    "ward_no": "33"
   },
   {
     "id": "2060451989386092558",
@@ -7956,7 +7956,7 @@
     "author": "@vetris50",
     "date": "2026-05-29T20:03:30+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Naganathapura",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -7966,8 +7966,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Naganathapura",
+    "ward_no": "33"
   },
   {
     "id": "2060531184778756334",
@@ -8031,7 +8031,7 @@
     "author": "@h_prash94994",
     "date": "2026-05-30T01:51:01+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Byrathi",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -8041,8 +8041,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Byrathi",
+    "ward_no": "28"
   },
   {
     "id": "2060537992939532366",
@@ -8050,7 +8050,7 @@
     "author": "@raghu1979sharma",
     "date": "2026-05-30T01:45:15+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Dharmagiri Ward",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -8060,8 +8060,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Dharmagiri Ward",
+    "ward_no": "107"
   },
   {
     "id": "2060555301749936379",
@@ -8135,8 +8135,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kammanahalli",
+    "ward_no": "35"
   },
   {
     "id": "2060600429998997660",
@@ -8181,7 +8181,7 @@
     "author": "@vs013",
     "date": "2026-05-30T04:14:27+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Kasavanahalli",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -8191,8 +8191,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kasavanahalli",
+    "ward_no": "31"
   },
   {
     "id": "2060651288103366824",
@@ -8228,8 +8228,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "HBR Layout",
+    "ward_no": "24"
   },
   {
     "id": "2060667163682496837",
@@ -8237,7 +8237,7 @@
     "author": "@THRILOKNat40171",
     "date": "2026-05-30T10:18:31+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Singasandra",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -8248,8 +8248,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Singasandra",
+    "ward_no": "66"
   },
   {
     "id": "2060676072996487537",
@@ -8257,7 +8257,7 @@
     "author": "@RameshsuryaN9",
     "date": "2026-05-30T10:53:55+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Vv Puram",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -8267,8 +8267,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "V.V Puram",
+    "ward_no": "41"
   },
   {
     "id": "2060657517823463436",
@@ -8285,8 +8285,8 @@
       "park"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "R T Nagar",
+    "ward_no": "53"
   },
   {
     "id": "2060688605602021601",
@@ -8359,8 +8359,8 @@
       "garbage"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Bandepalya",
+    "ward_no": "67"
   },
   {
     "id": "2060960616328868210",
@@ -8472,8 +8472,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Bommanahalli",
+    "ward_no": "63"
   },
   {
     "id": "2061048933984747947",
@@ -8481,7 +8481,7 @@
     "author": "@anyrudh79",
     "date": "2026-05-31T11:35:32+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Kanakanapalya",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -8491,8 +8491,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kanakanapalya",
+    "ward_no": "38"
   },
   {
     "id": "2061034020830654534",
@@ -8643,8 +8643,8 @@
       "pothole"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Bandepalya",
+    "ward_no": "67"
   },
   {
     "id": "2061289565772775562",
@@ -8652,15 +8652,15 @@
     "author": "@MeWhat71207",
     "date": "2026-06-01T03:31:44+00:00",
     "category": "Other",
-    "area": "Bangalore",
+    "area": "Horamavu",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
     "source_url": "https://twitter.com/i/web/status/2061289565772775562",
     "keywords": [],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Horamavu",
+    "ward_no": "2"
   },
   {
     "id": "2061268453605224699",
@@ -8668,7 +8668,7 @@
     "author": "@SendamilSelvan",
     "date": "2026-06-01T02:07:50+00:00",
     "category": "Water",
-    "area": "Bangalore",
+    "area": "Vinayakanagar",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -8678,8 +8678,8 @@
       "water supply"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Vinayakanagar",
+    "ward_no": "30"
   },
   {
     "id": "2061329845389525330",
@@ -8725,7 +8725,7 @@
     "author": "@PaiVishnu1",
     "date": "2026-06-01T04:46:18+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "G.M Palya",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -8735,8 +8735,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "G.M Palya",
+    "ward_no": "18"
   },
   {
     "id": "2061393997302837669",
@@ -8782,7 +8782,7 @@
     "author": "@iqbalkhuraishi",
     "date": "2026-06-01T09:06:29+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Kanakanapalya",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -8792,8 +8792,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kanakanapalya",
+    "ward_no": "38"
   },
   {
     "id": "2061336862535590231",
@@ -8829,8 +8829,8 @@
       "sewage overflow"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Beguru",
+    "ward_no": "36"
   },
   {
     "id": "2061473358164975944",
@@ -8931,7 +8931,7 @@
     "author": "@HResponse1966",
     "date": "2026-06-01T12:54:24+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Btm",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -8941,8 +8941,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "RBI Layout",
+    "ward_no": "42"
   },
   {
     "id": "2061544137330217019",
@@ -8950,7 +8950,7 @@
     "author": "@OkaySanjana",
     "date": "2026-06-01T20:23:18+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Garudachar Palya",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -8960,8 +8960,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Garudachar Palya",
+    "ward_no": "35"
   },
   {
     "id": "2061544136545849442",
@@ -8969,7 +8969,7 @@
     "author": "@OkaySanjana",
     "date": "2026-06-01T20:23:18+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Garudachar Palya",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -8979,8 +8979,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Garudachar Palya",
+    "ward_no": "35"
   },
   {
     "id": "2061599078665134154",
@@ -9024,7 +9024,7 @@
     "author": "@muruga_abi",
     "date": "2026-06-02T06:17:06+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Vinayaka Layout",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -9034,8 +9034,8 @@
       "waste"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Vinayaka Layout",
+    "ward_no": "25"
   },
   {
     "id": "2061688022702477524",
@@ -9062,7 +9062,7 @@
     "author": "@PaiVishnu1",
     "date": "2026-06-02T05:05:24+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "G.M Palya",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -9072,8 +9072,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "G.M Palya",
+    "ward_no": "18"
   },
   {
     "id": "2061661382555431065",
@@ -9129,8 +9129,8 @@
       "stray"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Pulakeshi Nagar",
+    "ward_no": "47"
   },
   {
     "id": "2061724387976593683",
@@ -9156,7 +9156,7 @@
     "author": "@zealram",
     "date": "2026-06-02T08:54:27+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "K R Pura",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -9166,8 +9166,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "K R Pura",
+    "ward_no": "14"
   },
   {
     "id": "2061710003980177830",
@@ -9309,7 +9309,7 @@
     "author": "@krishnared72419",
     "date": "2026-06-02T14:41:42+00:00",
     "category": "Flooding",
-    "area": "Bangalore",
+    "area": "Mahadevapura",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -9319,8 +9319,8 @@
       "submerge"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Mahadevapura",
+    "ward_no": "22"
   },
   {
     "id": "2061833849890591021",
@@ -9328,7 +9328,7 @@
     "author": "@krishnared72419",
     "date": "2026-06-02T15:34:31+00:00",
     "category": "Flooding",
-    "area": "Bangalore",
+    "area": "Mahadevapura",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -9338,8 +9338,8 @@
       "submerge"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Mahadevapura",
+    "ward_no": "22"
   },
   {
     "id": "2061844567377453314",
@@ -9422,7 +9422,7 @@
     "author": "@anugrahnair27",
     "date": "2026-06-03T01:29:13+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Kasavanahalli",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -9432,8 +9432,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kasavanahalli",
+    "ward_no": "31"
   },
   {
     "id": "2061963442232426960",
@@ -9441,7 +9441,7 @@
     "author": "@gjsantyy",
     "date": "2026-06-03T00:09:28+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Jakkur",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -9451,8 +9451,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Jakkur",
+    "ward_no": "17"
   },
   {
     "id": "2061981980364034471",
@@ -9516,7 +9516,7 @@
     "author": "@_frankenstein95",
     "date": "2026-06-03T03:47:43+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Kengeri",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -9525,8 +9525,8 @@
       "swm"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kengeri",
+    "ward_no": "19"
   },
   {
     "id": "2062033653505659081",
@@ -9609,7 +9609,7 @@
     "author": "@padekar_ruchi",
     "date": "2026-06-03T11:45:46+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Kasavanahalli",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -9619,8 +9619,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kasavanahalli",
+    "ward_no": "31"
   },
   {
     "id": "2062137994484879675",
@@ -9638,8 +9638,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kasavanahalli",
+    "ward_no": "31"
   },
   {
     "id": "2062158964876623909",
@@ -9732,8 +9732,8 @@
       "litter"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Bommanahalli",
+    "ward_no": "63"
   },
   {
     "id": "2062363177292333178",
@@ -9741,7 +9741,7 @@
     "author": "@thyaguilu",
     "date": "2026-06-04T02:37:52+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Kotthur",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -9751,8 +9751,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kotthur",
+    "ward_no": "16"
   },
   {
     "id": "2062346091123933217",
@@ -9779,7 +9779,7 @@
     "author": "@NitheshReddy58",
     "date": "2026-06-04T07:08:29+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Mahadevapura",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -9788,8 +9788,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Mahadevapura",
+    "ward_no": "22"
   },
   {
     "id": "2062416700570812542",
@@ -9827,8 +9827,8 @@
       "swm"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kumaraswamy Layout",
+    "ward_no": "3"
   },
   {
     "id": "2062406485511156107",
@@ -9890,7 +9890,7 @@
     "author": "@SowmyaRB",
     "date": "2026-06-04T10:14:53+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Dasarahalli",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -9900,8 +9900,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Dasarahalli",
+    "ward_no": "72"
   },
   {
     "id": "2062546778030027254",
@@ -9909,7 +9909,7 @@
     "author": "@akshayghali27",
     "date": "2026-06-04T14:47:26+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Singasandra",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -9919,8 +9919,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Singasandra",
+    "ward_no": "66"
   },
   {
     "id": "2062588837206143080",
@@ -9937,8 +9937,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Bommanahalli",
+    "ward_no": "63"
   },
   {
     "id": "2062714790456459603",
@@ -9955,8 +9955,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Mahadevapura",
+    "ward_no": "22"
   },
   {
     "id": "2062751282444771830",
@@ -9983,7 +9983,7 @@
     "author": "@MisterFigs",
     "date": "2026-06-05T04:18:19+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Agara",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -9993,8 +9993,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Agara",
+    "ward_no": "71"
   },
   {
     "id": "2062747568090894614",
@@ -10039,7 +10039,7 @@
     "author": "@CBAS918",
     "date": "2026-06-05T07:53:59+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Nagarbhavi",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -10049,8 +10049,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Nagarbhavi",
+    "ward_no": "79"
   },
   {
     "id": "2062772964614180930",
@@ -10078,7 +10078,7 @@
     "author": "@neethuneetha",
     "date": "2026-06-05T05:55:12+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Kadugodi",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -10088,8 +10088,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kadugodi",
+    "ward_no": "31"
   },
   {
     "id": "2062767882304655774",
@@ -10217,8 +10217,8 @@
       "crater"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Bandepalya",
+    "ward_no": "67"
   },
   {
     "id": "2062932416109678755",
@@ -10244,7 +10244,7 @@
     "author": "@jibinjohn",
     "date": "2026-06-05T15:06:32+00:00",
     "category": "Roads",
-    "area": "Bangalore",
+    "area": "Kodigehalli",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -10253,8 +10253,8 @@
       "footpath"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kodigehalli",
+    "ward_no": "13"
   },
   {
     "id": "2063068936514805933",
@@ -10318,7 +10318,7 @@
     "author": "@verghesetimothy",
     "date": "2026-06-06T05:15:01+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Byrathi",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -10328,8 +10328,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Byrathi",
+    "ward_no": "28"
   },
   {
     "id": "2063155437936210120",
@@ -10337,7 +10337,7 @@
     "author": "@rahulsingerb",
     "date": "2026-06-06T07:06:02+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Chikkalasandra",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -10347,8 +10347,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Chikkalasandra",
+    "ward_no": "110"
   },
   {
     "id": "2063180448894001301",
@@ -10356,7 +10356,7 @@
     "author": "@kalidasaa",
     "date": "2026-06-06T08:45:25+00:00",
     "category": "Flooding",
-    "area": "Bangalore",
+    "area": "Hosakerehalli",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -10365,8 +10365,8 @@
       "flood"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Hosakerehalli",
+    "ward_no": "112"
   },
   {
     "id": "2063205241949139181",
@@ -10457,8 +10457,8 @@
     "source_url": "https://twitter.com/i/web/status/2063289080079851721",
     "keywords": [],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Bandepalya",
+    "ward_no": "67"
   },
   {
     "id": "2063296130759479533",
@@ -10466,7 +10466,7 @@
     "author": "@PatilJayani",
     "date": "2026-06-06T16:25:06+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Sarakki",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -10475,8 +10475,8 @@
       "garbage"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Sarakki",
+    "ward_no": "16"
   },
   {
     "id": "2063376138676879838",
@@ -10503,7 +10503,7 @@
     "author": "@Akhil7845486407",
     "date": "2026-06-07T05:59:11+00:00",
     "category": "Water",
-    "area": "Bangalore",
+    "area": "Jakkur",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -10514,8 +10514,8 @@
       "no water"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Jakkur",
+    "ward_no": "17"
   },
   {
     "id": "2063440343799078987",
@@ -10553,8 +10553,8 @@
       "bmtc"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Bommanahalli",
+    "ward_no": "63"
   },
   {
     "id": "2063551993952743677",
@@ -10562,7 +10562,7 @@
     "author": "@Akhil7845486407",
     "date": "2026-06-07T09:21:48+00:00",
     "category": "Water",
-    "area": "Bangalore",
+    "area": "Jakkur",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -10573,8 +10573,8 @@
       "no water"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Jakkur",
+    "ward_no": "17"
   },
   {
     "id": "2063511387427799515",
@@ -10592,8 +10592,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kasavanahalli",
+    "ward_no": "31"
   },
   {
     "id": "2063509631528562715",
@@ -10601,7 +10601,7 @@
     "author": "@dailynasty",
     "date": "2026-06-07T06:33:28+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Konena Agrahara",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -10611,8 +10611,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Konena Agrahara",
+    "ward_no": "21"
   },
   {
     "id": "2063577398172590317",
@@ -10658,7 +10658,7 @@
     "author": "@Ryvhhgyujbvhu",
     "date": "2026-06-07T14:21:35+00:00",
     "category": "Roads",
-    "area": "Bangalore",
+    "area": "Medahalli",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -10667,8 +10667,8 @@
       "pothole"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Medahalli",
+    "ward_no": "10"
   },
   {
     "id": "2063633544153563606",
@@ -10731,7 +10731,7 @@
     "author": "@Akhil7845486407",
     "date": "2026-06-08T06:10:23+00:00",
     "category": "Water",
-    "area": "Bangalore",
+    "area": "Jakkur",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -10742,8 +10742,8 @@
       "no water"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Jakkur",
+    "ward_no": "17"
   },
   {
     "id": "2063858322835734717",
@@ -10751,7 +10751,7 @@
     "author": "@Akhil7845486407",
     "date": "2026-06-08T05:39:03+00:00",
     "category": "Water",
-    "area": "Bangalore",
+    "area": "Jakkur",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -10762,8 +10762,8 @@
       "no water"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Jakkur",
+    "ward_no": "17"
   },
   {
     "id": "2063872951796236503",
@@ -10781,8 +10781,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Mahadevapura",
+    "ward_no": "22"
   },
   {
     "id": "2063828306395570563",
@@ -10790,7 +10790,7 @@
     "author": "@Nandinishivalin",
     "date": "2026-06-08T03:39:46+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Kengeri",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -10801,8 +10801,8 @@
       "transformer"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kengeri",
+    "ward_no": "19"
   },
   {
     "id": "2063812232887353725",
@@ -10828,7 +10828,7 @@
     "author": "@Akhil7845486407",
     "date": "2026-06-08T11:15:20+00:00",
     "category": "Water",
-    "area": "Bangalore",
+    "area": "Jakkur",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -10839,8 +10839,8 @@
       "no water"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Jakkur",
+    "ward_no": "17"
   },
   {
     "id": "2063933828725637323",
@@ -10848,7 +10848,7 @@
     "author": "@Akhil7845486407",
     "date": "2026-06-08T10:39:05+00:00",
     "category": "Water",
-    "area": "Bangalore",
+    "area": "Jakkur",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -10859,8 +10859,8 @@
       "no water"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Jakkur",
+    "ward_no": "17"
   },
   {
     "id": "2063895021850653119",
@@ -10868,7 +10868,7 @@
     "author": "@Akhil7845486407",
     "date": "2026-06-08T08:04:53+00:00",
     "category": "Water",
-    "area": "Bangalore",
+    "area": "Jakkur",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -10879,8 +10879,8 @@
       "no water"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Jakkur",
+    "ward_no": "17"
   },
   {
     "id": "2063888371173498944",
@@ -10888,7 +10888,7 @@
     "author": "@Akhil7845486407",
     "date": "2026-06-08T07:38:27+00:00",
     "category": "Water",
-    "area": "Bangalore",
+    "area": "Jakkur",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -10899,8 +10899,8 @@
       "no water"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Jakkur",
+    "ward_no": "17"
   },
   {
     "id": "2063892759296262242",
@@ -10918,8 +10918,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kasavanahalli",
+    "ward_no": "31"
   },
   {
     "id": "2063945817216684221",
@@ -10927,7 +10927,7 @@
     "author": "@samantaraja4",
     "date": "2026-06-08T11:26:43+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Hoodi",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -10937,8 +10937,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Hoodi",
+    "ward_no": "29"
   },
   {
     "id": "2063918690912153884",
@@ -10974,8 +10974,8 @@
       "pothole"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Shivajinagar",
+    "ward_no": "5"
   },
   {
     "id": "2063964022362583428",
@@ -10983,7 +10983,7 @@
     "author": "@Akhil7845486407",
     "date": "2026-06-08T12:39:04+00:00",
     "category": "Water",
-    "area": "Bangalore",
+    "area": "Jakkur",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -10994,8 +10994,8 @@
       "no water"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Jakkur",
+    "ward_no": "17"
   },
   {
     "id": "2064002167745495338",
@@ -11163,8 +11163,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kasavanahalli",
+    "ward_no": "31"
   },
   {
     "id": "2064288629120503911",
@@ -11191,7 +11191,7 @@
     "author": "@AajKaShakaal",
     "date": "2026-06-09T07:11:50+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Horamavu",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -11200,8 +11200,8 @@
       "garbage"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Horamavu",
+    "ward_no": "2"
   },
   {
     "id": "2064334712328610036",
@@ -11227,7 +11227,7 @@
     "author": "@tamkin21",
     "date": "2026-06-09T12:22:30+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Basavangudi",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -11237,8 +11237,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Basavanapura",
+    "ward_no": "11"
   },
   {
     "id": "2064345436706762800",
@@ -11272,8 +11272,8 @@
     "source_url": "https://twitter.com/i/web/status/2064376341466923512",
     "keywords": [],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Bandepalya",
+    "ward_no": "67"
   },
   {
     "id": "2064364078022463864",
@@ -11364,8 +11364,8 @@
       "garbage"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Mahadevapura",
+    "ward_no": "22"
   },
   {
     "id": "2064343278393385158",
@@ -11635,7 +11635,7 @@
     "author": "@Akhil7845486407",
     "date": "2026-06-10T12:09:25+00:00",
     "category": "Water",
-    "area": "Bangalore",
+    "area": "Jakkur",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -11646,8 +11646,8 @@
       "no water"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Jakkur",
+    "ward_no": "17"
   },
   {
     "id": "2064685381111754880",
@@ -11655,7 +11655,7 @@
     "author": "@vishalkaradagi",
     "date": "2026-06-10T12:25:29+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Kengeri",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -11665,8 +11665,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kengeri",
+    "ward_no": "19"
   },
   {
     "id": "2064716152224485455",
@@ -11710,7 +11710,7 @@
     "author": "@DipankarSahani5",
     "date": "2026-06-10T15:48:53+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Mylasandra",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -11720,8 +11720,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Mylasandra",
+    "ward_no": "21"
   },
   {
     "id": "2064727722686132288",
@@ -11768,7 +11768,7 @@
     "author": "@dailynasty",
     "date": "2026-06-10T18:44:59+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Konena Agrahara",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -11778,8 +11778,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Konena Agrahara",
+    "ward_no": "21"
   },
   {
     "id": "2064871850103238774",
@@ -11815,8 +11815,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kasavanahalli",
+    "ward_no": "31"
   },
   {
     "id": "2064927810901450892",
@@ -11824,7 +11824,7 @@
     "author": "@vishalkaradagi",
     "date": "2026-06-11T04:28:49+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Kengeri",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -11834,8 +11834,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kengeri",
+    "ward_no": "19"
   },
   {
     "id": "2064923281426395277",
@@ -11843,7 +11843,7 @@
     "author": "@NKhandibagur",
     "date": "2026-06-11T04:10:49+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Hoodi",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -11853,8 +11853,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Hoodi",
+    "ward_no": "29"
   },
   {
     "id": "2064913492940046796",
@@ -11889,8 +11889,8 @@
       "bwssb"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Mahadevapura",
+    "ward_no": "22"
   },
   {
     "id": "2065008376564834744",
@@ -11907,8 +11907,8 @@
       "garbage"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Mahadevapura",
+    "ward_no": "22"
   },
   {
     "id": "2065083298972631228",
@@ -11926,8 +11926,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kasavanahalli",
+    "ward_no": "31"
   },
   {
     "id": "2065068720570192316",
@@ -11953,7 +11953,7 @@
     "author": "@Chaithanya_2506",
     "date": "2026-06-11T13:39:47+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Banaswadi",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -11963,8 +11963,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Banaswadi",
+    "ward_no": "32"
   },
   {
     "id": "2065056017491333251",
@@ -11972,7 +11972,7 @@
     "author": "@KVSMachan",
     "date": "2026-06-11T12:58:16+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Kodigehalli",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -11982,8 +11982,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kodigehalli",
+    "ward_no": "13"
   },
   {
     "id": "2065051596070031513",
@@ -12010,7 +12010,7 @@
     "author": "@samantaraja4",
     "date": "2026-06-11T11:38:33+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Hoodi",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -12020,8 +12020,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Hoodi",
+    "ward_no": "29"
   },
   {
     "id": "2065097271054905623",
@@ -12029,7 +12029,7 @@
     "author": "@souradeepseng14",
     "date": "2026-06-11T15:42:11+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Halasuru",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -12039,8 +12039,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Halasuru",
+    "ward_no": "8"
   },
   {
     "id": "2065295142085702006",
@@ -12077,8 +12077,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Bommanahalli",
+    "ward_no": "63"
   },
   {
     "id": "2065269996251648200",
@@ -12096,8 +12096,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Bommanahalli",
+    "ward_no": "63"
   },
   {
     "id": "2065272630937268713",
@@ -12134,8 +12134,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kasavanahalli",
+    "ward_no": "31"
   },
   {
     "id": "2065332396699042127",
@@ -12143,7 +12143,7 @@
     "author": "@manglamiam",
     "date": "2026-06-12T07:16:30+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Thanisandra",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -12153,8 +12153,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Thanisandra",
+    "ward_no": "19"
   },
   {
     "id": "2065315705810227302",
@@ -12173,8 +12173,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Bommanahalli",
+    "ward_no": "63"
   },
   {
     "id": "2065347221558849639",
@@ -12201,7 +12201,7 @@
     "author": "@Pladhurandar",
     "date": "2026-06-12T06:33:06+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Byrathi",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -12211,8 +12211,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Byrathi",
+    "ward_no": "28"
   },
   {
     "id": "2065320588005237042",
@@ -12258,7 +12258,7 @@
     "author": "@samantaraja4",
     "date": "2026-06-12T09:42:05+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Hoodi",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -12268,8 +12268,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Hoodi",
+    "ward_no": "29"
   },
   {
     "id": "2065444756168315045",
@@ -12296,7 +12296,7 @@
     "author": "@NKhandibagur",
     "date": "2026-06-12T14:33:13+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Hoodi",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -12306,8 +12306,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Hoodi",
+    "ward_no": "29"
   },
   {
     "id": "2065435350542291283",
@@ -12343,8 +12343,8 @@
       "lalbagh"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Lakkasandra",
+    "ward_no": "23"
   },
   {
     "id": "2065481465899753947",
@@ -12352,7 +12352,7 @@
     "author": "@RameshV0105",
     "date": "2026-06-12T17:08:50+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Byadarahalli",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -12361,8 +12361,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Byadarahalli",
+    "ward_no": "15"
   },
   {
     "id": "2065471473595392380",
@@ -12417,8 +12417,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kasavanahalli",
+    "ward_no": "31"
   },
   {
     "id": "2065549982560927851",
@@ -12519,7 +12519,7 @@
     "author": "@sajeev262",
     "date": "2026-06-13T03:49:36+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Singasandra",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -12530,8 +12530,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Singasandra",
+    "ward_no": "66"
   },
   {
     "id": "2065666823987863996",
@@ -12539,7 +12539,7 @@
     "author": "@123mangoman",
     "date": "2026-06-13T05:25:23+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Chickpete",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -12549,8 +12549,8 @@
       "swm"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Chickpete",
+    "ward_no": "58"
   },
   {
     "id": "2065664792749338656",
@@ -12558,7 +12558,7 @@
     "author": "@NKhandibagur",
     "date": "2026-06-13T05:17:19+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Hoodi",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -12568,8 +12568,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Hoodi",
+    "ward_no": "29"
   },
   {
     "id": "2065647735047622791",
@@ -12621,8 +12621,8 @@
       "waterlog"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Bommanahalli",
+    "ward_no": "63"
   },
   {
     "id": "2065686691852280160",
@@ -12687,7 +12687,7 @@
     "author": "@samantaraja4",
     "date": "2026-06-13T07:01:17+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Hoodi",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -12697,8 +12697,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Hoodi",
+    "ward_no": "29"
   },
   {
     "id": "2065687388618473836",
@@ -12706,7 +12706,7 @@
     "author": "@TYGIndia",
     "date": "2026-06-13T06:47:06+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Varthur",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -12715,8 +12715,8 @@
       "garbage"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Varthur",
+    "ward_no": "40"
   },
   {
     "id": "2065756642592108840",
@@ -12854,7 +12854,7 @@
     "author": "@drshankar81",
     "date": "2026-06-14T00:02:21+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Sampigehalli",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -12864,8 +12864,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Sampigehalli",
+    "ward_no": "20"
   },
   {
     "id": "2066037979127361554",
@@ -12883,8 +12883,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kasavanahalli",
+    "ward_no": "31"
   },
   {
     "id": "2066019148371816761",
@@ -12902,8 +12902,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Pulakeshi Nagar",
+    "ward_no": "47"
   },
   {
     "id": "2065998525952049344",
@@ -12930,7 +12930,7 @@
     "author": "@realrovertechie",
     "date": "2026-06-14T07:13:47+00:00",
     "category": "Water",
-    "area": "Bangalore",
+    "area": "Kothanur",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -12939,8 +12939,8 @@
       "bwssb"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kothanur",
+    "ward_no": "41"
   },
   {
     "id": "2066066365413470631",
@@ -12995,8 +12995,8 @@
       "waste"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Mahadevapura",
+    "ward_no": "22"
   },
   {
     "id": "2066124568386027585",
@@ -13061,7 +13061,7 @@
     "author": "@sajeev262",
     "date": "2026-06-14T12:46:43+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Singasandra",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -13072,8 +13072,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Singasandra",
+    "ward_no": "66"
   },
   {
     "id": "2066131386692735387",
@@ -13091,8 +13091,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kasavanahalli",
+    "ward_no": "31"
   },
   {
     "id": "2066183500647354788",
@@ -13110,8 +13110,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Bommanahalli",
+    "ward_no": "63"
   },
   {
     "id": "2066197696705409195",
@@ -13184,8 +13184,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kasavanahalli",
+    "ward_no": "31"
   },
   {
     "id": "2066362645054418986",
@@ -13193,7 +13193,7 @@
     "author": "@RakeshaNR1",
     "date": "2026-06-15T03:30:20+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Kadirenahalli",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -13203,8 +13203,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kadirenahalli",
+    "ward_no": "2"
   },
   {
     "id": "2066385561670324639",
@@ -13241,8 +13241,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "R T Nagar",
+    "ward_no": "53"
   },
   {
     "id": "2066316019715776768",
@@ -13323,7 +13323,7 @@
     "author": "@Vaiahali7",
     "date": "2026-06-15T07:21:08+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Panathur",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -13334,8 +13334,8 @@
       "swm"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Panathur",
+    "ward_no": "48"
   },
   {
     "id": "2066419987586445652",
@@ -13343,7 +13343,7 @@
     "author": "@Vaiahali7",
     "date": "2026-06-15T07:18:11+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Panathur",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -13353,8 +13353,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Panathur",
+    "ward_no": "48"
   },
   {
     "id": "2066551800736719088",
@@ -13362,7 +13362,7 @@
     "author": "@AKHILESHKUMARR2",
     "date": "2026-06-15T16:01:58+00:00",
     "category": "Water",
-    "area": "Bangalore",
+    "area": "Btm",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -13371,8 +13371,8 @@
       "bwssb"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "RBI Layout",
+    "ward_no": "42"
   },
   {
     "id": "2066572030791806979",
@@ -13427,8 +13427,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kasavanahalli",
+    "ward_no": "31"
   },
   {
     "id": "2066739431286202572",
@@ -13436,7 +13436,7 @@
     "author": "@vishalkaradagi",
     "date": "2026-06-16T04:27:33+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Kengeri",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -13446,8 +13446,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kengeri",
+    "ward_no": "19"
   },
   {
     "id": "2066808996812796138",
@@ -13455,7 +13455,7 @@
     "author": "@PankajK53448045",
     "date": "2026-06-16T09:03:58+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Thanisandra",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -13466,8 +13466,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Thanisandra",
+    "ward_no": "19"
   },
   {
     "id": "2066773306238443612",
@@ -13484,8 +13484,8 @@
       "bmtc"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Mahadevapura",
+    "ward_no": "22"
   },
   {
     "id": "2066862102577566022",
@@ -13493,7 +13493,7 @@
     "author": "@realrovertechie",
     "date": "2026-06-16T12:35:00+00:00",
     "category": "Water",
-    "area": "Bangalore",
+    "area": "Kothanur",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -13502,8 +13502,8 @@
       "bwssb"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kothanur",
+    "ward_no": "41"
   },
   {
     "id": "2066877422935715847",
@@ -13511,7 +13511,7 @@
     "author": "@Vaidyanathan3G",
     "date": "2026-06-16T13:35:53+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Banaswadi",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -13521,8 +13521,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Banaswadi",
+    "ward_no": "32"
   },
   {
     "id": "2066859602558484811",
@@ -13624,7 +13624,7 @@
     "author": "@c2b927767e804d0",
     "date": "2026-06-17T03:31:37+00:00",
     "category": "Water",
-    "area": "Bangalore",
+    "area": "Mahadevapura",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -13633,8 +13633,8 @@
       "bwssb"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Mahadevapura",
+    "ward_no": "22"
   },
   {
     "id": "2067085500176089556",
@@ -13670,8 +13670,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kasavanahalli",
+    "ward_no": "31"
   },
   {
     "id": "2067064867002184011",
@@ -13734,7 +13734,7 @@
     "author": "@gjsantyy",
     "date": "2026-06-17T13:42:18+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Rajamahal",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -13744,8 +13744,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Rajamahal",
+    "ward_no": "51"
   },
   {
     "id": "2067233379897241608",
@@ -13753,15 +13753,15 @@
     "author": "@InfraEye",
     "date": "2026-06-17T13:10:19+00:00",
     "category": "Other",
-    "area": "Bangalore",
+    "area": "New Thippasandra",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
     "source_url": "https://twitter.com/i/web/status/2067233379897241608",
     "keywords": [],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "New Thippasandra",
+    "ward_no": "16"
   },
   {
     "id": "2067210340115546257",
@@ -13836,8 +13836,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Bommanahalli",
+    "ward_no": "63"
   },
   {
     "id": "2067476811257430375",
@@ -13883,7 +13883,7 @@
     "author": "@sharan24080112",
     "date": "2026-06-18T04:11:31+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Jakkur",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -13893,8 +13893,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Jakkur",
+    "ward_no": "17"
   },
   {
     "id": "2067456060160643079",
@@ -14013,7 +14013,7 @@
     "author": "@samantaraja4",
     "date": "2026-06-18T08:20:26+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Hoodi",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -14023,8 +14023,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Hoodi",
+    "ward_no": "29"
   },
   {
     "id": "2067579116518515179",
@@ -14135,8 +14135,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Mahadevapura",
+    "ward_no": "22"
   },
   {
     "id": "2067625899571482633",
@@ -14154,8 +14154,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Yelahanka Old Town",
+    "ward_no": "3"
   },
   {
     "id": "2067649033129308676",
@@ -14163,7 +14163,7 @@
     "author": "@iamv1j4y",
     "date": "2026-06-18T16:41:59+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Varthur",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -14174,8 +14174,8 @@
       "debris"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Varthur",
+    "ward_no": "40"
   },
   {
     "id": "2067690513550197092",
@@ -14193,8 +14193,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Mahadevapura",
+    "ward_no": "22"
   },
   {
     "id": "2067684108348854275",
@@ -14249,8 +14249,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "R T Nagar",
+    "ward_no": "53"
   },
   {
     "id": "2067857052417064977",
@@ -14258,7 +14258,7 @@
     "author": "@RonaldStalinEn1",
     "date": "2026-06-19T06:28:34+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Ejipura",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -14268,8 +14268,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Ejipura",
+    "ward_no": "26"
   },
   {
     "id": "2067849142572036469",
@@ -14305,8 +14305,8 @@
       "garbage"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Mahadevapura",
+    "ward_no": "22"
   },
   {
     "id": "2067797486752952708",
@@ -14314,7 +14314,7 @@
     "author": "@KrishnanEs73213",
     "date": "2026-06-19T02:31:53+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "K Kamaraj Ward",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -14324,8 +14324,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "K Kamaraj Ward",
+    "ward_no": "7"
   },
   {
     "id": "2067859298034786644",
@@ -14342,8 +14342,8 @@
       "lalbagh"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Lakkasandra",
+    "ward_no": "23"
   },
   {
     "id": "2067884535333920920",
@@ -14360,8 +14360,8 @@
       "water supply"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Mahadevapura",
+    "ward_no": "22"
   },
   {
     "id": "2067917321583387044",
@@ -14399,8 +14399,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Bommanahalli",
+    "ward_no": "63"
   },
   {
     "id": "2067975746103263282",
@@ -14481,7 +14481,7 @@
     "author": "@gopi79",
     "date": "2026-06-19T18:04:45+00:00",
     "category": "Roads",
-    "area": "Bangalore",
+    "area": "Thanisandra",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -14490,8 +14490,8 @@
       "pothole"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Thanisandra",
+    "ward_no": "19"
   },
   {
     "id": "2068019761997660169",
@@ -14517,7 +14517,7 @@
     "author": "@DipankarSahani5",
     "date": "2026-06-20T01:23:57+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Mylasandra",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -14527,8 +14527,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Mylasandra",
+    "ward_no": "21"
   },
   {
     "id": "2068213526922174850",
@@ -14546,8 +14546,8 @@
       "water supply"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "R T Nagar",
+    "ward_no": "53"
   },
   {
     "id": "2068190253274616083",
@@ -14574,7 +14574,7 @@
     "author": "@msrinivasa1971",
     "date": "2026-06-20T04:06:23+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Shankar Mutt",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -14584,8 +14584,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Shankar Mutt",
+    "ward_no": "44"
   },
   {
     "id": "2068181041253392453",
@@ -14629,7 +14629,7 @@
     "author": "@manglamiam",
     "date": "2026-06-20T08:14:00+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Thanisandra",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -14639,8 +14639,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Thanisandra",
+    "ward_no": "19"
   },
   {
     "id": "2068240072152096960",
@@ -14667,7 +14667,7 @@
     "author": "@ShankarAmith",
     "date": "2026-06-20T06:27:31+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Avalahalli",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -14677,8 +14677,8 @@
       "bescom"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Avalahalli",
+    "ward_no": "93"
   },
   {
     "id": "2068263815997956114",
@@ -14686,7 +14686,7 @@
     "author": "@shetty_ash32439",
     "date": "2026-06-20T09:24:54+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "A Narayanapura",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -14696,8 +14696,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "A Narayanapura",
+    "ward_no": "20"
   },
   {
     "id": "2068289598128898482",
@@ -14724,7 +14724,7 @@
     "author": "@civicissueindia",
     "date": "2026-06-20T10:56:22+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Panathur",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -14734,8 +14734,8 @@
       "dump"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Panathur",
+    "ward_no": "48"
   },
   {
     "id": "2068312040452849690",
@@ -14771,7 +14771,7 @@
       "traffic jam"
     ],
     "status": "open",
-    "ward_name": "",
-    "ward_no": ""
+    "ward_name": "Kasavanahalli",
+    "ward_no": "31"
   }
 ]
