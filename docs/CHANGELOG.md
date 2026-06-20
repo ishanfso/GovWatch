@@ -5,6 +5,37 @@ Format: `[Date] - What changed and why`
 
 ---
 
+## [2026-06-20] — Fix MP assignments for all 369 wards + geo-based BESCOM/BWSSB enrichment script
+
+### What changed
+
+**`data/officials/mps.json`**
+- Converted `assemblies` from semicolon-delimited string to proper JSON array — the old string format caused all MP assignment code to iterate characters instead of assembly names, leaving 138 wards with no MP
+- Corrected assembly list for each MP to match exact constituency spellings used in `wards.json`
+- Added missing assemblies: Yelahanka + Ganganagar (North), Rajarajeshwarinagar + Anekal (South)
+- Fixed wrong entry: Pulakeshinagar was listed under North (wrong — it's Central); Yelahanka was missing
+
+**`data/officials/wards.json`**
+- Fixed MP assignment for all 369 wards (was missing for 138 wards — 37% of all wards)
+- Root cause: `mps.json` assemblies was a string, not array; plus spelling mismatches between ward constituency field and MP assembly names (e.g. "Chamrajapet" vs "Chamarajpet", "Gandhinagara" vs "Gandhi Nagar", "Rajajinagar" vs "Rajaji Nagar", "Vijayanagar" vs "Vijay Nagar")
+- Final coverage: 155 wards → South MP (Tejasvi Surya), 111 wards → North MP (Shobha Karandlaje), 103 wards → Central MP (P.C. Mohan)
+
+**`scripts/fix_mp_assignments.py`** (NEW)
+- One-time utility script — already run; no need to run again unless wards.json is reset
+- Builds an ECI-verified mapping of every ward constituency spelling variant → correct Lok Sabha constituency
+- Updates all wards in wards.json with correct `mp`, `mp_phones`, `mp_email`
+- Also fixes `mps.json` in the same run
+
+**`scripts/enrich_bescom_bwssb.py`** (NEW — run locally when needed)
+- Geo-proximity script to verify and correct BESCOM/BWSSB assignments across all 369 wards
+- Geocodes ward centroids + all BESCOM `om_unit` names + all BWSSB `service_station` names via Nominatim (OpenStreetMap, free)
+- Assigns each ward to the nearest BESCOM unit and BWSSB station using Haversine distance
+- Caches all geocodes in `data/geo_cache.json` so it can be interrupted and restarted
+- Expected runtime: ~25–35 minutes (rate-limited to 1 req/sec per Nominatim policy)
+- Run from project root: `python scripts/enrich_bescom_bwssb.py`
+
+---
+
 ## [2026-06-20] — Fix Bangalore fallback contacts + smarter area extraction + analytics breakdowns
 
 ### What changed
