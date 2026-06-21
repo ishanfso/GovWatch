@@ -15022,7 +15022,7 @@
     "author": "@BgansTeam",
     "date": "2026-06-21T16:37:45+00:00",
     "category": "Traffic",
-    "area": "Mikeri Circle",
+    "area": "ORR",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -15031,6 +15031,44 @@
     "source_url": "https://twitter.com/i/web/status/2068735130672538096",
     "keywords": [
       "traffic jam"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2068745711416639566",
+    "text": "@NammaBESCOM \n\nWill there be power cut in Bangalore , Austin town ,Linden street tomorrow.",
+    "author": "@manoj55845",
+    "date": "2026-06-21T17:19:47+00:00",
+    "category": "Electricity",
+    "area": "Austin Town",
+    "ward_name": "Austin Town",
+    "ward_no": "29",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2068745711416639566",
+    "keywords": [
+      "power cut",
+      "bescom"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2068739626605617176",
+    "text": "Encroachment of Public Parking space infront of Bangalore press club.\n\nHonourable CM Sir,\nI am a veteran of Indian Army and resident of Bangalore. I would like to highlight a matter of encroachment of Public Parking space by Private Press Club in Cubbon park.\n@DKShivakumar https://t.co/0bAsM2Vdkz",
+    "author": "@veterancitizen1",
+    "date": "2026-06-21T16:55:36+00:00",
+    "category": "Parks",
+    "area": "Cubbon Park",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2068739626605617176",
+    "keywords": [
+      "park",
+      "cubbon"
     ],
     "status": "open"
   }
