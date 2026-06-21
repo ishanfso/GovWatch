@@ -1620,59 +1620,162 @@ a.sc-phone:hover { text-decoration: underline; }
 .dir-suggestions {
   position: absolute; top: calc(100% + 4px); left: 0; right: 0;
   background: var(--panel); border: 1px solid var(--border);
-  border-radius: var(--radius); box-shadow: var(--shadow-md);
-  z-index: 200; overflow: hidden;
+  border-radius: var(--radius); box-shadow: var(--shadow-md); z-index: 200; overflow: hidden;
 }
 .dir-suggestions.hidden { display: none; }
 .dir-suggestion-item {
-  padding: 10px 14px; cursor: pointer;
-  display: flex; flex-direction: column; gap: 2px;
+  padding: 10px 14px; cursor: pointer; display: flex; flex-direction: column; gap: 2px;
   border-bottom: 1px solid var(--border-soft);
 }
 .dir-suggestion-item:last-child { border-bottom: none; }
 .dir-suggestion-item:hover { background: var(--brand-light); }
 .dir-sug-name { font-size: .88rem; font-weight: 600; color: var(--text); }
 .dir-sug-meta { font-size: .73rem; color: var(--muted); }
-.dir-browse-label {
-  font-size: .72rem; font-weight: 700; text-transform: uppercase;
-  letter-spacing: .08em; color: var(--muted); margin-bottom: 8px;
+
+.dir-dept-chips {
+  display: flex; gap: 8px; flex-wrap: wrap;
+  padding-bottom: 16px; margin-bottom: 20px;
+  border-bottom: 1px solid var(--border-soft);
 }
-.dir-cascade {
-  display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 24px;
+.dir-dept-chip {
+  padding: 7px 16px; border-radius: 20px;
+  border: 1.5px solid var(--border-soft); background: var(--panel);
+  color: var(--text); cursor: pointer; font-size: .84rem; font-weight: 500; transition: all .15s;
 }
-.dir-cascade .filter-select { flex: 1; min-width: 180px; }
-.dir-profile { margin-top: 4px; }
-.dir-profile.hidden { display: none; }
-.dir-profile-card {
-  background: var(--panel); border: 1px solid var(--border);
-  border-radius: var(--radius-lg); overflow: hidden;
+.dir-dept-chip:hover { border-color: var(--brand); color: var(--brand); }
+.dir-dept-chip.active { background: var(--brand); color: white; border-color: var(--brand); }
+
+.dir-org-wrap { padding-bottom: 40px; }
+.dir-org-header { margin-bottom: 16px; }
+.dir-org-title { font-size: 1rem; font-weight: 700; color: var(--text); }
+.dir-org-sub { font-size: .78rem; color: var(--muted); margin-top: 2px; }
+
+.dir-zone-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 10px; margin-bottom: 14px;
 }
-.dir-stats {
-  display: flex; border: 1px solid var(--border);
-  border-radius: var(--radius); overflow: hidden; margin-left: auto;
-  align-self: flex-start; flex-shrink: 0;
+.dir-zone-card {
+  padding: 14px; background: var(--panel); border: 1.5px solid var(--border-soft);
+  border-radius: var(--radius); cursor: pointer; transition: all .15s;
 }
-.dir-stat {
-  display: flex; flex-direction: column; align-items: center;
-  padding: 10px 18px; gap: 2px; border-right: 1px solid var(--border);
+.dir-zone-card:hover { border-color: var(--brand); box-shadow: 0 2px 8px rgba(0,0,0,.06); }
+.dir-zone-card.active { border-color: var(--brand); background: var(--brand-light); }
+.dir-zone-icon { font-size: 1.2rem; margin-bottom: 4px; }
+.dir-zone-name { font-size: .88rem; font-weight: 700; color: var(--text); }
+.dir-zone-head-line { font-size: .72rem; color: var(--muted); margin-top: 3px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.dir-zone-count { font-size: .7rem; color: var(--brand); margin-top: 8px; font-weight: 600; }
+
+.dir-sub-panel {
+  background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 16px 16px 12px; margin-bottom: 16px;
 }
-.dir-stat:last-child { border-right: none; }
-.dir-stat-num { font-size: 1.15rem; font-weight: 700; color: var(--text); line-height: 1; }
-.dir-stat-label { font-size: .63rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
-.dir-stat-progress .dir-stat-num { color: var(--warning); }
-.dir-stat-resolved .dir-stat-num { color: var(--success); }
-.dir-issue-row {
-  padding: 12px 20px; border-bottom: 1px solid var(--border-soft);
-  display: flex; flex-direction: column; gap: 6px;
+.dir-sub-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+.dir-sub-title { font-size: .9rem; font-weight: 700; color: var(--text); }
+.dir-sub-sect-label {
+  font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em;
+  color: var(--muted); margin-bottom: 8px; margin-top: 12px;
 }
-.dir-issue-row:last-child { border-bottom: none; }
+
+.dir-head-card {
+  display: flex; align-items: center; gap: 10px; padding: 10px 12px;
+  background: var(--panel); border: 1px solid var(--border-soft);
+  border-radius: var(--radius); margin-bottom: 12px;
+}
+.dir-head-avatar {
+  width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: .78rem; font-weight: 700; color: white;
+}
+.dir-head-info { flex: 1; min-width: 0; }
+.dir-head-name { font-size: .84rem; font-weight: 600; color: var(--text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.dir-head-role { font-size: .71rem; color: var(--muted); }
+.dir-head-actions { display: flex; gap: 6px; flex-shrink: 0; flex-wrap: wrap; }
+
+.dir-person-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 8px;
+}
+.dir-person-card {
+  padding: 12px; background: var(--panel); border: 1px solid var(--border-soft);
+  border-radius: var(--radius); cursor: pointer; transition: all .15s;
+}
+.dir-person-card:hover { border-color: var(--brand); transform: translateY(-1px); box-shadow: 0 2px 8px rgba(0,0,0,.07); }
+.dir-person-avatar {
+  width: 32px; height: 32px; border-radius: 50%; margin-bottom: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: .72rem; font-weight: 700; color: white;
+}
+.dir-person-name { font-size: .82rem; font-weight: 600; color: var(--text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.dir-person-role { font-size: .7rem; color: var(--muted); margin-top: 1px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.dir-person-area { font-size: .7rem; color: var(--brand); margin-top: 2px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.dir-person-phone { font-size: .69rem; color: var(--muted); margin-top: 4px; }
+.dir-person-hint { font-size: .67rem; color: var(--brand); margin-top: 6px; opacity: .7; }
+
+/* Profile Drawer */
+.dir-profile-overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,.4); z-index: 500;
+  display: flex; justify-content: flex-end;
+}
+.dir-profile-overlay.hidden { display: none; }
+.dir-profile-drawer {
+  width: min(520px, 100vw); height: 100%; background: var(--bg);
+  overflow-y: auto; box-shadow: -4px 0 32px rgba(0,0,0,.15);
+  display: flex; flex-direction: column;
+  animation: slideInRight .2s ease;
+}
+@keyframes slideInRight { from { transform: translateX(40px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+.dir-drawer-top {
+  position: sticky; top: 0; background: var(--bg); z-index: 1;
+  border-bottom: 1px solid var(--border-soft); padding: 14px 20px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.dir-drawer-dept-badge {
+  font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em;
+  padding: 3px 10px; border-radius: 4px; color: white;
+}
+.dir-drawer-close-btn {
+  width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--border-soft);
+  background: none; cursor: pointer; font-size: 1.1rem; color: var(--text);
+  display: flex; align-items: center; justify-content: center;
+}
+.dir-drawer-close-btn:hover { background: var(--panel); }
+.dir-drawer-body { padding: 20px; display: flex; flex-direction: column; gap: 16px; }
+.dir-drawer-header { display: flex; align-items: flex-start; gap: 14px; }
+.dir-drawer-avatar {
+  width: 52px; height: 52px; border-radius: 50%; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem; font-weight: 700; color: white;
+}
+.dir-drawer-info { flex: 1; min-width: 0; }
+.dir-drawer-name { font-size: 1rem; font-weight: 700; color: var(--text); }
+.dir-drawer-role { font-size: .81rem; color: var(--muted); margin-top: 2px; }
+.dir-drawer-area { font-size: .75rem; color: var(--brand); margin-top: 3px; }
+.dir-drawer-contacts { display: flex; gap: 8px; flex-wrap: wrap; }
+.dir-drawer-stats {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;
+}
+.dir-drawer-stat {
+  background: var(--panel); border: 1px solid var(--border-soft);
+  border-radius: var(--radius); padding: 12px 8px; text-align: center;
+}
+.dir-drawer-stat-num { font-size: 1.4rem; font-weight: 700; color: var(--text); display: block; }
+.dir-drawer-stat-label { font-size: .65rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+.dir-drawer-stat.is-active .dir-drawer-stat-num { color: var(--warning); }
+.dir-drawer-stat.is-resolved .dir-drawer-stat-num { color: var(--success); }
+.dir-drawer-section-label {
+  font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em;
+  color: var(--muted); padding-bottom: 8px; border-bottom: 1px solid var(--border-soft);
+}
+.dir-drawer-issue-row {
+  padding: 10px 0; border-bottom: 1px solid var(--border-soft); display: flex; flex-direction: column; gap: 5px;
+}
+.dir-drawer-issue-row:last-child { border-bottom: none; }
+.dir-drawer-no-issues { color: var(--muted); font-size: .84rem; text-align: center; padding: 24px 0; line-height: 1.6; }
+.dir-assigned-date { font-size: .7rem; color: var(--muted); }
 .dir-issue-meta { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
-.dir-issue-text { font-size: .82rem; color: var(--text); line-height: 1.4; }
 .dir-issue-actions { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-.dir-assigned-date {
-  font-size: .7rem; color: var(--muted); margin-left: 4px;
-}
+
 @media (max-width: 700px) {
-  .dir-stats { flex-direction: row; margin-left: 0; margin-top: 12px; }
-  .dir-cascade .filter-select { min-width: 140px; }
+  .dir-zone-grid { grid-template-columns: repeat(2, 1fr); }
+  .dir-person-grid { grid-template-columns: repeat(2, 1fr); }
+  .dir-profile-drawer { width: 100vw; }
 }

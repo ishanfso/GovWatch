@@ -5,6 +5,35 @@ Format: `[Date] - What changed and why`
 
 ---
 
+## [2026-06-21] — Directory tab: visual org hierarchy + slide-in profile drawer
+
+### What changed
+
+**`dashboard/js/app.js`**
+- Replaced broken dropdown cascade (dept → zone → name selects) with a fully visual org hierarchy system
+- New `renderDirectoryOrg(dept)` dispatches to per-dept renderers based on active dept chip
+- `renderBBMPOrg()`: groups city corp contacts by corporation, zone cards expand to officer grid
+- `renderSWMOrg()`: zone cards show SE name + AEE count; expanding shows SE head card + AEE person grid
+- `renderBESCOMOrg()`: zone cards → AEEs grouped by circle within each zone sub-panel
+- `renderBWSSBOrg()`: division cards → AEE person grid with subdivision info
+- `renderTrafficOrg()`: flat grid of all traffic PS cards (all 66 PIOs)
+- `renderPoliticalOrg()`: MP cards → MLA grid grouped under each MP's assemblies
+- `dirPersonCard()` / `dirHeadCard()`: shared helper functions for consistent person card and zone head card rendering
+- `openDirectoryProfile(entry)`: replaced inline `showDirectoryProfile` with a slide-in drawer — overlays from the right, dims the background, close with × or click outside
+- `wireDirectorySearch()`: fixed — uses `searchInput._dirWired` property instead of module-level `directoryWired` boolean (which prevented re-init if first call had empty index)
+- `renderDirectoryDeptChips()`: wires dept chip clicks and keeps chip highlight in sync with `dirActiveDept`
+- `DEPT_COLORS` + `getDeptColor()`: consistent colour per dept used for avatars and badges
+- `normZone()`: normalises SWM zone names ("Yelhanka Zone" vs "Yelhanka") for correct SE↔AEE matching
+
+**`dashboard/index.html`**
+- Replaced 3 cascading selects with dept chip strip + `dir-org-wrap` container
+- Added `dir-profile-overlay` / `dir-profile-drawer` divs for the slide-in profile panel
+
+**`dashboard/css/styles.css`**
+- Complete CSS rewrite for Directory tab: dept chips, zone card grid, sub-panel, person card grid, head card, slide-in drawer with sticky header
+
+---
+
 ## [2026-06-21] — Fix location detection accuracy
 
 ### What changed

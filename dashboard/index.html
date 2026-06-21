@@ -242,35 +242,20 @@
 
     <!-- Tab: Directory -->
     <div class="tab-content hidden" id="tab-directory">
-      <div class="officials-section">
-        <div class="officials-section-title">Officials Directory</div>
-        <div class="officials-section-sub">Search any official by name — or use the filters to browse by department and area</div>
-
-        <div class="dir-search-wrap">
-          <input class="search-input" id="dir-search" type="text" placeholder="Type a name, role, or area (e.g. Koramangala AEE, BESCOM, Rajiv Kumar)..." autocomplete="off" />
-          <div class="dir-suggestions hidden" id="dir-suggestions"></div>
-        </div>
-
-        <div class="dir-browse-label">Or browse by department &amp; area</div>
-        <div class="dir-cascade">
-          <select class="filter-select" id="dir-dept-select">
-            <option value="">All Departments</option>
-            <option value="SWM">SWM — Solid Waste Management</option>
-            <option value="BESCOM">BESCOM — Electricity</option>
-            <option value="BWSSB">BWSSB — Water Supply</option>
-            <option value="BBMP">BBMP — City Corporation</option>
-            <option value="Traffic Police">Traffic Police</option>
-            <option value="Political">Political — MLA / MP</option>
-          </select>
-          <select class="filter-select" id="dir-group-select" disabled>
-            <option value="">— Select zone / area —</option>
-          </select>
-          <select class="filter-select" id="dir-name-select" disabled>
-            <option value="">— Select official —</option>
-          </select>
-        </div>
-
-        <div id="dir-profile" class="dir-profile hidden"></div>
+      <div class="dir-search-wrap">
+        <input class="search-input" id="dir-search" type="text" placeholder="Search any official by name, role, or area…" autocomplete="off" />
+        <div class="dir-suggestions hidden" id="dir-suggestions"></div>
+      </div>
+      <div class="dir-dept-chips" id="dir-dept-chips">
+        <button class="dir-dept-chip active" data-dept="SWM">&#9851; SWM</button>
+        <button class="dir-dept-chip" data-dept="BESCOM">&#9889; BESCOM</button>
+        <button class="dir-dept-chip" data-dept="BWSSB">&#128167; BWSSB</button>
+        <button class="dir-dept-chip" data-dept="BBMP">&#127963; BBMP</button>
+        <button class="dir-dept-chip" data-dept="Traffic">&#128678; Traffic Police</button>
+        <button class="dir-dept-chip" data-dept="Political">&#127963; Political</button>
+      </div>
+      <div class="dir-org-wrap" id="dir-org-wrap">
+        <div class="loading">Loading officials data…</div>
       </div>
     </div>
 
@@ -320,6 +305,13 @@
   </footer>
 
   <script src="js/app.js"></script>
+
+  <!-- Directory profile drawer -->
+  <div class="dir-profile-overlay hidden" id="dir-profile-overlay">
+    <div class="dir-profile-drawer">
+      <div id="dir-drawer-content"></div>
+    </div>
+  </div>
 
   <!-- Official Profile Modal -->
   <div id="official-profile-overlay" class="official-profile-overlay hidden">

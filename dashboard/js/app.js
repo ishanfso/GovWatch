@@ -1319,7 +1319,8 @@ let officialsLoaded = false;
 let officialsLoadPromise = null;
 let activeOrgDept = "BBMP";
 let officialIndex = null;
-let directoryWired = false;
+let dirActiveDept = "SWM";
+let dirActiveZone = null;
 
 // ── Officials Init ─────────────────────────────────────────────────
 
@@ -1401,8 +1402,10 @@ async function initOfficials() {
 
     // If Directory tab is active, finish wiring it up
     if (activeTab === "directory" && officialsLoaded) {
-      officialIndex = buildOfficialIndex();
-      wireDirectoryUI();
+      if (!officialIndex) officialIndex = buildOfficialIndex();
+      wireDirectorySearch();
+      renderDirectoryDeptChips();
+      renderDirectoryOrg(dirActiveDept);
     }
   })();
 
@@ -2520,7 +2523,15 @@ function buildSmartEmailLink(contacts, issue) {
   return url;
 }
 
-// ── Officials Directory ─────────────────────────────────────────────
+// ── Officials Directory (Org Hierarchy) ────────────────────────────
+
+const DEPT_COLORS = {
+  BBMP: "#1f4d3a", SWM: "#2d6a4f", BESCOM: "#92400e",
+  BWSSB: "#0891b2", "Traffic Police": "#991b1b", Traffic: "#991b1b",
+  Political: "#7c3aed"
+};
+function getDeptColor(dept) { return DEPT_COLORS[dept] || "#1f4d3a"; }
+function normZone(s) { return (s || "").replace(/\s*Zone$/i, "").trim().toLowerCase(); }
 
 function buildOfficialIndex() {
   if (!officialsLoaded) return [];
@@ -2612,29 +2623,22 @@ function buildOfficialIndex() {
 
 async function initDirectory() {
   if (!officialsLoaded) {
-    const profileEl = document.getElementById("dir-profile");
-    if (profileEl) {
-      profileEl.innerHTML = '<div class="loading" style="padding:24px 0">Loading officials data…</div>';
-      profileEl.classList.remove("hidden");
-    }
+    const wrap = document.getElementById("dir-org-wrap");
+    if (wrap) wrap.innerHTML = '<div class="loading" style="padding:32px 0">Loading officials data…</div>';
     await initOfficials();
     if (!officialsLoaded) return;
   }
-  officialIndex = buildOfficialIndex();
-  wireDirectoryUI();
+  if (!officialIndex) officialIndex = buildOfficialIndex();
+  wireDirectorySearch();
+  renderDirectoryDeptChips();
+  renderDirectoryOrg(dirActiveDept);
 }
 
-function wireDirectoryUI() {
-  if (directoryWired) return;
-  directoryWired = true;
-
+function wireDirectorySearch() {
   const searchInput = document.getElementById("dir-search");
   const suggestions = document.getElementById("dir-suggestions");
-  const deptSelect = document.getElementById("dir-dept-select");
-  const groupSelect = document.getElementById("dir-group-select");
-  const nameSelect = document.getElementById("dir-name-select");
-  if (!searchInput || !deptSelect) return;
-
+  if (!searchInput || searchInput._dirWired) return;
+  searchInput._dirWired = true;
   searchInput.addEventListener("input", () => {
     const q = searchInput.value.trim().toLowerCase();
     if (q.length < 2) { suggestions.classList.add("hidden"); return; }
@@ -2656,51 +2660,436 @@ function wireDirectoryUI() {
         e.preventDefault();
         searchInput.value = matches[i].name;
         suggestions.classList.add("hidden");
-        showDirectoryProfile(matches[i]);
+        openDirectoryProfile(matches[i]);
       });
     });
   });
+  searchInput.addEventListener("blur", () => setTimeout(() => suggestions.classList.add("hidden"), 150));
+}
 
-  searchInput.addEventListener("blur", () => suggestions.classList.add("hidden"));
-
-  deptSelect.addEventListener("change", () => {
-    const dept = deptSelect.value;
-    groupSelect.innerHTML = '<option value="">— Select zone / area —</option>';
-    nameSelect.innerHTML = '<option value="">— Select official —</option>';
-    groupSelect.disabled = true;
-    nameSelect.disabled = true;
-    if (!dept) return;
-    const zones = [...new Set((officialIndex || []).filter(e => e.dept === dept).map(e => e.zone).filter(Boolean))].sort();
-    zones.forEach(g => {
-      const opt = document.createElement("option");
-      opt.value = g; opt.textContent = g;
-      groupSelect.appendChild(opt);
+function renderDirectoryDeptChips() {
+  document.querySelectorAll("#dir-dept-chips .dir-dept-chip").forEach(chip => {
+    chip.classList.toggle("active", chip.dataset.dept === dirActiveDept);
+    if (chip._dirChipWired) return;
+    chip._dirChipWired = true;
+    chip.addEventListener("click", () => {
+      document.querySelectorAll("#dir-dept-chips .dir-dept-chip").forEach(c => c.classList.remove("active"));
+      chip.classList.add("active");
+      dirActiveDept = chip.dataset.dept;
+      dirActiveZone = null;
+      renderDirectoryOrg(dirActiveDept);
     });
-    groupSelect.disabled = false;
+  });
+}
+
+function renderDirectoryOrg(dept) {
+  const wrap = document.getElementById("dir-org-wrap");
+  if (!wrap) return;
+  let html = "";
+  if (dept === "BBMP")     html = renderBBMPOrg();
+  else if (dept === "SWM") html = renderSWMOrg();
+  else if (dept === "BESCOM")  html = renderBESCOMOrg();
+  else if (dept === "BWSSB")   html = renderBWSSBOrg();
+  else if (dept === "Traffic") html = renderTrafficOrg();
+  else if (dept === "Political") html = renderPoliticalOrg();
+  else html = '<div class="loading">Select a department above</div>';
+  wrap.innerHTML = html;
+
+  wrap.querySelectorAll(".dir-zone-card").forEach(card => {
+    card.addEventListener("click", e => {
+      if (e.target.closest("a, button")) return;
+      const zone = card.dataset.zone;
+      dirActiveZone = (dirActiveZone === zone) ? null : zone;
+      renderDirectoryOrg(dept);
+    });
+  });
+  wrap.querySelectorAll(".dir-person-card[data-name]").forEach(card => {
+    card.addEventListener("click", () => {
+      const entry = (officialIndex || []).find(e => e.name === card.dataset.name);
+      if (entry) openDirectoryProfile(entry);
+    });
+  });
+  wrap.querySelectorAll("[data-open-profile]").forEach(btn => {
+    btn.addEventListener("click", e => {
+      e.stopPropagation();
+      const entry = (officialIndex || []).find(e => e.name === btn.dataset.openProfile);
+      if (entry) openDirectoryProfile(entry);
+    });
+  });
+}
+
+// ── Dept org renderers ──────────────────────────────────────────────
+
+function dirPersonCard(name, role, area, phone, dept) {
+  if (!name) return "";
+  const color = getDeptColor(dept || "BBMP");
+  const initials = name.split(" ").filter(Boolean).slice(0, 2).map(n => n[0]?.toUpperCase() || "").join("");
+  return `
+    <div class="dir-person-card" data-name="${esc(name)}">
+      <div class="dir-person-avatar" style="background:${color}">${esc(initials)}</div>
+      <div class="dir-person-name">${esc(name)}</div>
+      <div class="dir-person-role">${esc(role)}</div>
+      ${area ? `<div class="dir-person-area">${esc(area)}</div>` : ""}
+      ${phone ? `<div class="dir-person-phone">${esc(phone)}</div>` : ""}
+      <div class="dir-person-hint">Tap to view profile</div>
+    </div>`;
+}
+
+function dirHeadCard(name, role, phone, email, dept) {
+  if (!name) return "";
+  const color = getDeptColor(dept);
+  const initials = name.split(" ").filter(Boolean).slice(0, 2).map(n => n[0]?.toUpperCase() || "").join("");
+  const firstPhone = (phone || "").split(";")[0].trim();
+  return `
+    <div class="dir-head-card">
+      <div class="dir-head-avatar" style="background:${color}">${esc(initials)}</div>
+      <div class="dir-head-info">
+        <div class="dir-head-name">${esc(name)}</div>
+        <div class="dir-head-role">${esc(role)}</div>
+      </div>
+      <div class="dir-head-actions">
+        ${firstPhone ? `<a class="sc-phone" href="tel:${esc(firstPhone.replace(/\s/g,""))}" onclick="event.stopPropagation()">&#128222; ${esc(firstPhone)}</a>` : ""}
+        <button class="btn-assign" data-open-profile="${esc(name)}">Profile</button>
+      </div>
+    </div>`;
+}
+
+function renderBBMPOrg() {
+  const contacts = officialsData.cityCorpContacts || [];
+  const corps = {};
+  contacts.forEach(c => {
+    const corp = c.corporation || "BBMP";
+    if (!corps[corp]) corps[corp] = [];
+    corps[corp].push(c);
+  });
+  const corpNames = Object.keys(corps);
+  const shortName = n => n.replace("Bengaluru ", "").replace("Bruhat Bengaluru Mahanagara Palike", "BBMP Main");
+
+  let html = `<div class="dir-org-header">
+    <div class="dir-org-title">BBMP — Bruhat Bengaluru Mahanagara Palike</div>
+    <div class="dir-org-sub">Select a corporation zone to view all officers</div>
+  </div>
+  <div class="dir-zone-grid">`;
+
+  corpNames.forEach(name => {
+    const officers = corps[name];
+    const head = officers.find(o => o.role?.toLowerCase().includes("commissioner")) || officers[0];
+    const isActive = dirActiveZone === name;
+    html += `<div class="dir-zone-card${isActive ? " active" : ""}" data-zone="${esc(name)}">
+      <div class="dir-zone-icon">&#127963;</div>
+      <div class="dir-zone-name">${esc(shortName(name))}</div>
+      ${head?.name ? `<div class="dir-zone-head-line">${esc(head.role)}: ${esc(head.name)}</div>` : ""}
+      <div class="dir-zone-count">${officers.length} officers</div>
+    </div>`;
+  });
+  html += `</div>`;
+
+  if (dirActiveZone && corps[dirActiveZone]) {
+    const officers = corps[dirActiveZone];
+    html += `<div class="dir-sub-panel">
+      <div class="dir-sub-header"><div class="dir-sub-title">${esc(shortName(dirActiveZone))}</div></div>
+      <div class="dir-person-grid">`;
+    officers.forEach(o => {
+      if (!o.name) return;
+      html += dirPersonCard(o.name, o.role || "", o.zone || "", (o.phone || "").split(";")[0].trim(), "BBMP");
+    });
+    html += `</div></div>`;
+  }
+  return html;
+}
+
+function renderSWMOrg() {
+  const swmSe = officialsData.swmSe || [];
+  const swmAee = officialsData.swmAee || [];
+  const wards = officialsData.wards || [];
+
+  const zones = swmSe.map(se => {
+    const aees = swmAee.filter(a => normZone(a.zone) === normZone(se.zone));
+    const jhiCount = wards.filter(w => normZone(w.swm_division || w.swm_zone || "") === normZone(se.zone) || aees.some(a => normZone(w.swm_division || "") === normZone(a.division || ""))).length;
+    return { name: se.zone, se, aees, jhiCount };
   });
 
-  groupSelect.addEventListener("change", () => {
-    const dept = deptSelect.value;
-    const zone = groupSelect.value;
-    nameSelect.innerHTML = '<option value="">— Select official —</option>';
-    nameSelect.disabled = true;
-    if (!zone) return;
-    const seen = new Set();
-    const subset = (officialIndex || []).filter(e => e.dept === dept && e.zone === zone && e.name && !seen.has(e.name) && seen.add(e.name));
-    subset.sort((a, b) => a.name.localeCompare(b.name)).forEach(e => {
-      const opt = document.createElement("option");
-      opt.value = e.name;
-      opt.textContent = e.name + (e.role ? " (" + e.role + ")" : "");
-      nameSelect.appendChild(opt);
-    });
-    nameSelect.disabled = false;
+  let html = `<div class="dir-org-header">
+    <div class="dir-org-title">SWM — Solid Waste Management (BBMP)</div>
+    <div class="dir-org-sub">Zone SE &#8594; Division AEE &#8594; Ward JHI hierarchy</div>
+  </div>
+  <div class="dir-zone-grid">`;
+
+  zones.forEach(z => {
+    const isActive = dirActiveZone === z.name;
+    html += `<div class="dir-zone-card${isActive ? " active" : ""}" data-zone="${esc(z.name)}">
+      <div class="dir-zone-icon">&#9851;</div>
+      <div class="dir-zone-name">${esc(z.name)}</div>
+      ${z.se?.name ? `<div class="dir-zone-head-line">SE: ${esc(z.se.name)}</div>` : `<div class="dir-zone-head-line" style="color:var(--muted);font-style:italic">SE: Vacant</div>`}
+      <div class="dir-zone-count">${z.aees.length} AEEs</div>
+    </div>`;
+  });
+  html += `</div>`;
+
+  if (dirActiveZone) {
+    const zone = zones.find(z => z.name === dirActiveZone);
+    if (zone) {
+      html += `<div class="dir-sub-panel">
+        <div class="dir-sub-header"><div class="dir-sub-title">${esc(zone.name)}</div></div>`;
+      if (zone.se?.name) html += dirHeadCard(zone.se.name, "Superintending Engineer — Zone Head", zone.se.mobile || "", zone.se.email || "", "SWM");
+      if (zone.aees.length > 0) {
+        html += `<div class="dir-sub-sect-label">${zone.aees.length} Division AEEs</div><div class="dir-person-grid">`;
+        zone.aees.forEach(a => html += dirPersonCard(a.name, "SWM AEE", a.division || "", a.mobile || "", "SWM"));
+        html += `</div>`;
+      }
+      html += `</div>`;
+    }
+  }
+  return html;
+}
+
+function renderBESCOMOrg() {
+  const units = officialsData.bescomUnits || [];
+  const zoneMap = {};
+  units.forEach(u => {
+    const zone = u.zone || "Unknown Zone";
+    if (!zoneMap[zone]) zoneMap[zone] = { circles: {} };
+    const parsed = parseBescomAee(u.aee || "");
+    if (!parsed.name) return;
+    const circle = u.circle || "General";
+    if (!zoneMap[zone].circles[circle]) zoneMap[zone].circles[circle] = [];
+    if (!zoneMap[zone].circles[circle].find(e => e.name === parsed.name)) {
+      zoneMap[zone].circles[circle].push({ name: parsed.name, phone: parsed.phone, email: parsed.email, division: u.division || "" });
+    }
   });
 
-  nameSelect.addEventListener("change", () => {
-    const name = nameSelect.value;
-    if (!name) return;
-    const entry = (officialIndex || []).find(e => e.name === name);
-    if (entry) showDirectoryProfile(entry);
+  const zoneNames = Object.keys(zoneMap).sort();
+  let html = `<div class="dir-org-header">
+    <div class="dir-org-title">BESCOM — Bangalore Electricity Supply Company</div>
+    <div class="dir-org-sub">Zone &#8594; Circle &#8594; Division &#8594; AEE</div>
+  </div>
+  <div class="dir-zone-grid">`;
+
+  zoneNames.forEach(name => {
+    const aeeCount = Object.values(zoneMap[name].circles).flat().length;
+    const isActive = dirActiveZone === name;
+    html += `<div class="dir-zone-card${isActive ? " active" : ""}" data-zone="${esc(name)}">
+      <div class="dir-zone-icon">&#9889;</div>
+      <div class="dir-zone-name">${esc(name)}</div>
+      <div class="dir-zone-count">${aeeCount} AEEs</div>
+    </div>`;
+  });
+  html += `</div>`;
+
+  if (dirActiveZone && zoneMap[dirActiveZone]) {
+    const circles = zoneMap[dirActiveZone].circles;
+    html += `<div class="dir-sub-panel"><div class="dir-sub-header"><div class="dir-sub-title">${esc(dirActiveZone)}</div></div>`;
+    Object.entries(circles).forEach(([circle, aees]) => {
+      html += `<div class="dir-sub-sect-label">${esc(circle)} Circle — ${aees.length} AEEs</div><div class="dir-person-grid">`;
+      aees.forEach(a => html += dirPersonCard(a.name, "BESCOM AEE", a.division, a.phone, "BESCOM"));
+      html += `</div>`;
+    });
+    html += `</div>`;
+  }
+  return html;
+}
+
+function renderBWSSBOrg() {
+  const stations = officialsData.bwssb || [];
+  const divMap = {};
+  stations.forEach(s => {
+    const div = s.division || "Unknown";
+    if (!divMap[div]) divMap[div] = { ee_name: s.ee_name || "", aees: {} };
+    if (s.aee_name && !divMap[div].aees[s.aee_name]) {
+      divMap[div].aees[s.aee_name] = { name: s.aee_name, phone: s.aee_mobile || "", email: s.aee_email || "", subdivision: s.subdivision || "" };
+    }
+  });
+  const divNames = Object.keys(divMap).sort();
+
+  let html = `<div class="dir-org-header">
+    <div class="dir-org-title">BWSSB — Bangalore Water Supply &amp; Sewerage Board</div>
+    <div class="dir-org-sub">Division &#8594; AEE &#8594; Service Station AE</div>
+  </div>
+  <div class="dir-zone-grid">`;
+
+  divNames.forEach(name => {
+    const div = divMap[name];
+    const aeeCount = Object.keys(div.aees).length;
+    const isActive = dirActiveZone === name;
+    html += `<div class="dir-zone-card${isActive ? " active" : ""}" data-zone="${esc(name)}">
+      <div class="dir-zone-icon">&#128167;</div>
+      <div class="dir-zone-name">${esc(name)}</div>
+      ${div.ee_name ? `<div class="dir-zone-head-line">EE: ${esc(div.ee_name)}</div>` : ""}
+      <div class="dir-zone-count">${aeeCount} AEEs</div>
+    </div>`;
+  });
+  html += `</div>`;
+
+  if (dirActiveZone && divMap[dirActiveZone]) {
+    const aees = Object.values(divMap[dirActiveZone].aees);
+    html += `<div class="dir-sub-panel">
+      <div class="dir-sub-header"><div class="dir-sub-title">${esc(dirActiveZone)} Division</div></div>
+      <div class="dir-person-grid">`;
+    aees.forEach(a => html += dirPersonCard(a.name, `BWSSB AEE — ${a.subdivision}`, "", a.phone, "BWSSB"));
+    html += `</div></div>`;
+  }
+  return html;
+}
+
+function renderTrafficOrg() {
+  const stations = officialsData.traffic || [];
+  let html = `<div class="dir-org-header">
+    <div class="dir-org-title">Bangalore Traffic Police</div>
+    <div class="dir-org-sub">${stations.filter(s => s.pio).length} Police Stations — Click any card to view the PIO&apos;s profile</div>
+  </div>
+  <div class="dir-person-grid">`;
+  stations.forEach(s => {
+    if (!s.pio) return;
+    html += dirPersonCard(s.pio, "Traffic PIO", s.ps || "", s.pio_contact || "", "Traffic Police");
+  });
+  html += `</div>`;
+  return html;
+}
+
+function renderPoliticalOrg() {
+  const mps = officialsData.mps || [];
+  const mlas = officialsData.mlas || [];
+
+  let html = `<div class="dir-org-header">
+    <div class="dir-org-title">Political Representatives</div>
+    <div class="dir-org-sub">MPs &#8594; MLAs by assembly constituency</div>
+  </div>
+  <div class="dir-zone-grid">`;
+
+  mps.forEach(mp => {
+    const assemblies = mp.assemblies || [];
+    const mpMlas = assemblies.flatMap(a => mlas.filter(m => m.constituency === a));
+    const isActive = dirActiveZone === mp.constituency;
+    html += `<div class="dir-zone-card${isActive ? " active" : ""}" data-zone="${esc(mp.constituency)}">
+      <div class="dir-zone-icon">&#127963;</div>
+      <div class="dir-zone-name">MP: ${esc(mp.name)}</div>
+      <div class="dir-zone-head-line">${esc(mp.constituency)} &middot; ${esc(mp.party || "")}</div>
+      <div class="dir-zone-count">${assemblies.length} assemblies &middot; ${mpMlas.length} MLAs</div>
+    </div>`;
+  });
+  html += `</div>`;
+
+  if (dirActiveZone) {
+    const mp = mps.find(m => m.constituency === dirActiveZone);
+    if (mp) {
+      const assemblies = mp.assemblies || [];
+      const mpMlas = assemblies.flatMap(a => mlas.filter(m => m.constituency === a));
+      html += `<div class="dir-sub-panel">
+        <div class="dir-sub-header"><div class="dir-sub-title">MP: ${esc(mp.name)}</div></div>`;
+      html += dirHeadCard(mp.name, `Member of Parliament &middot; ${mp.constituency} &middot; ${mp.party || ""}`, (mp.phones || "").split(";")[0].trim(), mp.email || "", "Political");
+      if (mpMlas.length > 0) {
+        html += `<div class="dir-sub-sect-label">${mpMlas.length} MLAs under this constituency</div><div class="dir-person-grid">`;
+        mpMlas.forEach(m => {
+          const firstPhone = (m.phones || "").split(";")[0].split("/")[0].trim();
+          html += dirPersonCard(m.name, `MLA &middot; ${m.party || ""}`, m.constituency + " Assembly", firstPhone, "Political");
+        });
+        html += `</div>`;
+      } else if (assemblies.length > 0) {
+        html += `<div class="dir-sub-sect-label">Assemblies: ${assemblies.join(", ")}</div>`;
+      }
+      html += `</div>`;
+    }
+  }
+  return html;
+}
+
+// ── Directory profile drawer ────────────────────────────────────────
+
+function openDirectoryProfile(entry) {
+  const overlay = document.getElementById("dir-profile-overlay");
+  const content = document.getElementById("dir-drawer-content");
+  if (!overlay || !content) return;
+
+  const assignedIssues = getAssignedIssues(entry.name);
+  const initials = entry.name.split(" ").filter(Boolean).slice(0, 2).map(n => n[0]?.toUpperCase() || "").join("");
+  const avatarColor = getDeptColor(entry.dept);
+
+  const stats = {
+    total: assignedIssues.length,
+    inProgress: assignedIssues.filter(i => ["acknowledged", "in_progress"].includes(getStatus(i.id))).length,
+    resolved: assignedIssues.filter(i => getStatus(i.id) === "resolved").length,
+  };
+
+  const firstPhone = (entry.phone || "").split(";")[0].trim();
+  const emailBtn = entry.email
+    ? `<a class="ward-email-btn" href="https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(entry.email)}&su=${encodeURIComponent('[Civic Issue India] Civic Issue')}" target="_blank">&#128231; Email</a>`
+    : "";
+  const phoneBtn = firstPhone
+    ? `<a class="sc-phone" href="tel:${encodeURIComponent(firstPhone.replace(/\s/g, ""))}">&#128222; ${esc(firstPhone)}</a>`
+    : "";
+
+  const issueRows = assignedIssues.map(iss => {
+    const status = getStatus(iss.id);
+    const sla = getSLAStatus(iss);
+    const a = getAssignment(iss.id);
+    const assignedDate = a?.assignedAt
+      ? new Date(a.assignedAt).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" }) : "";
+    const statusOpts = STATUS_OPTIONS.map(o =>
+      `<option value="${o.value}"${status === o.value ? " selected" : ""}>${o.label}</option>`).join("");
+    const sevColor = iss.severity === "high" ? "var(--danger)" : iss.severity === "medium" ? "var(--warning)" : "var(--success)";
+    const sevBg   = iss.severity === "high" ? "var(--danger-light)" : iss.severity === "medium" ? "var(--warning-light)" : "var(--success-light)";
+    return `<div class="dir-drawer-issue-row">
+      <div class="dir-issue-meta">
+        <span class="q-priority-label" style="background:${sevBg};color:${sevColor}">${esc(iss.severity)}</span>
+        <span class="q-cat-badge">${esc(iss.category)}</span>
+        <span class="q-area">${esc(iss.area)}</span>
+        <span class="q-sla ${sla.cls}">${sla.label}</span>
+        ${assignedDate ? `<span class="dir-assigned-date">Raised ${esc(assignedDate)}</span>` : ""}
+      </div>
+      <div style="font-size:.82rem;color:var(--text);line-height:1.4">${esc(iss.text.length > 120 ? iss.text.slice(0, 120) + "…" : iss.text)}</div>
+      <div class="dir-issue-actions">
+        <select class="profile-status-select s-${esc(status)}" data-issue-id="${esc(String(iss.id))}">${statusOpts}</select>
+        ${iss.source_url ? `<a class="btn-source" href="${esc(iss.source_url)}" target="_blank" style="font-size:.7rem;padding:4px 8px">View Tweet &#8599;</a>` : ""}
+      </div>
+    </div>`;
+  }).join("");
+
+  content.innerHTML = `
+    <div class="dir-drawer-top">
+      <span class="dir-drawer-dept-badge" style="background:${avatarColor}">${esc(entry.dept)}</span>
+      <button class="dir-drawer-close-btn" id="dir-drawer-close">&#215;</button>
+    </div>
+    <div class="dir-drawer-body">
+      <div class="dir-drawer-header">
+        <div class="dir-drawer-avatar" style="background:${avatarColor}">${esc(initials)}</div>
+        <div class="dir-drawer-info">
+          <div class="dir-drawer-name">${esc(entry.name)}</div>
+          <div class="dir-drawer-role">${esc(entry.role)}</div>
+          ${entry.subgroup ? `<div class="dir-drawer-area">${esc(entry.subgroup)}</div>` : ""}
+          ${entry.extra ? `<div class="dir-drawer-role" style="color:var(--muted);font-size:.75rem">${esc(entry.extra)}</div>` : ""}
+        </div>
+      </div>
+      ${(phoneBtn || emailBtn) ? `<div class="dir-drawer-contacts">${phoneBtn}${emailBtn}</div>` : ""}
+      <div class="dir-drawer-stats">
+        <div class="dir-drawer-stat"><span class="dir-drawer-stat-num">${stats.total}</span><span class="dir-drawer-stat-label">Raised</span></div>
+        <div class="dir-drawer-stat is-active"><span class="dir-drawer-stat-num">${stats.inProgress}</span><span class="dir-drawer-stat-label">Active</span></div>
+        <div class="dir-drawer-stat is-resolved"><span class="dir-drawer-stat-num">${stats.resolved}</span><span class="dir-drawer-stat-label">Resolved</span></div>
+      </div>
+      <div class="dir-drawer-section-label">Issues Raised (${assignedIssues.length})</div>
+      ${assignedIssues.length === 0
+        ? '<div class="dir-drawer-no-issues">No issues raised to this official yet.<br>Use the &#34;Raise to&#34; button on any complaint.</div>'
+        : issueRows}
+    </div>`;
+
+  overlay.classList.remove("hidden");
+
+  const closeDrawer = () => overlay.classList.add("hidden");
+  document.getElementById("dir-drawer-close").addEventListener("click", closeDrawer);
+  overlay.addEventListener("mousedown", e => { if (e.target === overlay) closeDrawer(); }, { once: true });
+
+  content.querySelectorAll(".profile-status-select").forEach(sel => {
+    sel.addEventListener("change", e => {
+      const id = e.target.dataset.issueId;
+      const val = e.target.value;
+      setStatus(id, val);
+      sel.className = `profile-status-select s-${val}`;
+      if (val === "resolved") {
+        const iss = allIssues.find(i => String(i.id) === String(id));
+        if (iss) showResolveModal(iss);
+      }
+      renderKPIs(allIssues);
+      renderQueue(getFiltered());
+    });
   });
 }
 
