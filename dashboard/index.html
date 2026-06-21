@@ -141,6 +141,7 @@
       <button class="tab" data-tab="map">Map</button>
       <button class="tab" data-tab="departments">Departments</button>
       <button class="tab" data-tab="analytics">Analytics</button>
+      <button class="tab" data-tab="directory">Directory</button>
       <button class="tab" data-tab="officials">Officials</button>
     </nav>
 
@@ -236,6 +237,40 @@
           <div class="analytics-title">Requests Raised to Officials</div>
           <div class="raised-to-list" id="raised-to-list"></div>
         </div>
+      </div>
+    </div>
+
+    <!-- Tab: Directory -->
+    <div class="tab-content hidden" id="tab-directory">
+      <div class="officials-section">
+        <div class="officials-section-title">Officials Directory</div>
+        <div class="officials-section-sub">Search any official by name — or use the filters to browse by department and area</div>
+
+        <div class="dir-search-wrap">
+          <input class="search-input" id="dir-search" type="text" placeholder="Type a name, role, or area (e.g. Koramangala AEE, BESCOM, Rajiv Kumar)..." autocomplete="off" />
+          <div class="dir-suggestions hidden" id="dir-suggestions"></div>
+        </div>
+
+        <div class="dir-browse-label">Or browse by department &amp; area</div>
+        <div class="dir-cascade">
+          <select class="filter-select" id="dir-dept-select">
+            <option value="">All Departments</option>
+            <option value="SWM">SWM — Solid Waste Management</option>
+            <option value="BESCOM">BESCOM — Electricity</option>
+            <option value="BWSSB">BWSSB — Water Supply</option>
+            <option value="BBMP">BBMP — City Corporation</option>
+            <option value="Traffic Police">Traffic Police</option>
+            <option value="Political">Political — MLA / MP</option>
+          </select>
+          <select class="filter-select" id="dir-group-select" disabled>
+            <option value="">— Select zone / area —</option>
+          </select>
+          <select class="filter-select" id="dir-name-select" disabled>
+            <option value="">— Select official —</option>
+          </select>
+        </div>
+
+        <div id="dir-profile" class="dir-profile hidden"></div>
       </div>
     </div>
 

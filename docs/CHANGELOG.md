@@ -5,6 +5,79 @@ Format: `[Date] - What changed and why`
 
 ---
 
+## [2026-06-21] — Fix location detection accuracy
+
+### What changed
+
+**`dashboard/js/app.js`** — `detectNearestWard()`
+
+Root cause: `getCurrentPosition` was called without `enableHighAccuracy: true`, so the browser used WiFi/cell-tower triangulation (which can be 2–10 km off in Bangalore) instead of device GPS.
+
+Fixes applied:
+- Added `enableHighAccuracy: true` — forces GPS chipset instead of network triangulation
+- Added `maximumAge: 0` — never use a cached/stale position reading
+- Increased `timeout` from 10 s to 15 s — GPS needs more time to acquire a fix, especially indoors
+- Added `zoom=16` to the Nominatim reverse geocode request — returns neighbourhood-level address (was defaulting to city level)
+- Added `addr.hamlet` to the candidate list (catches some Bangalore micro-areas not tagged as suburb/neighbourhood)
+- If GPS accuracy is worse than 300 m, shows a note warning the result may be approximate
+- Improved error messages: distinct text for "permission denied" vs "GPS timeout" vs "unavailable"
+
+---
+
+## [2026-06-21] — Design consistency fixes: ward cells and smart contacts
+
+### What changed
+
+**`dashboard/css/styles.css`**
+
+Ward card cells (`.ward-dept-cell`):
+- Changed to `display: flex; flex-direction: column` — consistent vertical stacking
+- Set `min-height: 100px` so empty cells still match their row
+- Added `margin-top: auto` on `.ward-dept-cell .ward-email-btn` — email button always anchors to the bottom of its cell regardless of how much content is above it
+- `.ward-contact-name`: added `overflow: hidden; text-overflow: ellipsis; white-space: nowrap` — names truncate to one line instead of wrapping unpredictably (still clickable; full name appears in the profile modal)
+- `.ward-contact-detail` and `.ward-contact-phone`: same single-line truncation
+
+Smart contacts panel (`.smart-contact-row`):
+- Completely restructured from a single flat flex row (badge | role | name | phone | email | raise) to a two-line card layout:
+  - **Line 1**: badge + official name (name is now the primary, prominent element)
+  - **Line 2**: role/detail · phone · Email · Raise button
+- This means phone, email, and "Raise to" always appear at the exact same vertical position regardless of name or role length — eliminates the misalignment
+- `.smart-contacts` container now uses `gap: 0` with a single shared border + bottom separators per row (cleaner than individual bordered cards)
+- `.sc-name`: promoted to `font-size: .84rem; font-weight: 600` (was `.72rem` muted) — name is the primary identifier
+- `.sc-role`: demoted to `.71rem; color: muted` with ellipsis truncation
+- Removed old `/* Design fixes */` band-aid block (now baked into the core styles)
+
+**`dashboard/js/app.js`**
+
+- `renderSmartContactsHTML`: updated contact row HTML to match the new two-line structure (`sc-top-row` + `sc-sub-row`)
+- `renderWardCard` (MLA cell): `ward.mla_phones` now shows only the first phone number (first segment before `;`) — MLA phone strings contain 3–5 numbers separated by semicolons which caused extreme cell width
+- `renderWardCard` (MP cell): same fix for `ward.mp_phones`
+
+---
+
+## [2026-06-21] — Officials Directory tab
+
+### What changed
+
+**`dashboard/js/app.js`**
+- Added new **"Directory"** tab — a standalone searchable officials directory separate from the Officials tab
+- `buildOfficialIndex()`: flattens all 7 officials data sources into a single searchable list (~800+ entries): SWM AEE, SWM SE, BESCOM AEE, BWSSB AEE, BWSSB AE, Traffic PIO, City Corp officers, MLAs, MPs, Ward Councillors, SWM JHI. Deduplicates entries within each category
+- `initDirectory()`: async init — loads officials data if not yet loaded, then builds the index
+- `wireDirectoryUI()`: attaches all event listeners once (guarded by `directoryWired` flag). Powers the search autocomplete and the cascading dept → zone → name dropdowns
+- `showDirectoryProfile(entry)`: renders the selected official's full profile card inline — contact details, issues assigned to them (from localStorage), date each was raised, current status (editable), and Raised / Active / Resolved stats
+- Refactored `initOfficials()` to use a stored `officialsLoadPromise` (replaces `officialsLoading` boolean). Multiple callers (Officials tab + Directory tab) can now safely `await` the same load without double-fetching or race conditions
+- Added null guards on DOM access inside `initOfficials()` so it works even if the Officials tab is not currently visible
+- `switchTab()` now calls `initDirectory()` when switching to the directory tab
+
+**`dashboard/index.html`**
+- Added "Directory" tab button in the nav (between Analytics and Officials)
+- Added Directory tab content: search input with autocomplete, 3 cascading selects (department → zone/area → name), profile area
+
+**`dashboard/css/styles.css`**
+- Added all Directory tab styles: `.dir-search-wrap`, `.dir-suggestions`, `.dir-suggestion-item`, `.dir-sug-name`, `.dir-sug-meta`, `.dir-browse-label`, `.dir-cascade`, `.dir-profile`, `.dir-profile-card`, `.dir-stats`, `.dir-stat`, `.dir-issue-row`, `.dir-issue-meta`, `.dir-issue-text`, `.dir-issue-actions`, `.dir-assigned-date`
+
+---
+
 ## [2026-06-20] — Custom domain + public web app hardening
 
 ### What changed
