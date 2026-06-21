@@ -1529,13 +1529,15 @@ async function detectNearestWard() {
     return;
   }
 
-  if (btn) { btn.disabled = true; btn.innerHTML = "&#8987; Locating..."; }
+  if (btn) { btn.disabled = true; btn.innerHTML = "&#8987; Acquiring GPS..."; }
 
   navigator.geolocation.getCurrentPosition(
     async pos => {
       try {
-        const { latitude, longitude } = pos.coords;
-        const url = `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json&addressdetails=1`;
+        const { latitude, longitude, accuracy } = pos.coords;
+        const accuracyM = Math.round(accuracy);
+
+        const url = `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json&addressdetails=1&zoom=16`;
         const resp = await fetch(url, { headers: { "Accept-Language": "en" } });
         const data = await resp.json();
         const addr = data.address || {};
@@ -1543,8 +1545,8 @@ async function detectNearestWard() {
         // Try candidates from most-specific to least-specific
         const candidates = [
           addr.neighbourhood, addr.suburb, addr.quarter,
-          addr.residential, addr.village, addr.city_district,
-          addr.county, addr.town, addr.city
+          addr.residential, addr.hamlet, addr.village,
+          addr.city_district, addr.county, addr.town, addr.city
         ].filter(Boolean);
 
         const ward = findBestWardMatch(candidates);
@@ -1553,20 +1555,33 @@ async function detectNearestWard() {
           if (input) input.value = ward.ward_name;
           renderWardCard(ward);
           document.getElementById("ward-results").scrollIntoView({ behavior: "smooth", block: "nearest" });
+          if (accuracyM > 300 && resultsEl) {
+            const note = document.createElement("div");
+            note.className = "ward-note";
+            note.style.cssText = "margin-top:6px;font-size:.72rem;color:var(--muted)";
+            note.textContent = `GPS accuracy: ±${accuracyM}m — result may be approximate. If wrong, search manually.`;
+            resultsEl.appendChild(note);
+          }
         } else {
-          if (resultsEl) resultsEl.innerHTML = `<div class="ward-empty" style="padding:12px">Could not match your location (${candidates.join(", ")}) to a ward. Try searching manually.</div>`;
+          const hint = candidates.length ? ` (detected: ${candidates.slice(0, 3).join(", ")})` : "";
+          if (resultsEl) resultsEl.innerHTML = `<div class="ward-empty" style="padding:12px">Could not match your location${hint} to a known ward. Try searching by area name manually.</div>`;
         }
       } catch (err) {
-        if (resultsEl) resultsEl.innerHTML = `<div class="ward-empty" style="padding:12px">Location lookup failed. Try searching manually.</div>`;
+        if (resultsEl) resultsEl.innerHTML = `<div class="ward-empty" style="padding:12px">Location lookup failed. Check your connection and try again.</div>`;
       } finally {
         if (btn) { btn.disabled = false; btn.innerHTML = "&#127757; Detect My Location"; }
       }
     },
-    () => {
+    err => {
       if (btn) { btn.disabled = false; btn.innerHTML = "&#127757; Detect My Location"; }
-      if (resultsEl) resultsEl.innerHTML = `<div class="ward-empty" style="padding:12px">Location access denied. Please allow location access and try again.</div>`;
+      const msg = err.code === 1
+        ? "Location access denied. Tap Allow when your browser asks for permission."
+        : err.code === 3
+        ? "GPS timed out — you may be indoors. Try moving outside and retry."
+        : "Location unavailable. Try searching manually.";
+      if (resultsEl) resultsEl.innerHTML = `<div class="ward-empty" style="padding:12px">${msg}</div>`;
     },
-    { timeout: 10000 }
+    { enableHighAccuracy: true, timeout: 15000, maximumAge: 0 }
   );
 }
 

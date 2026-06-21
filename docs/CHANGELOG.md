@@ -5,6 +5,25 @@ Format: `[Date] - What changed and why`
 
 ---
 
+## [2026-06-21] — Fix location detection accuracy
+
+### What changed
+
+**`dashboard/js/app.js`** — `detectNearestWard()`
+
+Root cause: `getCurrentPosition` was called without `enableHighAccuracy: true`, so the browser used WiFi/cell-tower triangulation (which can be 2–10 km off in Bangalore) instead of device GPS.
+
+Fixes applied:
+- Added `enableHighAccuracy: true` — forces GPS chipset instead of network triangulation
+- Added `maximumAge: 0` — never use a cached/stale position reading
+- Increased `timeout` from 10 s to 15 s — GPS needs more time to acquire a fix, especially indoors
+- Added `zoom=16` to the Nominatim reverse geocode request — returns neighbourhood-level address (was defaulting to city level)
+- Added `addr.hamlet` to the candidate list (catches some Bangalore micro-areas not tagged as suburb/neighbourhood)
+- If GPS accuracy is worse than 300 m, shows a note warning the result may be approximate
+- Improved error messages: distinct text for "permission denied" vs "GPS timeout" vs "unavailable"
+
+---
+
 ## [2026-06-21] — Design consistency fixes: ward cells and smart contacts
 
 ### What changed
