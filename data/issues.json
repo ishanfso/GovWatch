@@ -15040,9 +15040,9 @@
     "author": "@manoj55845",
     "date": "2026-06-21T17:19:47+00:00",
     "category": "Electricity",
-    "area": "Austin Town",
-    "ward_name": "Austin Town",
-    "ward_no": "29",
+    "area": "ORR",
+    "ward_name": "",
+    "ward_no": "",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -15069,6 +15069,24 @@
     "keywords": [
       "park",
       "cubbon"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2068767755122430427",
+    "text": "@GBA_office I think bangalore south especially Bannerghatta road is the most ignored in all of Bengaluru, no proper roads and infra or development, every few meters and you may find a pothole and digup holes which doesn't get filled early",
+    "author": "@ZahidUlla14",
+    "date": "2026-06-21T18:47:23+00:00",
+    "category": "Roads",
+    "area": "Bannerghatta Road",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2068767755122430427",
+    "keywords": [
+      "pothole"
     ],
     "status": "open"
   }
