@@ -1719,13 +1719,13 @@ function renderWardCard(ward) {
     buildWardCell("MLA", [
       ward.mla ? `<div class="ward-contact-name"><span class="official-name-link" data-name="${esc(ward.mla)}" data-role="MLA" data-dept="" data-phone="${esc(ward.mla_phones||'')}" data-email="${esc(ward.mla_email||'')}" data-detail="${esc(ward.constituency||'')}">${esc(ward.mla)}</span></div>` : `<div class="ward-empty">Not available</div>`,
       ward.mla_party ? `<div class="ward-contact-detail">${esc(ward.mla_party)}</div>` : "",
-      ward.mla_phones ? phoneLink(ward.mla_phones) : "",
+      ward.mla_phones ? phoneLink(ward.mla_phones.split(";")[0].trim()) : "",
       ward.mla_email ? `<a class="ward-email-btn" href="${buildWardEmail(ward.mla_email, ward, "Civic issue")}" target="_blank">&#128231; Email MLA</a>` : "",
     ].filter(Boolean).join("")),
 
     buildWardCell("MP", [
       ward.mp ? `<div class="ward-contact-name"><span class="official-name-link" data-name="${esc(ward.mp)}" data-role="MP" data-dept="" data-phone="${esc(ward.mp_phones||'')}" data-email="${esc(ward.mp_email||'')}" data-detail="${esc(ward.constituency||'')}">${esc(ward.mp)}</span></div>` : `<div class="ward-empty">Not available</div>`,
-      ward.mp_phones ? phoneLink(ward.mp_phones) : "",
+      ward.mp_phones ? phoneLink(ward.mp_phones.split(";")[0].trim()) : "",
       ward.mp_email ? `<a class="ward-email-btn" href="${buildWardEmail(ward.mp_email, ward, "Civic issue")}" target="_blank">&#128231; Email MP</a>` : "",
     ].filter(Boolean).join("")),
   ];
@@ -2422,12 +2422,16 @@ function renderSmartContactsHTML(issue) {
     const isAssigned = assignment && assignment.name === c.name;
     return `
       <div class="smart-contact-row">
-        ${badge}
-        <span class="sc-role">${roleDetail}</span>
-        <span class="official-name-link sc-name" data-name="${esc(c.name)}" data-role="${esc(c.role)}" data-dept="${esc(c.dept || '')}" data-phone="${esc(c.phone || '')}" data-email="${esc(c.email || '')}" data-detail="${esc(c.detail || '')}">${esc(c.name)}</span>
-        ${c.phone ? phoneLink(c.phone.split(";")[0].trim(), "sc-phone") : ""}
-        ${emailBtn}
-        <button class="sc-raise-btn${isAssigned ? ' active' : ''}" data-contact-idx="${idx}" data-issue-id="${esc(String(issue.id))}">${isAssigned ? '&#10003; Assigned' : 'Raise to'}</button>
+        <div class="sc-top-row">
+          ${badge}
+          <span class="official-name-link sc-name" data-name="${esc(c.name)}" data-role="${esc(c.role)}" data-dept="${esc(c.dept || '')}" data-phone="${esc(c.phone || '')}" data-email="${esc(c.email || '')}" data-detail="${esc(c.detail || '')}">${esc(c.name)}</span>
+        </div>
+        <div class="sc-sub-row">
+          <span class="sc-role">${roleDetail}</span>
+          ${c.phone ? phoneLink(c.phone.split(";")[0].trim(), "sc-phone") : ""}
+          ${emailBtn}
+          <button class="sc-raise-btn${isAssigned ? ' active' : ''}" data-contact-idx="${idx}" data-issue-id="${esc(String(issue.id))}">${isAssigned ? '&#10003; Assigned' : 'Raise to'}</button>
+        </div>
       </div>
     `;
   }).join("");

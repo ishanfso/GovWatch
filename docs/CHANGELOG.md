@@ -5,6 +5,37 @@ Format: `[Date] - What changed and why`
 
 ---
 
+## [2026-06-21] — Design consistency fixes: ward cells and smart contacts
+
+### What changed
+
+**`dashboard/css/styles.css`**
+
+Ward card cells (`.ward-dept-cell`):
+- Changed to `display: flex; flex-direction: column` — consistent vertical stacking
+- Set `min-height: 100px` so empty cells still match their row
+- Added `margin-top: auto` on `.ward-dept-cell .ward-email-btn` — email button always anchors to the bottom of its cell regardless of how much content is above it
+- `.ward-contact-name`: added `overflow: hidden; text-overflow: ellipsis; white-space: nowrap` — names truncate to one line instead of wrapping unpredictably (still clickable; full name appears in the profile modal)
+- `.ward-contact-detail` and `.ward-contact-phone`: same single-line truncation
+
+Smart contacts panel (`.smart-contact-row`):
+- Completely restructured from a single flat flex row (badge | role | name | phone | email | raise) to a two-line card layout:
+  - **Line 1**: badge + official name (name is now the primary, prominent element)
+  - **Line 2**: role/detail · phone · Email · Raise button
+- This means phone, email, and "Raise to" always appear at the exact same vertical position regardless of name or role length — eliminates the misalignment
+- `.smart-contacts` container now uses `gap: 0` with a single shared border + bottom separators per row (cleaner than individual bordered cards)
+- `.sc-name`: promoted to `font-size: .84rem; font-weight: 600` (was `.72rem` muted) — name is the primary identifier
+- `.sc-role`: demoted to `.71rem; color: muted` with ellipsis truncation
+- Removed old `/* Design fixes */` band-aid block (now baked into the core styles)
+
+**`dashboard/js/app.js`**
+
+- `renderSmartContactsHTML`: updated contact row HTML to match the new two-line structure (`sc-top-row` + `sc-sub-row`)
+- `renderWardCard` (MLA cell): `ward.mla_phones` now shows only the first phone number (first segment before `;`) — MLA phone strings contain 3–5 numbers separated by semicolons which caused extreme cell width
+- `renderWardCard` (MP cell): same fix for `ward.mp_phones`
+
+---
+
 ## [2026-06-21] — Officials Directory tab
 
 ### What changed

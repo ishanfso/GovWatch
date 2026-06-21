@@ -977,6 +977,9 @@ body {
   padding: 12px 14px;
   border-right: 1px solid var(--border-soft);
   border-bottom: 1px solid var(--border-soft);
+  display: flex;
+  flex-direction: column;
+  min-height: 100px;
 }
 .ward-dept-cell:nth-child(3n) { border-right: none; }
 .ward-dept-label {
@@ -986,17 +989,25 @@ body {
   letter-spacing: .5px;
   color: var(--brand);
   margin-bottom: 6px;
+  flex-shrink: 0;
 }
 .ward-contact-name {
   font-size: .84rem;
   font-weight: 600;
   color: var(--text);
-  margin-bottom: 2px;
+  margin-bottom: 3px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
 }
 .ward-contact-detail {
-  font-size: .76rem;
+  font-size: .75rem;
   color: var(--muted);
   margin-bottom: 2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .ward-contact-phone {
   display: block;
@@ -1004,9 +1015,13 @@ body {
   color: var(--action);
   margin-bottom: 4px;
   text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 a.ward-contact-phone:hover { text-decoration: underline; }
 .ward-contact-phone::before { content: "T: "; font-weight: 600; color: var(--muted); }
+.ward-dept-cell .ward-email-btn { margin-top: auto; }
 
 /* Detect location button */
 .btn-detect-location {
@@ -1181,16 +1196,35 @@ a.org-contact-info:hover { text-decoration: underline; }
 }
 
 /* Smart contacts in detail panel */
-.smart-contacts { display: flex; flex-direction: column; gap: 6px; }
+.smart-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
 .smart-contact-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border-soft);
+  background: var(--panel);
+}
+.smart-contact-row:last-child { border-bottom: none; }
+.sc-top-row {
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 8px 10px;
-  background: var(--bg);
-  border-radius: var(--radius);
-  border: 1px solid var(--border-soft);
+  min-width: 0;
+}
+.sc-sub-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   flex-wrap: wrap;
+  min-width: 0;
 }
 .sc-type-badge {
   font-size: .6rem;
@@ -1200,15 +1234,32 @@ a.org-contact-info:hover { text-decoration: underline; }
   white-space: nowrap;
   flex-shrink: 0;
 }
-.sc-role {
-  font-size: .72rem;
+.sc-name {
+  font-size: .84rem;
   font-weight: 600;
   color: var(--text);
   flex: 1;
-  min-width: 120px;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
-.sc-name { font-size: .72rem; color: var(--muted); }
-.sc-phone { font-size: .71rem; color: var(--action); text-decoration: none; }
+.sc-role {
+  font-size: .71rem;
+  color: var(--muted);
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.sc-phone {
+  font-size: .71rem;
+  color: var(--action);
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
 a.sc-phone:hover { text-decoration: underline; }
 .sc-email-btn {
   display: inline-flex;
@@ -1488,10 +1539,6 @@ a.sc-phone:hover { text-decoration: underline; }
 .rcp-label { color: var(--muted); font-weight: 600; }
 .rcp-phone { color: var(--muted); font-size: .7rem; }
 
-/* ── Design fixes ────────────────────────────────────────────────── */
-.smart-contact-row { min-height: 44px; align-items: center; }
-.ward-dept-cell { min-height: 80px; }
-.sc-name { overflow: hidden; text-overflow: ellipsis; }
 .org-contact-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 @media (max-width: 900px) {
   .ward-card-grid { grid-template-columns: repeat(2, 1fr); }
