@@ -640,6 +640,7 @@ function renderDetailPanel(issue) {
         <a class="btn-assign" href="${buildEmailLink(issue)}">
           &#128231; Raise to ${esc(poc.dept)}
         </a>
+        <a class="btn-whatsapp" href="${whatsappUrl(issue)}" target="_blank" rel="noopener">&#128362; WhatsApp</a>
         ${issue.source_url ? `<a class="btn-source" href="${esc(issue.source_url)}" target="_blank" rel="noopener">Open source tweet &#8599;</a>` : ""}
         <button class="btn-copy-tweet" id="copy-tweet-btn">&#128203; Copy Tweet Reply</button>
         <div class="tweet-preview hidden" id="tweet-preview"></div>
@@ -933,9 +934,32 @@ function renderRaisedToBreakdown() {
     </div>`).join("");
 }
 
+function whatsappUrl(issue) {
+  const sevEmoji = issue.severity === "high" ? "🔴" : issue.severity === "medium" ? "🟡" : "🟢";
+  const poc = POC_DIRECTORY[issue.category] || POC_DIRECTORY.Other;
+  const date = issue.date ? new Date(issue.date).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" }) : "";
+  const snippet = issue.text.length > 200 ? issue.text.slice(0, 200) + "…" : issue.text;
+  const lines = [
+    `${sevEmoji} *Civic Issue — ${issue.category}*`,
+    "",
+    `📍 *Area:* ${issue.area}`,
+    `🏛 *Dept:* ${poc.dept}`,
+    `⚠️ *Severity:* ${issue.severity.charAt(0).toUpperCase() + issue.severity.slice(1)}`,
+    date ? `📅 *Reported:* ${date}` : "",
+    "",
+    `"${snippet}"`,
+    "",
+    issue.source_url ? `🔗 ${issue.source_url}` : "",
+    "",
+    `— Civic Issue India (civicissue.in)`,
+  ].filter(l => l !== undefined);
+  return `https://wa.me/?text=${encodeURIComponent(lines.join("\n"))}`;
+}
+
 function renderAnalytics(issues) {
   renderChart(issues);
   renderAreaChart(issues);
+  renderWardHeatMap(issues);
   renderBreakdownList("mla-breakdown",  issues, "constituency",  false);
   renderBreakdownList("mp-breakdown",   issues, "mp",             false);
   renderBreakdownList("zone-breakdown", issues, "city_corp",      true);
@@ -986,6 +1010,58 @@ function renderAnalytics(issues) {
       <thead><tr><th>Department</th><th>Total</th><th>Overdue</th><th>Resolved</th><th>Resolution %</th></tr></thead>
       <tbody>${tableRows}</tbody>
     </table>`;
+}
+
+function renderWardHeatMap(issues) {
+  const el = document.getElementById("ward-heatmap");
+  if (!el) return;
+
+  const now = Date.now();
+  const areaStats = {};
+  issues.forEach(iss => {
+    const area = iss.area || "Unknown";
+    if (!areaStats[area]) areaStats[area] = { total: 0, high: 0, overdue: 0, resolved: 0 };
+    const s = areaStats[area];
+    s.total++;
+    if (iss.severity === "high") s.high++;
+    if (getStatus(iss.id) === "resolved") s.resolved++;
+    const poc = POC_DIRECTORY[iss.category] || POC_DIRECTORY.Other;
+    const ageH = (now - new Date(iss.date).getTime()) / 36e5;
+    if (ageH >= poc.tat && getStatus(iss.id) !== "resolved") s.overdue++;
+  });
+
+  const areas = Object.entries(areaStats).map(([area, s]) => {
+    const open = s.total - s.resolved;
+    const score = (s.high * 3) + (s.overdue * 2) + open;
+    return { area, ...s, open, score };
+  }).sort((a, b) => b.score - a.score);
+
+  const maxScore = areas[0]?.score || 1;
+
+  const tileColor = score => {
+    const r = score / maxScore;
+    if (r === 0)   return "tile-none";
+    if (r < 0.2)   return "tile-low";
+    if (r < 0.45)  return "tile-medium";
+    if (r < 0.72)  return "tile-high";
+    return "tile-critical";
+  };
+
+  el.innerHTML = areas.map(a => `
+    <div class="heatmap-tile ${tileColor(a.score)}" data-area="${esc(a.area)}" title="${esc(a.area)}: ${a.open} open, ${a.high} high, ${a.overdue} overdue">
+      <div class="hm-area">${esc(a.area)}</div>
+      <div class="hm-count">${a.open}</div>
+      <div class="hm-sub">${a.high > 0 ? `<span class="hm-high">${a.high} high</span>` : ""}${a.overdue > 0 ? `<span class="hm-overdue">${a.overdue} OD</span>` : ""}</div>
+    </div>`).join("");
+
+  el.querySelectorAll(".heatmap-tile").forEach(tile => {
+    tile.addEventListener("click", () => {
+      const area = tile.dataset.area;
+      document.getElementById("area-filter").value = area;
+      applyFilters();
+      switchTab("queue");
+    });
+  });
 }
 
 function renderChart(issues) {

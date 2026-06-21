@@ -635,6 +635,15 @@ body {
 }
 .btn-source:hover { background: var(--brand-light); border-color: var(--brand); color: var(--brand); }
 
+.btn-whatsapp {
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+  padding: 8px 12px; background: #e7f9ef; color: #1a7340;
+  border: 1px solid #a3d9b7; border-radius: var(--radius);
+  font-size: .76rem; font-weight: 600; cursor: pointer;
+  text-decoration: none; font-family: inherit; transition: all .12s;
+}
+.btn-whatsapp:hover { background: #d0f0e0; border-color: #1a7340; }
+
 .btn-copy-tweet {
   display: flex;
   align-items: center;
@@ -1611,6 +1620,38 @@ a.sc-phone:hover { text-decoration: underline; }
 }
 @media (max-width: 700px) {
   .ward-hier-grid { grid-template-columns: 1fr; }
+}
+
+/* ── Ward Heat Map ───────────────────────────────────────────────── */
+.heatmap-legend {
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  margin-bottom: 14px; font-size: .73rem; color: var(--muted);
+}
+.hm-legend-item { display: flex; align-items: center; gap: 4px; }
+.hm-swatch { width: 12px; height: 12px; border-radius: 2px; display: inline-block; }
+.hm-legend-hint { margin-left: auto; font-style: italic; font-size: .7rem; }
+.heatmap-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 6px;
+}
+.heatmap-tile {
+  border-radius: 6px; padding: 10px 10px 8px; cursor: pointer;
+  transition: transform .1s, box-shadow .1s; border: 1px solid transparent;
+}
+.heatmap-tile:hover { transform: translateY(-2px); box-shadow: 0 3px 10px rgba(0,0,0,.1); }
+.tile-none     { background: var(--panel); border-color: var(--border-soft); }
+.tile-low      { background: #d1fae5; border-color: #6ee7b7; }
+.tile-medium   { background: #fef9c3; border-color: #fde047; }
+.tile-high     { background: #fed7aa; border-color: #fb923c; }
+.tile-critical { background: #fee2e2; border-color: #fca5a5; }
+.hm-area { font-size: .72rem; font-weight: 700; color: var(--text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.hm-count { font-size: 1.5rem; font-weight: 800; color: var(--text); line-height: 1.1; margin-top: 3px; }
+.hm-sub { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 4px; }
+.hm-high { font-size: .65rem; font-weight: 700; color: #b91c1c; background: #fee2e2; padding: 1px 4px; border-radius: 3px; }
+.hm-overdue { font-size: .65rem; font-weight: 700; color: #92400e; background: #fef3c7; padding: 1px 4px; border-radius: 3px; }
+@media (max-width: 700px) {
+  .heatmap-grid { grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); }
 }
 
 /* ── Officials Directory tab ─────────────────────────────────────── */

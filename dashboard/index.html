@@ -201,6 +201,18 @@
     <!-- Tab: Analytics -->
     <div class="tab-content hidden" id="tab-analytics">
       <div class="analytics-layout">
+        <div class="analytics-card analytics-card-wide">
+          <div class="analytics-title">Area Heat Map — Open Issue Intensity</div>
+          <div class="heatmap-legend">
+            <span class="hm-legend-item"><span class="hm-swatch tile-none"></span>None</span>
+            <span class="hm-legend-item"><span class="hm-swatch tile-low"></span>Low</span>
+            <span class="hm-legend-item"><span class="hm-swatch tile-medium"></span>Medium</span>
+            <span class="hm-legend-item"><span class="hm-swatch tile-high"></span>High</span>
+            <span class="hm-legend-item"><span class="hm-swatch tile-critical"></span>Critical</span>
+            <span class="hm-legend-hint">Click any tile to filter queue to that area</span>
+          </div>
+          <div class="heatmap-grid" id="ward-heatmap"></div>
+        </div>
         <div class="analytics-card">
           <div class="analytics-title">Issues by Category</div>
           <div class="chart-wrap">

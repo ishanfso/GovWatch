@@ -5,6 +5,27 @@ Format: `[Date] - What changed and why`
 
 ---
 
+## [2026-06-21] — WhatsApp message generator + Ward heat map
+
+### What changed
+
+**`dashboard/js/app.js`**
+
+`whatsappUrl(issue)`: Generates a `wa.me/?text=` link with a pre-formatted WhatsApp message for any issue. Format includes severity emoji, category, area, department, reported date, tweet snippet (200 chars), and the original tweet URL. Opens WhatsApp (web or app) with the message pre-filled — no typing needed.
+
+`renderWardHeatMap(issues)`: Renders a colour-coded tile grid in the Analytics tab showing every area's open issue intensity. Scoring: each high-severity issue = 3 pts, each overdue SLA issue = 2 pts, each open issue = 1 pt. Tiles are coloured in 5 tiers (none → low → medium → high → critical). Clicking any tile switches to the Queue tab with that area pre-filtered.
+
+**`dashboard/index.html`**
+- Added WhatsApp button (`btn-whatsapp`) in the detail pane action bar alongside the existing Raise/Email and tweet buttons
+- Added "Area Heat Map" analytics card at the top of the Analytics tab (wide card) with legend + `ward-heatmap` grid container
+
+**`dashboard/css/styles.css`**
+- `.btn-whatsapp`: green-tinted action button matching app button family
+- `.heatmap-grid`, `.heatmap-tile`: responsive tile grid with 5 colour tiers (tile-none / tile-low / tile-medium / tile-high / tile-critical)
+- `.hm-area`, `.hm-count`, `.hm-sub`, `.hm-high`, `.hm-overdue`: tile content styles
+
+---
+
 ## [2026-06-21] — Directory tab: visual org hierarchy + slide-in profile drawer
 
 ### What changed
