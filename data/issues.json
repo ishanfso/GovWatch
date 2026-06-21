@@ -14931,13 +14931,69 @@
     "date": "2026-06-21T12:26:16+00:00",
     "category": "Electricity",
     "area": "Bommanahalli",
-    "ward_name": "Bommanahalli",
-    "ward_no": "63",
+    "ward_name": "",
+    "ward_no": "",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
     "source_url": "https://twitter.com/i/web/status/2068671846569091519",
     "keywords": [
+      "bescom"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2068706508553203752",
+    "text": "Why are garbage collection vehicles parked here, is it a designated depot or allotted spot for them? They are creating a nuisance @GBA_office\n@ICCCBengaluru \nLocation: Near BESCOM office\n125, Chowdeshwari Temple Rd, Marathahalli Village, Marathahalli, Bengaluru, Karnataka 560037 https://t.co/AG7xYQw4oP",
+    "author": "@naera_08",
+    "date": "2026-06-21T14:44:01+00:00",
+    "category": "Electricity",
+    "area": "Marathahalli",
+    "ward_name": "Marathahalli",
+    "ward_no": "45",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2068706508553203752",
+    "keywords": [
+      "bescom"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2068704874842484921",
+    "text": "@NammaBESCOM There have been frequent power cuts in Whitefield D'Silva Layout (~15 to 20 times) only today and this is the same story everyday as well! \n\nSometimes this happens even at midnight. What's with all these increasing power cuts? \n\n#whitefield #bangalore #bescom",
+    "author": "@aravind2603",
+    "date": "2026-06-21T14:37:31+00:00",
+    "category": "Electricity",
+    "area": "Whitefield",
+    "ward_name": "Whitefield",
+    "ward_no": "38",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2068704874842484921",
+    "keywords": [
+      "power cut",
+      "bescom"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2068689386959691867",
+    "text": "@NammaBESCOM @siddaramaiah @DKShivakumar @TOIIndiaNews @tv9kannada @KannadaPrabha @ZeeNews @KannadaRepublic @ndtvindia @DH_Kannada @20 @SupriyaShrinate @Tejasvi_Surya @RahulGandhi @18 @CMofKarnataka Again Power Cut. Don't know when we will be able to live peacefully in Bangalore without these stupid power cuts.",
+    "author": "@shailesh91178",
+    "date": "2026-06-21T13:35:58+00:00",
+    "category": "Electricity",
+    "area": "Bangalore",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2068689386959691867",
+    "keywords": [
+      "power cut",
       "bescom"
     ],
     "status": "open"
