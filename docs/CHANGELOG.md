@@ -5,6 +5,29 @@ Format: `[Date] - What changed and why`
 
 ---
 
+## [2026-06-21] — Officials Directory tab
+
+### What changed
+
+**`dashboard/js/app.js`**
+- Added new **"Directory"** tab — a standalone searchable officials directory separate from the Officials tab
+- `buildOfficialIndex()`: flattens all 7 officials data sources into a single searchable list (~800+ entries): SWM AEE, SWM SE, BESCOM AEE, BWSSB AEE, BWSSB AE, Traffic PIO, City Corp officers, MLAs, MPs, Ward Councillors, SWM JHI. Deduplicates entries within each category
+- `initDirectory()`: async init — loads officials data if not yet loaded, then builds the index
+- `wireDirectoryUI()`: attaches all event listeners once (guarded by `directoryWired` flag). Powers the search autocomplete and the cascading dept → zone → name dropdowns
+- `showDirectoryProfile(entry)`: renders the selected official's full profile card inline — contact details, issues assigned to them (from localStorage), date each was raised, current status (editable), and Raised / Active / Resolved stats
+- Refactored `initOfficials()` to use a stored `officialsLoadPromise` (replaces `officialsLoading` boolean). Multiple callers (Officials tab + Directory tab) can now safely `await` the same load without double-fetching or race conditions
+- Added null guards on DOM access inside `initOfficials()` so it works even if the Officials tab is not currently visible
+- `switchTab()` now calls `initDirectory()` when switching to the directory tab
+
+**`dashboard/index.html`**
+- Added "Directory" tab button in the nav (between Analytics and Officials)
+- Added Directory tab content: search input with autocomplete, 3 cascading selects (department → zone/area → name), profile area
+
+**`dashboard/css/styles.css`**
+- Added all Directory tab styles: `.dir-search-wrap`, `.dir-suggestions`, `.dir-suggestion-item`, `.dir-sug-name`, `.dir-sug-meta`, `.dir-browse-label`, `.dir-cascade`, `.dir-profile`, `.dir-profile-card`, `.dir-stats`, `.dir-stat`, `.dir-issue-row`, `.dir-issue-meta`, `.dir-issue-text`, `.dir-issue-actions`, `.dir-assigned-date`
+
+---
+
 ## [2026-06-20] — Custom domain + public web app hardening
 
 ### What changed

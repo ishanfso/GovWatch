@@ -459,6 +459,7 @@ function switchTab(tab) {
   if (tab === "departments") renderDepartments(filtered);
   if (tab === "analytics")   renderAnalytics(filtered);
   if (tab === "officials")   initOfficials();
+  if (tab === "directory")   initDirectory();
 }
 
 // ── Queue ──────────────────────────────────────────────────────────
@@ -1315,85 +1316,97 @@ let officialsData = {
   bbmpDir: [],
 };
 let officialsLoaded = false;
-let officialsLoading = false;
+let officialsLoadPromise = null;
 let activeOrgDept = "BBMP";
+let officialIndex = null;
+let directoryWired = false;
 
 // ── Officials Init ─────────────────────────────────────────────────
 
 async function initOfficials() {
   if (officialsLoaded) return;
-  if (officialsLoading) return;
-  officialsLoading = true;
+  if (officialsLoadPromise) return officialsLoadPromise;
 
-  document.getElementById("org-chart-container").innerHTML = '<div class="loading">Loading officials data...</div>';
-  document.getElementById("routing-guide").innerHTML = '<div class="loading">Loading routing guide...</div>';
+  const orgChart = document.getElementById("org-chart-container");
+  const routingEl = document.getElementById("routing-guide");
+  if (orgChart) orgChart.innerHTML = '<div class="loading">Loading officials data...</div>';
+  if (routingEl) routingEl.innerHTML = '<div class="loading">Loading routing guide...</div>';
 
-  try {
-    const base = "../data/officials/";
-    const [
-      wards, areaWard, routing, escalation, cityCorpContacts,
-      swmSe, swmAee, bescomUnits, bwssb, traffic, mlas, mps, bbmpDir
-    ] = await Promise.all([
-      fetch(base + "wards.json").then(r => r.json()).catch(() => []),
-      fetch(base + "area_ward_lookup.json").then(r => r.json()).catch(() => ({})),
-      fetch(base + "issue_routing.json").then(r => r.json()).catch(() => []),
-      fetch(base + "escalation_chains.json").then(r => r.json()).catch(() => ({})),
-      fetch(base + "city_corp_contacts.json").then(r => r.json()).catch(() => []),
-      fetch(base + "swm_se.json").then(r => r.json()).catch(() => []),
-      fetch(base + "swm_aee.json").then(r => r.json()).catch(() => []),
-      fetch(base + "bescom_units.json").then(r => r.json()).catch(() => []),
-      fetch(base + "bwssb_stations.json").then(r => r.json()).catch(() => []),
-      fetch(base + "traffic_rti.json").then(r => r.json()).catch(() => []),
-      fetch(base + "mlas.json").then(r => r.json()).catch(() => []),
-      fetch(base + "mps.json").then(r => r.json()).catch(() => []),
-      fetch(base + "bbmp_directory.json").then(r => r.json()).catch(() => []),
-    ]);
+  officialsLoadPromise = (async () => {
+    try {
+      const base = "../data/officials/";
+      const [
+        wards, areaWard, routing, escalation, cityCorpContacts,
+        swmSe, swmAee, bescomUnits, bwssb, traffic, mlas, mps, bbmpDir
+      ] = await Promise.all([
+        fetch(base + "wards.json").then(r => r.json()).catch(() => []),
+        fetch(base + "area_ward_lookup.json").then(r => r.json()).catch(() => ({})),
+        fetch(base + "issue_routing.json").then(r => r.json()).catch(() => []),
+        fetch(base + "escalation_chains.json").then(r => r.json()).catch(() => ({})),
+        fetch(base + "city_corp_contacts.json").then(r => r.json()).catch(() => []),
+        fetch(base + "swm_se.json").then(r => r.json()).catch(() => []),
+        fetch(base + "swm_aee.json").then(r => r.json()).catch(() => []),
+        fetch(base + "bescom_units.json").then(r => r.json()).catch(() => []),
+        fetch(base + "bwssb_stations.json").then(r => r.json()).catch(() => []),
+        fetch(base + "traffic_rti.json").then(r => r.json()).catch(() => []),
+        fetch(base + "mlas.json").then(r => r.json()).catch(() => []),
+        fetch(base + "mps.json").then(r => r.json()).catch(() => []),
+        fetch(base + "bbmp_directory.json").then(r => r.json()).catch(() => []),
+      ]);
 
-    officialsData.wards = Array.isArray(wards) ? wards : [];
-    officialsData.areaToWard = areaWard || {};
-    officialsData.issueRouting = Array.isArray(routing) ? routing : [];
-    officialsData.escalationChains = escalation || {};
-    officialsData.cityCorpContacts = Array.isArray(cityCorpContacts) ? cityCorpContacts : [];
-    officialsData.swmSe = Array.isArray(swmSe) ? swmSe : [];
-    officialsData.swmAee = Array.isArray(swmAee) ? swmAee : [];
-    officialsData.bescomUnits = Array.isArray(bescomUnits) ? bescomUnits : [];
-    officialsData.bwssb = Array.isArray(bwssb) ? bwssb : [];
-    officialsData.traffic = Array.isArray(traffic) ? traffic : [];
-    officialsData.mlas = Array.isArray(mlas) ? mlas : [];
-    officialsData.mps = Array.isArray(mps) ? mps : [];
-    officialsData.bbmpDir = Array.isArray(bbmpDir) ? bbmpDir : [];
+      officialsData.wards = Array.isArray(wards) ? wards : [];
+      officialsData.areaToWard = areaWard || {};
+      officialsData.issueRouting = Array.isArray(routing) ? routing : [];
+      officialsData.escalationChains = escalation || {};
+      officialsData.cityCorpContacts = Array.isArray(cityCorpContacts) ? cityCorpContacts : [];
+      officialsData.swmSe = Array.isArray(swmSe) ? swmSe : [];
+      officialsData.swmAee = Array.isArray(swmAee) ? swmAee : [];
+      officialsData.bescomUnits = Array.isArray(bescomUnits) ? bescomUnits : [];
+      officialsData.bwssb = Array.isArray(bwssb) ? bwssb : [];
+      officialsData.traffic = Array.isArray(traffic) ? traffic : [];
+      officialsData.mlas = Array.isArray(mlas) ? mlas : [];
+      officialsData.mps = Array.isArray(mps) ? mps : [];
+      officialsData.bbmpDir = Array.isArray(bbmpDir) ? bbmpDir : [];
 
-    // Build lookup tables
-    officialsData.wardLookup = {};
-    officialsData.wardNoLookup = {};
-    officialsData.wards.forEach(w => {
-      if (w.ward_name) officialsData.wardLookup[w.ward_name.toLowerCase()] = w;
-      if (w.ward_no) officialsData.wardNoLookup[String(w.ward_no)] = w;
-    });
+      // Build lookup tables
+      officialsData.wardLookup = {};
+      officialsData.wardNoLookup = {};
+      officialsData.wards.forEach(w => {
+        if (w.ward_name) officialsData.wardLookup[w.ward_name.toLowerCase()] = w;
+        if (w.ward_no) officialsData.wardNoLookup[String(w.ward_no)] = w;
+      });
 
-    officialsLoaded = true;
-  } catch (err) {
-    console.error("Officials data load error:", err);
-  }
+      officialsLoaded = true;
+    } catch (err) {
+      console.error("Officials data load error:", err);
+    }
 
-  officialsLoading = false;
+    // If a complaint detail panel is already open, re-render it so smart contacts appear
+    if (officialsLoaded && selectedIssueId) {
+      const issue = allIssues.find(i => i.id === selectedIssueId);
+      if (issue) renderDetailPanel(issue);
+    }
 
-  // If a complaint detail panel is already open, re-render it so smart contacts appear
-  if (officialsLoaded && selectedIssueId) {
-    const issue = allIssues.find(i => i.id === selectedIssueId);
-    if (issue) renderDetailPanel(issue);
-  }
+    // Re-render analytics breakdown charts (they depend on ward data from officialsData)
+    if (activeTab === "analytics") renderAnalytics(getFiltered());
 
-  // Re-render analytics breakdown charts (they depend on ward data from officialsData)
-  if (activeTab === "analytics") renderAnalytics(getFiltered());
+    // Render org chart and routing guide only if Officials tab is active
+    if (document.getElementById("org-chart-container")) {
+      renderOrgChart(activeOrgDept);
+      renderRoutingGuide();
+      initWardSearch();
+      initOrgChipListeners();
+    }
+    autoShowWardFromFilter();
 
-  // Render initial org chart and routing guide (only if Officials tab is active)
-  renderOrgChart(activeOrgDept);
-  renderRoutingGuide();
-  initWardSearch();
-  initOrgChipListeners();
-  // If an area filter is already active, auto-populate the ward card
-  autoShowWardFromFilter();
+    // If Directory tab is active, finish wiring it up
+    if (activeTab === "directory" && officialsLoaded) {
+      officialIndex = buildOfficialIndex();
+      wireDirectoryUI();
+    }
+  })();
+
+  return officialsLoadPromise;
 }
 
 // ── Auto-populate ward from active area filter ─────────────────────
@@ -2385,7 +2398,7 @@ function getSmartContacts(issue) {
 
 function renderSmartContactsHTML(issue) {
   if (!officialsLoaded) {
-    if (!officialsLoading) initOfficials();
+    if (!officialsLoadPromise) initOfficials();
     return '<div class="sc-no-contacts" style="color:var(--muted);font-style:italic">Loading contact info…</div>';
   }
 
@@ -2486,6 +2499,281 @@ function buildSmartEmailLink(contacts, issue) {
   let url = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(toEmail)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   if (ccEmails) url += `&cc=${encodeURIComponent(ccEmails)}`;
   return url;
+}
+
+// ── Officials Directory ─────────────────────────────────────────────
+
+function buildOfficialIndex() {
+  if (!officialsLoaded) return [];
+  const entries = [];
+
+  // SWM AEE
+  (officialsData.swmAee || []).forEach(a => {
+    if (!a.name) return;
+    entries.push({ name: a.name, role: "SWM AEE", dept: "SWM", phone: a.mobile || "", email: a.email || "", subgroup: (a.zone || "") + (a.division ? " › " + a.division : ""), zone: a.zone || "" });
+  });
+
+  // SWM SE
+  (officialsData.swmSe || []).forEach(s => {
+    if (!s.name) return;
+    entries.push({ name: s.name, role: "SWM SE", dept: "SWM", phone: s.mobile || "", email: s.email || "", subgroup: s.zone || "", zone: s.zone || "" });
+  });
+
+  // BESCOM AEE (deduplicate by name+zone)
+  const bescomSeen = new Set();
+  (officialsData.bescomUnits || []).forEach(u => {
+    const parsed = parseBescomAee(u.aee || "");
+    const key = (parsed.name || "") + "|" + (u.zone || "");
+    if (!parsed.name || bescomSeen.has(key)) return;
+    bescomSeen.add(key);
+    entries.push({ name: parsed.name, role: "BESCOM AEE", dept: "BESCOM", phone: parsed.phone || "", email: parsed.email || "", subgroup: (u.zone || "") + (u.circle ? " › " + u.circle : ""), zone: u.zone || "" });
+  });
+
+  // BWSSB AEE and AE (deduplicate separately)
+  const bwssbSeen = new Set();
+  (officialsData.bwssb || []).forEach(s => {
+    if (s.aee_name) {
+      const key = "aee|" + s.aee_name + "|" + (s.division || "");
+      if (!bwssbSeen.has(key)) {
+        bwssbSeen.add(key);
+        entries.push({ name: s.aee_name, role: "BWSSB AEE", dept: "BWSSB", phone: s.aee_mobile || "", email: s.aee_email || "", subgroup: s.division || "", zone: s.division || "" });
+      }
+    }
+    if (s.ae_name) {
+      const key = "ae|" + s.ae_name + "|" + (s.service_station || "");
+      if (!bwssbSeen.has(key)) {
+        bwssbSeen.add(key);
+        entries.push({ name: s.ae_name, role: "BWSSB AE", dept: "BWSSB", phone: s.station_mobile || "", email: "", subgroup: (s.division || "") + (s.service_station ? " › " + s.service_station : ""), zone: s.division || "" });
+      }
+    }
+  });
+
+  // Traffic PIO
+  (officialsData.traffic || []).forEach(t => {
+    if (!t.pio) return;
+    entries.push({ name: t.pio, role: "Traffic PIO", dept: "Traffic Police", phone: t.pio_contact || "", email: "", subgroup: t.ps || "", zone: t.ps || "" });
+  });
+
+  // City Corp Contacts (BBMP)
+  (officialsData.cityCorpContacts || []).forEach(c => {
+    if (!c.name) return;
+    entries.push({ name: c.name, role: c.role || "", dept: "BBMP", phone: c.phone || "", email: c.email || "", subgroup: c.corporation || "", zone: c.corporation || "" });
+  });
+
+  // MLAs
+  (officialsData.mlas || []).forEach(m => {
+    if (!m.name) return;
+    entries.push({ name: m.name, role: "MLA", dept: "Political", phone: m.phones || "", email: m.email || "", subgroup: m.constituency || "", zone: m.constituency || "", extra: m.party || "" });
+  });
+
+  // MPs
+  (officialsData.mps || []).forEach(m => {
+    if (!m.name) return;
+    entries.push({ name: m.name, role: "MP", dept: "Political", phone: m.phones || "", email: m.email || "", subgroup: m.constituency || "", zone: m.constituency || "", extra: m.party || "" });
+  });
+
+  // Ward Councillors (from ward data, deduplicate)
+  const councillorSeen = new Set();
+  (officialsData.wards || []).forEach(w => {
+    if (!w.councillor || councillorSeen.has(w.councillor)) return;
+    councillorSeen.add(w.councillor);
+    entries.push({ name: w.councillor, role: "Ward Councillor", dept: "BBMP", phone: w.councillor_mobile || "", email: "", subgroup: w.ward_name || "", zone: "Ward Councillors" });
+  });
+
+  // SWM JHI (from ward data, deduplicate)
+  const jhiSeen = new Set();
+  (officialsData.wards || []).forEach(w => {
+    if (!w.swm_jhi || jhiSeen.has(w.swm_jhi)) return;
+    jhiSeen.add(w.swm_jhi);
+    entries.push({ name: w.swm_jhi, role: "SWM JHI", dept: "SWM", phone: w.swm_jhi_mobile || "", email: "", subgroup: w.swm_division || "", zone: w.swm_division || "" });
+  });
+
+  return entries;
+}
+
+async function initDirectory() {
+  if (!officialsLoaded) {
+    const profileEl = document.getElementById("dir-profile");
+    if (profileEl) {
+      profileEl.innerHTML = '<div class="loading" style="padding:24px 0">Loading officials data…</div>';
+      profileEl.classList.remove("hidden");
+    }
+    await initOfficials();
+    if (!officialsLoaded) return;
+  }
+  officialIndex = buildOfficialIndex();
+  wireDirectoryUI();
+}
+
+function wireDirectoryUI() {
+  if (directoryWired) return;
+  directoryWired = true;
+
+  const searchInput = document.getElementById("dir-search");
+  const suggestions = document.getElementById("dir-suggestions");
+  const deptSelect = document.getElementById("dir-dept-select");
+  const groupSelect = document.getElementById("dir-group-select");
+  const nameSelect = document.getElementById("dir-name-select");
+  if (!searchInput || !deptSelect) return;
+
+  searchInput.addEventListener("input", () => {
+    const q = searchInput.value.trim().toLowerCase();
+    if (q.length < 2) { suggestions.classList.add("hidden"); return; }
+    const matches = (officialIndex || []).filter(e =>
+      e.name.toLowerCase().includes(q) ||
+      e.role.toLowerCase().includes(q) ||
+      e.dept.toLowerCase().includes(q) ||
+      (e.subgroup && e.subgroup.toLowerCase().includes(q))
+    ).slice(0, 12);
+    if (!matches.length) { suggestions.classList.add("hidden"); return; }
+    suggestions.innerHTML = matches.map((m, i) => `
+      <div class="dir-suggestion-item" data-idx="${i}">
+        <span class="dir-sug-name">${esc(m.name)}</span>
+        <span class="dir-sug-meta">${esc(m.role)} &middot; ${esc(m.dept)}${m.subgroup ? " &middot; " + esc(m.subgroup) : ""}</span>
+      </div>`).join("");
+    suggestions.classList.remove("hidden");
+    suggestions.querySelectorAll(".dir-suggestion-item").forEach((item, i) => {
+      item.addEventListener("mousedown", e => {
+        e.preventDefault();
+        searchInput.value = matches[i].name;
+        suggestions.classList.add("hidden");
+        showDirectoryProfile(matches[i]);
+      });
+    });
+  });
+
+  searchInput.addEventListener("blur", () => suggestions.classList.add("hidden"));
+
+  deptSelect.addEventListener("change", () => {
+    const dept = deptSelect.value;
+    groupSelect.innerHTML = '<option value="">— Select zone / area —</option>';
+    nameSelect.innerHTML = '<option value="">— Select official —</option>';
+    groupSelect.disabled = true;
+    nameSelect.disabled = true;
+    if (!dept) return;
+    const zones = [...new Set((officialIndex || []).filter(e => e.dept === dept).map(e => e.zone).filter(Boolean))].sort();
+    zones.forEach(g => {
+      const opt = document.createElement("option");
+      opt.value = g; opt.textContent = g;
+      groupSelect.appendChild(opt);
+    });
+    groupSelect.disabled = false;
+  });
+
+  groupSelect.addEventListener("change", () => {
+    const dept = deptSelect.value;
+    const zone = groupSelect.value;
+    nameSelect.innerHTML = '<option value="">— Select official —</option>';
+    nameSelect.disabled = true;
+    if (!zone) return;
+    const seen = new Set();
+    const subset = (officialIndex || []).filter(e => e.dept === dept && e.zone === zone && e.name && !seen.has(e.name) && seen.add(e.name));
+    subset.sort((a, b) => a.name.localeCompare(b.name)).forEach(e => {
+      const opt = document.createElement("option");
+      opt.value = e.name;
+      opt.textContent = e.name + (e.role ? " (" + e.role + ")" : "");
+      nameSelect.appendChild(opt);
+    });
+    nameSelect.disabled = false;
+  });
+
+  nameSelect.addEventListener("change", () => {
+    const name = nameSelect.value;
+    if (!name) return;
+    const entry = (officialIndex || []).find(e => e.name === name);
+    if (entry) showDirectoryProfile(entry);
+  });
+}
+
+function showDirectoryProfile(entry) {
+  const profileEl = document.getElementById("dir-profile");
+  if (!profileEl) return;
+
+  const assignedIssues = getAssignedIssues(entry.name);
+  const initials = entry.name.split(" ").filter(Boolean).slice(0, 2).map(n => n[0]?.toUpperCase() || "").join("");
+
+  const deptColors = { BESCOM: "#92400e", BWSSB: "#0891b2", "Traffic Police": "#991b1b", Political: "#7c3aed", SWM: "#31572c" };
+  const avatarColor = deptColors[entry.dept] || "#1f4d3a";
+
+  const stats = {
+    total: assignedIssues.length,
+    inProgress: assignedIssues.filter(i => ["acknowledged", "in_progress"].includes(getStatus(i.id))).length,
+    resolved: assignedIssues.filter(i => getStatus(i.id) === "resolved").length,
+  };
+
+  const issueRows = assignedIssues.map(iss => {
+    const status = getStatus(iss.id);
+    const sla = getSLAStatus(iss);
+    const a = getAssignment(iss.id);
+    const assignedDate = a?.assignedAt
+      ? new Date(a.assignedAt).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" }) : "";
+    const statusOpts = STATUS_OPTIONS.map(o =>
+      `<option value="${o.value}"${status === o.value ? " selected" : ""}>${o.label}</option>`
+    ).join("");
+    const sevColor = iss.severity === "high" ? "var(--danger)" : iss.severity === "medium" ? "var(--warning)" : "var(--success)";
+    const sevBg = iss.severity === "high" ? "var(--danger-light)" : iss.severity === "medium" ? "var(--warning-light)" : "var(--success-light)";
+    return `
+      <div class="dir-issue-row">
+        <div class="dir-issue-meta">
+          <span class="q-priority-label" style="background:${sevBg};color:${sevColor}">${esc(iss.severity)}</span>
+          <span class="q-cat-badge">${esc(iss.category)}</span>
+          <span class="q-area">${esc(iss.area)}</span>
+          <span class="q-sla ${sla.cls}">${sla.label}</span>
+          ${assignedDate ? `<span class="dir-assigned-date">Raised ${esc(assignedDate)}</span>` : ""}
+        </div>
+        <div class="dir-issue-text">${esc(iss.text.length > 120 ? iss.text.slice(0, 120) + "…" : iss.text)}</div>
+        <div class="dir-issue-actions">
+          <select class="profile-status-select s-${esc(status)}" data-issue-id="${esc(String(iss.id))}">${statusOpts}</select>
+          ${iss.source_url ? `<a class="btn-source" href="${esc(iss.source_url)}" target="_blank" style="font-size:.7rem;padding:4px 8px">View Tweet &#8599;</a>` : ""}
+        </div>
+      </div>`;
+  }).join("");
+
+  const firstPhone = (entry.phone || "").split(";")[0].trim();
+  const emailBtn = entry.email
+    ? `<a class="ward-email-btn" href="https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(entry.email)}&su=${encodeURIComponent('[Civic Issue India] Civic Issue')}" target="_blank">&#128231; Email</a>` : "";
+  const phoneBtn = firstPhone
+    ? `<a class="sc-phone" href="tel:${encodeURIComponent(firstPhone.split(" ")[0])}">${esc(firstPhone)}</a>` : "";
+
+  profileEl.innerHTML = `
+    <div class="dir-profile-card">
+      <div class="profile-header">
+        <div class="profile-avatar" style="background:${avatarColor}">${esc(initials)}</div>
+        <div class="profile-info">
+          <div class="profile-name">${esc(entry.name)}</div>
+          <div class="profile-role">${esc(entry.role)}${entry.dept ? " &mdash; " + esc(entry.dept) : ""}</div>
+          ${entry.subgroup ? `<div class="profile-detail">${esc(entry.subgroup)}</div>` : ""}
+          ${entry.extra ? `<div class="profile-detail" style="color:var(--muted)">${esc(entry.extra)}</div>` : ""}
+          <div style="display:flex;gap:10px;align-items:center;margin-top:8px;flex-wrap:wrap">
+            ${phoneBtn}${emailBtn}
+          </div>
+        </div>
+        <div class="dir-stats">
+          <div class="dir-stat"><span class="dir-stat-num">${stats.total}</span><span class="dir-stat-label">Raised</span></div>
+          <div class="dir-stat dir-stat-progress"><span class="dir-stat-num">${stats.inProgress}</span><span class="dir-stat-label">Active</span></div>
+          <div class="dir-stat dir-stat-resolved"><span class="dir-stat-num">${stats.resolved}</span><span class="dir-stat-label">Resolved</span></div>
+        </div>
+      </div>
+      ${assignedIssues.length === 0
+        ? '<div class="profile-no-issues">No issues have been raised to this official yet. Use the "Raise to" button on any complaint.</div>'
+        : `<div class="profile-section-label">Issues Raised (${assignedIssues.length})</div>${issueRows}`}
+    </div>`;
+  profileEl.classList.remove("hidden");
+
+  profileEl.querySelectorAll(".profile-status-select").forEach(sel => {
+    sel.addEventListener("change", e => {
+      const id = e.target.dataset.issueId;
+      const val = e.target.value;
+      setStatus(id, val);
+      sel.className = `profile-status-select s-${val}`;
+      if (val === "resolved") {
+        const iss = allIssues.find(i => String(i.id) === String(id));
+        if (iss) showResolveModal(iss);
+      }
+      renderKPIs(allIssues);
+      renderQueue(getFiltered());
+    });
+  });
 }
 
 // ── Start ──────────────────────────────────────────────────────────
