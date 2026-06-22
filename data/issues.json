@@ -1080,6 +1080,24 @@
     "status": "open"
   },
   {
+    "id": "2069038140610973785",
+    "text": "@dpkBopanna @krishnabgowda sir the problem is there all over Bangalore ,today they lay the road , tomorrow BWSSB , or BESCOM or any other third party like Airtel jio they come and dig the roads , on top of that roads laid today and with in 3 months all path holes! No accountability . HBFY 🙏",
+    "author": "@harshamakam",
+    "date": "2026-06-22T12:41:48+00:00",
+    "category": "Electricity",
+    "area": "Bangalore",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 2,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2069038140610973785",
+    "keywords": [
+      "bescom"
+    ],
+    "status": "open"
+  },
+  {
     "id": "2054518266387902916",
     "text": "@EduMinOfIndia @dpradhanbjp \nAlarming state of affairs in the National Law School of India University, Bangalore. No water available and hostel facilities worsening. A lift falling from 2 floors carrying 2 students inside, risking their lives. No complaints addressed.",
     "author": "@Anchalshraff",
@@ -1563,9 +1581,9 @@
     "author": "@Praveenstarboy1",
     "date": "2026-05-24T07:55:54+00:00",
     "category": "Waste",
-    "area": "Vijayanagar",
-    "ward_name": "Vinayakanagar",
-    "ward_no": "30",
+    "area": "Marenahalli",
+    "ward_name": "",
+    "ward_no": "",
     "severity": "low",
     "likes": 1,
     "retweets": 0,
@@ -2568,7 +2586,7 @@
     "author": "@chairmanbwssb",
     "date": "2026-06-22T09:36:48+00:00",
     "category": "Other",
-    "area": "HSR Layout",
+    "area": "Hsr Layout",
     "ward_name": "HSR Layout",
     "ward_no": "72",
     "severity": "low",
@@ -7143,7 +7161,7 @@
     "author": "@a_r_y_a__s_e_n",
     "date": "2026-05-27T13:13:38+00:00",
     "category": "Waste",
-    "area": "Kadugodi",
+    "area": "Belathur",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -8535,7 +8553,7 @@
     "author": "@anyrudh79",
     "date": "2026-05-31T11:35:32+00:00",
     "category": "Waste",
-    "area": "Kanakanapalya",
+    "area": "Ashoka Pillar",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -11000,9 +11018,9 @@
     "author": "@chandrsh0808",
     "date": "2026-06-08T09:38:56+00:00",
     "category": "Waste",
-    "area": "Kothanur",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "JP Nagar",
+    "ward_name": "J.P Nagar",
+    "ward_no": "14",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -15226,7 +15244,7 @@
     "author": "@sadat01",
     "date": "2026-06-22T08:42:54+00:00",
     "category": "Electricity",
-    "area": "Pillanagarden",
+    "area": "Sagayapuram",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -15274,6 +15292,43 @@
     "keywords": [
       "garbage",
       "waste"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2069072562118943018",
+    "text": "@comm_blr_south This area falls under Bangalore South corporation and is full of garbage. Can you please clear and maintain it! ⁦@GBA_office⁩ ⁦@GBAChiefComm⁩ https://t.co/abTFr4OHFK",
+    "author": "@Bengaluruppl",
+    "date": "2026-06-22T14:58:34+00:00",
+    "category": "Waste",
+    "area": "Bangalore South",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2069072562118943018",
+    "keywords": [
+      "garbage"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2069065905615901102",
+    "text": "🗑 Garbage dump at 116 2nd cross Balaji layout, near Ombr park , behind hp petrol pump, Banaswadi, Kalyan Nagar.\nMLA: K. J. George (INC)\nNorth #31 · Minor severity\nTrack it → https://t.co/l1VV0SbyvU\n#NammaKasa #Bengaluru \nGarbage guy is not picking my garbage for the nth time",
+    "author": "@Bab07026754828",
+    "date": "2026-06-22T14:32:07+00:00",
+    "category": "Waste",
+    "area": "Balaji Layout, Banaswadi, Kalyan Nagar",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2069065905615901102",
+    "keywords": [
+      "garbage",
+      "dump"
     ],
     "status": "open"
   }
