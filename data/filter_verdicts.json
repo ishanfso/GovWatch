@@ -4291,5 +4291,221 @@
   "2068864545200972015": {
     "verdict": "no",
     "area": null
+  },
+  "2068999939913605204": {
+    "verdict": "no",
+    "area": null
+  },
+  "2068992537952415767": {
+    "verdict": "no",
+    "area": null
+  },
+  "2068973520542163263": {
+    "verdict": "no",
+    "area": null
+  },
+  "2068947920905539658": {
+    "verdict": "no",
+    "area": null
+  },
+  "2068947822989484232": {
+    "verdict": "no",
+    "area": null
+  },
+  "2068947681637220368": {
+    "verdict": "no",
+    "area": null
+  },
+  "2068947593921700330": {
+    "verdict": "no",
+    "area": null
+  },
+  "2068947509612027991": {
+    "verdict": "no",
+    "area": null
+  },
+  "2068947407568764952": {
+    "verdict": "no",
+    "area": null
+  },
+  "2068954532751806622": {
+    "verdict": "no",
+    "area": null
+  },
+  "2068934752674222408": {
+    "verdict": "no",
+    "area": null
+  },
+  "2068987952634658869": {
+    "verdict": "no",
+    "area": null
+  },
+  "2068954388421636131": {
+    "verdict": "no",
+    "area": null
+  },
+  "2069000678278910078": {
+    "verdict": "no",
+    "area": null
+  },
+  "2069006734337691869": {
+    "verdict": "no",
+    "area": null
+  },
+  "2068992769486672223": {
+    "verdict": "no",
+    "area": null
+  },
+  "2068940039325991006": {
+    "verdict": "no",
+    "area": null
+  },
+  "2068943865453928698": {
+    "verdict": "yes",
+    "area": null
+  },
+  "2068991586550354109": {
+    "verdict": "yes",
+    "area": "HSR Layout"
+  },
+  "2068960952415121565": {
+    "verdict": "no",
+    "area": null
+  },
+  "2068941662697779593": {
+    "verdict": "no",
+    "area": "Indiranagar"
+  },
+  "2068956464916709795": {
+    "verdict": "no",
+    "area": null
+  },
+  "2068947557913625035": {
+    "verdict": "no",
+    "area": null
+  },
+  "2068978932532261186": {
+    "verdict": "no",
+    "area": null
+  },
+  "2068982678251319710": {
+    "verdict": "no",
+    "area": null
+  },
+  "2068954728307028097": {
+    "verdict": "no",
+    "area": null
+  },
+  "2068942351893221629": {
+    "verdict": "no",
+    "area": null
+  },
+  "2068953302528892991": {
+    "verdict": "yes",
+    "area": "Whitefield"
+  },
+  "2069003754813460801": {
+    "verdict": "no",
+    "area": "BTM Layout 4th Stage"
+  },
+  "2069003951295578523": {
+    "verdict": "no",
+    "area": "Varthur"
+  },
+  "2069002716609990820": {
+    "verdict": "no",
+    "area": null
+  },
+  "2068941012509282572": {
+    "verdict": "no",
+    "area": null
+  },
+  "2068979147184185701": {
+    "verdict": "no",
+    "area": null
+  },
+  "2068978020283728195": {
+    "verdict": "yes",
+    "area": "Pillanagarden"
+  },
+  "2068973520810398202": {
+    "verdict": "yes",
+    "area": "Reva Circle"
+  },
+  "2068966716617769065": {
+    "verdict": "no",
+    "area": "Kolar"
+  },
+  "2068952840249500137": {
+    "verdict": "no",
+    "area": "Yeshwanthpur"
+  },
+  "2068932637197209871": {
+    "verdict": "no",
+    "area": null
+  },
+  "2068927353967763601": {
+    "verdict": "no",
+    "area": null
+  },
+  "2069014411743035867": {
+    "verdict": "no",
+    "area": "Chinnapanahalli"
+  },
+  "2068997935745081445": {
+    "verdict": "no",
+    "area": null
+  },
+  "2068962522607272035": {
+    "verdict": "no",
+    "area": "Shivajinagar"
+  },
+  "2068944526874705965": {
+    "verdict": "yes",
+    "area": "Ward No. 12"
+  },
+  "2068934491553607687": {
+    "verdict": "no",
+    "area": null
+  },
+  "2069011851594387767": {
+    "verdict": "no",
+    "area": null
+  },
+  "2069008304282730975": {
+    "verdict": "no",
+    "area": null
+  },
+  "2068927505940328641": {
+    "verdict": "no",
+    "area": null
+  },
+  "2068976560481468808": {
+    "verdict": "no",
+    "area": null
+  },
+  "2068962368978399652": {
+    "verdict": "no",
+    "area": "Dommasandra"
+  },
+  "2068956004767965630": {
+    "verdict": "no",
+    "area": null
+  },
+  "2068950903265370447": {
+    "verdict": "no",
+    "area": null
+  },
+  "2068948015931683161": {
+    "verdict": "no",
+    "area": null
+  },
+  "2068947312257429929": {
+    "verdict": "no",
+    "area": null
+  },
+  "2068941897373188167": {
+    "verdict": "no",
+    "area": null
   }
 }
