@@ -5,6 +5,23 @@ Format: `[Date] - What changed and why`
 
 ---
 
+## [2026-06-22] — Expand area detection: Bangalore-tagged issues drop from 78% to 40%
+
+### What changed
+
+**`scripts/process_issues.py`**
+
+Root cause fixed: `BANGALORE_AREAS` previously had ~50 hardcoded entries. Most tweets mentioned "Bangalore" generically so 625/799 issues fell through to the default "Bangalore" tag.
+
+- `MANUAL_AREA_ALIASES`: Expanded to ~60 manually curated entries (was ~50)
+- `_build_area_list()`: New startup function that merges ward names from `wards.json` (369 entries) + BESCOM unit names from `bescom_units.json` (484 entries) with the manual aliases, filtering entries shorter than 4 characters and sorting longest-first so specific names ("BTM Layout") match before short sub-strings ("BTM")
+- `PINCODE_AREA`: New dict mapping 74 Bangalore pincodes (560001–560104) to canonical area names as a fallback for tweets that include a postcode but no area name
+- `extract_area()`: Updated to try name match → pincode regex → "Bangalore" fallback (was name-only → fallback)
+
+**Result**: Issues with a specific area tag rose from 174/799 (22%) to 476/799 (60%). "Bangalore"-tagged count fell from 625 to 323. The 323 remaining are genuinely location-unspecific tweets.
+
+---
+
 ## [2026-06-21] — WhatsApp message generator + Ward heat map
 
 ### What changed

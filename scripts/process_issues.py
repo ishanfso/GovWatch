@@ -55,21 +55,98 @@ CATEGORY_RULES = {
     ],
 }
 
-# Bangalore areas — used to extract location from tweet text
-BANGALORE_AREAS = [
+# Bangalore area names — built at startup from ward + BESCOM data + manual aliases.
+# Sorted longest-first so "BTM Layout" matches before "BTM", "Electronic City" before "City", etc.
+# Falls back to pincode lookup (560xxx) if no name match.
+
+MANUAL_AREA_ALIASES = [
     "Koramangala", "Indiranagar", "Whitefield", "Jayanagar", "HSR Layout",
     "BTM Layout", "Marathahalli", "Sarjapur", "Electronic City", "Hebbal",
     "Malleshwaram", "Rajajinagar", "JP Nagar", "Bannerghatta", "Yelahanka",
     "MG Road", "Cubbon Park", "Lalbagh", "KR Puram", "Lavelle Road",
     "Bellandur", "Hoskote", "Anekal", "Domlur", "Madiwala",
-    "Basavanagudi", "Vijayanagar", "Yeshwantpur", "Peenya", "Tumkur Road",
-    "Outer Ring Road", "ORR", "ITPL", "Manyata", "Nagawara",
+    "Basavanagudi", "Vijayanagar", "Yeshwantpur", "Peenya", "Nagawara",
     "RT Nagar", "Kalyan Nagar", "HBR Layout", "Kammanahalli",
     "Cox Town", "Benson Town", "Frazer Town", "Richards Town",
     "KG Nagar", "Padmanabha Nagar", "Girinagar", "Kumaraswamy Layout",
-    "Electronic City", "Bommanahalli", "Hongasandra", "Hulimavu",
-    "Begur", "Gottigere", "Bannerghatta Road",
+    "Bommanahalli", "Hongasandra", "Hulimavu", "Begur", "Gottigere",
+    "Jakkur", "Singasandra", "Halehalli", "Mahadevapura", "Mahadevpura",
+    "Chandapura", "Narayanapura", "Shivajinagar", "Gandhinagar",
+    "Hennur", "Horamavu", "Thanisandra", "Bhattarahalli", "Varthur",
+    "Kengeri", "Uttarahalli", "Banashankari", "Wilson Garden",
+    "Shanthinagar", "CV Raman Nagar", "Ramamurthy Nagar", "Banaswadi",
+    "Byrathi", "Kothanur", "Amruthahalli", "Jalahalli", "Mathikere",
+    "Sahakara Nagar", "Sanjay Nagar", "Kaggadasapura", "Munnekolala",
+    "Munnekollala", "Brookefield", "Doddanekundi", "Devanahalli",
+    "Basavanagar", "Austin Town", "Ulsoor", "Richmond Town",
+    "Shivaji Nagar", "HAL", "Lakshmipura", "Nagarbhavi",
+    "Nayandahalli", "RR Nagar", "Rajarajeshwari Nagar",
+    "Abbigere", "Bagalagunte", "Chikkabanavara", "Dasarahalli",
+    "Maruthi Nagar", "Kasavanahalli", "ITPL", "Outer Ring Road",
+    "Akshayanagara", "Mahalakshmi Layout", "Hosakerehalli",
+    "Padmanabhanagar", "Yeshwanthpur", "KG Halli", "Vignan Nagar",
 ]
+
+# Pincode → canonical area name (560xxx range covers Bangalore)
+PINCODE_AREA = {
+    "560001": "MG Road",          "560002": "Gandhinagar",      "560003": "Shivajinagar",
+    "560004": "Cubbon Park",       "560005": "Ulsoor",            "560008": "Malleshwaram",
+    "560009": "Rajajinagar",       "560010": "Rajajinagar",       "560011": "Rajajinagar",
+    "560012": "Rajajinagar",       "560013": "Vijayanagar",       "560014": "Vijayanagar",
+    "560015": "Vijayanagar",       "560016": "Basavanagudi",      "560017": "Jayanagar",
+    "560018": "Jayanagar",         "560019": "Jayanagar",         "560020": "Jayanagar",
+    "560021": "Padmanabhanagar",   "560022": "Banashankari",      "560023": "Banashankari",
+    "560026": "Yeshwanthpur",      "560028": "Peenya",            "560029": "Mahalakshmi Layout",
+    "560030": "Nagawara",          "560031": "Banaswadi",         "560032": "HBR Layout",
+    "560033": "Kammanahalli",      "560034": "RT Nagar",          "560035": "Kalyan Nagar",
+    "560036": "Hennur",            "560037": "Kaggadasapura",     "560038": "Domlur",
+    "560040": "Indiranagar",       "560041": "Indiranagar",       "560042": "Frazer Town",
+    "560043": "Shivajinagar",      "560044": "Hebbal",            "560045": "Yelahanka",
+    "560046": "Nagawara",          "560047": "Malleshwaram",      "560050": "Koramangala",
+    "560051": "Koramangala",       "560052": "Madiwala",          "560053": "BTM Layout",
+    "560054": "Yeshwanthpur",      "560055": "Rajajinagar",       "560056": "Vijayanagar",
+    "560057": "Hosakerehalli",     "560058": "Kengeri",           "560059": "Uttarahalli",
+    "560060": "Girinagar",         "560061": "Padmanabhanagar",   "560062": "JP Nagar",
+    "560063": "JP Nagar",          "560064": "Bannerghatta",      "560065": "Bannerghatta",
+    "560066": "Electronic City",   "560067": "Electronic City",   "560068": "Singasandra",
+    "560069": "Hulimavu",          "560070": "Hongasandra",       "560071": "Bommanahalli",
+    "560072": "HSR Layout",        "560073": "Bellandur",         "560074": "Sarjapur",
+    "560075": "Marathahalli",      "560076": "Mahadevapura",      "560077": "KR Puram",
+    "560078": "Whitefield",        "560079": "Varthur",           "560080": "Whitefield",
+    "560081": "Devanahalli",       "560083": "Yelahanka",         "560085": "Jakkur",
+    "560086": "Hebbal",            "560087": "Thanisandra",       "560090": "Nagarbhavi",
+    "560091": "RR Nagar",          "560092": "Kengeri",           "560093": "Uttarahalli",
+    "560094": "Subramanyapura",    "560095": "Nagarbhavi",        "560096": "Vijayanagar",
+    "560097": "Dasarahalli",       "560098": "Jalahalli",         "560100": "Yelahanka",
+    "560103": "Horamavu",          "560104": "Banaswadi",
+}
+
+
+def _build_area_list():
+    """Load ward names + BESCOM unit names at startup and merge with manual aliases."""
+    areas = set(MANUAL_AREA_ALIASES)
+    try:
+        with open(WARDS_FILE, encoding="utf-8") as f:
+            wards_data = json.load(f)
+        for w in wards_data:
+            if w.get("ward_name"):
+                areas.add(w["ward_name"].strip())
+    except Exception:
+        pass
+    try:
+        bescom_path = os.path.join(os.path.dirname(__file__), "../data/officials/bescom_units.json")
+        with open(bescom_path, encoding="utf-8") as f:
+            bu = json.load(f)
+        for u in bu:
+            if u.get("om_unit"):
+                areas.add(u["om_unit"].strip().title())
+    except Exception:
+        pass
+    # Sort longest-first so specific names match before short sub-strings
+    return sorted({a for a in areas if len(a) > 3}, key=lambda x: -len(x))
+
+
+BANGALORE_AREAS = _build_area_list()
 
 
 def categorize(text: str) -> str:
@@ -82,9 +159,17 @@ def categorize(text: str) -> str:
 
 
 def extract_area(text: str) -> str:
+    tl = text.lower()
+    # 1. Area name match (longest-first to avoid sub-string shadowing)
     for area in BANGALORE_AREAS:
-        if area.lower() in text.lower():
+        if area.lower() in tl:
             return area
+    # 2. Pincode fallback
+    m = re.search(r'\b(560\s*\d{3})\b', text)
+    if m:
+        pin = m.group(1).replace(" ", "")
+        if pin in PINCODE_AREA:
+            return PINCODE_AREA[pin]
     return "Bangalore"
 
 
