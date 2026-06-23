@@ -1,4 +1,4 @@
-const SUPABASE_URL  = "https://YOUR_PROJECT_ID.supabase.co";
-const SUPABASE_ANON = "YOUR_ANON_KEY_HERE";
+const SUPABASE_URL  = "https://efdhdzanliqghwggjrco.supabase.co";
+const SUPABASE_ANON = "sb_publishable_nxxkf55J58wZsc1wvtchYQ_qGwl3r1l";
 const { createClient } = supabase;
 const sb = createClient(SUPABASE_URL, SUPABASE_ANON);
