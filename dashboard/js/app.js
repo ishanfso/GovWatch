@@ -455,6 +455,7 @@ function switchTab(tab) {
   document.getElementById(`tab-${tab}`).classList.remove("hidden");
 
   const filtered = getFiltered();
+  if (tab === "queue")       renderQueue(filtered);
   if (tab === "map")         renderMap(filtered);
   if (tab === "departments") renderDepartments(filtered);
   if (tab === "analytics")   renderAnalytics(filtered);
@@ -1059,8 +1060,8 @@ function renderWardHeatMap(issues) {
       const area = tile.dataset.area;
       activeFilters.area = area;
       document.getElementById("area-filter").value = area;
-      applyFilters();
       switchTab("queue");
+      applyFilters();
     });
   });
 }
