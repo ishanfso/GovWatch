@@ -1057,6 +1057,7 @@ function renderWardHeatMap(issues) {
   el.querySelectorAll(".heatmap-tile").forEach(tile => {
     tile.addEventListener("click", () => {
       const area = tile.dataset.area;
+      activeFilters.area = area;
       document.getElementById("area-filter").value = area;
       applyFilters();
       switchTab("queue");
