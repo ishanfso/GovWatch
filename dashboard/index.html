@@ -18,7 +18,7 @@
 
   <!-- Security -->
   <meta http-equiv="X-Content-Type-Options" content="nosniff" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://*.tile.openstreetmap.org https://nominatim.openstreetmap.org; connect-src 'self' https://nominatim.openstreetmap.org; frame-ancestors 'none';" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://*.tile.openstreetmap.org https://nominatim.openstreetmap.org; connect-src 'self' https://nominatim.openstreetmap.org https://*.supabase.co wss://*.supabase.co; frame-ancestors 'none';" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -27,6 +27,24 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+  <!-- Supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../js/supabase-client.js"></script>
+  <!-- Auth guard: redirect to landing if not logged in -->
+  <script>
+  (async () => {
+    const { data: { session } } = await sb.auth.getSession();
+    if (!session) window.location.replace("/");
+  })();
+  </script>
+
+  <style>
+  .header-user { display:flex; align-items:center; gap:10px; margin-left:auto; }
+  .user-email { font-size:0.8rem; color:#64748b; }
+  .btn-signout { font-size:0.78rem; padding:4px 10px; border-radius:4px; background:transparent; border:1px solid #cbd5e1; color:#64748b; cursor:pointer; }
+  .btn-signout:hover { background:#f1f5f9; }
+  </style>
 </head>
 <body>
 
@@ -60,6 +78,10 @@
         <span class="data-badge" id="data-source-badge">Sample Data</span>
         <span class="last-updated" id="last-updated"></span>
         <button class="header-btn" id="export-csv">Export CSV</button>
+      </div>
+      <div class="header-user" id="header-user">
+        <span class="user-email" id="user-email"></span>
+        <button class="btn-signout" id="btn-signout">Sign out</button>
       </div>
     </div>
   </header>

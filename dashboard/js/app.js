@@ -132,6 +132,11 @@ const ROLE_LABELS = {
 // ── State ──────────────────────────────────────────────────────────
 
 let allIssues = [];
+
+// Supabase issue state cache — populated at startup, kept in sync via realtime
+let issueStateCache = {};      // { [issue_id]: { status, assigned_to } }
+let currentUser = null;
+
 let activeFilters = {
   search: "", category: "all", area: "all", dept: "all", role: "",
   datePreset: "all", dateFrom: "", dateTo: "",
@@ -173,6 +178,8 @@ async function init() {
   }
 
   allIssues = await loadData();
+  currentUser = (await sb.auth.getUser()).data.user;
+  await loadIssueStates();
 
   if (allIssues.length === 0) {
     document.getElementById("queue-list").innerHTML =
@@ -238,6 +245,15 @@ async function init() {
 
   // Pre-load officials data in the background so smart contacts are ready when issues are clicked
   initOfficials();
+
+  // Show user email + wire logout
+  const emailEl = document.getElementById("user-email");
+  if (emailEl && currentUser) emailEl.textContent = currentUser.email;
+  const signoutBtn = document.getElementById("btn-signout");
+  if (signoutBtn) signoutBtn.addEventListener("click", async () => {
+    await sb.auth.signOut();
+    window.location.replace("/");
+  });
 }
 
 // ── KPIs ───────────────────────────────────────────────────────────
@@ -1196,32 +1212,54 @@ function renderRoleBanner(role) {
   banner.classList.remove("hidden");
 }
 
-// ── Status (localStorage) ──────────────────────────────────────────
+// ── Status (Supabase-backed, sync reads from cache) ────────────────
 
 function getStatus(id) {
-  return localStorage.getItem(`gw_status_${id}`) || "open";
+  return issueStateCache[id]?.status || "open";
 }
 
 function setStatus(id, value) {
-  localStorage.setItem(`gw_status_${id}`, value);
+  if (!issueStateCache[id]) issueStateCache[id] = {};
+  issueStateCache[id].status = value;
+  sb.from("issue_actions").upsert(
+    { issue_id: id, status: value, updated_by_email: currentUser?.email || "", updated_at: new Date().toISOString() },
+    { onConflict: "issue_id" }
+  );
 }
 
-// ── Assignment (localStorage) ──────────────────────────────────────
+// ── Assignment (Supabase-backed, sync reads from cache) ────────────
 
 function getAssignment(id) {
-  const stored = localStorage.getItem(`gw_assigned_${id}`);
-  try { return stored ? JSON.parse(stored) : null; } catch (_) { return null; }
+  return issueStateCache[id]?.assigned_to || null;
 }
 
 function setAssignment(id, contact) {
-  if (!contact) {
-    localStorage.removeItem(`gw_assigned_${id}`);
-  } else {
-    localStorage.setItem(`gw_assigned_${id}`, JSON.stringify({
-      name: contact.name, role: contact.role, dept: contact.dept || "",
-      detail: contact.detail || "", assignedAt: new Date().toISOString(),
-    }));
-  }
+  if (!issueStateCache[id]) issueStateCache[id] = {};
+  const assigned = contact ? {
+    name: contact.name, role: contact.role, dept: contact.dept || "",
+    detail: contact.detail || "", assignedAt: new Date().toISOString(),
+  } : null;
+  issueStateCache[id].assigned_to = assigned;
+  sb.from("issue_actions").upsert(
+    { issue_id: id, assigned_to: assigned, updated_by_email: currentUser?.email || "", updated_at: new Date().toISOString() },
+    { onConflict: "issue_id" }
+  );
+}
+
+async function loadIssueStates() {
+  try {
+    const { data } = await sb.from("issue_actions").select("issue_id,status,assigned_to");
+    if (data) data.forEach(r => { issueStateCache[r.issue_id] = { status: r.status, assigned_to: r.assigned_to }; });
+  } catch (_) {}
+  // Realtime: keep cache in sync when other users make changes
+  sb.channel("gw_issue_actions")
+    .on("postgres_changes", { event: "*", schema: "public", table: "issue_actions" }, ({ new: row }) => {
+      if (row?.issue_id) {
+        issueStateCache[row.issue_id] = { status: row.status, assigned_to: row.assigned_to };
+        if (activeTab === "queue" || activeTab === "departments") applyFilters();
+      }
+    })
+    .subscribe();
 }
 
 function getAssignedIssues(officialName) {

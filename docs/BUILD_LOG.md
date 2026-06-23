@@ -4,6 +4,17 @@ Every feature and file built in GovWatch, with dates and status.
 
 ---
 
+## Supabase Auth Integration (added 2026-06-23)
+
+| File | Date Built | Status | Description |
+|---|---|---|---|
+| `js/supabase-client.js` | 2026-06-23 | ✅ Live | Shared Supabase client — URL + anon key (fill in after creating project) |
+| `js/landing.js` | 2026-06-23 | ✅ Live | Landing page auth logic — session check, Google OAuth, email sign-in/sign-up |
+| `css/landing.css` | 2026-06-23 | ✅ Live | Landing page styles — dark theme, city grid, auth box |
+| `scripts/supabase_schema.sql` | 2026-06-23 | ✅ Live | SQL schema for Supabase — profiles, issue_actions, issue_comments tables + RLS |
+
+---
+
 ## Infrastructure & Documentation
 
 | File | Date Built | Status | Description |

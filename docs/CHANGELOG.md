@@ -5,6 +5,26 @@ Format: `[Date] - What changed and why`
 
 ---
 
+## [2026-06-23] — Supabase auth + landing page + migrate localStorage to shared state
+
+### What changed
+
+**New files:**
+- `index.html` — Full landing page replacing the old redirect. Shows city selector (Bangalore active, 5 cities coming soon), Google OAuth button, and email/password sign-in/sign-up form with toggle. Supabase handles auth.
+- `js/supabase-client.js` — Shared Supabase client (URL + anon key placeholders). Used by both landing page and dashboard.
+- `js/landing.js` — Landing page auth logic: session check on load, Google OAuth redirect, email sign-in/sign-up form handling, toggle between sign-in and sign-up modes.
+- `css/landing.css` — Dark landing page styles matching dashboard palette (`#0d1117` background, `#2d6a4f` green accent, responsive 3→2→1 city grid).
+- `scripts/supabase_schema.sql` — Complete SQL to run in Supabase SQL Editor. Creates `profiles`, `issue_actions`, and `issue_comments` tables with RLS policies and a realtime publication on `issue_actions`.
+
+**Modified files:**
+- `dashboard/index.html` — Added Supabase CDN + client script + auth guard (redirects to `/` if no session). Updated CSP to allow `*.supabase.co` in connect-src. Added `header-user` div with user email display and Sign Out button.
+- `dashboard/js/app.js` — Replaced `localStorage`-based `getStatus`/`setStatus`/`getAssignment`/`setAssignment` with Supabase-backed equivalents that read from an in-memory `issueStateCache` (fast, synchronous) and write to `issue_actions` table. Added `loadIssueStates()` which fetches all rows at startup and subscribes to a Postgres realtime channel so status changes sync live across all users. Added user email display and sign-out wiring in `init()`.
+
+### Why
+Issue status and assignments were stored in each user's browser (`localStorage`). This meant one official couldn't see another's updates. Supabase gives a shared, real-time state that all logged-in users see immediately — no page refresh needed.
+
+---
+
 ## [2026-06-22] — Expand area detection: Bangalore-tagged issues drop from 78% to 40%
 
 ### What changed
