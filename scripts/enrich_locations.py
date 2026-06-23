@@ -277,10 +277,11 @@ def main():
             skipped += 1
             continue
 
-        print(f"  → lat={geo['lat']:.4f} lon={geo['lon']:.4f} candidates={geo['candidates']}")
+        candidates = geo.get("candidates") or [extracted]
+        print(f"  → lat={geo['lat']:.4f} lon={geo['lon']:.4f} candidates={candidates}")
 
         # Step 3: Ward match
-        ward = match_ward(geo["candidates"], wards, area_lookup)
+        ward = match_ward(candidates, wards, area_lookup)
 
         issues[idx]["area"] = extracted
         issues[idx]["lat"] = geo["lat"]
