@@ -950,9 +950,6 @@
       "Bengaluru Central City Corporation"
     ]
   },
-  "bangalore toll gate near parle factory": {
-    "skip": true
-  },
   "jaraganahalli": {
     "lat": 12.8987896,
     "lon": 77.5776273,
@@ -2266,9 +2263,6 @@
     "lat": 13.002909,
     "lon": 77.6234618
   },
-  "vashi bridge": {
-    "skip": true
-  },
   "malleswaram": {
     "lat": 13.0027353,
     "lon": 77.5703253,
@@ -2426,9 +2420,6 @@
       "Kaggadasapura",
       "Bengaluru Central City Corporation"
     ]
-  },
-  "vashi": {
-    "skip": true
   },
   "choodasandra": {
     "lat": 12.8883623,
@@ -2726,9 +2717,6 @@
       "Rajamahal",
       "Bengaluru West City Corporation"
     ]
-  },
-  "i need to identify the specific bangalore locality from the coordinates and address provided in the tweet.\n\nthe coordinates given are (13.0523656": {
-    "skip": true
   },
   "narullahalli": null,
   "munnekolala": {
@@ -4229,12 +4217,6 @@
     "lat": 12.8668939,
     "lon": 77.5344087
   },
-  "o&m - v(cid:13) ( saraguru ), bangalore, karnataka": {
-    "skip": true
-  },
-  "o&m-i, bangalore, karnataka": {
-    "skip": true
-  },
   "frazer town, bangalore, karnataka": {
     "lat": 12.9975851,
     "lon": 77.6136744
@@ -4245,9 +4227,6 @@
   "kallambella, bangalore, karnataka": null,
   "channakeshavn agar, bangalore, karnataka": null,
   "nangli, bangalore, karnataka": null,
-  "o&m - iii(cid:13) (kodamba lli), bangalore, karnataka": {
-    "skip": true
-  },
   "kempanahalli, bangalore, karnataka": {
     "lat": 13.1108559,
     "lon": 77.5560765
@@ -4354,9 +4333,6 @@
     "lon": 77.6908858
   },
   "kyathsandra (east section), bangalore, karnataka": null,
-  "o&m - ii(cid:13) ( kudlur ), bangalore, karnataka": {
-    "skip": true
-  },
   "o&m5, bangalore, karnataka": {
     "lat": 13.0211565,
     "lon": 77.7660648
@@ -4380,9 +4356,6 @@
     "lon": 77.4203949
   },
   "karahalli, bangalore, karnataka": null,
-  "o&m -iii(cid:13) ( mudigere ), bangalore, karnataka": {
-    "skip": true
-  },
   "bannikuppe-1, bangalore, karnataka": null,
   "basaveshwara nagar, bangalore, karnataka": {
     "lat": 12.991257,
@@ -4416,9 +4389,6 @@
     "lat": 12.9188287,
     "lon": 77.6703171
   },
-  "o&m-ii, bangalore, karnataka": {
-    "skip": true
-  },
   "venkateshp ura, bangalore, karnataka": null,
   "hunasena halli, bangalore, karnataka": {
     "lat": 13.1398615,
@@ -4451,9 +4421,6 @@
     "lat": 12.9280952,
     "lon": 77.5488835
   },
-  "o&m -ii, bangalore, karnataka": {
-    "skip": true
-  },
   "c s pura, bangalore, karnataka": {
     "lat": 12.9877747,
     "lon": 77.5640956
@@ -4471,9 +4438,6 @@
   "rpc layout, bangalore, karnataka": {
     "lat": 12.9609115,
     "lon": 77.5358407
-  },
-  "o&m -i(cid:13) ( honganu r ), bangalore, karnataka": {
-    "skip": true
   },
   "bukkapattana, bangalore, karnataka": null,
   "baguru, bangalore, karnataka": {
@@ -4526,9 +4490,6 @@
   },
   "dodda alahalli, bangalore, karnataka": null,
   "maralav adi, bangalore, karnataka": null,
-  "o&m 1i, bangalore, karnataka": {
-    "skip": true
-  },
   "chellur, bangalore, karnataka": null,
   "venkatapura, bangalore, karnataka": {
     "lat": 12.8839153,
@@ -4601,12 +4562,6 @@
     "lon": 77.5197351
   },
   "nonavinkere, bangalore, karnataka": null,
-  "central section, bangalore, karnataka": {
-    "skip": true
-  },
-  "o&m - iv(cid:13) ( b.v halli ), bangalore, karnataka": {
-    "skip": true
-  },
   "mahadevapu ra, bangalore, karnataka": {
     "lat": 12.9965445,
     "lon": 77.6927176
@@ -4709,9 +4664,6 @@
     "lat": 12.9661076,
     "lon": 77.5115672
   },
-  "o&m1(santhebennur), bangalore, karnataka": {
-    "skip": true
-  },
   "haggenahalli, bangalore, karnataka": null,
   "aimangala, bangalore, karnataka": null,
   "baramasagara, bangalore, karnataka": null,
@@ -4743,9 +4695,6 @@
     "lon": 77.6188862
   },
   "vayalikaval, bangalore, karnataka": null,
-  "o&m -i, bangalore, karnataka": {
-    "skip": true
-  },
   "kudur, bangalore, karnataka": null,
   "vemgal, bangalore, karnataka": null,
   "hal, bangalore, karnataka": {
@@ -4815,9 +4764,6 @@
   "c k pura, bangalore, karnataka": {
     "lat": 13.0061586,
     "lon": 77.7006486
-  },
-  "north section (sira gate), bangalore, karnataka": {
-    "skip": true
   },
   "rt street, bangalore, karnataka": {
     "lat": 13.0303394,
@@ -4970,9 +4916,6 @@
     "lon": 77.7392369
   },
   "santhe mavatthuru, bangalore, karnataka": null,
-  "o&m-iii, bangalore, karnataka": {
-    "skip": true
-  },
   "kanchipura, bangalore, karnataka": {
     "lat": 12.9082967,
     "lon": 79.8344944
@@ -5087,9 +5030,6 @@
   "handanakere, bangalore, karnataka": null,
   "kunduru, bangalore, karnataka": null,
   "neelagunda, bangalore, karnataka": null,
-  "o&m -iii, bangalore, karnataka": {
-    "skip": true
-  },
   "honnudike, bangalore, karnataka": {
     "lat": 13.037077,
     "lon": 77.6413572
@@ -5183,9 +5123,6 @@
     "lat": 13.069641,
     "lon": 77.5857251
   },
-  "west section (chickpete), bangalore, karnataka": {
-    "skip": true
-  },
   "poonamghatta (arsikere), bangalore, karnataka": null,
   "kathige, bangalore, karnataka": {
     "lat": 13.1177735,
@@ -5201,9 +5138,6 @@
     "lat": 12.9207814,
     "lon": 77.6108339
   },
-  "o&m-iv, bangalore, karnataka": {
-    "skip": true
-  },
   "malladihalli, bangalore, karnataka": null,
   "shankarpuram, bangalore, karnataka": null,
   "bellavi, bangalore, karnataka": {
@@ -5213,9 +5147,6 @@
   "o&m6, bangalore, karnataka": {
     "lat": 13.0211565,
     "lon": 77.7660648
-  },
-  "devasandra service station / k r puram, bangalore, karnataka": {
-    "skip": true
   },
   "chamarajapete, bangalore, karnataka": {
     "lat": 12.9584184,
@@ -5233,12 +5164,6 @@
   "yalahanka new town, bangalore, karnataka": {
     "lat": 13.0995253,
     "lon": 77.576873
-  },
-  "magadi road 1/ magadi road 2, bangalore, karnataka": {
-    "skip": true
-  },
-  "challakere / horamavu / kalkere / kothanur-byrathi, bangalore, karnataka": {
-    "skip": true
   },
   "lingarajapuram, bangalore, karnataka": {
     "lat": 13.0093949,
@@ -5304,9 +5229,6 @@
     "lat": 13.0419311,
     "lon": 77.5160112
   },
-  "ittamadu / devagiri 1 & 2, bangalore, karnataka": {
-    "skip": true
-  },
   "yeshwanthapura, bangalore, karnataka": {
     "lat": 13.0178712,
     "lon": 77.5564667
@@ -5322,9 +5244,6 @@
   "bannappa park / sudhamanagar, bangalore, karnataka": {
     "lat": 12.9691224,
     "lon": 77.5855368
-  },
-  "nagendra block / girinagar / btr, bangalore, karnataka": {
-    "skip": true
   },
   "mysore road, bangalore, karnataka": {
     "lat": 12.9466619,
@@ -5353,12 +5272,6 @@
   "vjayanagar oht, bangalore, karnataka": {
     "lat": 12.9709537,
     "lon": 77.5373851
-  },
-  "narayan nagar & gottigerew, bangalore, karnataka": {
-    "skip": true
-  },
-  "banashankari / padmanabha nagara, bangalore, karnataka": {
-    "skip": true
   },
   "koramangala-2, bangalore, karnataka": {
     "lat": 12.9315959,
@@ -5430,22 +5343,13 @@
     "lat": 13.0129182,
     "lon": 77.6616638
   },
-  "hal airport/marathalli/doddanekundi, bangalore, karnataka": {
-    "skip": true
-  },
   "btm 1, bangalore, karnataka": {
     "lat": 12.9140008,
     "lon": 77.6102821
   },
-  "kumaraswamy layout stage /yelchenahalli, bangalore, karnataka": {
-    "skip": true
-  },
   "kempegowda tower, bangalore, karnataka": {
     "lat": 12.9797866,
     "lon": 77.6211119
-  },
-  "vv puram / k.g.nagar, bangalore, karnataka": {
-    "skip": true
   },
   "johnson market, bangalore, karnataka": {
     "lat": 12.9641789,
@@ -5515,9 +5419,6 @@
     "lat": 13.0039028,
     "lon": 77.6736303
   },
-  "mnk / basavanagudi, bangalore, karnataka": {
-    "skip": true
-  },
   "kottanoor dinne, bangalore, karnataka": {
     "lat": 12.8701259,
     "lon": 77.5820178
@@ -5550,22 +5451,13 @@
     "lat": 12.9663996,
     "lon": 77.5869482
   },
-  "traffic west sub division, bangalore, karnataka": {
-    "skip": true
-  },
   "jnanbharatrhi, bangalore, karnataka": {
     "lat": 12.9350669,
     "lon": 77.5109716
   },
-  "j b ngara tr ps, bangalore, karnataka": {
-    "skip": true
-  },
   "sadashivanagara trps, bangalore, karnataka": {
     "lat": 13.0110193,
     "lon": 77.5808641
-  },
-  "acp planning, bangalore, karnataka": {
-    "skip": true
   },
   "vijaynagara, bangalore, karnataka": {
     "lat": 12.9717228,
@@ -5588,9 +5480,6 @@
     "lat": 12.9745091,
     "lon": 77.5749573
   },
-  "traffic south sub division, bangalore, karnataka": {
-    "skip": true
-  },
   "hebbala, bangalore, karnataka": {
     "lat": 13.0388166,
     "lon": 77.5896632
@@ -5602,18 +5491,6 @@
   "chikkabanavara, bangalore, karnataka": {
     "lat": 13.0746787,
     "lon": 77.5056373
-  },
-  "tr hsr layout sub division, bangalore, karnataka": {
-    "skip": true
-  },
-  "acp tr east sub div, bangalore, karnataka": {
-    "skip": true
-  },
-  "deputy commissioner of police, traffic west division, bangalore, karnataka": {
-    "skip": true
-  },
-  "acp vijaynagara trafic sub division, bangalore, karnataka": {
-    "skip": true
   },
   "ashoknagar, bangalore, karnataka": {
     "lat": 12.9701373,
@@ -5627,9 +5504,6 @@
     "lat": 13.1006982,
     "lon": 77.5963454
   },
-  "office of the acp traffic central sub division, bangalore, karnataka": {
-    "skip": true
-  },
   "mahadevapura tr, bangalore, karnataka": {
     "lat": 12.9965445,
     "lon": 77.6927176
@@ -5637,18 +5511,6 @@
   "whitefield tr, bangalore, karnataka": {
     "lat": 12.9957428,
     "lon": 77.7579489
-  },
-  "dcp east, bangalore, karnataka": {
-    "skip": true
-  },
-  "office of the acp traffic east sub division, bangalore, karnataka": {
-    "skip": true
-  },
-  "traffic south division, bangalore, karnataka": {
-    "skip": true
-  },
-  "north sub division office, bangalore, karnataka": {
-    "skip": true
   },
   "chamarajpet, bangalore, karnataka": {
     "lat": 12.9577576,
@@ -5661,9 +5523,6 @@
   "electronic city traffic ps, bangalore, karnataka": {
     "lat": 12.8487599,
     "lon": 77.648253
-  },
-  "traffic northeast sub division office, bangalore, karnataka": {
-    "skip": true
   },
   "bellanduru traffic ps, bangalore, karnataka": {
     "lat": 12.9218104,
@@ -5692,9 +5551,6 @@
   "banashankari traffic ps, bangalore, karnataka": {
     "lat": 12.9229116,
     "lon": 77.5650055
-  },
-  "tr whitefield sub div office, bangalore, karnataka": {
-    "skip": true
   },
   "devanahalli, bangalore, karnataka": {
     "lat": 13.142344,

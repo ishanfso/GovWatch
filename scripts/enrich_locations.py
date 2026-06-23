@@ -269,7 +269,9 @@ def main():
 
         # Step 2: Geocode
         geo = geocode_area(extracted, geo_cache)
-        if not geo:
+        lat = geo.get("lat") if isinstance(geo, dict) else None
+        lon = geo.get("lon") if isinstance(geo, dict) else None
+        if not geo or lat is None or lon is None:
             print(f"  → Could not geocode '{extracted}'")
             issues[idx]["area"] = extracted  # still update area text
             issues[idx].setdefault("ward_name", "")
@@ -278,14 +280,14 @@ def main():
             continue
 
         candidates = geo.get("candidates") or [extracted]
-        print(f"  → lat={geo['lat']:.4f} lon={geo['lon']:.4f} candidates={candidates}")
+        print(f"  → lat={lat:.4f} lon={lon:.4f} candidates={candidates}")
 
         # Step 3: Ward match
         ward = match_ward(candidates, wards, area_lookup)
 
         issues[idx]["area"] = extracted
-        issues[idx]["lat"] = geo["lat"]
-        issues[idx]["lon"] = geo["lon"]
+        issues[idx]["lat"] = lat
+        issues[idx]["lon"] = lon
         issues[idx]["ward_name"] = ward["ward_name"] if ward else ""
         issues[idx]["ward_no"] = ward["ward_no"] if ward else ""
 
