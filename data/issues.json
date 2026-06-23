@@ -23,9 +23,9 @@
     "author": "@TVMohandasPai",
     "date": "2026-06-09T15:00:57+00:00",
     "category": "Roads",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Malleshwaram",
+    "ward_name": "Malleshwaram",
+    "ward_no": "53",
     "severity": "high",
     "likes": 91,
     "retweets": 6,
@@ -33,7 +33,9 @@
     "keywords": [
       "footpath"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 13.0027353,
+    "lon": 77.5703253
   },
   {
     "id": "2065262447687323659",
@@ -57,9 +59,9 @@
     "author": "@karnatakaportf",
     "date": "2026-06-15T02:46:18+00:00",
     "category": "Flooding",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Chikkalsandra",
+    "ward_name": "Basavanapura",
+    "ward_no": "11",
     "severity": "medium",
     "likes": 21,
     "retweets": 8,
@@ -68,7 +70,9 @@
       "waterlog",
       "flood"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 12.9090687,
+    "lon": 77.5490557
   },
   {
     "id": "2067103734719791436",
@@ -104,7 +108,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2055145374382256138",
@@ -122,7 +128,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2064371680903098535",
@@ -140,7 +148,9 @@
     "keywords": [
       "bmtc"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2067096415898329196",
@@ -176,7 +186,9 @@
     "keywords": [
       "pothole"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2056082063133151368",
@@ -194,7 +206,9 @@
     "keywords": [
       "rain water"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2065425617764716692",
@@ -212,7 +226,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2059478414340616571",
@@ -220,9 +236,9 @@
     "author": "@TanviSolanki_",
     "date": "2026-05-27T03:34:51+00:00",
     "category": "Traffic",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Chamrajapet",
+    "ward_name": "Chamarajpet",
+    "ward_no": "44",
     "severity": "low",
     "likes": 7,
     "retweets": 1,
@@ -230,7 +246,9 @@
     "keywords": [
       "traffic jam"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 12.9602381,
+    "lon": 77.562114
   },
   {
     "id": "2054616720451703215",
@@ -266,7 +284,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2064635109349917161",
@@ -284,7 +304,9 @@
     "keywords": [
       "pothole"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2065099269330375084",
@@ -320,7 +342,9 @@
     "keywords": [
       "power cut"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2069307741982830682",
@@ -365,9 +389,9 @@
     "author": "@misterc_speaks",
     "date": "2026-05-20T04:57:23+00:00",
     "category": "Waste",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Silkboard",
+    "ward_name": "HSR Layout",
+    "ward_no": "72",
     "severity": "low",
     "likes": 5,
     "retweets": 1,
@@ -375,7 +399,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 12.9164904,
+    "lon": 77.6234434
   },
   {
     "id": "2055620327020130654",
@@ -431,7 +457,9 @@
     "keywords": [
       "bmtc"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2056322129948541397",
@@ -439,9 +467,9 @@
     "author": "@debashish_das",
     "date": "2026-05-18T10:32:55+00:00",
     "category": "Waste",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Gattahalli",
+    "ward_name": "Uttarahalli",
+    "ward_no": "49",
     "severity": "low",
     "likes": 2,
     "retweets": 3,
@@ -451,7 +479,9 @@
       "dump",
       "solid waste"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 12.8685628,
+    "lon": 77.7026913
   },
   {
     "id": "2064346856231145497",
@@ -467,7 +497,9 @@
     "retweets": 1,
     "source_url": "https://twitter.com/i/web/status/2064346856231145497",
     "keywords": [],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2065738853256945862",
@@ -475,7 +507,7 @@
     "author": "@gulabpasha",
     "date": "2026-06-13T10:11:36+00:00",
     "category": "Flooding",
-    "area": "Bangalore",
+    "area": "Annayappakare",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -558,7 +590,9 @@
       "footpath",
       "pavement"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2067470738207244700",
@@ -576,7 +610,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2069314829073150161",
@@ -612,7 +648,9 @@
     "keywords": [
       "traffic jam"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2057492306295771469",
@@ -620,9 +658,9 @@
     "author": "@basusagnik5",
     "date": "2026-05-21T16:02:46+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Malleshpalya",
+    "ward_name": "G.M Palya",
+    "ward_no": "18",
     "severity": "low",
     "likes": 3,
     "retweets": 0,
@@ -631,7 +669,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 12.9744129,
+    "lon": 77.6743533
   },
   {
     "id": "2058222271337259328",
@@ -649,7 +689,9 @@
     "keywords": [
       "power cut"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2061686460550709658",
@@ -657,9 +699,9 @@
     "author": "@Hamsaa04",
     "date": "2026-06-02T05:48:51+00:00",
     "category": "Traffic",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Old Airport Road",
+    "ward_name": "Indiranagar",
+    "ward_no": "15",
     "severity": "low",
     "likes": 2,
     "retweets": 1,
@@ -667,7 +709,9 @@
     "keywords": [
       "bmtc"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 12.9591061,
+    "lon": 77.6595688
   },
   {
     "id": "2063271867268673536",
@@ -722,7 +766,9 @@
     "keywords": [
       "pothole"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2054173600543113692",
@@ -758,7 +804,9 @@
     "keywords": [
       "power cut"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2055483510811451615",
@@ -853,7 +901,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2057719189755019440",
@@ -929,7 +979,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2060349564465623419",
@@ -947,7 +999,9 @@
     "keywords": [
       "flood"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2060392816573087993",
@@ -955,9 +1009,9 @@
     "author": "@damodar_08",
     "date": "2026-05-29T16:08:22+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Bommasandra",
+    "ward_name": "Cottonpete",
+    "ward_no": "57",
     "severity": "low",
     "likes": 2,
     "retweets": 0,
@@ -965,7 +1019,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 12.8160161,
+    "lon": 77.6892217
   },
   {
     "id": "2062808461721976833",
@@ -973,9 +1029,9 @@
     "author": "@pramodhkp",
     "date": "2026-06-05T08:07:17+00:00",
     "category": "Waste",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Hanumanthanagar",
+    "ward_name": "Srinagar",
+    "ward_no": "100",
     "severity": "low",
     "likes": 1,
     "retweets": 1,
@@ -984,7 +1040,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 12.9427346,
+    "lon": 77.558378
   },
   {
     "id": "2063273842366403021",
@@ -1113,7 +1171,9 @@
     "keywords": [
       "pothole"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2069038140610973785",
@@ -1131,7 +1191,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2054518266387902916",
@@ -1139,9 +1201,9 @@
     "author": "@Anchalshraff",
     "date": "2026-05-13T11:05:00+00:00",
     "category": "Water",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "National Law School of India University",
+    "ward_name": "Rajajinagara",
+    "ward_no": "63",
     "severity": "low",
     "likes": 0,
     "retweets": 1,
@@ -1149,7 +1211,9 @@
     "keywords": [
       "no water"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 12.9529035,
+    "lon": 77.5158003
   },
   {
     "id": "2053815337163112891",
@@ -1185,7 +1249,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2055662035917287825",
@@ -1212,9 +1278,9 @@
     "author": "@Chandha67550359",
     "date": "2026-05-16T09:48:25+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Munnekollal",
+    "ward_name": "Munnekollalu",
+    "ward_no": "41",
     "severity": "low",
     "likes": 0,
     "retweets": 1,
@@ -1223,7 +1289,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 12.9480839,
+    "lon": 77.7090175
   },
   {
     "id": "2054071413682966957",
@@ -1242,7 +1310,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2053732079360516447",
@@ -1250,9 +1320,9 @@
     "author": "@basusagnik5",
     "date": "2026-05-11T07:00:58+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Malleshpalya",
+    "ward_name": "G.M Palya",
+    "ward_no": "18",
     "severity": "low",
     "likes": 1,
     "retweets": 0,
@@ -1261,7 +1331,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 12.9744129,
+    "lon": 77.6743533
   },
   {
     "id": "2053489774217019416",
@@ -1269,7 +1341,7 @@
     "author": "@goodvenky22",
     "date": "2026-05-10T14:58:08+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Shanthiniketan layout",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -1315,7 +1387,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2055144207984263375",
@@ -1425,7 +1499,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2056366882924679237",
@@ -1480,7 +1556,9 @@
     "keywords": [
       "water supply"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2056765220358705368",
@@ -1498,7 +1576,9 @@
     "keywords": [
       "power cut"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2057333042054828205",
@@ -1535,7 +1615,9 @@
     "keywords": [
       "flood"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2057643219882811654",
@@ -1591,7 +1673,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2057721385028603963",
@@ -1636,9 +1720,9 @@
     "author": "@Chandha67550359",
     "date": "2026-05-25T07:32:08+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Munnekollal",
+    "ward_name": "Munnekollalu",
+    "ward_no": "41",
     "severity": "low",
     "likes": 1,
     "retweets": 0,
@@ -1646,7 +1730,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 12.9480839,
+    "lon": 77.7090175
   },
   {
     "id": "2058854692604838124",
@@ -1654,9 +1740,9 @@
     "author": "@neethuneetha",
     "date": "2026-05-25T10:16:25+00:00",
     "category": "Waste",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Doddabanahalli",
+    "ward_name": "Doddabettahalli",
+    "ward_no": "6",
     "severity": "low",
     "likes": 1,
     "retweets": 0,
@@ -1666,7 +1752,9 @@
       "waste",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 13.0271648,
+    "lon": 77.7473867
   },
   {
     "id": "2059156641766064414",
@@ -1722,7 +1810,9 @@
     "keywords": [
       "no water"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2059925928449573083",
@@ -1730,9 +1820,9 @@
     "author": "@khuraafaati1011",
     "date": "2026-05-28T09:13:07+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Avalhalli",
+    "ward_name": "Avalahalli",
+    "ward_no": "93",
     "severity": "low",
     "likes": 1,
     "retweets": 0,
@@ -1741,7 +1831,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 12.9459464,
+    "lon": 77.5409354
   },
   {
     "id": "2059988358315880466",
@@ -1759,7 +1851,9 @@
     "keywords": [
       "pothole"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2060026522648641977",
@@ -1777,7 +1871,9 @@
     "keywords": [
       "bmtc"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2060324436109332951",
@@ -1795,7 +1891,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2060311937213501582",
@@ -1813,7 +1911,9 @@
     "keywords": [
       "bmtc"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2060387813959594160",
@@ -1851,7 +1951,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2060746853684314367",
@@ -1889,7 +1991,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2061141192805634346",
@@ -1935,9 +2039,9 @@
     "author": "@deepak_in_korea",
     "date": "2026-06-02T12:48:01+00:00",
     "category": "Water",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Immadihalli",
+    "ward_name": "Kodihalli",
+    "ward_no": "20",
     "severity": "low",
     "likes": 1,
     "retweets": 0,
@@ -1945,7 +2049,9 @@
     "keywords": [
       "borewell"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 12.9663991,
+    "lon": 77.762046
   },
   {
     "id": "2061826644030169432",
@@ -1953,9 +2059,9 @@
     "author": "@sachin_bhutada",
     "date": "2026-06-02T15:05:53+00:00",
     "category": "Traffic",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Brookfield",
+    "ward_name": "Priyadarshini Ward",
+    "ward_no": "42",
     "severity": "low",
     "likes": 1,
     "retweets": 0,
@@ -1963,7 +2069,9 @@
     "keywords": [
       "traffic jam"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 12.9660972,
+    "lon": 77.7178615
   },
   {
     "id": "2062421649476157462",
@@ -1982,7 +2090,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2062512607601561950",
@@ -2073,7 +2183,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2063317004938047943",
@@ -2110,7 +2222,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2064306068923245046",
@@ -2165,7 +2279,9 @@
     "keywords": [
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2064339103223816498",
@@ -2203,7 +2319,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2064637991826690427",
@@ -2240,7 +2358,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2065554962768130398",
@@ -2258,7 +2378,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2065615996413694433",
@@ -2372,7 +2494,9 @@
       "garbage",
       "swm"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2066889611184681044",
@@ -2390,7 +2514,9 @@
     "keywords": [
       "rain water"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2067212245604720832",
@@ -2408,7 +2534,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2067262506398331323",
@@ -2445,7 +2573,9 @@
     "keywords": [
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2067496529020301461",
@@ -2453,7 +2583,7 @@
     "author": "@thetanaysharma",
     "date": "2026-06-18T06:35:59+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Jagdish Nagar",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -2483,7 +2613,9 @@
       "waste",
       "solid waste"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2067824826832871717",
@@ -2540,7 +2672,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2068284093746254276",
@@ -2595,7 +2729,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2068943865453928698",
@@ -2614,7 +2750,9 @@
       "pothole",
       "speed breaker"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2068991586550354109",
@@ -2648,7 +2786,9 @@
     "keywords": [
       "pothole"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2054932579636416704",
@@ -2664,7 +2804,9 @@
     "retweets": 0,
     "source_url": "https://twitter.com/i/web/status/2054932579636416704",
     "keywords": [],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2054906527228793180",
@@ -2682,7 +2824,9 @@
     "keywords": [
       "water supply"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2054574252335256048",
@@ -2690,9 +2834,9 @@
     "author": "@fathi89910",
     "date": "2026-05-13T14:47:28+00:00",
     "category": "Water",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Sarvagnanagar",
+    "ward_name": "Cox Town",
+    "ward_no": "10",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -2701,7 +2845,9 @@
       "bwssb",
       "water supply"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 12.9954832,
+    "lon": 77.6239259
   },
   {
     "id": "2054456352794403020",
@@ -2765,7 +2911,7 @@
     "author": "@thevaruntiwari",
     "date": "2026-05-17T05:03:58+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Jigani",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -2775,7 +2921,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 12.7756195,
+    "lon": 77.6324661
   },
   {
     "id": "2055667335554535532",
@@ -2831,7 +2979,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2055564231936983061",
@@ -2839,9 +2989,9 @@
     "author": "@sabaris80344264",
     "date": "2026-05-16T08:21:18+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Rajasree Layout",
+    "ward_name": "Vidyaranyapura",
+    "ward_no": "10",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -2850,7 +3000,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 13.0686085,
+    "lon": 77.5562896
   },
   {
     "id": "2055519221489299712",
@@ -2858,9 +3010,9 @@
     "author": "@AnimeshDey1979",
     "date": "2026-05-16T05:22:26+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "HSR Layout",
+    "ward_name": "HSR Layout",
+    "ward_no": "72",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -2869,7 +3021,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 12.9116225,
+    "lon": 77.6388622
   },
   {
     "id": "2055414205755605112",
@@ -2953,9 +3107,9 @@
     "author": "@RajitSi88822490",
     "date": "2026-05-15T08:07:11+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Sobha Sentosa",
+    "ward_name": "Laggere",
+    "ward_no": "32",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -2963,7 +3117,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 12.9350961,
+    "lon": 77.7241065
   },
   {
     "id": "2054961184294797638",
@@ -3048,7 +3204,7 @@
     "author": "@TSPR281448",
     "date": "2026-05-13T17:46:46+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Reva Circle",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -3067,9 +3223,9 @@
     "author": "@TMail52685",
     "date": "2026-05-13T17:08:23+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Bagalur",
+    "ward_name": "Sagayapuram",
+    "ward_no": "46",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -3077,7 +3233,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 13.0079918,
+    "lon": 77.6184726
   },
   {
     "id": "2054581023304982758",
@@ -3150,7 +3308,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2054223260209074358",
@@ -3158,7 +3318,7 @@
     "author": "@arvin_mg",
     "date": "2026-05-12T15:32:45+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Kithaganur",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -3187,7 +3347,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2054142264444879233",
@@ -3205,7 +3367,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2054041597877387668",
@@ -3399,9 +3563,9 @@
     "author": "@Veer0212",
     "date": "2026-05-16T10:50:01+00:00",
     "category": "Waste",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Tumkur Road",
+    "ward_name": "Sadashiva Nagara",
+    "ward_no": "50",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -3409,7 +3573,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 13.0144906,
+    "lon": 77.5699843
   },
   {
     "id": "2055583283149508613",
@@ -3548,9 +3714,9 @@
     "author": "@sapna_krishnani",
     "date": "2026-05-14T16:48:56+00:00",
     "category": "Waste",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Harlur",
+    "ward_name": "Kasavanahalli",
+    "ward_no": "31",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -3558,7 +3724,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 12.9058923,
+    "lon": 77.675465
   },
   {
     "id": "2054930273280938413",
@@ -3623,7 +3791,7 @@
     "author": "@learn89193922",
     "date": "2026-05-13T05:14:22+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Pragatipura",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -3633,7 +3801,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 12.9705311,
+    "lon": 77.642201
   },
   {
     "id": "2054379533000994849",
@@ -3670,7 +3840,9 @@
     "keywords": [
       "rain water"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2055347967117472038",
@@ -3696,9 +3868,9 @@
     "author": "@ManjuAc95",
     "date": "2026-05-11T03:57:34+00:00",
     "category": "Traffic",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "St Joseph's",
+    "ward_name": "Ashokanagar",
+    "ward_no": "25",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -3708,7 +3880,9 @@
       "traffic jam",
       "bmtc"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 12.9703357,
+    "lon": 77.595084
   },
   {
     "id": "2055928849842815022",
@@ -3782,7 +3956,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2056111636889653589",
@@ -3859,7 +4035,9 @@
       "garbage",
       "swm"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2056063888580600243",
@@ -3867,9 +4045,9 @@
     "author": "@nane_girisha",
     "date": "2026-05-17T17:26:45+00:00",
     "category": "Traffic",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Anand Rao Circle",
+    "ward_name": "Srigandhanagar",
+    "ward_no": "9",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -3877,7 +4055,9 @@
     "keywords": [
       "traffic signal"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 12.9807136,
+    "lon": 77.5747416
   },
   {
     "id": "2056469167549890844",
@@ -3923,9 +4103,9 @@
     "author": "@mpaikaray",
     "date": "2026-05-18T18:27:24+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Kannamangala",
+    "ward_name": "Kodigehalli",
+    "ward_no": "13",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -3934,7 +4114,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 13.015491,
+    "lon": 77.7631731
   },
   {
     "id": "2056441380516544712",
@@ -3942,9 +4124,9 @@
     "author": "@RkYashas",
     "date": "2026-05-18T18:26:46+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "E9 Division",
+    "ward_name": "Jagadish Nagar",
+    "ward_no": "26",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -3953,7 +4135,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 12.9591483,
+    "lon": 77.6781141
   },
   {
     "id": "2056438715162243206",
@@ -3980,7 +4164,7 @@
     "author": "@sankaradm1",
     "date": "2026-05-18T15:54:25+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Attibale",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -3991,7 +4175,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 12.7751249,
+    "lon": 77.7709216
   },
   {
     "id": "2056401666833072536",
@@ -3999,7 +4185,7 @@
     "author": "@sankaradm1",
     "date": "2026-05-18T15:48:58+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Attibale",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -4010,7 +4196,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 12.7751249,
+    "lon": 77.7709216
   },
   {
     "id": "2056386647793791213",
@@ -4018,7 +4206,7 @@
     "author": "@Avinashpaul811",
     "date": "2026-05-18T14:49:17+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Chowrappa Layout",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -4049,7 +4237,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2056367693322924295",
@@ -4095,9 +4285,9 @@
     "author": "@classmate82836",
     "date": "2026-05-18T12:33:38+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "AECS Layout",
+    "ward_name": "Priyadarshini Ward",
+    "ward_no": "42",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -4106,7 +4296,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 12.964118,
+    "lon": 77.7130369
   },
   {
     "id": "2056318664241188903",
@@ -4114,9 +4306,9 @@
     "author": "@rahul_kr_india",
     "date": "2026-05-18T10:19:08+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Balagere Road",
+    "ward_name": "Laggere",
+    "ward_no": "32",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -4125,7 +4317,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 12.939209,
+    "lon": 77.7309444
   },
   {
     "id": "2056348007004811696",
@@ -4161,7 +4355,9 @@
     "keywords": [
       "flood"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2056261763553988883",
@@ -4198,7 +4394,9 @@
     "keywords": [
       "rain water"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2056766002411737259",
@@ -4312,7 +4510,9 @@
     "keywords": [
       "flood"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2056841656075452440",
@@ -4350,7 +4550,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2056974786467942597",
@@ -4368,7 +4570,9 @@
     "keywords": [
       "power cut"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2056978628316127671",
@@ -4413,9 +4617,9 @@
     "author": "@Anonymous758101",
     "date": "2026-05-20T11:17:39+00:00",
     "category": "Waste",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Siddapura",
+    "ward_name": "Kundalahalli",
+    "ward_no": "37",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -4424,7 +4628,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 12.9542596,
+    "lon": 77.7309743
   },
   {
     "id": "2057119091111162202",
@@ -4442,7 +4648,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2057127104643547519",
@@ -4450,9 +4658,9 @@
     "author": "@Sherlock_Ram26",
     "date": "2026-05-20T15:51:35+00:00",
     "category": "Waste",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Attigupe",
+    "ward_name": "Attiguppe",
+    "ward_no": "82",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -4461,7 +4669,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 12.9581817,
+    "lon": 77.5301742
   },
   {
     "id": "2057176578447298777",
@@ -4528,9 +4738,9 @@
     "author": "@hysujit",
     "date": "2026-05-21T02:39:02+00:00",
     "category": "Water",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Talagattapura",
+    "ward_name": "Talaghattapura",
+    "ward_no": "52",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -4538,7 +4748,9 @@
     "keywords": [
       "bwssb"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 12.8668939,
+    "lon": 77.5344087
   },
   {
     "id": "2057312129875894619",
@@ -4603,9 +4815,9 @@
     "author": "@hysujit",
     "date": "2026-05-21T02:27:14+00:00",
     "category": "Waste",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Talagattapura",
+    "ward_name": "Talaghattapura",
+    "ward_no": "52",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -4614,7 +4826,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 12.8668939,
+    "lon": 77.5344087
   },
   {
     "id": "2057338858166182237",
@@ -4775,9 +4989,9 @@
     "author": "@Shriram_26",
     "date": "2026-05-21T12:20:20+00:00",
     "category": "Waste",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Attigupe",
+    "ward_name": "Attiguppe",
+    "ward_no": "82",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -4786,7 +5000,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 12.9581817,
+    "lon": 77.5301742
   },
   {
     "id": "2057494792700150146",
@@ -4843,7 +5059,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2057491801624510547",
@@ -4984,9 +5202,9 @@
     "author": "@nikita221185",
     "date": "2026-05-21T19:54:01+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "PR Layout",
+    "ward_name": "HSR Layout",
+    "ward_no": "72",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -4995,7 +5213,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 13.031992,
+    "lon": 77.6280789
   },
   {
     "id": "2057611857251422539",
@@ -5013,7 +5233,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2057695142178648122",
@@ -5058,9 +5280,9 @@
     "author": "@dalua_julu",
     "date": "2026-05-22T02:14:19+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Hulimangala",
+    "ward_name": "Hulimavu",
+    "ward_no": "57",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -5069,7 +5291,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 12.8226963,
+    "lon": 77.6495447
   },
   {
     "id": "2057680611872223327",
@@ -5202,7 +5426,9 @@
       "garbage",
       "swm"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2057713874820907440",
@@ -5220,7 +5446,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2057705010029641908",
@@ -5238,7 +5466,9 @@
     "keywords": [
       "flood"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2057734603608383834",
@@ -5294,7 +5524,9 @@
       "bmtc",
       "metro"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2057701317339177268",
@@ -5312,7 +5544,9 @@
     "keywords": [
       "bmtc"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2057754319966122475",
@@ -5434,7 +5668,7 @@
     "author": "@VirendraBglr",
     "date": "2026-05-22T15:02:02+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Dominic Layout",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -5465,7 +5699,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2057836745430073446",
@@ -5484,7 +5720,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2057835724821663926",
@@ -5492,7 +5730,7 @@
     "author": "@SumitK1010",
     "date": "2026-05-22T14:47:24+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Jigni",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -5503,7 +5741,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 12.7807858,
+    "lon": 77.6410243
   },
   {
     "id": "2057835205575229559",
@@ -5511,7 +5751,7 @@
     "author": "@SumitK1010",
     "date": "2026-05-22T14:45:20+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Jigni",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -5522,7 +5762,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 12.7807858,
+    "lon": 77.6410243
   },
   {
     "id": "2057857521214517588",
@@ -5540,7 +5782,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2057892155356799174",
@@ -5577,7 +5821,9 @@
     "keywords": [
       "power cut"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2058043037654397381",
@@ -5614,7 +5860,9 @@
     "keywords": [
       "bmtc"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2058058471099306323",
@@ -5622,7 +5870,7 @@
     "author": "@123mangoman",
     "date": "2026-05-23T05:32:31+00:00",
     "category": "Water",
-    "area": "Bangalore",
+    "area": "Avenue Road",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -5632,7 +5880,9 @@
     "keywords": [
       "bwssb"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 12.9698326,
+    "lon": 77.5797061
   },
   {
     "id": "2058089834229674307",
@@ -5697,9 +5947,9 @@
     "author": "@anishsingh21",
     "date": "2026-05-23T06:55:01+00:00",
     "category": "Roads",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Thubrahalli",
+    "ward_name": "Andrahalli",
+    "ward_no": "12",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -5707,7 +5957,9 @@
     "keywords": [
       "footpath"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 12.9547872,
+    "lon": 77.7213154
   },
   {
     "id": "2058074947118108961",
@@ -5715,9 +5967,9 @@
     "author": "@RajeshSarella4",
     "date": "2026-05-23T06:37:59+00:00",
     "category": "Waste",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Garudacharpalya",
+    "ward_name": "Garudachar Palya",
+    "ward_no": "35",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -5726,7 +5978,9 @@
       "waste",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 12.993425,
+    "lon": 77.7005156
   },
   {
     "id": "2058090481247248594",
@@ -5734,9 +5988,9 @@
     "author": "@bvragavan",
     "date": "2026-05-23T07:39:42+00:00",
     "category": "Parks",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Cantonment",
+    "ward_name": "Jayamahal",
+    "ward_no": "2",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -5744,7 +5998,9 @@
     "keywords": [
       "park"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 12.9936865,
+    "lon": 77.5980003
   },
   {
     "id": "2058113880522690716",
@@ -5752,9 +6008,9 @@
     "author": "@t_s_s_k_0",
     "date": "2026-05-23T09:12:41+00:00",
     "category": "Roads",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "KR Pura",
+    "ward_name": "K R Pura",
+    "ward_no": "14",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -5762,7 +6018,9 @@
     "keywords": [
       "pothole"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 13.007516,
+    "lon": 77.695935
   },
   {
     "id": "2058095848152859026",
@@ -5799,7 +6057,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2058219119468847140",
@@ -5880,9 +6140,9 @@
     "author": "@bhagirathbptak",
     "date": "2026-05-23T17:29:55+00:00",
     "category": "Waste",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "HAL",
+    "ward_name": "Marathahalli",
+    "ward_no": "45",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -5890,7 +6150,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 12.9565103,
+    "lon": 77.6759082
   },
   {
     "id": "2058255942467342538",
@@ -5908,7 +6170,9 @@
     "keywords": [
       "rain water"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2058405236663034283",
@@ -5935,9 +6199,9 @@
     "author": "@KRLBLR",
     "date": "2026-05-24T02:37:23+00:00",
     "category": "Water",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "TC Palaya",
+    "ward_name": "K R Pura",
+    "ward_no": "14",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -5945,7 +6209,9 @@
     "keywords": [
       "bwssb"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 13.0106104,
+    "lon": 77.6932665
   },
   {
     "id": "2058441517254193263",
@@ -5953,9 +6219,9 @@
     "author": "@KRLBLR",
     "date": "2026-05-24T06:54:36+00:00",
     "category": "Water",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "TC Palaya",
+    "ward_name": "K R Pura",
+    "ward_no": "14",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -5963,7 +6229,9 @@
     "keywords": [
       "bwssb"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 13.0106104,
+    "lon": 77.6932665
   },
   {
     "id": "2058445374201999429",
@@ -6028,9 +6296,9 @@
     "author": "@KRLBLR",
     "date": "2026-05-24T08:15:35+00:00",
     "category": "Water",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "TC Palaya",
+    "ward_name": "K R Pura",
+    "ward_no": "14",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -6038,7 +6306,9 @@
     "keywords": [
       "bwssb"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 13.0106104,
+    "lon": 77.6932665
   },
   {
     "id": "2058518177571889430",
@@ -6046,9 +6316,9 @@
     "author": "@KRLBLR",
     "date": "2026-05-24T11:59:13+00:00",
     "category": "Water",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "TC Palaya",
+    "ward_name": "K R Pura",
+    "ward_no": "14",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -6056,7 +6326,9 @@
     "keywords": [
       "bwssb"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 13.0106104,
+    "lon": 77.6932665
   },
   {
     "id": "2058517285904732190",
@@ -6074,7 +6346,9 @@
     "keywords": [
       "power cut"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2058519878932566377",
@@ -6082,9 +6356,9 @@
     "author": "@KoustavHazra5",
     "date": "2026-05-24T12:05:59+00:00",
     "category": "Waste",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Munnenkolalu",
+    "ward_name": "HSR Layout",
+    "ward_no": "72",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -6093,7 +6367,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 12.9488094,
+    "lon": 77.7074968
   },
   {
     "id": "2058522467329782139",
@@ -6111,7 +6387,9 @@
     "keywords": [
       "park"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2058551859263271042",
@@ -6129,7 +6407,9 @@
     "keywords": [
       "power cut"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2058549400289542330",
@@ -6166,7 +6446,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2058586371275809122",
@@ -6193,9 +6475,9 @@
     "author": "@Sceneparty19",
     "date": "2026-05-24T18:42:23+00:00",
     "category": "Traffic",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Shanthi Nagar",
+    "ward_name": "Shanthinagar",
+    "ward_no": "31",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -6203,7 +6485,9 @@
     "keywords": [
       "bmtc"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 12.9546254,
+    "lon": 77.5922821
   },
   {
     "id": "2058684648226713827",
@@ -6298,7 +6582,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2058777904587452849",
@@ -6372,7 +6658,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2058870245188870581",
@@ -6419,7 +6707,7 @@
     "author": "@ojojojoo",
     "date": "2026-05-25T13:03:32+00:00",
     "category": "Waste",
-    "area": "Bangalore",
+    "area": "Jigani",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -6431,7 +6719,9 @@
       "waste",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 12.7756195,
+    "lon": 77.6324661
   },
   {
     "id": "2058931942629020139",
@@ -6439,9 +6729,9 @@
     "author": "@life_z_b",
     "date": "2026-05-25T15:23:22+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "CKB Layout",
+    "ward_name": "HSR Layout",
+    "ward_no": "72",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -6451,7 +6741,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 12.9507498,
+    "lon": 77.7049698
   },
   {
     "id": "2058913048694579372",
@@ -6459,9 +6751,9 @@
     "author": "@lohithharris",
     "date": "2026-05-25T14:08:18+00:00",
     "category": "Traffic",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Chamrajpet",
+    "ward_name": "Chamarajpet",
+    "ward_no": "44",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -6469,7 +6761,9 @@
     "keywords": [
       "traffic jam"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 12.9584184,
+    "lon": 77.5629161
   },
   {
     "id": "2058962739935293783",
@@ -6506,7 +6800,9 @@
       "garbage",
       "waste"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2059124381985669622",
@@ -6627,9 +6923,9 @@
     "author": "@PAVAN86198257",
     "date": "2026-05-26T15:43:21+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Balaji Layout",
+    "ward_name": "Whitefield",
+    "ward_no": "38",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -6638,7 +6934,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 12.9636169,
+    "lon": 77.7342959
   },
   {
     "id": "2059289547494895801",
@@ -6675,7 +6973,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2059273422014996933",
@@ -6779,9 +7079,9 @@
     "author": "@Vaiahali7",
     "date": "2026-05-26T13:18:53+00:00",
     "category": "Waste",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Balagere",
+    "ward_name": "Laggere",
+    "ward_no": "32",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -6791,7 +7091,9 @@
       "dump",
       "swm"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 12.9377243,
+    "lon": 77.7280705
   },
   {
     "id": "2059239216727699575",
@@ -6811,7 +7113,9 @@
       "trash",
       "litter"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2059209993593999386",
@@ -6819,9 +7123,9 @@
     "author": "@neethuneetha",
     "date": "2026-05-26T09:48:15+00:00",
     "category": "Waste",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Doddabanahalli",
+    "ward_name": "Doddabettahalli",
+    "ward_no": "6",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -6831,7 +7135,9 @@
       "waste",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 13.0271648,
+    "lon": 77.7473867
   },
   {
     "id": "2059340181132775721",
@@ -6850,7 +7156,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2059339303403262439",
@@ -6858,7 +7166,7 @@
     "author": "@iamArshadH",
     "date": "2026-05-26T18:22:05+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Pillanna Garden",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -6914,7 +7222,7 @@
     "author": "@suveeshckumar",
     "date": "2026-05-26T17:21:35+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Virgo Nagar",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -6924,7 +7232,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 12.9855994,
+    "lon": 77.6951895
   },
   {
     "id": "2059323657877663818",
@@ -6951,9 +7261,9 @@
     "author": "@suveeshckumar",
     "date": "2026-05-26T17:16:32+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Sai Serenity Layout",
+    "ward_name": "Medahalli",
+    "ward_no": "10",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -6961,7 +7271,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 13.0185339,
+    "lon": 77.7278266
   },
   {
     "id": "2059312618599485785",
@@ -7000,7 +7312,9 @@
       "power outage",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2059504930797547860",
@@ -7008,9 +7322,9 @@
     "author": "@KSri77",
     "date": "2026-05-27T05:20:13+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Jnanabharathi",
+    "ward_name": "Jnana Bharathi Ward",
+    "ward_no": "24",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -7019,7 +7333,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 12.9354476,
+    "lon": 77.5124016
   },
   {
     "id": "2059504282026864848",
@@ -7046,9 +7362,9 @@
     "author": "@TYGIndia",
     "date": "2026-05-27T04:35:35+00:00",
     "category": "Waste",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Tanisandra",
+    "ward_name": "Thanisandra",
+    "ward_no": "19",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -7056,7 +7372,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 13.0522499,
+    "lon": 77.6316152
   },
   {
     "id": "2059470322152378486",
@@ -7084,7 +7402,7 @@
     "author": "@NitiSahaya",
     "date": "2026-05-27T06:40:44+00:00",
     "category": "Roads",
-    "area": "Bangalore",
+    "area": "Jigani",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -7094,7 +7412,9 @@
     "keywords": [
       "road condition"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 12.7756195,
+    "lon": 77.6324661
   },
   {
     "id": "2059571574353572091",
@@ -7113,7 +7433,9 @@
       "garbage",
       "waste"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2059554549497737329",
@@ -7132,7 +7454,9 @@
       "garbage",
       "swm"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2059533369483084287",
@@ -7151,7 +7475,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2059520116224934042",
@@ -7265,7 +7591,9 @@
     "keywords": [
       "no electricity"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2059842485585903632",
@@ -7304,7 +7632,9 @@
       "no power",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2059874234089013732",
@@ -7312,7 +7642,7 @@
     "author": "@TSPR281448",
     "date": "2026-05-28T05:47:42+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Reva Circle",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -7495,7 +7825,9 @@
     "keywords": [
       "no electricity"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2060039496482410851",
@@ -7514,7 +7846,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2060095698352439588",
@@ -7541,9 +7875,9 @@
     "author": "@Abhishekt2957",
     "date": "2026-05-28T20:16:15+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Chikkalsandra",
+    "ward_name": "Basavanapura",
+    "ward_no": "11",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -7551,7 +7885,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 12.9090687,
+    "lon": 77.5490557
   },
   {
     "id": "2060109304787804342",
@@ -7615,9 +7951,9 @@
     "author": "@smiles9q9",
     "date": "2026-05-29T02:11:53+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Telecom Layout",
+    "ward_name": "Adi Chunchanagiri Ward",
+    "ward_no": "85",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -7625,7 +7961,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 12.965528,
+    "lon": 77.5467051
   },
   {
     "id": "2060232097017766075",
@@ -7775,7 +8113,9 @@
     "keywords": [
       "no electricity"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2060334608743600493",
@@ -7832,7 +8172,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2060346184435384365",
@@ -7877,7 +8219,7 @@
     "author": "@JayanthR513719",
     "date": "2026-05-29T15:08:39+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Ramesh Reddy Layout",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -7915,7 +8257,7 @@
     "author": "@arvin_mg",
     "date": "2026-05-29T13:42:14+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
+    "area": "Kithaganur",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -7982,7 +8324,9 @@
     "keywords": [
       "rain water"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2060430263759605941",
@@ -8028,9 +8372,9 @@
     "author": "@SharmaKant85041",
     "date": "2026-05-29T19:14:10+00:00",
     "category": "Waste",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Chinnapanahalli",
+    "ward_name": "Priyadarshini Ward",
+    "ward_no": "42",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -8038,7 +8382,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 12.9661219,
+    "lon": 77.7071156
   },
   {
     "id": "2060457570457071881",
@@ -8083,9 +8429,9 @@
     "author": "@Adichandel",
     "date": "2026-05-30T01:18:11+00:00",
     "category": "Water",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Vasant Vihar",
+    "ward_name": "Jaraganahalli",
+    "ward_no": "53",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -8094,7 +8440,9 @@
       "water supply",
       "no water"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 13.1551713,
+    "lon": 77.6398438
   },
   {
     "id": "2060539253281747441",
@@ -8113,7 +8461,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2060546581766787343",
@@ -8121,9 +8471,9 @@
     "author": "@FluteTweets",
     "date": "2026-05-30T02:19:22+00:00",
     "category": "Flooding",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Jaya Nagar",
+    "ward_name": "Sarakki",
+    "ward_no": "16",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -8131,7 +8481,9 @@
     "keywords": [
       "flood"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 12.9074812,
+    "lon": 77.5731495
   },
   {
     "id": "2060539445510869001",
@@ -8187,7 +8539,9 @@
     "keywords": [
       "traffic jam"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2060588787391222084",
@@ -8225,7 +8579,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2060613360878829975",
@@ -8281,7 +8637,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2060575542664208594",
@@ -8412,7 +8770,9 @@
     "keywords": [
       "bwssb"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2060699581537800605",
@@ -8486,7 +8846,9 @@
     "keywords": [
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2060973503697060330",
@@ -8543,7 +8905,9 @@
     "keywords": [
       "no water"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2061050298144375002",
@@ -8562,7 +8926,9 @@
       "water supply",
       "no water"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2061093415660687771",
@@ -8620,7 +8986,9 @@
       "dump",
       "debris"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2061031173032497235",
@@ -8666,9 +9034,9 @@
     "author": "@SaranyaBlr",
     "date": "2026-05-31T08:38:13+00:00",
     "category": "Traffic",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Bangalore Cantonment",
+    "ward_name": "Jayamahal",
+    "ward_no": "2",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -8676,7 +9044,9 @@
     "keywords": [
       "traffic jam"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 12.9936865,
+    "lon": 77.5980003
   },
   {
     "id": "2061128614612287500",
@@ -8695,7 +9065,9 @@
       "power cut",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2061112547357712495",
@@ -8714,7 +9086,9 @@
       "no electricity",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2061106573955731528",
@@ -8909,9 +9283,9 @@
     "author": "@khan421527",
     "date": "2026-06-01T06:39:40+00:00",
     "category": "Waste",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Chamrajpet",
+    "ward_name": "Chamarajpet",
+    "ward_no": "44",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -8920,7 +9294,9 @@
       "garbage",
       "swm"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 12.9584184,
+    "lon": 77.5629161
   },
   {
     "id": "2061489809110266131",
@@ -8946,9 +9322,9 @@
     "author": "@in2thedelusion",
     "date": "2026-06-01T15:42:03+00:00",
     "category": "Electricity",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Krishnarajapuram",
+    "ward_name": "K.S. Nissar Ahmed Ward",
+    "ward_no": "19",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -8957,7 +9333,9 @@
       "power outage",
       "bescom"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 13.0005461,
+    "lon": 77.6754561
   },
   {
     "id": "2061451546303578175",
@@ -8995,7 +9373,9 @@
     "keywords": [
       "no electricity"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2061462540861968391",
@@ -9013,7 +9393,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2061439606613213513",
@@ -9031,7 +9413,9 @@
     "keywords": [
       "garbage"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": null,
+    "lon": null
   },
   {
     "id": "2061431168705462470",
@@ -9096,9 +9480,9 @@
     "author": "@callakere873121",
     "date": "2026-06-02T00:01:37+00:00",
     "category": "Waste",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Challakere",
+    "ward_name": "Chellakere",
+    "ward_no": "3",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -9106,7 +9490,9 @@
     "keywords": [
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 13.027538,
+    "lon": 77.6412496
   },
   {
     "id": "2061685314494792091",
@@ -9151,9 +9537,9 @@
     "author": "@Prakash32219510",
     "date": "2026-06-02T05:55:03+00:00",
     "category": "Waste",
-    "area": "Bangalore",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Viveknagar",
+    "ward_name": "Vannarpet",
+    "ward_no": "26",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -9162,7 +9548,9 @@
       "garbage",
       "dump"
     ],
-    "status": "open"
+    "status": "open",
+    "lat": 12.9529247,
+    "lon": 77.6231374
   },
   {
     "id": "2061675527191363651",

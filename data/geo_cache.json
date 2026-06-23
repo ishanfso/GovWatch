@@ -5767,5 +5767,24 @@
   "d.v gundappa ward, bangalore, karnataka": {
     "lat": 12.9593985,
     "lon": 77.5784253
+  },
+  "shanthiniketan layout": null,
+  "immadihalli": {
+    "lat": 12.9663991,
+    "lon": 77.762046,
+    "candidates": [
+      "Immadihalli",
+      "Immadihalli",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "tumkur road": {
+    "lat": 13.0144906,
+    "lon": 77.5699843,
+    "candidates": [
+      "Tumkur Road",
+      "Sadashivanagar",
+      "Bengaluru West City Corporation"
+    ]
   }
 }
