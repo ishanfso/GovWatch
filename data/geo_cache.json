@@ -5642,5 +5642,22 @@
       "Sadashivanagar",
       "Bengaluru West City Corporation"
     ]
-  }
+  },
+  "shanthipura panchayat": null,
+  "vashi": null,
+  "bangalore\n\n(the tweet mentions a \"bda society\" but does not specify which particular bda locality or neighbourhood in bangalore)": null,
+  "vashi bridge": null,
+  "addiganahli": null,
+  "i cannot determine a specific bangalore locality from the coordinates and address code provided in this tweet. the tweet only contains gps coordinates and a generic location code": null,
+  "k.channasandra": {
+    "lat": 13.040022,
+    "lon": 77.6796248,
+    "candidates": [
+      "K.Channasandra",
+      "K Chennasandra",
+      "K. Channasandra",
+      "Bengaluru East City Corporation"
+    ]
+  },
+  "somasandra palya": null
 }
