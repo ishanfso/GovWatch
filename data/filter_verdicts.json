@@ -5211,5 +5211,29 @@
   "2069469806924058836": {
     "verdict": "no",
     "area": null
+  },
+  "2069492203282735402": {
+    "verdict": "no",
+    "area": null
+  },
+  "2069488596571320624": {
+    "verdict": "no",
+    "area": null
+  },
+  "2069490661062234263": {
+    "verdict": "no",
+    "area": "Koramangala"
+  },
+  "2069496674356269211": {
+    "verdict": "no",
+    "area": "Padmanabhanagar"
+  },
+  "2069496647932146100": {
+    "verdict": "no",
+    "area": null
+  },
+  "2069490641541996860": {
+    "verdict": "yes",
+    "area": "Hennur"
   }
 }
