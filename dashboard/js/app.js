@@ -667,8 +667,19 @@ function renderDetailPanel(issue) {
         <div class="tweet-preview hidden" id="tweet-preview"></div>
       </div>
 
+      <div class="detail-comments">
+        <div class="detail-section-label">Notes</div>
+        <div id="comments-list" class="comments-list"><div class="comment-loading">Loading notes…</div></div>
+        <div class="comment-form">
+          <textarea id="comment-input" class="comment-input" placeholder="Add a progress note…" rows="2"></textarea>
+          <button id="comment-submit" class="btn-comment-submit">Add note</button>
+        </div>
+      </div>
+
     </div>
   `;
+
+  loadComments(issue.id);
 
   const sel = document.getElementById("detail-status-select");
   if (sel) {
@@ -756,7 +767,78 @@ function legacyCopy(text) {
   document.body.removeChild(ta);
 }
 
-// ── Clustering ─────────────────────────────────────────────────────
+// ── Comments ───────────────────────────────────────────────────────
+
+async function loadComments(issueId) {
+  const listEl = document.getElementById("comments-list");
+  if (!listEl) return;
+
+  const { data, error } = await sb
+    .from("issue_comments")
+    .select("*")
+    .eq("issue_id", String(issueId))
+    .order("created_at", { ascending: true });
+
+  if (error) { listEl.innerHTML = '<div class="comment-empty">Could not load notes.</div>'; return; }
+  renderCommentsList(data || []);
+
+  const submitBtn = document.getElementById("comment-submit");
+  const inputEl  = document.getElementById("comment-input");
+  if (!submitBtn || !inputEl) return;
+
+  submitBtn.addEventListener("click", async () => {
+    const body = inputEl.value.trim();
+    if (!body) return;
+    submitBtn.disabled = true;
+    const { error: insertErr } = await sb.from("issue_comments").insert({
+      issue_id: String(issueId),
+      user_email: currentUser?.email || "unknown",
+      body,
+    });
+    if (!insertErr) {
+      inputEl.value = "";
+      const { data: fresh } = await sb.from("issue_comments").select("*").eq("issue_id", String(issueId)).order("created_at", { ascending: true });
+      renderCommentsList(fresh || []);
+    }
+    submitBtn.disabled = false;
+  });
+
+  // Submit on Ctrl+Enter / Cmd+Enter
+  inputEl.addEventListener("keydown", e => {
+    if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) submitBtn.click();
+  });
+}
+
+function renderCommentsList(comments) {
+  const listEl = document.getElementById("comments-list");
+  if (!listEl) return;
+  if (comments.length === 0) {
+    listEl.innerHTML = '<div class="comment-empty">No notes yet.</div>';
+    return;
+  }
+  listEl.innerHTML = comments.map(c => `
+    <div class="comment-item">
+      <div class="comment-meta">
+        <span class="comment-author">${esc((c.user_email || "unknown").split("@")[0])}</span>
+        <span class="comment-time">${commentAge(c.created_at)}</span>
+      </div>
+      <div class="comment-body">${esc(c.body)}</div>
+    </div>`).join("");
+  listEl.scrollTop = listEl.scrollHeight;
+}
+
+function commentAge(iso) {
+  if (!iso) return "";
+  const diff = Date.now() - new Date(iso).getTime();
+  const mins = Math.floor(diff / 60000);
+  if (mins < 1)  return "just now";
+  if (mins < 60) return `${mins}m ago`;
+  const hrs = Math.floor(mins / 60);
+  if (hrs < 24)  return `${hrs}h ago`;
+  return new Date(iso).toLocaleDateString("en-IN", { day: "numeric", month: "short" });
+}
+
+
 
 function getClusteredIssues(issues) {
   const groups = {};
