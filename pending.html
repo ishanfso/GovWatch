@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Access Pending — Civic Issue India</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="/js/supabase-client.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Source Sans 3', system-ui, sans-serif;
+      background: #0d1117;
+      color: #e6edf3;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+    }
+    .card {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 12px;
+      padding: 48px 40px;
+      max-width: 440px;
+      width: 90%;
+      text-align: center;
+    }
+    .icon { font-size: 2.5rem; margin-bottom: 20px; }
+    h1 { font-size: 1.4rem; font-weight: 700; margin-bottom: 10px; }
+    p { color: #8b949e; font-size: 0.95rem; line-height: 1.6; margin-bottom: 24px; }
+    .email-hint {
+      background: #0d1117;
+      border: 1px solid #30363d;
+      border-radius: 6px;
+      padding: 10px 14px;
+      font-size: 0.85rem;
+      color: #58a6ff;
+      margin-bottom: 28px;
+      word-break: break-all;
+    }
+    .btn-out {
+      display: inline-block;
+      padding: 10px 22px;
+      border-radius: 6px;
+      border: 1px solid #30363d;
+      background: transparent;
+      color: #8b949e;
+      font-size: 0.9rem;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .btn-out:hover { background: #21262d; color: #e6edf3; }
+    .brand { margin-bottom: 32px; font-size: 1.1rem; font-weight: 600; color: #2d6a4f; letter-spacing: 0.01em; }
+  </style>
+</head>
+<body>
+  <div class="brand">Civic Issue India</div>
+  <div class="card">
+    <div class="icon">🔒</div>
+    <h1>Access pending approval</h1>
+    <p>Your account has been created. An admin will review and approve your access shortly.</p>
+    <div class="email-hint" id="user-email-display">Signed in as —</div>
+    <p style="margin-bottom:28px">Once approved you'll be able to log in and access the dashboard. No action needed from your side.</p>
+    <button class="btn-out" id="btn-signout">Sign out</button>
+  </div>
+
+  <script>
+    (async () => {
+      const { data: { session } } = await sb.auth.getSession();
+      if (!session) { window.location.replace("/"); return; }
+      document.getElementById("user-email-display").textContent = "Signed in as " + session.user.email;
+      document.getElementById("btn-signout").addEventListener("click", async () => {
+        await sb.auth.signOut();
+        window.location.replace("/");
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -597,6 +597,13 @@ body {
 .status-select.s-in_progress  { border-color: #fcd34d; background: #fffbeb; color: #b45309; }
 .status-select.s-resolved     { border-color: #86efac; background: #f0fdf4; color: #15803d; }
 
+/* Read-only status badge for viewer role */
+.status-badge-ro { display:inline-block; padding:4px 10px; border-radius:4px; font-size:0.8rem; font-weight:600; border:1px solid; text-transform:capitalize; }
+.status-badge-ro.s-open        { border-color: #e2e8f0; background: #f8fafc; color: #64748b; }
+.status-badge-ro.s-acknowledged{ border-color: #93c5fd; background: #eff6ff; color: #1d4ed8; }
+.status-badge-ro.s-in_progress { border-color: #fcd34d; background: #fffbeb; color: #b45309; }
+.status-badge-ro.s-resolved    { border-color: #86efac; background: #f0fdf4; color: #15803d; }
+
 .btn-assign {
   display: flex;
   align-items: center;

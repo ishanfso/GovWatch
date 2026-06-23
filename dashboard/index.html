@@ -31,11 +31,16 @@
   <!-- Supabase -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="../js/supabase-client.js"></script>
-  <!-- Auth guard: redirect to landing if not logged in -->
+  <!-- Auth guard: check session + role before rendering -->
   <script>
-  (async () => {
+  window._roleReady = (async () => {
     const { data: { session } } = await sb.auth.getSession();
-    if (!session) window.location.replace("/");
+    if (!session) { window.location.replace("/"); return "none"; }
+    const { data: profile } = await sb.from("profiles").select("role").eq("id", session.user.id).single();
+    const role = profile?.role || "pending";
+    if (role === "pending") { window.location.replace("/pending.html"); return "none"; }
+    window._userRole = role;
+    return role;
   })();
   </script>
 

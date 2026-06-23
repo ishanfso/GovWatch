@@ -171,6 +171,10 @@ async function loadData() {
 }
 
 async function init() {
+  // Wait for role check to complete (auth guard sets window._roleReady)
+  await window._roleReady;
+  if (!window._userRole) return; // redirecting — don't render
+
   const urlRole = new URLSearchParams(window.location.search).get("role") || "";
   if (urlRole && ROLE_DEPARTMENTS[urlRole]) {
     activeFilters.role = urlRole;
@@ -652,11 +656,11 @@ function renderDetailPanel(issue) {
       <div class="detail-actions">
         <div class="detail-status-row">
           <span class="detail-status-label">Status</span>
-          <select class="status-select ${statusClass}" id="detail-status-select" data-issue-id="${esc(String(issue.id))}">${statusOpts}</select>
+          ${window._userRole === "admin"
+            ? `<select class="status-select ${statusClass}" id="detail-status-select" data-issue-id="${esc(String(issue.id))}">${statusOpts}</select>`
+            : `<span class="status-badge-ro s-${status}">${status}</span>`}
         </div>
-        <a class="btn-assign" href="${buildEmailLink(issue)}">
-          &#128231; Raise to ${esc(poc.dept)}
-        </a>
+        ${window._userRole === "admin" ? `<a class="btn-assign" href="${buildEmailLink(issue)}">&#128231; Raise to ${esc(poc.dept)}</a>` : ""}
         <a class="btn-whatsapp" href="${whatsappUrl(issue)}" target="_blank" rel="noopener">&#128362; WhatsApp</a>
         ${issue.source_url ? `<a class="btn-source" href="${esc(issue.source_url)}" target="_blank" rel="noopener">Open source tweet &#8599;</a>` : ""}
         <button class="btn-copy-tweet" id="copy-tweet-btn">&#128203; Copy Tweet Reply</button>
@@ -690,6 +694,7 @@ function renderDetailPanel(issue) {
     detailPane.addEventListener("click", e => {
       const raiseBtn = e.target.closest(".sc-raise-btn");
       if (raiseBtn) {
+        if (window._userRole !== "admin") return; // viewers cannot assign
         const idx = parseInt(raiseBtn.dataset.contactIdx, 10);
         const contacts = getSmartContacts(issue);
         const contact = contacts[idx];
