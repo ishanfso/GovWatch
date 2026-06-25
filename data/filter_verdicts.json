@@ -5647,5 +5647,21 @@
   "2069915119790985251": {
     "verdict": "no",
     "area": "Cubbon Park"
+  },
+  "2069941874178265366": {
+    "verdict": "no",
+    "area": "Lalbagh"
+  },
+  "2069951564559626339": {
+    "verdict": "no",
+    "area": null
+  },
+  "2069949930240983372": {
+    "verdict": "yes",
+    "area": "Whitefield"
+  },
+  "2069934411307798605": {
+    "verdict": "no",
+    "area": null
   }
 }
