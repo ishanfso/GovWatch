@@ -707,6 +707,24 @@
     "status": "open"
   },
   {
+    "id": "2070054913087099232",
+    "text": "this month's bill in bengaluru is showing a spike of 7x units consumption. Bescom as assured they ll check.. \nuntil then, can't help wonder if, the extreme heat this summer trigger some technical glitch in the new electronic meters? https://t.co/G5JbUYDxX0 https://t.co/Lptt0I3FhF",
+    "author": "@BuddyBangaramma",
+    "date": "2026-06-25T08:02:05+00:00",
+    "category": "Electricity",
+    "area": "Bangalore",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 3,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2070054913087099232",
+    "keywords": [
+      "bescom"
+    ],
+    "status": "open"
+  },
+  {
     "id": "2053442120212689235",
     "text": "@GBA_office This is mandatory check every day in every gully if the bangalore city. Dont show this as special task. Kids women  who are the majorly impacted. No path to walk, unhygienic smelly environment and pothole block.  Do this everyday.",
     "author": "@ravishyni",
@@ -1654,9 +1672,9 @@
     "author": "@Praveenstarboy1",
     "date": "2026-05-24T07:55:54+00:00",
     "category": "Waste",
-    "area": "Marenahalli",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Vijayanagar",
+    "ward_name": "Vinayakanagar",
+    "ward_no": "30",
     "severity": "low",
     "likes": 1,
     "retweets": 0,
@@ -2667,6 +2685,24 @@
     "retweets": 0,
     "source_url": "https://twitter.com/i/web/status/2068991586550354109",
     "keywords": [],
+    "status": "open"
+  },
+  {
+    "id": "2070049190919717216",
+    "text": "@RailwaySeva @RailMinIndia \nAm traveling from arasikere to Bangalore in siddaganga SF express (12726).There is no water to use for washrooms general coaches \nPlease look into this issue.\nPoor peoples also deserve comfortable travelling.\n(second coach from engine side )",
+    "author": "@Rangaswamimn2",
+    "date": "2026-06-25T07:39:21+00:00",
+    "category": "Water",
+    "area": "Bangalore",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 1,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2070049190919717216",
+    "keywords": [
+      "no water"
+    ],
     "status": "open"
   },
   {
@@ -11091,9 +11127,9 @@
     "author": "@chandrsh0808",
     "date": "2026-06-08T09:38:56+00:00",
     "category": "Waste",
-    "area": "JP Nagar",
-    "ward_name": "J.P Nagar",
-    "ward_no": "14",
+    "area": "Kothanur",
+    "ward_name": "",
+    "ward_no": "",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -11628,9 +11664,9 @@
     "author": "@matkashbakihai",
     "date": "2026-06-09T15:32:28+00:00",
     "category": "Parks",
-    "area": "Basavanagudi",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Malleshwaram",
+    "ward_name": "Malleshwaram",
+    "ward_no": "53",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -16081,9 +16117,9 @@
     "author": "@RwitabrataC",
     "date": "2026-06-25T04:48:25+00:00",
     "category": "Electricity",
-    "area": "Balaji Nagar",
-    "ward_name": "Bapuji Nagara",
-    "ward_no": "89",
+    "area": "Mahalakshmi Layout",
+    "ward_name": "",
+    "ward_no": "",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -16101,8 +16137,8 @@
     "date": "2026-06-25T04:36:04+00:00",
     "category": "Waste",
     "area": "RR Nagar",
-    "ward_name": "Rajajinagara",
-    "ward_no": "63",
+    "ward_name": "",
+    "ward_no": "",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -16147,6 +16183,62 @@
     "source_url": "https://twitter.com/i/web/status/2069970021519155524",
     "keywords": [
       "garbage"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2070065837189542245",
+    "text": "@NammaBESCOM And for the concerned authorities wondering, there has been another power cut since 11 am in the morning \n#bangalore #dejected",
+    "author": "@AvinashBaishya",
+    "date": "2026-06-25T08:45:30+00:00",
+    "category": "Electricity",
+    "area": "Bangalore",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2070065837189542245",
+    "keywords": [
+      "power cut",
+      "bescom"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2070034081384157670",
+    "text": "@NammaBESCOM Thank you for the update, @NammaBESCOM. If this was scheduled maintenance, why was there no prior notice? Many of us work from home, and such long outages cause significant inconvenience. If possible, kindly expedite the restoration. #Madiwala #Bengaluru #BESCOM",
+    "author": "@pyla_prathibha",
+    "date": "2026-06-25T06:39:19+00:00",
+    "category": "Electricity",
+    "area": "Madiwala",
+    "ward_name": "Madiwala",
+    "ward_no": "20",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2070034081384157670",
+    "keywords": [
+      "bescom"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2070029396078145989",
+    "text": "@NammaBESCOM power cut in my location for more than 1-2 hours. Please check and resolve. When will the power restore?\n\nAddress: Tavarekere, Maruti Nagar, 1st Stage, BTM 1st Stage, Bengaluru - 560029\nDivision/Subdivision: S1 Sub Division / \n / Gurappanapalya O&amp;M\n@DKShivakumar",
+    "author": "@aflehnihaaaal",
+    "date": "2026-06-25T06:20:41+00:00",
+    "category": "Electricity",
+    "area": "BTM 1st Stage",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2070029396078145989",
+    "keywords": [
+      "power cut",
+      "bescom"
     ],
     "status": "open"
   }
