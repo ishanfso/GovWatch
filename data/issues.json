@@ -1189,6 +1189,25 @@
     "status": "open"
   },
   {
+    "id": "2070150834093224218",
+    "text": "@OfficialBMRCL \n\nHey @OfficialBMRCL, we’re all stuck inside an underground Purple Line metro at Cubbon Park for the last 15 minutes with no announcement or update. Please let us know what’s causing the delay and when we’ll be moving again. #NammaMetro #Bengaluru\n#metro",
+    "author": "@pavan_nakshatri",
+    "date": "2026-06-25T14:23:15+00:00",
+    "category": "Parks",
+    "area": "Cubbon Park",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 1,
+    "retweets": 1,
+    "source_url": "https://twitter.com/i/web/status/2070150834093224218",
+    "keywords": [
+      "park",
+      "cubbon"
+    ],
+    "status": "open"
+  },
+  {
     "id": "2054518266387902916",
     "text": "@EduMinOfIndia @dpradhanbjp \nAlarming state of affairs in the National Law School of India University, Bangalore. No water available and hostel facilities worsening. A lift falling from 2 floors carrying 2 students inside, risking their lives. No complaints addressed.",
     "author": "@Anchalshraff",
@@ -2720,6 +2739,24 @@
     "source_url": "https://twitter.com/i/web/status/2070082075542327503",
     "keywords": [
       "power outage",
+      "bescom"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2070114838156833065",
+    "text": "It's been 8+ hours without electricity in Vaddarpalya, Bengaluru - 560114. Since morning, residents have been left without power, with no clear update on restoration.\n\nRequesting the concerned authorities to address this urgently\n\n#Bengaluru #PowerCut #BESCOM \n\n@NammaBESCOM",
+    "author": "@b_yogeshwara",
+    "date": "2026-06-25T12:00:12+00:00",
+    "category": "Electricity",
+    "area": "Vaddarpalya",
+    "ward_name": "Subedarpalya",
+    "ward_no": "54",
+    "severity": "low",
+    "likes": 1,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2070114838156833065",
+    "keywords": [
       "bescom"
     ],
     "status": "open"
@@ -5640,7 +5677,7 @@
     "author": "@SriroopaD99",
     "date": "2026-05-22T18:31:38+00:00",
     "category": "Electricity",
-    "area": "Vinayakanagar",
+    "area": "Wilson Garden",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -7289,7 +7326,7 @@
     "author": "@a_r_y_a__s_e_n",
     "date": "2026-05-27T13:13:38+00:00",
     "category": "Waste",
-    "area": "Belathur",
+    "area": "Kadugodi",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -16267,7 +16304,7 @@
     "author": "@Arko_Provo_Ray",
     "date": "2026-06-25T11:37:55+00:00",
     "category": "Electricity",
-    "area": "Electronic City Phase 2",
+    "area": "Electronic City",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -16286,7 +16323,7 @@
     "author": "@HGreen31213",
     "date": "2026-06-25T11:01:28+00:00",
     "category": "Electricity",
-    "area": "Red Carpet Layout, Kodathi, Sarjapura",
+    "area": "Sarjapur",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -16305,13 +16342,31 @@
     "author": "@HarshaRevanna",
     "date": "2026-06-25T09:30:16+00:00",
     "category": "Waste",
-    "area": "New Bayappanahalli",
-    "ward_name": "Old Baiyappanahalli",
-    "ward_no": "11",
+    "area": "Domlur",
+    "ward_name": "Domlur",
+    "ward_no": "22",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
     "source_url": "https://twitter.com/i/web/status/2070077106063909052",
+    "keywords": [
+      "garbage"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2070146707946693082",
+    "text": "@srivatsayb @DKShivakumar @krishnabgowda Also DKS sir and KBG sir, pls visit the place under the Kasturinagar flyover on ORR (Railway parallel road) and see how Bengaluru can compete for the top award as The Garbage City.\nIf I were you, I would clear the mess and use this place for Bike/Cycle parking.",
+    "author": "@HonesTweety",
+    "date": "2026-06-25T14:06:51+00:00",
+    "category": "Waste",
+    "area": "Kasturinagar",
+    "ward_name": "Kasturi Nagar",
+    "ward_no": "12",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2070146707946693082",
     "keywords": [
       "garbage"
     ],

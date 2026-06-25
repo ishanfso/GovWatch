@@ -5915,5 +5915,41 @@
   "2070092288882020444": {
     "verdict": "no",
     "area": null
+  },
+  "2070140000268636236": {
+    "verdict": "no",
+    "area": null
+  },
+  "2070118725190393923": {
+    "verdict": "no",
+    "area": "Lalbagh"
+  },
+  "2070153804037976161": {
+    "verdict": "no",
+    "area": "Cubbon Park"
+  },
+  "2070137437188243823": {
+    "verdict": "no",
+    "area": "Kengeri"
+  },
+  "2070150834093224218": {
+    "verdict": "yes",
+    "area": "Cubbon Park"
+  },
+  "2070114838156833065": {
+    "verdict": "yes",
+    "area": "Vaddarpalya"
+  },
+  "2070150512499147112": {
+    "verdict": "no",
+    "area": null
+  },
+  "2070145186928459861": {
+    "verdict": "no",
+    "area": null
+  },
+  "2070146707946693082": {
+    "verdict": "yes",
+    "area": "Kasturinagar"
   }
 }
