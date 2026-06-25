@@ -2546,7 +2546,7 @@
     "author": "@vigneshg_co",
     "date": "2026-06-19T04:20:31+00:00",
     "category": "Roads",
-    "area": "HSR Layout",
+    "area": "Hsr Layout",
     "ward_name": "HSR Layout",
     "ward_no": "72",
     "severity": "low",
@@ -2677,7 +2677,7 @@
     "author": "@chairmanbwssb",
     "date": "2026-06-22T09:36:48+00:00",
     "category": "Other",
-    "area": "HSR Layout",
+    "area": "Hsr Layout",
     "ward_name": "HSR Layout",
     "ward_no": "72",
     "severity": "low",
@@ -2702,6 +2702,25 @@
     "source_url": "https://twitter.com/i/web/status/2070049190919717216",
     "keywords": [
       "no water"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2070082075542327503",
+    "text": "@NammaBESCOM @BescomHelpline @mdbescom This is clearly not an isolated power outage. Large parts of Bengaluru appear to be affected, and the BESCOM helpline is overwhelmed with complaints. Kindly issue an official statement and share the expected time for power restoration.\n@KJGeorgeOffice",
+    "author": "@NikhilSamK",
+    "date": "2026-06-25T09:50:01+00:00",
+    "category": "Electricity",
+    "area": "Bangalore",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 1,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2070082075542327503",
+    "keywords": [
+      "power outage",
+      "bescom"
     ],
     "status": "open"
   },
@@ -4467,7 +4486,7 @@
     "author": "@bdchoubey",
     "date": "2026-05-20T09:14:31+00:00",
     "category": "Electricity",
-    "area": "HSR Layout",
+    "area": "Hsr Layout",
     "ward_name": "HSR Layout",
     "ward_no": "72",
     "severity": "low",
@@ -7800,7 +7819,7 @@
     "author": "@taniat_writes",
     "date": "2026-05-29T09:28:37+00:00",
     "category": "Electricity",
-    "area": "HSR Layout",
+    "area": "Hsr Layout",
     "ward_name": "HSR Layout",
     "ward_no": "72",
     "severity": "low",
@@ -8701,7 +8720,7 @@
     "author": "@AmithK1789547",
     "date": "2026-05-31T10:24:58+00:00",
     "category": "Waste",
-    "area": "HSR Layout",
+    "area": "Hsr Layout",
     "ward_name": "HSR Layout",
     "ward_no": "72",
     "severity": "low",
@@ -8720,7 +8739,7 @@
     "author": "@AmithK1789547",
     "date": "2026-05-31T10:19:43+00:00",
     "category": "Waste",
-    "area": "HSR Layout",
+    "area": "Hsr Layout",
     "ward_name": "HSR Layout",
     "ward_no": "72",
     "severity": "low",
@@ -11664,9 +11683,9 @@
     "author": "@matkashbakihai",
     "date": "2026-06-09T15:32:28+00:00",
     "category": "Parks",
-    "area": "Malleshwaram",
-    "ward_name": "Malleshwaram",
-    "ward_no": "53",
+    "area": "Basavanagudi",
+    "ward_name": "",
+    "ward_no": "",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -14736,7 +14755,7 @@
     "author": "@aksolan19",
     "date": "2026-06-20T04:32:36+00:00",
     "category": "Electricity",
-    "area": "HSR Layout",
+    "area": "Hsr Layout",
     "ward_name": "HSR Layout",
     "ward_no": "72",
     "severity": "low",
@@ -16229,7 +16248,7 @@
     "author": "@aflehnihaaaal",
     "date": "2026-06-25T06:20:41+00:00",
     "category": "Electricity",
-    "area": "BTM 1st Stage",
+    "area": "Tavarekere",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -16239,6 +16258,62 @@
     "keywords": [
       "power cut",
       "bescom"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2070109230313689415",
+    "text": "I don't know how people WFH in bengaluru, I am WFH today and there has been a power cut of more than 3 hours in between that till now in Electronic City Phase 2 area in bengaluru. Can someone look into this and fix this? @NammaBESCOM @EnergyDeptGoK @BescomTa",
+    "author": "@Arko_Provo_Ray",
+    "date": "2026-06-25T11:37:55+00:00",
+    "category": "Electricity",
+    "area": "Electronic City Phase 2",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2070109230313689415",
+    "keywords": [
+      "power cut",
+      "bescom"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2070100055911174195",
+    "text": "@NammaBESCOM There is a power cut  in #15 Modhak , Red carpet layout kodathi village road sarjapura main road Bangalore 560035. \nWhen the rain stopped the power went off.\n9556148053",
+    "author": "@HGreen31213",
+    "date": "2026-06-25T11:01:28+00:00",
+    "category": "Electricity",
+    "area": "Red Carpet Layout, Kodathi, Sarjapura",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2070100055911174195",
+    "keywords": [
+      "power cut",
+      "bescom"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2070077106063909052",
+    "text": "Dear @GBAuthority_Official @BBMPofficial,\nThe condition of roads and garbage management in New Bayappanahalli, Ward 57, C.V. Raman Nagar, Bengaluru 560038 is unacceptable.\nBroken roads\nNewBayappanahalli\n#Bengaluru #CVRamanNagar #NewBayappanahalli #Ward57 #BBMP #GBA https://t.co/MW2a5PRdYP",
+    "author": "@HarshaRevanna",
+    "date": "2026-06-25T09:30:16+00:00",
+    "category": "Waste",
+    "area": "New Bayappanahalli",
+    "ward_name": "Old Baiyappanahalli",
+    "ward_no": "11",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2070077106063909052",
+    "keywords": [
+      "garbage"
     ],
     "status": "open"
   }

@@ -5855,5 +5855,65 @@
   "2070047665296203973": {
     "verdict": "no",
     "area": "Cubbon Road"
+  },
+  "2070112197305630877": {
+    "verdict": "no",
+    "area": null
+  },
+  "2070108964847820947": {
+    "verdict": "no",
+    "area": null
+  },
+  "2070108094630412732": {
+    "verdict": "no",
+    "area": null
+  },
+  "2070093913302692003": {
+    "verdict": "no",
+    "area": null
+  },
+  "2070090057197776929": {
+    "verdict": "no",
+    "area": null
+  },
+  "2070109585445425168": {
+    "verdict": "no",
+    "area": "Lalbagh"
+  },
+  "2070082075542327503": {
+    "verdict": "yes",
+    "area": null
+  },
+  "2070098458405634419": {
+    "verdict": "no",
+    "area": null
+  },
+  "2070082417860465113": {
+    "verdict": "no",
+    "area": null
+  },
+  "2070092169722163536": {
+    "verdict": "no",
+    "area": null
+  },
+  "2070091610155802698": {
+    "verdict": "no",
+    "area": null
+  },
+  "2070109230313689415": {
+    "verdict": "yes",
+    "area": "Electronic City Phase 2"
+  },
+  "2070100055911174195": {
+    "verdict": "yes",
+    "area": "Red Carpet Layout, Kodathi, Sarjapura"
+  },
+  "2070077106063909052": {
+    "verdict": "yes",
+    "area": "New Bayappanahalli"
+  },
+  "2070092288882020444": {
+    "verdict": "no",
+    "area": null
   }
 }
