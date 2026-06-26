@@ -6271,5 +6271,33 @@
   "2070478629520441784": {
     "verdict": "no",
     "area": "Cubbon Park"
+  },
+  "2070515899262738444": {
+    "verdict": "no",
+    "area": "Old Madras Road"
+  },
+  "2070513077502738724": {
+    "verdict": "no",
+    "area": null
+  },
+  "2070513262622568864": {
+    "verdict": "no",
+    "area": null
+  },
+  "2070509893174358262": {
+    "verdict": "yes",
+    "area": "Shantinagar"
+  },
+  "2070510698040639500": {
+    "verdict": "no",
+    "area": "Gayatri Layout"
+  },
+  "2070516487023165921": {
+    "verdict": "no",
+    "area": null
+  },
+  "2070516716807827715": {
+    "verdict": "no",
+    "area": "Cubbon Park"
   }
 }
