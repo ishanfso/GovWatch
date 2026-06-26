@@ -1728,9 +1728,9 @@
     "author": "@Praveenstarboy1",
     "date": "2026-05-24T07:55:54+00:00",
     "category": "Waste",
-    "area": "Vijayanagar",
-    "ward_name": "Vinayakanagar",
-    "ward_no": "30",
+    "area": "Marenahalli",
+    "ward_name": "",
+    "ward_no": "",
     "severity": "low",
     "likes": 1,
     "retweets": 0,
@@ -7381,7 +7381,7 @@
     "author": "@a_r_y_a__s_e_n",
     "date": "2026-05-27T13:13:38+00:00",
     "category": "Waste",
-    "area": "Kadugodi",
+    "area": "Belathur",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -16627,6 +16627,24 @@
     "source_url": "https://twitter.com/i/web/status/2070537494937190553",
     "keywords": [
       "pothole"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2070588918949687424",
+    "text": "@GBA_office Great job\nPlease kindly close a big &amp; deep hole on 2nd crossCambridge road, ulsoor, Jogupalya, Bangalore 560008, opposite Gundappa park area &amp; BBMP contact point. People are parking cars also on top of it, not sure when a tragedy can...please kindly do the needful at earliest.",
+    "author": "@RanjiniGanesh2",
+    "date": "2026-06-26T19:24:02+00:00",
+    "category": "Parks",
+    "area": "Ulsoor",
+    "ward_name": "Indiranagar",
+    "ward_no": "15",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2070588918949687424",
+    "keywords": [
+      "park"
     ],
     "status": "open"
   }
