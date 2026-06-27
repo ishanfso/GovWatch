@@ -1728,9 +1728,9 @@
     "author": "@Praveenstarboy1",
     "date": "2026-05-24T07:55:54+00:00",
     "category": "Waste",
-    "area": "Marenahalli",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Vijayanagar",
+    "ward_name": "Vinayakanagar",
+    "ward_no": "30",
     "severity": "low",
     "likes": 1,
     "retweets": 0,
@@ -8773,7 +8773,7 @@
     "author": "@anyrudh79",
     "date": "2026-05-31T11:35:32+00:00",
     "category": "Waste",
-    "area": "Ashoka Pillar",
+    "area": "Kanakanapalya",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -11238,9 +11238,9 @@
     "author": "@chandrsh0808",
     "date": "2026-06-08T09:38:56+00:00",
     "category": "Waste",
-    "area": "Kothanur",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "JP Nagar",
+    "ward_name": "J.P Nagar",
+    "ward_no": "14",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -16664,6 +16664,25 @@
     "keywords": [
       "no electricity",
       "bescom"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2070737055559369034",
+    "text": "🗑 Garbage dump at JS Enclave,4th main 5th Cross road,GM palya, G.M Palya.\n\nMLA: S. Raghu (BJP)\nCentral #18 · Severe severity\n\nTrack it → https://t.co/l7vsct6R61\n\n#NammaKasa #Bengaluru #CivicDuty",
+    "author": "@PradeepK82169",
+    "date": "2026-06-27T05:12:41+00:00",
+    "category": "Waste",
+    "area": "G.M Palya",
+    "ward_name": "G.M Palya",
+    "ward_no": "18",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2070737055559369034",
+    "keywords": [
+      "garbage",
+      "dump"
     ],
     "status": "open"
   }
