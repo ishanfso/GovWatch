@@ -1747,9 +1747,9 @@
     "author": "@Praveenstarboy1",
     "date": "2026-05-24T07:55:54+00:00",
     "category": "Waste",
-    "area": "Marenahalli",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Vijayanagar",
+    "ward_name": "Vinayakanagar",
+    "ward_no": "30",
     "severity": "low",
     "likes": 1,
     "retweets": 0,
@@ -16739,6 +16739,43 @@
     "source_url": "https://twitter.com/i/web/status/2070758359209504784",
     "keywords": [
       "garbage"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2070849154381643857",
+    "text": "@saffrontrail Traffic… potholes… no electricity… nooooo water\n\nNamma bengaluru my ar?3",
+    "author": "@JaskaranSI8926",
+    "date": "2026-06-27T12:38:07+00:00",
+    "category": "Electricity",
+    "area": "Bangalore",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2070849154381643857",
+    "keywords": [
+      "no electricity"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2070840972033048829",
+    "text": "🗑 Garbage dump at 7th main btm ii stage opp Sugar cane juice centre., N.S Palya.\n\nMLA: Ramalinga Reddy (INC)\nSouth #17 · Moderate severity\n\nTrack it → https://t.co/pel0XfHhgH\n\n#NammaKasa #Bengaluru #CivicDuty",
+    "author": "@BalaBtm",
+    "date": "2026-06-27T12:05:36+00:00",
+    "category": "Waste",
+    "area": "BTM II Stage",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2070840972033048829",
+    "keywords": [
+      "garbage",
+      "dump"
     ],
     "status": "open"
   }

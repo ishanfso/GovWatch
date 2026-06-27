@@ -6471,5 +6471,33 @@
   "2070815965458440476": {
     "verdict": "no",
     "area": null
+  },
+  "2070847114666533308": {
+    "verdict": "no",
+    "area": null
+  },
+  "2070853576172441939": {
+    "verdict": "no",
+    "area": null
+  },
+  "2070849154381643857": {
+    "verdict": "yes",
+    "area": null
+  },
+  "2070854114834341925": {
+    "verdict": "no",
+    "area": null
+  },
+  "2070848639166238829": {
+    "verdict": "no",
+    "area": null
+  },
+  "2070840972033048829": {
+    "verdict": "yes",
+    "area": "BTM II Stage"
+  },
+  "2070840678133977482": {
+    "verdict": "no",
+    "area": null
   }
 }
