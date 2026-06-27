@@ -5732,7 +5732,7 @@
     "author": "@SriroopaD99",
     "date": "2026-05-22T18:31:38+00:00",
     "category": "Electricity",
-    "area": "Wilson Garden",
+    "area": "Vinayakanagar",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -7381,7 +7381,7 @@
     "author": "@a_r_y_a__s_e_n",
     "date": "2026-05-27T13:13:38+00:00",
     "category": "Waste",
-    "area": "Belathur",
+    "area": "Kadugodi",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -11238,9 +11238,9 @@
     "author": "@chandrsh0808",
     "date": "2026-06-08T09:38:56+00:00",
     "category": "Waste",
-    "area": "JP Nagar",
-    "ward_name": "J.P Nagar",
-    "ward_no": "14",
+    "area": "Kothanur",
+    "ward_name": "",
+    "ward_no": "",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -16645,6 +16645,25 @@
     "source_url": "https://twitter.com/i/web/status/2070588918949687424",
     "keywords": [
       "park"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2070670778123854222",
+    "text": "@NammaBESCOM @CMofKarnataka @DKShivakumar No electricity for several hours of the each days in Bengaluru  @BBCIndia  please cover the news 🙏 lets expose them and their carelessness.",
+    "author": "@NitinSa48282266",
+    "date": "2026-06-27T00:49:19+00:00",
+    "category": "Electricity",
+    "area": "Bangalore",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2070670778123854222",
+    "keywords": [
+      "no electricity",
+      "bescom"
     ],
     "status": "open"
   }
