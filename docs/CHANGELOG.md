@@ -5,6 +5,24 @@ Format: `[Date] - What changed and why`
 
 ---
 
+## [2026-06-28] — Admin user management panel
+
+### What changed
+
+**Modified files:**
+- `dashboard/index.html` — Added "Admin" tab button (hidden for non-admins) and empty admin tab content div.
+- `dashboard/js/app.js` — Admin tab now visible only when `window._userRole === "admin"`. Added `renderAdminTab()` which fetches all user profiles from Supabase, shows stats (total/pending/viewer/admin), a "Pending Approval" section with Approve buttons, and an All Users table with per-row role controls (Approve · Suspend · Make Admin · Demote). Actions write to the `profiles` table and re-render on success.
+- `dashboard/css/styles.css` — Added admin panel styles: stat cards, section headers, user table, role pills (color-coded by role), and all action button variants.
+- `scripts/supabase_schema.sql` — Changed default role from `viewer` to `pending` (new signups require approval). Added `admin update any profile` RLS policy so admins can change other users' roles. Added incremental SQL block for existing installations.
+
+### Why
+Previously, approving users required logging into Supabase directly and running SQL. Admins can now manage all users inside the dashboard — see pending signups, approve or suspend access, promote/demote roles — without leaving the app.
+
+### One-time Supabase action required
+Run the incremental SQL block at the bottom of `scripts/supabase_schema.sql` in Supabase SQL Editor to add the new RLS policy.
+
+---
+
 ## [2026-06-23] — Supabase auth + landing page + migrate localStorage to shared state
 
 ### What changed
