@@ -7,7 +7,7 @@ create table if not exists public.profiles (
   email text,
   full_name text,
   city text default 'Bangalore',
-  role text default 'viewer',
+  role text default 'pending',
   created_at timestamptz default now()
 );
 
@@ -58,12 +58,26 @@ create policy "write issue_actions" on public.issue_actions for all to authentic
 create policy "read comments" on public.issue_comments for select to authenticated using (true);
 create policy "write comments" on public.issue_comments for all to authenticated using (true) with check (true);
 
--- profiles: authenticated users can read all, update own
+-- profiles: authenticated users can read all, update own; admins can update any profile
 create policy "read profiles" on public.profiles for select to authenticated using (true);
 create policy "update own profile" on public.profiles for update to authenticated using (auth.uid() = id);
+create policy "admin update any profile" on public.profiles for update to authenticated
+  using (exists (select 1 from public.profiles p2 where p2.id = auth.uid() and p2.role = 'admin'));
 
 -- Enable Realtime on issue_actions (so status changes sync live across users)
 begin;
   drop publication if exists supabase_realtime;
   create publication supabase_realtime for table issue_actions, issue_comments;
 commit;
+
+-- ─────────────────────────────────────────────────────────────────────────────
+-- INCREMENTAL UPDATE: Run this if you already ran the schema above.
+-- Adds admin user-management capability.
+-- ─────────────────────────────────────────────────────────────────────────────
+-- Step 1: Allow admins to update any user's role
+create policy if not exists "admin update any profile" on public.profiles
+  for update to authenticated
+  using (exists (select 1 from public.profiles p2 where p2.id = auth.uid() and p2.role = 'admin'));
+
+-- Step 2: Change new-signup default to 'pending' (requires admin approval)
+alter table public.profiles alter column role set default 'pending';

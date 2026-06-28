@@ -175,6 +175,11 @@ async function init() {
   await window._roleReady;
   if (!window._userRole) return; // redirecting — don't render
 
+  // Show admin tab only for admin users
+  if (window._userRole === "admin") {
+    document.querySelectorAll(".admin-only").forEach(el => el.classList.remove("hidden"));
+  }
+
   const urlRole = new URLSearchParams(window.location.search).get("role") || "";
   if (urlRole && ROLE_DEPARTMENTS[urlRole]) {
     activeFilters.role = urlRole;
@@ -481,6 +486,7 @@ function switchTab(tab) {
   if (tab === "analytics")   renderAnalytics(filtered);
   if (tab === "officials")   initOfficials();
   if (tab === "directory")   initDirectory();
+  if (tab === "admin")       renderAdminTab();
 }
 
 // ── Queue ──────────────────────────────────────────────────────────
@@ -3383,6 +3389,116 @@ function showDirectoryProfile(entry) {
       }
       renderKPIs(allIssues);
       renderQueue(getFiltered());
+    });
+  });
+}
+
+// ── Admin Panel ────────────────────────────────────────────────────
+
+async function renderAdminTab() {
+  const wrap = document.querySelector("#tab-admin .admin-panel-wrap");
+  if (!wrap) return;
+  wrap.innerHTML = '<div class="loading">Loading users...</div>';
+
+  const { data: profiles, error } = await sb
+    .from("profiles")
+    .select("id, email, full_name, role, created_at")
+    .order("created_at", { ascending: false });
+
+  if (error || !profiles) {
+    wrap.innerHTML = '<div class="no-results">Could not load user list. Check Supabase RLS policies.</div>';
+    return;
+  }
+
+  const pending = profiles.filter(p => p.role === "pending");
+  const active  = profiles.filter(p => p.role !== "pending");
+  const admins  = profiles.filter(p => p.role === "admin").length;
+  const viewers = profiles.filter(p => p.role === "viewer").length;
+
+  function joinDate(iso) {
+    return new Date(iso).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" });
+  }
+
+  function userRow(p) {
+    const isMe = p.id === currentUser?.id;
+    const roleClass = { admin: "role-pill-admin", viewer: "role-pill-viewer", pending: "role-pill-pending" }[p.role] || "role-pill-viewer";
+    const actions = isMe
+      ? '<span class="admin-you-tag">You</span>'
+      : `<div class="admin-row-actions">
+          ${p.role === "pending"
+            ? `<button class="btn-admin-approve" data-uid="${esc(p.id)}">Approve</button>`
+            : `<button class="btn-admin-suspend" data-uid="${esc(p.id)}">Suspend</button>`}
+          ${p.role === "viewer"
+            ? `<button class="btn-admin-promote" data-uid="${esc(p.id)}">Make Admin</button>`
+            : ""}
+          ${p.role === "admin"
+            ? `<button class="btn-admin-demote" data-uid="${esc(p.id)}">Demote</button>`
+            : ""}
+        </div>`;
+    return `<tr>
+      <td class="admin-td-email">${esc(p.email || "—")}</td>
+      <td>${esc(p.full_name || "—")}</td>
+      <td><span class="role-pill ${roleClass}">${esc(p.role)}</span></td>
+      <td class="admin-td-date">${joinDate(p.created_at)}</td>
+      <td>${actions}</td>
+    </tr>`;
+  }
+
+  wrap.innerHTML = `
+    <div class="admin-stats-row">
+      <div class="admin-stat-card"><span class="admin-stat-num">${profiles.length}</span><span class="admin-stat-label">Total Users</span></div>
+      <div class="admin-stat-card admin-stat-pending"><span class="admin-stat-num">${pending.length}</span><span class="admin-stat-label">Pending</span></div>
+      <div class="admin-stat-card"><span class="admin-stat-num">${viewers}</span><span class="admin-stat-label">Viewers</span></div>
+      <div class="admin-stat-card admin-stat-admin"><span class="admin-stat-num">${admins}</span><span class="admin-stat-label">Admins</span></div>
+    </div>
+
+    ${pending.length > 0 ? `
+    <div class="admin-section">
+      <div class="admin-section-header">
+        <span class="admin-section-title">Pending Approval</span>
+        <span class="admin-section-badge admin-badge-pending">${pending.length}</span>
+      </div>
+      <table class="admin-table">
+        <thead><tr><th>Email</th><th>Name</th><th>Status</th><th>Signed Up</th><th>Actions</th></tr></thead>
+        <tbody>${pending.map(userRow).join("")}</tbody>
+      </table>
+    </div>` : `
+    <div class="admin-section">
+      <div class="admin-section-header"><span class="admin-section-title admin-all-clear">No pending approvals</span></div>
+    </div>`}
+
+    <div class="admin-section">
+      <div class="admin-section-header">
+        <span class="admin-section-title">All Users</span>
+        <span class="admin-section-badge">${active.length}</span>
+      </div>
+      <table class="admin-table">
+        <thead><tr><th>Email</th><th>Name</th><th>Role</th><th>Joined</th><th>Actions</th></tr></thead>
+        <tbody>${active.map(userRow).join("")}</tbody>
+      </table>
+    </div>`;
+
+  wrap.querySelectorAll("[data-uid]").forEach(btn => {
+    btn.addEventListener("click", async () => {
+      const uid = btn.dataset.uid;
+      let newRole = null;
+      if (btn.classList.contains("btn-admin-approve"))  newRole = "viewer";
+      if (btn.classList.contains("btn-admin-suspend"))  newRole = "pending";
+      if (btn.classList.contains("btn-admin-promote"))  newRole = "admin";
+      if (btn.classList.contains("btn-admin-demote"))   newRole = "viewer";
+      if (!newRole) return;
+
+      btn.disabled = true;
+      btn.textContent = "...";
+
+      const { error } = await sb.from("profiles").update({ role: newRole }).eq("id", uid);
+      if (error) {
+        btn.textContent = "Error";
+        btn.disabled = false;
+        console.error("Admin role update failed:", error);
+      } else {
+        renderAdminTab();
+      }
     });
   });
 }
