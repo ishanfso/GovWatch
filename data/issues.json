@@ -1289,8 +1289,8 @@
     "date": "2026-06-28T09:16:23+00:00",
     "category": "Waste",
     "area": "Geddalahalli",
-    "ward_name": "Geddalahalli",
-    "ward_no": "59",
+    "ward_name": "",
+    "ward_no": "",
     "severity": "low",
     "likes": 1,
     "retweets": 1,
@@ -1784,9 +1784,9 @@
     "author": "@Praveenstarboy1",
     "date": "2026-05-24T07:55:54+00:00",
     "category": "Waste",
-    "area": "Vijayanagar",
-    "ward_name": "Vinayakanagar",
-    "ward_no": "30",
+    "area": "Marenahalli",
+    "ward_name": "",
+    "ward_no": "",
     "severity": "low",
     "likes": 1,
     "retweets": 0,
@@ -8829,7 +8829,7 @@
     "author": "@anyrudh79",
     "date": "2026-05-31T11:35:32+00:00",
     "category": "Waste",
-    "area": "Kanakanapalya",
+    "area": "Ashoka Pillar",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -17035,6 +17035,24 @@
     "keywords": [
       "park",
       "cubbon"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2071199375435706463",
+    "text": "@DEVILya9 Even in Bangalore everyday 2 times power cut since last month\nTvk dhan reason ah?",
+    "author": "@thalapa13332131",
+    "date": "2026-06-28T11:49:46+00:00",
+    "category": "Electricity",
+    "area": "Bangalore",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2071199375435706463",
+    "keywords": [
+      "power cut"
     ],
     "status": "open"
   }
