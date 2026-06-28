@@ -5788,7 +5788,7 @@
     "author": "@SriroopaD99",
     "date": "2026-05-22T18:31:38+00:00",
     "category": "Electricity",
-    "area": "Vinayakanagar",
+    "area": "Wilson Garden",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -7437,7 +7437,7 @@
     "author": "@a_r_y_a__s_e_n",
     "date": "2026-05-27T13:13:38+00:00",
     "category": "Waste",
-    "area": "Kadugodi",
+    "area": "Belathur",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -17071,6 +17071,44 @@
     "source_url": "https://twitter.com/i/web/status/2071225165799940135",
     "keywords": [
       "footpath"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2071247237741707625",
+    "text": "@DKShivakumar My child is 13 months old. I'm not able to use a stroller because of the bad roads, even footpaths are illegally occupied by vendors, no place to walk. Kindly bless our child with good roads and save our kids.\n\nSeveral times called West Commissioner Rajendra KV, his team say's no https://t.co/vBZTruNesN",
+    "author": "@amithrkp",
+    "date": "2026-06-28T14:59:58+00:00",
+    "category": "Roads",
+    "area": "Bangalore",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2071247237741707625",
+    "keywords": [
+      "footpath"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2071245480357658992",
+    "text": "This is the current condition near Nallurahalli Lake, #Whitefield, #Bengaluru. Garbage has been piling up for days, creating an unhygienic environment and affecting nearby residents.\nKindly take urgent action to clear the waste and prevent further dumping. #bbmp\n#Bangalore https://t.co/Y1uU05OnJt",
+    "author": "@amantripathi093",
+    "date": "2026-06-28T14:52:59+00:00",
+    "category": "Waste",
+    "area": "Whitefield",
+    "ward_name": "Whitefield",
+    "ward_no": "38",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2071245480357658992",
+    "keywords": [
+      "garbage",
+      "waste",
+      "dump"
     ],
     "status": "open"
   }
