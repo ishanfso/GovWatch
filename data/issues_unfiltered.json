@@ -4309,6 +4309,24 @@
     "status": "open"
   },
   {
+    "id": "2071628293544005931",
+    "text": "'Bengaluru is a garbage city': Kiran Mazumdar-Shaw laments city's transformation, shares her vision on how it could have looked like\n\nhttps://t.co/cx9v5MB9T9",
+    "author": "@ravikeerthi22",
+    "date": "2026-06-29T16:14:08+00:00",
+    "category": "Waste",
+    "area": "Bangalore",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "medium",
+    "likes": 12,
+    "retweets": 3,
+    "source_url": "https://twitter.com/i/web/status/2071628293544005931",
+    "keywords": [
+      "garbage"
+    ],
+    "status": "open"
+  },
+  {
     "id": "2061742226305392847",
     "text": "There’s an interesting new print magazine published out of Bengaluru. Called LURU, it features essays and stories, and is elegantly designed. The new issue includes an ‘oral history of Cubbon Park’. You can learn more about it here:\nhttps://t.co/cYbLPNYsC5",
     "author": "@Ram_Guha",
@@ -5980,6 +5998,24 @@
     "keywords": [
       "bwssb",
       "water supply"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2071628688089812997",
+    "text": "If Beatles were in Bangalore:\n\nHere Comes the Pothole 🎶 https://t.co/ESLtdA0uOg",
+    "author": "@ijnani",
+    "date": "2026-06-29T16:15:42+00:00",
+    "category": "Roads",
+    "area": "Bangalore",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 9,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2071628688089812997",
+    "keywords": [
+      "pothole"
     ],
     "status": "open"
   },
@@ -24765,6 +24801,42 @@
     "status": "open"
   },
   {
+    "id": "2071654068536447084",
+    "text": "@ravikeerthi22 Madam @kiranshaw, Bengaluru was a garden City earlier, due to uncontrolled immigration from all states, they converted the garden City to a garbage city.",
+    "author": "@One_Tea_Salaga",
+    "date": "2026-06-29T17:56:34+00:00",
+    "category": "Waste",
+    "area": "Bangalore",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 1,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2071654068536447084",
+    "keywords": [
+      "garbage"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2071634444361036239",
+    "text": "BMTC EV Bus Accident Near Vidhana Soudha: Pedestrian Critical After Being Run Over\n\nhttps://t.co/cdsd5D0Kq2\n\n#BMTC #Bengaluru #VidhanaSoudha #BusAccident #ElectricBus #RoadAccident #BengaluruTraffic #KarnatakaNews #BreakingNews",
+    "author": "@SaptashwaTV",
+    "date": "2026-06-29T16:38:35+00:00",
+    "category": "Traffic",
+    "area": "Bangalore",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 1,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2071634444361036239",
+    "keywords": [
+      "bmtc"
+    ],
+    "status": "open"
+  },
+  {
     "id": "2055305588222165459",
     "text": "@Kuma50531Kumar no they are busy building it to tumakuru, kanakpura etc so core Bengaluru have to for now be happy with pothole ridden roads and traffic jams!",
     "author": "@ranjithe1",
@@ -38391,7 +38463,7 @@
     "author": "@a_r_y_a__s_e_n",
     "date": "2026-05-27T13:13:38+00:00",
     "category": "Waste",
-    "area": "Kadugodi",
+    "area": "Belathur",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -42583,9 +42655,9 @@
     "author": "@nikhilbhima",
     "date": "2026-05-30T16:14:34+00:00",
     "category": "Parks",
-    "area": "Koramangala",
-    "ward_name": "Koramangala East",
-    "ward_no": "28",
+    "area": "Cubbon Park",
+    "ward_name": "",
+    "ward_no": "",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -43490,7 +43562,7 @@
     "author": "@anyrudh79",
     "date": "2026-05-31T11:35:32+00:00",
     "category": "Waste",
-    "area": "Kanakanapalya",
+    "area": "Ashoka Pillar",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -57816,7 +57888,7 @@
     "author": "@RanjanPras49547",
     "date": "2026-06-08T09:41:02+00:00",
     "category": "Parks",
-    "area": "Hoskote",
+    "area": "Lalbagh",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -83854,6 +83926,98 @@
       "bmtc",
       "commute"
     ],
+    "status": "open"
+  },
+  {
+    "id": "2071655344804393237",
+    "text": "@NammaBESCOM too much power cut and power fluctuations in Rajasannidhi apartment Begur Koppa main road\nBangalore 560083\n8861829415",
+    "author": "@Deep74088502",
+    "date": "2026-06-29T18:01:38+00:00",
+    "category": "Electricity",
+    "area": "Begur",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2071655344804393237",
+    "keywords": [
+      "power cut",
+      "bescom"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2071644212832202822",
+    "text": "@shadowbarks @ChristinMP_ @CMofKarnataka @thekjgeorge @NammaBESCOM If consumers in Mumbai need not pay bribe to a Tata employee, why should consumer in Bangalore pay bribe to govt staff? Distribution is a business. BESCOM should chase consumers, not the other way around",
+    "author": "@shajugnair",
+    "date": "2026-06-29T17:17:24+00:00",
+    "category": "Electricity",
+    "area": "Bangalore",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2071644212832202822",
+    "keywords": [
+      "bescom"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2071644040106578263",
+    "text": "@NammaBESCOM \nDear BESCOM,\n5–10 power cuts every week. Are you supplying electricity or practicing load shedding for fun? We pay bills on time. Do your job.\n\n#BESCOM\n\n#BESCOM #PowerCuts #Bengaluru",
+    "author": "@GummyNarendra",
+    "date": "2026-06-29T17:16:43+00:00",
+    "category": "Electricity",
+    "area": "Bangalore",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2071644040106578263",
+    "keywords": [
+      "power cut",
+      "bescom",
+      "load shedding"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2071631967498695105",
+    "text": "@nischitkr2 Cubbon park is too far from my location, Bengaluru traffic  🙂🙂",
+    "author": "@divyaporwal_",
+    "date": "2026-06-29T16:28:44+00:00",
+    "category": "Parks",
+    "area": "Cubbon Park",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2071631967498695105",
+    "keywords": [
+      "park",
+      "cubbon"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2071653538401538188",
+    "text": "When he argues about other state issues, people like why can't he just talk about his constituency. When he trying think about his constituency, why he was silent for other constituency.\n\nLet me give one example of why we should minimize the usage of personal vehicle and start https://t.co/iCDDG8GmVv",
+    "author": "@MrCMofKA",
+    "date": "2026-06-29T17:54:27+00:00",
+    "category": "Other",
+    "area": "Bangalore",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2071653538401538188",
+    "keywords": [],
     "status": "open"
   }
 ]

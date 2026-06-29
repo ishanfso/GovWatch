@@ -7473,7 +7473,7 @@
     "author": "@a_r_y_a__s_e_n",
     "date": "2026-05-27T13:13:38+00:00",
     "category": "Waste",
-    "area": "Kadugodi",
+    "area": "Belathur",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -8865,7 +8865,7 @@
     "author": "@anyrudh79",
     "date": "2026-05-31T11:35:32+00:00",
     "category": "Waste",
-    "area": "Kanakanapalya",
+    "area": "Ashoka Pillar",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -17444,6 +17444,45 @@
     "keywords": [
       "garbage",
       "dump"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2071655344804393237",
+    "text": "@NammaBESCOM too much power cut and power fluctuations in Rajasannidhi apartment Begur Koppa main road\nBangalore 560083\n8861829415",
+    "author": "@Deep74088502",
+    "date": "2026-06-29T18:01:38+00:00",
+    "category": "Electricity",
+    "area": "Begur Koppa",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2071655344804393237",
+    "keywords": [
+      "power cut",
+      "bescom"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2071644040106578263",
+    "text": "@NammaBESCOM \nDear BESCOM,\n5–10 power cuts every week. Are you supplying electricity or practicing load shedding for fun? We pay bills on time. Do your job.\n\n#BESCOM\n\n#BESCOM #PowerCuts #Bengaluru",
+    "author": "@GummyNarendra",
+    "date": "2026-06-29T17:16:43+00:00",
+    "category": "Electricity",
+    "area": "Bangalore",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2071644040106578263",
+    "keywords": [
+      "power cut",
+      "bescom",
+      "load shedding"
     ],
     "status": "open"
   }
