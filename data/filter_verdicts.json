@@ -6911,5 +6911,41 @@
   "2071356126038577538": {
     "verdict": "yes",
     "area": "Wilson Garden"
+  },
+  "2071420424748187798": {
+    "verdict": "no",
+    "area": null
+  },
+  "2071409216913367463": {
+    "verdict": "no",
+    "area": null
+  },
+  "2071407577158836718": {
+    "verdict": "no",
+    "area": null
+  },
+  "2071420479299301422": {
+    "verdict": "yes",
+    "area": "RHCS Layout"
+  },
+  "2071418088030126582": {
+    "verdict": "no",
+    "area": null
+  },
+  "2071409533004435780": {
+    "verdict": "yes",
+    "area": "Mahadevapura"
+  },
+  "2071388813163893195": {
+    "verdict": "no",
+    "area": null
+  },
+  "2071417914654355533": {
+    "verdict": "no",
+    "area": "Lalbagh"
+  },
+  "2071415843507032500": {
+    "verdict": "no",
+    "area": null
   }
 }

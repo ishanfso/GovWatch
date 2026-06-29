@@ -8847,7 +8847,7 @@
     "author": "@anyrudh79",
     "date": "2026-05-31T11:35:32+00:00",
     "category": "Waste",
-    "area": "Ashoka Pillar",
+    "area": "Kanakanapalya",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -11312,9 +11312,9 @@
     "author": "@chandrsh0808",
     "date": "2026-06-08T09:38:56+00:00",
     "category": "Waste",
-    "area": "JP Nagar",
-    "ward_name": "J.P Nagar",
-    "ward_no": "14",
+    "area": "Kothanur",
+    "ward_name": "",
+    "ward_no": "",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -11849,9 +11849,9 @@
     "author": "@matkashbakihai",
     "date": "2026-06-09T15:32:28+00:00",
     "category": "Parks",
-    "area": "Malleshwaram",
-    "ward_name": "Malleshwaram",
-    "ward_no": "53",
+    "area": "Basavanagudi",
+    "ward_name": "",
+    "ward_no": "",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -17183,6 +17183,44 @@
     "keywords": [
       "no electricity",
       "bescom"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2071420479299301422",
+    "text": "@NammaBESCOM Again There is a Power cut for no reason at RHCS Layout 3rd main 6th Cross Srigandad Kaval Sunkadakatte Bangalore 91. Please restore soon.\nWorst service from BESCOM.@NammaBESCOM @mdbescom",
+    "author": "@Bharath_Kumar01",
+    "date": "2026-06-29T02:28:22+00:00",
+    "category": "Electricity",
+    "area": "RHCS Layout",
+    "ward_name": "RBI Layout",
+    "ward_no": "42",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2071420479299301422",
+    "keywords": [
+      "power cut",
+      "bescom"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2071409533004435780",
+    "text": "🗑 Garbage dump at Near MTB School mahadevpura, Mahadevapura.\n\nMLA: B. A. Basavaraja (BJP)\nEast #22 · Critical severity\n\nTrack it → https://t.co/2WH672TYAp\n\n#NammaKasa #Bengaluru #CivicDuty",
+    "author": "@vjpiyush08",
+    "date": "2026-06-29T01:44:52+00:00",
+    "category": "Waste",
+    "area": "Mahadevapura",
+    "ward_name": "Mahadevapura",
+    "ward_no": "22",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2071409533004435780",
+    "keywords": [
+      "garbage",
+      "dump"
     ],
     "status": "open"
   }
