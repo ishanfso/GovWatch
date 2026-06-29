@@ -1802,9 +1802,9 @@
     "author": "@Praveenstarboy1",
     "date": "2026-05-24T07:55:54+00:00",
     "category": "Waste",
-    "area": "Vijayanagar",
-    "ward_name": "Vinayakanagar",
-    "ward_no": "30",
+    "area": "Marenahalli",
+    "ward_name": "",
+    "ward_no": "",
     "severity": "low",
     "likes": 1,
     "retweets": 0,
@@ -5806,7 +5806,7 @@
     "author": "@SriroopaD99",
     "date": "2026-05-22T18:31:38+00:00",
     "category": "Electricity",
-    "area": "Vinayakanagar",
+    "area": "Wilson Garden",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -11312,9 +11312,9 @@
     "author": "@chandrsh0808",
     "date": "2026-06-08T09:38:56+00:00",
     "category": "Waste",
-    "area": "JP Nagar",
-    "ward_name": "J.P Nagar",
-    "ward_no": "14",
+    "area": "Kothanur",
+    "ward_name": "",
+    "ward_no": "",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -11849,9 +11849,9 @@
     "author": "@matkashbakihai",
     "date": "2026-06-09T15:32:28+00:00",
     "category": "Parks",
-    "area": "Malleshwaram",
-    "ward_name": "Malleshwaram",
-    "ward_no": "53",
+    "area": "Basavanagudi",
+    "ward_name": "",
+    "ward_no": "",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -17225,6 +17225,44 @@
     "status": "open"
   },
   {
+    "id": "2071491177707348391",
+    "text": "@NammaBESCOM Again There is a Power cut for no reason at RHCS Layout 3rd main 6th Cross Srigandad Kaval Sunkadakatte Bangalore 91. Please restore soon.\nWorst service from BESCOM.@NammaBESCOM @mdbescom",
+    "author": "@Bharath_Kumar01",
+    "date": "2026-06-29T07:09:17+00:00",
+    "category": "Electricity",
+    "area": "Sunkadakatte",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2071491177707348391",
+    "keywords": [
+      "power cut",
+      "bescom"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2071449557813404006",
+    "text": "@BSWML_GBA People staying in Vijayanagar Bengaluru, have lost their senses completely. If some one finds their senses in this garbage then please return it to them with dignity. https://t.co/UALZUxsYHv",
+    "author": "@vsunkad",
+    "date": "2026-06-29T04:23:54+00:00",
+    "category": "Waste",
+    "area": "Vijayanagar",
+    "ward_name": "Vinayakanagar",
+    "ward_no": "30",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2071449557813404006",
+    "keywords": [
+      "garbage",
+      "swm"
+    ],
+    "status": "open"
+  },
+  {
     "id": "2071490634138193922",
     "text": "@TVMohandasPai @iiscbangalore Sir, there must also be walkable footpaths and seamless public transport connectivity.\n\nI’ll give my own example.\n\nI stay on Neeladri Road. The footpaths are encroached by vendors, making it difficult to even walk to the bus stop.\n\nI take BMTC bus 378 and get down at the",
     "author": "@FixingBengaluru",
@@ -17243,52 +17281,14 @@
     "status": "open"
   },
   {
-    "id": "2071491177707348391",
-    "text": "@NammaBESCOM Again There is a Power cut for no reason at RHCS Layout 3rd main 6th Cross Srigandad Kaval Sunkadakatte Bangalore 91. Please restore soon.\nWorst service from BESCOM.@NammaBESCOM @mdbescom",
-    "author": "@Bharath_Kumar01",
-    "date": "2026-06-29T07:09:17+00:00",
-    "category": "Electricity",
-    "area": "RHCS Layout",
-    "ward_name": "RBI Layout",
-    "ward_no": "42",
-    "severity": "low",
-    "likes": 0,
-    "retweets": 0,
-    "source_url": "https://twitter.com/i/web/status/2071491177707348391",
-    "keywords": [
-      "power cut",
-      "bescom"
-    ],
-    "status": "open"
-  },
-  {
-    "id": "2071449557813404006",
-    "text": "@BSWML_GBA People staying in Vijayanagar Bengaluru, have lost their senses completely. If some one finds their senses in this garbage then please return it to them with dignity. https://t.co/UALZUxsYHv",
-    "author": "@vsunkad",
-    "date": "2026-06-29T04:23:54+00:00",
-    "category": "Waste",
-    "area": "Vijayanagar",
-    "ward_name": "Kalyanagar",
-    "ward_no": "31",
-    "severity": "low",
-    "likes": 0,
-    "retweets": 0,
-    "source_url": "https://twitter.com/i/web/status/2071449557813404006",
-    "keywords": [
-      "garbage",
-      "swm"
-    ],
-    "status": "open"
-  },
-  {
     "id": "2071466975839256947",
     "text": "The Chief Minister / The Commissioner, BBMP / The Managing Director, BMRCL\nGovernment of Karnataka, Bengaluru.\n\nUrgent representation regarding immediate pedestrian safety measures and the status of the pedestrian skywalk connecting Banashankari Metro Station and the BMTC Bus https://t.co/Luiwzr3IUH",
     "author": "@Ravi_1836",
     "date": "2026-06-29T05:33:07+00:00",
     "category": "Traffic",
     "area": "Banashankari",
-    "ward_name": "Banashankari Temple Ward",
-    "ward_no": "4",
+    "ward_name": "",
+    "ward_no": "",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -17296,6 +17296,62 @@
     "keywords": [
       "bmtc",
       "metro"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2071543290101748114",
+    "text": "@NammaBESCOM There is a power cut  in #15 Modhak , Red carpet layout kodathi village road sarjapura main road Bangalore 560035. \nWhat's the reason of today's power cut?? Are the daily power cuts necessary?? It's very irritating \n9556148053",
+    "author": "@HGreen31213",
+    "date": "2026-06-29T10:36:22+00:00",
+    "category": "Electricity",
+    "area": "Kodathi",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2071543290101748114",
+    "keywords": [
+      "power cut",
+      "bescom"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2071516331380465711",
+    "text": "@mdbescom @NammaBESCOM @BescomHelpline No power in my area since last 4 hours.\nAddress - Building no 14, 3rd cross, Balaji Layout, Narullahalli, Bengaluru -560066\nTried to contact BESCOM guys also.\nPlease resolve asap.",
+    "author": "@rnjn_ayush",
+    "date": "2026-06-29T08:49:14+00:00",
+    "category": "Electricity",
+    "area": "Narullahalli",
+    "ward_name": "Jalahalli",
+    "ward_no": "60",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2071516331380465711",
+    "keywords": [
+      "no power",
+      "bescom"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2071520125694701743",
+    "text": "@ICCCBengaluru @dineshgrao  Garbage not cleared since few days @ Santusapet, KV Temple Street, Bangalore, 560053\nhttps://t.co/3JSHZSIi7A https://t.co/eb7RmTPBfP",
+    "author": "@Sachin110876",
+    "date": "2026-06-29T09:04:19+00:00",
+    "category": "Waste",
+    "area": "Santusapet",
+    "ward_name": "RBI Layout",
+    "ward_no": "42",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2071520125694701743",
+    "keywords": [
+      "garbage"
     ],
     "status": "open"
   }

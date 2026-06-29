@@ -2328,7 +2328,7 @@
     "author": "@TOIBengaluru",
     "date": "2026-06-23T13:36:40+00:00",
     "category": "Parks",
-    "area": "Magadi Road",
+    "area": "Cubbon Park",
     "ward_name": "",
     "ward_no": "",
     "severity": "medium",
@@ -6285,7 +6285,7 @@
     "author": "@moneycontrolcom",
     "date": "2026-06-23T14:45:27+00:00",
     "category": "Parks",
-    "area": "Magadi Road",
+    "area": "Cubbon Park",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -9659,7 +9659,7 @@
     "author": "@TalkTrendzX",
     "date": "2026-06-23T16:09:57+00:00",
     "category": "Parks",
-    "area": "Magadi Road",
+    "area": "Cubbon Park",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -15527,6 +15527,42 @@
     "status": "open"
   },
   {
+    "id": "2071548072614850643",
+    "text": "Storm Water Drain Cleaning &amp; Desilting | Subramanyapura\n\nStorm water drain cleaning and desilting works were undertaken by Bengaluru South City Corporation at Subramanyapura to remove accumulated silt, debris, and solid waste, ensuring the free flow of rainwater and improving https://t.co/X05evFL7CT",
+    "author": "@GBA_office",
+    "date": "2026-06-29T10:55:22+00:00",
+    "category": "Flooding",
+    "area": "Subramanyapura",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 1,
+    "retweets": 1,
+    "source_url": "https://twitter.com/i/web/status/2071548072614850643",
+    "keywords": [
+      "rainwater"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2071497125935161640",
+    "text": "@PCMohanMP Moving the dose queue from the heavily crowded CTR Malleswaram to the less crowded Lalbagh road MTR is very much needed.\n\nCrowding at Hebbal affects NH traffic, ORR traffic, local North Bengaluru traffic. Nothing wrong with moving it to Mekhri (which is being fixed too).",
+    "author": "@balajiworld",
+    "date": "2026-06-29T07:32:56+00:00",
+    "category": "Parks",
+    "area": "Lalbagh",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 2,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2071497125935161640",
+    "keywords": [
+      "lalbagh"
+    ],
+    "status": "open"
+  },
+  {
     "id": "2054888808299250005",
     "text": "@NammaBengaluroo Potholes in Bangalore : holding 🍻after 1L per pothole potluck !",
     "author": "@arunkmurthy",
@@ -17596,9 +17632,9 @@
     "author": "@Praveenstarboy1",
     "date": "2026-05-24T07:55:54+00:00",
     "category": "Waste",
-    "area": "Vijayanagar",
-    "ward_name": "Vinayakanagar",
-    "ward_no": "30",
+    "area": "Marenahalli",
+    "ward_name": "",
+    "ward_no": "",
     "severity": "low",
     "likes": 1,
     "retweets": 0,
@@ -23461,7 +23497,7 @@
     "author": "@ChristinMP_",
     "date": "2026-06-23T14:00:11+00:00",
     "category": "Parks",
-    "area": "Magadi Road",
+    "area": "Cubbon Park",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -23480,7 +23516,7 @@
     "author": "@DarshanDevaiahB",
     "date": "2026-06-23T13:55:28+00:00",
     "category": "Parks",
-    "area": "Magadi Road",
+    "area": "Cubbon Park",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -23623,7 +23659,7 @@
     "author": "@grok",
     "date": "2026-06-24T07:20:37+00:00",
     "category": "Parks",
-    "area": "Magadi Road",
+    "area": "Cubbon Park",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -24506,6 +24542,61 @@
     "likes": 1,
     "retweets": 0,
     "source_url": "https://twitter.com/i/web/status/2071457814846091453",
+    "keywords": [
+      "bmtc"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2071492838911869022",
+    "text": "@arivuexpress @PriyankKharge @alokkumar6994 No signal in mobile , no tar on road and no water on taps. Welcome to bengaluru",
+    "author": "@TarunAgrawal",
+    "date": "2026-06-29T07:15:53+00:00",
+    "category": "Water",
+    "area": "Bangalore",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 1,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2071492838911869022",
+    "keywords": [
+      "no water"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2071494466750595497",
+    "text": "Do you also get Kolkata vibes from this building?\n\nIt's next to Cubbon Park, Bengaluru https://t.co/5HAwH3z59m",
+    "author": "@ankitbarnwal10",
+    "date": "2026-06-29T07:22:22+00:00",
+    "category": "Parks",
+    "area": "Cubbon Park",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 1,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2071494466750595497",
+    "keywords": [
+      "park",
+      "cubbon"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2071501274621816883",
+    "text": "@naveenkopparam BMTC is good, ksrtc isn't, Bengaluru and few high end volvo buses don't make the entire KSRTC. \n\nGo Mysuru, mangalore , kalaburagi the state of KA govt. buses. TNSTC already upgraded numerous buses under the last govt.",
+    "author": "@reclaimchennai",
+    "date": "2026-06-29T07:49:25+00:00",
+    "category": "Traffic",
+    "area": "Bangalore",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 1,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2071501274621816883",
     "keywords": [
       "bmtc"
     ],
@@ -33217,7 +33308,7 @@
     "author": "@SriroopaD99",
     "date": "2026-05-22T18:31:38+00:00",
     "category": "Electricity",
-    "area": "Vinayakanagar",
+    "area": "Wilson Garden",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -40794,9 +40885,9 @@
     "author": "@abythomas21",
     "date": "2026-05-29T16:31:43+00:00",
     "category": "Flooding",
-    "area": "Malleshwaram",
-    "ward_name": "Malleshwaram",
-    "ward_no": "53",
+    "area": "Basavanagudi",
+    "ward_name": "",
+    "ward_no": "",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -56376,9 +56467,9 @@
     "author": "@Akhil7845486407",
     "date": "2026-06-08T08:10:50+00:00",
     "category": "Water",
-    "area": "Hebbal",
-    "ward_name": "Hebbal",
-    "ward_no": "56",
+    "area": "Jakkur",
+    "ward_name": "",
+    "ward_no": "",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -57452,9 +57543,9 @@
     "author": "@chandrsh0808",
     "date": "2026-06-08T09:38:56+00:00",
     "category": "Waste",
-    "area": "JP Nagar",
-    "ward_name": "J.P Nagar",
-    "ward_no": "14",
+    "area": "Kothanur",
+    "ward_name": "",
+    "ward_no": "",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -57563,7 +57654,7 @@
     "author": "@RanjanPras49547",
     "date": "2026-06-08T09:41:02+00:00",
     "category": "Parks",
-    "area": "Lalbagh",
+    "area": "Hoskote",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -59078,9 +59169,9 @@
     "author": "@matkashbakihai",
     "date": "2026-06-09T15:32:28+00:00",
     "category": "Parks",
-    "area": "Malleshwaram",
-    "ward_name": "Malleshwaram",
-    "ward_no": "53",
+    "area": "Basavanagudi",
+    "ward_name": "",
+    "ward_no": "",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -82901,6 +82992,317 @@
     "keywords": [
       "bmtc",
       "commute"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2071529124607451612",
+    "text": "Bengaluru East City Corporation will begin a phased footpath clearance drive from 1 July, alongside scientific pothole repairs and junction beautification. The first phase is targeted for completion by 10 July.\n\nhttps://t.co/xPwWDh3Juq\n\n#BengaluruEastCity #FootpathClearance https://t.co/dWe8zFyTpP",
+    "author": "@TheNammaWard",
+    "date": "2026-06-29T09:40:05+00:00",
+    "category": "Roads",
+    "area": "Bangalore",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2071529124607451612",
+    "keywords": [
+      "pothole",
+      "footpath"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2071546517408879007",
+    "text": "🌧️ A weaker 2026 monsoon could impact Bengaluru through lower reservoir inflows, water supply concerns, and rising food prices. While it's only a forecast, timely water conservation and preparedness will be key. 💧 #Bengaluru #Monsoon2026 #ElNino #Karnataka --------- https://t.co/11CJpZXeTs",
+    "author": "@ecitycredence",
+    "date": "2026-06-29T10:49:11+00:00",
+    "category": "Water",
+    "area": "Bangalore",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2071546517408879007",
+    "keywords": [
+      "water supply"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2071544411838939490",
+    "text": "@mdbescom \n@DKShivakumar \n@BescomTa \n@NammaBESCOM \nI want Bescom to install 1000 50KW,60Kw,90 Kw,and 120 Kw, fast ev charger in all areas of Bangalore, mysore,coorg, sakleshpur,Mangalore, kundapura, and in all highways of state.and give power to all buildings above 500 sqmts,",
+    "author": "@praveen64000",
+    "date": "2026-06-29T10:40:49+00:00",
+    "category": "Electricity",
+    "area": "Bangalore",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2071544411838939490",
+    "keywords": [
+      "bescom"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2071543290101748114",
+    "text": "@NammaBESCOM There is a power cut  in #15 Modhak , Red carpet layout kodathi village road sarjapura main road Bangalore 560035. \nWhat's the reason of today's power cut?? Are the daily power cuts necessary?? It's very irritating \n9556148053",
+    "author": "@HGreen31213",
+    "date": "2026-06-29T10:36:22+00:00",
+    "category": "Electricity",
+    "area": "Sarjapur",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2071543290101748114",
+    "keywords": [
+      "power cut",
+      "bescom"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2071516331380465711",
+    "text": "@mdbescom @NammaBESCOM @BescomHelpline No power in my area since last 4 hours.\nAddress - Building no 14, 3rd cross, Balaji Layout, Narullahalli, Bengaluru -560066\nTried to contact BESCOM guys also.\nPlease resolve asap.",
+    "author": "@rnjn_ayush",
+    "date": "2026-06-29T08:49:14+00:00",
+    "category": "Electricity",
+    "area": "Electronic City",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2071516331380465711",
+    "keywords": [
+      "no power",
+      "bescom"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2071559303283020231",
+    "text": "'Bengaluru is a garbage city': Kiran Mazumdar-Shaw laments city's transformation, shares her vision on how it could have looked like https://t.co/fMxJffrscL https://t.co/i4BpDU7WMz",
+    "author": "@DeccanHerald",
+    "date": "2026-06-29T11:40:00+00:00",
+    "category": "Waste",
+    "area": "Bangalore",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2071559303283020231",
+    "keywords": [
+      "garbage"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2071546888466337890",
+    "text": "@HResponse1966 @TVMohandasPai @kiranshaw @krishnabgowda @ELCITA_IN @DKShivakumar This is a practical idea. Vacant sites often become garbage dumping spots and collect weeds, affecting the entire neighbourhood. Making it mandatory for owners to either maintain greenery or landscape their vacant plots would improve Bengaluru’s tree cover, reduce illegal dumping",
+    "author": "@FixingBengaluru",
+    "date": "2026-06-29T10:50:40+00:00",
+    "category": "Waste",
+    "area": "Bangalore",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2071546888466337890",
+    "keywords": [
+      "garbage",
+      "dump"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2071532421452083467",
+    "text": "@GBAChiefComm , @krishnabgowda @blrcitytraffic , sir is Vijayanagar not in Bangalore or India, pls see these videos to see the bad state of traffic, garbage, blacksires and apathy! Is it dry talk or action also on your promises to make Bangalore livable? #savevijayanagar https://t.co/wB2sETx1Vr",
+    "author": "@SaveVijayanagar",
+    "date": "2026-06-29T09:53:11+00:00",
+    "category": "Waste",
+    "area": "Vijayanagar",
+    "ward_name": "Vinayakanagar",
+    "ward_no": "30",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2071532421452083467",
+    "keywords": [
+      "garbage"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2071520125694701743",
+    "text": "@ICCCBengaluru @dineshgrao  Garbage not cleared since few days @ Santusapet, KV Temple Street, Bangalore, 560053\nhttps://t.co/3JSHZSIi7A https://t.co/eb7RmTPBfP",
+    "author": "@Sachin110876",
+    "date": "2026-06-29T09:04:19+00:00",
+    "category": "Waste",
+    "area": "BTM Layout",
+    "ward_name": "RBI Layout",
+    "ward_no": "42",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2071520125694701743",
+    "keywords": [
+      "garbage"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2071515651412308471",
+    "text": "GBA or Panchayath officials are into their jobs just to draw salary &amp; no work. As their jobs are secure , no accountability . Most of the roads across bangalore are full of garbage.Public is not scared of throwing garbage on roads. Marshalls are also appointed to draw salary only",
+    "author": "@Anil58734034",
+    "date": "2026-06-29T08:46:32+00:00",
+    "category": "Waste",
+    "area": "Bangalore",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2071515651412308471",
+    "keywords": [
+      "garbage"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2071502233238475052",
+    "text": "Garden city is now a ‘garbage city’: Kiran Mazumdar-Shaw laments Bengaluru’s crumbling infrastructure\n\n#viral #Trending #Bengaluru \n\nhttps://t.co/n4wvZboBRU",
+    "author": "@ietrending",
+    "date": "2026-06-29T07:53:13+00:00",
+    "category": "Waste",
+    "area": "Bangalore",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2071502233238475052",
+    "keywords": [
+      "garbage"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2071498341285003749",
+    "text": "@DKShivakumar Please do not let Bengaluru turn into a garbage city. Please improve road conditions and please improve cleanliness.",
+    "author": "@HarshDSeth",
+    "date": "2026-06-29T07:37:45+00:00",
+    "category": "Roads",
+    "area": "Bangalore",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2071498341285003749",
+    "keywords": [
+      "road condition"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2071565299523125755",
+    "text": "Auto rams into stationary bus, driver suffers serious injuries https://t.co/mraq6gS18N #Bengaluru #Accident #RoadAccident #BMTC @blrcitytraffic @BMTC_BENGALURU",
+    "author": "@PublicTVEnglish",
+    "date": "2026-06-29T12:03:49+00:00",
+    "category": "Traffic",
+    "area": "Bangalore",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2071565299523125755",
+    "keywords": [
+      "bmtc"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2071563228174569604",
+    "text": "@suchetadalal @CMOMaharashtra Maintaining these buses will be a nightmare. Seen this in Bangalore BMTC Volvo buses.",
+    "author": "@HariHar00522234",
+    "date": "2026-06-29T11:55:36+00:00",
+    "category": "Traffic",
+    "area": "Bangalore",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2071563228174569604",
+    "keywords": [
+      "bmtc"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2071524648437821676",
+    "text": "BJP MP @Tejasvi_Surya criticised the Karnataka government over Bengaluru's worsening traffic congestion, alleging that 4,500 buses sanctioned by the Central government are yet to be deployed on the city's roads. He said the additional buses could significantly improve public https://t.co/kNgaFD4g5l",
+    "author": "@News9Tweets",
+    "date": "2026-06-29T09:22:17+00:00",
+    "category": "Traffic",
+    "area": "Bangalore",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2071524648437821676",
+    "keywords": [
+      "congestion"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2071507759259136079",
+    "text": "The Suburban Rail Heartbreak\nThe \"delays hurting big time\" is an understatement for long-distance commuters (like those on the Electronic City, Whitefield, or Yelahanka corridors). The Bengaluru Suburban Rail Project (BSRP) is arguably the city's most frustrating public",
+    "author": "@NiranjanC70085",
+    "date": "2026-06-29T08:15:11+00:00",
+    "category": "Traffic",
+    "area": "Electronic City",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2071507759259136079",
+    "keywords": [
+      "commute"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2071507755383615955",
+    "text": "Bengaluru's public transport system relies on two main pillars: the bus network (BMTC) and the rapid transit rail network (Namma Metro). While its metro ridership has surged dramatically over the last year, buses continue to be the absolute backbone of public commuting in the",
+    "author": "@NiranjanC70085",
+    "date": "2026-06-29T08:15:10+00:00",
+    "category": "Traffic",
+    "area": "Bangalore",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2071507755383615955",
+    "keywords": [
+      "bmtc",
+      "metro"
     ],
     "status": "open"
   }
