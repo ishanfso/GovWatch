@@ -7591,5 +7591,41 @@
   "2071932199092588982": {
     "verdict": "no",
     "area": null
+  },
+  "2071980959919112462": {
+    "verdict": "no",
+    "area": "Chickpet"
+  },
+  "2071987180671836388": {
+    "verdict": "no",
+    "area": null
+  },
+  "2071980113676374106": {
+    "verdict": "no",
+    "area": "North Bengaluru"
+  },
+  "2071984937352450092": {
+    "verdict": "no",
+    "area": "Lalbagh"
+  },
+  "2071996684037673077": {
+    "verdict": "no",
+    "area": null
+  },
+  "2071981713660727324": {
+    "verdict": "yes",
+    "area": "Banashankari"
+  },
+  "2071994192969224403": {
+    "verdict": "yes",
+    "area": "Gunjur"
+  },
+  "2071984832557781014": {
+    "verdict": "no",
+    "area": null
+  },
+  "2071984802786656618": {
+    "verdict": "no",
+    "area": null
   }
 }
