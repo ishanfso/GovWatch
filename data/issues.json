@@ -2909,6 +2909,24 @@
     "status": "open"
   },
   {
+    "id": "2071941210198225245",
+    "text": "Garbage dumped on brand new footpath.\nI have spoken to GBA customer care and registered a complaint on Namma Bengaluru app, but contractor closing ticket\nLocation: Horamavu Signal, service road, ORR\n@ICCCBengaluru @GBA_office @GBAChiefComm @krishnabgowda https://t.co/8EXYQydJ6d",
+    "author": "@Swami0904",
+    "date": "2026-06-30T12:57:33+00:00",
+    "category": "Roads",
+    "area": "Horamavu",
+    "ward_name": "Horamavu",
+    "ward_no": "2",
+    "severity": "low",
+    "likes": 1,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2071941210198225245",
+    "keywords": [
+      "footpath"
+    ],
+    "status": "open"
+  },
+  {
     "id": "2054110623907357010",
     "text": "@narendramodi Bangalore roads are not built from years,in every 2m there is a big pothole,no infra,no cleaning of roads,no garbage collection from roads,who wants to travel on such roads",
     "author": "@nehagup72415189",
@@ -11330,9 +11348,9 @@
     "author": "@chandrsh0808",
     "date": "2026-06-08T09:38:56+00:00",
     "category": "Waste",
-    "area": "JP Nagar",
-    "ward_name": "J.P Nagar",
-    "ward_no": "14",
+    "area": "Kothanur",
+    "ward_name": "",
+    "ward_no": "",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -17630,6 +17648,60 @@
     "keywords": [
       "garbage",
       "dump"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2071952126423785740",
+    "text": "@krishnabgowda @Tejasvi_Surya @DKShivakumar sir classic place in bangalore to see all problems together is Banashankari to kathriguppe, maybe till devegowda petrol pump junction .. you can see . Garbage piled on road side, building waste material dumped, unfinished road, pavement",
+    "author": "@bsajith1",
+    "date": "2026-06-30T13:40:56+00:00",
+    "category": "Roads",
+    "area": "Banashankari",
+    "ward_name": "Banashankari Temple Ward",
+    "ward_no": "4",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2071952126423785740",
+    "keywords": [
+      "pavement"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2071942918735032525",
+    "text": "Attempt #2 🛑\nToxic garbage burning continues right next to DSR Waterscape Apt, Horamavu choking 350+ families who live here. Rptd complaints have yielded 0 action. Clean air is our right. Please intervene! @DKShivakumar @GBA_office \n#Bengaluru #AirPollution https://t.co/fykV6pZKOB",
+    "author": "@vivekraun",
+    "date": "2026-06-30T13:04:21+00:00",
+    "category": "Waste",
+    "area": "Horamavu",
+    "ward_name": "Horamavu",
+    "ward_no": "2",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2071942918735032525",
+    "keywords": [
+      "garbage"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2071932954541207801",
+    "text": "@krishnabgowda @krishnabgowda sir the situation in North Bangalore around Elements Mall and Nagawara is extremely bad. There’s no footpath to walk on, everything is claimed by vendors or is broken. Scooters and bikes keep riding on the wrong lane causing accidents every day. The roads are fixed",
+    "author": "@nrjpoddar",
+    "date": "2026-06-30T12:24:45+00:00",
+    "category": "Roads",
+    "area": "Nagawara",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2071932954541207801",
+    "keywords": [
+      "footpath"
     ],
     "status": "open"
   }
