@@ -7627,5 +7627,33 @@
   "2071984802786656618": {
     "verdict": "no",
     "area": null
+  },
+  "2072002441554624700": {
+    "verdict": "no",
+    "area": null
+  },
+  "2072007847458812356": {
+    "verdict": "no",
+    "area": "Varthur"
+  },
+  "2072012704206946751": {
+    "verdict": "no",
+    "area": null
+  },
+  "2072003828841595208": {
+    "verdict": "no",
+    "area": null
+  },
+  "2072019412648140951": {
+    "verdict": "yes",
+    "area": "Horamavu Agara"
+  },
+  "2072009781909614868": {
+    "verdict": "no",
+    "area": null
+  },
+  "2072008786475446508": {
+    "verdict": "yes",
+    "area": "SBC"
   }
 }
