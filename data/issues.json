@@ -2943,6 +2943,44 @@
     "status": "open"
   },
   {
+    "id": "2072255354646495647",
+    "text": "@krishnabgowda\n Sir, heavy footpath encroachment near Banashankari Metro station is making pedestrian movement dangerous. Also, heaps of garbage near Banashankari Temple is a serious eyesore &amp; health hazard. Kindly look into this please.\n#GBA @GBA_office #bangalore @DKShivakumar https://t.co/Qmk8UvskAM",
+    "author": "@akarsh_shastry",
+    "date": "2026-07-01T09:45:51+00:00",
+    "category": "Roads",
+    "area": "Banashankari",
+    "ward_name": "Banashankari Temple Ward",
+    "ward_no": "4",
+    "severity": "low",
+    "likes": 1,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2072255354646495647",
+    "keywords": [
+      "footpath"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2072202819248275792",
+    "text": "This is on Dr. B.R. Ambedkar Medical College Main Road, Kushal Nagar, Ward 95, Bengaluru 560045.\n\nBBMP clears this garbage every day, but within hours it becomes a dumping yard again. Residents are suffering due to foul smell, mosquitoes and stray animals. https://t.co/TaBl2fejdg",
+    "author": "@sameerzaks",
+    "date": "2026-07-01T06:17:06+00:00",
+    "category": "Waste",
+    "area": "Kushal Nagar",
+    "ward_name": "Kushal Nagar",
+    "ward_no": "45",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 1,
+    "source_url": "https://twitter.com/i/web/status/2072202819248275792",
+    "keywords": [
+      "garbage",
+      "dump",
+      "stray"
+    ],
+    "status": "open"
+  },
+  {
     "id": "2054110623907357010",
     "text": "@narendramodi Bangalore roads are not built from years,in every 2m there is a big pothole,no infra,no cleaning of roads,no garbage collection from roads,who wants to travel on such roads",
     "author": "@nehagup72415189",
@@ -11901,9 +11939,9 @@
     "author": "@matkashbakihai",
     "date": "2026-06-09T15:32:28+00:00",
     "category": "Parks",
-    "area": "Basavanagudi",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Malleshwaram",
+    "ward_name": "Malleshwaram",
+    "ward_no": "53",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -17838,7 +17876,7 @@
     "author": "@pa1__reddy",
     "date": "2026-07-01T06:07:41+00:00",
     "category": "Electricity",
-    "area": "Malleshpalya",
+    "area": "Kaggadasapura",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -17876,7 +17914,7 @@
     "author": "@hegde_manoj285",
     "date": "2026-07-01T03:01:34+00:00",
     "category": "Waste",
-    "area": "Laxmanappa Road",
+    "area": "Ganesh Mandira Ward",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -17886,6 +17924,61 @@
     "keywords": [
       "garbage",
       "dump"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2072259058082709810",
+    "text": "No water is available in the ladies washroom in the ladies waiting hall at Bangalore\n Very bad maintenance",
+    "author": "@nalinisivakuma3",
+    "date": "2026-07-01T10:00:34+00:00",
+    "category": "Water",
+    "area": "Bangalore",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2072259058082709810",
+    "keywords": [
+      "no water"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2072257117244080530",
+    "text": "No water supply in the ladies washroom in the waiting hall of Bangalore. As well in the A/c waiting hall.  This is the confirmation of Bangalore railway station",
+    "author": "@nalinisivakuma3",
+    "date": "2026-07-01T09:52:52+00:00",
+    "category": "Water",
+    "area": "Bangalore Railway Station",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2072257117244080530",
+    "keywords": [
+      "water supply",
+      "no water"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2072258989904347170",
+    "text": "Not just footpath, entire service road encroached by Greater #Bengaluru authority by dumping precast concrete boxes near Nayandahalli\n\nWhen will @BWCCofficial clear it? \n\n@krishnabgowda @GBAChiefComm @GBA_office\n\n#BrandBengaluru\nhttps://t.co/JwZcEmK4UT https://t.co/QIwCZIrH4S https://t.co/Au6Sru1DzL",
+    "author": "@pradeep_c_k",
+    "date": "2026-07-01T10:00:18+00:00",
+    "category": "Roads",
+    "area": "Nayandahalli",
+    "ward_name": "Nayanda Halli",
+    "ward_no": "81",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2072258989904347170",
+    "keywords": [
+      "footpath"
     ],
     "status": "open"
   }
