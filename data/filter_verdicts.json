@@ -7907,5 +7907,25 @@
   "2072341334845964558": {
     "verdict": "yes",
     "area": "HBR Layout"
+  },
+  "2072384572273405976": {
+    "verdict": "no",
+    "area": null
+  },
+  "2072379195314126949": {
+    "verdict": "no",
+    "area": null
+  },
+  "2072376975608762492": {
+    "verdict": "no",
+    "area": null
+  },
+  "2072399311745474915": {
+    "verdict": "no",
+    "area": "HSR Layout"
+  },
+  "2072374846986567786": {
+    "verdict": "no",
+    "area": null
   }
 }
