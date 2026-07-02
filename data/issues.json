@@ -5915,7 +5915,7 @@
     "author": "@SriroopaD99",
     "date": "2026-05-22T18:31:38+00:00",
     "category": "Electricity",
-    "area": "Vinayakanagar",
+    "area": "Wilson Garden",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -8956,7 +8956,7 @@
     "author": "@anyrudh79",
     "date": "2026-05-31T11:35:32+00:00",
     "category": "Waste",
-    "area": "Kanakanapalya",
+    "area": "Ashoka Pillar",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -11958,9 +11958,9 @@
     "author": "@matkashbakihai",
     "date": "2026-06-09T15:32:28+00:00",
     "category": "Parks",
-    "area": "Malleshwaram",
-    "ward_name": "Malleshwaram",
-    "ward_no": "53",
+    "area": "Basavanagudi",
+    "ward_name": "",
+    "ward_no": "",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -18221,6 +18221,25 @@
     "source_url": "https://twitter.com/i/web/status/2072586343851741496",
     "keywords": [
       "footpath"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2072618183853560280",
+    "text": "@karnataka_dma @SwachhBharatGov @MoHUA_India Plz stop this illegal Garbage dumping in Doddabanahalli, Bangalore. All the garbage frm nearby apartments is being dumped near the forest area. @CPCB_OFFICIAL @osd_cmkarnataka @karnatakakspcb @krishnabgowda @BlrCityPolice https://t.co/8z93WFVLLj",
+    "author": "@neethuneetha",
+    "date": "2026-07-02T09:47:37+00:00",
+    "category": "Waste",
+    "area": "Doddabanahalli",
+    "ward_name": "Doddabettahalli",
+    "ward_no": "6",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2072618183853560280",
+    "keywords": [
+      "garbage",
+      "dump"
     ],
     "status": "open"
   }
