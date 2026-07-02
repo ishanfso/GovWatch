@@ -1818,9 +1818,9 @@
     "author": "@Praveenstarboy1",
     "date": "2026-05-24T07:55:54+00:00",
     "category": "Waste",
-    "area": "Marenahalli",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Vijayanagar",
+    "ward_name": "Vinayakanagar",
+    "ward_no": "30",
     "severity": "low",
     "likes": 1,
     "retweets": 0,
@@ -8956,7 +8956,7 @@
     "author": "@anyrudh79",
     "date": "2026-05-31T11:35:32+00:00",
     "category": "Waste",
-    "area": "Ashoka Pillar",
+    "area": "Kanakanapalya",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -11958,9 +11958,9 @@
     "author": "@matkashbakihai",
     "date": "2026-06-09T15:32:28+00:00",
     "category": "Parks",
-    "area": "Basavanagudi",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Malleshwaram",
+    "ward_name": "Malleshwaram",
+    "ward_no": "53",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -18240,6 +18240,43 @@
     "keywords": [
       "garbage",
       "dump"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2072643037331853703",
+    "text": "@GBAChiefComm @GBA_office @bbmpcommr @krishnabgowda Check the attached pic outside KSR Metro station walk way. These will fall anytime. Request you to take quick action. #bangaloreroads #blrinfra #blrmetro https://t.co/zMiZ7GQ01O",
+    "author": "@mb_offisial",
+    "date": "2026-07-02T11:26:22+00:00",
+    "category": "Traffic",
+    "area": "KSR Metro station",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2072643037331853703",
+    "keywords": [
+      "metro"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2072650411493015750",
+    "text": "@NammaBESCOM @BescomHelpline \n\nThere is no electricity in my area Mullur, Kodathi from last 6 hours and noone is doing anything about it.\n\nI thought i lived in Bangalore but the situation is worse than any remote village.\n\n#bescom #powercut #electricity #nammabengaluru #bengaluru",
+    "author": "@KeshavPand70837",
+    "date": "2026-07-02T11:55:40+00:00",
+    "category": "Electricity",
+    "area": "Mullur, Kodathi",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2072650411493015750",
+    "keywords": [
+      "no electricity",
+      "bescom"
     ],
     "status": "open"
   }

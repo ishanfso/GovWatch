@@ -8107,5 +8107,45 @@
   "2072606862441324563": {
     "verdict": "no",
     "area": null
+  },
+  "2072650177987727828": {
+    "verdict": "no",
+    "area": null
+  },
+  "2072650180718194939": {
+    "verdict": "no",
+    "area": null
+  },
+  "2072643037331853703": {
+    "verdict": "yes",
+    "area": "KSR Metro station"
+  },
+  "2072667293197439051": {
+    "verdict": "no",
+    "area": "Richmond, St Joseph's College"
+  },
+  "2072650411493015750": {
+    "verdict": "yes",
+    "area": "Mullur, Kodathi"
+  },
+  "2072658033550020800": {
+    "verdict": "no",
+    "area": "North Bangalore"
+  },
+  "2072647360463691972": {
+    "verdict": "no",
+    "area": "ORR, Hebbal to Silk Board"
+  },
+  "2072644804895514839": {
+    "verdict": "no",
+    "area": null
+  },
+  "2072647050651697414": {
+    "verdict": "no",
+    "area": "Lalbagh"
+  },
+  "2072656980209180892": {
+    "verdict": "no",
+    "area": "Outer Ring Road, Mahadevpura to Bellandur"
   }
 }
