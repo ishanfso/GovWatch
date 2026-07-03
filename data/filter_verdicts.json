@@ -8443,5 +8443,41 @@
   "2072914151740235786": {
     "verdict": "no",
     "area": "Malleshwaram"
+  },
+  "2072964576618992056": {
+    "verdict": "no",
+    "area": null
+  },
+  "2072979294423232810": {
+    "verdict": "no",
+    "area": null
+  },
+  "2072995418229887067": {
+    "verdict": "yes",
+    "area": "Hoysala Nagar"
+  },
+  "2072992585266995521": {
+    "verdict": "yes",
+    "area": "Sarjapur"
+  },
+  "2072975555193098345": {
+    "verdict": "no",
+    "area": null
+  },
+  "2072963483403243614": {
+    "verdict": "yes",
+    "area": "Vidya Nagar"
+  },
+  "2072986344364954023": {
+    "verdict": "no",
+    "area": "Varthur"
+  },
+  "2072983052033380789": {
+    "verdict": "no",
+    "area": null
+  },
+  "2072975658444329169": {
+    "verdict": "no",
+    "area": "Lalbagh"
   }
 }
