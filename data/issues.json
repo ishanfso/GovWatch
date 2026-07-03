@@ -759,6 +759,25 @@
     "status": "open"
   },
   {
+    "id": "2072938015757144172",
+    "text": "@hemsdoc @BBMPSWMSplComm @GBA_office @krishnabgowda Sadly this is the condition around most of Bangalore. Morning run/walks have to be on the roads &amp; risk getting knocked over by a speeding vehicle. Whitefield road is no exception with open storm water drains &amp; piles of garbage. https://t.co/biAS2Yxui1",
+    "author": "@h2crunner",
+    "date": "2026-07-03T06:58:30+00:00",
+    "category": "Waste",
+    "area": "Whitefield",
+    "ward_name": "Whitefield",
+    "ward_no": "38",
+    "severity": "low",
+    "likes": 3,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2072938015757144172",
+    "keywords": [
+      "garbage",
+      "swm"
+    ],
+    "status": "open"
+  },
+  {
     "id": "2053442120212689235",
     "text": "@GBA_office This is mandatory check every day in every gully if the bangalore city. Dont show this as special task. Kids women  who are the majorly impacted. No path to walk, unhygienic smelly environment and pothole block.  Do this everyday.",
     "author": "@ravishyni",
@@ -1331,6 +1350,24 @@
     "source_url": "https://twitter.com/i/web/status/2071268960243482654",
     "keywords": [
       "bwssb"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2072953246357053844",
+    "text": "@krishnabgowda Great initiative.Hope this not just enforced in every parts of Bengaluru.\n\nThis is the situation of Dr.Rajgopal Road in Sanjaynagar. The entire footpath has been taken over by the water supply company. It's been 2 months and no one is telling them to stop the encroachment. https://t.co/BgcIJeHKtp",
+    "author": "@PramodDeva65265",
+    "date": "2026-07-03T07:59:02+00:00",
+    "category": "Water",
+    "area": "Sanjaynagar",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 2,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2072953246357053844",
+    "keywords": [
+      "water supply"
     ],
     "status": "open"
   },
@@ -7564,7 +7601,7 @@
     "author": "@a_r_y_a__s_e_n",
     "date": "2026-05-27T13:13:38+00:00",
     "category": "Waste",
-    "area": "Belathur",
+    "area": "Kadugodi",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -8956,7 +8993,7 @@
     "author": "@anyrudh79",
     "date": "2026-05-31T11:35:32+00:00",
     "category": "Waste",
-    "area": "Ashoka Pillar",
+    "area": "Kanakanapalya",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -11958,9 +11995,9 @@
     "author": "@matkashbakihai",
     "date": "2026-06-09T15:32:28+00:00",
     "category": "Parks",
-    "area": "Basavanagudi",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Malleshwaram",
+    "ward_name": "Malleshwaram",
+    "ward_no": "53",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -18379,8 +18416,8 @@
     "date": "2026-07-03T03:07:37+00:00",
     "category": "Waste",
     "area": "Padmanabha Nagar",
-    "ward_name": "Padmanabhanagara",
-    "ward_no": "1",
+    "ward_name": "",
+    "ward_no": "",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -18405,6 +18442,25 @@
     "source_url": "https://twitter.com/i/web/status/2072859382166237219",
     "keywords": [
       "footpath"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2072951599312634287",
+    "text": "@NammaBESCOM  No electricity in area for more than 2 hour. When will it be restored?\n\nAddress - Rachenahalli main road, thanisandra, Bengaluru - 560077",
+    "author": "@manglamiam",
+    "date": "2026-07-03T07:52:29+00:00",
+    "category": "Electricity",
+    "area": "Thanisandra",
+    "ward_name": "Thanisandra",
+    "ward_no": "19",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2072951599312634287",
+    "keywords": [
+      "no electricity",
+      "bescom"
     ],
     "status": "open"
   }
