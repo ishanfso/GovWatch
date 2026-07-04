@@ -2729,7 +2729,7 @@
     "author": "@vigneshg_co",
     "date": "2026-06-19T04:20:31+00:00",
     "category": "Roads",
-    "area": "HSR Layout",
+    "area": "Hsr Layout",
     "ward_name": "HSR Layout",
     "ward_no": "72",
     "severity": "low",
@@ -2860,7 +2860,7 @@
     "author": "@chairmanbwssb",
     "date": "2026-06-22T09:36:48+00:00",
     "category": "Other",
-    "area": "HSR Layout",
+    "area": "Hsr Layout",
     "ward_name": "HSR Layout",
     "ward_no": "72",
     "severity": "low",
@@ -3051,6 +3051,25 @@
     "source_url": "https://twitter.com/i/web/status/2073260476339994838",
     "keywords": [
       "bwssb"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2073404207802233263",
+    "text": "Power cut since morning again.\n\n@NammaBESCOM, have you taken an oath to\n\nmake sure residents never get a normal weekend? Last Saturday it was a 17-hour outage, and now this again.\n\n#BESCOM #Bengaluru\n\nLocation: singasandra 13th main road aecs layout, a block 560068",
+    "author": "@Shubhu_R",
+    "date": "2026-07-04T13:50:59+00:00",
+    "category": "Electricity",
+    "area": "AECS Layout",
+    "ward_name": "RBI Layout",
+    "ward_no": "42",
+    "severity": "low",
+    "likes": 1,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2073404207802233263",
+    "keywords": [
+      "power cut",
+      "bescom"
     ],
     "status": "open"
   },
@@ -4816,7 +4835,7 @@
     "author": "@bdchoubey",
     "date": "2026-05-20T09:14:31+00:00",
     "category": "Electricity",
-    "area": "HSR Layout",
+    "area": "Hsr Layout",
     "ward_name": "HSR Layout",
     "ward_no": "72",
     "severity": "low",
@@ -7619,7 +7638,7 @@
     "author": "@a_r_y_a__s_e_n",
     "date": "2026-05-27T13:13:38+00:00",
     "category": "Waste",
-    "area": "Kadugodi",
+    "area": "Belathur",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -8149,7 +8168,7 @@
     "author": "@taniat_writes",
     "date": "2026-05-29T09:28:37+00:00",
     "category": "Electricity",
-    "area": "HSR Layout",
+    "area": "Hsr Layout",
     "ward_name": "HSR Layout",
     "ward_no": "72",
     "severity": "low",
@@ -9050,7 +9069,7 @@
     "author": "@AmithK1789547",
     "date": "2026-05-31T10:24:58+00:00",
     "category": "Waste",
-    "area": "HSR Layout",
+    "area": "Hsr Layout",
     "ward_name": "HSR Layout",
     "ward_no": "72",
     "severity": "low",
@@ -9069,7 +9088,7 @@
     "author": "@AmithK1789547",
     "date": "2026-05-31T10:19:43+00:00",
     "category": "Waste",
-    "area": "HSR Layout",
+    "area": "Hsr Layout",
     "ward_name": "HSR Layout",
     "ward_no": "72",
     "severity": "low",
@@ -12013,9 +12032,9 @@
     "author": "@matkashbakihai",
     "date": "2026-06-09T15:32:28+00:00",
     "category": "Parks",
-    "area": "Malleshwaram",
-    "ward_name": "Malleshwaram",
-    "ward_no": "53",
+    "area": "Basavanagudi",
+    "ward_name": "",
+    "ward_no": "",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -15085,7 +15104,7 @@
     "author": "@aksolan19",
     "date": "2026-06-20T04:32:36+00:00",
     "category": "Electricity",
-    "area": "HSR Layout",
+    "area": "Hsr Layout",
     "ward_name": "HSR Layout",
     "ward_no": "72",
     "severity": "low",
@@ -18760,6 +18779,115 @@
     "source_url": "https://twitter.com/i/web/status/2073357320177009071",
     "keywords": [
       "bescom"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2073415057644367920",
+    "text": "My vehicle hit a pothole in Bangalore and broke my tire but I will blame E20 - E20 PR Brigade",
+    "author": "@Whattrd",
+    "date": "2026-07-04T14:34:06+00:00",
+    "category": "Roads",
+    "area": "Bangalore",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2073415057644367920",
+    "keywords": [
+      "pothole"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2073405587073946080",
+    "text": "@GBA_office @krishnabgowda @ChristinMP_ @blrcitytraffic Another traffic congestion point is the BWSSB pipe line work after Hebbal Railway station. What can happen in a week abroad takes months in our Bengaluru. A temporary road made is in miserable condition, probably made thinking work will be done in 4 days, while it looks 4 months.",
+    "author": "@Rajeshbyheart",
+    "date": "2026-07-04T13:56:28+00:00",
+    "category": "Water",
+    "area": "Hebbal",
+    "ward_name": "Hebbal",
+    "ward_no": "56",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2073405587073946080",
+    "keywords": [
+      "bwssb"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2073419493246926992",
+    "text": "@NammaBESCOM what the hell is happening with the power in Bengaluru? Because BESCOM is the only option we have , we are being bound to use it. I wish we had alternatives",
+    "author": "@AchantaRaj",
+    "date": "2026-07-04T14:51:44+00:00",
+    "category": "Electricity",
+    "area": "Bangalore",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2073419493246926992",
+    "keywords": [
+      "bescom"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2073421985019998612",
+    "text": "@eshwar_khandre sir Bengaluru Panchayat area are stinking with no garbage management, no roads.. Kommasandra, Dommasandra, Kada Agrahara, Yamare panchayat needs development.. please help...it's very bad shape..@krishnabgowda @DKShivakumar please help",
+    "author": "@Vishwaj64798607",
+    "date": "2026-07-04T15:01:38+00:00",
+    "category": "Waste",
+    "area": "Kommasandra",
+    "ward_name": "Doddabommasandra",
+    "ward_no": "11",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2073421985019998612",
+    "keywords": [
+      "garbage"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2073389821012447642",
+    "text": "@krishnabgowda What about Bangalore brand garbage on roads and footpaths. One thing you clear once and then next you see the same things back in two days. Also up and down, and storing garbage on trees root.. it needs a systematic process not just what you do for a week and then forget after..",
+    "author": "@bmkumar83",
+    "date": "2026-07-04T12:53:49+00:00",
+    "category": "Roads",
+    "area": "Bangalore",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2073389821012447642",
+    "keywords": [
+      "footpath"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2073401329620554160",
+    "text": "In rash driving, BMTC bus drivers leave everyone behind. They jump signals, change lanes as if they are driving a scooty and threaten every commuter on the street. This should be the lowest hanging fruit in Bangalore improvement which govt seems keen on. They are govt employees. https://t.co/earAVYcGXD",
+    "author": "@rahulmalviya",
+    "date": "2026-07-04T13:39:33+00:00",
+    "category": "Traffic",
+    "area": "Bangalore",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2073401329620554160",
+    "keywords": [
+      "bmtc",
+      "commute"
     ],
     "status": "open"
   }

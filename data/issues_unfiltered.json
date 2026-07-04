@@ -906,7 +906,7 @@
     "author": "@namma_vjy",
     "date": "2026-06-16T11:57:42+00:00",
     "category": "Waste",
-    "area": "HSR Layout",
+    "area": "Hsr Layout",
     "ward_name": "HSR Layout",
     "ward_no": "72",
     "severity": "high",
@@ -2608,6 +2608,22 @@
     "keywords": [
       "bmtc"
     ],
+    "status": "open"
+  },
+  {
+    "id": "2073409298126995870",
+    "text": "Bengaluru: 18 people including 15 passengers, one driver &amp; two conductors (all Tata e-bus) sustained injuries in an accident involving two e-buses near KR Circle at around 8:30am on July 4. They were shifted to St Martha's Hospital for treatment. \n\n11 have been discharged after https://t.co/p8FVWllbJ2 https://t.co/p68PC3QTng",
+    "author": "@ChristinMP_",
+    "date": "2026-07-04T14:11:13+00:00",
+    "category": "Other",
+    "area": "Bangalore",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "medium",
+    "likes": 26,
+    "retweets": 6,
+    "source_url": "https://twitter.com/i/web/status/2073409298126995870",
+    "keywords": [],
     "status": "open"
   },
   {
@@ -5625,6 +5641,24 @@
     "status": "open"
   },
   {
+    "id": "2073403935810085363",
+    "text": "#Accident in #Bengaluru\n\n18 passengers were injured when a #BMTC electric bus rear-ended another bus near K R Circle. \n\nVisuals of the rescue operation 👇\n\n@timesofindia https://t.co/chXR9EdFsi",
+    "author": "@TOIBengaluru",
+    "date": "2026-07-04T13:49:54+00:00",
+    "category": "Traffic",
+    "area": "Bangalore",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "medium",
+    "likes": 11,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2073403935810085363",
+    "keywords": [
+      "bmtc"
+    ],
+    "status": "open"
+  },
+  {
     "id": "2054553712509821401",
     "text": "♻️🏙️ BSWML–BAF Stakeholder Dialogue on Solid Waste Management Rules 2026\n\nA stakeholder dialogue was held on 12 May 2026 at Purva Fountain Square, near Marathahalli Flyover under the limits of Bengaluru East Corporation.\n\nMs. Ramamani, Chief Operating Officer of Bengaluru Solid https://t.co/v29InsFbTo",
     "author": "@GBA_office",
@@ -6556,6 +6590,24 @@
     "status": "open"
   },
   {
+    "id": "2073393381053800802",
+    "text": "Visited St. Martha's Hospital to meet those injured in today's BMTC bus accident at KR Circle, Bengaluru. Directed doctors to ensure the best possible treatment.\n\nThe Government of Karnataka will bear the entire cost of their medical treatment.\n\n@BMTC_BENGALURU  \n@tdkarnataka https://t.co/EH2jbukOlz",
+    "author": "@byrathi_suresh",
+    "date": "2026-07-04T13:07:58+00:00",
+    "category": "Traffic",
+    "area": "Bangalore",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 9,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2073393381053800802",
+    "keywords": [
+      "bmtc"
+    ],
+    "status": "open"
+  },
+  {
     "id": "2054560667018158199",
     "text": "📌 Sattva Engineering Construction Limited informed the exchange about receiving Letter of Acceptance of Tender from Bangalore Water Supply and Sewerage Board for \"Work of Design, construction, commissioning of 20 MLD STP based on Integrated fixed – Film Activated sludge (IFAS) https://t.co/dIVIfCgxYV",
     "author": "@nileshkurhade",
@@ -6876,7 +6928,7 @@
     "author": "@namma_vjy",
     "date": "2026-06-16T11:54:19+00:00",
     "category": "Waste",
-    "area": "HSR Layout",
+    "area": "Hsr Layout",
     "ward_name": "HSR Layout",
     "ward_no": "72",
     "severity": "low",
@@ -12209,7 +12261,7 @@
     "author": "@namma_vjy",
     "date": "2026-06-16T11:51:46+00:00",
     "category": "Waste",
-    "area": "HSR Layout",
+    "area": "Hsr Layout",
     "ward_name": "HSR Layout",
     "ward_no": "72",
     "severity": "low",
@@ -12933,6 +12985,43 @@
     "keywords": [
       "garbage",
       "swm"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2073416530675835147",
+    "text": "#BWSSB bans use of drinking water for pools, car washing, gardening, construction &amp; entertainment in #Bengaluru . Violators face a 5,000 fine + 500/day for repeat offences. Non compliant establishments also risk a 50% water supply cut.\n#Karnataka",
+    "author": "@KeypadGuerilla",
+    "date": "2026-07-04T14:39:57+00:00",
+    "category": "Water",
+    "area": "Bangalore",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 2,
+    "retweets": 1,
+    "source_url": "https://twitter.com/i/web/status/2073416530675835147",
+    "keywords": [
+      "bwssb",
+      "water supply"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2073396408674357616",
+    "text": "Several people were injured after a BMTC electric bus crashed into the rear of a stationary Vayu Vajra airport bus near K.R. Circle in Bengaluru.\n\nThe bus driver was critically injured and rescued from the mangled cabin, while other injured passengers were shifted to hospital. https://t.co/29Rk3xsC2s",
+    "author": "@TheDailyPioneer",
+    "date": "2026-07-04T13:20:00+00:00",
+    "category": "Traffic",
+    "area": "Bangalore",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 2,
+    "retweets": 1,
+    "source_url": "https://twitter.com/i/web/status/2073396408674357616",
+    "keywords": [
+      "bmtc"
     ],
     "status": "open"
   },
@@ -17133,6 +17222,45 @@
     "status": "open"
   },
   {
+    "id": "2073419305732218895",
+    "text": "Finally, Bengaluru commuters, after years of delay, can now use the National Common Mobility Card (NCMC) for travel on Bengaluru Metropolitan Transport Corporation (BMTC) buses, following the rollout of 11,000 new smart Electronic Ticketing Machines (ETMs) across the",
+    "author": "@the_hindu",
+    "date": "2026-07-04T14:50:59+00:00",
+    "category": "Traffic",
+    "area": "Bangalore",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 2,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2073419305732218895",
+    "keywords": [
+      "bmtc",
+      "metro",
+      "commute"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2073411641316880875",
+    "text": "A BMTC electric bus rammed into a stationary Vayu Vajra bus at a traffic signal near Bengaluru’s KR Circle, leaving the driver seriously injured and 13–16 passengers hurt. Fire and emergency personnel rescued those trapped inside, while the injured were shifted to a nearby https://t.co/ZPs3K0h0wJ",
+    "author": "@sanewsKarnataka",
+    "date": "2026-07-04T14:20:32+00:00",
+    "category": "Traffic",
+    "area": "Bangalore",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 1,
+    "retweets": 1,
+    "source_url": "https://twitter.com/i/web/status/2073411641316880875",
+    "keywords": [
+      "traffic signal",
+      "bmtc"
+    ],
+    "status": "open"
+  },
+  {
     "id": "2054888808299250005",
     "text": "@NammaBengaluroo Potholes in Bangalore : holding 🍻after 1L per pothole potluck !",
     "author": "@arunkmurthy",
@@ -17854,7 +17982,7 @@
     "author": "@quixja",
     "date": "2026-05-14T02:40:04+00:00",
     "category": "Parks",
-    "area": "MG Road",
+    "area": "Lalbagh",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -22732,7 +22860,7 @@
     "author": "@comm_blr_south",
     "date": "2026-06-15T08:07:45+00:00",
     "category": "Waste",
-    "area": "HSR Layout",
+    "area": "Hsr Layout",
     "ward_name": "HSR Layout",
     "ward_no": "72",
     "severity": "low",
@@ -23449,7 +23577,7 @@
     "author": "@vigneshg_co",
     "date": "2026-06-19T04:20:31+00:00",
     "category": "Roads",
-    "area": "HSR Layout",
+    "area": "Hsr Layout",
     "ward_name": "HSR Layout",
     "ward_no": "72",
     "severity": "low",
@@ -24600,7 +24728,7 @@
     "author": "@chairmanbwssb",
     "date": "2026-06-22T09:36:48+00:00",
     "category": "Other",
-    "area": "HSR Layout",
+    "area": "Hsr Layout",
     "ward_name": "HSR Layout",
     "ward_no": "72",
     "severity": "low",
@@ -27075,6 +27203,97 @@
     "status": "open"
   },
   {
+    "id": "2073404207802233263",
+    "text": "Power cut since morning again.\n\n@NammaBESCOM, have you taken an oath to\n\nmake sure residents never get a normal weekend? Last Saturday it was a 17-hour outage, and now this again.\n\n#BESCOM #Bengaluru\n\nLocation: singasandra 13th main road aecs layout, a block 560068",
+    "author": "@Shubhu_R",
+    "date": "2026-07-04T13:50:59+00:00",
+    "category": "Electricity",
+    "area": "Singasandra",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 1,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2073404207802233263",
+    "keywords": [
+      "power cut",
+      "bescom"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2073392254312738924",
+    "text": "@krishnabgowda Was overjoyed to see our morning walk footpath being cleaned up and laid so beautifully in JP nagar today! \n\nIt’s been decades since we saw ‘visible’ improvement in Bangalore …great work sir - keep it up! \n\nHope to see more improvement’s especially garbage management.",
+    "author": "@TheHigherStateR",
+    "date": "2026-07-04T13:03:29+00:00",
+    "category": "Roads",
+    "area": "JP Nagar",
+    "ward_name": "J.P Nagar",
+    "ward_no": "14",
+    "severity": "low",
+    "likes": 1,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2073392254312738924",
+    "keywords": [
+      "footpath"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2073407155492032852",
+    "text": "Bengaluru: At least five passengers sustained minor injuries after an OHM Mobility-operated BMTC bus and a Tata Smart Mobility electric bus were involved in a rear-end collision near K.R. Circle on Friday morning. \n\n#Bengaluru #BMTC #RoadAccident #KRCircle #ElectricBus https://t.co/z2eNWouZLn",
+    "author": "@NewsTrail_India",
+    "date": "2026-07-04T14:02:42+00:00",
+    "category": "Traffic",
+    "area": "Bangalore",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 1,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2073407155492032852",
+    "keywords": [
+      "bmtc"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2073397374928777534",
+    "text": "#Accident in #Bengaluru\n\n5 passengers were injured when a #BMTC electric bus rear-ended another bus near K R Circle. \n\nVisuals of the rescue operation 👇\n\n@timesofindia https://t.co/WiMtBISf5o",
+    "author": "@TOIBengaluru",
+    "date": "2026-07-04T13:23:50+00:00",
+    "category": "Traffic",
+    "area": "Bangalore",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 1,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2073397374928777534",
+    "keywords": [
+      "bmtc"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2073394048036167714",
+    "text": "@vrishabhgowda7 @harishupadhya Such an obvious insight one can make out by spending a day in Bengaluru roads and observing how yellow boards and non-Bengaluru vehicles drive.\n\nBMTC needs to wake up and train their staff themselves.",
+    "author": "@VenkatSPrabhu",
+    "date": "2026-07-04T13:10:37+00:00",
+    "category": "Traffic",
+    "area": "Bangalore",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 1,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2073394048036167714",
+    "keywords": [
+      "bmtc"
+    ],
+    "status": "open"
+  },
+  {
     "id": "2055305588222165459",
     "text": "@Kuma50531Kumar no they are busy building it to tumakuru, kanakpura etc so core Bengaluru have to for now be happy with pothole ridden roads and traffic jams!",
     "author": "@ranjithe1",
@@ -29094,7 +29313,7 @@
     "author": "@TheNammaWard",
     "date": "2026-05-15T11:43:04+00:00",
     "category": "Waste",
-    "area": "HSR Layout",
+    "area": "Hsr Layout",
     "ward_name": "HSR Layout",
     "ward_no": "72",
     "severity": "low",
@@ -31593,7 +31812,7 @@
     "author": "@CNNnews18",
     "date": "2026-05-18T05:54:06+00:00",
     "category": "Electricity",
-    "area": "HSR Layout",
+    "area": "Hsr Layout",
     "ward_name": "HSR Layout",
     "ward_no": "72",
     "severity": "low",
@@ -33060,7 +33279,7 @@
     "author": "@bdchoubey",
     "date": "2026-05-20T09:14:31+00:00",
     "category": "Electricity",
-    "area": "HSR Layout",
+    "area": "Hsr Layout",
     "ward_name": "HSR Layout",
     "ward_no": "72",
     "severity": "low",
@@ -40701,7 +40920,7 @@
     "author": "@a_r_y_a__s_e_n",
     "date": "2026-05-27T13:13:38+00:00",
     "category": "Waste",
-    "area": "Kadugodi",
+    "area": "Belathur",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -42579,7 +42798,7 @@
     "author": "@taniat_writes",
     "date": "2026-05-29T09:28:37+00:00",
     "category": "Electricity",
-    "area": "HSR Layout",
+    "area": "Hsr Layout",
     "ward_name": "HSR Layout",
     "ward_no": "72",
     "severity": "low",
@@ -42859,7 +43078,7 @@
     "author": "@shivanandkanavi",
     "date": "2026-05-29T06:11:37+00:00",
     "category": "Parks",
-    "area": "HSR Layout",
+    "area": "Hsr Layout",
     "ward_name": "HSR Layout",
     "ward_no": "72",
     "severity": "low",
@@ -43357,7 +43576,7 @@
     "author": "@abythomas21",
     "date": "2026-05-29T16:31:43+00:00",
     "category": "Flooding",
-    "area": "Shivajinagar",
+    "area": "Basavanagudi",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -45839,7 +46058,7 @@
     "author": "@AmithK1789547",
     "date": "2026-05-31T10:24:58+00:00",
     "category": "Waste",
-    "area": "HSR Layout",
+    "area": "Hsr Layout",
     "ward_name": "HSR Layout",
     "ward_no": "72",
     "severity": "low",
@@ -45876,7 +46095,7 @@
     "author": "@AmithK1789547",
     "date": "2026-05-31T10:19:43+00:00",
     "category": "Waste",
-    "area": "HSR Layout",
+    "area": "Hsr Layout",
     "ward_name": "HSR Layout",
     "ward_no": "72",
     "severity": "low",
@@ -58939,9 +59158,9 @@
     "author": "@Akhil7845486407",
     "date": "2026-06-08T08:10:50+00:00",
     "category": "Water",
-    "area": "Jakkur",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Hebbal",
+    "ward_name": "Hebbal",
+    "ward_no": "56",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -60126,7 +60345,7 @@
     "author": "@RanjanPras49547",
     "date": "2026-06-08T09:41:02+00:00",
     "category": "Parks",
-    "area": "Lalbagh",
+    "area": "Hoskote",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -61641,9 +61860,9 @@
     "author": "@matkashbakihai",
     "date": "2026-06-09T15:32:28+00:00",
     "category": "Parks",
-    "area": "Malleshwaram",
-    "ward_name": "Malleshwaram",
-    "ward_no": "53",
+    "area": "Basavanagudi",
+    "ward_name": "",
+    "ward_no": "",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -64492,7 +64711,7 @@
     "author": "@NBRREALTORS",
     "date": "2026-06-12T08:39:31+00:00",
     "category": "Other",
-    "area": "HSR Layout",
+    "area": "Hsr Layout",
     "ward_name": "HSR Layout",
     "ward_no": "72",
     "severity": "low",
@@ -74047,7 +74266,7 @@
     "author": "@aksolan19",
     "date": "2026-06-20T04:32:36+00:00",
     "category": "Electricity",
-    "area": "HSR Layout",
+    "area": "Hsr Layout",
     "ward_name": "HSR Layout",
     "ward_no": "72",
     "severity": "low",
@@ -91309,6 +91528,169 @@
     "keywords": [
       "bmtc",
       "metro"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2073415057644367920",
+    "text": "My vehicle hit a pothole in Bangalore and broke my tire but I will blame E20 - E20 PR Brigade",
+    "author": "@Whattrd",
+    "date": "2026-07-04T14:34:06+00:00",
+    "category": "Roads",
+    "area": "Bangalore",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2073415057644367920",
+    "keywords": [
+      "pothole"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2073413029115375803",
+    "text": "E20 PR Brigade - If your call breaks down due to a pothole in Bangalore then its Nithin's fault. \n\nWe cant abuse Feroze's grandson. \n\nhe pays us!",
+    "author": "@Whattrd",
+    "date": "2026-07-04T14:26:02+00:00",
+    "category": "Roads",
+    "area": "Bangalore",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2073413029115375803",
+    "keywords": [
+      "pothole"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2073405587073946080",
+    "text": "@GBA_office @krishnabgowda @ChristinMP_ @blrcitytraffic Another traffic congestion point is the BWSSB pipe line work after Hebbal Railway station. What can happen in a week abroad takes months in our Bengaluru. A temporary road made is in miserable condition, probably made thinking work will be done in 4 days, while it looks 4 months.",
+    "author": "@Rajeshbyheart",
+    "date": "2026-07-04T13:56:28+00:00",
+    "category": "Water",
+    "area": "Hebbal",
+    "ward_name": "Hebbal",
+    "ward_no": "56",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2073405587073946080",
+    "keywords": [
+      "bwssb"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2073419493246926992",
+    "text": "@NammaBESCOM what the hell is happening with the power in Bengaluru? Because BESCOM is the only option we have , we are being bound to use it. I wish we had alternatives",
+    "author": "@AchantaRaj",
+    "date": "2026-07-04T14:51:44+00:00",
+    "category": "Electricity",
+    "area": "Bangalore",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2073419493246926992",
+    "keywords": [
+      "bescom"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2073421985019998612",
+    "text": "@eshwar_khandre sir Bengaluru Panchayat area are stinking with no garbage management, no roads.. Kommasandra, Dommasandra, Kada Agrahara, Yamare panchayat needs development.. please help...it's very bad shape..@krishnabgowda @DKShivakumar please help",
+    "author": "@Vishwaj64798607",
+    "date": "2026-07-04T15:01:38+00:00",
+    "category": "Waste",
+    "area": "Bangalore",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2073421985019998612",
+    "keywords": [
+      "garbage"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2073404958138138891",
+    "text": "@SupriyaShrinate Please visit Bangalore which has been turned into a Garbage city by your Government and post those pictures as well, Aunty.",
+    "author": "@sbabu18304",
+    "date": "2026-07-04T13:53:58+00:00",
+    "category": "Waste",
+    "area": "Bangalore",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2073404958138138891",
+    "keywords": [
+      "garbage"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2073399993835352372",
+    "text": "@krishnabgowda Waiting for the garbage roads of Bangalore to be fixed soon sir",
+    "author": "@tradingnfbnf",
+    "date": "2026-07-04T13:34:15+00:00",
+    "category": "Waste",
+    "area": "Bangalore",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2073399993835352372",
+    "keywords": [
+      "garbage"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2073389821012447642",
+    "text": "@krishnabgowda What about Bangalore brand garbage on roads and footpaths. One thing you clear once and then next you see the same things back in two days. Also up and down, and storing garbage on trees root.. it needs a systematic process not just what you do for a week and then forget after..",
+    "author": "@bmkumar83",
+    "date": "2026-07-04T12:53:49+00:00",
+    "category": "Roads",
+    "area": "Bangalore",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2073389821012447642",
+    "keywords": [
+      "footpath"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2073401329620554160",
+    "text": "In rash driving, BMTC bus drivers leave everyone behind. They jump signals, change lanes as if they are driving a scooty and threaten every commuter on the street. This should be the lowest hanging fruit in Bangalore improvement which govt seems keen on. They are govt employees. https://t.co/earAVYcGXD",
+    "author": "@rahulmalviya",
+    "date": "2026-07-04T13:39:33+00:00",
+    "category": "Traffic",
+    "area": "Bangalore",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2073401329620554160",
+    "keywords": [
+      "bmtc",
+      "commute"
     ],
     "status": "open"
   }
