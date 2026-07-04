@@ -8859,5 +8859,37 @@
   "2073331056993071279": {
     "verdict": "no",
     "area": "K.R. Circle"
+  },
+  "2073351397567848926": {
+    "verdict": "no",
+    "area": null
+  },
+  "2073366131528937724": {
+    "verdict": "no",
+    "area": null
+  },
+  "2073348764891496555": {
+    "verdict": "no",
+    "area": null
+  },
+  "2073357320177009071": {
+    "verdict": "yes",
+    "area": null
+  },
+  "2073354833877512611": {
+    "verdict": "no",
+    "area": "South Bangalore"
+  },
+  "2073353959872647528": {
+    "verdict": "no",
+    "area": "North Bangalore"
+  },
+  "2073367115684520387": {
+    "verdict": "no",
+    "area": "KR Circle"
+  },
+  "2073359499264704626": {
+    "verdict": "no",
+    "area": null
   }
 }
