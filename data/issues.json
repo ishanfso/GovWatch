@@ -3042,7 +3042,7 @@
     "author": "@suchiswriting",
     "date": "2026-07-04T04:19:51+00:00",
     "category": "Water",
-    "area": "Indiranagar 1st Stage",
+    "area": "Indiranagar",
     "ward_name": "Indiranagar",
     "ward_no": "15",
     "severity": "low",
@@ -5970,7 +5970,7 @@
     "author": "@SriroopaD99",
     "date": "2026-05-22T18:31:38+00:00",
     "category": "Electricity",
-    "area": "Vinayakanagar",
+    "area": "Wilson Garden",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -9011,7 +9011,7 @@
     "author": "@anyrudh79",
     "date": "2026-05-31T11:35:32+00:00",
     "category": "Waste",
-    "area": "Ashoka Pillar",
+    "area": "Kanakanapalya",
     "ward_name": "",
     "ward_no": "",
     "severity": "low",
@@ -12013,9 +12013,9 @@
     "author": "@matkashbakihai",
     "date": "2026-06-09T15:32:28+00:00",
     "category": "Parks",
-    "area": "Basavanagudi",
-    "ward_name": "",
-    "ward_no": "",
+    "area": "Malleshwaram",
+    "ward_name": "Malleshwaram",
+    "ward_no": "53",
     "severity": "low",
     "likes": 0,
     "retweets": 0,
@@ -18611,6 +18611,43 @@
       "garbage",
       "dump",
       "swm"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2073294084807209082",
+    "text": "🗑 Garbage dump at kundyanapraveen@gmail.com, Ullal.\n\nMLA: S. T. Somashekar (BJP)\nWest #16 · Critical severity\n\nTrack it → https://t.co/QN4VDhhoJ0\n\n#NammaKasa #Bengaluru #CivicDuty",
+    "author": "@PraveenKundyana",
+    "date": "2026-07-04T06:33:24+00:00",
+    "category": "Waste",
+    "area": "Ullal",
+    "ward_name": "Ullal",
+    "ward_no": "16",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2073294084807209082",
+    "keywords": [
+      "garbage",
+      "dump"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "2073276516188971378",
+    "text": "@GBA_office We residents of GM Infinite Silver Corner Apartment in R. T. Nagar Bengaluru narth facing problem of Garbage throwing by public in front of Apartment gate. Kindly help us to sort out the matter.",
+    "author": "@h_yogesh5779",
+    "date": "2026-07-04T05:23:35+00:00",
+    "category": "Waste",
+    "area": "R. T. Nagar",
+    "ward_name": "",
+    "ward_no": "",
+    "severity": "low",
+    "likes": 0,
+    "retweets": 0,
+    "source_url": "https://twitter.com/i/web/status/2073276516188971378",
+    "keywords": [
+      "garbage"
     ],
     "status": "open"
   }
