@@ -7,16 +7,6 @@
 
 const DATA_PATHS = ["../data/issues.json", "../data/sample_issues.json"];
 
-const CATEGORY_COLORS = {
-  Roads:       "#1f4d3a",
-  Water:       "#0891b2",
-  Electricity: "#92400e",
-  Waste:       "#31572c",
-  Flooding:    "#7c3aed",
-  Parks:       "#15803d",
-  Traffic:     "#991b1b",
-  Other:       "#6f675d",
-};
 
 const AREA_COORDS = {
   "Koramangala":    [12.9352, 77.6245],
@@ -319,11 +309,11 @@ function renderKPIs(issues) {
     return new Date(i.date).getTime() >= oneWeekAgo;
   }).length;
 
-  document.getElementById("kpi-overdue").textContent   = overdue;
-  document.getElementById("kpi-high").textContent      = highOpen;
-  document.getElementById("kpi-new").textContent       = newToday;
-  document.getElementById("kpi-unassigned").textContent = unassigned;
-  document.getElementById("kpi-resolved").textContent  = resolvedWk;
+  document.getElementById("kpi-overdue").textContent   = overdue.toLocaleString("en-IN");
+  document.getElementById("kpi-high").textContent      = highOpen.toLocaleString("en-IN");
+  document.getElementById("kpi-new").textContent       = newToday.toLocaleString("en-IN");
+  document.getElementById("kpi-unassigned").textContent = unassigned.toLocaleString("en-IN");
+  document.getElementById("kpi-resolved").textContent  = resolvedWk.toLocaleString("en-IN");
 }
 
 // ── Filters ────────────────────────────────────────────────────────
@@ -1207,31 +1197,51 @@ function renderWardHeatMap(issues) {
   });
 }
 
+// Chart styling comes from the CSS colour tokens, so charts follow light/dark mode.
+// Both analytics charts show magnitude (counts), so they use ONE data colour
+// rather than a colour per bar (dataviz rule: colour encodes identity, not rank).
+const cssVar = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+function chartTheme() {
+  return {
+    data: cssVar("--data") || "#1e7a4c",
+    grid: cssVar("--border-soft") || "#ece7dd",
+    tick: cssVar("--subtle") || "#7b8079",
+    ink: cssVar("--text") || "#17201b",
+    panel: cssVar("--panel") || "#fffdf8",
+    font: { family: '"Source Sans 3", system-ui, sans-serif', size: 12 },
+  };
+}
+function chartTooltip(t) {
+  return {
+    backgroundColor: t.ink, titleColor: t.panel, bodyColor: t.panel, padding: 10, cornerRadius: 8,
+    displayColors: false, titleFont: { ...t.font, weight: "600" }, bodyFont: t.font,
+    callbacks: { label: c => `${c.raw} complaint${c.raw !== 1 ? "s" : ""}` },
+  };
+}
+
 function renderChart(issues) {
   const ctx = document.getElementById("categoryChart");
   if (!ctx) return;
   const counts = countBy(issues, "category");
   const labels = Object.keys(counts).sort((a, b) => counts[b] - counts[a]);
   const values = labels.map(l => counts[l]);
-  const colors = labels.map(l => CATEGORY_COLORS[l] || CATEGORY_COLORS.Other);
+  const t = chartTheme();
 
   if (chart) chart.destroy();
   chart = new Chart(ctx.getContext("2d"), {
     type: "bar",
     data: {
       labels,
-      datasets: [{ label: "Issues", data: values, backgroundColor: colors, borderRadius: 4, borderSkipped: false }],
+      datasets: [{ label: "Complaints", data: values, backgroundColor: t.data, hoverBackgroundColor: t.ink,
+        borderRadius: { topLeft: 4, topRight: 4 }, borderSkipped: "bottom", maxBarThickness: 44 }],
     },
     options: {
       responsive: true,
       maintainAspectRatio: false,
-      plugins: {
-        legend: { display: false },
-        tooltip: { callbacks: { label: c => ` ${c.raw} issue${c.raw !== 1 ? "s" : ""}` } },
-      },
+      plugins: { legend: { display: false }, tooltip: chartTooltip(t) },
       scales: {
-        y: { beginAtZero: true, ticks: { stepSize: 1, font: { size: 11 } }, grid: { color: "#e2dbd0" } },
-        x: { ticks: { font: { size: 11 } }, grid: { display: false } },
+        y: { beginAtZero: true, border: { display: false }, ticks: { color: t.tick, font: t.font, precision: 0 }, grid: { color: t.grid } },
+        x: { border: { color: t.grid }, ticks: { color: t.tick, font: t.font }, grid: { display: false } },
       },
     },
   });
@@ -1256,26 +1266,24 @@ function renderAreaChart(issues) {
 
   const labels = entries.map(e => e[0]);
   const values = entries.map(e => e[1]);
-  const colors = labels.map((_, i) => `hsl(${150 + (i * 9) % 120}, 45%, ${38 + (i % 3) * 5}%)`);
+  const t = chartTheme();
 
   if (areaChart) areaChart.destroy();
   areaChart = new Chart(ctx.getContext("2d"), {
     type: "bar",
     data: {
       labels,
-      datasets: [{ label: "Issues", data: values, backgroundColor: colors, borderRadius: 3, borderSkipped: false }],
+      datasets: [{ label: "Complaints", data: values, backgroundColor: t.data, hoverBackgroundColor: t.ink,
+        borderRadius: { topRight: 4, bottomRight: 4 }, borderSkipped: "left", maxBarThickness: 18 }],
     },
     options: {
       indexAxis: "y",
       responsive: true,
       maintainAspectRatio: false,
-      plugins: {
-        legend: { display: false },
-        tooltip: { callbacks: { label: c => ` ${c.raw} issue${c.raw !== 1 ? "s" : ""}` } },
-      },
+      plugins: { legend: { display: false }, tooltip: chartTooltip(t) },
       scales: {
-        x: { beginAtZero: true, ticks: { stepSize: 1, font: { size: 10 } }, grid: { color: "#e2dbd0" } },
-        y: { ticks: { font: { size: 10 } }, grid: { display: false } },
+        x: { beginAtZero: true, border: { display: false }, ticks: { color: t.tick, font: t.font, precision: 0 }, grid: { color: t.grid } },
+        y: { border: { color: t.grid }, ticks: { color: t.ink, font: t.font }, grid: { display: false } },
       },
     },
   });
@@ -1358,7 +1366,7 @@ function renderDemoBanner() {
   bar.setAttribute("role", "status");
   bar.innerHTML = `
     <span class="demo-pill">Open access</span>
-    <span>No sign-up needed. Statuses and assignments you set are saved in this browser only.</span>
+    <span>No sign-up needed. Statuses you set are saved in this browser only. An independent project, not an official government portal.</span>
     <button class="demo-close" type="button" aria-label="Dismiss">&#x2715;</button>`;
   bar.querySelector(".demo-close").addEventListener("click", () => bar.remove());
   document.body.prepend(bar);
