@@ -77,5 +77,7 @@ Founder, Civic Issue India
 
 | Sent to | Date | Reply |
 |---|---|---|
-| Centre for e-Governance (iPGRS) | | |
-| Greater Bengaluru Authority | | |
+| Centre for e-Governance (iPGRS): pdpgrs@karnataka.gov.in, cc support.ipgrs@karnataka.gov.in | 2026-11-02 | Waiting |
+| Greater Bengaluru Authority: comm@bbmp.gov.in | 2026-11-02 | Waiting |
+
+**Follow-up plan:** if there's no reply by 16 November 2026 (two weeks), send a short polite follow-up on the same thread. If there's still nothing after another two weeks, call the iPGRS helpline (1902) or the GBA helpline (1533) and ask for the right person.
