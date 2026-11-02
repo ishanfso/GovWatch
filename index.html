@@ -19,8 +19,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Noto+Sans+Kannada:wght@600;700&display=swap" />
-  <link rel="stylesheet" href="css/landing.css?v=20261102-signboard" />
-  <script src="js/landing.js?v=20261102-signboard" defer></script>
+  <link rel="stylesheet" href="css/landing.css?v=20261102-flows" />
+  <script src="js/landing.js?v=20261102-flows" defer></script>
 </head>
 <body>
 
@@ -32,11 +32,13 @@
         <span class="plate" aria-hidden="true"></span>
         Civic Issue India
       </a>
-      <nav class="nav-links" aria-label="Sections">
-        <a href="#how">How it works</a>
-        <a href="#reports">What people report</a>
+      <nav class="nav-links" aria-label="Main">
+        <a href="dashboard/">Complaints</a>
+        <a href="dashboard/?tab=insights">Insights</a>
+        <a href="report/">Report a problem</a>
+        <a href="dashboard/?view=people">Find officials</a>
       </nav>
-      <a class="btn btn-primary btn-sm" href="dashboard/">Open the dashboard</a>
+      <a class="btn btn-primary btn-sm" href="report/">Report a problem</a>
     </div>
   </header>
 
@@ -54,9 +56,15 @@
           <div class="hero-copy">
             <p class="lede">People in Bengaluru report potholes, power cuts and overflowing garbage on X every day. Civic Issue India reads those posts, keeps the genuine complaints, and sends each one to the office responsible for that ward.</p>
             <p class="facts"><strong id="n-screened">4,989</strong> posts read. <strong id="n-kept">1,012</strong> kept as real complaints. <strong>369</strong> wards matched to their officials.</p>
-            <div class="actions">
-              <a class="btn btn-primary" href="dashboard/">Open the dashboard</a>
-              <a class="btn btn-quiet" href="#how">How it works</a>
+            <div class="doors">
+              <a class="door" href="report/">
+                <strong>Report a problem</strong>
+                <span>Find who is responsible in your ward and complain on the right official channel.</span>
+              </a>
+              <a class="door" href="dashboard/">
+                <strong>See all complaints</strong>
+                <span>Browse what Bengaluru is reporting, by department, ward and type.</span>
+              </a>
             </div>
             <p class="freshness" id="freshness"></p>
           </div>
@@ -163,7 +171,10 @@
           <h2>Open to everyone, no account needed</h2>
           <p class="muted">Bengaluru first. Mumbai, Delhi, Chennai, Hyderabad and Pune are next.</p>
         </div>
-        <a class="btn btn-primary" href="dashboard/">Open the dashboard</a>
+        <div class="actions" style="margin-top:0">
+          <a class="btn btn-primary" href="report/">Report a problem</a>
+          <a class="btn" href="dashboard/">See all complaints</a>
+        </div>
       </div>
     </section>
 

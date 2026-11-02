@@ -2391,3 +2391,57 @@ h1, h2, h3, .analytics-title, .detail-title, .detail-headline, .dept-name, .sect
 }
 .dept-icon { display: none; }
 .dept-total, .dept-count { font-stretch: 75% !important; font-weight: 800; background: none !important; }
+
+/* ── Information architecture (2026-11-02): two modes, global nav, Insights ── */
+/* Mode switching: complaint controls only where they work */
+.people-only { display: none !important; }
+body.view-people .people-only { display: revert !important; }
+body.view-people .complaints-only,
+body.view-people .page-intro:not(.people-only),
+body.view-people .kpi-row,
+body.view-people .toolbar { display: none !important; }
+body.view-people .tab.people-only { display: inline-block !important; }
+
+/* Global nav inside the signboard header */
+.header-inner { gap: 28px; }
+.site-nav { display: flex; gap: 22px; align-items: center; }
+.site-nav a { color: rgba(255,255,255,.85); text-decoration: none; font: 600 .95rem/1 var(--sans); padding: 6px 0; border-bottom: 3px solid transparent; white-space: nowrap; }
+.site-nav a:hover { color: #fff; border-bottom-color: rgba(255,255,255,.5); }
+.site-nav a[aria-current="page"] { color: #fff; border-bottom-color: #F4C400; }
+.header-actions { margin-left: auto; }
+
+/* Detail pane: the hand-off to Report a problem */
+.btn-report { display: block; background: #1D4F9C; color: #fff !important; border: 2px solid #1D4F9C; padding: 10px 14px; font-weight: 700; text-decoration: none; text-align: center; }
+.btn-report:hover { background: #163E7C; }
+.btn-assign { background: transparent !important; color: var(--text) !important; border-color: var(--rule) !important; }
+
+/* Insights */
+.insight-block { display: grid; gap: 16px; padding-bottom: 36px; margin-bottom: 8px; border-bottom: 2px solid var(--rule); }
+.insight-block:last-child { border-bottom: 0; }
+.insight-head h2 { font: 800 1.5rem/1.1 var(--sans); font-stretch: 118%; }
+.insight-head p { color: var(--muted); margin-top: 6px; max-width: 70ch; }
+.where-levels { width: max-content; max-width: 100%; overflow-x: auto; }
+.where-list { border: 2px solid var(--rule); background: var(--panel); }
+.where-row { display: grid; grid-template-columns: minmax(180px, 1.2fr) 2fr 90px 110px; gap: 16px; align-items: center; padding: 10px 16px; border: 0; border-top: 1px solid var(--border); background: none; width: 100%; text-align: left; font: inherit; color: var(--text); }
+.where-row:first-child { border-top: 0; }
+button.where-row { cursor: pointer; }
+button.where-row:hover { background: var(--panel-alt); }
+.where-head { font-weight: 700; font-size: .85rem; color: var(--muted); background: var(--panel-alt); border-bottom: 2px solid var(--rule); }
+.where-name { font-weight: 600; display: grid; }
+.where-name small { font-weight: 400; color: var(--muted); font-stretch: 75%; font-size: .85rem; }
+.where-bar { height: 14px; background: var(--panel-alt); }
+.where-bar i { display: block; height: 100%; background: var(--data); }
+.where-n, .where-late { font-stretch: 75%; font-weight: 700; font-variant-numeric: tabular-nums; text-align: right; }
+.where-late b { background: #F4C400; color: #1B1F22; padding: 1px 6px; }
+.where-note { padding: 10px 16px; color: var(--muted); font-size: .85rem; border-top: 1px solid var(--border); }
+.where-note:empty { display: none; }
+
+@media (max-width: 1100px) {
+  .site-nav { order: 3; width: 100%; overflow-x: auto; gap: 18px; padding-bottom: 10px; scrollbar-width: none; }
+  .header-inner { flex-wrap: wrap; height: auto; padding-top: 12px; row-gap: 6px; }
+}
+@media (max-width: 640px) {
+  .where-row { grid-template-columns: 1fr 64px 80px; }
+  .where-bar { display: none; }
+}
+.page-intro a { color: var(--brand); font-weight: 600; text-underline-offset: 3px; }
