@@ -4,6 +4,16 @@ Every feature and file built in GovWatch, with dates and status.
 
 ---
 
+## Two places: Complaints and Report a problem (added 2026-11-02)
+
+| File | Date Built | Status | Description |
+|---|---|---|---|
+| `docs/product/USER_FLOWS.md` | 2026-11-02 | ✅ Live | Users, goals, flows and site structure; the product plan |
+| `report/index.html`, `report/report.css`, `report/report.js` | 2026-11-02 | ✅ Live | Report a problem: 5-step resident flow with ward lookup, responsible officials, pre-written complaint and official channels |
+| `data/officials/official_channels.json` | 2026-11-02 | ✅ Live | Official complaint channels with last-checked dates and confidence |
+
+---
+
 ## Public Launch Readiness (added 2026-11-02)
 
 | File | Date Built | Status | Description |

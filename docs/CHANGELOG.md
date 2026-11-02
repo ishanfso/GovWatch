@@ -5,6 +5,40 @@ Format: `[Date] - What changed and why`
 
 ---
 
+## [2026-11-02] — Two places, clear flows: "Complaints" and "Report a problem"
+
+### Why
+The dashboard had six tabs of equal weight serving different people with different jobs. Full reasoning, users and flows: [[USER_FLOWS]].
+
+### What changed
+**New: Report a problem (`report/index.html`, `report/report.css`, `report/report.js`)**, the resident's flow in five numbered steps:
+1. What's wrong (7 plain-language problem types).
+2. Where (search all 369 wards plus common neighbourhood names).
+3. Who's responsible: the first contact, who to escalate to, and elected representatives, with tap-to-call and email. Missing data is said plainly; for example, ward engineer names are not in our data yet.
+4. Complain officially: a pre-written, editable complaint; copy it; open the right official channel (Sahaaya app, BESCOM 1912 or WhatsApp with the text pre-filled, BWSSB 1916, the local traffic police station, 112 for danger), email the named officials in Gmail, or post on X.
+5. If it isn't fixed: the expected response time and the escalation ladder.
+
+The page also links to other complaints from the same ward. A complaint in the list links into this flow with the type and place filled in.
+
+**New: `data/officials/official_channels.json`**, the official complaint channels, each with a "last checked" date, a confidence level and its source.
+
+**Dashboard reorganised (`dashboard/index.html`, `dashboard/js/app.js`, `dashboard/css/styles.css`)**
+- The same four links on every page: Complaints · Insights · Report a problem · Find officials.
+- Complaints mode has List, Map and Insights. Find officials mode (`?view=people`) has By ward and By name, and hides the complaint figures and filters, which don't apply there.
+- Departments merged into Insights. Insights now has four sections:
+  - By department, against deadlines
+  - Where complaints come from, with a level switcher for city corporation, assembly constituency, ward or neighbourhood (selecting a ward or neighbourhood opens its complaints in the list)
+  - What people complain about
+  - Requests raised to officials
+
+  This replaces the 300-tile heat map and three overlapping breakdowns.
+- Complaint detail: new "Who's responsible and how to complain officially" button. Plain labels ("Email BESCOM", "View the post on X", "Share on WhatsApp").
+- Fixed: the saved-view click handler was attached to every chip on the page, including the officials section's chips.
+
+**Landing page:** hero now offers the two places as two doors (Report a problem / See all complaints). The nav uses the same four links and stays visible on phones.
+
+---
+
 ## [2026-11-02] — Version tags on stylesheets and scripts
 
 ### What changed

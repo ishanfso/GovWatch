@@ -142,6 +142,68 @@ let leafletMap = null;
 let mapMarkers = [];
 let mapInitialized = false;
 
+// ── Insights: where complaints come from ────────────────────────────
+// One ranked list, at the level the user picks. Ward-based levels use the
+// officials ward data to look up each complaint's corporation and constituency.
+
+let whereLevel = "corp";
+
+function renderWhere(issues) {
+  const el = document.getElementById("where-list");
+  if (!el) return;
+  const needsWards = whereLevel === "corp" || whereLevel === "constituency" || whereLevel === "ward";
+  if (needsWards && !officialsLoaded) {
+    el.innerHTML = '<div class="loading">Loading ward data...</div>';
+    initOfficials().then(() => renderWhere(getFiltered()));
+    return;
+  }
+  const wardOf = i => (i.ward_name && officialsData.wardLookup[i.ward_name.toLowerCase()]) || null;
+  const shortCorp = c => String(c || "").replace("Bengaluru ", "").replace(" City Corporation", "");
+  const keyFns = {
+    corp:         i => wardOf(i)?.city_corp ? shortCorp(wardOf(i).city_corp) + " City Corporation" : null,
+    constituency: i => wardOf(i)?.constituency || null,
+    ward:         i => wardOf(i) ? `${wardOf(i).ward_name}|Ward ${wardOf(i).ward_no}, ${shortCorp(wardOf(i).city_corp)}` : null,
+    area:         i => (i.area && i.area !== "Bangalore" && i.area !== "Bengaluru") ? i.area : null,
+  };
+  const keyFn = keyFns[whereLevel];
+  const groups = {};
+  let unplaced = 0;
+  for (const i of issues) {
+    const k = keyFn(i);
+    if (!k) { unplaced++; continue; }
+    (groups[k] ||= { total: 0, late: 0 });
+    groups[k].total++;
+    if (getSLAStatus(i).cls === "sla-overdue" && getStatus(i.id) !== "resolved") groups[k].late++;
+  }
+  const rows = Object.entries(groups).sort((a, b) => b[1].total - a[1].total);
+  const shown = rows.slice(0, whereLevel === "corp" ? 5 : 25);
+  const max = shown[0]?.[1].total || 1;
+  const clickable = whereLevel === "ward" || whereLevel === "area";
+  const noun = { corp: "corporations", constituency: "constituencies", ward: "wards", area: "neighbourhoods" }[whereLevel];
+
+  el.innerHTML = `
+    <div class="where-row where-head" aria-hidden="true"><span>Name</span><span></span><span>Complaints</span><span>Past deadline</span></div>
+    ${shown.map(([k, g]) => {
+      const [name, sub] = k.split("|");
+      const inner = `<span class="where-name">${esc(name)}${sub ? `<small>${esc(sub)}</small>` : ""}</span>
+        <span class="where-bar"><i style="width:${(g.total / max * 100).toFixed(1)}%"></i></span>
+        <span class="where-n">${g.total.toLocaleString("en-IN")}</span>
+        <span class="where-late">${g.late ? `<b>${g.late.toLocaleString("en-IN")}</b>` : "0"}</span>`;
+      return clickable
+        ? `<button class="where-row" type="button" data-q="${esc(name)}">${inner}</button>`
+        : `<div class="where-row">${inner}</div>`;
+    }).join("")}
+    <p class="where-note">${rows.length > shown.length ? `Showing the top ${shown.length} of ${rows.length} ${noun}. ` : ""}${unplaced ? `${unplaced.toLocaleString("en-IN")} complaints don't name a specific ${whereLevel === "area" ? "neighbourhood" : "ward"}, so they aren't counted here.` : ""}</p>`;
+
+  el.querySelectorAll("button.where-row").forEach(b => b.addEventListener("click", () => {
+    activeFilters.search = b.dataset.q.toLowerCase();
+    document.getElementById("search-input").value = b.dataset.q;
+    switchTab("queue");
+    applyFilters();
+    window.scrollTo({ top: document.querySelector(".toolbar").offsetTop - 80, behavior: "smooth" });
+  }));
+}
+
 // ── Clock ──────────────────────────────────────────────────────────
 // When the data feed is paused, the newest complaint can be weeks old and
 // every SLA timer would read "overdue by thousands of hours". In that case
@@ -219,9 +281,28 @@ async function init() {
     btn.addEventListener("click", () => switchTab(btn.dataset.tab))
   );
 
-  document.querySelectorAll(".view-chip").forEach(btn =>
+  document.querySelectorAll("#saved-views .view-chip").forEach(btn =>
     btn.addEventListener("click", () => onSavedViewClick(btn))
   );
+
+  // "Where complaints come from" level switcher (Insights)
+  document.querySelectorAll("#where-levels .view-chip").forEach(btn =>
+    btn.addEventListener("click", () => {
+      whereLevel = btn.dataset.level;
+      document.querySelectorAll("#where-levels .view-chip").forEach(b => b.classList.toggle("active", b === btn));
+      renderWhere(getFiltered());
+    })
+  );
+
+  // Two modes on this page: complaints (List, Map, Insights) and Find officials (By ward, By name).
+  // ?view=people opens Find officials; ?tab=insights|map|list opens a complaints tab.
+  const params = new URLSearchParams(window.location.search);
+  if (params.get("view") === "people") setMode("people", params.get("tab") === "name" ? "directory" : "officials");
+  else {
+    setMode("complaints");
+    const t = { insights: "analytics", analytics: "analytics", map: "map" }[params.get("tab")];
+    if (t) switchTab(t);
+  }
 
   document.getElementById("cluster-toggle").addEventListener("change", e => {
     clustered = e.target.checked;
@@ -496,8 +577,23 @@ function applyFilters() {
 
 // ── Tabs ───────────────────────────────────────────────────────────
 
+// Page mode: "complaints" shows the figures, filters and complaint tabs;
+// "people" hides them (they don't apply to the officials directory).
+function setMode(mode, tab) {
+  document.body.classList.toggle("view-people", mode === "people");
+  document.body.classList.toggle("view-complaints", mode !== "people");
+  document.querySelectorAll(".site-nav a").forEach(a => a.removeAttribute("aria-current"));
+  const navKey = mode === "people" ? "people" : (tab === "analytics" ? "insights" : "list");
+  document.querySelector(`.site-nav a[data-nav="${navKey}"]`)?.setAttribute("aria-current", "page");
+  switchTab(tab || (mode === "people" ? "officials" : "queue"));
+}
+
 function switchTab(tab) {
   activeTab = tab;
+  if (!document.body.classList.contains("view-people")) {
+    document.querySelectorAll(".site-nav a").forEach(a => a.removeAttribute("aria-current"));
+    document.querySelector(`.site-nav a[data-nav="${tab === "analytics" ? "insights" : "list"}"]`)?.setAttribute("aria-current", "page");
+  }
   document.querySelectorAll(".tab").forEach(b => b.classList.toggle("active", b.dataset.tab === tab));
   document.querySelectorAll(".tab-content").forEach(s => s.classList.add("hidden"));
   document.getElementById(`tab-${tab}`).classList.remove("hidden");
@@ -689,10 +785,11 @@ function renderDetailPanel(issue) {
             ? `<select class="status-select ${statusClass}" id="detail-status-select" data-issue-id="${esc(String(issue.id))}">${statusOpts}</select>`
             : `<span class="status-badge-ro s-${status}">${status}</span>`}
         </div>
-        ${CAN_ACT() ? `<a class="btn-assign" href="${buildEmailLink(issue)}">&#128231; Raise to ${esc(poc.dept)}</a>` : ""}
-        <a class="btn-whatsapp" href="${whatsappUrl(issue)}" target="_blank" rel="noopener">&#128362; WhatsApp</a>
-        ${issue.source_url ? `<a class="btn-source" href="${esc(issue.source_url)}" target="_blank" rel="noopener">Open source tweet &#8599;</a>` : ""}
-        <button class="btn-copy-tweet" id="copy-tweet-btn">&#128203; Copy Tweet Reply</button>
+        <a class="btn-report" href="${reportLink(issue)}">Who's responsible and how to complain officially</a>
+        ${CAN_ACT() ? `<a class="btn-assign" href="${buildEmailLink(issue)}">Email ${esc(poc.dept)}</a>` : ""}
+        <a class="btn-whatsapp" href="${whatsappUrl(issue)}" target="_blank" rel="noopener">Share on WhatsApp</a>
+        ${issue.source_url ? `<a class="btn-source" href="${esc(issue.source_url)}" target="_blank" rel="noopener">View the post on X</a>` : ""}
+        <button class="btn-copy-tweet" id="copy-tweet-btn">Copy a reply to the post</button>
         <div class="tweet-preview hidden" id="tweet-preview"></div>
       </div>
 
@@ -768,7 +865,7 @@ function renderDetailPanel(issue) {
         copyBtn.innerHTML = "&#10003; Copied!";
         copyBtn.classList.add("copied");
         setTimeout(() => {
-          copyBtn.innerHTML = "&#128203; Copy Tweet Reply";
+          copyBtn.innerHTML = "Copy a reply to the post";
           copyBtn.classList.remove("copied");
         }, 2500);
       };
@@ -907,6 +1004,14 @@ function getSLAStatus(issue) {
   if (pct >= 1)    return { cls: "sla-overdue", label: `${Math.round(elapsedH - poc.tat).toLocaleString("en-IN")}h late` };
   if (pct >= 0.75) return { cls: "sla-warning", label: `${Math.round(poc.tat - elapsedH)}h left` };
   return               { cls: "sla-ok",       label: `${Math.round(poc.tat - elapsedH)}h left` };
+}
+
+// Link from a complaint to the Report a problem flow, with type and place filled in
+function reportLink(issue) {
+  const p = new URLSearchParams({ category: issue.category || "" });
+  if (issue.ward_name) p.set("ward", issue.ward_name);
+  if (issue.area && issue.area !== "Bangalore") p.set("area", issue.area);
+  return `../report/?${p}`;
 }
 
 function buildEmailLink(issue) {
@@ -1097,12 +1202,9 @@ function whatsappUrl(issue) {
 }
 
 function renderAnalytics(issues) {
+  renderDepartments(issues);
+  renderWhere(issues);
   renderChart(issues);
-  renderAreaChart(issues);
-  renderWardHeatMap(issues);
-  renderBreakdownList("mla-breakdown",  issues, "constituency",  false);
-  renderBreakdownList("mp-breakdown",   issues, "mp",             false);
-  renderBreakdownList("zone-breakdown", issues, "city_corp",      true);
   renderRaisedToBreakdown();
 
   // Severity breakdown bars
@@ -1147,7 +1249,7 @@ function renderAnalytics(issues) {
 
   document.getElementById("sla-table").innerHTML = `
     <table class="sla-table">
-      <thead><tr><th>Department</th><th>Total</th><th>Overdue</th><th>Resolved</th><th>Resolution %</th></tr></thead>
+      <thead><tr><th>Department</th><th>Complaints</th><th>Past deadline</th><th>Resolved</th><th>Share resolved</th></tr></thead>
       <tbody>${tableRows}</tbody>
     </table>`;
 }
@@ -1741,7 +1843,7 @@ function initWardSearch() {
     const locBtn = document.createElement("button");
     locBtn.id = "detect-location-btn";
     locBtn.className = "btn-detect-location";
-    locBtn.innerHTML = "&#127757; Detect My Location";
+    locBtn.innerHTML = "Use my location";
     locBtn.addEventListener("click", detectNearestWard);
     searchWrap.after(locBtn);
   }
@@ -1868,11 +1970,11 @@ async function detectNearestWard() {
       } catch (err) {
         if (resultsEl) resultsEl.innerHTML = `<div class="ward-empty" style="padding:12px">Location lookup failed. Check your connection and try again.</div>`;
       } finally {
-        if (btn) { btn.disabled = false; btn.innerHTML = "&#127757; Detect My Location"; }
+        if (btn) { btn.disabled = false; btn.innerHTML = "Use my location"; }
       }
     },
     err => {
-      if (btn) { btn.disabled = false; btn.innerHTML = "&#127757; Detect My Location"; }
+      if (btn) { btn.disabled = false; btn.innerHTML = "Use my location"; }
       const msg = err.code === 1
         ? "Location access denied. Tap Allow when your browser asks for permission."
         : err.code === 3
@@ -2272,7 +2374,7 @@ function renderOrgChart(dept) {
     container.innerHTML = `
       <div class="org-chart">${chainHTML}</div>
       <div style="margin-top:20px">
-        <div class="officials-section-title" style="font-size:.85rem;margin-bottom:12px">City Corporation Commissioners &amp; Key Contacts</div>
+        <div class="officials-section-title" style="font-size:.85rem;margin-bottom:12px">City corporation commissioners and key contacts</div>
         ${corpCards}
       </div>
     `;
