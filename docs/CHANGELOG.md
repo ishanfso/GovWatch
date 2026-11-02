@@ -5,6 +5,18 @@ Format: `[Date] - What changed and why`
 
 ---
 
+## [2026-11-02] — Open access: sign-up removed; sign-in switched off
+
+### What changed
+- **Why:** the Supabase project behind sign-in has been deleted (its web address no longer exists), so "Continue with Google" led to a "site can't be reached" error. The owner also wants people to use the product without signing up.
+- `index.html`, `js/landing.js`, `css/landing.css` — Removed the sign-in / sign-up section, the nav "Sign in" link and the Supabase library from the landing page.
+- `js/supabase-client.js` — New `AUTH_ENABLED` master switch, set to `false`. With it off, no page ever contacts Supabase.
+- `dashboard/js/app.js` — Visitors without an account can now do almost everything: change status, assign officials, and open pre-filled email drafts to the right department. Their changes are saved in their own browser only. Still closed: the Admin tab and team notes, which need a database. The banner now says "Open access" and can be dismissed. The header sign-in/out button is hidden.
+- `dashboard/css/styles.css` — Dismiss button for the banner.
+- `docs/GO_LIVE.md` — Supabase marked as deleted; setting up a new project is now optional.
+
+---
+
 ## [2026-11-02] — Public demo mode, new landing page, data-feed cost guard
 
 ### What changed

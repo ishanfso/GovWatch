@@ -283,8 +283,7 @@ async function init() {
   if (emailEl && currentUser) emailEl.textContent = currentUser.email;
   const signoutBtn = document.getElementById("btn-signout");
   if (signoutBtn && IS_DEMO()) {
-    signoutBtn.textContent = "Sign in";
-    signoutBtn.addEventListener("click", () => window.location.assign("/#signin"));
+    signoutBtn.remove(); // open access — no accounts, so no sign-in/out button
   } else if (signoutBtn) signoutBtn.addEventListener("click", async () => {
     await sb.auth.signOut();
     window.location.replace("/");
@@ -688,11 +687,11 @@ function renderDetailPanel(issue) {
       <div class="detail-actions">
         <div class="detail-status-row">
           <span class="detail-status-label">Status</span>
-          ${window._userRole === "admin"
+          ${CAN_ACT()
             ? `<select class="status-select ${statusClass}" id="detail-status-select" data-issue-id="${esc(String(issue.id))}">${statusOpts}</select>`
             : `<span class="status-badge-ro s-${status}">${status}</span>`}
         </div>
-        ${window._userRole === "admin" ? `<a class="btn-assign" href="${buildEmailLink(issue)}">&#128231; Raise to ${esc(poc.dept)}</a>` : ""}
+        ${CAN_ACT() ? `<a class="btn-assign" href="${buildEmailLink(issue)}">&#128231; Raise to ${esc(poc.dept)}</a>` : ""}
         <a class="btn-whatsapp" href="${whatsappUrl(issue)}" target="_blank" rel="noopener">&#128362; WhatsApp</a>
         ${issue.source_url ? `<a class="btn-source" href="${esc(issue.source_url)}" target="_blank" rel="noopener">Open source tweet &#8599;</a>` : ""}
         <button class="btn-copy-tweet" id="copy-tweet-btn">&#128203; Copy Tweet Reply</button>
@@ -737,7 +736,7 @@ function renderDetailPanel(issue) {
     detailPane.addEventListener("click", e => {
       const raiseBtn = e.target.closest(".sc-raise-btn");
       if (raiseBtn) {
-        if (window._userRole !== "admin") return; // viewers cannot assign
+        if (!CAN_ACT()) return; // signed-in viewers cannot assign
         const idx = parseInt(raiseBtn.dataset.contactIdx, 10);
         const contacts = getSmartContacts(issue);
         const contact = contacts[idx];
@@ -1343,6 +1342,10 @@ function renderRoleBanner(role) {
 // read-only public demo. Status changes are kept only in their own browser.
 
 const IS_DEMO = () => window._userRole === "demo";
+// Open access: visitors without an account can use everything except the
+// Admin tab and team notes (those need a database). Their status changes and
+// assignments are saved in their own browser only.
+const CAN_ACT = () => window._userRole === "admin" || IS_DEMO();
 const DEMO_STORE_KEY = "gw_demo_issue_state";
 
 function saveDemoState() {
@@ -1353,13 +1356,11 @@ function renderDemoBanner() {
   const bar = document.createElement("div");
   bar.className = "demo-banner";
   bar.setAttribute("role", "status");
-  const offline = window._demoReason === "offline";
   bar.innerHTML = `
-    <span class="demo-pill">Public demo</span>
-    <span>${offline
-      ? "Sign-in is temporarily unavailable, so you're seeing the read-only demo."
-      : "You're exploring GovWatch as a guest. Changes you make stay in this browser only."}</span>
-    ${offline ? "" : '<a class="demo-link" href="/#signin">Official sign-in &rarr;</a>'}`;
+    <span class="demo-pill">Open access</span>
+    <span>No sign-up needed. Statuses and assignments you set are saved in this browser only.</span>
+    <button class="demo-close" type="button" aria-label="Dismiss">&#x2715;</button>`;
+  bar.querySelector(".demo-close").addEventListener("click", () => bar.remove());
   document.body.prepend(bar);
 }
 

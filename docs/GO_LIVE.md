@@ -12,7 +12,7 @@ Last reviewed: 2026-11-02.
 | Website hosting (GitHub Pages) | ✅ Working | Deploys succeed after every push |
 | Public landing page + demo dashboard | ✅ Working | Opens without login, so a CV link always works |
 | Twitter/X data feed | ❌ Stopped | Every query returns **"402 Payment Required — credits depleted"**. Newest complaint is from 4 Jul 2026 |
-| Supabase (login, shared status, notes) | ⚠️ Likely paused | Free Supabase projects pause after about a week with no activity |
+| Supabase (login, shared status, notes) | ❌ Deleted | The project's address no longer exists (checked 2026-11-02). Sign-in is switched off until a new project is set up |
 | Domain `civicissue.in` | ❓ Check | Make sure the domain registration hasn't expired |
 
 ---
@@ -23,15 +23,16 @@ Last reviewed: 2026-11-02.
 2. If it doesn't load, log in to wherever you bought the domain and check it's renewed.
 3. In GitHub → repo **Settings → Pages**, confirm the custom domain says `civicissue.in` with a green tick and **Enforce HTTPS** is on.
 
-## Step 2 — Bring Supabase back (10–30 minutes, free)
+## Step 2 — Set up a new Supabase project (about 30 minutes, free) — optional
 
-1. Log in at supabase.com and open the project.
-2. If it says **Paused**, click **Restore project** and wait a few minutes.
-3. If Supabase says the project can no longer be restored, create a new project, then:
+Only needed if you want official logins, shared status and team notes back. The public demo works without it.
+
+The old project (`efdhdzanliqghwggjrco`) has been deleted, so it can't be restored. Create a new one at supabase.com, then:
    - open **SQL Editor** and run everything in `scripts/supabase_schema.sql`
    - copy the new **Project URL** and **publishable (anon) key** into `js/supabase-client.js`
    - under **Authentication → URL Configuration**, add `https://civicissue.in/dashboard/` as a redirect URL
    - re-enable the Google sign-in provider
+   - ask Claude to switch sign-in back on (`AUTH_ENABLED = true` in `js/supabase-client.js`)
    - sign in once, then make yourself admin in the `profiles` table (`role = admin`)
 4. Note: free projects pause again after a quiet week. Logging in once a week or so keeps it awake; the paid tier never pauses.
 

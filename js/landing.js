@@ -1,6 +1,5 @@
-// Civic Issue India — landing page
-// 1. Auth (optional: if Supabase is unreachable the page still works)
-// 2. Live figures, neighbourhood map, complaint ticker and category chart,
+// Civic Issue India — landing page (open access: no sign-up or login)
+// Live figures, neighbourhood map, complaint ticker and category chart,
 //    all computed in the browser from the same JSON files the dashboard uses.
 
 const $ = (sel) => document.querySelector(sel);
@@ -14,73 +13,6 @@ const nav = $("#nav");
 const onScroll = () => nav.classList.toggle("scrolled", window.scrollY > 8);
 window.addEventListener("scroll", onScroll, { passive: true });
 onScroll();
-
-// ── Auth ─────────────────────────────────────────────────────────
-const authReady = typeof sb !== "undefined" && sb;
-
-function openSignin() {
-  const sec = $("#signin");
-  sec.hidden = false;
-  requestAnimationFrame(() => sec.scrollIntoView({ behavior: reducedMotion ? "auto" : "smooth", block: "center" }));
-  if (!authReady) {
-    const msg = $("#auth-error");
-    msg.textContent = "Sign-in is temporarily unavailable. You can still explore the public dashboard.";
-    msg.hidden = false;
-    document.querySelectorAll("#auth-form input, #auth-form button, #btn-google").forEach((el) => (el.disabled = true));
-  }
-}
-document.querySelectorAll("[data-open-signin]").forEach((a) =>
-  a.addEventListener("click", (e) => { e.preventDefault(); openSignin(); }));
-if (location.hash === "#signin") openSignin();
-
-if (authReady) {
-  // Already signed in → straight to the dashboard
-  sb.auth.getSession().then(({ data }) => { if (data?.session) location.replace(DASHBOARD); }).catch(() => {});
-  sb.auth.onAuthStateChange((_e, session) => { if (session) location.replace(DASHBOARD); });
-
-  $("#btn-google").addEventListener("click", async () => {
-    await sb.auth.signInWithOAuth({ provider: "google", options: { redirectTo: new URL(DASHBOARD, location.href).href } });
-  });
-
-  let isSignUp = false;
-  $("#auth-toggle").addEventListener("click", () => {
-    isSignUp = !isSignUp;
-    $("#name-row").hidden = !isSignUp;
-    $("#btn-submit").textContent = isSignUp ? "Create account" : "Sign in";
-    $("#auth-toggle-text").textContent = isSignUp ? "Already have an account?" : "Don't have an account?";
-    $("#auth-toggle").textContent = isSignUp ? "Sign in" : "Create one";
-    $("#auth-password").autocomplete = isSignUp ? "new-password" : "current-password";
-    $("#auth-error").hidden = true;
-  });
-
-  $("#auth-form").addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const email = $("#auth-email").value.trim();
-    const password = $("#auth-password").value;
-    const msg = $("#auth-error");
-    const btn = $("#btn-submit");
-    btn.disabled = true;
-    btn.textContent = "Please wait…";
-    msg.hidden = true;
-    msg.classList.remove("ok");
-
-    let error;
-    try {
-      if (isSignUp) {
-        const name = $("#full-name").value.trim();
-        ({ error } = await sb.auth.signUp({ email, password, options: { data: { full_name: name } } }));
-        if (!error) { msg.textContent = "Check your email for a confirmation link."; msg.classList.add("ok"); msg.hidden = false; }
-      } else {
-        ({ error } = await sb.auth.signInWithPassword({ email, password }));
-      }
-    } catch (err) {
-      error = { message: "Couldn't reach the sign-in service. Please try again later." };
-    }
-    if (error) { msg.textContent = error.message; msg.hidden = false; }
-    btn.disabled = false;
-    btn.textContent = isSignUp ? "Create account" : "Sign in";
-  });
-}
 
 // ── Data ─────────────────────────────────────────────────────────
 async function getJSON(path) {
