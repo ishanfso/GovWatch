@@ -5,6 +5,13 @@ Format: `[Date] - What changed and why`
 
 ---
 
+## [2026-11-02] — Version tags on stylesheets and scripts
+
+### What changed
+- `index.html` and `dashboard/index.html` now load `landing.css`, `landing.js`, `styles.css` and `app.js` with a `?v=` version tag. Browsers treat a new tag as a new file, so visitors get the latest design right after an update instead of a stale saved copy. Change the tag whenever these files change.
+
+---
+
 ## [2026-11-02] — "Ward signboard" redesign of the landing page and dashboard
 
 ### What changed
