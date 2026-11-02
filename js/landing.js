@@ -8,6 +8,23 @@ const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const DASHBOARD = "dashboard/";
 
+// ── Reveal on scroll ─────────────────────────────────────────────
+// Sections are visible by default (see landing.css). We only fade them in
+// when this script runs, and a safety timer shows everything regardless.
+(function setupReveal() {
+  const els = document.querySelectorAll(".reveal");
+  if (reducedMotion || !("IntersectionObserver" in window)) return;
+  document.documentElement.classList.add("js");
+  const io = new IntersectionObserver((entries) => entries.forEach((e) => {
+    if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+  }), { rootMargin: "0px 0px -8% 0px", threshold: 0.05 });
+  els.forEach((el) => io.observe(el));
+  // Anything already on screen (or a browser that never fires) still shows
+  setTimeout(() => els.forEach((el) => {
+    if (el.getBoundingClientRect().top < innerHeight * 1.2) el.classList.add("in");
+  }), 120);
+})();
+
 // ── Nav: hairline once scrolled ──────────────────────────────────
 const nav = $("#nav");
 const onScroll = () => nav.classList.toggle("scrolled", window.scrollY > 8);
@@ -57,6 +74,9 @@ const dateFmt = (ms) => new Date(ms).toLocaleDateString("en-IN", { day: "numeric
 
   renderBars(issues);
   renderAreas(issues);
+  renderTimeline(issues);
+  renderDepts(issues);
+  renderVoices(issues);
   if (geo) renderMap(issues, geo);
 })();
 
@@ -246,4 +266,95 @@ function startTicker(groups, svg) {
   ticker.addEventListener("mouseenter", () => (paused = true));
   ticker.addEventListener("mouseleave", () => (paused = false));
   setInterval(next, 5200);
+}
+
+// ── Complaints per week (single-hue columns) ────────────────────
+function renderTimeline(issues) {
+  const box = $("#timeline"), axis = $("#timeline-axis"), tip = $("#timeline-tip");
+  if (!box) return;
+  const WEEK = 7 * 864e5;
+  const times = issues.map((i) => Date.parse(i.date)).filter(Boolean);
+  // Weeks start on Monday
+  const startOf = (t) => { const d = new Date(t); d.setHours(0, 0, 0, 0); d.setDate(d.getDate() - ((d.getDay() + 6) % 7)); return d.getTime(); };
+  const first = startOf(Math.min(...times)), last = startOf(Math.max(...times));
+  const weeks = [];
+  for (let w = first; w <= last; w += WEEK) weeks.push({ start: w, n: 0 });
+  times.forEach((t) => { const k = Math.round((startOf(t) - first) / WEEK); if (weeks[k]) weeks[k].n++; });
+  const max = Math.max(...weeks.map((w) => w.n));
+  const short = (t) => new Date(t).toLocaleDateString("en-IN", { day: "numeric", month: "short" });
+
+  $("#timeline-range").textContent = `${short(first)} – ${short(last + WEEK - 864e5)}`;
+  box.innerHTML = weeks.map((w) => `
+    <div class="tl-col" role="listitem" tabindex="0" data-n="${w.n}" data-start="${w.start}"
+         aria-label="Week of ${short(w.start)}: ${w.n} complaints">
+      <span class="tl-bar" data-h="${max ? (w.n / max) * 100 : 0}"></span>
+    </div>`).join("");
+  const ticks = [weeks[0], weeks[Math.floor(weeks.length / 2)], weeks[weeks.length - 1]];
+  axis.innerHTML = ticks.map((w) => `<span>${short(w.start)}</span>`).join("");
+
+  const grow = () => box.querySelectorAll(".tl-bar").forEach((b) => (b.style.height = b.dataset.h + "%"));
+  if ("IntersectionObserver" in window && !reducedMotion) {
+    const io = new IntersectionObserver((es) => { if (es.some((e) => e.isIntersecting)) { grow(); io.disconnect(); } }, { threshold: 0.3 });
+    io.observe(box);
+  } else grow();
+
+  const card = box.parentElement;
+  const show = (col) => {
+    const bar = col.querySelector(".tl-bar").getBoundingClientRect(), c = card.getBoundingClientRect();
+    tip.innerHTML = `<strong>Week of ${short(+col.dataset.start)}</strong>${fmt(+col.dataset.n)} complaints`;
+    tip.style.left = `${Math.min(Math.max(bar.left + bar.width / 2 - c.left, 80), c.width - 80)}px`;
+    tip.style.top = `${bar.top - c.top}px`;
+    tip.hidden = false;
+  };
+  box.querySelectorAll(".tl-col").forEach((col) => {
+    col.addEventListener("mouseenter", () => show(col));
+    col.addEventListener("focus", () => show(col));
+    col.addEventListener("mouseleave", () => (tip.hidden = true));
+    col.addEventListener("blur", () => (tip.hidden = true));
+  });
+}
+
+// ── Departments (same routing as the dashboard) ─────────────────
+function renderDepts(issues) {
+  const box = $("#depts");
+  if (!box) return;
+  const DEPT = { Electricity: "BESCOM", Water: "BWSSB", Traffic: "BTP" }; // everything else → BBMP
+  const INFO = {
+    BBMP:   "City corporation — roads, garbage, parks, drains",
+    BESCOM: "Electricity supply and street lights",
+    BWSSB:  "Water supply and sewerage",
+    BTP:    "Bengaluru Traffic Police — signals, jams",
+  };
+  const counts = { BBMP: 0, BESCOM: 0, BWSSB: 0, BTP: 0 };
+  issues.forEach((i) => counts[DEPT[i.category] || "BBMP"]++);
+  const total = issues.length;
+  box.innerHTML = Object.entries(counts).sort((a, b) => b[1] - a[1]).map(([d, n]) => `
+    <div class="dept">
+      <div class="dept-name">${d}</div>
+      <div class="dept-n">${fmt(n)}</div>
+      <div class="dept-desc">${INFO[d]}</div>
+      <div class="dept-share" role="img" aria-label="${Math.round((n / total) * 100)} percent of complaints"><i style="width:${(n / total) * 100}%"></i></div>
+    </div>`).join("");
+}
+
+// ── Voices: most-shared complaints, verbatim ────────────────────
+function renderVoices(issues) {
+  const box = $("#voice-wall");
+  if (!box) return;
+  const seen = new Set();
+  const picks = issues
+    .map((i) => ({ i, text: cleanText(i.text), score: (i.likes || 0) + 2 * (i.retweets || 0) }))
+    .filter((p) => p.text.length > 60 && p.text.length < 420)
+    .sort((a, b) => b.score - a.score)
+    .filter((p) => { const k = p.i.category + "|" + p.i.area; if (seen.has(k)) return false; seen.add(k); return true; })
+    .slice(0, 6);
+  box.innerHTML = picks.map(({ i, text }) => `
+    <article class="voice card reveal in">
+      <div class="voice-meta"><span class="chip">${esc(i.category)}</span><span>${esc(i.area || "Bangalore")}</span></div>
+      <p class="voice-text">“${esc(text)}”</p>
+      <div class="voice-foot">
+        <span>${new Date(i.date).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })} · ♥ ${fmt(i.likes || 0)}</span>
+        ${i.source_url ? `<a href="${esc(i.source_url)}" target="_blank" rel="noopener">View on X ↗</a>` : ""}
+      </div>
+    </article>`).join("");
 }

@@ -5,6 +5,28 @@ Format: `[Date] - What changed and why`
 
 ---
 
+## [2026-11-02] — Dashboard redesign to match the landing page; fuller landing page
+
+### What changed
+
+**Dashboard (`dashboard/index.html`, `dashboard/css/styles.css`, `dashboard/js/app.js`)**
+- Same look as the landing page: warm paper background, serif headings, monospace labels, the same brand mark and favicon. The heavy green header is now a light bar that blurs content scrolling underneath it.
+- **Automatic dark mode.** Every colour is now a named setting with a light and a dark value. The 116 hard-coded colours in the stylesheet were replaced, and map tiles are darkened in dark mode.
+- New page heading ("What needs attention in Bangalore"). The five numbers sit in one divided panel with thousands separators. Filters, chips and tabs are rounded pills.
+- The disclaimer bar and the open-access banner are merged into one slim notice. The footer now carries the disclaimer.
+- **Charts:** the analytics charts use a single validated colour instead of one colour per bar or rainbow shades (dataviz skill rule: colour shows identity, not rank). They follow light/dark mode and have cleaner tooltips.
+- **Bug fix:** the page's security settings blocked the map library's stylesheet, which broke the Map tab. Now allowed.
+- Phone layout: compact header, two-column filters.
+
+**Landing page (`index.html`, `css/landing.css`, `js/landing.js`)**
+- Sections were sometimes invisible because the scroll fade-in relied on a new browser feature. Content is now always visible by default; the fade-in only runs when the page script is working, with a safety net.
+- New sections: a framed screenshot of the dashboard (light/dark), complaints per week, a breakdown by department (BBMP, BESCOM, BWSSB, BTP), and a wall of the six most-shared real complaints with links to X.
+- Added the missing social preview image, so the link shows a picture when shared on LinkedIn or WhatsApp.
+
+**New files:** `assets/dashboard-light.jpg`, `assets/dashboard-dark.jpg`, `og-preview.png`.
+
+---
+
 ## [2026-11-02] — Open access: sign-up removed; sign-in switched off
 
 ### What changed

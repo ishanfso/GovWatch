@@ -37,6 +37,7 @@
       </a>
       <nav class="nav-links" aria-label="Sections">
         <a href="#how">How it works</a>
+        <a href="#preview">Dashboard</a>
         <a href="#signal">What we hear</a>
         <a href="#product">For officials</a>
       </nav>
@@ -125,6 +126,29 @@
       </div>
     </section>
 
+    <!-- ── Preview ──────────────────────────────────────────── -->
+    <section class="section preview-section" id="preview" aria-labelledby="preview-title">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <p class="eyebrow">Inside the dashboard</p>
+          <h2 id="preview-title">One screen tells an official what to fix first.</h2>
+          <p class="section-sub">A ranked queue on the left, the full complaint and the right contact on the right. Map, department and analytics views are one tab away.</p>
+        </header>
+        <a class="browser reveal" href="dashboard/" aria-label="Open the live dashboard">
+          <div class="browser-bar" aria-hidden="true">
+            <span class="dots"><i></i><i></i><i></i></span>
+            <span class="url">civicissue.in/dashboard</span>
+            <span class="open">Open live →</span>
+          </div>
+          <picture>
+            <source srcset="assets/dashboard-dark.jpg" media="(prefers-color-scheme: dark)" />
+            <img src="assets/dashboard-light.jpg" width="1440" height="900" loading="lazy" decoding="async"
+                 alt="The Civic Issue India dashboard: a ranked queue of Bangalore complaints with a detail panel showing the responsible department." />
+          </picture>
+        </a>
+      </div>
+    </section>
+
     <!-- ── Signal ───────────────────────────────────────────── -->
     <section class="section section-alt" id="signal">
       <div class="wrap signal-grid">
@@ -141,6 +165,28 @@
           <h3 class="mono-label">Most-reported neighbourhoods</h3>
           <ol class="areas" id="top-areas"></ol>
         </div>
+        <div class="card timeline-card reveal">
+          <div class="timeline-head">
+            <h3 class="mono-label">Complaints per week</h3>
+            <span class="mono-label muted" id="timeline-range"></span>
+          </div>
+          <div class="timeline" id="timeline" role="list"></div>
+          <div class="timeline-axis" id="timeline-axis" aria-hidden="true"></div>
+          <div class="chart-tip" id="timeline-tip" hidden></div>
+        </div>
+        <div class="depts reveal" id="depts" aria-label="Complaints by responsible department"></div>
+      </div>
+    </section>
+
+    <!-- ── Voices ───────────────────────────────────────────── -->
+    <section class="section" id="voices" aria-labelledby="voices-title">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <p class="eyebrow">In citizens' own words</p>
+          <h2 id="voices-title">The complaints behind the numbers.</h2>
+          <p class="section-sub">The most-shared verified complaints, exactly as posted. Open any of them on X.</p>
+        </header>
+        <div class="voices" id="voice-wall"></div>
       </div>
     </section>
 

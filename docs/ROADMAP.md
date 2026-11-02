@@ -88,8 +88,11 @@ Goal: Make the project shareable (CV, LinkedIn, stakeholders), working "outside 
 - [x] Open access: no sign-up; visitors can use everything except Admin and team notes
 - [ ] Owner actions to go fully live — see [[GO_LIVE]] (domain check, top up X credits)
 - [ ] Optional: new Supabase project if shared (cross-browser) statuses, team notes or official logins are wanted again
-- [ ] Dashboard redesign, inward from the header: shared design tokens with the landing page, dark mode, KPI tiles, validated chart palette in Analytics, mobile review mode
-- [ ] Social preview image (`og-preview.png`) so the link looks good when pasted into LinkedIn
+- [x] Dashboard redesign: shared look with the landing page, dark mode, KPI panel, validated chart colours, phone layout
+- [x] Social preview image (`og-preview.png`) so the link looks good when pasted into LinkedIn
+- [x] Landing page: dashboard preview, weekly trend, departments, citizen complaint wall
+- [ ] Polish remaining inner panels (Officials org charts, Directory drawer, heat-map tiles) to the new style in detail
+- [ ] Light/dark toggle button (currently follows the device setting automatically)
 - [ ] "About / built by" section with the founder's name and links (needs owner's input)
 
 ---

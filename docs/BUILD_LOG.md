@@ -10,6 +10,8 @@ Every feature and file built in GovWatch, with dates and status.
 |---|---|---|---|
 | `docs/GO_LIVE.md` | 2026-11-02 | ✅ Live | Plain-English checklist: domain, Supabase restore, Twitter/X credits, sharing |
 | `index.html` + `css/landing.css` + `js/landing.js` | 2026-11-02 | ✅ Rebuilt | New public landing page with live figures, neighbourhood map, ticker and charts |
+| `assets/dashboard-light.jpg`, `assets/dashboard-dark.jpg` | 2026-11-02 | ✅ Live | Dashboard screenshots shown on the landing page (regenerate after big dashboard changes) |
+| `og-preview.png` | 2026-11-02 | ✅ Live | 1200×630 preview image shown when the link is shared on LinkedIn, WhatsApp, etc. |
 
 ---
 

@@ -3,6 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#f7f4ee" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0e1713" media="(prefers-color-scheme: dark)" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231f4d3a'/%3E%3Ccircle cx='16' cy='16' r='5' fill='%23f7f4ee'/%3E%3Ccircle cx='16' cy='16' r='10' fill='none' stroke='%23f7f4ee' stroke-opacity='.45' stroke-width='2'/%3E%3C/svg%3E" />
   <title>Civic Issue India — Bangalore Civic Intelligence</title>
   <meta name="description" content="Track and act on public civic complaints across Bangalore — roads, water, electricity, waste, traffic and more. Powered by public social media data." />
 
@@ -18,11 +22,11 @@
 
   <!-- Security -->
   <meta http-equiv="X-Content-Type-Options" content="nosniff" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://*.tile.openstreetmap.org https://nominatim.openstreetmap.org; connect-src 'self' https://nominatim.openstreetmap.org https://*.supabase.co wss://*.supabase.co; frame-ancestors 'none';" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://*.tile.openstreetmap.org https://nominatim.openstreetmap.org; connect-src 'self' https://nominatim.openstreetmap.org https://*.supabase.co wss://*.supabase.co; frame-ancestors 'none';" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,600;0,700;1,600&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" />
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -53,45 +57,24 @@
   })();
   </script>
 
-  <style>
-  .header-user { display:flex; align-items:center; gap:10px; margin-left:auto; }
-  .user-email { font-size:0.8rem; color:#64748b; }
-  .btn-signout { font-size:0.78rem; padding:4px 10px; border-radius:4px; background:transparent; border:1px solid #cbd5e1; color:#64748b; cursor:pointer; }
-  .btn-signout:hover { background:#f1f5f9; }
-  </style>
 </head>
 <body>
-
-  <!-- Public disclaimer -->
-  <div class="disclaimer-bar" id="disclaimer-bar">
-    <span>&#9432; Civic Issue India displays public complaints sourced from Twitter/X. This is an independent civic monitoring platform, not an official government portal. Data is for awareness and accountability purposes only.</span>
-    <button class="disclaimer-close" onclick="this.parentElement.style.display='none'" aria-label="Dismiss">&#x2715;</button>
-  </div>
 
   <!-- Header -->
   <header class="header">
     <div class="header-inner">
-      <div class="header-brand">
-        <div class="brand-mark">
-          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <polygon points="11,3 3,9 19,9" fill="rgba(255,255,255,0.9)"/>
-            <rect x="4" y="9" width="2.5" height="7" fill="rgba(255,255,255,0.85)"/>
-            <rect x="9.75" y="9" width="2.5" height="7" fill="rgba(255,255,255,0.85)"/>
-            <rect x="15.5" y="9" width="2.5" height="7" fill="rgba(255,255,255,0.85)"/>
-            <rect x="3" y="16" width="16" height="2.5" rx="1" fill="rgba(255,255,255,0.9)"/>
-            <circle cx="17" cy="5" r="3" fill="#ef4444"/>
-            <text x="17" y="7.2" text-anchor="middle" font-size="4.5" font-weight="800" fill="white" font-family="system-ui,sans-serif">!</text>
-          </svg>
-        </div>
-        <div class="brand-text">
-          <span class="brand-name">Civic Issue India</span>
-          <span class="brand-context">Civic Intelligence Platform</span>
-        </div>
-      </div>
+      <a class="header-brand" href="../" aria-label="Civic Issue India home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">
+          <span class="brand-name">Civic Issue <em>India</em></span>
+          <span class="brand-context">Bangalore</span>
+        </span>
+      </a>
       <div class="header-actions">
         <span class="data-badge" id="data-source-badge">Sample Data</span>
         <span class="last-updated" id="last-updated"></span>
         <button class="header-btn" id="export-csv">Export CSV</button>
+        <a class="header-btn primary" href="../#how">How it works</a>
       </div>
       <div class="header-user" id="header-user">
         <span class="user-email" id="user-email"></span>
@@ -104,6 +87,15 @@
 
     <!-- Role Banner -->
     <div class="role-banner hidden" id="role-banner"></div>
+
+    <!-- Page intro -->
+    <section class="page-intro">
+      <div>
+        <span class="eyebrow">Complaint queue</span>
+        <h1>What needs attention in Bangalore</h1>
+        <p>Every verified civic complaint from X, ranked by urgency and routed to the department responsible.</p>
+      </div>
+    </section>
 
     <!-- KPI Row -->
     <section class="kpi-row">
@@ -356,8 +348,10 @@
 
   </div><!-- /page-body -->
 
-  <footer class="footer">
-    Civic Issue India &middot; Public complaint intelligence &middot; For authorized government use
+  <footer class="footer app-footer">
+    Civic Issue India is an independent civic-technology project, not an official government portal.
+    Complaints are public posts from X, shown for awareness and accountability. &middot;
+    <a href="https://github.com/ishanfso/GovWatch" rel="noopener">Source on GitHub</a>
   </footer>
 
   <script src="js/app.js"></script>
