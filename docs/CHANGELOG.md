@@ -5,6 +5,12 @@ Format: `[Date] - What changed and why`
 
 ---
 
+## [2026-11-02] — Official addresses added to the permission emails
+
+- `docs/outreach/EMAIL_DRAFTS.md`: filled in the official recipient addresses found on each organisation's own contact page (iPGRS Programme Director and support desk; GBA Chief Commissioner's office). The founder's personal details stay out of this public repo; the filled emails were given to the founder as Gmail links.
+
+---
+
 ## [2026-11-02] — Filing agent, phase 1: plan, "coming soon" note, permission emails
 
 ### What changed

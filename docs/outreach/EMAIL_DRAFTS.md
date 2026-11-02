@@ -2,7 +2,7 @@
 
 Written 2026-11-02 for the filing agent plan ([[FILING_AGENT]]). Fill in the parts in [square brackets] before sending. Your contact details are deliberately not filled in here, because this repository is public.
 
-**Before sending:** find the current contact address on each organisation's official website. Look for "Contact us" on `ceg.karnataka.gov.in` and `gba.karnataka.gov.in`. Don't rely on addresses from third-party sites.
+**Addresses:** found on each organisation's official contact page on 2 November 2026 (see below). A different Gmail address for the GBA appears on its Facebook page; the official website address is used instead.
 
 **Tip:** attach two or three screenshots (the Report a problem page and Insights) and link to https://civicissue.in.
 
@@ -10,7 +10,8 @@ Written 2026-11-02 for the filing agent plan ([[FILING_AGENT]]). Fill in the par
 
 ## 1. Centre for e-Governance, Karnataka (runs iPGRS / Janaspandana)
 
-**To:** [iPGRS / Centre for e-Governance contact address from ceg.karnataka.gov.in]
+**To:** pdpgrs@karnataka.gov.in (Programme Director, iPGRS — listed on ceg.karnataka.gov.in/contact.html)
+**Cc:** support.ipgrs@karnataka.gov.in (iPGRS support — listed on ipgrs.karnataka.gov.in/Home/Contact)
 **Subject:** Request for guidance: helping Bengaluru residents file grievances on iPGRS
 
 Dear Sir/Madam,
@@ -45,8 +46,7 @@ Founder, Civic Issue India
 
 ## 2. Greater Bengaluru Authority (Sahaaya)
 
-**To:** [GBA IT / grievance cell contact from gba.karnataka.gov.in]
-**Cc (optional):** [Office of the Chief Commissioner, GBA]
+**To:** comm@bbmp.gov.in (Office of the Chief Commissioner — listed on the GBA official site, bbmp.gov.in)
 **Subject:** Public social-media complaints for Bengaluru, and a possible link with Sahaaya
 
 Dear Sir/Madam,
