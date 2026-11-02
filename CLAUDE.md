@@ -83,6 +83,7 @@ GovWatch/
     └── config.example.py          ← Config template — copy to config.py, never commit
 
 Public landing page: `index.html` + `css/landing.css` + `js/landing.js` (live figures, map). No sign-up or sign-in.
+**Visual design:** "Ward signboard" (see `docs/design/WARD_SIGNBOARD.md`). Square corners, Archivo + Noto Sans Kannada, colour only as a signal (blue = act, yellow = past deadline, red = high severity). Keep new UI consistent with it.
 **Open access:** sign-in is switched off (`AUTH_ENABLED = false` in `js/supabase-client.js`; the old Supabase project was deleted). Everyone gets the dashboard in "demo" role: everything works except Admin and team notes, and changes save to the visitor's browser. Go-live steps: `docs/GO_LIVE.md`.
 ```
 

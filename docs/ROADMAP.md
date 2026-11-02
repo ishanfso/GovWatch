@@ -91,6 +91,8 @@ Goal: Make the project shareable (CV, LinkedIn, stakeholders), working "outside 
 - [x] Dashboard redesign: shared look with the landing page, dark mode, KPI panel, validated chart colours, phone layout
 - [x] Social preview image (`og-preview.png`) so the link looks good when pasted into LinkedIn
 - [x] Landing page: dashboard preview, weekly trend, departments, citizen complaint wall
+- [x] **Ward signboard redesign** — landing page and dashboard, see [[WARD_SIGNBOARD]]
+- [ ] Have a native Kannada reader confirm the Kannada text on the signboard and header
 - [ ] Polish remaining inner panels (Officials org charts, Directory drawer, heat-map tiles) to the new style in detail
 - [ ] Light/dark toggle button (currently follows the device setting automatically)
 - [ ] "About / built by" section with the founder's name and links (needs owner's input)

@@ -5,6 +5,37 @@ Format: `[Date] - What changed and why`
 
 ---
 
+## [2026-11-02] — "Ward signboard" redesign of the landing page and dashboard
+
+### What changed
+A new look, made with the frontend-design skill so the site no longer reads as AI-generated. It borrows from Bengaluru's blue street-name boards (Kannada above English), BMTC amber bus displays and yellow road markings. Full spec: [[WARD_SIGNBOARD]].
+
+**Landing page (`index.html`, `css/landing.css`, `js/landing.js`)**
+- Hero is a full-width blue signboard: "ಬೆಂಗಳೂರು ನಾಗರಿಕ ದೂರುಗಳು / Bengaluru civic complaints" with a plate showing the number on record. It is the only animated element.
+- Plain-English copy throughout, sentence case, no slogans or small uppercase labels. Facts written as a sentence.
+- Square corners and 2 px rules everywhere. One typeface family (Archivo) at three widths, plus Noto Sans Kannada.
+- Removed: rotating ticker, count-up numbers, fade-in on every section, feature-card grid.
+- Quote wall now skips thank-you posts the AI filter occasionally keeps.
+
+**Dashboard (`dashboard/index.html`, `dashboard/css/styles.css`, `dashboard/js/app.js`)**
+- Header is a signboard strip with a bus-display panel showing how current the data is.
+- The page headline is written from the data, e.g. "992 of 1,012 complaints are past their deadline".
+- Colour now always means something: yellow = past deadline, red = high severity, blue = something you can act on. Departments no longer have their own colours.
+- Plain labels: "Past deadline" instead of "Overdue SLA", "18h late" instead of "Overdue 18h", "Download CSV", sentence-case filters.
+- Square segmented controls, fields and panels; emoji department icons removed; phone header trimmed so nothing overflows.
+
+**Images:** regenerated `assets/dashboard-light.jpg`, `assets/dashboard-dark.jpg` and `og-preview.png` in the new style.
+
+---
+
+## [2026-11-02] — Ward signboard design direction (proposed, not live)
+
+### What changed
+- New `docs/design/WARD_SIGNBOARD.md` with a vision board image: a Bengaluru-signage-inspired look (blue street-name boards, Kannada with English, square corners, colour used only as a signal), made with the frontend-design skill.
+- `index.html` partly rewritten for this direction on the working branch only. It is **not merged or live**; the live site is unchanged until the owner approves.
+
+---
+
 ## [2026-11-02] — Dashboard redesign to match the landing page; fuller landing page
 
 ### What changed
