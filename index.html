@@ -3,26 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Civic Issue India — Bangalore's civic complaints, routed to the right desk</title>
-  <meta name="description" content="An independent civic-intelligence platform that listens to public complaints on X, filters the noise with AI, and routes each issue to the right Bangalore official — ward by ward." />
+  <title>Civic Issue India: Bengaluru's civic complaints, sorted by ward</title>
+  <meta name="description" content="An independent project that reads public complaints about Bengaluru on X, keeps the genuine ones, and routes each to the office responsible for that ward." />
   <meta name="color-scheme" content="light dark" />
-  <meta name="theme-color" content="#f7f4ee" media="(prefers-color-scheme: light)" />
-  <meta name="theme-color" content="#0e1713" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#1D4F9C" />
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://civicissue.in/" />
   <meta property="og:title" content="Civic Issue India" />
-  <meta property="og:description" content="Bangalore's civic complaints — listened to, filtered by AI, and routed to the right official." />
+  <meta property="og:description" content="Bengaluru's civic complaints from X, sorted by ward and routed to the office that fixes them." />
   <meta property="og:image" content="https://civicissue.in/og-preview.png" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231f4d3a'/%3E%3Ccircle cx='16' cy='16' r='5' fill='%23f7f4ee'/%3E%3Ccircle cx='16' cy='16' r='10' fill='none' stroke='%23f7f4ee' stroke-opacity='.45' stroke-width='2'/%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231D4F9C'/%3E%3Crect x='3.5' y='3.5' width='25' height='25' rx='3.5' fill='none' stroke='%23fff' stroke-width='2'/%3E%3Crect x='9' y='19' width='14' height='3' fill='%23F4C400'/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Noto+Sans+Kannada:wght@600;700&display=swap" />
   <link rel="stylesheet" href="css/landing.css" />
-
   <script src="js/landing.js" defer></script>
 </head>
 <body>
@@ -31,195 +28,142 @@
 
   <header class="nav" id="nav">
     <div class="wrap nav-inner">
-      <a class="brand" href="/" aria-label="Civic Issue India home">
-        <span class="brand-mark" aria-hidden="true"></span>
-        <span class="brand-name">Civic Issue <em>India</em></span>
+      <a class="brand" href="./" aria-label="Civic Issue India home">
+        <span class="plate" aria-hidden="true"></span>
+        Civic Issue India
       </a>
       <nav class="nav-links" aria-label="Sections">
         <a href="#how">How it works</a>
-        <a href="#preview">Dashboard</a>
-        <a href="#signal">What we hear</a>
-        <a href="#product">For officials</a>
+        <a href="#reports">What people report</a>
       </nav>
-      <div class="nav-cta">
-        <a class="btn btn-sm btn-primary" href="dashboard/">Open dashboard</a>
-      </div>
+      <a class="btn btn-primary btn-sm" href="dashboard/">Open the dashboard</a>
     </div>
   </header>
 
   <main id="main">
 
-    <!-- ── Hero ─────────────────────────────────────────────── -->
     <section class="hero">
-      <div class="wrap hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow"><span class="live-dot" id="feed-dot" aria-hidden="true"></span><span id="feed-state">Bangalore · civic intelligence</span></p>
-          <h1>Every civic complaint, on the <span class="ink-mark">right official's desk</span>.</h1>
-          <p class="lede">Citizens already report potholes, power cuts and overflowing garbage on X. Civic Issue India listens, uses AI to strip out the noise, and routes each real complaint to the ward-level official responsible — with a clock on it.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary btn-lg" href="dashboard/">Explore the live dashboard <span aria-hidden="true">→</span></a>
-            <a class="btn btn-ghost btn-lg" href="#how">See how it works</a>
-          </div>
-          <dl class="hero-stats" id="hero-stats">
-            <div><dt>Public posts screened</dt><dd data-count="4989">4,989</dd></div>
-            <div><dt>Verified civic complaints</dt><dd data-count="1012">1,012</dd></div>
-            <div><dt>Wards mapped to officials</dt><dd data-count="369">369</dd></div>
-          </dl>
-          <p class="fineprint" id="freshness"></p>
+      <div class="wrap">
+        <div class="board" role="img" aria-label="Signboard: Bengaluru civic complaints">
+          <p class="board-kn" lang="kn">ಬೆಂಗಳೂರು ನಾಗರಿಕ ದೂರುಗಳು</p>
+          <h1 class="board-en">Bengaluru civic complaints</h1>
+          <p class="board-plate"><span id="plate-n">1,012</span> on record</p>
         </div>
 
-        <figure class="hero-map card" aria-labelledby="map-cap">
-          <div class="map-head">
-            <span class="mono-label">Complaints by neighbourhood</span>
-            <span class="mono-label muted" id="map-count"></span>
-          </div>
-          <div class="map-stage" id="map-stage">
-            <svg id="city-map" role="img" aria-label="Map of Bangalore neighbourhoods sized by complaint count"></svg>
-            <div class="map-tip" id="map-tip" hidden></div>
-          </div>
-          <div class="ticker" id="ticker" aria-live="polite">
-            <div class="ticker-card" id="ticker-card">
-              <span class="chip">Loading</span>
-              <p class="ticker-text">Reading the latest complaints…</p>
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="lede">People in Bengaluru report potholes, power cuts and overflowing garbage on X every day. Civic Issue India reads those posts, keeps the genuine complaints, and sends each one to the office responsible for that ward.</p>
+            <p class="facts"><strong id="n-screened">4,989</strong> posts read. <strong id="n-kept">1,012</strong> kept as real complaints. <strong>369</strong> wards matched to their officials.</p>
+            <div class="actions">
+              <a class="btn btn-primary" href="dashboard/">Open the dashboard</a>
+              <a class="btn btn-quiet" href="#how">How it works</a>
             </div>
+            <p class="freshness" id="freshness"></p>
           </div>
-          <figcaption id="map-cap" class="map-cap">Circle size = number of verified complaints. Placed at neighbourhood centre, not exact address.</figcaption>
-        </figure>
+
+          <figure class="hero-map" aria-labelledby="map-cap">
+            <div class="map-stage" id="map-stage">
+              <svg id="city-map" role="img" aria-label="Map of Bengaluru neighbourhoods, circles sized by number of complaints"></svg>
+              <div class="tip" id="map-tip" hidden></div>
+            </div>
+            <figcaption id="map-cap">Each circle is a neighbourhood, sized by how many complaints came from it. <span id="map-count"></span> Select one to see its complaints.</figcaption>
+          </figure>
+        </div>
       </div>
     </section>
 
-    <!-- ── How it works ─────────────────────────────────────── -->
-    <section class="section" id="how">
+    <section class="band" id="how" aria-labelledby="how-title">
       <div class="wrap">
-        <header class="section-head reveal">
-          <p class="eyebrow">How it works</p>
-          <h2>From a noisy timeline to an accountable queue.</h2>
-        </header>
-
-        <ol class="steps">
-          <li class="step card reveal">
-            <span class="step-n">01</span>
-            <h3>Listen</h3>
-            <p>Nine targeted searches on X watch for roads, water, power, waste, flooding, parks and traffic across Bengaluru — fetching only new posts each run.</p>
-            <div class="step-viz" aria-hidden="true">
-              <span class="q">pothole</span><span class="q">BESCOM</span><span class="q">water cut</span><span class="q">garbage</span><span class="q">waterlogged</span><span class="q">traffic signal</span>
+        <h2 id="how-title">How a post becomes a ticket</h2>
+        <ol class="route">
+          <li>
+            <h3>Read</h3>
+            <p>Nine searches on X watch for roads, water, power, garbage, flooding, parks and traffic in Bengaluru. Each run only fetches posts newer than the last.</p>
+            <p class="small muted">Searches include pothole, BESCOM, water cut, garbage, waterlogged and traffic signal.</p>
+          </li>
+          <li>
+            <h3>Filter</h3>
+            <p>Keyword searches also catch news, campaigns and politicians' visits. An AI model reads every post and keeps only real complaints someone can act on.</p>
+            <div class="funnel" aria-label="Posts read compared with posts kept">
+              <div class="funnel-row"><span>Read</span><span class="funnel-bar"><i style="--w:100%"></i></span><span class="num" id="funnel-in">4,989</span></div>
+              <div class="funnel-row"><span>Kept</span><span class="funnel-bar"><i class="kept" id="funnel-kept" style="--w:20.3%"></i></span><span class="num" id="funnel-out">1,012</span></div>
             </div>
           </li>
-          <li class="step card reveal">
-            <span class="step-n">02</span>
-            <h3>Filter with AI</h3>
-            <p>Keyword matches are full of news, campaigns and politician visits. Claude reads every post and keeps only genuine, actionable civic complaints.</p>
-            <div class="funnel" id="funnel" aria-label="Posts screened versus kept">
-              <div class="funnel-row"><span class="funnel-label">Screened</span><span class="funnel-bar"><i style="--w:100%"></i></span><span class="funnel-n" id="funnel-in">4,989</span></div>
-              <div class="funnel-row"><span class="funnel-label">Kept</span><span class="funnel-bar"><i class="kept" id="funnel-kept" style="--w:20.3%"></i></span><span class="funnel-n" id="funnel-out">1,012</span></div>
-            </div>
-          </li>
-          <li class="step card reveal">
-            <span class="step-n">03</span>
-            <h3>Route &amp; track</h3>
-            <p>Each complaint is tagged to a neighbourhood and ward, matched to the right BBMP, BESCOM, BWSSB or Traffic Police contact, and given an SLA timer.</p>
-            <div class="route" aria-hidden="true">
-              <span class="route-node">Koramangala</span><span class="route-line"></span><span class="route-node">Ward 151</span><span class="route-line"></span><span class="route-node strong">BESCOM AEE</span>
-            </div>
+          <li>
+            <h3>Route</h3>
+            <p>Each complaint is tagged to a neighbourhood and ward, matched to the right BBMP, BESCOM, BWSSB or traffic police contact, and given a deadline.</p>
+            <p class="small muted">Example: a power cut in Koramangala goes to the BESCOM engineer for that ward.</p>
           </li>
         </ol>
       </div>
     </section>
 
-    <!-- ── Preview ──────────────────────────────────────────── -->
-    <section class="section preview-section" id="preview" aria-labelledby="preview-title">
+    <section class="band" id="preview" aria-labelledby="preview-title">
       <div class="wrap">
-        <header class="section-head reveal">
-          <p class="eyebrow">Inside the dashboard</p>
-          <h2 id="preview-title">One screen tells an official what to fix first.</h2>
-          <p class="section-sub">A ranked queue on the left, the full complaint and the right contact on the right. Map, department and analytics views are one tab away.</p>
-        </header>
-        <a class="browser reveal" href="dashboard/" aria-label="Open the live dashboard">
-          <div class="browser-bar" aria-hidden="true">
-            <span class="dots"><i></i><i></i><i></i></span>
-            <span class="url">civicissue.in/dashboard</span>
-            <span class="open">Open live →</span>
-          </div>
+        <div class="split-head">
+          <h2 id="preview-title">The dashboard officials use</h2>
+          <p class="muted">The most urgent complaints come first. Pick one to read it in full and see who to contact.</p>
+        </div>
+        <a class="shot" href="dashboard/">
           <picture>
             <source srcset="assets/dashboard-dark.jpg" media="(prefers-color-scheme: dark)" />
             <img src="assets/dashboard-light.jpg" width="1440" height="900" loading="lazy" decoding="async"
-                 alt="The Civic Issue India dashboard: a ranked queue of Bangalore complaints with a detail panel showing the responsible department." />
+                 alt="The Civic Issue India dashboard: a list of Bengaluru complaints ordered by urgency, with the selected complaint and its department on the right." />
           </picture>
         </a>
       </div>
     </section>
 
-    <!-- ── Signal ───────────────────────────────────────────── -->
-    <section class="section section-alt" id="signal">
-      <div class="wrap signal-grid">
-        <header class="section-head reveal">
-          <p class="eyebrow">What Bangalore is reporting</p>
-          <h2>Power and garbage dominate the city's complaints.</h2>
-          <p class="section-sub" id="signal-sub">Verified complaints by category. Hover a bar for its share.</p>
-        </header>
-        <div class="card chart-card reveal">
-          <div class="bars" id="cat-bars" role="list"></div>
-          <div class="chart-tip" id="chart-tip" hidden></div>
+    <section class="band band-tint" id="reports" aria-labelledby="reports-title">
+      <div class="wrap">
+        <div class="split-head">
+          <h2 id="reports-title">What people report</h2>
+          <p class="muted" id="reports-sub">Genuine complaints by type.</p>
         </div>
-        <div class="card areas-card reveal">
-          <h3 class="mono-label">Most-reported neighbourhoods</h3>
-          <ol class="areas" id="top-areas"></ol>
-        </div>
-        <div class="card timeline-card reveal">
-          <div class="timeline-head">
-            <h3 class="mono-label">Complaints per week</h3>
-            <span class="mono-label muted" id="timeline-range"></span>
+
+        <div class="reports-grid">
+          <div class="panel">
+            <h3 class="panel-title">By type</h3>
+            <div class="bars" id="cat-bars" role="list"></div>
+            <div class="tip" id="chart-tip" hidden></div>
           </div>
-          <div class="timeline" id="timeline" role="list"></div>
-          <div class="timeline-axis" id="timeline-axis" aria-hidden="true"></div>
-          <div class="chart-tip" id="timeline-tip" hidden></div>
+          <div class="panel">
+            <h3 class="panel-title">Neighbourhoods with the most complaints</h3>
+            <ol class="areas" id="top-areas"></ol>
+          </div>
+          <div class="panel panel-wide">
+            <div class="panel-head">
+              <h3 class="panel-title">Complaints each week</h3>
+              <span class="muted small" id="timeline-range"></span>
+            </div>
+            <div class="timeline" id="timeline" role="list"></div>
+            <div class="timeline-axis" id="timeline-axis" aria-hidden="true"></div>
+            <div class="tip" id="timeline-tip" hidden></div>
+          </div>
         </div>
-        <div class="depts reveal" id="depts" aria-label="Complaints by responsible department"></div>
+
+        <h3 class="sub-title">Who is responsible</h3>
+        <div class="depts" id="depts"></div>
       </div>
     </section>
 
-    <!-- ── Voices ───────────────────────────────────────────── -->
-    <section class="section" id="voices" aria-labelledby="voices-title">
+    <section class="band" id="voices" aria-labelledby="voices-title">
       <div class="wrap">
-        <header class="section-head reveal">
-          <p class="eyebrow">In citizens' own words</p>
-          <h2 id="voices-title">The complaints behind the numbers.</h2>
-          <p class="section-sub">The most-shared verified complaints, exactly as posted. Open any of them on X.</p>
-        </header>
+        <div class="split-head">
+          <h2 id="voices-title">In their own words</h2>
+          <p class="muted">The most-shared complaints, exactly as posted.</p>
+        </div>
         <div class="voices" id="voice-wall"></div>
       </div>
     </section>
 
-    <!-- ── Product ──────────────────────────────────────────── -->
-    <section class="section" id="product">
-      <div class="wrap">
-        <header class="section-head reveal">
-          <p class="eyebrow">Built for the people who fix things</p>
-          <h2>A working queue, not another chart wall.</h2>
-        </header>
-        <div class="features">
-          <article class="feature reveal"><span class="f-icon" aria-hidden="true">◎</span><h3>Priority queue</h3><p>Ranked by severity, engagement and SLA risk, with the full complaint one click away.</p></article>
-          <article class="feature reveal"><span class="f-icon" aria-hidden="true">◷</span><h3>SLA timers</h3><p>Category-specific turnaround targets show what's on time, at risk, or overdue.</p></article>
-          <article class="feature reveal"><span class="f-icon" aria-hidden="true">⌖</span><h3>Ward-level routing</h3><p>369 wards mapped to councillors, MLAs, and BBMP, BESCOM, BWSSB and traffic officials.</p></article>
-          <article class="feature reveal"><span class="f-icon" aria-hidden="true">✉</span><h3>One-click escalation</h3><p>Pre-filled emails to the first contact, with the escalation chain copied in.</p></article>
-          <article class="feature reveal"><span class="f-icon" aria-hidden="true">▦</span><h3>Department views</h3><p>Each agency sees only its own queue, from field engineer to commissioner.</p></article>
-          <article class="feature reveal"><span class="f-icon" aria-hidden="true">⤓</span><h3>Exportable</h3><p>Download any filtered view as CSV for reviews, reports and RTI follow-ups.</p></article>
+    <section class="band closing">
+      <div class="wrap closing-inner">
+        <div>
+          <h2>Open to everyone, no account needed</h2>
+          <p class="muted">Bengaluru first. Mumbai, Delhi, Chennai, Hyderabad and Pune are next.</p>
         </div>
-
-        <div class="cta-band card reveal">
-          <div>
-            <h3>See it with real Bangalore data.</h3>
-            <p>No sign-up, no login. Filter the queue, set statuses, find the right official and draft the email — all in your browser.</p>
-          </div>
-          <a class="btn btn-primary btn-lg" href="dashboard/">Open the dashboard <span aria-hidden="true">→</span></a>
-        </div>
-
-        <div class="cities reveal" aria-label="City coverage">
-          <span class="mono-label">Coverage</span>
-          <span class="city live">Bangalore</span>
-          <span class="city">Mumbai</span><span class="city">Delhi</span><span class="city">Chennai</span><span class="city">Hyderabad</span><span class="city">Pune</span>
-          <span class="muted small">— next</span>
-        </div>
+        <a class="btn btn-primary" href="dashboard/">Open the dashboard</a>
       </div>
     </section>
 
@@ -227,9 +171,8 @@
 
   <footer class="footer">
     <div class="wrap footer-inner">
-      <span class="brand small"><span class="brand-mark" aria-hidden="true"></span>Civic Issue India</span>
-      <p class="muted small">An independent civic-technology project — not an official government portal. Complaints are public posts from X, shown for awareness and accountability.</p>
-      <a class="link-quiet small" href="https://github.com/ishanfso/GovWatch" rel="noopener">Source on GitHub</a>
+      <p>Civic Issue India is an independent civic-technology project, not an official government portal. Complaints are public posts from X, shown for awareness and accountability.</p>
+      <a href="https://github.com/ishanfso/GovWatch" rel="noopener">Source code on GitHub</a>
     </div>
   </footer>
 

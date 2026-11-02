@@ -5,6 +5,14 @@ Format: `[Date] - What changed and why`
 
 ---
 
+## [2026-11-02] — Ward signboard design direction (proposed, not live)
+
+### What changed
+- New `docs/design/WARD_SIGNBOARD.md` with a vision board image: a Bengaluru-signage-inspired look (blue street-name boards, Kannada with English, square corners, colour used only as a signal), made with the frontend-design skill.
+- `index.html` partly rewritten for this direction on the working branch only. It is **not merged or live**; the live site is unchanged until the owner approves.
+
+---
+
 ## [2026-11-02] — Dashboard redesign to match the landing page; fuller landing page
 
 ### What changed
