@@ -151,6 +151,20 @@ let leafletMap = null;
 let mapMarkers = [];
 let mapInitialized = false;
 
+// ── Clock ──────────────────────────────────────────────────────────
+// When the data feed is paused, the newest complaint can be weeks old and
+// every SLA timer would read "overdue by thousands of hours". In that case
+// the dashboard switches to "snapshot mode": ages and SLAs are measured from
+// the moment the data was captured, not from today.
+
+let SNAPSHOT_MS = null;
+const nowMs = () => SNAPSHOT_MS ?? Date.now();
+
+function setSnapshotClock(issues) {
+  const latest = Math.max(0, ...issues.map(i => Date.parse(i.date) || 0));
+  SNAPSHOT_MS = latest && Date.now() - latest > 3 * 864e5 ? latest + 6 * 36e5 : null;
+}
+
 // ── Bootstrap ──────────────────────────────────────────────────────
 
 async function loadData() {
@@ -187,7 +201,9 @@ async function init() {
   }
 
   allIssues = await loadData();
-  currentUser = (await sb.auth.getUser()).data.user;
+  setSnapshotClock(allIssues);
+  if (IS_DEMO()) renderDemoBanner();
+  else currentUser = (await sb.auth.getUser()).data.user;
   await loadIssueStates();
 
   if (allIssues.length === 0) {
@@ -199,6 +215,13 @@ async function init() {
   setLastUpdated();
   renderKPIs(allIssues);
   buildFilters(allIssues);
+
+  // Deep link from the landing page map, e.g. /dashboard/?q=Whitefield
+  const urlQuery = new URLSearchParams(window.location.search).get("q");
+  if (urlQuery) {
+    activeFilters.search = urlQuery.toLowerCase().trim();
+    document.getElementById("search-input").value = urlQuery;
+  }
   renderQueue(getFiltered());
 
   document.querySelectorAll(".tab").forEach(btn =>
@@ -259,7 +282,10 @@ async function init() {
   const emailEl = document.getElementById("user-email");
   if (emailEl && currentUser) emailEl.textContent = currentUser.email;
   const signoutBtn = document.getElementById("btn-signout");
-  if (signoutBtn) signoutBtn.addEventListener("click", async () => {
+  if (signoutBtn && IS_DEMO()) {
+    signoutBtn.textContent = "Sign in";
+    signoutBtn.addEventListener("click", () => window.location.assign("/#signin"));
+  } else if (signoutBtn) signoutBtn.addEventListener("click", async () => {
     await sb.auth.signOut();
     window.location.replace("/");
   });
@@ -268,9 +294,9 @@ async function init() {
 // ── KPIs ───────────────────────────────────────────────────────────
 
 function renderKPIs(issues) {
-  const now = Date.now();
+  const now = nowMs();
   const oneWeekAgo = now - 7 * 24 * 36e5;
-  const todayStart = new Date(); todayStart.setHours(0, 0, 0, 0);
+  const todayStart = new Date(nowMs()); todayStart.setHours(0, 0, 0, 0);
 
   const overdue = issues.filter(i => {
     const status = getStatus(i.id);
@@ -382,7 +408,7 @@ function resetFilters() {
 }
 
 function getDateBounds() {
-  const now = new Date();
+  const now = new Date(nowMs());
   const p = activeFilters.datePreset;
   if (p === "1") {
     const from = new Date(now); from.setDate(from.getDate() - 1); from.setHours(0,0,0,0);
@@ -409,7 +435,7 @@ function getDateBounds() {
 }
 
 function getFiltered() {
-  const now = Date.now();
+  const now = nowMs();
   const { from, to } = getDateBounds();
   return allIssues.filter(i => {
     if (activeFilters.category !== "all" && i.category !== activeFilters.category) return false;
@@ -505,7 +531,7 @@ function renderQueue(issues) {
 
   // Sort according to activeSort selection
   const sevOrder = { high: 0, medium: 1, low: 2 };
-  const now = Date.now();
+  const now = nowMs();
   displayed.sort((a, b) => {
     if (activeSort === "newest") return new Date(b.date) - new Date(a.date);
     if (activeSort === "oldest") return new Date(a.date) - new Date(b.date);
@@ -779,6 +805,13 @@ async function loadComments(issueId) {
   const listEl = document.getElementById("comments-list");
   if (!listEl) return;
 
+  if (IS_DEMO()) {
+    listEl.innerHTML = '<div class="comment-empty">Team notes are available to signed-in officials.</div>';
+    document.getElementById("comment-input")?.setAttribute("disabled", "");
+    document.getElementById("comment-submit")?.setAttribute("disabled", "");
+    return;
+  }
+
   const { data, error } = await sb
     .from("issue_comments")
     .select("*")
@@ -864,7 +897,7 @@ function getClusteredIssues(issues) {
 // ── SLA & Age ──────────────────────────────────────────────────────
 
 function getIssueAge(dateStr) {
-  const diffH = Math.floor((Date.now() - new Date(dateStr).getTime()) / 36e5);
+  const diffH = Math.floor((nowMs() - new Date(dateStr).getTime()) / 36e5);
   if (diffH < 1)  return "just now";
   if (diffH < 24) return `${diffH}h ago`;
   return `${Math.floor(diffH / 24)}d ago`;
@@ -872,7 +905,7 @@ function getIssueAge(dateStr) {
 
 function getSLAStatus(issue) {
   const poc = POC_DIRECTORY[issue.category] || POC_DIRECTORY.Other;
-  const elapsedH = (Date.now() - new Date(issue.date).getTime()) / 36e5;
+  const elapsedH = (nowMs() - new Date(issue.date).getTime()) / 36e5;
   const pct = elapsedH / poc.tat;
   if (pct >= 1)    return { cls: "sla-overdue", label: `Overdue ${Math.round(elapsedH - poc.tat)}h` };
   if (pct >= 0.75) return { cls: "sla-warning", label: `${Math.round(poc.tat - elapsedH)}h left` };
@@ -1093,7 +1126,7 @@ function renderAnalytics(issues) {
     </div>`).join("");
 
   // SLA table by dept
-  const now = Date.now();
+  const now = nowMs();
   const deptStats = {};
   for (const [dName, dInfo] of Object.entries(DEPARTMENT_MAP)) {
     const di = issues.filter(i => dInfo.categories.includes(i.category));
@@ -1126,7 +1159,7 @@ function renderWardHeatMap(issues) {
   const el = document.getElementById("ward-heatmap");
   if (!el) return;
 
-  const now = Date.now();
+  const now = nowMs();
   const areaStats = {};
   issues.forEach(iss => {
     const area = iss.area || "Unknown";
@@ -1305,6 +1338,31 @@ function renderRoleBanner(role) {
   banner.classList.remove("hidden");
 }
 
+// ── Demo mode ──────────────────────────────────────────────────────
+// Visitors who aren't signed in (or when Supabase is unreachable) get a
+// read-only public demo. Status changes are kept only in their own browser.
+
+const IS_DEMO = () => window._userRole === "demo";
+const DEMO_STORE_KEY = "gw_demo_issue_state";
+
+function saveDemoState() {
+  try { localStorage.setItem(DEMO_STORE_KEY, JSON.stringify(issueStateCache)); } catch (_) {}
+}
+
+function renderDemoBanner() {
+  const bar = document.createElement("div");
+  bar.className = "demo-banner";
+  bar.setAttribute("role", "status");
+  const offline = window._demoReason === "offline";
+  bar.innerHTML = `
+    <span class="demo-pill">Public demo</span>
+    <span>${offline
+      ? "Sign-in is temporarily unavailable, so you're seeing the read-only demo."
+      : "You're exploring GovWatch as a guest. Changes you make stay in this browser only."}</span>
+    ${offline ? "" : '<a class="demo-link" href="/#signin">Official sign-in &rarr;</a>'}`;
+  document.body.prepend(bar);
+}
+
 // ── Status (Supabase-backed, sync reads from cache) ────────────────
 
 function getStatus(id) {
@@ -1314,6 +1372,7 @@ function getStatus(id) {
 function setStatus(id, value) {
   if (!issueStateCache[id]) issueStateCache[id] = {};
   issueStateCache[id].status = value;
+  if (IS_DEMO()) return saveDemoState();
   sb.from("issue_actions").upsert(
     { issue_id: id, status: value, updated_by_email: currentUser?.email || "", updated_at: new Date().toISOString() },
     { onConflict: "issue_id" }
@@ -1333,6 +1392,7 @@ function setAssignment(id, contact) {
     detail: contact.detail || "", assignedAt: new Date().toISOString(),
   } : null;
   issueStateCache[id].assigned_to = assigned;
+  if (IS_DEMO()) return saveDemoState();
   sb.from("issue_actions").upsert(
     { issue_id: id, assigned_to: assigned, updated_by_email: currentUser?.email || "", updated_at: new Date().toISOString() },
     { onConflict: "issue_id" }
@@ -1340,6 +1400,10 @@ function setAssignment(id, contact) {
 }
 
 async function loadIssueStates() {
+  if (IS_DEMO()) {
+    try { Object.assign(issueStateCache, JSON.parse(localStorage.getItem(DEMO_STORE_KEY) || "{}")); } catch (_) {}
+    return;
+  }
   try {
     const { data } = await sb.from("issue_actions").select("issue_id,status,assigned_to");
     if (data) data.forEach(r => { issueStateCache[r.issue_id] = { status: r.status, assigned_to: r.assigned_to }; });
@@ -1502,7 +1566,14 @@ function setLastUpdated() {
   const ts = allIssues.map(i => i.date ? new Date(i.date).getTime() : 0).filter(Boolean);
   if (!ts.length) return;
   document.getElementById("last-updated").textContent =
-    "Latest: " + new Date(Math.max(...ts)).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" });
+    (SNAPSHOT_MS ? "Snapshot · " : "Latest: ") + new Date(Math.max(...ts)).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" });
+  if (SNAPSHOT_MS) {
+    const badge = document.getElementById("data-source-badge");
+    badge.textContent = "Archived data";
+    badge.classList.remove("live");
+    badge.classList.add("snapshot");
+    badge.title = "The live feed is paused. Ages and SLA timers are measured from when this data was captured.";
+  }
 }
 
 // ── Officials Data & State ─────────────────────────────────────────

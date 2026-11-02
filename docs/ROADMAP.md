@@ -77,6 +77,21 @@ Goal: Give officials a complete self-serve routing system so the right person ge
 
 ---
 
+## Phase 5.5 — Public Launch & Design Refresh ✅ IN PROGRESS
+
+Goal: Make the project shareable (CV, LinkedIn, stakeholders), working "outside in": public face first, then the dashboard itself.
+
+- [x] Public read-only demo: dashboard works without login or Supabase
+- [x] Snapshot mode: honest timers when the data feed is paused
+- [x] New landing page: live figures, neighbourhood map, how-it-works, category chart, dark mode
+- [x] Data refresh cost guard: daily schedule, skip empty runs, fail loudly on API errors
+- [ ] Owner actions to go fully live — see [[GO_LIVE]] (domain check, restore Supabase, top up X credits)
+- [ ] Dashboard redesign, inward from the header: shared design tokens with the landing page, dark mode, KPI tiles, validated chart palette in Analytics, mobile review mode
+- [ ] Social preview image (`og-preview.png`) so the link looks good when pasted into LinkedIn
+- [ ] "About / built by" section with the founder's name and links (needs owner's input)
+
+---
+
 ## Phase 6 — Self-Serve Routing Config
 
 Goal: Let admins configure routing rules and org structure themselves without touching code.

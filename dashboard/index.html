@@ -28,19 +28,28 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 
-  <!-- Supabase -->
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <!-- Supabase (optional — the dashboard falls back to a public read-only demo without it) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
   <script src="../js/supabase-client.js"></script>
-  <!-- Auth guard: check session + role before rendering -->
+  <!-- Access check: signed-in users get their role; everyone else (or if Supabase is down) gets demo mode -->
   <script>
   window._roleReady = (async () => {
-    const { data: { session } } = await sb.auth.getSession();
-    if (!session) { window.location.replace("/"); return "none"; }
-    const { data: profile } = await sb.from("profiles").select("role").eq("id", session.user.id).single();
-    const role = profile?.role || "pending";
-    if (role === "pending") { window.location.replace("/pending.html"); return "none"; }
-    window._userRole = role;
-    return role;
+    const demo = (reason) => { window._userRole = "demo"; window._demoReason = reason; return "demo"; };
+    if (typeof sb === "undefined" || !sb) return demo("offline");
+    const withTimeout = (p, ms) => Promise.race([p, new Promise((_, rej) => setTimeout(() => rej(new Error("timeout")), ms))]);
+    try {
+      const { data: { session } } = await withTimeout(sb.auth.getSession(), 4000);
+      if (!session) return demo("guest");
+      const { data: profile, error } = await withTimeout(
+        sb.from("profiles").select("role").eq("id", session.user.id).single(), 4000);
+      if (error) return demo("offline");
+      const role = profile?.role || "pending";
+      if (role === "pending") { window.location.replace("/pending.html"); return "none"; }
+      window._userRole = role;
+      return role;
+    } catch (_) {
+      return demo("offline");
+    }
   })();
   </script>
 

@@ -2,7 +2,9 @@ name: Auto-refresh Civic Issues Data
 
 on:
   schedule:
-    - cron: '*/5 * * * *'  # Every 5 minutes
+    # Once a day at ~6:07 AM IST (00:37 UTC). Every run spends Twitter/X API
+    # credits, so this was reduced from "every 5 minutes" to protect the budget.
+    - cron: '37 0 * * *'
   workflow_dispatch:         # Also allows manual trigger from the GitHub Actions tab
 
 permissions:
@@ -46,18 +48,30 @@ jobs:
           EOF
 
       - name: Fetch new tweets
+        id: fetch
         working-directory: scripts
-        run: python fetch_tweets.py
+        run: |
+          python fetch_tweets.py
+          # Only continue if Twitter actually returned new tweets
+          if git diff --quiet -- ../data/raw_tweets.json; then
+            echo "new=false" >> "$GITHUB_OUTPUT"
+            echo "No new tweets (or the Twitter/X API refused the request) — skipping processing."
+          else
+            echo "new=true" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Process issues
+        if: steps.fetch.outputs.new == 'true'
         working-directory: scripts
         run: python process_issues.py
 
       - name: Filter issues with LLM
+        if: steps.fetch.outputs.new == 'true'
         working-directory: scripts
         run: python filter_issues.py
 
       - name: Commit and push if data changed
+        if: steps.fetch.outputs.new == 'true'
         run: |
           git config user.name "GovWatch Bot"
           git config user.email "govwatch-bot@users.noreply.github.com"
