@@ -82,8 +82,8 @@ GovWatch/
     ├── requirements.txt           ← Python dependencies
     └── config.example.py          ← Config template — copy to config.py, never commit
 
-Public landing page: `index.html` + `css/landing.css` + `js/landing.js` (live figures, map, sign-in at `/#signin`).
-Dashboard opens in a read-only **demo mode** when not signed in or when Supabase is down. Go-live steps: `docs/GO_LIVE.md`.
+Public landing page: `index.html` + `css/landing.css` + `js/landing.js` (live figures, map). No sign-up or sign-in.
+**Open access:** sign-in is switched off (`AUTH_ENABLED = false` in `js/supabase-client.js`; the old Supabase project was deleted). Everyone gets the dashboard in "demo" role: everything works except Admin and team notes, and changes save to the visitor's browser. Go-live steps: `docs/GO_LIVE.md`.
 ```
 
 ---

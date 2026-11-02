@@ -1976,3 +1976,4 @@ a.sc-phone:hover { text-decoration: underline; }
 .demo-link { margin-left: auto; font-weight: 600; color: var(--brand); text-decoration: none; }
 .demo-link:hover { text-decoration: underline; }
 .badge.snapshot, .data-badge.snapshot { background: rgba(255,255,255,.12); color: #f4e7c5; border-color: rgba(244,231,197,.4); }
+.demo-close { margin-left: auto; background: none; border: 0; cursor: pointer; color: var(--brand); font-size: .9rem; padding: 2px 4px; line-height: 1; }

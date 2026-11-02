@@ -85,7 +85,9 @@ Goal: Make the project shareable (CV, LinkedIn, stakeholders), working "outside 
 - [x] Snapshot mode: honest timers when the data feed is paused
 - [x] New landing page: live figures, neighbourhood map, how-it-works, category chart, dark mode
 - [x] Data refresh cost guard: daily schedule, skip empty runs, fail loudly on API errors
-- [ ] Owner actions to go fully live — see [[GO_LIVE]] (domain check, restore Supabase, top up X credits)
+- [x] Open access: no sign-up; visitors can use everything except Admin and team notes
+- [ ] Owner actions to go fully live — see [[GO_LIVE]] (domain check, top up X credits)
+- [ ] Optional: new Supabase project if shared (cross-browser) statuses, team notes or official logins are wanted again
 - [ ] Dashboard redesign, inward from the header: shared design tokens with the landing page, dark mode, KPI tiles, validated chart palette in Analytics, mobile review mode
 - [ ] Social preview image (`og-preview.png`) so the link looks good when pasted into LinkedIn
 - [ ] "About / built by" section with the founder's name and links (needs owner's input)
