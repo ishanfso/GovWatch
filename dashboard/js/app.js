@@ -40,10 +40,10 @@ const AREA_COORDS = {
 };
 
 const DEPARTMENT_MAP = {
-  BBMP:   { icon: "🏗", color: "#1f4d3a", desc: "Roads · Waste · Parks · Flooding", categories: ["Roads", "Waste", "Parks", "Flooding", "Other"] },
-  BESCOM: { icon: "⚡", color: "#92400e", desc: "Electricity · Street Lights",      categories: ["Electricity"] },
-  BWSSB:  { icon: "💧", color: "#0891b2", desc: "Water Supply · Drainage",          categories: ["Water"] },
-  BTP:    { icon: "🚦", color: "#991b1b", desc: "Traffic Signals · Road Safety",    categories: ["Traffic"] },
+  BBMP:   { icon: "🏗", color: "var(--brand)", desc: "Roads · Waste · Parks · Flooding", categories: ["Roads", "Waste", "Parks", "Flooding", "Other"] },
+  BESCOM: { icon: "⚡", color: "var(--brand)", desc: "Electricity · Street Lights",      categories: ["Electricity"] },
+  BWSSB:  { icon: "💧", color: "var(--brand)", desc: "Water Supply · Drainage",          categories: ["Water"] },
+  BTP:    { icon: "🚦", color: "var(--brand)", desc: "Traffic Signals · Road Safety",    categories: ["Traffic"] },
 };
 
 const CATEGORY_DEPT = {
@@ -58,7 +58,8 @@ const STATUS_OPTIONS = [
   { value: "resolved",     label: "🟢 Resolved" },
 ];
 
-const SEV_COLORS = { high: "#991b1b", medium: "#92400e", low: "#14532d" };
+// Map marker colours (Leaflet needs real hex values). Red = high severity only.
+const SEV_COLORS = { high: "#C8321E", medium: "#C99A00", low: "#1D4F9C" };
 
 const POC_DIRECTORY = {
   Roads:       { dept: "BBMP",   div: "Roads & Infrastructure",  email: "roads@bbmp.gov.in",            phone: "080-22660000", tat: 72  },
@@ -166,7 +167,7 @@ async function loadData() {
       if (!Array.isArray(data) || data.length === 0) continue;
       const isLive = path.includes("issues.json") && !path.includes("sample");
       const badge = document.getElementById("data-source-badge");
-      badge.textContent = isLive ? "Live Data" : "Sample Data";
+      badge.textContent = isLive ? "Live" : "Sample data";
       if (isLive) badge.classList.add("live");
       return data;
     } catch (_) { continue; }
@@ -310,6 +311,13 @@ function renderKPIs(issues) {
   }).length;
 
   document.getElementById("kpi-overdue").textContent   = overdue.toLocaleString("en-IN");
+  const headline = document.getElementById("page-headline");
+  if (headline) {
+    const total = issues.length.toLocaleString("en-IN");
+    headline.innerHTML = overdue
+      ? `<span class="hl-late">${overdue.toLocaleString("en-IN")}</span> of ${total} complaints are past their deadline`
+      : `None of the ${total} complaints are past their deadline`;
+  }
   document.getElementById("kpi-high").textContent      = highOpen.toLocaleString("en-IN");
   document.getElementById("kpi-new").textContent       = newToday.toLocaleString("en-IN");
   document.getElementById("kpi-unassigned").textContent = unassigned.toLocaleString("en-IN");
@@ -509,7 +517,7 @@ function switchTab(tab) {
 function renderQueue(issues) {
   const displayed = clustered ? getClusteredIssues(issues) : issues;
   const count = document.getElementById("queue-count");
-  count.textContent = `${displayed.length} issue${displayed.length !== 1 ? "s" : ""}` +
+  count.textContent = `${displayed.length.toLocaleString("en-IN")} complaint${displayed.length !== 1 ? "s" : ""}` +
     (clustered && displayed.length < issues.length ? ` (grouped from ${issues.length})` : "");
 
   const list = document.getElementById("queue-list");
@@ -610,7 +618,7 @@ function renderDetailPanel(issue) {
   const status = getStatus(issue.id);
   const sla = getSLAStatus(issue);
   const poc = POC_DIRECTORY[issue.category] || POC_DIRECTORY.Other;
-  const sevLabel = { high: "High Risk", medium: "Medium", low: "Low" }[issue.severity] || issue.severity;
+  const sevLabel = { high: "High severity", medium: "Medium severity", low: "Low severity" }[issue.severity] || issue.severity;
   const statusOpts = STATUS_OPTIONS.map(o =>
     `<option value="${o.value}"${status === o.value ? " selected" : ""}>${o.label}</option>`
   ).join("");
@@ -896,7 +904,7 @@ function getSLAStatus(issue) {
   const poc = POC_DIRECTORY[issue.category] || POC_DIRECTORY.Other;
   const elapsedH = (nowMs() - new Date(issue.date).getTime()) / 36e5;
   const pct = elapsedH / poc.tat;
-  if (pct >= 1)    return { cls: "sla-overdue", label: `Overdue ${Math.round(elapsedH - poc.tat)}h` };
+  if (pct >= 1)    return { cls: "sla-overdue", label: `${Math.round(elapsedH - poc.tat).toLocaleString("en-IN")}h late` };
   if (pct >= 0.75) return { cls: "sla-warning", label: `${Math.round(poc.tat - elapsedH)}h left` };
   return               { cls: "sla-ok",       label: `${Math.round(poc.tat - elapsedH)}h left` };
 }
@@ -949,7 +957,7 @@ function renderMap(issues) {
     const coords = AREA_COORDS[issue.area] || AREA_COORDS["Bangalore"];
     const jitter = () => (Math.random() - 0.5) * 0.008;
     const latLng = [coords[0] + jitter(), coords[1] + jitter()];
-    const color = SEV_COLORS[issue.severity] || "#9e9487";
+    const color = SEV_COLORS[issue.severity] || "#6F777C";
     const marker = L.circleMarker(latLng, {
       radius: issue.severity === "high" ? 10 : issue.severity === "medium" ? 7 : 5,
       fillColor: color,
@@ -961,10 +969,10 @@ function renderMap(issues) {
     const sevLabel = { high: "High", medium: "Medium", low: "Low" }[issue.severity] || "";
     marker.bindPopup(`
       <div style="max-width:240px;font-family:system-ui,sans-serif;font-size:13px">
-        <div style="font-weight:700;color:#1f4d3a;margin-bottom:4px">${esc(issue.category)} — ${esc(issue.area)}</div>
-        <div style="color:#202124;line-height:1.45;margin-bottom:6px">${esc(issue.text)}</div>
-        <div style="color:#9e9487;font-size:11px">${sevLabel} · ❤️ ${issue.likes || 0} 🔁 ${issue.retweets || 0} · ${formatDate(issue.date)}</div>
-        ${issue.source_url ? `<a href="${esc(issue.source_url)}" target="_blank" style="color:#31572c;font-weight:600;font-size:12px">View Tweet ↗</a>` : ""}
+        <div style="font-weight:700;color:var(--brand);margin-bottom:4px">${esc(issue.category)} — ${esc(issue.area)}</div>
+        <div style="color:var(--text);line-height:1.45;margin-bottom:6px">${esc(issue.text)}</div>
+        <div style="color:var(--subtle);font-size:11px">${sevLabel} · ❤️ ${issue.likes || 0} 🔁 ${issue.retweets || 0} · ${formatDate(issue.date)}</div>
+        ${issue.source_url ? `<a href="${esc(issue.source_url)}" target="_blank" style="color:var(--brand);font-weight:600;font-size:12px">View the post on X</a>` : ""}
       </div>
     `);
     marker.addTo(leafletMap);
@@ -1208,7 +1216,7 @@ function chartTheme() {
     tick: cssVar("--subtle") || "#7b8079",
     ink: cssVar("--text") || "#17201b",
     panel: cssVar("--panel") || "#fffdf8",
-    font: { family: '"Source Sans 3", system-ui, sans-serif', size: 12 },
+    font: { family: '"Archivo", system-ui, sans-serif', size: 12 },
   };
 }
 function chartTooltip(t) {
@@ -1365,8 +1373,7 @@ function renderDemoBanner() {
   bar.className = "demo-banner";
   bar.setAttribute("role", "status");
   bar.innerHTML = `
-    <span class="demo-pill">Open access</span>
-    <span>No sign-up needed. Statuses you set are saved in this browser only. An independent project, not an official government portal.</span>
+    <span>Open to everyone, no account needed. Statuses you set are saved in this browser only. This is an independent project, not an official government portal.</span>
     <button class="demo-close" type="button" aria-label="Dismiss">&#x2715;</button>`;
   bar.querySelector(".demo-close").addEventListener("click", () => bar.remove());
   document.body.prepend(bar);
@@ -1575,10 +1582,10 @@ function setLastUpdated() {
   const ts = allIssues.map(i => i.date ? new Date(i.date).getTime() : 0).filter(Boolean);
   if (!ts.length) return;
   document.getElementById("last-updated").textContent =
-    (SNAPSHOT_MS ? "Snapshot · " : "Latest: ") + new Date(Math.max(...ts)).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" });
+    (SNAPSHOT_MS ? "data to " : "updated ") + new Date(Math.max(...ts)).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" });
   if (SNAPSHOT_MS) {
     const badge = document.getElementById("data-source-badge");
-    badge.textContent = "Archived data";
+    badge.textContent = "Archive,";
     badge.classList.remove("live");
     badge.classList.add("snapshot");
     badge.title = "The live feed is paused. Ages and SLA timers are measured from when this data was captured.";
@@ -2815,11 +2822,12 @@ function buildSmartEmailLink(contacts, issue) {
 // ── Officials Directory (Org Hierarchy) ────────────────────────────
 
 const DEPT_COLORS = {
-  BBMP: "#1f4d3a", SWM: "#2d6a4f", BESCOM: "#92400e",
-  BWSSB: "#0891b2", "Traffic Police": "#991b1b", Traffic: "#991b1b",
-  Political: "#7c3aed"
+  // Departments are named in text; colour is reserved for meaning, so all use the brand blue.
+  BBMP: "var(--brand)", SWM: "var(--brand)", BESCOM: "var(--brand)",
+  BWSSB: "var(--brand)", "Traffic Police": "var(--brand)", Traffic: "var(--brand)",
+  Political: "var(--brand)"
 };
-function getDeptColor(dept) { return DEPT_COLORS[dept] || "#1f4d3a"; }
+function getDeptColor(dept) { return DEPT_COLORS[dept] || "var(--brand)"; }
 function normZone(s) { return (s || "").replace(/\s*Zone$/i, "").trim().toLowerCase(); }
 
 function buildOfficialIndex() {
@@ -3389,8 +3397,7 @@ function showDirectoryProfile(entry) {
   const assignedIssues = getAssignedIssues(entry.name);
   const initials = entry.name.split(" ").filter(Boolean).slice(0, 2).map(n => n[0]?.toUpperCase() || "").join("");
 
-  const deptColors = { BESCOM: "#92400e", BWSSB: "#0891b2", "Traffic Police": "#991b1b", Political: "#7c3aed", SWM: "#31572c" };
-  const avatarColor = deptColors[entry.dept] || "#1f4d3a";
+  const avatarColor = "var(--brand)";
 
   const stats = {
     total: assignedIssues.length,

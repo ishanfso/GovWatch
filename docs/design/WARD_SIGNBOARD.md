@@ -1,6 +1,6 @@
 # Ward Signboard — design direction
 
-Status: **proposed, awaiting approval** (2026-11-02). Not live yet.
+Status: **live** on the landing page and dashboard (2026-11-02).
 
 ![[ward-signboard-vision-board.png]]
 
