@@ -26,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Noto+Sans+Kannada:wght@600;700;800&display=swap" />
-  <link rel="stylesheet" href="css/styles.css?v=20261102-signboard" />
+  <link rel="stylesheet" href="css/styles.css?v=20261102-flows" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
@@ -69,13 +69,18 @@
           <span class="brand-name">Civic complaints</span>
         </span>
       </a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="./" data-nav="list">Complaints</a>
+        <a href="./?tab=insights" data-nav="insights">Insights</a>
+        <a href="../report/">Report a problem</a>
+        <a href="./?view=people" data-nav="people">Find officials</a>
+      </nav>
       <div class="header-actions">
         <span class="led" aria-live="polite">
           <span class="data-badge" id="data-source-badge">Sample data</span>
           <span class="last-updated" id="last-updated"></span>
         </span>
-        <button class="header-btn" id="export-csv">Download CSV</button>
-        <a class="header-btn" href="../#how">How it works</a>
+        <button class="header-btn complaints-only" id="export-csv">Download CSV</button>
       </div>
       <div class="header-user" id="header-user">
         <span class="user-email" id="user-email"></span>
@@ -94,6 +99,13 @@
       <div>
         <h1 id="page-headline">Bengaluru civic complaints</h1>
         <p>Genuine complaints posted on X, most urgent first. Pick one to read it in full and see which office to contact.</p>
+      </div>
+    </section>
+
+    <section class="page-intro people-only">
+      <div>
+        <h1>Find who's responsible</h1>
+        <p>Look up the officials and elected representatives for any Bengaluru ward, or search for a person by name. To complain about a specific problem, use <a href="../report/">Report a problem</a>, which also writes the complaint for you.</p>
       </div>
     </section>
 
@@ -165,12 +177,11 @@
 
     <!-- Tab Navigation -->
     <nav class="tab-nav">
-      <button class="tab active" data-tab="queue">Queue</button>
-      <button class="tab" data-tab="map">Map</button>
-      <button class="tab" data-tab="departments">Departments</button>
-      <button class="tab" data-tab="analytics">Analytics</button>
-      <button class="tab" data-tab="directory">Directory</button>
-      <button class="tab" data-tab="officials">Officials</button>
+      <button class="tab complaints-only active" data-tab="queue">List</button>
+      <button class="tab complaints-only" data-tab="map">Map</button>
+      <button class="tab complaints-only" data-tab="analytics">Insights</button>
+      <button class="tab people-only" data-tab="officials">By ward</button>
+      <button class="tab people-only" data-tab="directory">By name</button>
       <button class="tab admin-only hidden" data-tab="admin">Admin</button>
     </nav>
 
@@ -220,71 +231,65 @@
       <div id="leaflet-map"></div>
     </div>
 
-    <!-- Tab: Departments -->
-    <div class="tab-content hidden" id="tab-departments">
-      <div class="dept-grid" id="dept-grid">
-        <div class="loading">Loading...</div>
-      </div>
-    </div>
-
     <!-- Tab: Analytics -->
     <div class="tab-content hidden" id="tab-analytics">
-      <div class="analytics-layout">
+      <section class="insight-block">
+        <div class="insight-head">
+          <h2>By department</h2>
+          <p>Which office each complaint goes to, and how many are past their deadline.</p>
+        </div>
+        <div class="dept-grid" id="dept-grid"><div class="loading">Loading...</div></div>
         <div class="analytics-card analytics-card-wide">
-          <div class="analytics-title">Area Heat Map — Open Issue Intensity</div>
-          <div class="heatmap-legend">
-            <span class="hm-legend-item"><span class="hm-swatch tile-none"></span>None</span>
-            <span class="hm-legend-item"><span class="hm-swatch tile-low"></span>Low</span>
-            <span class="hm-legend-item"><span class="hm-swatch tile-medium"></span>Medium</span>
-            <span class="hm-legend-item"><span class="hm-swatch tile-high"></span>High</span>
-            <span class="hm-legend-item"><span class="hm-swatch tile-critical"></span>Critical</span>
-            <span class="hm-legend-hint">Click any tile to filter queue to that area</span>
-          </div>
-          <div class="heatmap-grid" id="ward-heatmap"></div>
-        </div>
-        <div class="analytics-card">
-          <div class="analytics-title">Issues by Category</div>
-          <div class="chart-wrap">
-            <canvas id="categoryChart"></canvas>
-          </div>
-        </div>
-        <div class="analytics-card">
-          <div class="analytics-title">Severity Breakdown</div>
-          <div class="sev-breakdown" id="sev-breakdown"></div>
-        </div>
-        <div class="analytics-card analytics-card-wide">
-          <div class="analytics-title">SLA Performance by Department</div>
+          <div class="analytics-title">Against deadlines</div>
           <div class="sla-table" id="sla-table"></div>
         </div>
-        <div class="analytics-card analytics-card-wide">
-          <div class="analytics-title">Top Areas by Issue Count</div>
-          <div class="chart-wrap chart-wrap-tall">
-            <canvas id="areaChart"></canvas>
+      </section>
+
+      <section class="insight-block">
+        <div class="insight-head">
+          <h2>Where complaints come from</h2>
+          <p>Choose a level. Select a ward or neighbourhood to see its complaints in the list.</p>
+        </div>
+        <div class="saved-views where-levels" id="where-levels" role="tablist" aria-label="Level">
+          <button class="view-chip active" data-level="corp" role="tab">City corporation</button>
+          <button class="view-chip" data-level="constituency" role="tab">Assembly constituency</button>
+          <button class="view-chip" data-level="ward" role="tab">Ward</button>
+          <button class="view-chip" data-level="area" role="tab">Neighbourhood</button>
+        </div>
+        <div class="where-list" id="where-list"></div>
+      </section>
+
+      <section class="insight-block">
+        <div class="insight-head">
+          <h2>What people complain about</h2>
+        </div>
+        <div class="analytics-layout">
+          <div class="analytics-card">
+            <div class="analytics-title">By type</div>
+            <div class="chart-wrap"><canvas id="categoryChart"></canvas></div>
+          </div>
+          <div class="analytics-card">
+            <div class="analytics-title">By severity</div>
+            <div class="sev-breakdown" id="sev-breakdown"></div>
           </div>
         </div>
-        <div class="analytics-card">
-          <div class="analytics-title">Issues by MLA Constituency</div>
-          <div class="breakdown-list" id="mla-breakdown"></div>
-        </div>
-        <div class="analytics-card">
-          <div class="analytics-title">Issues by MP Constituency</div>
-          <div class="breakdown-list" id="mp-breakdown"></div>
-        </div>
-        <div class="analytics-card analytics-card-wide">
-          <div class="analytics-title">Issues by Corporation Zone</div>
-          <div class="breakdown-list breakdown-list-wide" id="zone-breakdown"></div>
+      </section>
+
+      <section class="insight-block">
+        <div class="insight-head">
+          <h2>Requests raised to officials</h2>
+          <p>Complaints assigned to a named official from this browser.</p>
         </div>
         <div class="analytics-card analytics-card-wide">
-          <div class="analytics-title">Requests Raised to Officials</div>
           <div class="raised-to-list" id="raised-to-list"></div>
         </div>
-      </div>
+      </section>
     </div>
 
     <!-- Tab: Directory -->
     <div class="tab-content hidden" id="tab-directory">
       <div class="dir-search-wrap">
-        <input class="search-input" id="dir-search" type="text" placeholder="Search any official by name, role, or area…" autocomplete="off" />
+        <input class="search-input" id="dir-search" type="text" placeholder="Search for an official by name, role or area" autocomplete="off" />
         <div class="dir-suggestions hidden" id="dir-suggestions"></div>
       </div>
       <div class="dir-dept-chips" id="dir-dept-chips">
@@ -305,8 +310,8 @@
 
       <!-- Section A: Ward Lookup -->
       <div class="officials-section">
-        <div class="officials-section-title">Ward &amp; Area Lookup</div>
-        <div class="officials-section-sub">Search by area or ward name to see all responsible officials</div>
+        <div class="officials-section-title">Look up a ward</div>
+        <div class="officials-section-sub">Type a neighbourhood or ward to see every official and representative for it.</div>
         <div class="ward-search-wrap">
           <input class="search-input" id="ward-search" type="text" placeholder="e.g. Koramangala, Indiranagar, HSR Layout..." autocomplete="off" />
           <div class="ward-suggestions hidden" id="ward-suggestions"></div>
@@ -316,7 +321,7 @@
 
       <!-- Section B: Department Org Charts -->
       <div class="officials-section">
-        <div class="officials-section-title">Department Structure &amp; Contacts</div>
+        <div class="officials-section-title">How each department is organised</div>
         <div class="org-dept-chips" id="org-dept-chips">
           <button class="view-chip active" data-dept="BBMP">BBMP</button>
           <button class="view-chip" data-dept="BESCOM">BESCOM</button>
@@ -331,7 +336,7 @@
 
       <!-- Section C: Issue Routing Guide -->
       <div class="officials-section">
-        <div class="officials-section-title">Issue Routing &amp; Escalation Reference</div>
+        <div class="officials-section-title">Which office handles what, and who to escalate to</div>
         <div id="routing-guide">
           <div class="loading">Loading routing guide...</div>
         </div>
@@ -354,7 +359,7 @@
     <a href="https://github.com/ishanfso/GovWatch" rel="noopener">Source on GitHub</a>
   </footer>
 
-  <script src="js/app.js?v=20261102-signboard"></script>
+  <script src="js/app.js?v=20261102-flows"></script>
 
   <!-- Directory profile drawer -->
   <div class="dir-profile-overlay hidden" id="dir-profile-overlay">

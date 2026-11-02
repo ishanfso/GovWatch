@@ -93,6 +93,11 @@ Goal: Make the project shareable (CV, LinkedIn, stakeholders), working "outside 
 - [x] Landing page: dashboard preview, weekly trend, departments, citizen complaint wall
 - [x] **Ward signboard redesign** — landing page and dashboard, see [[WARD_SIGNBOARD]]
 - [ ] Have a native Kannada reader confirm the Kannada text on the signboard and header
+- [x] **Two places with clear flows** — Complaints (List, Map, Insights) and Report a problem; see [[USER_FLOWS]]
+- [ ] **Direct submission to official systems** — watch for a partner interface from the GBA's planned single-window platform ("Sahaaya Plus") / Sahaaya 3.0; until then the site hands off with pre-filled text and links
+- [ ] **Re-check official channels every 3 months** — `data/officials/official_channels.json` (BESCOM WhatsApp number and BWSSB details are marked medium confidence)
+- [ ] **Ward engineer contacts** — add ward-level engineers for roads and drains so Report a problem can name them
+- [ ] **Better ward matching** — only about 1 in 9 complaints is matched to a ward today; improve so Insights by ward and corporation cover more complaints
 - [ ] Polish remaining inner panels (Officials org charts, Directory drawer, heat-map tiles) to the new style in detail
 - [ ] Light/dark toggle button (currently follows the device setting automatically)
 - [ ] "About / built by" section with the founder's name and links (needs owner's input)

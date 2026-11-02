@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Report a problem: Civic Issue India</title>
+  <meta name="description" content="Find who is responsible for a civic problem in your Bengaluru ward and complain on the right official channel, with the complaint written for you." />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#1D4F9C" />
+  <meta property="og:title" content="Report a civic problem in Bengaluru" />
+  <meta property="og:description" content="Find the official responsible for your ward and complain on the right channel." />
+  <meta property="og:image" content="https://civicissue.in/og-preview.png" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231D4F9C'/%3E%3Crect x='3.5' y='3.5' width='25' height='25' rx='3.5' fill='none' stroke='%23fff' stroke-width='2'/%3E%3Crect x='9' y='19' width='14' height='3' fill='%23F4C400'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Noto+Sans+Kannada:wght@600;700;800&display=swap" />
+  <link rel="stylesheet" href="../css/landing.css?v=20261102-flows" />
+  <link rel="stylesheet" href="report.css?v=20261102-flows" />
+  <script src="report.js?v=20261102-flows" defer></script>
+</head>
+<body>
+
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="../" aria-label="Civic Issue India home"><span class="plate" aria-hidden="true"></span>Civic Issue India</a>
+      <nav class="nav-links" aria-label="Main">
+        <a href="../dashboard/">Complaints</a>
+        <a href="../dashboard/?tab=insights">Insights</a>
+        <a href="./" aria-current="page">Report a problem</a>
+        <a href="../dashboard/?view=people">Find officials</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="wrap report">
+
+    <div class="report-head">
+      <div class="board board-small">
+        <p class="board-kn" lang="kn">ಬೆಂಗಳೂರು</p>
+        <h1 class="board-en">Report a problem</h1>
+      </div>
+      <p class="lede">Tell us what's wrong and where. We'll show who is responsible, write the complaint for you, and open the official channel to send it.</p>
+    </div>
+
+    <ol class="steps">
+
+      <!-- 1 -->
+      <li class="step" id="step-type">
+        <h2>What's wrong?</h2>
+        <div class="type-grid" id="type-grid" role="radiogroup" aria-label="Type of problem"></div>
+      </li>
+
+      <!-- 2 -->
+      <li class="step" id="step-place">
+        <h2>Where is it?</h2>
+        <label class="field-label" for="place-input">Neighbourhood or ward</label>
+        <div class="place-box">
+          <input id="place-input" type="search" autocomplete="off" placeholder="For example Indiranagar or Koramangala" aria-controls="place-results" aria-describedby="place-help" />
+          <ul class="place-results" id="place-results" role="listbox" hidden></ul>
+        </div>
+        <p class="help" id="place-help">Pick from the list. All 369 Bengaluru wards are included.</p>
+        <div class="chosen" id="place-chosen" hidden></div>
+      </li>
+
+      <!-- 3 -->
+      <li class="step locked" id="step-who">
+        <h2>Who's responsible</h2>
+        <p class="waiting">Choose a problem and a place first.</p>
+        <div id="who" hidden></div>
+      </li>
+
+      <!-- 4 -->
+      <li class="step locked" id="step-lodge">
+        <h2>Complain officially</h2>
+        <p class="waiting">Choose a problem and a place first.</p>
+        <div id="lodge" hidden>
+          <p class="help">Edit the complaint if you like, add a landmark, then send it on one of the official channels below. Keep the complaint number they give you.</p>
+          <label class="field-label" for="complaint-text">Your complaint</label>
+          <textarea id="complaint-text" rows="7"></textarea>
+          <div class="row-actions">
+            <button class="btn" type="button" id="copy-btn">Copy complaint</button>
+            <span class="copied" id="copied" role="status" hidden>Copied</span>
+          </div>
+          <div class="channels" id="channels"></div>
+        </div>
+      </li>
+
+      <!-- 5 -->
+      <li class="step locked" id="step-escalate">
+        <h2>If it isn't fixed</h2>
+        <p class="waiting">Choose a problem and a place first.</p>
+        <div id="escalate" hidden></div>
+      </li>
+    </ol>
+
+    <aside class="ward-context" id="ward-context" hidden></aside>
+
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <p>Civic Issue India is an independent civic-technology project, not an official government portal. Contacts come from public directories and may be out of date; official channels were last checked on 2 November 2026.</p>
+      <a href="https://github.com/ishanfso/GovWatch" rel="noopener">Source code on GitHub</a>
+    </div>
+  </footer>
+
+</body>
+</html>

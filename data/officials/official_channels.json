@@ -1,0 +1,51 @@
+{
+  "_about": "Official places a citizen can lodge a complaint, by complaint type. Used by the Report a problem page (report/). None of these offer a public API for lodging complaints on someone's behalf, so the site hands the citizen over with pre-filled text, links and numbers. Re-check every entry before relying on it: numbers and portals change.",
+  "_last_checked": "2026-11-02",
+  "channels": {
+    "gba_sahaaya": {
+      "name": "Sahaaya app (Greater Bengaluru Authority)",
+      "for": "Garbage, roads, footpaths, drains, flooding, streetlights in public spaces, sanitation",
+      "how": "Install the Sahaaya app, sign in with your phone number, choose the complaint type and paste the text below. You get a complaint number to track.",
+      "url": "https://play.google.com/store/search?q=Sahaaya%20GBA&c=apps",
+      "url_label": "Find Sahaaya on Google Play",
+      "web": "https://gba.karnataka.gov.in",
+      "web_label": "Greater Bengaluru Authority website",
+      "confidence": "high",
+      "source": "Deccan Herald, Sept 2026: officials direct citizens to raise complaints in the Sahaaya app; Sahaaya 3.0 upgrade in progress."
+    },
+    "bescom_helpline": {
+      "name": "BESCOM 24x7 helpline",
+      "for": "Power cuts, transformer faults, electricity safety",
+      "phone": "1912",
+      "whatsapp": "919449844640",
+      "web": "https://bescom.karnataka.gov.in",
+      "web_label": "BESCOM website",
+      "how": "Call 1912 or send the text below on WhatsApp. Ask for a complaint number.",
+      "confidence": "medium",
+      "source": "BESCOM Contact Us page lists 1912 and WhatsApp 9449844640; some third-party sites list other WhatsApp numbers, so confirm on the BESCOM site."
+    },
+    "bwssb_helpline": {
+      "name": "BWSSB 24x7 helpline",
+      "for": "No water, low pressure, sewage overflow, open manholes",
+      "phone": "1916",
+      "how": "Call 1916 and give the location below. Ask for a complaint number.",
+      "confidence": "medium",
+      "source": "Listed as BWSSB's 24x7 helpline by multiple sources, including Karnataka iPGRS listings."
+    },
+    "traffic_station": {
+      "name": "Your local traffic police station",
+      "for": "Signals not working, congestion, illegal parking",
+      "how": "Contact the traffic police station for this ward, shown in the contacts above.",
+      "confidence": "high",
+      "source": "Station and officer contacts come from the ward data (data/officials/wards.json)."
+    },
+    "emergency": {
+      "name": "Emergency: 112",
+      "for": "Anything dangerous right now: live wires, open manholes, flooding with people at risk",
+      "phone": "112",
+      "how": "Call 112 first if someone could be hurt.",
+      "confidence": "high",
+      "source": "India's national emergency number."
+    }
+  }
+}
