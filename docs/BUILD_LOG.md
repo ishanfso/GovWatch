@@ -8,6 +8,7 @@ Every feature and file built in GovWatch, with dates and status.
 
 | File | Date Built | Status | Description |
 |---|---|---|---|
+| `scripts/filing_agent/driver.js` + `README.md` | 2026-11-02 | 🧪 Prototype | Supervised browser driver for a one-off test filing on iPGRS |
 | `docs/product/FILING_AGENT.md` | 2026-11-02 | 📝 Plan | Design, rules and phases for the "we file it for you" assistant |
 | `docs/outreach/EMAIL_DRAFTS.md` | 2026-11-02 | 📝 Draft | Permission emails to the Centre for e-Governance (iPGRS) and the GBA, plus a tracker for replies |
 

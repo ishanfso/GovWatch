@@ -5,6 +5,13 @@ Format: `[Date] - What changed and why`
 
 ---
 
+## [2026-11-02] — Filing agent: supervised test driver (prototype)
+
+- New `scripts/filing_agent/driver.js` and its README: a headless browser kept open between chat turns, so Claude can step through a government portal with the owner, who types the OTP and approves before anything is submitted. Not used by the website.
+- First attempt to reach iPGRS was blocked by this environment's network policy. The owner added the domains; the change applies when the session container restarts.
+
+---
+
 ## [2026-11-02] — Official addresses added to the permission emails; emails sent
 
 - Both permission emails were sent by the founder on 2 November 2026; the tracker in `docs/outreach/EMAIL_DRAFTS.md` now shows them as "Waiting", with a follow-up plan.
