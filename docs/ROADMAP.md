@@ -96,6 +96,7 @@ Goal: Make the project shareable (CV, LinkedIn, stakeholders), working "outside 
 - [x] **Two places with clear flows** — Complaints (List, Map, Insights) and Report a problem; see [[USER_FLOWS]]
 - [x] **Filing agent, phase 1** — plan ([[FILING_AGENT]]), "coming soon" note on Report a problem, permission emails drafted ([[EMAIL_DRAFTS]])
 - [ ] **Owner: send the two permission emails** and record replies in [[EMAIL_DRAFTS]]
+- [ ] **Supervised test filing on iPGRS (in progress)** — `scripts/filing_agent/driver.js` built; waiting for network access to the portal from the cloud session (or Remote Control on the owner's computer)
 - [ ] **Filing agent, phase 2 (iPGRS)** — needs: a small server in an India region (owner creates a Render or Railway account), Playwright + Claude, built and tested against the real portal; goes live only after one real complaint returns a Grievance ID. Then make it the headline feature.
 - [ ] **Filing agent, phase 3** — BESCOM online complaints, then Sahaaya once 3.0 is released; switch to an official partner interface (GBA "Sahaaya Plus") if one is offered
 - [ ] **Re-check official channels every 3 months** — `data/officials/official_channels.json` (BESCOM WhatsApp number and BWSSB details are marked medium confidence)
