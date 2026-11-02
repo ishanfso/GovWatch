@@ -4,6 +4,15 @@ Every feature and file built in GovWatch, with dates and status.
 
 ---
 
+## Public Launch Readiness (added 2026-11-02)
+
+| File | Date Built | Status | Description |
+|---|---|---|---|
+| `docs/GO_LIVE.md` | 2026-11-02 | ✅ Live | Plain-English checklist: domain, Supabase restore, Twitter/X credits, sharing |
+| `index.html` + `css/landing.css` + `js/landing.js` | 2026-11-02 | ✅ Rebuilt | New public landing page with live figures, neighbourhood map, ticker and charts |
+
+---
+
 ## Supabase Auth Integration (added 2026-06-23)
 
 | File | Date Built | Status | Description |

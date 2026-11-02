@@ -81,6 +81,9 @@ GovWatch/
     ├── filter_issues.py           ← LLM filter: removes non-civic noise (incremental)
     ├── requirements.txt           ← Python dependencies
     └── config.example.py          ← Config template — copy to config.py, never commit
+
+Public landing page: `index.html` + `css/landing.css` + `js/landing.js` (live figures, map, sign-in at `/#signin`).
+Dashboard opens in a read-only **demo mode** when not signed in or when Supabase is down. Go-live steps: `docs/GO_LIVE.md`.
 ```
 
 ---
@@ -94,7 +97,7 @@ GovWatch/
 | Twitter data | Twitter API v2 **Basic (paid)** via Tweepy | ~$100/mo when fetching; $0 when paused | Free tier does not support search queries |
 | LLM filtering | Anthropic Claude API (Haiku model) | ~$0.05–0.10 per filter run | Removes noise that keyword matching can't catch |
 | Hosting | GitHub Pages | Free | Live at `https://ishanfso.github.io/GovWatch/dashboard/` |
-| Automation | GitHub Actions | **On hold** — avoid API costs | Will revisit when budget allows |
+| Automation | GitHub Actions | Daily at ~6 AM IST; skips when no new tweets | Fails loudly if the X API refuses every query |
 
 ---
 

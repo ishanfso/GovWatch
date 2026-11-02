@@ -5,6 +5,32 @@ Format: `[Date] - What changed and why`
 
 ---
 
+## [2026-11-02] — Public demo mode, new landing page, data-feed cost guard
+
+### What changed
+
+**Why the site looked "down":**
+- The Twitter/X API has been refusing every request with *"402 Payment Required — credits depleted"*, so no new complaints since 4 Jul 2026.
+- The dashboard sent anyone without a login back to the homepage, and sign-in depends on Supabase, which appears to be paused.
+
+**Modified files:**
+- `index.html`, `css/landing.css`, `js/landing.js` — Rebuilt the public landing page. It explains the product in three steps (Listen → Filter with AI → Route & track), shows real figures computed from the data (posts screened, complaints kept, wards mapped), a Bangalore map with one circle per neighbourhood sized by complaint count, a rotating ticker of real complaints, a category bar chart and top neighbourhoods. Automatic dark mode, smooth page transitions, scroll-in animations (switched off for people who prefer reduced motion), and a phone layout. Sign-in moved to a section at `/#signin`. Chart colours checked with the dataviz colour validator.
+- `dashboard/index.html` — The access check now falls back to a **public read-only demo** when the visitor isn't signed in or Supabase is unreachable (4-second timeout), instead of redirecting away.
+- `dashboard/js/app.js` — Demo mode: banner at the top, status changes saved only in the visitor's browser, team notes and email escalation reserved for signed-in officials. **Snapshot mode**: when the newest data is more than 3 days old, ages and SLA timers are measured from when the data was captured, so cards no longer say "Overdue 2916h". The header badge reads "Archived data". `?q=` in the URL pre-fills the search box (used by the landing-page map).
+- `dashboard/css/styles.css` — Added the missing general `.hidden` rule (the Admin tab was showing for everyone), plus demo-banner styles.
+- `js/supabase-client.js` — No longer crashes the page if the Supabase library fails to load.
+- `pending.html` — Pinned the Supabase library version.
+- `.github/workflows/refresh.yml` — Runs **once a day** instead of every 5 minutes, and skips processing and committing when no new tweets arrive (no more empty "auto-refresh" commits).
+- `scripts/fetch_tweets.py` — If every query fails, the run now fails with a clear error so GitHub shows it in red and emails the owner.
+
+**New files:**
+- `docs/GO_LIVE.md` — Plain-English checklist to bring everything back live.
+
+### Why
+So the project can go on a CV: anyone with the link sees a polished, working product straight away, with no login and no broken-looking numbers, even while the paid data feed is paused.
+
+---
+
 ## [2026-06-28] — Admin user management panel
 
 ### What changed

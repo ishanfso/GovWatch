@@ -84,6 +84,7 @@ def fetch_tweets():
 
     print(f"Fetching new tweets...")
 
+    failed_queries = 0
     for i, query in enumerate(SEARCH_QUERIES, 1):
         print(f"  Query {i}/{len(SEARCH_QUERIES)}: {query[:60]}...")
         try:
@@ -127,7 +128,15 @@ def fetch_tweets():
 
         except tweepy.TweepyException as e:
             print(f"    Warning: query {i} failed — {e}")
+            failed_queries += 1
             continue
+
+    # If every single query failed, something is wrong with the account
+    # (e.g. "402 Payment Required — credits depleted"). Fail loudly so the
+    # GitHub Actions run shows red instead of silently "succeeding".
+    if failed_queries == len(SEARCH_QUERIES):
+        print("\nERROR: every Twitter/X query failed. Check the API plan, credits and bearer token.")
+        sys.exit(1)
 
     all_tweets = existing_tweets + new_tweets
 
