@@ -94,7 +94,10 @@ Goal: Make the project shareable (CV, LinkedIn, stakeholders), working "outside 
 - [x] **Ward signboard redesign** — landing page and dashboard, see [[WARD_SIGNBOARD]]
 - [ ] Have a native Kannada reader confirm the Kannada text on the signboard and header
 - [x] **Two places with clear flows** — Complaints (List, Map, Insights) and Report a problem; see [[USER_FLOWS]]
-- [ ] **Direct submission to official systems** — watch for a partner interface from the GBA's planned single-window platform ("Sahaaya Plus") / Sahaaya 3.0; until then the site hands off with pre-filled text and links
+- [x] **Filing agent, phase 1** — plan ([[FILING_AGENT]]), "coming soon" note on Report a problem, permission emails drafted ([[EMAIL_DRAFTS]])
+- [ ] **Owner: send the two permission emails** and record replies in [[EMAIL_DRAFTS]]
+- [ ] **Filing agent, phase 2 (iPGRS)** — needs: a small server in an India region (owner creates a Render or Railway account), Playwright + Claude, built and tested against the real portal; goes live only after one real complaint returns a Grievance ID. Then make it the headline feature.
+- [ ] **Filing agent, phase 3** — BESCOM online complaints, then Sahaaya once 3.0 is released; switch to an official partner interface (GBA "Sahaaya Plus") if one is offered
 - [ ] **Re-check official channels every 3 months** — `data/officials/official_channels.json` (BESCOM WhatsApp number and BWSSB details are marked medium confidence)
 - [ ] **Ward engineer contacts** — add ward-level engineers for roads and drains so Report a problem can name them
 - [ ] **Better ward matching** — only about 1 in 9 complaints is matched to a ward today; improve so Insights by ward and corporation cover more complaints

@@ -5,6 +5,23 @@ Format: `[Date] - What changed and why`
 
 ---
 
+## [2026-11-02] — Filing agent, phase 1: plan, "coming soon" note, permission emails
+
+### What changed
+- New `docs/product/FILING_AGENT.md`: the plan for an assistant that files a complaint on the official portal for the resident (Karnataka iPGRS first). It covers:
+  - how the resident stays in control: their own OTP, a review before submitting, and the official grievance ID at the end
+  - where Claude helps: matching the portal's categories
+  - data rules: OTPs never stored, details deleted after filing, rate limits, no CAPTCHA bypassing, DPDP Act 2023
+  - hosting needs: a small server in an India region, about $7–10 a month
+  - phases and a "done means" checklist
+- New `docs/outreach/EMAIL_DRAFTS.md`: permission emails to the Centre for e-Governance (runs iPGRS) and the Greater Bengaluru Authority (Sahaaya), with blanks for the founder's contact details. The repo is public, so those details are not filled in.
+- `report/index.html`, `report/report.css`: a plainly labelled "Coming soon: we file it for you" note in step 4. No button, because nothing is built yet.
+
+### Why
+Automatic filing could become the site's main feature, but it needs a server, testing against the real portals (not reachable from Claude's environment) and the portals' permission. Phase 1 gets the plan and the permission request done first.
+
+---
+
 ## [2026-11-02] — Two places, clear flows: "Complaints" and "Report a problem"
 
 ### Why
