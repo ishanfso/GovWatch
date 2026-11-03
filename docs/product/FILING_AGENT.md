@@ -78,6 +78,12 @@ The owner creates the hosting account; Claude writes the code and the setup step
 3. **More portals:** BESCOM's online complaint form, then Sahaaya once version 3.0 is released.
 4. **Official route:** if a department offers a partner interface (the GBA's planned single-window "Sahaaya Plus"), switch to it and retire the browser agent for that department.
 
+## Test results so far
+
+**3 November 2026: Karnataka government sites refuse servers outside India.** With the cloud environment's network opened to the portal, the connection reached `ipgrs.karnataka.gov.in`, but the government side reset it during the secure handshake, every time. `karnataka.gov.in`, `bescom.karnataka.gov.in` and a district `nic.in` site behaved the same way, while `india.gov.in` (served worldwide) loaded normally. So:
+- A browser agent for Karnataka portals **must run from an Indian internet connection**: either a server in an India region (as planned), or, for the supervised test, the owner's own computer via Remote Control.
+- The cloud test environment can't be used for filing.
+
 ## Done means (for phase 2)
 - [ ] A real complaint filed on iPGRS through the site, with a Grievance ID that shows up on the iPGRS tracking page
 - [ ] Consent, OTP, review and submit steps tested on a phone

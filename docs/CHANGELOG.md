@@ -5,6 +5,12 @@ Format: `[Date] - What changed and why`
 
 ---
 
+## [2026-11-03] — Filing agent test: Karnataka portals block foreign servers
+
+- `docs/product/FILING_AGENT.md`: new "Test results so far" section. The network setting now lets the connection out, but iPGRS and other Karnataka government sites reset connections from outside India. The agent must run from an Indian connection: an India-region server, or the owner's computer via Remote Control for the supervised test.
+
+---
+
 ## [2026-11-02] — Filing agent: supervised test driver (prototype)
 
 - New `scripts/filing_agent/driver.js` and its README: a headless browser kept open between chat turns, so Claude can step through a government portal with the owner, who types the OTP and approves before anything is submitted. Not used by the website.
