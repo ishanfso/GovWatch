@@ -77,7 +77,9 @@ Founder, Civic Issue India
 
 | Sent to | Date | Reply |
 |---|---|---|
-| Centre for e-Governance (iPGRS): pdpgrs@karnataka.gov.in, cc support.ipgrs@karnataka.gov.in | 2026-11-02 | Waiting |
-| Greater Bengaluru Authority: comm@bbmp.gov.in | 2026-11-02 | Waiting |
+| Centre for e-Governance (iPGRS): pdpgrs@karnataka.gov.in, cc support.ipgrs@karnataka.gov.in | 2026-11-02 | No reply by 16 Nov. Follow-up drafted 16 Nov, waiting for the founder to send |
+| Greater Bengaluru Authority: comm@bbmp.gov.in | 2026-11-02 | No reply by 16 Nov. Follow-up drafted 16 Nov, waiting for the founder to send |
 
 **Follow-up plan:** if there's no reply by 16 November 2026 (two weeks), send a short polite follow-up on the same thread. If there's still nothing after another two weeks, call the iPGRS helpline (1902) or the GBA helpline (1533) and ask for the right person.
+
+**Follow-up text (16 Nov 2026):** a short note on each thread repeating the key questions (assisted filing with the citizen's own OTP; an official partner interface; for the GBA, the free complaint feed) and asking them to forward it to the right officer if needed. The founder sends it from Gmail, ideally as a reply on the original thread in Sent.
