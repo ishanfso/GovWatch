@@ -5,6 +5,12 @@ Format: `[Date] - What changed and why`
 
 ---
 
+## [2026-11-16] — Permission emails: follow-up drafted
+
+- `docs/outreach/EMAIL_DRAFTS.md`: no reply from iPGRS or the GBA after two weeks (checked daily). Follow-up emails were drafted and given to the founder as Gmail links; the tracker shows them as waiting to be sent.
+
+---
+
 ## [2026-11-03] — Filing agent test: Karnataka portals block foreign servers
 
 - `docs/product/FILING_AGENT.md`: new "Test results so far" section. The network setting now lets the connection out, but iPGRS and other Karnataka government sites reset connections from outside India. The agent must run from an Indian connection: an India-region server, or the owner's computer via Remote Control for the supervised test.
